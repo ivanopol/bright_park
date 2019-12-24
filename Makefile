@@ -29,4 +29,4 @@ perm:
 	if [ -d "public/build" ]; then sudo chown ${USER}:${USER} public/build -R; fi
 
 unperm:
-	sudo chown -R ivanopol:ivanopol ./storage/docker/mysql
+	sudo chown -R ${USER}:${USER} ./storage/docker/mysql

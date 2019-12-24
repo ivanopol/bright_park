@@ -1,6 +1,14 @@
-FROM php:7.2-cli
+FROM php:7.2.2-cli
 
-RUN apt-get update && apt-get install -y libmcrypt-dev mysql-client \
-    && docker-php-ext-install mcrypt pdo_mysql
+RUN apt-get update \
+	&& apt-get install -y libmcrypt-dev mariadb-client \
+	&& rm -rf /var/lib/apt/lists/* \
+	&& pecl install mcrypt-1.0.1 \
+	&& docker-php-ext-enable mcrypt
+RUN curl -sS https://getcomposer.org/installer | php -- \
+        --filename=composer \
+        --install-dir=/usr/local/bin && \
+        echo "alias composer='composer'" >> /root/.bashrc && \
+        composer
 
 WORKDIR /var/www
