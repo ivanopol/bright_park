@@ -44,7 +44,7 @@
                 <div class="logo-lada"></div>
             </div>
             <div class="lada-line">
-                <p>Granta лифтбек</p>
+                <p id="model-active"></p>
             </div>
         </header>
 

@@ -2024,6 +2024,13 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     Hooper: hooper__WEBPACK_IMPORTED_MODULE_0__["Hooper"],
     Slide: hooper__WEBPACK_IMPORTED_MODULE_0__["Slide"]
+  },
+  methods: {
+    change_line: function change_line(event) {
+      var current_model = document.querySelectorAll('#items ul li')[event.currentSlide];
+      var model = document.getElementById('model-active').textContent = current_model.dataset.model;
+      return Promise.resolve("");
+    }
   }
 });
 
@@ -6573,7 +6580,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "@charset \"UTF-8\";\n.items-mini {\n  width: 900px;\n  padding: 0;\n}\n.items-mini li {\n  width: 132px;\n  display: inline-block;\n  text-align: center;\n}\n.items-mini li span {\n  position: relative;\n  padding: 3px 8px;\n  -webkit-transition: all ease-out 0.3s;\n  transition: all ease-out 0.3s;\n}\n.items-mini li.is-current span {\n  display: inline;\n  padding: 3px 8px;\n  background-color: #0467ff;\n  border-radius: 5px;\n  color: #fff;\n}\n.items-mini li img {\n  width: 100%;\n}\n.items ul {\n  padding-top: 20px;\n  width: 2280px;\n}\n.items ul li {\n  width: 375px;\n  height: 390px;\n  overflow: hidden;\n  display: inline-block;\n  position: relative;\n  color: #fff;\n  text-align: center;\n  padding: 20px 30px;\n}\n.items ul li.slide_1 {\n  background: url(" + escape(__webpack_require__(/*! ./img/pixel_dark.png */ "./resources/js/components/img/pixel_dark.png")) + "), url(" + escape(__webpack_require__(/*! ./img/slider/full/granta/lada_granta_sedan_slide.png */ "./resources/js/components/img/slider/full/granta/lada_granta_sedan_slide.png")) + ") no-repeat center center;\n  background-size: 126%;\n}\n.items ul li.slide_2 {\n  background: url(" + escape(__webpack_require__(/*! ./img/pixel_dark.png */ "./resources/js/components/img/pixel_dark.png")) + "), url(" + escape(__webpack_require__(/*! ./img/slider/full/granta/lada_granta_sedan_slide.png */ "./resources/js/components/img/slider/full/granta/lada_granta_sedan_slide.png")) + ") no-repeat center center;\n  background-size: 126%;\n}\n.items ul li.slide_3 {\n  background: url(" + escape(__webpack_require__(/*! ./img/pixel_dark.png */ "./resources/js/components/img/pixel_dark.png")) + "), url(" + escape(__webpack_require__(/*! ./img/slider/full/granta/lada_granta_sedan_slide.png */ "./resources/js/components/img/slider/full/granta/lada_granta_sedan_slide.png")) + ") no-repeat center center;\n  background-size: 126%;\n}\n.items ul li.slide_4 {\n  background: url(" + escape(__webpack_require__(/*! ./img/pixel_dark.png */ "./resources/js/components/img/pixel_dark.png")) + "), url(" + escape(__webpack_require__(/*! ./img/slider/full/granta/lada_granta_sedan_slide.png */ "./resources/js/components/img/slider/full/granta/lada_granta_sedan_slide.png")) + ") no-repeat center center;\n  background-size: 126%;\n}\n.items ul li.slide_5 {\n  background: url(" + escape(__webpack_require__(/*! ./img/pixel_dark.png */ "./resources/js/components/img/pixel_dark.png")) + "), url(" + escape(__webpack_require__(/*! ./img/slider/full/granta/lada_granta_sedan_slide.png */ "./resources/js/components/img/slider/full/granta/lada_granta_sedan_slide.png")) + ") no-repeat center center;\n  background-size: 126%;\n}\n.items ul li.slide_6 {\n  background: url(" + escape(__webpack_require__(/*! ./img/pixel_dark.png */ "./resources/js/components/img/pixel_dark.png")) + "), url(" + escape(__webpack_require__(/*! ./img/slider/full/granta/lada_granta_sedan_slide.png */ "./resources/js/components/img/slider/full/granta/lada_granta_sedan_slide.png")) + ") no-repeat center center;\n  background-size: 126%;\n}\n.items ul li p {\n  font-size: 20px;\n  line-height: 28px;\n}\n.items ul li p.sub_title {\n  margin: 20px 0 10px;\n  text-transform: uppercase;\n}\n.items ul li a {\n  cursor: pointer;\n  background-color: #0467ff;\n  display: inline;\n  color: #fff;\n  text-transform: uppercase;\n  text-decoration: none;\n  padding: 5px 20px 4px;\n  border-radius: 5px;\n}\n.items ul li .more_details {\n  width: 100%;\n  position: absolute;\n  text-transform: uppercase;\n  bottom: 30px;\n  left: 0;\n}\n.items ul li .more_details span {\n  position: relative;\n}\n.items ul li .more_details span::after {\n  content: \"\";\n  position: absolute;\n  border: 3px solid #fff;\n  width: 8px;\n  height: 8px;\n  border-left: none;\n  border-top: none;\n  display: inline-block;\n  left: calc(50% - 4px);\n  bottom: -15px;\n  /* Для Firefox */\n  /* Для IE */\n  -webkit-transform: rotate(45deg);\n  /* Для Safari, Chrome, iOS */\n  /* Для Opera */\n  transform: rotate(45deg);\n  -webkit-animation: animationDetails 1s infinite ease-in;\n          animation: animationDetails 1s infinite ease-in;\n}\n.hooper-slide {\n  height: 100%;\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\n.hooper-progress {\n  position: absolute;\n  top: 0;\n  right: 0;\n  left: 0;\n  height: 4px;\n  background-color: #efefef;\n}\n.hooper-progress-inner {\n  height: 100%;\n  background-color: #4285f4;\n  -webkit-transition: 300ms;\n  transition: 300ms;\n}\n.hooper-pagination {\n  position: absolute;\n  bottom: 0;\n  right: 50%;\n  -webkit-transform: translateX(50%);\n          transform: translateX(50%);\n  display: -webkit-box;\n  display: flex;\n  padding: 5px 10px;\n}\n.hooper-indicators {\n  display: -webkit-box;\n  display: flex;\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n.hooper-indicator:hover,\n.hooper-indicator.is-active {\n  background-color: #4285f4;\n}\n.hooper-indicator {\n  margin: 0 2px;\n  width: 12px;\n  height: 4px;\n  border-radius: 4px;\n  border: none;\n  padding: 0;\n  background-color: #fff;\n  cursor: pointer;\n}\n.hooper-pagination.is-vertical {\n  bottom: auto;\n  right: 0;\n  top: 50%;\n  -webkit-transform: translateY(-50%);\n          transform: translateY(-50%);\n}\n.hooper-pagination.is-vertical .hooper-indicators {\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-direction: column;\n}\n.hooper-pagination.is-vertical .hooper-indicator {\n  width: 6px;\n}\n.hooper-next,\n.hooper-prev {\n  background-color: transparent;\n  border: none;\n  padding: 1em;\n  position: absolute;\n  top: 50%;\n  -webkit-transform: translateY(-50%);\n          transform: translateY(-50%);\n  cursor: pointer;\n}\n.hooper-next.is-disabled,\n.hooper-prev.is-disabled {\n  opacity: 0.3;\n  cursor: not-allowed;\n}\n.hooper-next {\n  right: 0;\n}\n.hooper-prev {\n  left: 0;\n}\n.hooper-navigation.is-vertical .hooper-next {\n  top: auto;\n  bottom: 0;\n  -webkit-transform: initial;\n          transform: initial;\n}\n.hooper-navigation.is-vertical .hooper-prev {\n  top: 0;\n  bottom: auto;\n  right: 0;\n  left: auto;\n  -webkit-transform: initial;\n          transform: initial;\n}\n.hooper-navigation.is-rtl .hooper-prev {\n  left: auto;\n  right: 0;\n}\n.hooper-navigation.is-rtl .hooper-next {\n  right: auto;\n  left: 0;\n}\n.hooper {\n  position: relative;\n  box-sizing: border-box;\n  width: 100%;\n  height: auto;\n}\n.hooper * {\n  box-sizing: border-box;\n}\n.hooper-list {\n  overflow: hidden;\n  width: 100%;\n  height: 100%;\n}\n.hooper-track {\n  display: -webkit-box;\n  display: flex;\n  box-sizing: border-box;\n  width: 100%;\n  height: 100%;\n  padding: 0;\n  margin: 0;\n}\n.hooper.is-vertical .hooper-track {\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-direction: column;\n}\n.hooper.is-rtl {\n  direction: rtl;\n}\n.hooper-sr-only {\n  position: absolute;\n  width: 1px;\n  height: 1px;\n  padding: 0;\n  margin: -1px;\n  overflow: hidden;\n  clip: rect(0, 0, 0, 0);\n  border: 0;\n}", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n.items-mini {\n  width: 900px;\n  padding: 0;\n  height: 95px !important;\n}\n.items-mini li {\n  width: 132px;\n  display: inline-block;\n  text-align: center;\n}\n.items-mini li span {\n  position: relative;\n  padding: 3px 8px;\n  -webkit-transition: all ease-out 0.3s;\n  transition: all ease-out 0.3s;\n}\n.items-mini li.is-current span {\n  display: inline;\n  padding: 3px 8px;\n  background-color: #0467ff;\n  border-radius: 5px;\n  color: #fff;\n}\n.items-mini li img {\n  width: 100%;\n}\n.items ul {\n  padding-top: 20px;\n  width: 2280px;\n}\n.items ul li {\n  width: 375px;\n  height: 390px;\n  overflow: hidden;\n  display: inline-block;\n  position: relative;\n  color: #fff;\n  text-align: center;\n  padding: 20px 30px;\n}\n.items ul li.slide_1 {\n  background: url(" + escape(__webpack_require__(/*! ./img/pixel_dark.png */ "./resources/js/components/img/pixel_dark.png")) + "), url(" + escape(__webpack_require__(/*! ./img/slider/full/granta/lada_granta_sedan_slide.png */ "./resources/js/components/img/slider/full/granta/lada_granta_sedan_slide.png")) + ") no-repeat center center;\n  background-size: 126%;\n}\n.items ul li.slide_2 {\n  background: url(" + escape(__webpack_require__(/*! ./img/pixel_dark.png */ "./resources/js/components/img/pixel_dark.png")) + "), url(" + escape(__webpack_require__(/*! ./img/slider/full/granta/lada_granta_sedan_slide.png */ "./resources/js/components/img/slider/full/granta/lada_granta_sedan_slide.png")) + ") no-repeat center center;\n  background-size: 126%;\n}\n.items ul li.slide_3 {\n  background: url(" + escape(__webpack_require__(/*! ./img/pixel_dark.png */ "./resources/js/components/img/pixel_dark.png")) + "), url(" + escape(__webpack_require__(/*! ./img/slider/full/granta/lada_granta_sedan_slide.png */ "./resources/js/components/img/slider/full/granta/lada_granta_sedan_slide.png")) + ") no-repeat center center;\n  background-size: 126%;\n}\n.items ul li.slide_4 {\n  background: url(" + escape(__webpack_require__(/*! ./img/pixel_dark.png */ "./resources/js/components/img/pixel_dark.png")) + "), url(" + escape(__webpack_require__(/*! ./img/slider/full/granta/lada_granta_sedan_slide.png */ "./resources/js/components/img/slider/full/granta/lada_granta_sedan_slide.png")) + ") no-repeat center center;\n  background-size: 126%;\n}\n.items ul li.slide_5 {\n  background: url(" + escape(__webpack_require__(/*! ./img/pixel_dark.png */ "./resources/js/components/img/pixel_dark.png")) + "), url(" + escape(__webpack_require__(/*! ./img/slider/full/granta/lada_granta_sedan_slide.png */ "./resources/js/components/img/slider/full/granta/lada_granta_sedan_slide.png")) + ") no-repeat center center;\n  background-size: 126%;\n}\n.items ul li.slide_6 {\n  background: url(" + escape(__webpack_require__(/*! ./img/pixel_dark.png */ "./resources/js/components/img/pixel_dark.png")) + "), url(" + escape(__webpack_require__(/*! ./img/slider/full/granta/lada_granta_sedan_slide.png */ "./resources/js/components/img/slider/full/granta/lada_granta_sedan_slide.png")) + ") no-repeat center center;\n  background-size: 126%;\n}\n.items ul li p {\n  font-size: 20px;\n  line-height: 28px;\n}\n.items ul li p.sub_title {\n  margin: 20px 0 10px;\n  text-transform: uppercase;\n}\n.items ul li a {\n  cursor: pointer;\n  background-color: #0467ff;\n  display: inline;\n  color: #fff;\n  text-transform: uppercase;\n  text-decoration: none;\n  padding: 5px 20px 4px;\n  border-radius: 5px;\n}\n.items ul li .more_details {\n  width: 100%;\n  position: absolute;\n  text-transform: uppercase;\n  bottom: 30px;\n  left: 0;\n}\n.items ul li .more_details span {\n  position: relative;\n}\n.items ul li .more_details span::after {\n  content: \"\";\n  position: absolute;\n  border: 3px solid #fff;\n  width: 8px;\n  height: 8px;\n  border-left: none;\n  border-top: none;\n  display: inline-block;\n  left: calc(50% - 4px);\n  bottom: -15px;\n  /* Для Firefox */\n  /* Для IE */\n  -webkit-transform: rotate(45deg);\n  /* Для Safari, Chrome, iOS */\n  /* Для Opera */\n  transform: rotate(45deg);\n  -webkit-animation: animationDetails 1s infinite ease-in;\n          animation: animationDetails 1s infinite ease-in;\n}\n.hooper-slide {\n  height: 100%;\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\n.hooper-progress {\n  position: absolute;\n  top: 0;\n  right: 0;\n  left: 0;\n  height: 4px;\n  background-color: #efefef;\n}\n.hooper-progress-inner {\n  height: 100%;\n  background-color: #4285f4;\n  -webkit-transition: 300ms;\n  transition: 300ms;\n}\n.hooper-pagination {\n  position: absolute;\n  bottom: 0;\n  right: 50%;\n  -webkit-transform: translateX(50%);\n          transform: translateX(50%);\n  display: -webkit-box;\n  display: flex;\n  padding: 5px 10px;\n}\n.hooper-indicators {\n  display: -webkit-box;\n  display: flex;\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n.hooper-indicator:hover,\n.hooper-indicator.is-active {\n  background-color: #4285f4;\n}\n.hooper-indicator {\n  margin: 0 2px;\n  width: 12px;\n  height: 4px;\n  border-radius: 4px;\n  border: none;\n  padding: 0;\n  background-color: #fff;\n  cursor: pointer;\n}\n.hooper-pagination.is-vertical {\n  bottom: auto;\n  right: 0;\n  top: 50%;\n  -webkit-transform: translateY(-50%);\n          transform: translateY(-50%);\n}\n.hooper-pagination.is-vertical .hooper-indicators {\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-direction: column;\n}\n.hooper-pagination.is-vertical .hooper-indicator {\n  width: 6px;\n}\n.hooper-next,\n.hooper-prev {\n  background-color: transparent;\n  border: none;\n  padding: 1em;\n  position: absolute;\n  top: 50%;\n  -webkit-transform: translateY(-50%);\n          transform: translateY(-50%);\n  cursor: pointer;\n}\n.hooper-next.is-disabled,\n.hooper-prev.is-disabled {\n  opacity: 0.3;\n  cursor: not-allowed;\n}\n.hooper-next {\n  right: 0;\n}\n.hooper-prev {\n  left: 0;\n}\n.hooper-navigation.is-vertical .hooper-next {\n  top: auto;\n  bottom: 0;\n  -webkit-transform: initial;\n          transform: initial;\n}\n.hooper-navigation.is-vertical .hooper-prev {\n  top: 0;\n  bottom: auto;\n  right: 0;\n  left: auto;\n  -webkit-transform: initial;\n          transform: initial;\n}\n.hooper-navigation.is-rtl .hooper-prev {\n  left: auto;\n  right: 0;\n}\n.hooper-navigation.is-rtl .hooper-next {\n  right: auto;\n  left: 0;\n}\n.hooper {\n  position: relative;\n  box-sizing: border-box;\n  width: 100%;\n  height: auto;\n}\n.hooper * {\n  box-sizing: border-box;\n}\n.hooper-list {\n  overflow: hidden;\n  width: 100%;\n  height: 100%;\n}\n.hooper-track {\n  display: -webkit-box;\n  display: flex;\n  box-sizing: border-box;\n  width: 100%;\n  height: 100%;\n  padding: 0;\n  margin: 0;\n}\n.hooper.is-vertical .hooper-track {\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-direction: column;\n}\n.hooper.is-rtl {\n  direction: rtl;\n}\n.hooper-sr-only {\n  position: absolute;\n  width: 1px;\n  height: 1px;\n  padding: 0;\n  margin: -1px;\n  overflow: hidden;\n  clip: rect(0, 0, 0, 0);\n  border: 0;\n}", ""]);
 
 // exports
 
@@ -39307,7 +39314,8 @@ var render = function() {
         "hooper",
         {
           staticClass: "items-mini",
-          attrs: { group: "group1", itemsToShow: 3, centerMode: true }
+          attrs: { group: "group1", itemsToShow: 3, centerMode: true },
+          on: { slide: _vm.change_line }
         },
         [
           _c("slide", [
@@ -39381,103 +39389,147 @@ var render = function() {
       _vm._v(" "),
       _c(
         "hooper",
-        { staticClass: "items", attrs: { group: "group1" } },
+        { staticClass: "items", attrs: { id: "items", group: "group1" } },
         [
-          _c("slide", { staticClass: "slide_1" }, [
-            _c("p", { staticClass: "title" }, [_vm._v("LADA Granta Лифтбек")]),
-            _vm._v(" "),
-            _c("p", { staticClass: "sub_title" }, [
-              _vm._v("динамический дизайн"),
-              _c("br"),
-              _vm._v(" и вместительность")
-            ]),
-            _vm._v(" "),
-            _c("a", { attrs: { href: "#" } }, [_vm._v("Купить")]),
-            _vm._v(" "),
-            _c("span", { staticClass: "more_details" }, [
-              _c("span", [_vm._v("Подробнее")])
-            ])
-          ]),
+          _c(
+            "slide",
+            { staticClass: "slide_1", attrs: { "data-model": "Granta седан" } },
+            [
+              _c("p", { staticClass: "title" }, [_vm._v("LADA Granta седан")]),
+              _vm._v(" "),
+              _c("p", { staticClass: "sub_title" }, [
+                _vm._v("динамический дизайн"),
+                _c("br"),
+                _vm._v(" и вместительность")
+              ]),
+              _vm._v(" "),
+              _c("a", { attrs: { href: "#" } }, [_vm._v("Купить")]),
+              _vm._v(" "),
+              _c("span", { staticClass: "more_details" }, [
+                _c("span", [_vm._v("Подробнее")])
+              ])
+            ]
+          ),
           _vm._v(" "),
-          _c("slide", { staticClass: "slide_2" }, [
-            _c("p", { staticClass: "title" }, [_vm._v("LADA Granta Лифтбек")]),
-            _vm._v(" "),
-            _c("p", { staticClass: "sub_title" }, [
-              _vm._v("динамический дизайн"),
-              _c("br"),
-              _vm._v(" и вместительность")
-            ]),
-            _vm._v(" "),
-            _c("a", { attrs: { href: "#" } }, [_vm._v("Купить")]),
-            _vm._v(" "),
-            _c("span", { staticClass: "more_details" }, [
-              _c("span", [_vm._v("Подробнее")])
-            ])
-          ]),
+          _c(
+            "slide",
+            {
+              staticClass: "slide_2",
+              attrs: { "data-model": "Granta лифтбек" }
+            },
+            [
+              _c("p", { staticClass: "title" }, [
+                _vm._v("LADA Granta Лифтбек")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "sub_title" }, [
+                _vm._v("динамический дизайн"),
+                _c("br"),
+                _vm._v(" и вместительность")
+              ]),
+              _vm._v(" "),
+              _c("a", { attrs: { href: "#" } }, [_vm._v("Купить")]),
+              _vm._v(" "),
+              _c("span", { staticClass: "more_details" }, [
+                _c("span", [_vm._v("Подробнее")])
+              ])
+            ]
+          ),
           _vm._v(" "),
-          _c("slide", { staticClass: "slide_3" }, [
-            _c("p", { staticClass: "title" }, [_vm._v("LADA Granta Лифтбек")]),
-            _vm._v(" "),
-            _c("p", { staticClass: "sub_title" }, [
-              _vm._v("динамический дизайн"),
-              _c("br"),
-              _vm._v(" и вместительность")
-            ]),
-            _vm._v(" "),
-            _c("a", { attrs: { href: "#" } }, [_vm._v("Купить")]),
-            _vm._v(" "),
-            _c("span", { staticClass: "more_details" }, [
-              _c("span", [_vm._v("Подробнее")])
-            ])
-          ]),
+          _c(
+            "slide",
+            {
+              staticClass: "slide_3",
+              attrs: { "data-model": "Granta универсал" }
+            },
+            [
+              _c("p", { staticClass: "title" }, [
+                _vm._v("LADA Granta универсал")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "sub_title" }, [
+                _vm._v("динамический дизайн"),
+                _c("br"),
+                _vm._v(" и вместительность")
+              ]),
+              _vm._v(" "),
+              _c("a", { attrs: { href: "#" } }, [_vm._v("Купить")]),
+              _vm._v(" "),
+              _c("span", { staticClass: "more_details" }, [
+                _c("span", [_vm._v("Подробнее")])
+              ])
+            ]
+          ),
           _vm._v(" "),
-          _c("slide", { staticClass: "slide_4" }, [
-            _c("p", { staticClass: "title" }, [_vm._v("LADA Granta Лифтбек")]),
-            _vm._v(" "),
-            _c("p", { staticClass: "sub_title" }, [
-              _vm._v("динамический дизайн"),
-              _c("br"),
-              _vm._v(" и вместительность")
-            ]),
-            _vm._v(" "),
-            _c("a", { attrs: { href: "#" } }, [_vm._v("Купить")]),
-            _vm._v(" "),
-            _c("span", { staticClass: "more_details" }, [
-              _c("span", [_vm._v("Подробнее")])
-            ])
-          ]),
+          _c(
+            "slide",
+            { staticClass: "slide_4", attrs: { "data-model": "Granta cross" } },
+            [
+              _c("p", { staticClass: "title" }, [_vm._v("LADA Granta cross")]),
+              _vm._v(" "),
+              _c("p", { staticClass: "sub_title" }, [
+                _vm._v("динамический дизайн"),
+                _c("br"),
+                _vm._v(" и вместительность")
+              ]),
+              _vm._v(" "),
+              _c("a", { attrs: { href: "#" } }, [_vm._v("Купить")]),
+              _vm._v(" "),
+              _c("span", { staticClass: "more_details" }, [
+                _c("span", [_vm._v("Подробнее")])
+              ])
+            ]
+          ),
           _vm._v(" "),
-          _c("slide", { staticClass: "slide_5" }, [
-            _c("p", { staticClass: "title" }, [_vm._v("LADA Granta Лифтбек")]),
-            _vm._v(" "),
-            _c("p", { staticClass: "sub_title" }, [
-              _vm._v("динамический дизайн"),
-              _c("br"),
-              _vm._v(" и вместительность")
-            ]),
-            _vm._v(" "),
-            _c("a", { attrs: { href: "#" } }, [_vm._v("Купить")]),
-            _vm._v(" "),
-            _c("span", { staticClass: "more_details" }, [
-              _c("span", [_vm._v("Подробнее")])
-            ])
-          ]),
+          _c(
+            "slide",
+            {
+              staticClass: "slide_5",
+              attrs: { "data-model": "Granta drive active" }
+            },
+            [
+              _c("p", { staticClass: "title" }, [
+                _vm._v("LADA Granta Drive Active")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "sub_title" }, [
+                _vm._v("динамический дизайн"),
+                _c("br"),
+                _vm._v(" и вместительность")
+              ]),
+              _vm._v(" "),
+              _c("a", { attrs: { href: "#" } }, [_vm._v("Купить")]),
+              _vm._v(" "),
+              _c("span", { staticClass: "more_details" }, [
+                _c("span", [_vm._v("Подробнее")])
+              ])
+            ]
+          ),
           _vm._v(" "),
-          _c("slide", { staticClass: "slide_6" }, [
-            _c("p", { staticClass: "title" }, [_vm._v("LADA Granta Лифтбек")]),
-            _vm._v(" "),
-            _c("p", { staticClass: "sub_title" }, [
-              _vm._v("динамический дизайн"),
-              _c("br"),
-              _vm._v(" и вместительность")
-            ]),
-            _vm._v(" "),
-            _c("a", { attrs: { href: "#" } }, [_vm._v("Купить")]),
-            _vm._v(" "),
-            _c("span", { staticClass: "more_details" }, [
-              _c("span", [_vm._v("Подробнее")])
-            ])
-          ])
+          _c(
+            "slide",
+            {
+              staticClass: "slide_6",
+              attrs: { "data-model": "Granta хэтчбек" }
+            },
+            [
+              _c("p", { staticClass: "title" }, [
+                _vm._v("LADA Granta хэтчбек")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "sub_title" }, [
+                _vm._v("динамический дизайн"),
+                _c("br"),
+                _vm._v(" и вместительность")
+              ]),
+              _vm._v(" "),
+              _c("a", { attrs: { href: "#" } }, [_vm._v("Купить")]),
+              _vm._v(" "),
+              _c("span", { staticClass: "more_details" }, [
+                _c("span", [_vm._v("Подробнее")])
+              ])
+            ]
+          )
         ],
         1
       )
@@ -39595,23 +39647,6 @@ function normalizeComponent (
     options: options
   }
 }
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-yandex-maps/dist/vue-yandex-maps.esm.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/vue-yandex-maps/dist/vue-yandex-maps.esm.js ***!
-  \******************************************************************/
-/*! exports provided: default, loadYmap, yandexMap, ymapMarker */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loadYmap", function() { return k; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "yandexMap", function() { return v; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ymapMarker", function() { return O; });
-function e(t){return(e="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(t)}function t(e,t){for(var r=0;r<t.length;r++){var o=t[r];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}function r(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}function o(e){return function(e){if(Array.isArray(e)){for(var t=0,r=new Array(e.length);t<e.length;t++)r[t]=e[t];return r}}(e)||function(e){if(Symbol.iterator in Object(e)||"[object Arguments]"===Object.prototype.toString.call(e))return Array.from(e)}(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance")}()}function n(e,t){var r=t.options,n=t.callbacks,a=t.map,i=t.useObjectManager,s=t.objectManagerClusterize,c={},l=[];if(e.forEach(function(e){e.clusterName?c[e.clusterName]=c[e.clusterName]?[].concat(o(c[e.clusterName]),[e]):[e]:l.push(e)}),Object.keys(c).forEach(function(e){var t=r[e]||{},o=n[e]||{},l=t.layout||"\n      <div>{{ properties.balloonContentHeader }}</div>\n      <div>{{ properties.balloonContentBody }}</div>\n      <div>{{ properties.balloonContentFooter }}</div>\n    ";t.clusterBalloonItemContentLayout=ymaps.templateLayoutFactory.createClass(l);var u=t.clusterLayout?ymaps.templateLayoutFactory.createClass(t.clusterLayout):t.clusterBalloonContentLayout||"cluster#balloonTwoColumns";t.clusterBalloonContentLayout=u;var p=t.clusterIconContentLayout;if(t.clusterIconContentLayout=p&&ymaps.templateLayoutFactory.createClass(p),i){var d=new ymaps.ObjectManager(Object.assign({clusterize:s},t));Object.keys(o).forEach(function(e){d.clusters.events.add(e,o[e])}),d.add(c[e]),a.geoObjects.add(d)}else{var m=new ymaps.Clusterer(t);Object.keys(o).forEach(function(e){m.events.add(e,o[e])}),t.createCluster&&(m.createCluster=t.createCluster),m.add(c[e]),a.geoObjects.add(m)}}),l.length){var u=i?new ymaps.ObjectManager({clusterize:!1}):new ymaps.GeoObjectCollection;l.forEach(function(e){return u.add(e)}),a.geoObjects.add(u)}}function a(e){return e.charAt(0).toUpperCase()+e.slice(1)}function i(e){return(e.icon.color||"blue")+(e.icon.glyph?a(e.icon.glyph):e.icon.content?"Stretchy":"")}function s(e){return e.map(function(e){return Array.isArray(e)?s(e):+e})}function c(t,r){var o=[];return function t(r,n){if(r===n)return!0;if(r instanceof Date&&n instanceof Date)return+r==+n;if("object"!==e(r)||"object"!==e(n))return!1;if(function(e,t){for(var r=o.length;r--;)if(!(o[r][0]!==e&&o[r][0]!==t||o[r][1]!==t&&o[r][1]!==e))return!0;return!1}(r,n))return!0;o.push([r,n]);var a=Object.keys(r),i=a.length;if(Object.keys(n).length!==i)return!1;for(;i--;)if(!t(r[a[i]],n[a[i]]))return!1;return!0}(t,r)}var l=new(function(){function e(){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e),this.events={},this.ymapReady=!1,this.scriptIsNotAttached=!0}var r,o,n;return r=e,(o=[{key:"$on",value:function(e,t){var r=this;return this.events[e]||(this.events[e]=[]),this.events[e].push(t),function(){r.events[e]=r.events[e].filter(function(e){return t!==e})}}},{key:"$emit",value:function(e,t){var r=this.events[e];r&&r.forEach(function(e){return e(t)})}}])&&t(r.prototype,o),n&&t(r,n),e}()),u=["fullscreenControl","geolocationControl","routeEditor","rulerControl","searchControl","trafficControl","typeSelector","zoomControl","routePanelControl"];function p(e){return 0===e.filter(function(e){return![].concat(u,["default"]).includes(e)}).length}function d(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return new Promise(function(t,r){if(window.ymaps)return t();var o=document.createElement("SCRIPT"),n=e.apiKey,a=void 0===n?"":n,i=e.lang,s=void 0===i?"ru_RU":i,c=e.version,u=void 0===c?"2.1":c,p=e.coordorder,d=void 0===p?"latlong":p,m=e.debug,f=void 0!==m&&m?"debug":"release",h="lang=".concat(s).concat(a&&"&apikey=".concat(a),"&mode=").concat(f,"&coordorder=").concat(d),y="https://api-maps.yandex.ru/".concat(u,"/?").concat(h);o.setAttribute("src",y),o.setAttribute("async",""),o.setAttribute("defer",""),document.body.appendChild(o),l.scriptIsNotAttached=!1,o.onload=function(){ymaps.ready(function(){l.ymapReady=!0,l.$emit("scriptIsLoaded"),t()})},o.onerror=r})}var m=l,f=["actionend","balloonclose","balloonopen","click","contextmenu","dblclick","destroy","hintclose","hintopen","optionschange","sizechange","typechange"],h={pluginOptions:{},provide:function(){var e,t,r=this,o=[],n=[];return{useObjectManager:this.useObjectManager,addMarker:this.addMarker,deleteMarker:function(t){r.myMap.geoObjects&&(o.push(t),e&&clearTimeout(e),e=setTimeout(function(){r.deleteMarkers(o),o=[]},0))},compareValues:function(e){var o=e.newVal,a=e.oldVal,i=e.marker;c(o,a)||(n.push(i),t&&clearTimeout(t),t=setTimeout(function(){r.setMarkers(n),n=[]},0))}}},data:function(){return{ymapId:"yandexMap".concat(Math.round(1e5*Math.random())),myMap:{},style:this.ymapClass?"":"width: 100%; height: 100%;",isReady:!1,debounce:null,markers:[]}},props:{coords:{type:Array,required:!0},zoom:{validator:function(e){return!Number.isNaN(e)},default:18},bounds:Array,clusterOptions:{type:Object,default:function(){return{}}},clusterCallbacks:{type:Object,default:function(){return{}}},behaviors:{type:Array,default:function(){return["default"]}},controls:{type:Array,default:function(){return["default"]},validator:function(e){return p(e)}},detailedControls:{type:Object,validator:function(e){return p(Object.keys(e))}},scrollZoom:{type:Boolean,default:!0},mapType:{type:String,default:"map",validator:function(e){return["map","satellite","hybrid"].includes(e)}},placemarks:{type:Array,default:function(){return[]}},useObjectManager:{type:Boolean,default:!1},objectManagerClusterize:{type:Boolean,default:!0},ymapClass:String,initWithoutMarkers:{type:Boolean,default:!0},debug:{type:Boolean,default:!1},settings:{type:Object,default:function(){return{}}},options:{type:Object,default:function(){return{}}},showAllMarkers:Boolean},computed:{coordinates:function(){return this.coords.map(function(e){return+e})}},methods:{init:function(){var e=this;if(window.ymaps&&ymaps.GeoObjectCollection&&(this.initWithoutMarkers||this.$slots.default||this.placemarks.length)){if(this.$emit("map-initialization-started"),this.myMap=new ymaps.Map(this.ymapId,{center:this.coordinates,zoom:+this.zoom,bounds:this.bounds,behaviors:this.behaviors,controls:this.controls,type:"yandex#".concat(this.mapType)},this.options),f.forEach(function(t){return e.myMap.events.add(t,function(r){return e.$emit(t,r)})}),this.myMap.events.add("boundschange",function(t){var r=t.originalEvent,o=r.newZoom,n=r.newCenter,a=r.newBounds;e.$emit("boundschange",t),e.$emit("update:zoom",o),e.$emit("update:coords",n),e.$emit("update:bounds",a)}),this.detailedControls)Object.keys(this.detailedControls).forEach(function(t){e.myMap.controls.remove(t),e.myMap.controls.add(t,e.detailedControls[t])});!1===this.scrollZoom&&this.myMap.behaviors.disable("scrollZoom"),this.isReady=!0,this.$emit("map-was-initialized",this.myMap)}},addMarker:function(e){var t=this;this.markers.push(e),this.debounce&&clearTimeout(this.debounce),this.debounce=setTimeout(function(){t.setMarkers(t.markers)},0)},setMarkers:function(e){var t=this,r={options:this.clusterOptions,callbacks:this.clusterCallbacks,map:this.myMap,useObjectManager:this.useObjectManager,objectManagerClusterize:this.objectManagerClusterize};if(this.markers!==e){var o=e.map(function(e){return t.useObjectManager?e.id:e.properties.get("markerId")});this.deleteMarkers(o),n(e,r),this.$emit("markers-was-change",o)}else n(e,r);this.markers=[],this.showAllMarkers&&this.myMap.setBounds(this.myMap.geoObjects.getBounds())},deleteMarkers:function(e){var t=this;this.myMap.geoObjects.each(function(r){var o=[];if(t.useObjectManager)r.remove(e);else{var n,a=function(t){var r=t.properties.get("markerId");e.includes(r)&&o.push(t)};if(r.each)r.each(a),n=r.getLength();else if(r.getGeoObjects){var i=r.getGeoObjects();i.forEach(a),n=i.length}0===n||n===o.length?t.myMap.geoObjects.remove(r):o.length&&o.forEach(function(e){return r.remove(e)})}}),this.$emit("markers-was-delete",e)}},watch:{coordinates:function(e){this.myMap.panTo&&this.myMap.getZoom()&&this.myMap.panTo(e)},zoom:function(){this.myMap.setZoom(this.zoom)},bounds:function(e){this.myMap.setBounds&&this.myMap.setBounds(e)}},render:function(e){return e("section",{class:"ymap-container",ref:"mapContainer"},[e("div",{attrs:{id:this.ymapId,class:this.ymapClass,style:this.style}}),this.isReady&&e("div",{ref:"markersContainer",attrs:{class:"ymap-markers"}},[this.$slots.default])])},mounted:function(){var e=this;if(this.$attrs["map-link"]||this.$attrs.mapLink)throw new Error("Vue-yandex-maps: Attribute mapLink is not supported. Use settings.");if(this.placemarks&&this.placemarks.length)throw new Error("Vue-yandex-maps: Attribute placemarks is not supported. Use marker component.");this.mapObserver=new MutationObserver(function(){e.myMap.container&&e.myMap.container.fitToViewport()});var t=this.$refs.mapContainer;if(this.mapObserver.observe(t,{attributes:!0,childList:!0,characterData:!0,subtree:!1}),m.scriptIsNotAttached){var o=this.debug;d(function(e){for(var t=1;t<arguments.length;t++){var o=null!=arguments[t]?arguments[t]:{},n=Object.keys(o);"function"==typeof Object.getOwnPropertySymbols&&(n=n.concat(Object.getOwnPropertySymbols(o).filter(function(e){return Object.getOwnPropertyDescriptor(o,e).enumerable}))),n.forEach(function(t){r(e,t,o[t])})}return e}({},this.$options.pluginOptions,this.settings,{debug:o}))}m.ymapReady?ymaps.ready(this.init):m.$on("scriptIsLoaded",function(){ymaps.ready(e.init)})},beforeDestroy:function(){this.myMap.geoObjects&&this.myMap.geoObjects.removeAll()}},y=["placemark","polyline","rectangle","polygon","circle"],b=["balloonclose","balloonopen","click","contextmenu","dblclick","drag","dragend","dragstart","hintclose","hintopen","mouseenter","mouseleave"],g={inject:["useObjectManager","addMarker","deleteMarker","compareValues"],props:{coords:Array,hintContent:String,icon:Object,balloon:Object,markerType:{type:String,validator:function(e){return y.includes(e.toLowerCase())},default:"placemark"},markerFill:Object,markerStroke:Object,clusterName:[String,Number],circleRadius:{validator:function(e){return!Number.isNaN(e)},default:1e3},balloonTemplate:String,markerId:{type:[String,Number],required:!0},properties:Object,options:Object},data:function(){return{unwatchArr:[]}},render:function(){},mounted:function(){var e=this;Object.keys(this.$props).forEach(function(t){e.unwatchArr.push(e.$watch(t,function(t,r){return e.compareValues({newVal:t,oldVal:r,marker:e.defineMarker()})}))}),this.addMarker(this.defineMarker())},methods:{defineMarker:function(){var e=this,t={};this.balloonTemplate&&(t={balloonContentLayout:ymaps.templateLayoutFactory.createClass(this.balloonTemplate)});var r={markerId:this.markerId,markerType:this.markerType||"placemark",coords:s(this.coords),hintContent:this.hintContent,markerFill:this.markerFill,circleRadius:+this.circleRadius,clusterName:this.clusterName,markerStroke:this.markerStroke,balloon:this.balloon,properties:this.properties,options:this.options,balloonOptions:t};this.icon&&["default#image","default#imageWithContent"].includes(this.icon.layout)?(r.iconContent=this.icon.content,r.iconLayout=this.icon.layout,r.iconImageHref=this.icon.imageHref,r.iconImageSize=this.icon.imageSize,r.iconImageOffset=this.icon.imageOffset,r.iconContentOffset=this.icon.contentOffset,this.icon.contentLayout&&"string"==typeof this.icon.contentLayout&&(r.iconContentLayout=ymaps.templateLayoutFactory.createClass(this.icon.contentLayout))):r.icon=this.icon;var o=function(e,t){var r=a(e);if(!t)return r;switch(r){case"Placemark":return"Point";case"Polyline":return"LineString";default:return r}}(r.markerType,this.useObjectManager),n={hintContent:r.hintContent,iconContent:r.icon?r.icon.content:r.iconContent,markerId:r.markerId},c=r.balloon?{balloonContentHeader:r.balloon.header,balloonContentBody:r.balloon.body,balloonContentFooter:r.balloon.footer}:{},l=Object.assign(n,c,r.properties),u=r.iconLayout?{iconLayout:r.iconLayout,iconImageHref:r.iconImageHref,iconImageSize:r.iconImageSize,iconImageOffset:r.iconImageOffset,iconContentOffset:r.iconContentOffset,iconContentLayout:r.iconContentLayout}:{preset:r.icon&&"islands#".concat(i(r),"Icon")},p=r.markerStroke?{strokeColor:r.markerStroke.color||"0066ffff",strokeOpacity:parseFloat(r.markerStroke.opacity)>=0?parseFloat(r.markerStroke.opacity):1,strokeStyle:r.markerStroke.style,strokeWidth:parseFloat(r.markerStroke.width)>=0?parseFloat(r.markerStroke.width):1}:{},d=r.markerFill?{fill:r.markerFill.enabled||!0,fillColor:r.markerFill.color||"0066ff99",fillOpacity:parseFloat(r.markerFill.opacity)>=0?parseFloat(r.markerFill.opacity):1,fillImageHref:r.markerFill.imageHref||""}:{},m=Object.assign(u,p,d,r.balloonOptions,r.options);"Circle"===o&&(r.coords=[r.coords,r.circleRadius]);var f=function(e,t){var r=t?{type:"Feature",id:e.properties.markerId,geometry:{type:e.markerType,coordinates:e.coords},properties:e.properties,options:e.options}:new ymaps[e.markerType](e.coords,e.properties,e.options);return r.clusterName=e.clusterName,r}({properties:l,options:m,markerType:o,coords:r.coords,clusterName:r.clusterName},this.useObjectManager,this.$emit);return this.useObjectManager||b.forEach(function(t){return f.events.add(t,function(r){return e.$emit(t,r)})}),f}},beforeDestroy:function(){this.unwatchArr.forEach(function(e){return e()}),this.deleteMarker(this.markerId)}};h.install=function e(t){var r=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};e.installed||(e.installed=!0,h.pluginOptions=r,t.component("yandex-map",h),t.component("ymap-marker",g))},"undefined"!=typeof window&&window.Vue&&window.Vue.use(h);var k=d,v=h,O=g;/* harmony default export */ __webpack_exports__["default"] = (h);
 
 
 /***/ }),
@@ -51670,19 +51705,14 @@ module.exports = function(module) {
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue_yandex_maps__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-yandex-maps */ "./node_modules/vue-yandex-maps/dist/vue-yandex-maps.esm.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-
-
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
@@ -51703,13 +51733,6 @@ Vue.component('hooper-component', __webpack_require__(/*! ./components/HooperCom
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-var settings = {
-  apiKey: 'a1464c44-cc93-4643-b321-9ea5f3a2a083',
-  lang: 'ru_RU',
-  coordorder: 'latlong',
-  version: '2.1'
-};
-Vue.use(vue_yandex_maps__WEBPACK_IMPORTED_MODULE_0__["default"], settings);
 var app = new Vue({
   el: '#app'
 });
