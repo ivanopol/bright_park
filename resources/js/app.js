@@ -22,6 +22,7 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('hooper-component', require('./components/HooperComponent.vue').default);
+Vue.component('info-component', require('./components/InfoComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

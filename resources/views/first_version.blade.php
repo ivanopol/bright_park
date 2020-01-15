@@ -3,6 +3,8 @@
 @section('content')
     <div class="container">
         <hooper-component></hooper-component>
+        <info-component :number="0"></info-component>
+        {{--
         <section class="block block_1">
             <div class="block-text">
                 <h2><span class="c_orange">Сочетая</span> самое лучшее</h2>
@@ -12,6 +14,7 @@
                 <img src="{{ asset('img/blocks/block_01.png') }}" alt="">
             </div>
         </section>
+        --}}
         <section class="block block_2">
             <div class="block-text">
                 <h2><span class="c_orange">Новое</span> в знакомом</h2>
