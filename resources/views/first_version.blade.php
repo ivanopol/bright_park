@@ -4,17 +4,6 @@
     <div class="container">
         <hooper-component></hooper-component>
         <info-component :number="this.$store.state.model"></info-component>
-        {{--
-        <section class="block block_1">
-            <div class="block-text">
-                <h2><span class="c_orange">Сочетая</span> самое лучшее</h2>
-                <p>Компактный внешне и&nbsp;удивительно просторный внутри. Быстрый, но&nbsp;экономичный. Способный одинаково успешно ездить в&nbsp;любых погодных условиях и&nbsp;в&nbsp;городе, и&nbsp;на&nbsp;трассе, и&nbsp;по&nbsp;проселку. Красивый, комфортный, недорогой. Казалось&nbsp;бы, автомобиль не&nbsp;может сочетать в&nbsp;себе так много плюсов, но&nbsp;LADA Granta&nbsp;&mdash; это под силу.</p>
-            </div>
-            <div class="block-img">
-                <img src="{{ asset('img/blocks/block_01.png') }}" alt="">
-            </div>
-        </section>
-        --}}
         <section class="block block_2">
             <div class="block-text">
                 <h2><span class="c_orange">Новое</span> в знакомом</h2>
