@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <hooper-component></hooper-component>
-        <info-component :number="0"></info-component>
+        <info-component :number="this.$store.state.model"></info-component>
         {{--
         <section class="block block_1">
             <div class="block-text">

@@ -94,6 +94,7 @@
             change_line: function(event) {
                 let current_model = document.querySelectorAll('#items ul li')[event.currentSlide];
                 let model = document.getElementById('model-active').textContent = current_model.dataset.model;
+                this.$store.commit('change', event.currentSlide);
                 return Promise.resolve("");
             }
         }
