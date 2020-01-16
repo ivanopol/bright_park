@@ -25,4 +25,24 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    /**
+     * Show first version of design.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function first_version()
+    {
+        return view('first_version');
+    }
+
+    /**
+     * Show second version of design.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function second_version()
+    {
+        return view('second_version');
+    }
 }

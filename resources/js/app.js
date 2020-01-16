@@ -5,9 +5,11 @@
  */
 
 require('./bootstrap');
-
 window.Vue = require('vue');
+window.Vuex = require('vuex');
+//import Vuex from 'vuex';
 
+Vue.use(Vuex);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -19,7 +21,19 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('hooper-component', require('./components/HooperComponent.vue').default);
+Vue.component('info-component', require('./components/InfoComponent.vue').default);
+
+const store = new Vuex.Store({
+    state: {
+        model: 0
+    },
+    mutations: {
+        change (state, current_model) {
+            state.model = current_model;
+        }
+    }
+});
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -29,4 +43,5 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app',
+    store
 });

@@ -1,0 +1,278 @@
+.items-mini {
+    width: 150px * 6;
+    padding: 0;
+    height: 95px!important;
+    li {
+        width: 132px;
+        display: inline-block;
+        text-align: center;
+
+        span {
+            position: relative;
+            padding: 3px 8px;
+            -webkit-transition: all ease-out 0.3s;
+            -moz-transition: all ease-out 0.3s;
+            -o-transition: all ease-out 0.3s;
+            transition: all ease-out 0.3s;
+        }
+
+        &.is-current span {
+            display: inline;
+            padding: 3px 8px;
+            background-color: #0467ff;
+            border-radius: 5px;
+            color: #fff;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.items {
+    ul {
+        padding-top: 20px;
+        width: 380px * 6;
+
+        li {
+            width: 375px;
+            height: 390px;
+            overflow: hidden;
+            display: inline-block;
+            position: relative;
+            color: #fff;
+            text-align: center;
+            padding: 20px 30px;
+
+            &.slide_1 {
+                background: url(img/pixel_dark.png), url(img/slider/full/granta/lada_granta_sedan_slide.png) no-repeat center center;
+                background-size: 126%;
+            }
+
+            &.slide_2 {
+                background: url(img/pixel_dark.png), url(img/slider/full/granta/lada_granta_sedan_slide.png) no-repeat center center;
+                background-size: 126%;
+            }
+
+            &.slide_3 {
+                background: url(img/pixel_dark.png), url(img/slider/full/granta/lada_granta_sedan_slide.png) no-repeat center center;
+                background-size: 126%;
+            }
+
+            &.slide_4 {
+                background: url(img/pixel_dark.png), url(img/slider/full/granta/lada_granta_sedan_slide.png) no-repeat center center;
+                background-size: 126%;
+            }
+
+            &.slide_5 {
+                background: url(img/pixel_dark.png), url(img/slider/full/granta/lada_granta_sedan_slide.png) no-repeat center center;
+                background-size: 126%;
+            }
+
+            &.slide_6 {
+                background: url(img/pixel_dark.png), url(img/slider/full/granta/lada_granta_sedan_slide.png) no-repeat center center;
+                background-size: 126%;
+            }
+
+            p {
+                font-size: 20px;
+                line-height: 28px;
+
+                &.title {
+                }
+
+                &.sub_title {
+                    margin: 20px 0 10px;
+                    text-transform: uppercase;
+                }
+            }
+
+            a {
+                cursor: pointer;
+                background-color: #0467ff;
+                display: inline;
+                color: #fff;
+                text-transform: uppercase;
+                text-decoration: none;
+                padding: 5px 20px 4px;
+                border-radius: 5px;
+            }
+
+            .more_details {
+                width: 100%;
+                position: absolute;
+                text-transform: uppercase;
+                bottom: 30px;
+                left: 0;
+
+                span {
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        border: 3px solid #fff;
+                        width: 8px;
+                        height: 8px;
+                        border-left: none;
+                        border-top: none;
+                        display: inline-block;
+                        left: calc(50% - 4px);
+                        bottom: -15px;
+                        -moz-transform: rotate(45deg); /* Для Firefox */
+                        -ms-transform: rotate(45deg); /* Для IE */
+                        -webkit-transform: rotate(45deg); /* Для Safari, Chrome, iOS */
+                        -o-transform: rotate(45deg); /* Для Opera */
+                        transform: rotate(45deg);
+
+                        animation: animationDetails 1s infinite ease-in;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.hooper-slide {
+ //   flex-shrink: 0;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.hooper-progress {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 4px;
+    background-color: #efefef;
+}
+.hooper-progress-inner {
+    height: 100%;
+    background-color: #4285f4;
+    transition: 300ms;
+}
+.hooper-pagination {
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+    display: flex;
+    padding: 5px 10px;
+}
+.hooper-indicators {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.hooper-indicator:hover,
+.hooper-indicator.is-active {
+    background-color: #4285f4;
+}
+.hooper-indicator {
+    margin: 0 2px;
+    width: 12px;
+    height: 4px;
+    border-radius: 4px;
+    border: none;
+    padding: 0;
+    background-color: #fff;
+    cursor: pointer;
+}
+.hooper-pagination.is-vertical {
+    bottom: auto;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.hooper-pagination.is-vertical .hooper-indicators {
+    flex-direction: column;
+}
+.hooper-pagination.is-vertical .hooper-indicator {
+    width: 6px;
+}
+.hooper-next,
+.hooper-prev {
+    background-color: transparent;
+    border: none;
+    padding: 1em;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.hooper-next.is-disabled,
+.hooper-prev.is-disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+.hooper-next {
+    right: 0;
+}
+.hooper-prev {
+    left: 0;
+}
+.hooper-navigation.is-vertical .hooper-next {
+    top: auto;
+    bottom: 0;
+    transform: initial;
+}
+.hooper-navigation.is-vertical .hooper-prev {
+    top: 0;
+    bottom: auto;
+    right: 0;
+    left: auto;
+    transform: initial;
+}
+.hooper-navigation.is-rtl .hooper-prev {
+    left: auto;
+    right: 0;
+}
+.hooper-navigation.is-rtl .hooper-next {
+    right: auto;
+    left: 0;
+}
+.hooper {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+}
+.hooper * {
+    box-sizing: border-box;
+}
+.hooper-list {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+.hooper-track {
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+.hooper.is-vertical .hooper-track {
+    flex-direction: column;
+
+}
+
+.hooper.is-rtl {
+    direction: rtl;
+}
+
+.hooper-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
