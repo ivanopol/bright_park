@@ -2058,9 +2058,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'App',
-  props: ['number'],
+  props: ['number', 'block', 'pointers', 'pnum'],
+  computed: {
+    cblock: function cblock(el) {
+      return "block block_" + el.block;
+    },
+    cpointer: function cpointer(el) {
+      return "pointers-" + el.pnum;
+    }
+  },
   data: function data() {
     return {
       models: [{
@@ -2070,7 +2083,7 @@ __webpack_require__.r(__webpack_exports__);
       }, {
         title: '<span class="c_orange">Второй</span> the best',
         text: 'Сомнение рефлектирует естественный закон исключённого третьего.. Интеллект естественно понимает под собой интеллигибельный закон внешнего мира, открывая новые горизонты. Гедонизм осмысляет дедуктивный метод. Аксиома силлогизма, по определению, представляет собой неоднозначный предмет деятельности. Надстройка нет',
-        url: './img/blocks/block_02.png'
+        url: './img/blocks/block_02.jpg'
       }, {
         title: '<span class="c_orange">Третий</span> наш текст',
         text: 'Смысл жизни, следовательно, творит данный закон внешнего мира. Надстройка нетривиальна. Дедуктивный метод решительно представляет собой бабувизм. Сомнение рефлектирует естественный закон исключённого третьего.. Созерцание непредсказуемо. Импликация, следовательно, контролирует бабувизм, открывая новые горизонты.',
@@ -39666,7 +39679,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", { staticClass: "block block_1" }, [
+  return _c("section", { class: _vm.cblock }, [
     _c("div", { staticClass: "block-text" }, [
       _c("h2", {
         domProps: { innerHTML: _vm._s(_vm.models[_vm.number].title) }
@@ -39675,8 +39688,19 @@ var render = function() {
       _c("p", [_vm._v(_vm._s(_vm.models[_vm.number].text))])
     ]),
     _vm._v(" "),
+    _c("div", { staticClass: "block-img", attrs: { "v-if": _vm.pointers } }, [
+      _c(
+        "ul",
+        { class: _vm.cpointer },
+        _vm._l(_vm.pointers, function(n) {
+          return _c("li", { class: "p" + n }, [_vm._v("+")])
+        }),
+        0
+      )
+    ]),
+    _vm._v(" "),
     _c("div", { staticClass: "block-img" }, [
-      _c("img", { attrs: { src: "./img/blocks/block_01.png", alt: "" } })
+      _c("img", { attrs: { src: _vm.models[_vm.number].url, alt: "" } })
     ])
   ])
 }
