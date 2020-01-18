@@ -1,11 +1,16 @@
 <template>
-    <section class="block block_1">
+    <section :class="cblock">
         <div class="block-text">
             <h2 v-html="models[number].title"></h2>
             <p>{{ models[number].text }}</p>
         </div>
+        <div :v-if="pointers" class="block-img">
+            <ul :class="cpointer">
+                <li v-for="n in pointers"  :class="'p' + n">+</li>
+            </ul>
+        </div>
         <div class="block-img">
-            <img :src="'./img/blocks/block_01.png'" alt="">
+            <img :src="models[number].url" alt="">
         </div>
     </section>
 </template>
@@ -13,7 +18,15 @@
 <script>
     export default {
         name: 'App',
-        props : ['number'],
+        props : ['number', 'block', 'pointers', 'pnum'],
+        computed: {
+            cblock: function(el) {
+                return "block block_" + el.block;
+            },
+            cpointer: function(el) {
+                return "pointers-" + el.pnum;
+            }
+        },
         data: function () {
             return {
                 models: [
@@ -25,7 +38,7 @@
                     {
                         title: '<span class="c_orange">Второй</span> the best',
                         text: 'Сомнение рефлектирует естественный закон исключённого третьего.. Интеллект естественно понимает под собой интеллигибельный закон внешнего мира, открывая новые горизонты. Гедонизм осмысляет дедуктивный метод. Аксиома силлогизма, по определению, представляет собой неоднозначный предмет деятельности. Надстройка нет',
-                        url: './img/blocks/block_02.png'
+                        url: './img/blocks/block_02.jpg'
                     },
                     {
                         title: '<span class="c_orange">Третий</span> наш текст',
