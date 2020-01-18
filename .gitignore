@@ -1,6 +1,7 @@
 /node_modules
 /public/hot
 /public/storage
+/public/images
 /storage
 /storage/docker/mysql
 /vendor
@@ -14,3 +15,18 @@ yarn-error.log
 /.idea
 /.vscode
 /.vagrant
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+*.sublime-workspace
+.project
+_ide_helper.php
+.phpstorm.meta.php
+composer.phar
+error.log
+output.txt
+/.vscode
+.php_cs.cache
+coverage.xml
+/coverage
+.phpunit.result.cache

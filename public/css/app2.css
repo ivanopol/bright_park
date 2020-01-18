@@ -401,7 +401,7 @@ header .logo-wrap {
 }
 
 header .logo-wrap .logo-bright-park {
-  background: url(/images/logo_bright_park.svg?b88a13527da90e5feab48ec6bb15618a) no-repeat left;
+  background: url(/images/logo_bright_park.svg?f384f193c2eafd42e522c0cb0f9be7e5) no-repeat left;
   width: 49%;
   height: 25px;
   background-size: 100%;
@@ -409,7 +409,7 @@ header .logo-wrap .logo-bright-park {
 }
 
 header .logo-wrap .logo-lada {
-  background: url(/images/logo_lada.svg?dbff63981f5b83366c85697fe3a2247a) no-repeat right;
+  background: url(/images/logo_lada.svg?00a01feacccaab91834be7aabcb34949) no-repeat right;
   width: 49%;
   height: 25px;
   background-size: 40%;
@@ -417,7 +417,7 @@ header .logo-wrap .logo-lada {
 }
 
 header .lada-line {
-  background: url(/images/lada_line.svg?ce70e9f6e5ec55e6de2d045ab6e32794) no-repeat;
+  background: url(/images/lada_line.svg?15ddc5864c9b83e60cd41f59292a5bf7) no-repeat;
   width: 100%;
   height: 100%;
   background-size: 101%;
