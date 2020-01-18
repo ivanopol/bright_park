@@ -19,6 +19,12 @@ assets-rebuild:
 assets-dev:
 	docker-compose exec node yarn run dev
 
+assets-production:
+    docker-compose exec node yarn run production
+
+assets-prod:
+    docker-compose exec node yarn run prod
+
 assets-watch:
 	docker-compose exec node yarn run watch
 
