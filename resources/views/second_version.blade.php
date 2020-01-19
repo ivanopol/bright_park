@@ -5,27 +5,27 @@
         <section class="auto-slider">
             <ul class="items-mini">
                 <li>
-                    <img src="img/slider/mini/granta/lada_granta_sedan.png" alt="Лада Гранта седан">
+                    <img src="build/images/slider/mini/granta/lada_granta_sedan.png" alt="Лада Гранта седан">
                     <span>Седан</span>
                 </li>
                 <li class="active">
-                    <img src="./img/slider/mini/granta/lada_granta_liftback.png" alt="Лада Гранта лифтбек">
+                    <img src="build/images/slider/mini/granta/lada_granta_liftback.png" alt="Лада Гранта лифтбек">
                     <span>Лифтбек</span>
                 </li>
                 <li>
-                    <img src="./img/slider/mini/granta/lada_granta_universal.png" alt="Лада Гранта универсал">
+                    <img src="build/images/slider/mini/granta/lada_granta_universal.png" alt="Лада Гранта универсал">
                     <span>Универсал</span>
                 </li>
                 <li>
-                    <img src="./img/slider/mini/granta/lada_granta_cross.png" alt="Лада Гранта cross">
+                    <img src="build/images/slider/mini/granta/lada_granta_cross.png" alt="Лада Гранта cross">
                     <span>Cross</span>
                 </li>
                 <li>
-                    <img src="./img/slider/mini/granta/lada_granta_drive_active.png" alt="Лада Гранта Drive Active">
+                    <img src="build/images/slider/mini/granta/lada_granta_drive_active.png" alt="Лада Гранта Drive Active">
                     <span>Drive Active</span>
                 </li>
                 <li>
-                    <img src="./img/slider/mini/granta/lada_granta_hatcback.png" alt="Лада Гранта хэтчбек">
+                    <img src="build/images/slider/mini/granta/lada_granta_hatcback.png" alt="Лада Гранта хэтчбек">
                     <span>Хэтчбек</span>
                 </li>
             </ul>
@@ -86,7 +86,7 @@
                 <p>Компактный внешне и&nbsp;удивительно просторный внутри. Быстрый, но&nbsp;экономичный. Способный одинаково успешно ездить в&nbsp;любых погодных условиях и&nbsp;в&nbsp;городе, и&nbsp;на&nbsp;трассе, и&nbsp;по&nbsp;проселку. Красивый, комфортный, недорогой. Казалось&nbsp;бы, автомобиль не&nbsp;может сочетать в&nbsp;себе так много плюсов, но&nbsp;LADA Granta&nbsp;&mdash; это под силу.</p>
             </div>
             <div class="block-img">
-                <img src="{{ asset('img/blocks/block_01.png') }}" alt="">
+                <img src="build/images/blocks/block_01.png" alt="">
             </div>
         </section>
         <section class="block block_2">
@@ -102,7 +102,7 @@
                     <li class="p4">+</li>
                     <li class="p5">+</li>
                 </ul>
-                <img src="./img/blocks/block_02.jpg" alt="">
+                <img src="build/images/blocks/block_02.jpg" alt="">
             </div>
         </section>
         <section class="block block_3">
@@ -118,7 +118,7 @@
                     <li class="p4">+</li>
                     <li class="p5">+</li>
                 </ul>
-                <img src="./img/blocks/block_03.png" alt="">
+                <img src="build/images/blocks/block_03.png" alt="">
             </div>
         </section>
         <section class="block block_4">
@@ -136,7 +136,7 @@
                     <li class="p5">+</li>
                     <li class="p6">+</li>
                 </ul>
-                <img src="./img/blocks/block_04.png" alt="">
+                <img src="build/images/blocks/block_04.png" alt="">
             </div>
         </section>
         <section class="block change-color">
@@ -145,7 +145,7 @@
             </div>
             <div class="car-color">
                 <div class="backlight"></div>
-                <img src="./img/colors/lada_granta_blue.png" alt="">
+                <img src="build/images/colors/lada_granta_blue.png" alt="">
             </div>
             <div class="palette">
                 <div class="color-name">Голубая планета</div>
@@ -269,13 +269,13 @@
             </div>
             <div class="photo_block">
                 <div class="feedback_01">
-                    <img src="./img/photos/feedback/feedback_01.png" alt="">
+                    <img src="build/images/photos/feedback/feedback_01.png" alt="">
                 </div>
                 <div class="feedback_02">
-                    <img src="./img/photos/feedback/feedback_02.png" alt="">
+                    <img src="build/images/photos/feedback/feedback_02.png" alt="">
                 </div>
                 <div class="feedback_03">
-                    <img src="./img/photos/feedback/feedback_03.png" alt="">
+                    <img src="build/images/photos/feedback/feedback_03.png" alt="">
                 </div>
             </div>
         </section>
