@@ -2,27 +2,27 @@
     <div>
         <hooper class="items-mini" group="group1" :itemsToShow="3" :centerMode="true" v-on:slide="change_line">
             <slide>
-                <img :src="'./img/slider/mini/granta/lada_granta_sedan.png'" alt="Лада Гранта седан">
+                <img :src="'build/images/slider/mini/granta/lada_granta_sedan.png'" alt="Лада Гранта седан">
                 <span>Седан</span>
             </slide>
             <slide>
-                <img :src="'./img/slider/mini/granta/lada_granta_liftback.png'" alt="Лада Гранта лифтбек">
+                <img :src="'build/images/slider/mini/granta/lada_granta_liftback.png'" alt="Лада Гранта лифтбек">
                 <span>Лифтбек</span>
             </slide>
             <slide>
-                <img :src="'./img/slider/mini/granta/lada_granta_universal.png'" alt="Лада Гранта универсал">
+                <img :src="'build/images/slider/mini/granta/lada_granta_universal.png'" alt="Лада Гранта универсал">
                 <span>Универсал</span>
             </slide>
             <slide>
-                <img :src="'./img/slider/mini/granta/lada_granta_cross.png'" alt="Лада Гранта cross">
+                <img :src="'build/images/slider/mini/granta/lada_granta_cross.png'" alt="Лада Гранта cross">
                 <span>Cross</span>
             </slide>
             <slide>
-                <img :src="'./img/slider/mini/granta/lada_granta_drive_active.png'" alt="Лада Гранта Drive Active">
+                <img :src="'build/images/slider/mini/granta/lada_granta_drive_active.png'" alt="Лада Гранта Drive Active">
                 <span>Drive Active</span>
             </slide>
             <slide>
-                <img :src="'./img/slider/mini/granta/lada_granta_hatcback.png'" alt="Лада Гранта хэтчбек">
+                <img :src="'build/images/slider/mini/granta/lada_granta_hatcback.png'" alt="Лада Гранта хэтчбек">
                 <span>Хэтчбек</span>
             </slide>
         </hooper>

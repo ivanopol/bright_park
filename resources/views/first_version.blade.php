@@ -19,7 +19,7 @@
                     <li class="p4">+</li>
                     <li class="p5">+</li>
                 </ul>
-                <img src="./img/blocks/block_03.png" alt="">
+                <img src="build/images/blocks/block_03.png" alt="">
             </div>
         </section>
         <section class="block block_4">
@@ -37,7 +37,7 @@
                     <li class="p5">+</li>
                     <li class="p6">+</li>
                 </ul>
-                <img src="./img/blocks/block_04.png" alt="">
+                <img src="build/images/blocks/block_04.png" alt="">
             </div>
         </section>
         <section class="block change-color">
@@ -46,7 +46,7 @@
             </div>
             <div class="car-color">
                 <div class="backlight"></div>
-                <img src="./img/colors/lada_granta_blue.png" alt="">
+                <img src="build/images/colors/lada_granta_blue.png" alt="">
             </div>
             <div class="palette">
                 <div class="color-name">Голубая планета</div>
@@ -170,13 +170,13 @@
             </div>
             <div class="photo_block">
                 <div class="feedback_01">
-                    <img src="./img/photos/feedback/feedback_01.png" alt="">
+                    <img src="build/images/photos/feedback/feedback_01.png" alt="">
                 </div>
                 <div class="feedback_02">
-                    <img src="./img/photos/feedback/feedback_02.png" alt="">
+                    <img src="build/images/photos/feedback/feedback_02.png" alt="">
                 </div>
                 <div class="feedback_03">
-                    <img src="./img/photos/feedback/feedback_03.png" alt="">
+                    <img src="build/images/photos/feedback/feedback_03.png" alt="">
                 </div>
             </div>
         </section>
