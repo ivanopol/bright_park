@@ -3,9 +3,33 @@
 @section('content')
     <div class="container">
         <hooper-component></hooper-component>
-        <info-component :number="this.$store.state.model" :block="1"></info-component>
-        <info-component :number="this.$store.state.model" :block="2" :pointers="5" :pnum="1"></info-component>
-
+        {{--<info-component :number="this.$store.state.model" :block="1"></info-component>
+        <info-component :number="this.$store.state.model" :block="2" :pointers="5" :pnum="1"></info-component>--}}
+        <section class="block block_1">
+            <div class="block-text">
+                <h2><span class="c_orange">Сочетая</span> самое лучшее</h2>
+                <p>Компактный внешне и&nbsp;удивительно просторный внутри. Быстрый, но&nbsp;экономичный. Способный одинаково успешно ездить в&nbsp;любых погодных условиях и&nbsp;в&nbsp;городе, и&nbsp;на&nbsp;трассе, и&nbsp;по&nbsp;проселку. Красивый, комфортный, недорогой. Казалось&nbsp;бы, автомобиль не&nbsp;может сочетать в&nbsp;себе так много плюсов, но&nbsp;LADA Granta&nbsp;&mdash; это под силу.</p>
+            </div>
+            <div class="block-img">
+                <img src="build/images/blocks/block_01.png" alt="">
+            </div>
+        </section>
+        <section class="block block_2">
+            <div class="block-text">
+                <h2><span class="c_orange">Новое</span> в знакомом</h2>
+                <p>Компактный внешне и&nbsp;удивительно просторный внутри. Быстрый, но&nbsp;экономичный. Способный одинаково успешно ездить в&nbsp;любых погодных условиях и&nbsp;в&nbsp;городе, и&nbsp;на&nbsp;трассе, и&nbsp;по&nbsp;проселку. Красивый, комфортный, недорогой. Казалось&nbsp;бы, автомобиль не&nbsp;может сочетать в&nbsp;себе так много плюсов, но&nbsp;LADA Granta&nbsp;&mdash; это под силу.</p>
+            </div>
+            <div class="block-img">
+                <ul class="pointers-1">
+                    <li class="p1">+</li>
+                    <li class="p2">+</li>
+                    <li class="p3">+</li>
+                    <li class="p4">+</li>
+                    <li class="p5">+</li>
+                </ul>
+                <img src="build/images/blocks/block_02.jpg" alt="">
+            </div>
+        </section>
         <section class="block block_3">
             <div class="block-text">
                 <h2><span class="c_orange">Забота</span> о каждом</h2>
