@@ -15,11 +15,9 @@
                         @endif
                         <h3>Модели</h3>
                             <ul>
-                                <li><a href="{{ url('/basic_version') }}">Базовая версия</a></li>
-                                <li><a href="{{ url('/second_version') }}">Версия №2</a></li>
+                                <li><a href="{{ url('/basic') }}">Базовая версия</a></li>
+                                <li><a href="{{ url('/alt_menu') }}">Альтернативное меню</a></li>
                             </ul>
-
-
                     </div>
                 </div>
             </div>

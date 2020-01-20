@@ -31,9 +31,9 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function basic_version()
+    public function basic()
     {
-        return view('basic_version');
+        return view('basic');
     }
 
     /**
@@ -41,8 +41,8 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function second_version()
+    public function alt_menu()
     {
-        return view('second_version');
+        return view('alt_menu');
     }
 }
