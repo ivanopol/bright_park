@@ -3,6 +3,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Bright Park">
+    <meta name="description" content="">
+    <meta name="yandex-verification" content="">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+
+    <link rel="canonical" href="">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
