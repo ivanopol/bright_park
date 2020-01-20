@@ -1,85 +1,37 @@
 @extends('layouts.app2')
 
 @section('content')
+    <section id="panel_2">
+        <ul>
+            <li>
+                <div class="menu"></div>
+                <span>Меню</span>
+            </li>
+            <li>
+                <div class="call"></div>
+                <span>Звонок</span>
+            </li>
+            <li>
+                <div class="route"></div>
+                <span>Маршрут</span>
+            </li>
+        </ul>
+    </section>
+
+    <header>
+        <div class="logo-wrap">
+            <div class="logo-bright-park"></div>
+            <div class="logo-lada"></div>
+        </div>
+        <div class="lada-line">
+            <p id="model-active"></p>
+        </div>
+    </header>
+
     <div class="container">
-        <section class="auto-slider">
-            <ul class="items-mini">
-                <li>
-                    <img src="build/images/slider/mini/granta/lada_granta_sedan.png" alt="Лада Гранта седан">
-                    <span>Седан</span>
-                </li>
-                <li class="active">
-                    <img src="build/images/slider/mini/granta/lada_granta_liftback.png" alt="Лада Гранта лифтбек">
-                    <span>Лифтбек</span>
-                </li>
-                <li>
-                    <img src="build/images/slider/mini/granta/lada_granta_universal.png" alt="Лада Гранта универсал">
-                    <span>Универсал</span>
-                </li>
-                <li>
-                    <img src="build/images/slider/mini/granta/lada_granta_cross.png" alt="Лада Гранта cross">
-                    <span>Cross</span>
-                </li>
-                <li>
-                    <img src="build/images/slider/mini/granta/lada_granta_drive_active.png" alt="Лада Гранта Drive Active">
-                    <span>Drive Active</span>
-                </li>
-                <li>
-                    <img src="build/images/slider/mini/granta/lada_granta_hatcback.png" alt="Лада Гранта хэтчбек">
-                    <span>Хэтчбек</span>
-                </li>
-            </ul>
-            <ul class="items">
-                <li class="slide_1">
-                    <p class="title">LADA Granta Лифтбек</p>
-                    <p class="sub_title">динамический дизайн<br> и вместительность</p>
-                    <a href="#">Купить</a>
-                    <span class="more_details">
-                            <span>Подробнее</span>
-                        </span>
-                </li>
-                <li class="slide_2">
-                    <p class="title">LADA Granta Лифтбек</p>
-                    <p class="sub_title">динамический дизайн<br> и вместительность</p>
-                    <a href="#">Купить</a>
-                    <span class="more_details">
-                            <span>Подробнее</span>
-                        </span>
-                </li>
-                <li class="slide_3">
-                    <p class="title">LADA Granta Универсал</p>
-                    <p class="sub_title">динамический дизайн<br> и вместительность</p>
-                    <a href="#">Купить</a>
-                    <span class="more_details">
-                            <span>Подробнее</span>
-                        </span>
-                </li>
-                <li class="slide_4">
-                    <p class="title">LADA Granta Cross</p>
-                    <p class="sub_title">динамический дизайн<br> и вместительность</p>
-                    <a href="#">Купить</a>
-                    <span class="more_details">
-                            <span>Подробнее</span>
-                        </span>
-                </li>
-                <li class="slide_5">
-                    <p class="title">LADA Granta Drive Active</p>
-                    <p class="sub_title">динамический дизайн<br> и вместительность</p>
-                    <a href="#">Купить</a>
-                    <span class="more_details">
-                            <span>Подробнее</span>
-                        </span>
-                </li>
-                <li class="slide_6">
-                    <p class="title">LADA Granta Хэтчбек</p>
-                    <p class="sub_title">динамический дизайн<br> и вместительность</p>
-                    <a href="#">Купить</a>
-                    <span class="more_details">
-                            <span>Подробнее</span>
-                        </span>
-                </li>
-            </ul>
-        </section>
+        <hooper-component></hooper-component>
+        {{--<info-component :number="this.$store.state.model" :block="1"></info-component>
+        <info-component :number="this.$store.state.model" :block="2" :pointers="5" :pnum="1"></info-component>--}}
         <section class="block block_1">
             <div class="block-text">
                 <h2><span class="c_orange">Сочетая</span> самое лучшее</h2>
@@ -311,8 +263,8 @@
                 <a class="btn" href="#" onclick="return false;">Проложить маршрут</a>
             </div>
             <div class="map">
-                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A835db353a68100909105f85f9e9a5b504f478330f77575a2b3f5ee8fd1053d2b&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
-            </div>
-        </footer>
+                <script type="application/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A835db353a68100909105f85f9e9a5b504f478330f77575a2b3f5ee8fd1053d2b&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></div>
+    </div>
+    </footer>
     </div>
 @endsection
