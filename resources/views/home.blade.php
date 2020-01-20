@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Dashboard</div>
+                    <div class="card-header">Страницы</div>
 
                     <div class="card-body">
                         @if (session('status'))
@@ -13,9 +13,13 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                        <a href="{{ url('/first_version') }}">Версия №1</a><br>
-                        <a href="{{ url('/second_version') }}">Версия №2</a><br>
-                        You are logged in!
+                        <h3>Модели</h3>
+                            <ul>
+                                <li><a href="{{ url('/basic_version') }}">Базовая версия</a></li>
+                                <li><a href="{{ url('/second_version') }}">Версия №2</a></li>
+                            </ul>
+
+
                     </div>
                 </div>
             </div>
