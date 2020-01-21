@@ -1,77 +1,17 @@
 <template>
     <div>
         <hooper class="items-mini" group="group1" :itemsToShow="3" :centerMode="true" v-on:slide="change_line">
-            <slide>
-                <img :src="'build/images/slider/mini/granta/lada_granta_sedan.png'" alt="Лада Гранта седан">
+            <slide v-for="slide in slides_mini" v-bind:key="slide.id">
+                <img :src="slide.image" :alt="slide.title">
                 <span>Седан</span>
-            </slide>
-            <slide>
-                <img :src="'build/images/slider/mini/granta/lada_granta_liftback.png'" alt="Лада Гранта лифтбек">
-                <span>Лифтбек</span>
-            </slide>
-            <slide>
-                <img :src="'build/images/slider/mini/granta/lada_granta_universal.png'" alt="Лада Гранта универсал">
-                <span>Универсал</span>
-            </slide>
-            <slide>
-                <img :src="'build/images/slider/mini/granta/lada_granta_cross.png'" alt="Лада Гранта cross">
-                <span>Cross</span>
-            </slide>
-            <slide>
-                <img :src="'build/images/slider/mini/granta/lada_granta_drive_active.png'" alt="Лада Гранта Drive Active">
-                <span>Drive Active</span>
-            </slide>
-            <slide>
-                <img :src="'build/images/slider/mini/granta/lada_granta_hatcback.png'" alt="Лада Гранта хэтчбек">
-                <span>Хэтчбек</span>
             </slide>
         </hooper>
 
         <hooper id="items" class="items" group="group1" >
-            <slide class="slide_1" data-model="Granta седан">
-                <p class="title">LADA Granta седан</p>
-                <p class="sub_title">динамический дизайн<br> и вместительность</p>
-                <a href="#">Купить</a>
-                <span class="more_details">
-                    <span>Подробнее</span>
-                </span>
-            </slide>
-            <slide class="slide_2" data-model="Granta лифтбек">
-                <p class="title">LADA Granta Лифтбек</p>
-                <p class="sub_title">динамический дизайн<br> и вместительность</p>
-                <a href="#">Купить</a>
-                <span class="more_details">
-                    <span>Подробнее</span>
-                </span>
-            </slide>
-            <slide class="slide_3" data-model="Granta универсал">
-                <p class="title">LADA Granta универсал</p>
-                <p class="sub_title">динамический дизайн<br> и вместительность</p>
-                <a href="#">Купить</a>
-                <span class="more_details">
-                    <span>Подробнее</span>
-                </span>
-            </slide>
-            <slide class="slide_4" data-model="Granta cross">
-                <p class="title">LADA Granta cross</p>
-                <p class="sub_title">динамический дизайн<br> и вместительность</p>
-                <a href="#">Купить</a>
-                <span class="more_details">
-                    <span>Подробнее</span>
-                </span>
-            </slide>
-            <slide class="slide_5" data-model="Granta drive active">
-                <p class="title">LADA Granta Drive Active</p>
-                <p class="sub_title">динамический дизайн<br> и вместительность</p>
-                <a href="#">Купить</a>
-                <span class="more_details">
-                    <span>Подробнее</span>
-                </span>
-            </slide>
-            <slide class="slide_6" data-model="Granta хэтчбек">
-                <p class="title">LADA Granta хэтчбек</p>
-                <p class="sub_title">динамический дизайн<br> и вместительность</p>
-                <a href="#">Купить</a>
+            <slide v-for="slide in slides" v-bind:key="slide.id" :class="slide.class" :data-model="slide.reduction">
+                <p class="title" v-text="slide.title"></p>
+                <p class="sub_title" v-html="slide.subtitle"></p>
+                <a :href="slide.link">Купить</a>
                 <span class="more_details">
                     <span>Подробнее</span>
                 </span>
@@ -89,6 +29,87 @@
         components: {
             Hooper,
             Slide
+        },
+        data: function () {
+            return {
+                slides_mini: [
+                    {
+                        image: 'build/images/slider/mini/granta/lada_granta_sedan.png',
+                        title: 'Лада Гранта седан'
+                    },
+                    {
+                        image: 'build/images/slider/mini/granta/lada_granta_liftback.png',
+                        title: 'Лада Гранта лифтбек'
+                    },
+                    {
+                        image: 'build/images/slider/mini/granta/lada_granta_universal.png',
+                        title: 'Лада Гранта универсал'
+                    },
+                    {
+                        image: 'build/images/slider/mini/granta/lada_granta_cross.png',
+                        title: 'Лада Гранта cross'
+                    },
+                    {
+                        image: 'build/images/slider/mini/granta/lada_granta_drive_active.png',
+                        title: 'Лада Гранта Drive Active'
+                    },
+                    {
+                        image: 'build/images/slider/mini/granta/lada_granta_hatcback.png',
+                        title: 'Лада Гранта хэтчбек'
+                    }
+                ],
+                slides: [
+                    {
+                        class: 'slide_1',
+                        title: 'LADA Granta седан',
+                        reduction: 'Granta седан',
+                        subtitle: 'динамический дизайн<br> и вместительность',
+                        link: '#'
+                    },
+                    {
+                        class: 'slide_2',
+                        title: 'LADA Granta седан',
+                        reduction: 'Granta лифтбек',
+                        subtitle: 'динамический дизайн<br> и вместительность',
+                        link: '#'
+                    },
+                    {
+                        class: 'slide_3',
+                        title: 'LADA Granta седан',
+                        reduction: 'Granta универсал',
+                        subtitle: 'динамический дизайн<br> и вместительность',
+                        link: '#'
+                    },
+                    {
+                        class: 'slide_4',
+                        title: 'LADA Granta седан',
+                        reduction: 'Granta cross',
+                        subtitle: 'динамический дизайн<br> и вместительность',
+                        link: '#'
+                    },
+                    {
+                        class: 'slide_5',
+                        title: 'LADA Granta седан',
+                        reduction: 'Granta drive active',
+                        subtitle: 'динамический дизайн<br> и вместительность',
+                        link: '#'
+                    },
+                    {
+                        class: 'slide_6',
+                        title: 'LADA Granta седан',
+                        reduction: '',
+                        subtitle: 'динамический дизайн<br> и вместительность',
+                        link: '#'
+                    },
+                    {
+                        class: 'slide_7',
+                        title: 'LADA Granta седан',
+                        reduction: 'Granta хэтчбек',
+                        subtitle: 'динамический дизайн<br> и вместительность',
+                        link: '#'
+                    },
+                ]
+            }
         },
         methods: {
             change_line: function(event) {
