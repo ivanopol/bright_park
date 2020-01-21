@@ -1,13 +1,13 @@
 <template>
     <div>
-        <hooper class="items-mini" group="group1" :itemsToShow="3" :centerMode="true" v-on:slide="change_line">
+        <hooper class="items-mini" group="slider" :itemsToShow="3" :centerMode="true" v-on:slide="change_line">
             <slide v-for="slide in slides_mini" v-bind:key="slide.id">
-                <img :src="slide.image" :alt="slide.title">
-                <span>Седан</span>
+                <img :src="slide.image" :alt="slide.alt">
+                <span v-text="slide.title">Седан</span>
             </slide>
         </hooper>
 
-        <hooper id="items" class="items" group="group1" >
+        <hooper id="items" class="items" group="slider" >
             <slide v-for="slide in slides" v-bind:key="slide.id" :class="slide.class" :data-model="slide.reduction">
                 <p class="title" v-text="slide.title"></p>
                 <p class="sub_title" v-html="slide.subtitle"></p>
@@ -35,27 +35,33 @@
                 slides_mini: [
                     {
                         image: 'build/images/slider/mini/granta/lada_granta_sedan.png',
-                        title: 'Лада Гранта седан'
+                        alt: 'Лада Гранта седан',
+                        title: 'Седан'
                     },
                     {
                         image: 'build/images/slider/mini/granta/lada_granta_liftback.png',
-                        title: 'Лада Гранта лифтбек'
+                        alt: 'Лада Гранта лифтбек',
+                        title: 'Лифтбек'
                     },
                     {
                         image: 'build/images/slider/mini/granta/lada_granta_universal.png',
-                        title: 'Лада Гранта универсал'
+                        alt: 'Лада Гранта универсал',
+                        title: 'Универсал'
                     },
                     {
                         image: 'build/images/slider/mini/granta/lada_granta_cross.png',
-                        title: 'Лада Гранта cross'
+                        alt: 'Лада Гранта cross',
+                        title: 'Cross'
                     },
                     {
                         image: 'build/images/slider/mini/granta/lada_granta_drive_active.png',
-                        title: 'Лада Гранта Drive Active'
+                        alt: 'Лада Гранта Drive Active',
+                        title: 'Drive Active'
                     },
                     {
                         image: 'build/images/slider/mini/granta/lada_granta_hatcback.png',
-                        title: 'Лада Гранта хэтчбек'
+                        alt: 'Лада Гранта хэтчбек',
+                        title: 'Хэтчбек'
                     }
                 ],
                 slides: [
