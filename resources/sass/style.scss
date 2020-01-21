@@ -8,6 +8,10 @@ body {
     background-color: #fff;
 }
 
+.wrapper{
+    min-width: 320px;
+}
+
 a {
     color: #0057ae;
     font-weight: bold;
@@ -143,7 +147,7 @@ h2 {
                 width: 25px;
                 height: 25px;
                 display: block;
-                margin: 0 auto 3px;
+                margin: 0 auto;
             }
 
             & > span {
