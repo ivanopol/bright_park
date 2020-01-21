@@ -1,9 +1,11 @@
 .items-mini {
-    width: 150px * 6;
     padding: 0;
-    height: 95px!important;
+
+    .hooper-track {
+        padding: 5px 0 10px;
+    }
+
     li {
-        width: 132px;
         display: inline-block;
         text-align: center;
 
@@ -19,9 +21,9 @@
         &.is-current span {
             display: inline;
             padding: 3px 8px;
-            background-color: #0467ff;
-            border-radius: 5px;
-            color: #fff;
+           /* border-radius: 5px;*/
+            /*background-color: #0467ff;*/
+            /*color: #fff;*/
         }
 
         img {
@@ -32,11 +34,7 @@
 
 .items {
     ul {
-        padding-top: 20px;
-        width: 380px * 6;
-
         li {
-            width: 375px;
             height: 390px;
             overflow: hidden;
             display: inline-block;
@@ -47,32 +45,32 @@
 
             &.slide_1 {
                 background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/granta/lada_granta_sedan_slide.png) no-repeat center center;
-                background-size: 126%;
+                background-size: cover;
             }
 
             &.slide_2 {
                 background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/granta/lada_granta_sedan_slide.png) no-repeat center center;
-                background-size: 126%;
+                background-size: cover;
             }
 
             &.slide_3 {
                 background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/granta/lada_granta_sedan_slide.png) no-repeat center center;
-                background-size: 126%;
+                background-size: cover;
             }
 
             &.slide_4 {
                 background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/granta/lada_granta_sedan_slide.png) no-repeat center center;
-                background-size: 126%;
+                background-size: cover;
             }
 
             &.slide_5 {
                 background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/granta/lada_granta_sedan_slide.png) no-repeat center center;
-                background-size: 126%;
+                background-size: cover;
             }
 
             &.slide_6 {
                 background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/granta/lada_granta_sedan_slide.png) no-repeat center center;
-                background-size: 126%;
+                background-size: cover;
             }
 
             p {
@@ -80,10 +78,11 @@
                 line-height: 28px;
 
                 &.title {
+                    margin-bottom: 20px;
                 }
 
                 &.sub_title {
-                    margin: 20px 0 10px;
+                    margin-bottom: 10px;
                     text-transform: uppercase;
                 }
             }
@@ -91,12 +90,16 @@
             a {
                 cursor: pointer;
                 background-color: #0467ff;
-                display: inline;
+                display: inline-block;
                 color: #fff;
                 text-transform: uppercase;
                 text-decoration: none;
-                padding: 5px 20px 4px;
+                padding: 7px 20px 4px;
                 border-radius: 5px;
+
+                &:hover {
+
+                }
             }
 
             .more_details {
