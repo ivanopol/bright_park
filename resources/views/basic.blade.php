@@ -54,7 +54,7 @@
                     <li class="p4">+</li>
                     <li class="p5">+</li>
                 </ul>
-                <img src="build/images/blocks/block_02.jpg" alt="">
+                <img src="build/images/blocks/mobile/block_02.jpg" alt="">
             </div>
         </section>
         <section class="block block_3">
