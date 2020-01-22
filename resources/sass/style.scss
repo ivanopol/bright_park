@@ -31,6 +31,25 @@ h2 {
     text-align: center;
 }
 
+$context: 375;
+
+@media only screen and (max-width: 321px) {
+    $context: 320;
+}
+
+@media only screen and (max-width: 375px) {
+    $context: 375;
+}
+
+@media only screen and (max-width: 414px) {
+    $context: 414;
+}
+
+@function get-vw($target, $context) {
+    $vw-context: ($context*.01) * 1px;
+    @return ($target/$vw-context) * 1vw;
+}
+
 .btn {
     color: #fff;
     text-decoration: none;
@@ -226,158 +245,129 @@ h2 {
     overflow: hidden;
 }
 
-.pointers-1 {
-
+.pointers-1,
+.pointers-2,
+.pointers-3 {
+    width: 100%;
+    height: 100%;
     &>li {
+        cursor:pointer;
         position: absolute;
         color: #fff;
         font-size: 32px;
-        font-weight: bold;
         z-index: 3;
 
         &:before {
-            content:'';
+            content: "";
             position: absolute;
-            width: 47px;
-            height: 47px;
+            width: 42px;
+            height: 42px;
             display: block;
             border-radius: 50px;
-            background-color: #ed6c21;
-            opacity: 0.7;
+            background-color: rgba(237, 155, 33, 0.4);
             z-index: -1;
-            left: -14px;
-            top: -23px;
+            left: -12px;
+            top: -21px;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            display: block;
+            border-radius: 50px;
+            background-color: rgba(237, 108, 33, 0.6);
+            z-index: -1;
+            left: -6px;
+            top: -15px;
         }
     }
+}
 
+.pointers-1 {
     .p1 {
-        left: 120px;
-        top: 95px;
+        left: get-vw(58px, $context);
+        top: get-vw(67px, $context);
     }
 
     .p2 {
-        left: 166px;
-        top: 124px;
+        left: get-vw(109px, $context);
+        top: get-vw(92px, $context);
     }
 
     .p3 {
-        left: 233px;
-        top: 85px;
+        left: get-vw(213px, $context);
+        top: get-vw(47px, $context);
     }
 
     .p4 {
-        left: 300px;
-        top: 106px;
+        left: get-vw(315px, $context);
+        top: get-vw(66px, $context);
     }
 
     .p5 {
-        left: 235px;
-        top: 156px;
+        left: get-vw(205px, $context);
+        top: get-vw(138px, $context);
     }
 }
 
 .pointers-2 {
-
-    &>li {
-        position: absolute;
-        color: #fff;
-        font-size: 32px;
-        font-weight: bold;
-        z-index: 3;
-
-        &:before {
-            content:'';
-            position: absolute;
-            width: 47px;
-            height: 47px;
-            display: block;
-            border-radius: 50px;
-            background-color: #ed6c21;
-            opacity: 0.7;
-            z-index: -1;
-            left: -14px;
-            top: -23px;
-        }
-    }
-
     .p1 {
-        left: 103px;
-        top: 75px;
+        left: get-vw(103px, $context);
+        top: get-vw(75px, $context);
     }
 
     .p2 {
-        left: 175px;
-        top: 29px;
+        left: get-vw(175px, $context);
+        top: get-vw(29px, $context);
     }
 
     .p3 {
-        left: 60px;
-        top: 174px;
+        left: get-vw(60px, $context);
+        top:  get-vw(174px, $context);
     }
 
     .p4 {
-        left: 284px;
-        top: 156px;
+        left: get-vw(284px, $context);
+        top: get-vw(156px, $context);
     }
 
     .p5 {
-        left: 152px;
-        top: 156px;
+        left: get-vw(152px, $context);
+        top: get-vw(156px, $context);
     }
 }
 
 .pointers-3 {
-
-    &>li {
-        position: absolute;
-        color: #fff;
-        font-size: 32px;
-        font-weight: bold;
-        z-index: 3;
-
-        &:before {
-            content:'';
-            position: absolute;
-            width: 47px;
-            height: 47px;
-            display: block;
-            border-radius: 50px;
-            background-color: #ed6c21;
-            opacity: 0.7;
-            z-index: -1;
-            left: -14px;
-            top: -23px;
-        }
-    }
-
     .p1 {
-        left: 156px;
-        top: 25px;
+        left: get-vw(156px, $context);
+        top: get-vw(25px, $context);
     }
 
     .p2 {
-        left: 211px;
-        top: 50px;
+        left: get-vw(211px, $context);
+        top: get-vw(50px, $context);
     }
 
     .p3 {
-        left: 22px;
-        top: 160px;
+        left: get-vw(22px, $context);
+        top: get-vw(160px, $context);
     }
 
     .p4 {
-        left: 332px;
-        top: 60px;
+        left: get-vw(332px, $context);
+        top: get-vw(60px, $context);
     }
 
     .p5 {
-        left: 251px;
-        top: 105px;
+        left: get-vw(251px, $context);
+        top: get-vw(105px, $context);
     }
 
     .p6 {
-        left: 319px;
-        top: 129px;
+        left: get-vw(319px, $context);
+        top: get-vw(129px, $context);
     }
 }
 

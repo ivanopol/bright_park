@@ -1,16 +1,16 @@
 <template>
-    <section :class="cblock">
+    <section :class="_block">
         <div class="block-text">
-            <h2 v-html="models[number].title"></h2>
-            <p>{{ models[number].text }}</p>
+            <h2 v-html="data.title"></h2>
+            <p v-html="data.text"></p>
         </div>
-        <div :v-if="pointers" class="block-img">
-            <ul :class="cpointer">
-                <li v-for="n in pointers"  :class="'p' + n">+</li>
+        <div :v-if="data.pointers" class="block-img">
+            <ul :class="_pointer">
+                <li v-for="n in data.pointers"  :class="'p' + n">+</li>
             </ul>
         </div>
         <div class="block-img">
-            <img :src="models[number].url" alt="">
+            <img :src="data.url" alt="">
         </div>
     </section>
 </template>
@@ -18,50 +18,17 @@
 <script>
     export default {
         name: 'App',
-        props : ['number', 'block', 'pointers', 'pnum'],
+        props : ['data'],
         computed: {
-            cblock: function(el) {
+            _block: function(el) {
                 return "block block_" + el.block;
             },
-            cpointer: function(el) {
-                return "pointers-" + el.pnum;
+            _pointer: function(el) {
+                return "pointers-" + this.data.pnum;
             }
         },
         data: function () {
-            return {
-                models: [
-                    {
-                        title: '<span class="c_orange">Сочетая</span> самое лучшее',
-                        text: 'Компактный внешне и удивительно просторный внутри. Быстрый, но экономичный. Способный одинаково успешно ездить в любых погодных условиях и в городе, и на трассе, и по проселку. Красивый, комфортный, недорогой. Казалось бы, автомобиль не может сочетать в себе так много плюсов, но LADA Granta — это под силу.',
-                        url: 'build/images/blocks/block_01.png'
-                    },
-                    {
-                        title: '<span class="c_orange">Второй</span> the best',
-                        text: 'Сомнение рефлектирует естественный закон исключённого третьего.. Интеллект естественно понимает под собой интеллигибельный закон внешнего мира, открывая новые горизонты. Гедонизм осмысляет дедуктивный метод. Аксиома силлогизма, по определению, представляет собой неоднозначный предмет деятельности. Надстройка нет',
-                        url: 'build/images/blocks/mobile/block_02.jpg'
-                    },
-                    {
-                        title: '<span class="c_orange">Третий</span> наш текст',
-                        text: 'Смысл жизни, следовательно, творит данный закон внешнего мира. Надстройка нетривиальна. Дедуктивный метод решительно представляет собой бабувизм. Сомнение рефлектирует естественный закон исключённого третьего.. Созерцание непредсказуемо. Импликация, следовательно, контролирует бабувизм, открывая новые горизонты.',
-                        url: 'build/images/blocks/block_03.png'
-                    },
-                    {
-                        title: '<span class="c_orange">Четвертый</span> тест текста',
-                        text: 'Структурализм абстрактен. Надстройка нетривиальна. Созерцание непредсказуемо. Отсюда естественно следует, что автоматизация дискредитирует предмет деятельности. Наряду с этим ощущение мира решительно контролирует непредвиденный гравитационный парадокс. Отсюда естественно следует, что автоматизация дискредитирует',
-                        url: 'build/images/blocks/block_04.png'
-                    },
-                    {
-                        title: '<span class="c_orange">Пятый</span> важный контент',
-                        text: 'Дедуктивный метод решительно представляет собой бабувизм. Гедонизм осмысляет дедуктивный метод. Созерцание непредсказуемо. Наряду с этим ощущение мира решительно контролирует непредвиденный гравитационный парадокс. Дискретность амбивалентно транспонирует гравитационный парадокс. ',
-                        url: 'build/images/blocks/block_05.png'
-                    },
-                    {
-                        title: '<span class="c_orange">Шетой</span> лучший',
-                        text: 'Компактный внешне и удивительно просторный внутри. Быстрый, но экономичный. Способный одинаково успешно ездить в любых погодных условиях и в городе, и на трассе, и по проселку. Красивый, комфортный, недорогой. Казалось бы, автомобиль не может сочетать в себе так много плюсов, но LADA Granta — это под силу.',
-                        url: 'build/images/blocks/block_06.png'
-                    }
-                ]
-            }
+            return {}
         }
     };
 </script>
