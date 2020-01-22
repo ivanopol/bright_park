@@ -34,45 +34,7 @@
         <info-component :data='@json($data['blocks'][1])'></info-component>
         <info-component :data='@json($data['blocks'][2])'></info-component>
         <info-component :data='@json($data['blocks'][3])'></info-component>
-
-        <section class="block change-color">
-            <div class="block-text">
-                <h2><span class="c_orange">Цвет</span> притягивает взгляды</h2>
-            </div>
-            <div class="car-color">
-                <div class="backlight"></div>
-                <img src="build/images/colors/lada_granta_blue.png" alt="">
-            </div>
-            <div class="palette">
-                <div class="color-name">Голубая планета</div>
-                <ul>
-                    <li class="active">
-                        <div class="circle color-blue-planet" data-name="Голубая планета"></div>
-                    </li>
-                    <li>
-                        <div class="circle color-cornelian" data-name="Сердолик"></div>
-                    </li>
-                    <li>
-                        <div class="circle color-white-cloud" data-name="Белое облако"></div>
-                    </li>
-                    <li>
-                        <div class="circle color-panther" data-name="Пантера"></div>
-                    </li>
-                    <li>
-                        <div class="circle color-riesling" data-name="Рислинг"></div>
-                    </li>
-                    <li>
-                        <div class="circle color-techno" data-name="Техно"></div>
-                    </li>
-                    <li>
-                        <div class="circle color-borneo" data-name="Борнео"></div>
-                    </li>
-                    <li>
-                        <div class="circle color-coriander" data-name="Кориандр"></div>
-                    </li>
-                </ul>
-            </div>
-        </section>
+        <color-choose-component :colors='@json($data['colors'])'></color-choose-component>
         <section class="block form">
             <div class="block-text">
                 <h2><span class="c_orange">Попробуйте</span> сами</h2>

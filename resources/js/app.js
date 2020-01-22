@@ -23,6 +23,7 @@ Vue.use(Vuex);
 
 Vue.component('hooper-component', require('./components/HooperComponent.vue').default);
 Vue.component('info-component', require('./components/InfoComponent.vue').default);
+Vue.component('color-choose-component', require('./components/ColorChooseComponent.vue').default);
 
 const store = new Vuex.Store({
     state: {

@@ -141,7 +141,49 @@ class HomeController extends Controller
                     'pointers' => 6,
                     'pnum' => 3,
                 ]
-            ]
+            ],
+            'colors' => [
+                [
+                    'title' => 'Голубая планета',
+                    'image' => 'build/images/colors/lada_granta_blue-planet.png',
+                    'class' => 'color-blue-planet',
+                ],
+                [
+                    'title' => 'Сердолик',
+                    'image' => 'build/images/colors/lada_granta_cornelian.png',
+                    'class' => 'color-cornelian',
+                ],
+                [
+                    'title' => 'Белое облако',
+                    'image' => 'build/images/colors/lada_white-cloud.png',
+                    'class' => 'color-white-cloud',
+                ],
+                [
+                    'title' => 'Пантера',
+                    'image' => 'build/images/colors/lada_panther.png',
+                    'class' => 'color-panther',
+                ],
+                [
+                    'title' => 'Рислинг',
+                    'image' => 'build/images/colors/lada_riesling.png',
+                    'class' => 'color-riesling',
+                ],
+                [
+                    'title' => 'Техно',
+                    'image' => 'build/images/colors/lada_techno.png',
+                    'class' => 'color-techno',
+                ],
+                [
+                    'title' => 'Борнео',
+                    'image' => 'build/images/colors/lada_borneo.png',
+                    'class' => 'color-borneo',
+                ],
+                [
+                    'title' => 'Кориандр',
+                    'image' => 'build/images/colors/lada_coriander.png',
+                    'class' => 'color-coriander',
+                ],
+            ],
         ];
 
         return view('basic', [ 'data' => $data ]);
