@@ -279,3 +279,33 @@
     clip: rect(0, 0, 0, 0);
     border: 0;
 }
+
+@media only screen and (max-width: 321px) {
+    .items-mini {
+        li {
+            span {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .items {
+        ul {
+            li {
+                p {
+                    font-size: 18px;
+                    line-height: 26px;
+
+                    &.title {
+                        margin-bottom: 18px;
+                    }
+
+                    &.sub_title {
+                        margin-bottom: 8px;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+}
