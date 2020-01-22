@@ -5,13 +5,13 @@
         </div>
         <div class="car-color">
             <div class="backlight"></div>
-            <img src="build/images/colors/lada_granta_blue.png" alt="Голубая планета">
+            <img :src="image" :alt="title">
         </div>
         <div class="palette">
-            <div class="color-name" >Голубая планета</div>
+            <div class="color-name" v-text="title"></div>
             <ul>
                 <li v-for="(color, id) in colors" >
-                    <div :class="'circle ' + color.class" :data-name="color.title" :data-image="color.image"> </div>
+                    <div :class="'circle ' + color.class" :data-name="color.title" :data-image="color.image" @click="change_color(color)"></div>
                 </li>
             </ul>
         </div>
@@ -23,7 +23,16 @@
         name: 'App',
         props : ['colors'],
         data: function () {
-            return {};
+            return {
+                image: this.colors[0].image,
+                title: this.colors[0].title
+            };
+        },
+        methods: {
+            change_color(color) {
+                this.image = color.image;
+                this.title = color.title;
+            }
         }
     }
 </script>
