@@ -449,8 +449,10 @@ header {
             flex-wrap: wrap;
             justify-content: space-between;
             align-content: space-between;
-            height: 140px;
+            height: get-vw(140px, $context);
             li {
+                width: 25%;
+
                 &.active div {
                     box-shadow: none;
                     border: 2px solid #fff;
@@ -466,8 +468,9 @@ header {
 
                 .circle {
                     border-radius: 100px;
-                    width: 60px;
-                    height: 60px;
+                    width: get-vw(60px, $context);
+                    height: get-vw(60px, $context);
+                    margin: 0 auto;
                 }
 
                 .color- {
