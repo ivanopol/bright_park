@@ -427,11 +427,14 @@ header {
         .backlight {
             background: rgb(255,255,255);
             background: radial-gradient(ellipse, rgba(255, 255, 255, 0.8) 10%, rgba(255, 255, 255, 0) 72%);
-            width: 100%;
-            height: 200px;
+            width: 100vw;
+            height: get-vw(200px, $context);
             position: absolute;
             top: 0;
             left: 0;
+            right: 0;
+            bottom: 0;
+            margin: 0 auto;
         }
     }
 
