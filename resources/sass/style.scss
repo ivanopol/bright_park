@@ -456,6 +456,10 @@ header {
                     border: 2px solid #fff;
                 }
 
+                &.active div.color-white-cloud {
+                    border: 2px solid #b5b5b5;
+                }
+
                 &>div {
                     box-shadow: 0 0 5px 1px rgba(255,255,255,0.8);
                 }
