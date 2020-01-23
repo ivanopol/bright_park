@@ -35,92 +35,15 @@
         <info-component :data='@json($data['blocks'][2])'></info-component>
         <info-component :data='@json($data['blocks'][3])'></info-component>
         <color-choose-component :colors='@json($data['colors'])'></color-choose-component>
-        <section class="block form">
-            <div class="block-text">
-                <h2><span class="c_orange">Попробуйте</span> сами</h2>
-                <p class="note_1">Расширенный тест-драйв в Брайт парке</p>
-            </div>
-            <form action="" id="form_test-drive" method="POST" name="feedback">
-                <input type="text" class="" name="name" placeholder="Имя">
-                <input type="text" class="" name="phone" placeholder="Телефон">
-                <button>Записаться</button>
-            </form>
-        </section>
+        <form-component></form-component>
+
         <section class="block block_4">
             <div class="block-text">
                 <h2><span class="c_orange">Эксперты</span> о Lada Granta</h2>
             </div>
 
             <div class="opinions">
-                <ul class="opinion-slider">
-                    <li>
-                        <blockquote cite="https://www.kolesa.ru/article/pyat-veshhej-za-kotorye-lyubyat-i-nenavidyat-lada-granta">
-                            <p>Гранта сделана в&nbsp;России и&nbsp;специально для России. Клиренс в&nbsp;165&nbsp;мм хвалят очень многие владельцы этого авто</p>
-                            <footer>портал <cite>КОЛЕСА.ру</cite></footer>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <blockquote cite="https://www.kolesa.ru/article/pyat-veshhej-za-kotorye-lyubyat-i-nenavidyat-lada-granta">
-                            <p>Гранта сделана в&nbsp;России и&nbsp;специально для России. Клиренс в&nbsp;165&nbsp;мм хвалят очень многие владельцы этого авто</p>
-                            <footer>портал <cite>КОЛЕСА.ру</cite></footer>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <blockquote cite="https://www.kolesa.ru/article/pyat-veshhej-za-kotorye-lyubyat-i-nenavidyat-lada-granta">
-                            <p>Гранта сделана в&nbsp;России и&nbsp;специально для России. Клиренс в&nbsp;165&nbsp;мм хвалят очень многие владельцы этого авто</p>
-                            <footer>портал <cite>КОЛЕСА.ру</cite></footer>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <blockquote cite="https://www.kolesa.ru/article/pyat-veshhej-za-kotorye-lyubyat-i-nenavidyat-lada-granta">
-                            <p>Гранта сделана в&nbsp;России и&nbsp;специально для России. Клиренс в&nbsp;165&nbsp;мм хвалят очень многие владельцы этого авто</p>
-                            <footer>портал <cite>КОЛЕСА.ру</cite></footer>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <blockquote cite="https://www.kolesa.ru/article/pyat-veshhej-za-kotorye-lyubyat-i-nenavidyat-lada-granta">
-                            <p>Гранта сделана в&nbsp;России и&nbsp;специально для России. Клиренс в&nbsp;165&nbsp;мм хвалят очень многие владельцы этого авто</p>
-                            <footer>портал <cite>КОЛЕСА.ру</cite></footer>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <blockquote cite="https://www.kolesa.ru/article/pyat-veshhej-za-kotorye-lyubyat-i-nenavidyat-lada-granta">
-                            <p>Гранта сделана в&nbsp;России и&nbsp;специально для России. Клиренс в&nbsp;165&nbsp;мм хвалят очень многие владельцы этого авто</p>
-                            <footer>портал <cite>КОЛЕСА.ру</cite></footer>
-                        </blockquote>
-                    </li>
-                    <li>
-                        <blockquote cite="https://www.kolesa.ru/article/pyat-veshhej-za-kotorye-lyubyat-i-nenavidyat-lada-granta">
-                            <p>Гранта сделана в&nbsp;России и&nbsp;специально для России. Клиренс в&nbsp;165&nbsp;мм хвалят очень многие владельцы этого авто</p>
-                            <footer>портал <cite>КОЛЕСА.ру</cite></footer>
-                        </blockquote>
-                    </li>
-                </ul>
-                <div class="opinion-numbers">
-                    <ul>
-                        <li>
-                            <span></span>
-                        </li>
-                        <li class="active">
-                            <span></span>
-                        </li>
-                        <li>
-                            <span></span>
-                        </li>
-                        <li>
-                            <span></span>
-                        </li>
-                        <li>
-                            <span></span>
-                        </li>
-                        <li>
-                            <span></span>
-                        </li>
-                        <li>
-                            <span></span>
-                        </li>
-                    </ul>
-                </div>
+                <review-component :reviews='@json($data['reviews'])'></review-component>
             </div>
             <div class="trigger-wrap">
                 <p>98% клиентов оставили положительные отзывы о&nbsp;Granta лифтбек</p>

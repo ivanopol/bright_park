@@ -19,6 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/basic', 'HomeController@basic')->name('basic');
-Route::get('/alt_menu', 'HomeController@alt_menu')->name('alt_menu');
+Route::any('/basic', 'HomeController@basic')->name('basic');
+Route::any('/alt_menu', 'HomeController@alt_menu')->name('alt_menu');
 
