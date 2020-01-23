@@ -11,7 +11,7 @@
             <div class="color-name" v-text="title"></div>
             <ul>
                 <li v-for="(color, id) in colors" :class="{ active : color.is_active }">
-                    <div class="circle" :class="color.class" :data-name="color.title" :data-image="color.image" @click="change_color(color, $event)"></div>
+                    <div class="circle" :class="color.class" :data-name="color.title" :data-image="color.image" @click="change_color(color)"></div>
                 </li>
             </ul>
         </div>
@@ -29,7 +29,7 @@
             };
         },
         methods: {
-            change_color(color, e) {
+            change_color(color) {
                 this.image = color.image;
                 this.title = color.title;
                 this.colors.forEach(function(item, i, arr) {
