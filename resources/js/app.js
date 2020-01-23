@@ -7,6 +7,7 @@
 require('./bootstrap');
 window.Vue = require('vue');
 window.Vuex = require('vuex');
+
 //import Vuex from 'vuex';
 
 Vue.use(Vuex);
