@@ -564,9 +564,9 @@ form {
 }
 
 .opinions {
-    width: 380px * 7;
-    margin-bottom: 30px;
-    ul.opinion-slider {
+    margin-bottom: 45px;
+
+    ul {
         margin-bottom: 15px;
         li {
             width: 375px;
@@ -584,31 +584,33 @@ form {
 
                 footer {
                     text-align: right;
+                    padding-bottom: 20px;
                 }
             }
         }
     }
 
-    .opinion-numbers {
-        ul {
-            width: 100vw;
-            display: flex;
-            flex-wrap: nowrap;
-            justify-content: space-between;
-            padding: 0 90px;
+    .hooper-pagination {
+        bottom: -26px;
+
+        .hooper-indicator:hover, .hooper-indicator.is-active {
+            background-color: #666;
+            border-color: #666;
+        }
+
+        ol {
             li {
-
-                &.active span {
-                    background-color: #666;
-                }
-
-                span {
-                    display: block;
-                    background-color: #fff;
-                    width: 12px;
-                    height: 12px;
+                .hooper-indicator {
+                    width: 7px;
+                    height: 7px;
                     border:1px solid #ccc;
+                    background-color: #ccc;
                     border-radius: 6px;
+                    margin: 0 4px;
+                    -webkit-transition: all ease-out 0.3s;
+                    -moz-transition: all ease-out 0.3s;
+                    -o-transition: all ease-out 0.3s;
+                    transition: all ease-out 0.3s;
                 }
             }
         }

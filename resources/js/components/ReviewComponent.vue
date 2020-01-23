@@ -1,8 +1,10 @@
 <template>
-    <hooper>
+    <hooper class="opinions">
         <slide v-for="review in reviews" :key="reviews.key">
-            <p v-html="review.quote"></p>
-            <footer v-html="review.author"></footer>
+            <blockquote :cite="review.url">
+                <p v-html="review.quote"></p>
+                <footer v-html="review.author"></footer>
+            </blockquote>
         </slide>
         <hooper-pagination slot="hooper-addons"></hooper-pagination>
     </hooper>
@@ -14,6 +16,7 @@
         Slide,
         Pagination as HooperPagination
     } from 'hooper';
+    import 'hooper/dist/hooper.css';
 
     export default {
         name: 'App',
