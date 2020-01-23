@@ -5,7 +5,7 @@
             <p class="note_1">Расширенный тест-драйв в Брайт парке</p>
         </div>
         <form action="#" id="form_test-drive" method="POST" name="feedback" @submit="send">
-            <input type="text" class="" name="name" placeholder="Имя">
+            <input type="text" class="" name="name" placeholder="Имя" required>
             <input
                 type="tel"
                 v-model="phone"
