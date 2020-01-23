@@ -1,11 +1,14 @@
 <template>
     <div>
-        <hooper class="items-mini" group="slider" :itemsToShow="3" :centerMode="true" v-on:slide="change_line">
-            <slide v-for="slide in data.slides_mini" v-bind:key="slide.id">
-                <img :src="slide.image" :alt="slide.alt">
-                <span v-text="slide.title">Седан</span>
-            </slide>
-        </hooper>
+        <div style="position:relative">
+            <hooper class="items-mini" group="slider" :itemsToShow="3" :centerMode="true" v-on:slide="change_line">
+                <slide v-for="slide in data.slides_mini" v-bind:key="slide.id">
+                    <img :src="slide.image" :alt="slide.alt">
+                    <span v-text="slide.title">Седан</span>
+                </slide>
+            </hooper>
+            <span class="indicator"></span>
+        </div>
 
         <hooper id="items" class="items" group="slider" >
             <slide v-for="slide in data.slides" v-bind:key="slide.id" :class="slide.class" :data-model="slide.reduction">
