@@ -6,7 +6,9 @@
         </div>
         <div :v-if="data.pointers" class="block-img">
             <ul :class="'pointers-' + data.pnum">
-                <li v-for="n in data.pointers"  :class="'p' + n">+</li>
+                <li v-for="n in data.pointers">
+                    <span :class="'pointer p' + n" v-on:click="activate">+</span>
+                </li>
             </ul>
         </div>
         <div class="block-img">
@@ -21,6 +23,11 @@
         props : ['data'],
         data: function () {
             return {}
+        },
+        methods: {
+            activate: function (event) {
+                alert();
+            }
         }
     };
 </script>
