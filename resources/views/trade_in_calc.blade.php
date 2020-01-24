@@ -48,6 +48,29 @@
                     <option selected="selected">Пробег</option>
                 </select>
             </div>
+
+            <div class="trigger-wrap">
+                <p class="trigger-wrap-text">
+                    Осталось <span class="model-count-text">666</span> Granta Лифтбек по спеццене
+                    Осталось <span class="model-count-text">666</span> Granta Лифтбек по спеццене
+                </p>
+            </div>
+
+            <div class="model-choose-text">
+                <p>
+                    Подберите выгодные условия на LADA Grant LiftBack
+                </p>
+            </div>
+
+            <div class="button-wrapper">
+                <button class="hollow-button hollow-button-recolored">
+                    <a href='/trade_in_calc'>ДА, ОЦЕНИТЬ МОЙ АВТОМОБИЛЬ</a>
+                </button>
+                <button class="hollow-button hollow-button-recolored">
+                    У МЕНЯ НЕТ АВТОМОБИЛЯ
+                </button>
+            </div>
+
             <div style="margin-bottom: 20%">
                 <div class="progressbar-wrapper">
                     <div class="progressbar-section-colored">
