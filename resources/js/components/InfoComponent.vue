@@ -18,7 +18,7 @@
             <div class="block-aside">
                 <div class="aside_wrap" >
                     <div class="aside_text" v-text="data.slider"></div>
-                    <div class="close" v-on:click="deactivate">X</div>
+                    <div class="close" v-on:click="deactivate"></div>
                 </div>
             </div>
         </div>
