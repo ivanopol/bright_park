@@ -31,7 +31,23 @@
     <div class="container">
         <section>
             <h3>Оцените свой автомобиль</h3>
-
+            <div class="container dropdown-group">
+                <select class="colored">
+                    <option selected="selected">Марка</option>
+                </select>
+                <select class="colored">
+                    <option selected="selected">Модель</option>
+                </select>
+                <select class="colored">
+                    <option selected="selected">Год выпуска</option>
+                </select>
+                <select class="colored">
+                    <option selected="selected">Комплектация</option>
+                </select>
+                <select class="colored">
+                    <option selected="selected">Пробег</option>
+                </select>
+            </div>
             <div style="margin-bottom: 20%">
                 <div class="progressbar-wrapper">
                     <div class="progressbar-section-colored">
