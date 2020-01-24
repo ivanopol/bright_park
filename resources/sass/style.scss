@@ -263,7 +263,6 @@ $context: 375;
             -o-transition: box-shadow ease-out .2s, opacity .1s ease-out .2s;
             transition: box-shadow ease-out .2s, opacity .1s ease-out .2s;
 
-
             &.is_opacity {
                 opacity: 0;
                 box-shadow: 0 0 0 0 rgba(237, 155, 33, 0.4);
@@ -281,7 +280,9 @@ $context: 375;
             background-color: rgba(237, 155, 33, 0.8);
             display: flex;
             justify-content: center;
+            -webkit-box-pack: center;
             align-items: center;
+            -webkit-box-align: center;
             border-radius: 50px;
             box-shadow: 0 0 0 7px rgba(237, 155, 33, 0.4);
         }
