@@ -7,7 +7,6 @@
 require('./bootstrap');
 window.Vue = require('vue');
 window.Vuex = require('vuex');
-
 //import Vuex from 'vuex';
 
 Vue.use(Vuex);
@@ -27,6 +26,7 @@ Vue.component('info-component', require('./components/InfoComponent.vue').defaul
 Vue.component('color-choose-component', require('./components/ColorChooseComponent.vue').default);
 Vue.component('form-component', require('./components/FormComponent.vue').default);
 Vue.component('review-component', require('./components/ReviewComponent.vue').default);
+Vue.component('model-details-component', require('./components/ModelDetailsComponent').default);
 
 const store = new Vuex.Store({
     state: {

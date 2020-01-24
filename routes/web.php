@@ -21,4 +21,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::any('/basic', 'HomeController@basic')->name('basic');
 Route::any('/alt_menu', 'HomeController@alt_menu')->name('alt_menu');
+Route::any('/model_details', 'HomeController@model_details')->name('model_details');
+Route::any('/basic', 'HomeController@basic')->name('basic');
+Route::any('/alt_menu', 'HomeController@alt_menu')->name('alt_menu');
+Route::any('/trade_in_calc', 'HomeController@trade_in_calc')->name('trade_in_calc');
+
 
