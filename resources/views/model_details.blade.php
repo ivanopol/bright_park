@@ -88,14 +88,18 @@
                         Оцените автомобиль
                     </p>
                 </div>
+
                 <div class="divider"></div>
+
                 <div class="buy-step-circle divided">
                     <p class="buy-step-number">2</p>
                     <p class="buy-step-text">
                         Рассчитайте платеж
                     </p>
                 </div>
+
                 <div class="divider"></div>
+
                 <div class="buy-step-circle divided">
                     <p class="buy-step-number">3</p>
                     <p class="buy-step-text">
@@ -118,6 +122,30 @@
                     У МЕНЯ НЕТ АВТОМОБИЛЯ
                 </button>
             </div>
+
+            <div style="margin-bottom: 20%">
+                <div class="progressbar-wrapper">
+                    <div class="progressbar-section-colored">
+                        <p class="progressbar-text">Осталось всего 2 шага до получения выгодных условий</p>
+                    </div>
+                    <div class="progressbar-section">
+                    </div>
+                    <div class="progressbar-section">
+                    </div>
+                </div>
+            </div>
+
         </section>
     </div>
+
+    <script>
+        $(".meter > span").each(function() {
+            $(this)
+                .data("origWidth", $(this).width())
+                .width(0)
+                .animate({
+                    width: $(this).data("origWidth") // or + "%" if fluid
+                }, 1200);
+        });
+    </script>
 @endsection
