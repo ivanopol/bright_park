@@ -287,6 +287,95 @@ $context: 375;
         }
     }
 
+    .block {
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        p {
+            line-height: 1.4;
+            margin-bottom: 40px;
+        }
+
+        &-text {
+            padding: 30px 30px 0;
+
+            p.note_1 {
+                margin-bottom: 20px;
+                text-align: center;
+            }
+        }
+
+        &-aside,
+        &-img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: #000;
+        }
+
+        &-img {
+            transition: transform ease-in 0.8s;
+            img {
+                width: 100%;
+            }
+
+            &.show {
+                transform: scale(3);
+            }
+        }
+
+        &-aside {
+            touch-action: pan-y;
+            user-select: none;
+            -webkit-user-drag: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            left: 110%;
+            width: 100%;
+            -webkit-transition: all ease-in 0.75s;
+            -moz-transition: all ease-in 0.75s;
+            -o-transition: all ease-in 0.75s;
+            transition: all ease-in 0.75s;
+
+            .aside_wrap {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                padding: 20px 30px;
+                .aside_text {
+                    color: #fff;
+                }
+
+                .close {
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    width: 20px;
+                    height: 20px;
+                    color: #fff;
+                    font-weight: bold;
+                }
+            }
+/*            transform: translateX(150%);
+            -webkit-transition: transform ease-in 0.5s;
+            -moz-transition: transform ease-in 0.5s;
+            -o-transition: transform ease-in 0.5s;
+            transition: transform ease-in 0.5s;*/
+
+            &.show {
+               //transform: translateX(0%);
+                left: 0;
+/*                animation: slidein 0.75s 1 ease-in;
+                animation-fill-mode: forwards;*/
+            }
+        }
+    }
+
+
     .pointers-1 {
         .p1 {
             left: get-vw(50px, $context);
@@ -373,67 +462,6 @@ $context: 375;
         }
     }
 
-    .block {
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            line-height: 1.3;
-        }
-
-        p {
-            line-height: 1.4;
-            margin-bottom: 40px;
-        }
-
-        &-text {
-            padding: 30px 30px 0;
-
-            p.note_1 {
-                margin-bottom: 20px;
-                text-align: center;
-            }
-        }
-
-        &-aside,
-        &-img {
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background-color: #000;
-        }
-
-        &-img {
-            transition: transform ease-in 0.8s;
-            img {
-                width: 100%;
-            }
-
-            &.show {
-                transform: scale(3);
-            }
-        }
-
-        &-aside {
-            touch-action: pan-y;
-            user-select: none;
-            -webkit-user-drag: none;
-            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-            left: 110%;
-/*            transform: translateX(150%);
-            -webkit-transition: transform ease-in 0.5s;
-            -moz-transition: transform ease-in 0.5s;
-            -o-transition: transform ease-in 0.5s;
-            transition: transform ease-in 0.5s;*/
-
-            &.show {
-               //transform: translateX(0%);
-                animation: slidein 0.75s 1 ease-in;
-                animation-fill-mode: forwards;
-            }
-        }
-    }
 
 
 

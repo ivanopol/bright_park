@@ -16,7 +16,10 @@
                 <img :src="data.url" alt="">
             </div>
             <div class="block-aside">
-
+                <div class="aside_wrap" >
+                    <div class="aside_text" v-text="data.slider"></div>
+                    <div class="close" v-on:click="deactivate">X</div>
+                </div>
             </div>
         </div>
     </section>
@@ -40,16 +43,25 @@
         },
         methods: {
             activate: function (event) {
-
                 let dots = document.querySelectorAll('#pointer_' + this.n + ' ul li span');
                 dots.forEach(function(item, i, arr) {
                     item.className += ' is_opacity';
                 });
                 let aside = document.querySelectorAll('#pointer_' + this.n + ' .block-aside');
-                console.log(aside);
                 aside[0].className += ' show';
                 let image = document.querySelectorAll('#pointer_' + this.n + ' .block-img');
                 image[0].className += ' show';
+            },
+            deactivate: function (event) {
+
+               let dots = document.querySelectorAll('#pointer_' + this.n + ' ul li span');
+                dots.forEach(function(item, i, arr) {
+                    item.classList.remove("is_opacity");
+                });
+                let aside = document.querySelectorAll('#pointer_' + this.n + ' .block-aside');
+                aside[0].classList.remove("show");
+                let image = document.querySelectorAll('#pointer_' + this.n + ' .block-img');
+                image[0].classList.remove("show");
             }
         }
     };

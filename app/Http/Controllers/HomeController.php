@@ -119,7 +119,8 @@ class HomeController extends Controller
                     'url' => 'build/images/blocks/block_01.png',
                     'pointers' => 0,
                     'pnum' => 0,
-                    'show' => false
+                    'show' => false,
+                    'slider' => 'Современная форма кузова Улучшенная аэродинамика автомобиля'
                 ],
                 [
                     'title' => '<span class="c_orange">Новое</span> в знакомом',
@@ -127,7 +128,8 @@ class HomeController extends Controller
                     'url' => 'build/images/blocks/mobile/block_02.jpg',
                     'pointers' => 5,
                     'pnum' => 1,
-                    'show' => false
+                    'show' => false,
+                    'slider' => 'Настройка сиденья водителя Регулировка в диапазоне 40 мм'
                 ],
                 [
                     'title' => '<span class="c_orange">Забота</span> о каждом',
@@ -135,7 +137,8 @@ class HomeController extends Controller
                     'url' => 'build/images/blocks/block_03.png',
                     'pointers' => 5,
                     'pnum' => 2,
-                    'show' => false
+                    'show' => false,
+                    'slider' => ''
                 ],
                 [
                     'title' => '<span class="c_orange">Ответственность</span> и безопасность',
@@ -143,7 +146,8 @@ class HomeController extends Controller
                     'url' => 'build/images/blocks/block_04.png',
                     'pointers' => 6,
                     'pnum' => 3,
-                    'show' => false
+                    'show' => false,
+                    'slider' => 'Подушки безопасности Две фронтальные подушки безопасности – необходимая защита водителя и пассажира'
                 ]
             ],
             'colors' => [
