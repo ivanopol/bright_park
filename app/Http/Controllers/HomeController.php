@@ -119,6 +119,8 @@ class HomeController extends Controller
                     'url' => 'build/images/blocks/block_01.png',
                     'pointers' => 0,
                     'pnum' => 0,
+                    'show' => false,
+                    'slider' => 'Современная форма кузова Улучшенная аэродинамика автомобиля'
                 ],
                 [
                     'title' => '<span class="c_orange">Новое</span> в знакомом',
@@ -126,6 +128,8 @@ class HomeController extends Controller
                     'url' => 'build/images/blocks/mobile/block_02.jpg',
                     'pointers' => 5,
                     'pnum' => 1,
+                    'show' => false,
+                    'slider' => 'Настройка сиденья водителя Регулировка в диапазоне 40 мм'
                 ],
                 [
                     'title' => '<span class="c_orange">Забота</span> о каждом',
@@ -133,6 +137,8 @@ class HomeController extends Controller
                     'url' => 'build/images/blocks/block_03.png',
                     'pointers' => 5,
                     'pnum' => 2,
+                    'show' => false,
+                    'slider' => ''
                 ],
                 [
                     'title' => '<span class="c_orange">Ответственность</span> и безопасность',
@@ -140,6 +146,8 @@ class HomeController extends Controller
                     'url' => 'build/images/blocks/block_04.png',
                     'pointers' => 6,
                     'pnum' => 3,
+                    'show' => false,
+                    'slider' => 'Подушки безопасности Две фронтальные подушки безопасности – необходимая защита водителя и пассажира'
                 ]
             ],
             'colors' => [
@@ -147,43 +155,68 @@ class HomeController extends Controller
                     'title' => 'Голубая планета',
                     'image' => 'build/images/colors/lada/granta/lada_granta_blue_planet.png',
                     'class' => 'color-blue-planet',
+                    'is_active' => true
                 ],
                 [
                     'title' => 'Сердолик',
                     'image' => 'build/images/colors/lada/granta/lada_granta_cornelian.png',
                     'class' => 'color-cornelian',
+                    'is_active' => false
                 ],
                 [
                     'title' => 'Белое облако',
                     'image' => 'build/images/colors/lada/granta/lada_granta_white_cloud.png',
                     'class' => 'color-white-cloud',
+                    'is_active' => false
                 ],
                 [
                     'title' => 'Пантера',
                     'image' => 'build/images/colors/lada/granta/lada_granta_panther.png',
                     'class' => 'color-panther',
+                    'is_active' => false
                 ],
                 [
                     'title' => 'Рислинг',
                     'image' => 'build/images/colors/lada/granta/lada_granta_riesling.png',
                     'class' => 'color-riesling',
+                    'is_active' => false
                 ],
                 [
                     'title' => 'Техно',
                     'image' => 'build/images/colors/lada/granta/lada_granta_techno.png',
                     'class' => 'color-techno',
+                    'is_active' => false
                 ],
                 [
                     'title' => 'Борнео',
                     'image' => 'build/images/colors/lada/granta/lada_granta_borneo.png',
                     'class' => 'color-borneo',
+                    'is_active' => false
                 ],
                 [
                     'title' => 'Кориандр',
                     'image' => 'build/images/colors/lada/granta/lada_granta_coriander.png',
                     'class' => 'color-coriander',
+                    'is_active' => false
                 ],
             ],
+            'reviews' => [
+                [
+                    'url' => 'https://www.kolesa.ru/article/pyat-veshhej-za-kotorye-lyubyat-i-nenavidyat-lada-granta',
+                    'quote' => 'Гранта сделана в России и специально для России. Клиренс в 165 мм хвалят очень многие владельцы этого авто',
+                    'author' => 'портал <cite>КОЛЕСА.ру</cite>'
+                ],
+                [
+                    'url' => 'https://www.kolesa.ru/article/pyat-veshhej-za-kotorye-lyubyat-i-nenavidyat-lada-granta',
+                    'quote' => 'Обновлённая Гранта предлагается с четырьмя типами кузова: кроме традиционного седана, это лифтбек, хэтчбек и даже универсал! ',
+                    'author' => 'портал <cite>КОЛЕСА.ру</cite>'
+                ],
+                [
+                    'url' => 'https://www.kolesa.ru/article/pyat-veshhej-za-kotorye-lyubyat-i-nenavidyat-lada-granta',
+                    'quote' => 'Среди покупателей этой машины до сих пор много тех, кто и техобслуживание, и ремонт ведёт своими силами, в гараже.',
+                    'author' => 'портал <cite>КОЛЕСА.ру</cite>'
+                ]
+            ]
         ];
 
         return view('basic', [ 'data' => $data ]);
