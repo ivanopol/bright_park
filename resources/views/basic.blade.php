@@ -31,9 +31,9 @@
     <div class="container">
         <hooper-component :data='@json($data['slider'])' ></hooper-component>
         <info-component :data='@json($data['blocks'][0])'></info-component>
-        <info-component :data='@json($data['blocks'][1])'></info-component>
-        <info-component :data='@json($data['blocks'][2])'></info-component>
-        <info-component :data='@json($data['blocks'][3])'></info-component>
+        <info-component :data='@json($data['blocks'][1])' :n="1"></info-component>
+        <info-component :data='@json($data['blocks'][2])' :n="2"></info-component>
+        <info-component :data='@json($data['blocks'][3])' :n="3"></info-component>
         <color-choose-component :colors='@json($data['colors'])'></color-choose-component>
         <form-component></form-component>
 

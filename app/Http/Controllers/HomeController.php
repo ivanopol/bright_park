@@ -119,6 +119,7 @@ class HomeController extends Controller
                     'url' => 'build/images/blocks/block_01.png',
                     'pointers' => 0,
                     'pnum' => 0,
+                    'show' => false
                 ],
                 [
                     'title' => '<span class="c_orange">Новое</span> в знакомом',
@@ -126,6 +127,7 @@ class HomeController extends Controller
                     'url' => 'build/images/blocks/mobile/block_02.jpg',
                     'pointers' => 5,
                     'pnum' => 1,
+                    'show' => false
                 ],
                 [
                     'title' => '<span class="c_orange">Забота</span> о каждом',
@@ -133,6 +135,7 @@ class HomeController extends Controller
                     'url' => 'build/images/blocks/block_03.png',
                     'pointers' => 5,
                     'pnum' => 2,
+                    'show' => false
                 ],
                 [
                     'title' => '<span class="c_orange">Ответственность</span> и безопасность',
@@ -140,6 +143,7 @@ class HomeController extends Controller
                     'url' => 'build/images/blocks/block_04.png',
                     'pointers' => 6,
                     'pnum' => 3,
+                    'show' => false
                 ]
             ],
             'colors' => [
