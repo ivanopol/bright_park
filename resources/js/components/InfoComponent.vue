@@ -8,7 +8,7 @@
             <div :v-if="data.pointers">
                 <ul :class="'pointers-' + data.pnum">
                     <li v-for="n in data.pointers">
-                        <span :class="'pointer p' + n" v-on:click="activate">+</span>
+                        <span :class="'pointer p' + n" v-on:click="activate"></span>
                     </li>
                 </ul>
             </div>

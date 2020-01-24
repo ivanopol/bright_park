@@ -251,6 +251,19 @@ $context: 375;
     background-color: #000;
     height: 211px;
 
+    &#pointer_1 {
+        height: 211px;
+    }
+
+    &#pointer_2 {
+        height: 235px;
+    }
+
+    &#pointer_3 {
+        height: 238px;
+    }
+
+
     .pointers-1,
     .pointers-2,
     .pointers-3 {
@@ -285,6 +298,26 @@ $context: 375;
             -webkit-box-align: center;
             border-radius: 50px;
             box-shadow: 0 0 0 7px rgba(237, 155, 33, 0.4);
+
+            &:after,
+            &:before {
+                content: '';
+                width: 14px;
+                height: 2px;
+                background-color: #fff;
+                display: block;
+                position: absolute;
+            }
+
+            &:after {
+                transform: rotate(0deg);
+                left: 8px;
+            }
+
+            &:before {
+                transform: rotate(-90deg);
+                top: 14px;
+            }
         }
     }
 
@@ -320,7 +353,7 @@ $context: 375;
         }
 
         &-img {
-            transition: transform ease-in 0.8s;
+            transition: transform ease-in 0.6s;
             img {
                 width: 100%;
             }
@@ -337,10 +370,11 @@ $context: 375;
             -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
             left: 110%;
             width: 100%;
-            -webkit-transition: all ease-in 0.75s;
-            -moz-transition: all ease-in 0.75s;
-            -o-transition: all ease-in 0.75s;
-            transition: all ease-in 0.75s;
+            -webkit-transition: all ease-in 0.45s;
+            -moz-transition: all ease-in 0.45s;
+            -o-transition: all ease-in 0.45s;
+            transition: all ease-in 0.45s;
+            z-index: 10;
 
             .aside_wrap {
                 width: 100%;
@@ -361,17 +395,9 @@ $context: 375;
                     font-weight: bold;
                 }
             }
-/*            transform: translateX(150%);
-            -webkit-transition: transform ease-in 0.5s;
-            -moz-transition: transform ease-in 0.5s;
-            -o-transition: transform ease-in 0.5s;
-            transition: transform ease-in 0.5s;*/
 
             &.show {
-               //transform: translateX(0%);
                 left: 0;
-/*                animation: slidein 0.75s 1 ease-in;
-                animation-fill-mode: forwards;*/
             }
         }
     }
@@ -462,9 +488,6 @@ $context: 375;
             top: get-vw(129px, $context);
         }
     }
-
-
-
 
     @media only screen and (max-width: 321px) {
 
