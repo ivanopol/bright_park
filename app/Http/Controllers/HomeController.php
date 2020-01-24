@@ -203,4 +203,9 @@ class HomeController extends Controller
     {
         return view('model_details');
     }
+
+    public function trade_in_calc()
+    {
+        return view('trade_in_calc');
+    }
 }

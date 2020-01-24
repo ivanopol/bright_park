@@ -84,14 +84,23 @@
             <div class="buy-steps-wrapper">
                 <div class="buy-step-circle-colored divided">
                     <p class="buy-step-number">1</p>
+                    <p class="buy-step-text">
+                        Оцените автомобиль
+                    </p>
                 </div>
                 <div class="divider"></div>
                 <div class="buy-step-circle divided">
                     <p class="buy-step-number">2</p>
+                    <p class="buy-step-text">
+                        Рассчитайте платеж
+                    </p>
                 </div>
                 <div class="divider"></div>
                 <div class="buy-step-circle divided">
                     <p class="buy-step-number">3</p>
+                    <p class="buy-step-text">
+                        Заполните форму
+                    </p>
                 </div>
             </div>
 
@@ -103,7 +112,7 @@
 
             <div class="button-wrapper">
                 <button class="hollow-button hollow-button-recolored">
-                    ДА, ОЦЕНИТЬ МОЙ АВТОМОБИЛЬ
+                    <a href='/trade_in_calc'>ДА, ОЦЕНИТЬ МОЙ АВТОМОБИЛЬ</a>
                 </button>
                 <button class="hollow-button hollow-button-recolored">
                     У МЕНЯ НЕТ АВТОМОБИЛЯ
