@@ -543,41 +543,6 @@ $context: 375;
     }
 }
 
-header {
-    .logo-wrap {
-        padding: 15px 15px 0 15px;
-
-        .logo-bright-park {
-            background: url(/build/images/logo_bright_park.svg) no-repeat left;
-            width: 49%;
-            height: 25px;
-            background-size: 100%;
-            display: inline-block;
-        }
-
-        .logo-lada {
-            background: url(/build/images/logo_lada.svg) no-repeat right;
-            width: 49%;
-            height: 25px;
-            background-size: 40%;
-            display: inline-block;
-        }
-    }
-    .lada-line {
-        background: url(/build/images/lada_line.svg) no-repeat;
-        width: 100%;
-        height: 100%;
-        background-size: 101%;
-
-        p {
-            padding-top: 15px;
-            padding-right: 15px;
-            text-align: right;
-            font-weight: bold;
-        }
-    }
-}
-
 
 .change-color {
     background-color: #000;
@@ -957,8 +922,12 @@ footer {
     display: flex;
     justify-content: space-between;
 
-    img {
-        width: 120%;
+    div {
+        width: 20%;
+
+        & > img {
+            width: 100%;
+        }
     }
 }
 
