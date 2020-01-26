@@ -31,6 +31,32 @@
 <body>
     <div id="app">
         <div class="wrapper">
+            <section id="panel_2">
+                <ul>
+                    <li>
+                        <div class="menu"></div>
+                        <span>Меню</span>
+                    </li>
+                    <li>
+                        <div class="call"></div>
+                        <span>Звонок</span>
+                    </li>
+                    <li>
+                        <div class="route"></div>
+                        <span>Маршрут</span>
+                    </li>
+                </ul>
+            </section>
+            <header-component></header-component>
+{{--            <header>
+                <div class="logo-wrap">
+                    <a class="logo-bright-park" href="/home"></a>
+                    <div class="logo-lada"></div>
+                </div>
+                <div class="lada-line">
+                    <p id="model-active"></p>
+                </div>
+            </header>--}}
             @yield('content')
         </div>
     </div>
