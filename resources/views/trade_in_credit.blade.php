@@ -31,7 +31,7 @@
     <div class="container">
         <section>
             <div class="buy-steps-wrapper">
-                <div class="buy-step-circle-colored divided">
+                <div class="buy-step-circle divided">
                     <p class="buy-step-number">1</p>
                     <p class="buy-step-text">
                         Оцените автомобиль
@@ -40,7 +40,7 @@
 
                 <div class="divider"></div>
 
-                <div class="buy-step-circle divided">
+                <div class="buy-step-circle-colored divided">
                     <p class="buy-step-number">2</p>
                     <p class="buy-step-text">
                         Рассчитайте платеж
@@ -56,36 +56,30 @@
                     </p>
                 </div>
             </div>
-            <div class="dropdown-group-title">Оцените свой автомобиль</div>
-            <div class="container dropdown-group">
-                <select class="dropdown">
-                    <option selected="selected">Марка</option>
-                </select>
-                <select>
-                    <option selected="selected">Модель</option>
-                </select>
-                <select>
-                    <option selected="selected">Год выпуска</option>
-                </select>
-                <select>
-                    <option selected="selected">Комплектация</option>
-                </select>
-                <select>
-                    <option selected="selected">Пробег</option>
-                </select>
-            </div>
 
-            <div class="trigger-wrap">
-                <p class="trigger-wrap-text">
-                    Рыночная оценка <span class="model-count-text">666 руб</span> <br/>
-                    Оценка Bright Park <span class="model-count-text">666 руб</span>
-                </p>
-            </div>
-
-            <div class="model-choose-text">
+            <div class="credit-profit-text">
                 <p>
-                    Предложение действует до 16 января
+                    В Bright Park выгодные условия кредитования!
+                </p> <br/>
+                <ul>
+                    <li>12 банков-партнеров</li>
+                    <li>Одобрение по кредиту 30 минут</li>
+                    <li>Вероятность одобрения 96%</li>
+                </ul>
+                <br/>
+                <p>
+                    Первоначальный взнос
                 </p>
+                <div class="button-wrapper-row">
+                    <button class="hollow-button hollow-button-recolored">
+                        <a>Зачесть мой авто первоначальным взносом</a>
+                    </button>
+                </div>
+            </div>
+
+            <div>
+                <range-slider-component>
+                </range-slider-component>
             </div>
 
             <div class="button-wrapper-row">

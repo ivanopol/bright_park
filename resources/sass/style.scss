@@ -976,12 +976,36 @@ footer {
     margin: 10%;
 }
 
+.button-wrapper-row {
+    margin: 5%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .hollow-button {
     color: #606060;
     background-color: #ffffff;
     width: 100%;
     text-transform: uppercase;
-    border-radius: 5px;
+    border-radius: 15px;
+    padding: 8px 13px;
+    text-align: center;
+    border: #606060 solid 1px;
+    margin-bottom: 1%;
+    font-size: 12px;
+
+    a {
+        color: #606060;
+        font-weight: normal;
+    }
+}
+
+.hollow-button-halfsize{
+    color: #606060;
+    background-color: #ffffff;
+    width: 45%;
+    text-transform: uppercase;
+    border-radius: 15px;
     padding: 8px 13px;
     text-align: center;
     border: #606060 solid 1px;
@@ -1005,6 +1029,7 @@ footer {
 
 .progressbar-wrapper{
     border: #0e0e0e;
+    margin-bottom: 20%;
     border-top: #606060 1px solid;
     border-bottom: #606060 1px solid;
     display: flex;
@@ -1053,22 +1078,32 @@ footer {
         -webkit-appearance: none;
         -moz-appearance: none;
     }
+}
 
+.dropdown-group-title{
+    text-align: center;
+    font-weight: bold;
+    padding-top: 5%;
+}
 
-    select.colored {
-        background-image:
-            linear-gradient(45deg, transparent 50%, #ffff 50%),
-            linear-gradient(135deg, #ffff 50%, transparent 50%),
-            linear-gradient(to right, #ff8351, #ff8351);
-        background-position:
-            calc(100% - 10px) calc(1em + 2px),
-            calc(100% - 15px) calc(1em + 2px),
-            100% 0;
-        background-size:
-            10px 10px,
-            10px 10px,
-            1em 2em;
-        background-repeat: no-repeat;
+.credit-profit-text{
+    margin: 5%;
+    padding: 5%;
+
+    ul {
+        list-style: none;
+        font-size: 12px;
+    }
+
+    ul li:before {
+        content: '✓  ';
+        color: #1d643b;
+    }
+
+    .hollow-button{
+        border-radius: 25px;
     }
 }
+
+
 

@@ -123,15 +123,14 @@
                 </button>
             </div>
 
-            <div style="margin-bottom: 20%">
-                <div class="progressbar-wrapper">
-                    <div class="progressbar-section-colored">
-                        <p class="progressbar-text">Осталось всего 2 шага до получения выгодных условий</p>
-                    </div>
-                    <div class="progressbar-section">
-                    </div>
-                    <div class="progressbar-section">
-                    </div>
+
+            <div class="progressbar-wrapper">
+                <div class="progressbar-section-colored">
+                    <p class="progressbar-text">Осталось всего 2 шага до получения выгодных условий</p>
+                </div>
+                <div class="progressbar-section">
+                </div>
+                <div class="progressbar-section">
                 </div>
             </div>
 

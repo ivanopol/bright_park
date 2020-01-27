@@ -27,6 +27,8 @@ Vue.component('color-choose-component', require('./components/ColorChooseCompone
 Vue.component('form-component', require('./components/FormComponent.vue').default);
 Vue.component('review-component', require('./components/ReviewComponent.vue').default);
 Vue.component('model-details-component', require('./components/ModelDetailsComponent').default);
+Vue.component('range-slider-component', require('./components/RangeSliderComponent').default);
+
 
 const store = new Vuex.Store({
     state: {
