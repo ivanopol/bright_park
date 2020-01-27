@@ -53,9 +53,10 @@
         z-index: 1000;
 
         .logo-wrap {
-            padding: 15px 15px 0 15px;
+            padding: 15px 15px 10px;
             display: flex;
             justify-content: space-between;
+            background-color: #000;
             .logo-bright-park {
                 width: 49%;
                 height: 25px;
