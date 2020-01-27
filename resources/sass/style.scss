@@ -1098,3 +1098,51 @@ footer {
     position: relative;
     overflow: hidden;
 }
+
+.advantages {
+    padding: 80px 30px 100px;
+
+    h1 {
+        font-size: 28px;
+        font-weight: bold;
+        line-height: 34px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    p {
+        margin-bottom: 30px;
+        line-height: 20px;
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        li {
+            width: 49%;
+            margin-bottom: 30px;
+
+            .advantage {
+                .value {
+                    display: block;
+                    font-size: 30px;
+                    font-weight: bold;
+                    margin-bottom: 30px;
+                }
+
+                .text {
+                    display: block;
+                    font-size: 15px;
+                    font-weight: bold;
+                    margin-bottom: 20px;
+                }
+            }
+
+            &:nth-child(1),
+            &:nth-child(2) {
+                border-bottom: 4px solid #ff8351;
+            }
+        }
+    }
+}
