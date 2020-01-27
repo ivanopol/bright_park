@@ -28,6 +28,7 @@ Vue.component('form-component', require('./components/FormComponent.vue').defaul
 Vue.component('review-component', require('./components/ReviewComponent.vue').default);
 Vue.component('model-details-component', require('./components/ModelDetailsComponent').default);
 Vue.component('header-component', require('./components/elements/HeaderComponent').default);
+Vue.component('main-hooper-component', require('./components/MainHooperComponent').default);
 
 const store = new Vuex.Store({
     state: {

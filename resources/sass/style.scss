@@ -734,7 +734,7 @@ form {
     }
 
     .hooper-pagination {
-        bottom: -26px;
+        top: 260px;
 
         .hooper-indicator:hover, .hooper-indicator.is-active {
             background-color: #666;
@@ -757,6 +757,28 @@ form {
                 }
             }
         }
+    }
+}
+
+.main-screen-wrap .hooper-pagination {
+    top: 65vh;
+
+    .hooper-indicator:hover, .hooper-indicator.is-active {
+        background-color: #666;
+        border-color: #fff;
+    }
+
+    .hooper-indicator {
+        width: 8px;
+        height: 8px;
+        border: 2px solid #fff;
+        background-color: #fff;
+        border-radius: 8px;
+        margin: 0 4px;
+        -webkit-transition: all ease-out 0.3s;
+        -moz-transition: all ease-out 0.3s;
+        -o-transition: all ease-out 0.3s;
+        transition: all ease-out 0.3s;
     }
 }
 

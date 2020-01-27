@@ -1,5 +1,5 @@
 <template>
-    <header>
+    <header class="fixed">
         <div class="logo-wrap">
             <div class="logo-bright-park">
                 <a href="/home">
@@ -22,14 +22,19 @@
 
     export default {
         name: "App",
-        props: [
-            'theme',
-            'line'
-        ],
+        props: {
+            theme: {
+                default: 'dark',
+                type: String,
+            },
+            line: {
+                default: true,
+                type: Boolean
+            }
+        },
         data: function () {
             return {
-                theme: 'dark',
-                line: true,
+
             };
         },
         components: {
@@ -40,7 +45,13 @@
 </script>
 
 <style scoped lang="scss">
+    .fixed {
+        position: fixed;
+    }
+
     header {
+        z-index: 1000;
+
         .logo-wrap {
             padding: 15px 15px 0 15px;
             display: flex;
