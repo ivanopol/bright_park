@@ -6,7 +6,7 @@
     <main-hooper-component></main-hooper-component>
 </section>
 <div class="container">
-    <div class="advantages">
+    <div id="advantages" class="advantages_wrap">
         <h1>Брайт Парк</h1>
         <p>Мы - федеральный дилер LADA, работающий в Москве и ещё 5 регионах с 2008 года.</p>
         <ul>
@@ -37,4 +37,55 @@
         </ul>
     </div>
 </div>
+<section id="models" class="models_wrap">
+    <h2>Модели</h2>
+    <ul>
+        <li>
+            <a href="/basic">
+                <div class="img_wrap">
+                    <img src="build/images/photos/models/granta/granta.png" alt="Granta">
+                </div>
+                <div class="title">Granta</div>
+            </a>
+        </li>
+        <li>
+            <a href="/basic">
+                <div class="img_wrap">
+                    <img src="build/images/photos/models/vesta/vesta.png" alt="Vesta">
+                </div>
+                <div class="title">Vesta</div>
+            </a>
+        </li>
+        <li>
+            <a href="/basic">
+                <div class="img_wrap">
+                    <img src="build/images/photos/models/xray/xray.png" alt="Xray">
+                </div>
+                <div class="title">Xray</div>
+            </a>
+        </li>
+        <li>
+            <a href="/basic">
+                <div class="img_wrap">
+                    <img src="build/images/photos/models/4x4/4x4.png" alt="4x4">
+                </div>
+                <div class="title">4x4</div>
+            </a>
+        </li>
+        <li>
+            <a href="/basic">
+                <div class="img_wrap">
+                    <img src="build/images/photos/models/largus/largus.png" alt="Largus">
+                </div>
+                <div class="title">Largus</div>
+            </a>
+        </li>
+    </ul>
+</section>
+<section id="buttons_other" class="buttons_other">
+    <div class="item-buttons-other">
+        <a href="/basic" class="btn btn-primary">Записаться на тест-драйв</a>
+        <a href="" class="btn btn-secondary">Записаться на сервис</a>
+    </div>
+</section>
 @endsection

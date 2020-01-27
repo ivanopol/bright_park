@@ -1,6 +1,6 @@
 <template>
     <header class="fixed">
-        <div class="logo-wrap">
+        <div class="logo-wrap" :class="theme">
             <div class="logo-bright-park">
                 <a href="/home">
                     <logo-bright-park :theme="theme"></logo-bright-park>
@@ -53,9 +53,10 @@
         z-index: 1000;
 
         .logo-wrap {
-            padding: 15px 15px 0 15px;
+            padding: 15px 15px 0;
             display: flex;
             justify-content: space-between;
+
             .logo-bright-park {
                 width: 49%;
                 height: 25px;
@@ -65,15 +66,23 @@
                 width: 16%;
                 height: 25px;
             }
+
+            &.dark {
+                background-color: #fff;
+            }
+            &.light {
+                padding-bottom: 10px;
+                background-color: #000;
+            }
         }
         .lada-line {
-            background: url(/build/images/lada_line.svg) no-repeat;
+            background: #fff url(/build/images/lada_line.svg) no-repeat;
             width: 100%;
             height: 100%;
             background-size: 101%;
 
             p {
-                padding-top: 20px;
+                padding-top: 15px;
                 padding-right: 15px;
                 text-align: right;
                 font-weight: bold;

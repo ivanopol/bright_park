@@ -9,7 +9,7 @@ body {
     background-color: #fff;
 }
 
-.wrapper {
+.wrapper{
     min-width: 320px;
 }
 
@@ -22,7 +22,6 @@ a {
 h2 {
     text-transform: uppercase;
     font-size: 30px;
-
     span {
         display: block;
     }
@@ -86,7 +85,6 @@ $context: 375;
     bottom: 0;
     left: 0;
     z-index: 10;
-
     ul {
         background-color: #f7f6f6;
         display: flex;
@@ -153,7 +151,6 @@ $context: 375;
     left: 0;
     z-index: 10;
     border-top: 1px solid #b2b2b2;
-
     ul {
         background-color: #f7f6f6;
         display: flex;
@@ -203,7 +200,6 @@ $context: 375;
     left: 0;
     z-index: 10;
     border-top: 1px solid #b2b2b2;
-
     ul {
         background-color: #f7f6f6;
         display: flex;
@@ -358,7 +354,6 @@ $context: 375;
 
         &-img {
             transition: transform ease-in 0.6s;
-
             img {
                 width: 100%;
             }
@@ -386,7 +381,6 @@ $context: 375;
                 height: 100%;
                 position: relative;
                 padding: 20px 30px;
-
                 .aside_text {
                     color: #fff;
                 }
@@ -540,7 +534,6 @@ $context: 375;
             &-text {
                 padding: 25px 25px 0;
                 font-size: 15px;
-
                 p.note_1 {
                     margin-bottom: 15px;
                     text-align: center;
@@ -553,7 +546,6 @@ $context: 375;
 
 .change-color {
     background-color: #000;
-
     h2 {
         color: #fff;
         text-align: center;
@@ -563,7 +555,6 @@ $context: 375;
     .car-color {
         position: relative;
         text-align: center;
-
         img {
             width: 80vw;
             margin: 0 auto;
@@ -571,7 +562,7 @@ $context: 375;
         }
 
         .backlight {
-            background: rgb(255, 255, 255);
+            background: rgb(255,255,255);
             background: radial-gradient(ellipse, rgba(255, 255, 255, 0.8) 10%, rgba(255, 255, 255, 0) 72%);
             width: 100vw;
             height: get-vw(200px, $context);
@@ -599,7 +590,6 @@ $context: 375;
             justify-content: space-between;
             align-content: space-between;
             height: get-vw(140px, $context);
-
             li {
                 width: 25%;
 
@@ -612,8 +602,8 @@ $context: 375;
                     border: 2px solid #b5b5b5;
                 }
 
-                & > div {
-                    box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.8);
+                &>div {
+                    box-shadow: 0 0 5px 1px rgba(255,255,255,0.8);
                 }
 
                 .circle {
@@ -663,8 +653,7 @@ $context: 375;
 
 form {
     margin-bottom: 60px;
-
-    & > * {
+    &>* {
         margin: 0 auto;
         display: block;
         outline: none;
@@ -688,7 +677,6 @@ form {
         &:active, {
             border-color: #5fbd89;
         }
-
         &:focus {
             border-color: #5fbd89;
             box-shadow: none;
@@ -713,7 +701,7 @@ form {
 
         &:active,
         &:focus {
-            box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, .5);
+            box-shadow: 0 0 0 0.2rem rgba(255,193,7,.5);
         }
     }
 }
@@ -723,7 +711,6 @@ form {
 
     ul {
         margin-bottom: 15px;
-
         li {
             width: 375px;
             display: inline-block;
@@ -747,7 +734,7 @@ form {
     }
 
     .hooper-pagination {
-        bottom: -26px;
+        top: 260px;
 
         .hooper-indicator:hover, .hooper-indicator.is-active {
             background-color: #666;
@@ -759,7 +746,7 @@ form {
                 .hooper-indicator {
                     width: 7px;
                     height: 7px;
-                    border: 1px solid #ccc;
+                    border:1px solid #ccc;
                     background-color: #ccc;
                     border-radius: 6px;
                     margin: 0 4px;
@@ -797,7 +784,6 @@ form {
 
 .trigger-wrap {
     margin: 30px 0;
-
     p {
         width: 80vw;
         display: block;
@@ -810,7 +796,7 @@ form {
             display: block;
             border: 5px solid #ed6c21;
             position: absolute;
-            top: -10px;
+            top:-10px;
             height: 110%;
             width: 10px;
         }
@@ -819,7 +805,6 @@ form {
             border-right: none;
             left: -25px;
         }
-
         &::after {
             border-left: none;
             right: -25px;
@@ -829,7 +814,6 @@ form {
 
 .photo_block {
     overflow: hidden;
-
     div {
         float: left;
         overflow: hidden;
@@ -869,14 +853,11 @@ form {
     color: #fff;
     background-color: #0e0e0e;
     text-align: center;
-
     ul {
         padding-top: 5px;
         padding-bottom: 20px;
-
         li {
             margin-bottom: 25px;
-
             a {
                 width: 80vw;
             }
@@ -886,7 +867,6 @@ form {
 
 footer {
     padding-bottom: 87px;
-
     .phone {
         border-bottom: 2px solid #b0c5dc;
         margin-bottom: -2px;
@@ -996,17 +976,6 @@ footer {
     margin-right: 15px
 }
 
-.trade-in-price-text {
-    text-align: center;
-    font-size: 18px;
-    line-height: 1.6;
-    color: #606060;
-    font-weight: bold;
-    margin-left: 15px;
-    margin-right: 15px;
-    padding-top: 5%;
-}
-
 .model-price-text {
     margin: 10%;
     text-align: center;
@@ -1047,36 +1016,12 @@ footer {
     margin: 10%;
 }
 
-.button-wrapper-row {
-    margin: 5%;
-    display: flex;
-    justify-content: space-evenly;
-}
-
 .hollow-button {
     color: #606060;
     background-color: #ffffff;
     width: 100%;
     text-transform: uppercase;
-    border-radius: 15px;
-    padding: 8px 13px;
-    text-align: center;
-    border: #606060 solid 1px;
-    margin-bottom: 1%;
-    font-size: 12px;
-
-    a {
-        color: #606060;
-        font-weight: normal;
-    }
-}
-
-.hollow-button-halfsize {
-    color: #606060;
-    background-color: #ffffff;
-    width: 45%;
-    text-transform: uppercase;
-    border-radius: 15px;
+    border-radius: 5px;
     padding: 8px 13px;
     text-align: center;
     border: #606060 solid 1px;
@@ -1098,9 +1043,8 @@ footer {
     }
 }
 
-.progressbar-wrapper {
+.progressbar-wrapper{
     border: #0e0e0e;
-    margin-bottom: 20%;
     border-top: #606060 1px solid;
     border-bottom: #606060 1px solid;
     display: flex;
@@ -1129,94 +1073,31 @@ footer {
     }
 }
 
-.dropdown-group {
-    margin: 5% 10%;
-
-    select {
-        margin-top: 2%;
-        width: 100%;
-        background-color: #f7f6f6;
-        border: thin solid #d0d0d0;
-        border-radius: 4px;
-        display: inline-block;
-        font: inherit;
-        line-height: 1.5em;
-        text-align: center;
-
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-    }
+.meter {
+    height: 20px;
+    position: relative;
+    background: #555;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    border-radius: 25px;
+    padding: 10px;
+    box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
 }
 
-.dropdown-group-title {
-    text-align: center;
-    font-weight: bold;
-    padding-top: 5%;
+.meter > span {
+    display: block;
+    height: 100%;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: rgb(43,194,83);
+    box-shadow:
+        inset 0 2px 9px  rgba(255,255,255,0.3),
+        inset 0 -2px 6px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
 }
-
-.credit-profit-text {
-    margin: 5% 5% 0;
-    padding: 5% 5% 0;
-
-    ul {
-        list-style: none;
-        font-size: 12px;
-    }
-
-    ul li:before {
-        content: '✓  ';
-        color: #1d643b;
-    }
-
-    .hollow-button {
-        border-radius: 25px;
-    }
-}
-
-.disabled-input {
-    input {
-        border-radius: 5px;
-        box-shadow: none;
-        border: 1px solid #606060;
-        width: 20%;
-        margin-left: 30%;
-        background: white
-    }
-}
-
-.range-slider-wrapper {
-    width: 90%;
-    margin: 5%;
-}
-
-.radio-buttons-group {
-    padding: 5%;
-    font-size: 10px;
-    display: grid;
-}
-
-.radio-buttons-group-option {
-    grid-column: span 1;
-
-    p {
-        grid-column: span 11;
-    }
-}
-
-.special-text-colored {
-    font-size: 14px;
-    color: #ee6723
-}
-
-.special-text-colored-bold {
-    font-size: 18px;
-    color: #ee6723;
-    font-weight: bold;
-}
-
 
 .advantages {
     padding: 80px 30px 100px;
@@ -1238,15 +1119,14 @@ footer {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
-
         li {
-            width: 49%;
+            width: 45%;
             margin-bottom: 30px;
 
             .advantage {
                 .value {
                     display: block;
-                    font-size: 30px;
+                    font-size: 36px;
                     font-weight: bold;
                     margin-bottom: 30px;
                 }
@@ -1267,5 +1147,94 @@ footer {
     }
 }
 
+.models_wrap {
+    padding: 80px 0 100px;
+    background-color: #000;
+    h2 {
+        color: #fff;
+        font-size: 28px;
+        font-weight: bold;
+        line-height: 34px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
 
+    ul {
+        padding: 0 20px;
+        li {
+            width: 100%;
+            display: flex;
+            justify-content: left;
+            flex-wrap: nowrap;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+            align-items: center;
 
+            a {
+                display: flex;
+                align-items: center;
+
+                .img_wrap {
+                    width: 47%;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                .title {
+                    color: #fff;
+                    font-size: 22px;
+                    text-transform: uppercase;
+                    position: relative;
+                    width: 48%;
+                    padding-left: 15px;
+                    font-weight: normal;
+
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        display: block;
+                        width: 20px;
+                        height: 20px;
+                        -webkit-transform: rotate(45deg);
+                        transform: rotate(45deg);
+                        border: 2px solid #606060;
+                        right: 0;
+                        top: 0;
+                        border-left: none;
+                        border-bottom: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.buttons_other {
+    .item-buttons-other {
+        margin: 40px 0 80px;
+        text-align: center;
+
+        & > a {
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            width: 85vw;
+            border-radius: 50px;
+            padding: 14px 15px 10px;
+        }
+
+        .btn-primary {
+            border: 2px solid #000;
+            color: #fff;
+            background-color: #000;
+        }
+
+        .btn-secondary {
+            border: 2px solid #000;
+            color: #000;
+            background-color: transparent;
+        }
+    }
+}
