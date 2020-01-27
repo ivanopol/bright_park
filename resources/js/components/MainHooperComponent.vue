@@ -1,34 +1,48 @@
 <template>
-    <hooper class="main-screen-wrap">
-        <slide>
-            <div class="asset-container">
-                <img class="asset-image" src="build/images/main_bg.jpg" alt="" />
-            </div>
-            <div class="product-content">
-                <p class="title-model">LADA Vesta</p>
-                <p class="title-tagline">Доплата при обмене <span>40 000 руб.</span></p>
-            </div>
-        </slide>
-        <slide>
-            <div class="asset-container">
-                <img class="asset-image" src="build/images/main_bg.jpg" alt="" />
-            </div>
-            <div class="product-content">
-                <p class="title-model">LADA Vesta</p>
-                <p class="title-tagline">Доплата при обмене <span>40 000 руб.</span></p>
-            </div>
-        </slide>
-        <slide>
-            <div class="asset-container">
-                <img class="asset-image" src="build/images/main_bg.jpg" alt="" />
-            </div>
-            <div class="product-content">
-                <p class="title-model">LADA Vesta</p>
-                <p class="title-tagline">Доплата при обмене <span>40 000 руб.</span></p>
-            </div>
-        </slide>
-        <hooper-pagination slot="hooper-addons"></hooper-pagination>
-    </hooper>
+    <section>
+        <hooper class="main-screen-wrap">
+            <slide>
+                <div class="asset-container">
+                    <img class="asset-image" src="build/images/main_bg.jpg" alt="" />
+                </div>
+                <div class="product-content">
+                    <p class="title-model">LADA Vesta</p>
+                    <p class="title-tagline">Доплата при обмене <span>40 000 руб.</span></p>
+                    <div class="item-buttons">
+                        <a href="/basic" class="btn btn-primary">Подробнее о модели</a>
+                        <a href="" class="btn btn-secondary">Условия акции</a>
+                    </div>
+                </div>
+            </slide>
+            <slide>
+                <div class="asset-container">
+                    <img class="asset-image" src="build/images/main_bg.jpg" alt="" />
+                </div>
+                <div class="product-content">
+                    <p class="title-model">LADA Vesta</p>
+                    <p class="title-tagline">Доплата при обмене <span>40 000 руб.</span></p>
+                    <div class="item-buttons">
+                        <a href="/basic" class="btn btn-primary">Подробнее о модели</a>
+                        <a href="" class="btn btn-secondary">Условия акции</a>
+                    </div>
+                </div>
+            </slide>
+            <slide>
+                <div class="asset-container">
+                    <img class="asset-image" src="build/images/main_bg.jpg" alt="" />
+                </div>
+                <div class="product-content">
+                    <p class="title-model">LADA Vesta</p>
+                    <p class="title-tagline">Доплата при обмене <span>40 000 руб.</span></p>
+                    <div class="item-buttons">
+                        <a href="/basic" class="btn btn-primary">Подробнее о модели</a>
+                        <a href="" class="btn btn-secondary">Условия акции</a>
+                    </div>
+                </div>
+            </slide>
+            <hooper-pagination slot="hooper-addons"></hooper-pagination>
+        </hooper>
+    </section>
 </template>
 
 <script>
@@ -47,25 +61,25 @@
 
 
 <style lang="scss" scoped>
-    .main-screen-wrap .hooper-pagination {
-        top: 65vh;
-
-        .hooper-indicator:hover, .hooper-indicator.is-active {
-            background-color: #fff;
-            border-color: #fff;
+    .item-buttons {
+        margin-top: 260px;
+        &>a {
+            margin-bottom: 15px;
         }
+        .btn {
+            width: 85vw;
+            border-radius: 50px;
+            padding: 14px 15px 10px;
+            &.btn-primary {
+                color: #606060;
+                background-color: #fff;
+            }
 
-        .hooper-indicator {
-            width: 16px;
-            height: 16px;
-            border: 2px solid #fff;
-            background-color: #ccc;
-            border-radius: 8px;
-            margin: 0 4px;
-            -webkit-transition: all ease-out 0.3s;
-            -moz-transition: all ease-out 0.3s;
-            -o-transition: all ease-out 0.3s;
-            transition: all ease-out 0.3s;
+            &.btn-secondary {
+                border: 2px solid #fff;
+                color: #fff;
+                background-color: transparent;
+            }
         }
     }
 
