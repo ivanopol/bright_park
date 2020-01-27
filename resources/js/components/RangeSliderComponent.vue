@@ -1,5 +1,5 @@
 <template>
-    <vue-slider v-model="value"  :interval="1" :tooltip="always" :marks="marks" :drag-on-click="true" :min="15" :max="50"/>
+    <vue-slider v-model="value"  :interval="1" :marks="marks" :drag-on-click="true" :min="15" :max="50"/>
 </template>
 
 <script>

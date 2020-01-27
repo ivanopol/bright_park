@@ -1,23 +1,6 @@
 @extends('layouts.app2')
 
 @section('content')
-    <section id="panel">
-        <ul>
-            <li>
-                <div class="menu"></div>
-                <span>Меню</span>
-            </li>
-            <li>
-                <div class="call"></div>
-                <span>Звонок</span>
-            </li>
-            <li>
-                <div class="route"></div>
-                <span>Маршрут</span>
-            </li>
-        </ul>
-    </section>
-
     <header-component :line="true" :theme="'dark'"></header-component>
 
     <div class="container">
