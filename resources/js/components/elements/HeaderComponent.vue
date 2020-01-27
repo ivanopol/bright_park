@@ -27,21 +27,16 @@
     header {
         .logo-wrap {
             padding: 15px 15px 0 15px;
-
+            display: flex;
+            justify-content: space-between;
             .logo-bright-park {
-                background: url(/build/images/logo_bright_park.svg) no-repeat left;
                 width: 49%;
                 height: 25px;
-                background-size: 100%;
-                display: inline-block;
             }
 
             .logo-lada {
-                background: url(/build/images/logo_lada.svg) no-repeat right;
-                width: 49%;
+                width: 16%;
                 height: 25px;
-                background-size: 40%;
-                display: inline-block;
             }
         }
         .lada-line {

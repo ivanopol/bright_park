@@ -1,5 +1,5 @@
 <template>
-    <svg id="logo_bright_park" data-name="logo_bright_park" xmlns="http://www.w3.org/2000/svg" width="1006.89" height="125.41" viewBox="0 0 1006.89 125.41">
+    <svg id="logo_bright_park" class="logo-bright-park" data-name="logo_bright_park" xmlns="http://www.w3.org/2000/svg" width="1006.89" height="125.41" viewBox="0 0 1006.89 125.41">
         <title>logo_bright_park</title>
         <g>
             <path class="cls-1" d="M435.68,130.14v10.45a29.19,29.19,0,0,1,24.21-12.18c19.06,0,32.56,15,32.56,35.08,0,20.37-13.63,35.46-32.95,35.46a28.76,28.76,0,0,1-23-10.85v37.19H419.93V130.14Zm.26,33.48c0,11.25,7.81,20.24,19.59,20.24s19.58-9.13,19.58-20.24c0-10.86-7.67-20.12-19.58-20.12S435.94,152.63,435.94,163.62Z" transform="translate(-124.48 -99.88)"/>
@@ -22,3 +22,16 @@
         </g>
     </svg>
 </template>
+
+<script>
+    export default {
+
+    }
+</script>
+
+<style lang="scss" scoped>
+    #logo_bright_park {
+
+    }
+</style>
+
