@@ -1,10 +1,18 @@
 <template>
     <header>
         <div class="logo-wrap">
-            <logo-bright-park></logo-bright-park>
-            <logo-lada></logo-lada>
+            <div class="logo-bright-park">
+                <a href="/main">
+                    <logo-bright-park></logo-bright-park>
+                </a>
+            </div>
+            <div class="logo-lada">
+                <a href="/">
+                    <logo-lada></logo-lada>
+                </a>
+            </div>
         </div>
-        <div class="lada-line">
+        <div class="lada-line" v-if="line">
             <p id="model-active"></p>
         </div>
     </header>
@@ -16,6 +24,14 @@
 
     export default {
         name: "App",
+        props: [
+            'line'
+        ],
+        data: function () {
+            return {
+
+            };
+        },
         components: {
             LogoBrightPark,
             LogoLada

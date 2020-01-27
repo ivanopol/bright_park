@@ -47,7 +47,7 @@
                     </li>
                 </ul>
             </section>
-            <header-component></header-component>
+
 {{--            <header>
                 <div class="logo-wrap">
                     <a class="logo-bright-park" href="/home"></a>

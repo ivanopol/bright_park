@@ -1,5 +1,5 @@
 <template>
-    <svg id="logo_lada" class="logo-lada" data-name="logo_lada" xmlns="http://www.w3.org/2000/svg" width="100mm" height="26.15mm" viewBox="0 0 283.46 74.12">
+    <svg id="logo_lada" class="logo-lada-svg" data-name="logo_lada" xmlns="http://www.w3.org/2000/svg" width="100mm" height="26.15mm" viewBox="0 0 283.46 74.12">
         <title>logo_lada</title>
         <polygon class="cls-1" points="19.21 60.39 19.21 0 0 0 0 74.11 49.41 74.11 49.41 60.39 19.21 60.39"/>
         <path class="cls-1" d="M367,249.35l-27,74.11h19l5-13.72h33l5,13.72h19l-27-74.11ZM369,296l11.51-31.63L392,296Z" transform="translate(-287.98 -249.34)"/>
@@ -8,3 +8,16 @@
     </svg>
 
 </template>
+
+<script>
+    export default {
+
+    }
+</script>
+
+<style lang="scss" scoped>
+    .logo-lada-svg {
+        width: 100%;
+        height: 100%;
+    }
+</style>
