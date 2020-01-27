@@ -62,7 +62,7 @@
 
 <style lang="scss" scoped>
     .item-buttons {
-        margin-top: 260px;
+        margin-top: 39vh;
         &>a {
             margin-bottom: 15px;
         }
