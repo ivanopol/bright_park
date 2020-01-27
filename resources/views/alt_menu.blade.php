@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="container">
-        <hooper-component></hooper-component>
+        <header-component :line="true" :theme="'dark'"></header-component>
         {{--<info-component :number="this.$store.state.model" :block="1"></info-component>
         <info-component :number="this.$store.state.model" :block="2" :pointers="5" :pnum="1"></info-component>--}}
         <section class="block block_1">

@@ -1,6 +1,7 @@
 @extends('layouts.app2')
 
 @section('content')
+    <header-component :line="true" :theme="'dark'"></header-component>
     <div class="container">
         <section>
             <div>
