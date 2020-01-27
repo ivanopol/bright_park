@@ -39,7 +39,6 @@
 </div>
 <section id="models" class="models_wrap">
     <h2>Модели</h2>
-
     <ul>
         <li>
             <a href="/basic">
@@ -82,5 +81,11 @@
             </a>
         </li>
     </ul>
+</section>
+<section id="buttons_other" class="buttons_other">
+    <div class="item-buttons-other">
+        <a href="/basic" class="btn btn-primary">Записаться на тест-драйв</a>
+        <a href="" class="btn btn-secondary">Записаться на сервис</a>
+    </div>
 </section>
 @endsection

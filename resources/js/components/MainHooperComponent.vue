@@ -70,7 +70,9 @@
             width: 85vw;
             border-radius: 50px;
             padding: 14px 15px 10px;
+
             &.btn-primary {
+                border: 2px solid #fff;
                 color: #606060;
                 background-color: #fff;
             }
