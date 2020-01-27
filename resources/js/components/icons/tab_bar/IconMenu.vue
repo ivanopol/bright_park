@@ -1,14 +1,29 @@
 <template>
     <div class="menu">
-        <?xml version="1.0" encoding="iso-8859-1"?>
-        <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-        <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-             width="124px" height="124px" viewBox="0 0 124 124" style="enable-background:new 0 0 124 124;" xml:space="preserve">
+        <?xml version="1.0" encoding="utf-8"?>
+        <!-- Generator: Adobe Illustrator 23.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+        <svg version="1.1" id="Menu" class="menu_wrap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             viewBox="0 0 584 508" style="enable-background:new 0 0 584 508;" xml:space="preserve">
+
             <g>
-                <path fill="#001746" d="M112,6H12C5.4,6,0,11.4,0,18s5.4,12,12,12h100c6.6,0,12-5.4,12-12S118.6,6,112,6z"/>
-                <path fill="#001746" d="M112,50H12C5.4,50,0,55.4,0,62c0,6.6,5.4,12,12,12h100c6.6,0,12-5.4,12-12C124,55.4,118.6,50,112,50z"/>
-                <path fill="#001746" d="M112,94H12c-6.6,0-12,5.4-12,12s5.4,12,12,12h100c6.6,0,12-5.4,12-12S118.6,94,112,94z"/>
+                <path d="M578.2,474.1L434.9,330.8c64.8-78.7,61.7-196.5-13.4-271.6c-78.9-78.9-207.3-78.9-286.2,0c-79.1,79.1-79.1,207.2,0,286.3
+                    c74.2,74.2,192.1,78.7,271.5,13.3l143.3,143.3c7.7,7.8,20.3,7.8,28.1,0C585.9,494.4,585.9,481.9,578.2,474.1z M393.5,317.4
+                    c-63.4,63.5-166.7,63.5-230.1,0c-63.6-63.6-63.6-166.6,0-230.2c63.4-63.5,166.7-63.5,230.1,0C457.1,150.9,457.1,253.8,393.5,317.4
+                    z"/>
+            </g>
+
+            <g>
+                <path d="M51.5,194.5H15.5C6.9,194.5,0,201.5,0,210c0,8.5,6.9,15.5,15.5,15.5h36.1c8.5,0,15.5-6.9,15.5-15.5
+                    S60.1,194.5,51.5,194.5z"/>
+            </g>
+
+            <g>
+                <path d="M81.5,70.8H16.5C7.9,70.8,1,77.7,1,86.3s6.9,15.5,15.5,15.5h65.1c8.5,0,15.5-6.9,15.5-15.5S90.1,70.8,81.5,70.8z"/>
+            </g>
+
+            <g>
+                <path d="M86.5,318.3H16.5c-8.5,0-15.5,6.9-15.5,15.5c0,8.5,6.9,15.5,15.5,15.5h70.1c8.5,0,15.5-6.9,15.5-15.5
+                    C102,325.2,95.1,318.3,86.5,318.3z"/>
             </g>
         </svg>
     </div>
