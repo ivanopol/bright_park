@@ -1,35 +1,9 @@
 @extends('layouts.app2')
 
 @section('content')
-    <section id="panel_2">
-        <ul>
-            <li>
-                <div class="menu"></div>
-                <span>Меню</span>
-            </li>
-            <li>
-                <div class="call"></div>
-                <span>Звонок</span>
-            </li>
-            <li>
-                <div class="route"></div>
-                <span>Маршрут</span>
-            </li>
-        </ul>
-    </section>
-
-    <header>
-        <div class="logo-wrap">
-            <div class="logo-bright-park"></div>
-            <div class="logo-lada"></div>
-        </div>
-        <div class="lada-line">
-            <p id="model-active"></p>
-        </div>
-    </header>
 
     <div class="container">
-        <hooper-component></hooper-component>
+        <header-component :line="true" :theme="'dark'"></header-component>
         {{--<info-component :number="this.$store.state.model" :block="1"></info-component>
         <info-component :number="this.$store.state.model" :block="2" :pointers="5" :pnum="1"></info-component>--}}
         <section class="block block_1">

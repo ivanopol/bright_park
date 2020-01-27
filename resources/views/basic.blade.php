@@ -1,33 +1,7 @@
 @extends('layouts.app2')
 
 @section('content')
-    <section id="panel">
-        <ul>
-            <li>
-                <div class="menu"></div>
-                <span>Меню</span>
-            </li>
-            <li>
-                <div class="call"></div>
-                <span>Звонок</span>
-            </li>
-            <li>
-                <div class="route"></div>
-                <span>Маршрут</span>
-            </li>
-        </ul>
-    </section>
-
-    <header>
-        <div class="logo-wrap">
-            <div class="logo-bright-park"></div>
-            <div class="logo-lada"></div>
-        </div>
-        <div class="lada-line">
-            <p id="model-active"></p>
-        </div>
-    </header>
-
+    <header-component :line="true" :theme="'dark'"></header-component>
     <div class="container">
         <hooper-component :data='@json($data['slider'])' ></hooper-component>
         <info-component :data='@json($data['blocks'][0])'></info-component>

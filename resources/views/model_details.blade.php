@@ -1,33 +1,7 @@
 @extends('layouts.app2')
 
 @section('content')
-    <section id="panel">
-        <ul>
-            <li>
-                <div class="menu"></div>
-                <span>Меню</span>
-            </li>
-            <li>
-                <div class="call"></div>
-                <span>Звонок</span>
-            </li>
-            <li>
-                <div class="route"></div>
-                <span>Маршрут</span>
-            </li>
-        </ul>
-    </section>
-
-    <header>
-        <div class="logo-wrap">
-            <div class="logo-bright-park"></div>
-            <div class="logo-lada"></div>
-        </div>
-        <div class="lada-line">
-            <p id="model-active">Lada Granta</p>
-        </div>
-    </header>
-    <hr>
+    <header-component :line="true" :theme="'dark'"></header-component>
     <div class="container">
         <section>
             <div>
@@ -36,23 +10,23 @@
             <div class="car-pictures-wrapper">
                 <div>
                     <img
-                        src="build/images/photos/models/granta/preview/granta_example.jpg">
+                        src="build/images/photos/models/granta/preview/1.jpg">
                 </div>
                 <div>
                     <img
-                        src="build/images/photos/models/granta/preview/granta_example.jpg">
+                        src="build/images/photos/models/granta/preview/2.jpg">
                 </div>
                 <div>
                     <img
-                        src="build/images/photos/models/granta/preview/granta_example.jpg">
+                        src="build/images/photos/models/granta/preview/3.jpg">
                 </div>
                 <div>
                     <img
-                        src="build/images/photos/models/granta/preview/granta_example.jpg">
+                        src="build/images/photos/models/granta/preview/4.jpg">
                 </div>
                 <div>
                     <img
-                        src="build/images/photos/models/granta/preview/granta_example.jpg">
+                        src="build/images/photos/models/granta/preview/5.jpg">
                 </div>
             </div>
         </section>
