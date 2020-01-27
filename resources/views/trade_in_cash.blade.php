@@ -49,59 +49,22 @@
                 </div>
             </div>
 
+            <div class="trade-in-price-text">
+                <p>
+                    Ваша доплата составит
+                </p>
+                <span class="special-text-colored-bold">126 000 руб.*</span>
+            </div>
+
             <div class="credit-profit-text">
                 <p>
-                    В Bright Park выгодные условия кредитования!
+                    В Bright Park выгодные условия покупке за наличные!
                 </p> <br/>
                 <ul>
-                    <li>12 банков-партнеров</li>
-                    <li>Одобрение по кредиту 30 минут</li>
-                    <li>Вероятность одобрения 96%</li>
+                    <li>Личный менеджер</li>
+                    <li>Выгода 40 000 руб. при обмене</li>
+                    <li>Зимняя резина в подарок <span class="special-text-colored">только до 16.01</span></li>
                 </ul>
-                <br/>
-                <p>
-                    Первоначальный взнос
-                </p>
-                <div class="button-wrapper-row">
-                    <button class="hollow-button hollow-button-recolored">
-                        <a>Зачесть мой авто первоначальным взносом</a>
-                    </button>
-                </div>
-            </div>
-
-            <div class="range-slider-wrapper">
-                <range-slider-component>
-                </range-slider-component>
-            </div>
-
-            <div class="disabled-input">
-                <input readonly value="126 000"/> руб.
-            </div>
-
-            <div class="credit-profit-text">
-                <p>Срок в месяцах</p>
-            </div>
-
-            <div class="range-slider-wrapper">
-                <range-slider-component-period>
-                </range-slider-component-period>
-            </div>
-
-            <div class="disabled-input">
-                <input readonly value="12"/> мес.
-            </div>
-
-            <div class="radio-buttons-group">
-                <div >
-                    <input type="radio" name="program"> Обычная программа 19 700 руб./мес
-                </div>
-                <div>
-                    <input type="radio" name="program"> Программа LADA Finance 12 700 руб./мес<br>
-                </div>
-                <div>
-                    <input type="radio" name="program"> Специальный рассчет 11 700 руб./мес<br>
-
-                </div>
             </div>
 
             <div class="button-wrapper-row">

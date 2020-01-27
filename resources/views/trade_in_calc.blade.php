@@ -64,10 +64,10 @@
 
             <div class="button-wrapper-row">
                 <button class="hollow-button-halfsize hollow-button-recolored">
-                    <a href=''>Наличный расчет</a>
+                    <a href='/trade_in_cash'>Наличный расчет</a>
                 </button>
                 <button class="hollow-button-halfsize hollow-button-recolored">
-                    В кредит
+                    <a href="/trade_in_credit">В кредит</a>
                 </button>
             </div>
 

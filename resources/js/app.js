@@ -30,7 +30,7 @@ Vue.component('model-details-component', require('./components/ModelDetailsCompo
 Vue.component('header-component', require('./components/elements/HeaderComponent').default);
 Vue.component('main-hooper-component', require('./components/MainHooperComponent').default);
 Vue.component('range-slider-component', require('./components/RangeSliderComponent').default);
-
+Vue.component('range-slider-component-period', require('./components/RangeSliderComponentPeriod').default);
 
 const store = new Vuex.Store({
     state: {

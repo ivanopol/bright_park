@@ -1,5 +1,5 @@
 <template>
-    <vue-slider v-model="value"  :interval="1" :tooltip="always" :marks="marks" :drag-on-click="true" :min="15" :max="50"/>
+    <vue-slider v-model="value"  :interval="1" :tooltip="always" :marks="marks" :drag-on-click="true" :min="12" :max="60"/>
 </template>
 
 <script>
@@ -12,8 +12,8 @@
         },
         data () {
             return {
-                value: 15,
-                marks: [15, 50]
+                value: 12,
+                marks: [12, 60]
             }
         }
     }

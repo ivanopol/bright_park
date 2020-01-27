@@ -318,4 +318,9 @@ class HomeController extends Controller
     {
         return view('trade_in_credit');
     }
+
+    public function trade_in_cash()
+    {
+        return view('trade_in_cash');
+    }
 }
