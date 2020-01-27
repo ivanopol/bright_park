@@ -2,10 +2,11 @@
 
 @section('content')
     <header-component :line="true" :theme="'dark'"></header-component>
+
     <div class="container">
         <section>
             <div class="buy-steps-wrapper">
-                <div class="buy-step-circle-colored divided">
+                <div class="buy-step-circle divided">
                     <p class="buy-step-number">1</p>
                     <p class="buy-step-text">
                         Оцените автомобиль
@@ -14,7 +15,7 @@
 
                 <div class="divider"></div>
 
-                <div class="buy-step-circle divided">
+                <div class="buy-step-circle-colored divided">
                     <p class="buy-step-number">2</p>
                     <p class="buy-step-text">
                         Рассчитайте платеж
@@ -30,45 +31,31 @@
                     </p>
                 </div>
             </div>
-            <div class="dropdown-group-title">Оцените свой автомобиль</div>
-            <div class="container dropdown-group">
-                <select class="dropdown">
-                    <option selected="selected">Марка</option>
-                </select>
-                <select>
-                    <option selected="selected">Модель</option>
-                </select>
-                <select>
-                    <option selected="selected">Год выпуска</option>
-                </select>
-                <select>
-                    <option selected="selected">Комплектация</option>
-                </select>
-                <select>
-                    <option selected="selected">Пробег</option>
-                </select>
-            </div>
 
-            <div class="trigger-wrap">
-                <p class="trigger-wrap-text">
-                    Рыночная оценка <span class="model-count-text">666 руб</span> <br/>
-                    Оценка Bright Park <span class="model-count-text">666 руб</span>
-                </p>
-            </div>
-
-            <div class="model-choose-text">
+            <div class="trade-in-price-text">
                 <p>
-                    Предложение действует до 16 января
+                    Ваша доплата составит
                 </p>
+                <span class="special-text-colored-bold">126 000 руб.*</span>
+            </div>
+
+            <div class="credit-profit-text">
+                <p>
+                    В Bright Park выгодные условия покупке за наличные!
+                </p> <br/>
+                <ul>
+                    <li>Личный менеджер</li>
+                    <li>Выгода 40 000 руб. при обмене</li>
+                    <li>Зимняя резина в подарок <span class="special-text-colored">только до 16.01</span></li>
+                </ul>
             </div>
 
             <div class="button-wrapper-row">
-                <button class="hollow-button-halfsize hollow-button-recolored">
-                    <a href='/trade_in_cash'>Наличный расчет</a>
-                </button>
-                <button class="hollow-button-halfsize hollow-button-recolored">
-                    <a href="/trade_in_credit">В кредит</a>
-                </button>
+                <div class="button-wrapper-row">
+                    <button class="hollow-button hollow-button-recolored">
+                        <a>закрепить условия</a>
+                    </button>
+                </div>
             </div>
 
             <div style="margin-bottom: 20%">

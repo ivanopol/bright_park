@@ -26,5 +26,8 @@ Route::any('/basic', 'HomeController@basic')->name('basic');
 Route::any('/alt_menu', 'HomeController@alt_menu')->name('alt_menu');
 Route::any('/trade_in_calc', 'HomeController@trade_in_calc')->name('trade_in_calc');
 Route::any('/main', 'HomeController@main')->name('main');
+Route::any('/trade_in_credit', 'HomeController@trade_in_credit')->name('trade_in_credit');
+Route::any('/trade_in_cash', 'HomeController@trade_in_cash')->name('trade_in_cash');
+
 
 

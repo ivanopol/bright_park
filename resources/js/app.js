@@ -29,6 +29,8 @@ Vue.component('review-component', require('./components/ReviewComponent.vue').de
 Vue.component('model-details-component', require('./components/ModelDetailsComponent').default);
 Vue.component('header-component', require('./components/elements/HeaderComponent').default);
 Vue.component('main-hooper-component', require('./components/MainHooperComponent').default);
+Vue.component('range-slider-component', require('./components/RangeSliderComponent').default);
+Vue.component('range-slider-component-period', require('./components/RangeSliderComponentPeriod').default);
 
 const store = new Vuex.Store({
     state: {
