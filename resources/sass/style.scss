@@ -1166,38 +1166,44 @@ footer {
             display: flex;
             justify-content: left;
             flex-wrap: nowrap;
-            border-bottom: 1px solid #606060;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.18);
             align-items: center;
 
-            .img_wrap {
-                width: 47%;
+            a {
+                display: flex;
+                align-items: center;
 
-                img {
-                    width: 100%;
+                .img_wrap {
+                    width: 47%;
+
+                    img {
+                        width: 100%;
+                    }
                 }
-            }
 
-            .title {
-                color: #fff;
-                font-size: 22px;
-                text-transform: uppercase;
-                position: relative;
-                width: 48%;
-                padding-left: 15px;
+                .title {
+                    color: #fff;
+                    font-size: 22px;
+                    text-transform: uppercase;
+                    position: relative;
+                    width: 48%;
+                    padding-left: 15px;
+                    font-weight: normal;
 
-                &::after {
-                    position: absolute;
-                    content: "";
-                    display: block;
-                    width: 20px;
-                    height: 20px;
-                    -webkit-transform: rotate(45deg);
-                    transform: rotate(45deg);
-                    border: 2px solid #606060;
-                    right: 0;
-                    top: 0;
-                    border-left: none;
-                    border-bottom: none;
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        display: block;
+                        width: 20px;
+                        height: 20px;
+                        -webkit-transform: rotate(45deg);
+                        transform: rotate(45deg);
+                        border: 2px solid #606060;
+                        right: 0;
+                        top: 0;
+                        border-left: none;
+                        border-bottom: none;
+                    }
                 }
             }
         }
