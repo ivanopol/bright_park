@@ -48,15 +48,6 @@
                 </ul>
             </section>
 
-{{--            <header>
-                <div class="logo-wrap">
-                    <a class="logo-bright-park" href="/home"></a>
-                    <div class="logo-lada"></div>
-                </div>
-                <div class="lada-line">
-                    <p id="model-active"></p>
-                </div>
-            </header>--}}
             @yield('content')
         </div>
     </div>
