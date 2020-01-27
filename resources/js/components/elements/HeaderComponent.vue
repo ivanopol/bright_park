@@ -2,14 +2,12 @@
     <header>
         <div class="logo-wrap">
             <div class="logo-bright-park">
-                <a href="/main">
-                    <logo-bright-park></logo-bright-park>
+                <a href="/home">
+                    <logo-bright-park :theme="theme"></logo-bright-park>
                 </a>
             </div>
             <div class="logo-lada">
-                <a href="/">
-                    <logo-lada></logo-lada>
-                </a>
+                <logo-lada :theme="theme"></logo-lada>
             </div>
         </div>
         <div class="lada-line" v-if="line">
@@ -25,11 +23,13 @@
     export default {
         name: "App",
         props: [
+            'theme',
             'line'
         ],
         data: function () {
             return {
-
+                theme: 'dark',
+                line: true,
             };
         },
         components: {
