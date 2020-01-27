@@ -84,12 +84,16 @@
             }
         }
     }
+    .main-screen-wrap {
+        background-color: #000;
+    }
 
     .main-screen-wrap ul li {
         position: relative;
         display: flex;
         justify-content: center;
     }
+
 
     .main-screen {
         width: 100%;
