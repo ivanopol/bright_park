@@ -17,7 +17,13 @@
             </div>
             <div class="block-aside">
                 <div class="aside_wrap" >
-                    <div class="aside_text" v-text="data.slider"></div>
+                    <hooper class="info-aside">
+                        <slide v-for="slide in data.slider" :key="slide.key">
+                            <img :src="slide.image" alt="">
+                            <p v-text="slide.text"></p>
+                        </slide>
+                    </hooper>
+                    <!--<div class="aside_text" v-text="data.slider"></div>-->
                     <div class="close" v-on:click="deactivate"></div>
                 </div>
             </div>
@@ -26,12 +32,19 @@
 </template>
 
 <script>
+    import { Hooper, Slide } from 'hooper';
+    import 'hooper/dist/hooper.css';
+
     export default {
         name: 'App',
         props : ['data', 'n'],
         data: function () {
             return {
             }
+        },
+        components: {
+            Hooper,
+            Slide
         },
         computed: {
             point_id: function () {
