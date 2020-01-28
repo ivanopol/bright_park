@@ -31,23 +31,6 @@
 <body>
     <div id="app">
         <div class="wrapper">
-            <section id="panel_2">
-                <ul>
-                    <li>
-                        <div class="menu"></div>
-                        <span>Меню</span>
-                    </li>
-                    <li>
-                        <div class="call"></div>
-                        <span>Звонок</span>
-                    </li>
-                    <li>
-                        <div class="route"></div>
-                        <span>Маршрут</span>
-                    </li>
-                </ul>
-            </section>
-
             @yield('content')
         </div>
     </div>

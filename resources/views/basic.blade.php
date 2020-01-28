@@ -1,7 +1,8 @@
 @extends('layouts.app2')
 
 @section('content')
-    <header-component :line="true" :theme="'dark'"></header-component>
+    <top-bar :theme="'dark'"></top-bar>
+    <header-component :line="true" :theme="'light'"></header-component>
     <div class="container">
         <hooper-component :data='@json($data['slider'])' ></hooper-component>
         <info-component :data='@json($data['blocks'][0])'></info-component>

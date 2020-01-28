@@ -1,7 +1,8 @@
 @extends('layouts.app2')
 
 @section('content')
-<header-component :line="false" :theme="'light'"></header-component>
+<top-bar :theme="'dark'"></top-bar>
+<header-component :line="false" :theme="'dark'"></header-component>
 <section class="main-screen">
     <main-hooper-component></main-hooper-component>
 </section>

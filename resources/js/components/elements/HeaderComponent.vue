@@ -24,7 +24,7 @@
         name: "App",
         props: {
             theme: {
-                default: 'dark',
+                default: 'light',
                 type: String,
             },
             line: {
@@ -68,11 +68,11 @@
             }
 
             &.dark {
-                background-color: #fff;
-            }
-            &.light {
                 padding-bottom: 10px;
                 background-color: #000;
+            }
+            &.light {
+                background-color: #fff;
             }
         }
         .lada-line {

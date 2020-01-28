@@ -1,7 +1,8 @@
 @extends('layouts.app2')
 
 @section('content')
-    <header-component :line="true" :theme="'dark'"></header-component>
+    <top-bar></top-bar>
+    <header-component :line="true" :theme="'light'"></header-component>
     <div class="container p-top-90">
         <section>
             <div class="buy-steps-wrapper">

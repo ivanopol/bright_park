@@ -24,10 +24,10 @@
     }
 
     .dark .cls-1 {
-        fill: #5a676e;
+        fill: #fff;
     }
 
     .light .cls-1 {
-        fill: #fff;
+        fill: #5a676e;
     }
 </style>

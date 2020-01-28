@@ -38,11 +38,11 @@
     }
 
     .dark .cls-1 {
-        fill: #000;
+        fill: #fff;
     }
 
     .light .cls-1 {
-        fill: #fff;
+        fill: #000;
     }
 </style>
 
