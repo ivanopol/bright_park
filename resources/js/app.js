@@ -31,7 +31,8 @@ Vue.component('header-component', require('./components/elements/HeaderComponent
 Vue.component('main-hooper-component', require('./components/MainHooperComponent').default);
 Vue.component('range-slider-component', require('./components/RangeSliderComponent').default);
 Vue.component('range-slider-component-period', require('./components/RangeSliderComponentPeriod').default);
-Vue.component('top-bar', require('./components/elements/TopBar').default);
+Vue.component('tab-bar', require('./components/elements/TabBar').default);
+Vue.component('slide-show', require('./components/SlideShow').default);
 
 const store = new Vuex.Store({
     state: {

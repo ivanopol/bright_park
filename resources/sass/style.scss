@@ -775,15 +775,17 @@ footer {
 }
 
 .car-pictures-wrapper {
-    margin: 15px;
-    display: flex;
-    justify-content: space-between;
+    margin: 0;
 
-    div {
-        width: 20%;
+    ul {
+        display: flex;
+        justify-content: space-between;
+        li {
+            width: 20%;
 
-        & > img {
-            width: 100%;
+            & > img {
+                width: 100%;
+            }
         }
     }
 }
