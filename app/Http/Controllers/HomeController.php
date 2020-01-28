@@ -294,16 +294,6 @@ class HomeController extends Controller
         return view('basic', [ 'data' => $data ]);
     }
 
-    /**
-     * Show second version of design.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function alt_menu()
-    {
-        return view('alt_menu');
-    }
-
     public function model_details()
     {
         return view('model_details');

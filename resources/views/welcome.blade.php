@@ -69,8 +69,6 @@
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">HOME</a>
-                        <a href="{{ url('/first_version') }}">Версия №1</a>
-                        <a href="{{ url('/second_version') }}">Версия №2</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 

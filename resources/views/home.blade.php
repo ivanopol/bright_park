@@ -17,7 +17,6 @@
                             <ul>
                                 <li><a href="{{ url('/main') }}">Главная страница</a></li>
                                 <li><a href="{{ url('/basic') }}">Базовая версия</a></li>
-                                <li><a href="{{ url('/alt_menu') }}">Альтернативное меню</a></li>
                                 <li><a href="{{ url('/model_details') }}">Сбытовая 1</a></li>
                                 <li><a href="{{ url('/trade_in_calc') }}">Сбытовая 2</a></li>
                             </ul>
