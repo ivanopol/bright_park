@@ -2,7 +2,7 @@
 
 @section('content')
     <header-component :line="true" :theme="'dark'"></header-component>
-    <div class="container">
+    <div class="container p-top-90">
         <section>
             <div>
                 <img width="100%" src="build/images/photos/models/granta/full/front-left.jpg">

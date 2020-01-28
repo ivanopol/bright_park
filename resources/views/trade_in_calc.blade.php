@@ -2,7 +2,7 @@
 
 @section('content')
     <header-component :line="true" :theme="'dark'"></header-component>
-    <div class="container">
+    <div class="container p-top-90">
         <section>
             <div class="buy-steps-wrapper">
                 <div class="buy-step-circle-colored divided">

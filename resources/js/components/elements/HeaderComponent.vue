@@ -79,6 +79,7 @@
             background: #fff url(/build/images/lada_line.svg) no-repeat;
             width: 100%;
             height: 100%;
+            min-height: 31px;
             background-size: 101%;
 
             p {
