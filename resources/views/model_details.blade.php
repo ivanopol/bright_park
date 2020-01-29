@@ -51,7 +51,7 @@
                     <p>Имеете ли вы автомобиль на обмен?</p>
                 </div>
 
-                <section id="buttons_other" class="buttons_other">
+                <section class="buttons_other mt-20">
                     <div class="item-buttons-other">
                         <a href="/trade_in_calc" class="btn btn-secondary">Да, оценить мой атомобиль</a>
                         <a href="" class="btn btn-secondary">У меня нет автомобиля</a>
