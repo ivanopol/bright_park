@@ -53,14 +53,14 @@
         z-index: 10;
 
         ul {
-            background-color: rgba(255, 255, 255);
+
             display: flex;
             flex-direction: row;
             flex-wrap: nowrap;
             justify-content: space-between;
             padding: 8px 25px 5px;
-            backdrop-filter: blur(5px);
             -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
 
             &.light {
                 background-color: rgba(255, 255, 255, 0.7);
@@ -90,9 +90,7 @@
 
                 & > span {
                     font-size: 12px;
-                    //color: #000;
                 }
-
             }
         }
     }
