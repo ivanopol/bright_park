@@ -58,6 +58,7 @@
                     </div>
                 </section>
 
+                <classified></classified>
 
                 <div class="progressbar-wrapper">
                     <span class="progressbar-text">Осталось всего 2 шага до получения выгодных условий</span>
