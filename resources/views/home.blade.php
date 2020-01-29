@@ -16,7 +16,7 @@
                         <h3>Модели</h3>
                             <ul>
                                 <li><a href="{{ url('/main') }}">Главная страница</a></li>
-                                <li><a href="{{ url('/basic') }}">Базовая версия</a></li>
+                                <li><a href="{{ url('/basic') }}">Страница моделей</a></li>
                                 <li><a href="{{ url('/model_details') }}">Сбытовая шаг 1</a></li>
                                 <li><a href="{{ url('/trade_in_calc') }}">Сбытовая шаг 2</a></li>
                                 <li><a href="{{ url('/trade_in_cash') }}">Сбытовая шаг 3.1</a></li>
