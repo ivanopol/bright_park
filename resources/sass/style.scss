@@ -757,6 +757,7 @@ footer {
     height: 50px;
     background-color: #ff8351;
     color: #000000;
+    box-shadow: 0 0 10px 0 #ff8351;
 }
 
 .buy-step-number {
@@ -767,6 +768,7 @@ footer {
 
 .buy-step-text {
     font-size: 14px;
+    line-height: 18px;
     display: block;
     color: #000000;
     text-align: center;
