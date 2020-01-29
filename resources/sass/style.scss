@@ -925,17 +925,21 @@ footer {
 }
 
 .progressbar-wrapper {
-    border: #0e0e0e;
     margin-bottom: 20%;
-    border-top: #606060 1px solid;
-    border-bottom: #606060 1px solid;
+    border: 2px solid #92d36e;
     display: flex;
-    justify-content: stretch;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 
-    .progressbar-section {
-        border-radius: 0;
-        width: 33%;
-        height: 50px;
+    &::before {
+        content: "";
+        width: 33.3%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        background-color: #92d36e;
     }
 
     .progressbar-section-colored {
@@ -946,12 +950,10 @@ footer {
     }
 
     .progressbar-text {
-        margin: 1%;
         text-align: center;
-        vertical-align: center;
-        padding-top: 5%;
-        font-size: 10px;
-        color: #0e0e0e;
+        font-size: 14px;
+        color: #000;
+        position: absolute;
     }
 }
 
