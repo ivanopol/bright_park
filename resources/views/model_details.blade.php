@@ -1,93 +1,71 @@
 @extends('layouts.app2')
 
 @section('content')
-    {{-- <<tab-bar></tab-bar>
-   header-component :line="true" :theme="'light'"></header-component>--}}
-    <div class="container p-top-90">
-        text
-        {{--  <slide-show></slide-show>
+    <tab-bar></tab-bar>
+    <header-component :line="true" :theme="'light'"></header-component>
+    <section class="container p-top-90">
+
+        <slide-show></slide-show>
             <section>
 
                 <div class="model-price-text">
-                    <p>
-                        От 421 600 руб.
-                    </p>
+                    <p>От 421 600 руб.</p>
                 </div>
 
-
                 <div class="credit-price-text">
-                    <p>
-                        В кредит от 4210 руб. / мес.
-                    </p>
+                    <p>В кредит от 4210 руб. / мес.</p>
                 </div>
 
                 <div class="trigger-wrap">
-                    <p class="trigger-wrap-text">
-                        Осталось <span class="model-count-text">666</span> Granta Лифтбек по спеццене
-                    </p>
+                    <p class="trigger-wrap-text">Осталось <span class="model-count-text">666</span> Granta Лифтбек по спеццене</p>
                 </div>
 
                 <div class="model-choose-text">
-                    <p>
-                        Подберите выгодные условия на LADA Grant LiftBack
-                    </p>
+                    <p>Подберите выгодные условия на LADA Grant LiftBack</p>
                 </div>
 
                 <div class="buy-steps-wrapper">
-                    <div class="buy-step-circle-colored divided">
-                        <p class="buy-step-number">1</p>
-                        <p class="buy-step-text">
-                            Оцените автомобиль
-                        </p>
+                    <div class="buy-step-block">
+                        <div class="buy-step-circle-colored divided">
+                            <p class="buy-step-number">1</p>
+                        </div>
+                        <p class="buy-step-text">Оцените автомобиль</p>
                     </div>
 
-                    <div class="divider"></div>
-
-                    <div class="buy-step-circle divided">
-                        <p class="buy-step-number">2</p>
-                        <p class="buy-step-text">
-                            Рассчитайте платеж
-                        </p>
+                    <div class="buy-step-block">
+                        <div class="buy-step-circle divided">
+                            <p class="buy-step-number">2</p>
+                        </div>
+                        <p class="buy-step-text">Рассчитайте платеж</p>
                     </div>
 
-                    <div class="divider"></div>
-
-                    <div class="buy-step-circle divided">
-                        <p class="buy-step-number">3</p>
-                        <p class="buy-step-text">
-                            Заполните форму
-                        </p>
+                    <div class="buy-step-block">
+                        <div class="buy-step-circle divided">
+                            <p class="buy-step-number">3</p>
+                        </div>
+                        <p class="buy-step-text">Заполните форму</p>
                     </div>
                 </div>
 
                 <div class="option-text">
-                    <p>
-                        Имеете ли вы автомобиль на обмен?
-                    </p>
+                    <p>Имеете ли вы автомобиль на обмен?</p>
                 </div>
 
-                <div class="button-wrapper">
-                    <button class="hollow-button hollow-button-recolored">
-                        <a href='/trade_in_calc'>ДА, ОЦЕНИТЬ МОЙ АВТОМОБИЛЬ</a>
-                    </button>
-                    <button class="hollow-button hollow-button-recolored">
-                        У МЕНЯ НЕТ АВТОМОБИЛЯ
-                    </button>
-                </div>
+                <section id="buttons_other" class="buttons_other">
+                    <div class="item-buttons-other">
+                        <a href="/trade_in_calc" class="btn btn-secondary">Да, оценить мой атомобиль</a>
+                        <a href="" class="btn btn-secondary">У меня нет автомобиля</a>
+                    </div>
+                </section>
 
 
                 <div class="progressbar-wrapper">
-                    <div class="progressbar-section-colored">
-                        <p class="progressbar-text">Осталось всего 2 шага до получения выгодных условий</p>
-                    </div>
-                    <div class="progressbar-section">
-                    </div>
-                    <div class="progressbar-section">
-                    </div>
+                    <span class="progressbar-text">Осталось всего 2 шага до получения выгодных условий</span>
+                  {{--  <div class="progressbar-section-colored"></div>--}}
                 </div>
 
 
          </section>
-          --}}
+
     </div>
 @endsection
