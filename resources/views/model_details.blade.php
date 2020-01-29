@@ -1,11 +1,11 @@
 @extends('layouts.app2')
 
 @section('content')
-    {{-- <<tab-bar></tab-bar>
-   header-component :line="true" :theme="'light'"></header-component>--}}
+    <tab-bar></tab-bar>
+    <header-component :line="true" :theme="'light'"></header-component>
     <div class="container p-top-90">
-        text
-        {{--  <slide-show></slide-show>
+
+        <slide-show></slide-show>
             <section>
 
                 <div class="model-price-text">
@@ -88,6 +88,6 @@
 
 
          </section>
-          --}}
+
     </div>
 @endsection
