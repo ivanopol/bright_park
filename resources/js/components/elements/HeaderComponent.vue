@@ -51,6 +51,7 @@
 
     header {
         z-index: 1000;
+        width: 100%;
 
         .logo-wrap {
             padding: 15px 15px 0;

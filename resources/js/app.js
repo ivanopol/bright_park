@@ -4,7 +4,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+//require('./bootstrap');
 window.Vue = require('vue');
 window.Vuex = require('vuex');
 //import Vuex from 'vuex';
@@ -33,6 +33,7 @@ Vue.component('range-slider-component', require('./components/RangeSliderCompone
 Vue.component('range-slider-component-period', require('./components/RangeSliderComponentPeriod').default);
 Vue.component('tab-bar', require('./components/elements/TabBar').default);
 Vue.component('slide-show', require('./components/SlideShow').default);
+Vue.component('classified', require('./components/Classified').default);
 
 const store = new Vuex.Store({
     state: {

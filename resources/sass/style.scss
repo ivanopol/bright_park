@@ -4,7 +4,7 @@
 }
 
 body {
-    font-family: Helvetica;
+    font-family: HelveticaRegular, Helvetica, sans-serif;
     font-size: 16px;
     background-color: #fff;
     //overflow: hidden;
@@ -37,6 +37,14 @@ h2 {
     padding-top: 90px;
 }
 
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mt-40 {
+    margin-top: 40px;
+}
+
 $context: 375;
 
 @media only screen and (max-width: 321px) {
@@ -65,6 +73,7 @@ $context: 375;
     border-radius: 5px;
     display: inline-block;
     font-weight: bold;
+    font-size: 14px;
 
     &:hover,
     &:focus {
@@ -756,15 +765,18 @@ footer {
     height: 50px;
     background-color: #ff8351;
     color: #000000;
+    box-shadow: 0 0 10px 0 #ff8351;
 }
 
 .buy-step-number {
     font-size: 20px;
     font-weight: bold;
+    height: 15px;
 }
 
 .buy-step-text {
     font-size: 14px;
+    line-height: 18px;
     display: block;
     color: #000000;
     text-align: center;
@@ -857,7 +869,7 @@ footer {
 }
 
 .option-text {
-    margin: 15% 30px 5%;
+    margin: 10% 30px 5%;
     text-align: center;
     font-size: 18px;
     font-weight: bold;
@@ -927,6 +939,8 @@ footer {
 .progressbar-wrapper {
     margin-bottom: 20%;
     border: 2px solid #92d36e;
+    border-right: none;
+    border-left: none;
     display: flex;
     height: 50px;
     justify-content: center;
@@ -952,8 +966,10 @@ footer {
     .progressbar-text {
         text-align: center;
         font-size: 14px;
+        line-height: 18px;
         color: #000;
         position: absolute;
+        padding: 0 15px;
     }
 }
 
@@ -1160,7 +1176,7 @@ footer {
 
 .buttons_other {
     .item-buttons-other {
-        margin: 40px 0 80px;
+        margin-bottom: 80px;
         text-align: center;
 
         & > a {

@@ -83,7 +83,7 @@
         </li>
     </ul>
 </section>
-<section id="buttons_other" class="buttons_other">
+<section id="buttons_other" class="buttons_other mt-40">
     <div class="item-buttons-other">
         <a href="/basic" class="btn btn-primary">Записаться на тест-драйв</a>
         <a href="" class="btn btn-secondary">Записаться на сервис</a>
