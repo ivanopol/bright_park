@@ -762,6 +762,7 @@ footer {
 .buy-step-number {
     font-size: 20px;
     font-weight: bold;
+    height: 15px;
 }
 
 .buy-step-text {
@@ -928,6 +929,8 @@ footer {
 .progressbar-wrapper {
     margin-bottom: 20%;
     border: 2px solid #92d36e;
+    border-right: none;
+    border-left: none;
     display: flex;
     height: 50px;
     justify-content: center;
@@ -953,8 +956,10 @@ footer {
     .progressbar-text {
         text-align: center;
         font-size: 14px;
+        line-height: 18px;
         color: #000;
         position: absolute;
+        padding: 0 15px;
     }
 }
 
