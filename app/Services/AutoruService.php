@@ -6,6 +6,7 @@ namespace App\Services;
 
 use Illuminate\Support\Facades\DB;
 use Exception;
+use Cache;
 
 
 class AutoruService
@@ -31,27 +32,41 @@ class AutoruService
      *
      * @return array
      */
-    public function get_brands() : array
+    public function get_brands()
     {
-        $brands = $this->request('GET', 'search/cars/breadcrumbs', [
-            'rid'   => 50,
-            'state' => 'USED',
-        ]);
+        return $this->getCached('brands', function () {
+            $brands = [];
+            $res = $this->request('GET', 'search/cars/breadcrumbs', [
+                'rid'   => 50,
+                'state' => 'USED',
+            ]);
 
-        if (!$this->isError && !empty($brands['breadcrumbs'][0]['entities'])) {
-            foreach ($brands['breadcrumbs'][0]['entities'] as $brand) {
-                DB::insert('insert into brands (code, title, logo) values(?, ?, ?)',
-                    [
-                        $brand['id'],
-                        $brand['name'],
-                        $brand['mark']['logo']['sizes']['logo'],
-                    ]);
+            if (!$this->isError && !empty($res['breadcrumbs'][0]['entities'])) {
+                foreach ($res['breadcrumbs'][0]['entities'] as $brand) {
+                     DB::insert('insert into brands (code, title, logo) values(?, ?, ?)',
+                        [
+                            $brand['id'],
+                            $brand['name'],
+                            $brand['mark']['logo']['sizes']['logo'],
+                        ]);
+                }
+            } else {
+                throw new Exception('Brands collecting failed!');
             }
-        } else {
-            throw new Exception('Brands collecting failed!');
-        }
 
-        return $brands;
+            $rows = DB::select('select `id`, `title` FROM `brands`');
+
+            if ($rows) {
+                foreach ($rows as $row) {
+                    $brands[] = [
+                        'id' => $row->id,
+                        'title' => $row->title,
+                    ];
+                }
+            }
+
+            return $brands;
+        });
     }
 
     /**
@@ -102,5 +117,23 @@ class AutoruService
         }
 
         return $json;
+    }
+
+    /**
+     *
+     *
+     * @return array
+     */
+    private function getCached($key, $callback) : array
+    {
+        if (Cache::has($key))
+        {
+            $data = json_decode(Cache::get($key), true);
+        } else {
+            $data = call_user_func($callback);
+            Cache::put($key, json_encode($data));
+        }
+
+        return $data;
     }
 }

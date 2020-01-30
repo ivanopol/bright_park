@@ -76,7 +76,7 @@ class HomeController extends Controller
 
         echo "<pre>";
         print_r($data);
-        echo "pre>";
+        echo "</re>";
 
     }
 }
