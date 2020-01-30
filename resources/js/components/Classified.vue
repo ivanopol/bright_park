@@ -54,7 +54,7 @@
         name: 'App',
         data: () => ({
             Deselect: {
-                render: createElement => createElement('span', {class: {'close': true}}),
+                render: createElement => createElement('span'),
             },
             OpenIndicator: {
                 render: createElement => createElement('span', {class: {'toggle': true}}),
@@ -78,6 +78,8 @@
                 background-color: #eef2f7;
                 border-radius: 6px;
                 border: 1px solid #eef2f7;
+                height: 42px;
+                overflow: hidden;
             }
 
             .vs__search, .vs__search:focus {
@@ -87,13 +89,13 @@
             }
 
             .vs__selected {
-                padding: 0 17px;
-                width: 85%;
-                overflow: hidden;
+                padding: 0 25px 0 14px;
+                height: 34px;
             }
 
             &.vs--single.vs--open .vs__selected {
                 line-height: 2;
+                height: 34px;
             }
 
             &.vs--searching .vs__search {
