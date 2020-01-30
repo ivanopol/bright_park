@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\AutoruService;
 use App\Services\BasePageService;
 use Illuminate\Http\Request;
 
@@ -64,5 +65,24 @@ class HomeController extends Controller
     public function trade_in_cash()
     {
         return view('trade_in_cash');
+    }
+
+    public function get_brands()
+    {
+        $raw = new AutoruService('GET', 'search/cars/breadcrumbs', [
+            'rid'   => 50,
+            'state' => 'USED',
+        ]);
+
+        $data = $raw->request();
+
+        if (!$this->isError && !empty($raw['breadcrumbs'][0]['entities'])) {
+            echo "<pre>";
+            print_r($raw);
+            echo "</pre>";
+        } else {
+            throw new Exception('Brands collecting failed!');
+        }
+
     }
 }

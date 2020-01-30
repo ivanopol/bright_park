@@ -2,7 +2,7 @@
     <section id="classified">
         <div class="option-text">Оцените свой автомобиль</div>
         <div class="dropdown-group">
-            <v-select class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Марка" taggable :options="['test1dfgfdhgfhgfjhjkhgkjghdfghdfg', 'test2']">
+            <v-select class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Марка" taggable :options="[]">
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
