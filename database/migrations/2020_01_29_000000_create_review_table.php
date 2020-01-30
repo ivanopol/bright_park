@@ -16,5 +16,18 @@ class CreateReviewTable extends Migration
             $table->string('quote');
             $table->string('author');
         });
+        Artisan::call('db:seed', [
+            '--class' => ReviewTableSeeder::class
+        ]);
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('review');
     }
 }

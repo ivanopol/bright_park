@@ -17,5 +17,18 @@ class CreateColorTable extends Migration
             $table->string('class');
             $table->boolean('is_active');
         });
+        Artisan::call('db:seed', [
+            '--class' => ColorTableSeeder::class
+        ]);
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('color');
     }
 }

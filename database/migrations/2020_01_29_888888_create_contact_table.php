@@ -21,5 +21,18 @@ class CreateContactTable extends Migration
             $table->string('youtube_url')->nullable();
             $table->string('ok_url')->nullable();
         });
+        Artisan::call('db:seed', [
+            '--class' => ContactsTableSeeder::class
+        ]);
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('contact');
     }
 }

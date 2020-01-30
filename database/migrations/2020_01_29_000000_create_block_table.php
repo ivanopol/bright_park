@@ -16,6 +16,21 @@ class CreateBlockTable extends Migration
             $table->integer('pointers');
             $table->boolean('show');
             $table->integer('pnum');
+            $table->mediumText('text');
+            $table->string('url');
         });
+        Artisan::call('db:seed', [
+            '--class' => BlockTableSeeder::class
+        ]);
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('block');
     }
 }

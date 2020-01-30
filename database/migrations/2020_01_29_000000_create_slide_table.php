@@ -18,5 +18,18 @@ class CreateSlideTable extends Migration
             $table->string('subtitle');
             $table->string('link');
         });
+        Artisan::call('db:seed', [
+            '--class' => SlideTableSeeder::class
+        ]);
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('slide');
     }
 }

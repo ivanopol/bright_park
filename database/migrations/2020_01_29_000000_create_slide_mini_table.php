@@ -16,5 +16,18 @@ class CreateSlideMiniTable extends Migration
             $table->string('alt');
             $table->string('title');
         });
+        Artisan::call('db:seed', [
+            '--class' => SlideMiniTableSeeder::class
+        ]);
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('slide_mini');
     }
 }

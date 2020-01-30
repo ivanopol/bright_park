@@ -13,5 +13,18 @@ class CreateCityTable extends Migration
             $table->string('title_ru');
             $table->string('title_en');
         });
+        Artisan::call('db:seed', [
+            '--class' => CityTableSeeder::class
+        ]);
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('city');
     }
 }

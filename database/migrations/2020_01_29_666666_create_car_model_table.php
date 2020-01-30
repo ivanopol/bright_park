@@ -13,5 +13,18 @@ class CreateCarModelTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
         });
+        Artisan::call('db:seed', [
+            '--class' => CarModelTableSeeder::class
+        ]);
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('car_model');
     }
 }

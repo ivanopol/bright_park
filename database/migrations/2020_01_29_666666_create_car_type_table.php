@@ -14,5 +14,18 @@ class CreateCarTypeTable extends Migration
             $table->string('title_en')->nullable();
             $table->string('title_ru')->nullable();
         });
+        Artisan::call('db:seed', [
+            '--class' => CarTypeTableSeeder::class
+        ]);
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('car_type');
     }
 }
