@@ -72,6 +72,9 @@ class AutoruService
     /**
      * Запрос к Auto.ru
      *
+     * @param string $method
+     * @param string $url
+     * @param array $data
      * @return array|mixed
      */
     private function request(string $method, string $url, array $data)
@@ -122,6 +125,8 @@ class AutoruService
     /**
      *
      *
+     * @param $key
+     * @param $callback
      * @return array
      */
     private function getCached($key, $callback) : array
