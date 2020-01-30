@@ -108,12 +108,15 @@
 
             &.vs--open .vs__dropdown-toggle {
                 background-color: #fff;
-                border: 1px solid rgba(60, 60, 60, 0.26);
+                border: 2px solid #000;//rgba(60, 60, 60, 0.26);
                 border-radius: 6px 6px 0 0;
+                border-bottom: none;
             }
 
             .vs__dropdown-menu {
                 border-radius: 0 0 6px 6px;
+                border: 2px solid #000;
+                border-top: none;
             }
 
             .vs__fade-enter-active,
