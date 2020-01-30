@@ -3,7 +3,7 @@
 @section('content')
     <tab-bar></tab-bar>
     <header-component :line="true" :theme="'light'"></header-component>
-    <section class="container p-top-90">
+    <section class="container p-top-90 m-bottom-90">
 
         <slide-show></slide-show>
             <section>
@@ -53,7 +53,7 @@
 
                 <section class="buttons_other mt-20">
                     <div class="item-buttons-other">
-                        <a href="/trade_in_calc" class="btn btn-secondary">Да, оценить мой атомобиль</a>
+                        <a href="/trade_in_calc" class="btn btn-primary">Да, оценить мой атомобиль</a>
                         <a href="" class="btn btn-secondary">У меня нет автомобиля</a>
                     </div>
                 </section>
@@ -61,11 +61,9 @@
                 <classified></classified>
 
                 <div class="progressbar-wrapper">
+                    <div class="progressbar-line"></div>
                     <span class="progressbar-text">Осталось всего 2 шага до получения выгодных условий</span>
-                  {{--  <div class="progressbar-section-colored"></div>--}}
                 </div>
-
-
          </section>
 
     </section>

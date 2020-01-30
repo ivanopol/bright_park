@@ -37,6 +37,10 @@ h2 {
     padding-top: 90px;
 }
 
+.m-bottom-90 {
+    margin-bottom: 90px;
+}
+
 .mt-20 {
     margin-top: 20px;
 }
@@ -937,23 +941,25 @@ footer {
 }
 
 .progressbar-wrapper {
-    margin-bottom: 20%;
-    border: 2px solid #92d36e;
-    border-right: none;
-    border-left: none;
-    display: flex;
-    height: 50px;
-    justify-content: center;
-    align-items: center;
-    position: relative;
 
-    &::before {
-        content: "";
-        width: 33.3%;
-        height: 100%;
-        position: absolute;
-        left: 0;
-        background-color: #92d36e;
+    .progressbar-line {
+        margin: 0 auto 10px;
+        display: block;
+        height: 50px;
+        position: relative;
+        border-radius: 8px;
+        width: 90vw;
+        background-color: #ffdcc6;
+
+        &::before {
+            content: "";
+            width: 33.3%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            background-color: #ed6c21;
+            border-radius: 8px 0 0 8px;
+        }
     }
 
     .progressbar-section-colored {
@@ -965,11 +971,12 @@ footer {
 
     .progressbar-text {
         text-align: center;
-        font-size: 14px;
+        font-size: 13px;
         line-height: 18px;
         color: #000;
         position: absolute;
         padding: 0 15px;
+        width: 100vw;
     }
 }
 
