@@ -765,7 +765,7 @@ footer {
     height: 50px;
     background-color: #ff8351;
     color: #000000;
-    box-shadow: 0 0 10px 0 #ff8351;
+    box-shadow: 0 0 0px 7px rgba(255, 131, 81, 0.28);
 }
 
 .buy-step-number {
@@ -970,53 +970,6 @@ footer {
         color: #000;
         position: absolute;
         padding: 0 15px;
-    }
-}
-
-.dropdown-group {
-    margin: 5% 10%;
-
-    select {
-        margin-top: 2%;
-        width: 100%;
-        background-color: #f7f6f6;
-        border: thin solid #d0d0d0;
-        border-radius: 4px;
-        display: inline-block;
-        font: inherit;
-        line-height: 1.5em;
-        text-align: center;
-
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-    }
-}
-
-.dropdown-group-title {
-    text-align: center;
-    font-weight: bold;
-    padding-top: 5%;
-}
-
-.credit-profit-text {
-    margin: 5% 5% 0;
-    padding: 5% 5% 0;
-
-    ul {
-        list-style: none;
-        font-size: 12px;
-    }
-
-    ul li:before {
-        content: '✓  ';
-        color: #1d643b;
-    }
-
-    .hollow-button {
-        border-radius: 25px;
     }
 }
 
