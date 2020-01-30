@@ -1,20 +1,23 @@
 <?php
 
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateCarModelTable extends Migration
+class CreateSlideMiniTable extends Migration
 {
     public function up()
     {
-        Schema::create('car_model', function (Blueprint $table) {
+        Schema::create('slide_mini', function (Blueprint $table) {
             $table->engine = "InnoDB";
             $table->bigIncrements('id');
+            $table->bigInteger('model_id')->nullable();
+            $table->bigInteger('type_id')->nullable();
+            $table->string('image');
+            $table->string('alt');
             $table->string('title');
         });
         Artisan::call('db:seed', [
-            '--class' => CarModelTableSeeder::class
+            '--class' => SlideMiniTableSeeder::class
         ]);
     }
 
@@ -25,6 +28,6 @@ class CreateCarModelTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('car_model');
+        Schema::dropIfExists('slide_mini');
     }
 }

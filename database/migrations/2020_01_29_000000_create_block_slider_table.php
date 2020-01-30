@@ -1,21 +1,23 @@
 <?php
 
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateCarTypeTable extends Migration
+class CreateBlockSliderTable extends Migration
 {
     public function up()
     {
-        Schema::create('car_type', function (Blueprint $table) {
+        Schema::create('block_slider', function (Blueprint $table) {
             $table->engine = "InnoDB";
             $table->bigIncrements('id');
-            $table->string('title_en')->nullable();
-            $table->string('title_ru')->nullable();
+            $table->bigInteger('block_id');
+            $table->string('text');
+            $table->string('image');
+            $table->integer('number');
         });
+
         Artisan::call('db:seed', [
-            '--class' => CarTypeTableSeeder::class
+            '--class' => BlockSliderTableSeeder::class
         ]);
     }
 
@@ -26,6 +28,6 @@ class CreateCarTypeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('car_type');
+        Schema::dropIfExists('block_slider');
     }
 }

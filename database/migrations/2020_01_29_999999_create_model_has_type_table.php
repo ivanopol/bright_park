@@ -15,5 +15,18 @@ class CreateModelHasTypeTable extends Migration
             $table->bigInteger('car_type_id')->unsigned();
             $table->foreign('car_type_id')->references('id')->on('car_type');
         });
+        Artisan::call('db:seed', [
+            '--class' => ModelHasTypeSeeder::class
+        ]);
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('model_has_type');
     }
 }
