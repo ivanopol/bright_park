@@ -40,7 +40,12 @@ class AutoruService
 
         if (!$this->isError && !empty($brands['breadcrumbs'][0]['entities'])) {
             foreach ($brands['breadcrumbs'][0]['entities'] as $brand) {
-
+                DB::insert('insert into brands (code, title, logo) values(?, ?, ?)',
+                    [
+                        $brand['id'],
+                        $brand['name'],
+                        $brand['mark']['logo']['sizes']['logo'],
+                    ]);
             }
         } else {
             throw new Exception('Brands collecting failed!');
