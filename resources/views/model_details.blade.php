@@ -3,7 +3,7 @@
 @section('content')
     <tab-bar></tab-bar>
     <header-component :line="true" :theme="'light'"></header-component>
-    <section class="container p-top-90 m-bottom-90">
+    <section class="container p-top-90 m-bottom-120">
 
         <slide-show></slide-show>
             <section>
