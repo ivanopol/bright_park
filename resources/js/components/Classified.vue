@@ -25,10 +25,17 @@
         </div>
 
         <div class="trigger-wrap">
-            <p class="trigger-wrap-text">
-                Рыночная оценка <span class="model-count-text">666 руб</span> <br/>
-                Оценка Bright Park <span class="model-count-text">666 руб</span>
-            </p>
+            <div class="trigger-block">
+                <div class="trigger-row">
+                    <div class="trigger-half trigger-left trigger-text">Рыночная оценка</div>
+                    <div class="trigger-half trigger-right trigger-price">300 000 руб.</div>
+                </div>
+
+                <div class="trigger-row">
+                    <div class="trigger-half trigger-left trigger-text">Оценка Bright Park</div>
+                    <div class="trigger-half trigger-right trigger-price trigger-price-accent">320 000 руб.</div>
+                </div>
+            </div>
         </div>
 
         <div class="model-choose-text">
