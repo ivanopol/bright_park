@@ -49,6 +49,7 @@ class HomeController extends Controller
 
     public function model_details()
     {
+
         return view('model_details');
     }
 
@@ -69,20 +70,13 @@ class HomeController extends Controller
 
     public function get_brands()
     {
-        $raw = new AutoruService('GET', 'search/cars/breadcrumbs', [
-            'rid'   => 50,
-            'state' => 'USED',
-        ]);
+        $raw = new AutoruService();
 
-        $data = $raw->request();
+        $data = $raw->get_brands();
 
-        if (!$this->isError && !empty($raw['breadcrumbs'][0]['entities'])) {
-            echo "<pre>";
-            print_r($raw);
-            echo "</pre>";
-        } else {
-            throw new Exception('Brands collecting failed!');
-        }
+        echo "<pre>";
+        print_r($data);
+        echo "pre>";
 
     }
 }
