@@ -32,7 +32,7 @@ class AutoruService
      *
      * @return array
      */
-    public function get_brands()
+    public function get_brands() : array
     {
         return $this->getCached('brands', function () {
             $brands = [];
