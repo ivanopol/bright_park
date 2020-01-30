@@ -6,19 +6,19 @@
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
-            <v-select class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Модель" taggable :options="[]">
+            <v-select disabled class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Модель" taggable :options="[]">
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
-            <v-select class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Год выпуска" taggable :options="[]">
+            <v-select disabled class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Год выпуска" taggable :options="[]">
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
-            <v-select class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Комплектация" taggable :options="[]">
+            <v-select disabled class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Комплектация" taggable :options="[]">
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
-            <v-select class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Пробег" taggable :options="[]">
+            <v-select disabled class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Пробег" taggable :options="[]">
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
@@ -86,10 +86,20 @@
             position: relative;
             margin-bottom: 18px;
 
-            .vs__dropdown-toggle {
+            &.vs--disabled .vs__clear,
+            &.vs--disabled .vs__dropdown-toggle,
+            &.vs--disabled .vs__open-indicator,
+            &.vs--disabled .vs__search,
+            &.vs--disabled .vs__selected {
                 background-color: #eef2f7;
+                border: 2px solid #eef2f7;
+                color: #9299a2;
+            }
+
+            .vs__dropdown-toggle {
+                background-color: #fff;
                 border-radius: 6px;
-                border: 1px solid #eef2f7;
+                border: 2px solid #000;
                 height: 42px;
                 overflow: hidden;
             }
@@ -97,7 +107,7 @@
             .vs__search, .vs__search:focus {
                 line-height: 2;
                 padding: 0 17px;
-                color: #9299a2;
+                color: #000;
             }
 
             .vs__selected {
