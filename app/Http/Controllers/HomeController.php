@@ -72,7 +72,7 @@ class HomeController extends Controller
     {
         $raw = new AutoruService();
 
-        $data = $raw->get_brands();
+        $data = $raw->getBrands();
 
         echo "<pre>";
         print_r($data);

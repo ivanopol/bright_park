@@ -32,7 +32,7 @@ class AutoruService
      *
      * @return array
      */
-    public function get_brands() : array
+    public function getBrands() : array
     {
         return $this->getCached('brands', function () {
             $brands = [];
@@ -67,6 +67,17 @@ class AutoruService
 
             return $brands;
         });
+    }
+
+    /**
+     *
+     * return array
+     */
+    public function getModels() : array
+    {
+        $models = [];
+
+        return $models;
     }
 
     /**
