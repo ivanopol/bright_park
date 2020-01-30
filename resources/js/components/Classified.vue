@@ -36,10 +36,10 @@
         </div>
 
         <div class="button-wrapper-row">
-            <button class="hollow-button-halfsize hollow-button-recolored">
+            <button class="btn-half-secondary">
                 <a href='/trade_in_cash'>Наличный расчет</a>
             </button>
-            <button class="hollow-button-halfsize hollow-button-recolored">
+            <button class="btn-half-primary">
                 <a href="/trade_in_credit">В кредит</a>
             </button>
         </div>
@@ -64,7 +64,9 @@
             vSelect
         },
         methods: {
-            mutableLoading() {}
+            mutableLoading() {
+                return {};
+            }
         }
     };
 </script>
@@ -72,7 +74,7 @@
 <style lang="scss" >
 
     .dropdown-group {
-        margin: 0 28px;
+        margin: 0 30px;
         .select_wrap {
             position: relative;
             margin-bottom: 18px;
