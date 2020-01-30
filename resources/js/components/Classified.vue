@@ -2,37 +2,26 @@
     <section id="classified">
         <div class="option-text">Оцените свой автомобиль</div>
         <div class="dropdown-group">
-            <v-select placeholder="Марка" taggable :options="[]">
- <!--               <slot name="spinner">
-                    <div class="spinner" v-show="mutableLoading">Загрузка...</div>
-                </slot>-->
-                <slot name="no-options">Извините, совпадений не найдено</slot>
+            <v-select class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Марка" taggable :options="['test1dfgfdhgfhgfjhjkhgkjghdfghdfg', 'test2']">
+                <div class="spinner" v-show="mutableLoading">Загрузка...</div>
+                <div slot="no-options">Нет совпадений</div>
             </v-select>
-<!--            <div class="select_wrap">
-                <select class="dropdown">
-                    <option selected="selected">Марка</option>
-                </select>
-            </div>
-            <div class="select_wrap">
-                <select>
-                    <option selected="selected">Модель</option>
-                </select>
-            </div>
-            <div class="select_wrap">
-                <select>
-                    <option selected="selected">Год выпуска</option>
-                </select>
-            </div>
-            <div class="select_wrap">
-                <select>
-                    <option selected="selected">Комплектация</option>
-                </select>
-            </div>
-            <div class="select_wrap">
-                <select>
-                    <option selected="selected">Пробег</option>
-                </select>
-            </div>-->
+            <v-select class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Модель" taggable :options="[]">
+                <div class="spinner" v-show="mutableLoading">Загрузка...</div>
+                <div slot="no-options">Нет совпадений</div>
+            </v-select>
+            <v-select class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Год выпуска" taggable :options="[]">
+                <div class="spinner" v-show="mutableLoading">Загрузка...</div>
+                <div slot="no-options">Нет совпадений</div>
+            </v-select>
+            <v-select class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Комплектация" taggable :options="[]">
+                <div class="spinner" v-show="mutableLoading">Загрузка...</div>
+                <div slot="no-options">Нет совпадений</div>
+            </v-select>
+            <v-select class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Пробег" taggable :options="[]">
+                <div class="spinner" v-show="mutableLoading">Загрузка...</div>
+                <div slot="no-options">Нет совпадений</div>
+            </v-select>
         </div>
 
         <div class="trigger-wrap">
@@ -63,13 +52,21 @@
 
     export default {
         name: 'App',
+        data: () => ({
+            Deselect: {
+                render: createElement => createElement('span', {class: {'close': true}}),
+            },
+            OpenIndicator: {
+                render: createElement => createElement('span', {class: {'toggle': true}}),
+            },
+        }),
         components: {
             vSelect
         }
     };
 </script>
 
-<style lang="scss" scoped >
+<style lang="scss" >
 
     .dropdown-group {
         margin: 0 28px;
@@ -77,8 +74,92 @@
             position: relative;
             margin-bottom: 18px;
 
-            &:after {
-                content: '';
+            .vs__dropdown-toggle {
+                background-color: #eef2f7;
+                border-radius: 6px;
+                border: 1px solid #eef2f7;
+            }
+
+            .vs__search, .vs__search:focus {
+                line-height: 2;
+                padding: 0 17px;
+                color: #9299a2;
+            }
+
+            .vs__selected {
+                padding: 0 17px;
+                width: 85%;
+                overflow: hidden;
+            }
+
+            &.vs--single.vs--open .vs__selected {
+                line-height: 2;
+            }
+
+            &.vs--searching .vs__search {
+                color: #000;
+            }
+
+            .vs__actions {
+                padding-right: 17px;
+            }
+
+            &.vs--open .vs__dropdown-toggle {
+                background-color: #fff;
+                border: 1px solid rgba(60, 60, 60, 0.26);
+                border-radius: 6px 6px 0 0;
+            }
+
+            .vs__dropdown-menu {
+                border-radius: 0 0 6px 6px;
+            }
+
+            .vs__fade-enter-active,
+            .vs__fade-leave-active {
+                transition: none;
+            }
+
+            .vs__open-indicator {
+                transition: none;
+            }
+
+            .close {
+                display: block;
+                position: absolute;
+                top: 50%;
+                margin-top: -12px;
+                right: 40px;
+                width: 25px;
+                height: 25px;
+                background-color: transparent;
+                border-radius: 15px;
+                border: 1px solid #9299a2;
+                cursor: pointer;
+
+                &:before,
+                &:after {
+                    content: '';
+                    display: block;
+                    width: 14px;
+                    height: 1px;
+                    background-color: #9299a2;
+                    position: absolute;
+                    top: 11px;
+                    left: 5px;
+                }
+
+                &:after {
+                    -webkit-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                }
+
+                &:before {
+                    -webkit-transform: rotate(-45deg);
+                    transform: rotate(-45deg);
+                }
+            }
+
+            .toggle {
                 display: block;
                 position: absolute;
                 top: 50%;
@@ -92,23 +173,11 @@
                 -webkit-transform: rotate(45deg);
                 transform: rotate(45deg);
             }
-        }
-        select {
-            width: 100%;
-            background-color: #eef2f7;
-            border: none;
-            border-radius: 6px;
-            display: inline-block;
-            font: inherit;
-            line-height: 1.5em;
-            text-align: center;
-            box-sizing: border-box;
-            height: 42px;
-            padding: 0 17px;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            color: #9299a2;
+
+            &.vs--open .toggle {
+                -webkit-transform: rotate(225deg);
+                transform: rotate(225deg);
+            }
         }
     }
 
