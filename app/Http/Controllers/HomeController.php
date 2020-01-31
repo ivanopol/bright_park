@@ -49,7 +49,9 @@ class HomeController extends Controller
 
     public function model_details()
     {
-        return view('model_details');
+        $raw = new AutoruService();
+        $brands = $raw->getBrands();
+        return view('model_details', [ 'brands' => $brands ]);
     }
 
     public function trade_in_calc()
@@ -69,20 +71,5 @@ class HomeController extends Controller
 
     public function get_brands()
     {
-        $raw = new AutoruService('GET', 'search/cars/breadcrumbs', [
-            'rid'   => 50,
-            'state' => 'USED',
-        ]);
-
-        $data = $raw->request();
-
-        if (!$this->isError && !empty($raw['breadcrumbs'][0]['entities'])) {
-            echo "<pre>";
-            print_r($raw);
-            echo "</pre>";
-        } else {
-            throw new Exception('Brands collecting failed!');
-        }
-
     }
 }

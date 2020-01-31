@@ -68,9 +68,8 @@
         },
         methods: {
             change_slide: function (index) {
-                // this.$children[1].slideTo(event.toElement.dataset.index);
                 this.$children[0].slideTo(index);
-                console.log(index);
+                return {};
             }
         }
     };

@@ -5,6 +5,9 @@ namespace App\Services;
 
 
 use Illuminate\Support\Facades\DB;
+use Exception;
+use Cache;
+
 
 class AutoruService
 {
@@ -18,13 +21,9 @@ class AutoruService
 
     private $url = 'https://apiauto.ru/1.0/';
 
-    private $method;
-
-    private $data;
-
     private $headers;
 
-    public function __construct($method, $url, $data)
+    public function __construct()
     {
     }
 
@@ -33,44 +32,73 @@ class AutoruService
      *
      * @return array
      */
-    public function get_brands() : array
+    public function getBrands() : array
     {
-        $brands = [];
+        return $this->getCached('brands', function () {
+            $brands = [];
+            $res = $this->request('GET', 'search/cars/breadcrumbs', [
+                'rid'   => 50,
+                'state' => 'USED',
+            ]);
 
-        $brands = $this->request('GET', 'search/cars/breadcrumbs', [
-            'rid'   => 50,
-            'state' => 'USED',
-        ]);
-
-        if (!$this->isError && !empty($raw['breadcrumbs'][0]['entities'])) {
-            foreach ($raw['breadcrumbs'][0]['entities'] as $brand) {
-
+            if (!$this->isError && !empty($res['breadcrumbs'][0]['entities'])) {
+                foreach ($res['breadcrumbs'][0]['entities'] as $brand) {
+                     DB::insert('insert into brands (code, title, logo) values(?, ?, ?)',
+                        [
+                            $brand['id'],
+                            $brand['name'],
+                            $brand['mark']['logo']['sizes']['logo'],
+                        ]);
+                }
+            } else {
+                throw new Exception('Brands collecting failed!');
             }
-        } else {
-            throw new Exception('Brands collecting failed!');
-        }
 
-        return $brands;
+            $rows = DB::select('select `id`, `title` FROM `brands`');
+
+            if ($rows) {
+                foreach ($rows as $row) {
+                    $brands[] = [
+                        'code' => $row->id,
+                        'label' => $row->title,
+                    ];
+                }
+            }
+
+            return $brands;
+        });
+    }
+
+    /**
+     *
+     * return array
+     */
+    public function getModels() : array
+    {
+        $models = [];
+
+        return $models;
     }
 
     /**
      * Запрос к Auto.ru
      *
+     * @param string $method
+     * @param string $url
+     * @param array $data
      * @return array|mixed
      */
-    public function request(string $method, string $url, array $data) : array
+    private function request(string $method, string $url, array $data)
     {
         $this->headers = [
             'Content-Type: application/json; charset=utf-8',
             'x-authorization: ' . $this->token,
         ];
 
-        $this->method = $method;
+        $this->url .= $url;
 
-        $this->data = $data;
-
-        if ($this->method == 'GET') {
-            $this->url .= '?' . http_build_query($this->data);
+        if ($method == 'GET') {
+            $this->url .= '?' . http_build_query($data);
         }
 
         $ch = curl_init();
@@ -79,9 +107,9 @@ class AutoruService
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
-        if ($this->method == 'POST') {
+        if ($method == 'POST') {
             curl_setopt($ch, CURLOPT_POST, 1);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($this->data));
+            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
         }
 
         curl_setopt($ch, CURLOPT_HTTPHEADER, $this->headers);
@@ -103,5 +131,25 @@ class AutoruService
         }
 
         return $json;
+    }
+
+    /**
+     *
+     *
+     * @param $key
+     * @param $callback
+     * @return array
+     */
+    private function getCached($key, $callback) : array
+    {
+        if (Cache::has($key))
+        {
+            $data = json_decode(Cache::get($key), true);
+        } else {
+            $data = call_user_func($callback);
+            Cache::put($key, json_encode($data));
+        }
+
+        return $data;
     }
 }
