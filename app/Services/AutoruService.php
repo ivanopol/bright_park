@@ -112,7 +112,7 @@ class AutoruService
         return DB::select('select id, title from brand_models where brand_id = :brand_id', ['brand_id' => $brand_id]);
     }
 
-    public function get_mileage_range()
+    public function getMileageRange()
     {
         return [
             1 => 'До 10 000',
@@ -126,7 +126,7 @@ class AutoruService
         ];
     }
 
-    public function get_years_range()
+    public function getYearsRange()
     {
         return range(2000, date("Y"), $step = 1);
     }

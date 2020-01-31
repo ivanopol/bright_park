@@ -80,4 +80,18 @@ class HomeController extends Controller
         $models = $raw->getModels($brand_id);
         return Response::json([ 'models' => $models]);
     }
+
+    public function getYearsRange()
+    {
+        $raw = new AutoruService();
+        $getYearsRange = $raw->getYearsRange();
+        return Response::json([ 'yearsRange' => $getYearsRange]);
+    }
+
+    public function getMileageRange()
+    {
+        $raw = new AutoruService();
+        $getMileageRange = $raw->getMileageRange();
+        return Response::json([ 'mileageRange' => $getMileageRange]);
+    }
 }
