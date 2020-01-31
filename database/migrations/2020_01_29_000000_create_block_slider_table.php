@@ -9,6 +9,8 @@ class CreateBlockSliderTable extends Migration
     {
         Schema::create('block_slider', function (Blueprint $table) {
             $table->engine = "InnoDB";
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_general_ci';
             $table->bigIncrements('id');
             $table->bigInteger('block_id');
             $table->string('text');

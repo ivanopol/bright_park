@@ -3,30 +3,22 @@
 
 namespace App\Services;
 
-
 use Illuminate\Support\Facades\DB;
 
-class BasePageService
+class ModelService
 {
-    public function get_base_page_data()
+    public function __construct()
     {
 
+    }
+
+    public function get_model_page_view_data()
+    {
         $reviews = DB::select('select * from review');
         $colors = DB::select('select * from color');
-        $blocks = DB::select('select * from block');
-        $blocks_slider = DB::select('select * from block_slider');
+        $blocks = DB::select('select * from block left join block_slider as bs on bs.block_id = block.id');
         $slides = DB::select('select * from slide');
         $slide_mini = DB::select('select * from slide_mini');
-
-        foreach ($blocks as &$block) {
-            $block->slider = [];
-
-            foreach ($blocks_slider as $slider) {
-                if ($block->id == $slider->block_id) {
-                    $block->slider = $slider;
-                }
-            }
-        }
 
         $data = [
             'slider' => [
