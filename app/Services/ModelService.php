@@ -3,12 +3,16 @@
 
 namespace App\Services;
 
-
 use Illuminate\Support\Facades\DB;
 
-class BasePageService
+class ModelService
 {
-    public function get_base_page_data()
+    public function __construct()
+    {
+
+    }
+
+    public function get_model_page_view_data()
     {
         $reviews = DB::select('select * from review');
         $colors = DB::select('select * from color');
