@@ -1033,6 +1033,10 @@ footer {
             background-color: #ed6c21;
             border-radius: 8px 0 0 8px;
         }
+
+        &.step2::before {
+            width: 66%;
+        }
     }
 
     .progressbar-section-colored {
