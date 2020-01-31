@@ -56,6 +56,7 @@
 <script>
     import vSelect from 'vue-select';
     import 'vue-select/dist/vue-select.css';
+    import axios from 'axios';
 
     export default {
         name: 'App',
@@ -70,13 +71,30 @@
             step_one: false,
         }),
         components: {
-            vSelect
+            vSelect,
+            axios
         },
         methods: {
             mutableLoading() {
                 return {};
             },
             stepOne: function (input) {
+
+                axios.get('/get_brand_models', {
+                    params: {
+                        model_id: input.code
+                    }
+                })
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+                .then(function () {
+                   // console.log('always');
+                });
+
                 this.step_one = true;
                 //this.$children[1].disabled = false;
             },

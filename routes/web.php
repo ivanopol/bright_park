@@ -29,6 +29,7 @@ Route::any('/main', 'HomeController@main')->name('main');
 Route::any('/trade_in_credit', 'HomeController@trade_in_credit')->name('trade_in_credit');
 Route::any('/trade_in_cash', 'HomeController@trade_in_cash')->name('trade_in_cash');
 Route::any('/get_brands', 'HomeController@get_brands')->name('get_brands');
+Route::any('/get_brand_models', 'HomeController@get_brand_models')->name('get_brand_models');
 
 
 
