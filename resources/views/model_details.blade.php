@@ -20,50 +20,7 @@
                     <p class="trigger-wrap-text">Осталось <span class="model-count-text">333</span> Granta Лифтбек по спеццене</p>
                 </div>
 
-                <div class="model-choose-text">
-                    <p>Подберите выгодные условия на LADA Grant LiftBack</p>
-                </div>
-
-                <div class="buy-steps-wrapper">
-                    <div class="buy-step-block">
-                        <div class="buy-step-circle-colored divided">
-                            <p class="buy-step-number">1</p>
-                        </div>
-                        <p class="buy-step-text">Оцените автомобиль</p>
-                    </div>
-
-                    <div class="buy-step-block">
-                        <div class="buy-step-circle divided">
-                            <p class="buy-step-number">2</p>
-                        </div>
-                        <p class="buy-step-text">Рассчитайте платеж</p>
-                    </div>
-
-                    <div class="buy-step-block">
-                        <div class="buy-step-circle divided">
-                            <p class="buy-step-number">3</p>
-                        </div>
-                        <p class="buy-step-text">Заполните форму</p>
-                    </div>
-                </div>
-
-                <div class="option-text">
-                    <p>Имеете ли вы автомобиль на обмен?</p>
-                </div>
-
-                <section class="buttons_other mt-20">
-                    <div class="item-buttons-other">
-                        <a href="/trade_in_calc" class="btn btn-primary">Да, оценить мой атомобиль</a>
-                        <a href="" class="btn btn-secondary">У меня нет автомобиля</a>
-                    </div>
-                </section>
-
-                <classified :brands='@json($brands)'></classified>
-
-                <div class="progressbar-wrapper">
-                    <div class="progressbar-line"></div>
-                    <span class="progressbar-text">Осталось всего 2 шага до получения выгодных условий</span>
-                </div>
+                <steps :brands='@json($brands)'></steps>
          </section>
 
     </section>

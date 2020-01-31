@@ -34,6 +34,7 @@ Vue.component('range-slider-component-period', require('./components/RangeSlider
 Vue.component('tab-bar', require('./components/elements/TabBar').default);
 Vue.component('slide-show', require('./components/SlideShow').default);
 Vue.component('classified', require('./components/Classified').default);
+Vue.component('steps', require('./components/Steps').default);
 
 const store = new Vuex.Store({
     state: {
