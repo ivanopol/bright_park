@@ -73,11 +73,43 @@ class AutoruService
      *
      * return array
      */
-    public function getModels() : array
+    public function getModels($brand_id) : array
     {
-        $models = [];
+        $brand_list = DB::select('select id, code, title from brand where id = :brand_id', ['brand_id'=>$brand_id]);
 
-        return $models;
+        if (sizeof($brand_list) == 0) {
+            return [];
+        }
+
+        $brand = $brand_list[0];
+
+        $model_list = DB::select('select * from brand_models where brand_id = :brand_id', ['brand_id'=>$brand_id]);
+
+        if (sizeof($model_list) == 0) {
+            $res = $this->request('GET', 'search/cars/breadcrumbs', [
+                'bc_lookup' => $brand['code'],
+                'rid'       => 50,
+                'state'     => 'USED',
+            ]);
+
+            if (!$this->isError && !empty($res['breadcrumbs'])) {
+                foreach ($res['breadcrumbs'] as $level) {
+                    if ($level['meta_level'] == 'MODEL_LEVEL') {
+                        foreach ($level['entities'] as $model) {
+                            DB::table('brand_models')->insert([
+                                'code'     => $model['id'],
+                                'title'    => $model['name'],
+                                'brand_id' => $brand['id'],
+                            ]);
+                        }
+                    }
+                }
+            } else {
+                throw new Exception('Models collecting failed!');
+            }
+        }
+
+        return DB::select('select id, title from brand_models where brand_id = :brand_id', ['brand_id'=>$brand_id]);
     }
 
     /**
