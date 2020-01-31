@@ -2,7 +2,7 @@
     <section id="classified">
         <div class="option-text">Оцените свой автомобиль</div>
         <div class="dropdown-group">
-            <v-select class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Марка" taggable :options="brands"  label="label">
+            <v-select class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Марка" taggable :options="brands" v-on:input="stepOne">
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
@@ -74,6 +74,10 @@
         methods: {
             mutableLoading() {
                 return {};
+            },
+            stepOne: function (input) {
+                this.$children[1].disabled = false;
+                console.log();
             }
         }
     };
