@@ -3,54 +3,55 @@
 @section('content')
     <tab-bar></tab-bar>
     <header-component :line="true" :theme="'light'"></header-component>
-    <div class="container p-top-90">
+    <div class="container p-top-90 m-bottom-120">
         <section>
             <div class="buy-steps-wrapper">
-                <div class="buy-step-circle divided">
-                    <p class="buy-step-number">1</p>
-                    <p class="buy-step-text">
-                        Оцените автомобиль
-                    </p>
+                <div class="buy-step-block">
+                    <div class="buy-step-circle-colored divided">
+                        <p class="buy-step-number">1</p>
+                    </div>
+                    <p class="buy-step-text">Оцените автомобиль</p>
                 </div>
 
-                <div class="divider"></div>
-
-                <div class="buy-step-circle-colored divided">
-                    <p class="buy-step-number">2</p>
-                    <p class="buy-step-text">
-                        Рассчитайте платеж
-                    </p>
+                <div class="buy-step-block">
+                    <div class="buy-step-circle-colored divided">
+                        <p class="buy-step-number">2</p>
+                    </div>
+                    <p class="buy-step-text">Рассчитайте платеж</p>
                 </div>
 
-                <div class="divider"></div>
-
-                <div class="buy-step-circle divided">
-                    <p class="buy-step-number">3</p>
-                    <p class="buy-step-text">
-                        Заполните форму
-                    </p>
+                <div class="buy-step-block">
+                    <div class="buy-step-circle divided">
+                        <p class="buy-step-number">3</p>
+                    </div>
+                    <p class="buy-step-text">Заполните форму</p>
                 </div>
             </div>
 
-            <div class="credit-profit-text">
-                <p>
-                    В Bright Park выгодные условия кредитования!
-                </p> <br/>
+            <div class="option-text">
+                <p>В Bright Park выгодные условия кредитования!</p>
+            </div>
+
+            <div class="conditions">
                 <ul>
-                    <li>12 банков-партнеров</li>
-                    <li>Одобрение по кредиту 30 минут</li>
-                    <li>Вероятность одобрения 96%</li>
+                    <li><span><i class="fas fa-check"></i></span> <span>12 банков-партнеров</span></li>
+                    <li><span><i class="fas fa-check"></i></span> <span>Одобрение по кредиту 30 минут</span></li>
+                    <li><span><i class="fas fa-check"></i></span> <span>Вероятность одобрения 96%</span></li>
                 </ul>
-                <br/>
+            </div>
+
+            <div class="option-text">
                 <p>
                     Первоначальный взнос
                 </p>
-                <div class="button-wrapper-row">
-                    <button class="hollow-button hollow-button-recolored">
-                        <a>Зачесть мой авто первоначальным взносом</a>
-                    </button>
+            </div>
+
+            <div class="buttons_other">
+                <div class="item-buttons-other">
+                    <a href="#" class="btn btn-secondary">Зачесть мой авто первоначальным взносом</a>
                 </div>
             </div>
+
 
             <div class="range-slider-wrapper">
                 <range-slider-component>
@@ -87,26 +88,16 @@
                 </div>
             </div>
 
-            <div class="button-wrapper-row">
-                <div class="button-wrapper-row">
-                    <button class="hollow-button hollow-button-recolored">
-                        <a>закрепить условия</a>
-                    </button>
+            <div class="buttons_other">
+                <div class="item-buttons-other">
+                    <a href="#" class="btn btn-primary">Закрепить условия</a>
                 </div>
             </div>
-
-            <div style="margin-bottom: 20%">
-                <div class="progressbar-wrapper">
-                    <div class="progressbar-section-colored">
-                        <p class="progressbar-text">Остался всего 1 шаг до получения выгодных условий</p>
-                    </div>
-                    <div class="progressbar-section-colored">
-                    </div>
-                    <div class="progressbar-section">
-                    </div>
-                </div>
+            <div class="progressbar-wrapper">
+                <div class="progressbar-line step2"></div>
+                <span class="progressbar-text" >Остался всего 1 шаг до получения выгодных условий</span>
             </div>
-
         </section>
     </div>
+    <script src="https://kit.fontawesome.com/f17735271b.js" crossorigin="anonymous"></script>
 @endsection

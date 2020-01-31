@@ -6,7 +6,7 @@
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
-            <v-select @search:focus="uploadModels" :disabled="!step_one" class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Модель" taggable :options="[]">
+            <v-select @search:focus="uploadModels" :disabled="!step_one" class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Модель"  taggable :options="[]">
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
@@ -69,6 +69,7 @@
                 render: createElement => createElement('span', {class: {'toggle': true}}),
             },
             step_one: false,
+            models: []
         }),
         components: {
             vSelect,
@@ -86,7 +87,7 @@
                     }
                 })
                 .then(function (response) {
-                    console.log(response);
+                    console.log(response.data);
                 })
                 .catch(function (error) {
                     console.log(error);
