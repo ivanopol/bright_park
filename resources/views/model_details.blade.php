@@ -17,7 +17,7 @@
                 </div>
 
                 <div class="trigger-wrap">
-                    <p class="trigger-wrap-text">Осталось <span class="model-count-text">666</span> Granta Лифтбек по спеццене</p>
+                    <p class="trigger-wrap-text">Осталось <span class="model-count-text">333</span> Granta Лифтбек по спеццене</p>
                 </div>
 
                 <div class="model-choose-text">
@@ -58,7 +58,7 @@
                     </div>
                 </section>
 
-                <classified></classified>
+                <classified :brands='@json($brands)'></classified>
 
                 <div class="progressbar-wrapper">
                     <div class="progressbar-line"></div>

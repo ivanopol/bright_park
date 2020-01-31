@@ -59,8 +59,8 @@ class AutoruService
             if ($rows) {
                 foreach ($rows as $row) {
                     $brands[] = [
-                        'id' => $row->id,
-                        'title' => $row->title,
+                        'code' => $row->id,
+                        'label' => $row->title,
                     ];
                 }
             }

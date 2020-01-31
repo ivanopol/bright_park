@@ -2,7 +2,7 @@
     <section id="classified">
         <div class="option-text">Оцените свой автомобиль</div>
         <div class="dropdown-group">
-            <v-select class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Марка" taggable :options="[]">
+            <v-select class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Марка" taggable :options="brands"  label="label">
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
@@ -59,6 +59,7 @@
 
     export default {
         name: 'App',
+        props: ['brands'],
         data: () => ({
             Deselect: {
                 render: createElement => createElement('span'),
