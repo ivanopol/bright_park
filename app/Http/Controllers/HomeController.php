@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Services\AutoruService;
 use App\Services\BasePageService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 
 class HomeController extends Controller
 {
@@ -77,6 +78,6 @@ class HomeController extends Controller
     {
         $raw = new AutoruService();
         $models = $raw->getModels($brand_id);
-        return view('model_details', [ 'models' => $models]);
+        return Response::json([ 'models' => $models]);
     }
 }

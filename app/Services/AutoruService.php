@@ -32,18 +32,18 @@ class AutoruService
      *
      * @return array
      */
-    public function getBrands() : array
+    public function getBrands(): array
     {
         return $this->getCached('brands', function () {
             $brands = [];
             $res = $this->request('GET', 'search/cars/breadcrumbs', [
-                'rid'   => 50,
+                'rid' => 50,
                 'state' => 'USED',
             ]);
 
             if (!$this->isError && !empty($res['breadcrumbs'][0]['entities'])) {
                 foreach ($res['breadcrumbs'][0]['entities'] as $brand) {
-                     DB::insert('insert into brands (code, title, logo) values(?, ?, ?)',
+                    DB::insert('insert into brands (code, title, logo) values(?, ?, ?)',
                         [
                             $brand['id'],
                             $brand['name'],
@@ -73,9 +73,9 @@ class AutoruService
      *
      * return array
      */
-    public function getModels($brand_id) : array
+    public function getModels($brand_id): array
     {
-        $brand_list = DB::select('select id, code, title from brands where id = :brand_id', ['brand_id'=>$brand_id]);
+        $brand_list = DB::select('select id, code, title from brands where id = :brand_id', ['brand_id' => $brand_id]);
 
         if (sizeof($brand_list) == 0) {
             return [];
@@ -83,12 +83,12 @@ class AutoruService
 
         $brand = $brand_list[0];
 
-        $model_list = DB::select('select * from brand_models where brand_id = :brand_id', ['brand_id'=>$brand_id]);
+        $model_list = DB::select('select * from brand_models where brand_id = :brand_id', ['brand_id' => $brand_id]);
         if (sizeof($model_list) == 0) {
             $res = $this->request('GET', 'search/cars/breadcrumbs', [
-                'rid'   => 50,
+                'rid' => 50,
                 'state' => 'USED',
-                'bc_lookup'=>$brand->code
+                'bc_lookup' => $brand->code
             ]);
 
             if (!$this->isError && !empty($res['breadcrumbs'])) {
@@ -109,7 +109,26 @@ class AutoruService
             }
         }
 
-        return DB::select('select id, title from brand_models where brand_id = :brand_id', ['brand_id'=>$brand_id]);
+        return DB::select('select id, title from brand_models where brand_id = :brand_id', ['brand_id' => $brand_id]);
+    }
+
+    public function get_mileage_range()
+    {
+        return [
+            1 => 'До 10 000',
+            2 => '10 000 - 30 000',
+            3 => '30 000 - 50 000',
+            4 => '50 000 - 75 000',
+            5 => '75 000 - 100 000',
+            6 => '100 000 - 150 000',
+            7 => '150 000 - 200 000',
+            8 => 'более 200 000'
+        ];
+    }
+
+    public function get_years_range()
+    {
+        return range(2000, date("Y"), $step = 1);
     }
 
     /**
@@ -172,10 +191,9 @@ class AutoruService
      * @param $callback
      * @return array
      */
-    private function getCached($key, $callback) : array
+    private function getCached($key, $callback): array
     {
-        if (Cache::has($key))
-        {
+        if (Cache::has($key)) {
             $data = json_decode(Cache::get($key), true);
         } else {
             $data = call_user_func($callback);
