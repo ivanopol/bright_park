@@ -37,6 +37,10 @@ h2 {
     padding-top: 90px;
 }
 
+.m-bottom-120 {
+    margin-bottom: 120px;
+}
+
 .mt-20 {
     margin-top: 20px;
 }
@@ -644,8 +648,53 @@ form {
 }
 
 .trigger-wrap {
-    margin: 30px 0;
+    margin: 30px;
 
+    .trigger-row {
+        color: #000;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 10px;
+
+        .trigger-left {
+            text-align: right;
+        }
+
+        .trigger-right {
+            text-align: left;
+        }
+
+        .trigger-half {
+            width: 48%;
+        }
+
+        .trigger-text {
+            font-size: 16px;
+        }
+
+        @media only screen and (max-width: 340px) {
+            .trigger-text {
+                font-size: 14px;
+            }
+        }
+
+        .trigger-price {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        @media only screen and (max-width: 340px) {
+            .trigger-price {
+                font-size: 20px;
+            }
+        }
+
+        .trigger-price-accent {
+            color: #ee6723;
+        }
+    }
+    .trigger-block,
     p {
         width: 80vw;
         display: block;
@@ -794,7 +843,7 @@ footer {
         position: absolute;
         height: 2px;
         display: block;
-        top: 28%;
+        top: 25%;
         left: 10%;
         right: 10%;
         margin: 0 auto;
@@ -875,20 +924,14 @@ footer {
     font-weight: bold;
 }
 
-.trigger-wrap-text {
-    font-size: 16px;
-    text-align: left;
-    line-height: 1.4;
-}
-
 .button-wrapper {
     margin: 5% 10% 10%;
 }
 
 .button-wrapper-row {
-    margin: 5%;
+    margin: 5% 30px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .hollow-button {
@@ -936,24 +979,60 @@ footer {
     }
 }
 
-.progressbar-wrapper {
-    margin-bottom: 20%;
-    border: 2px solid #92d36e;
-    border-right: none;
-    border-left: none;
-    display: flex;
-    height: 50px;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+.btn-half-primary,
+.btn-half-secondary {
+    width: 47%;
+    text-transform: uppercase;
+    padding: 11px 9px;
+    text-align: center;
+    border: 2px solid #000;
+    border-radius: 8px;
+    margin-bottom: 1%;
 
-    &::before {
-        content: "";
-        width: 33.3%;
-        height: 100%;
-        position: absolute;
-        left: 0;
-        background-color: #92d36e;
+    a {
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 18px;
+        text-transform: uppercase;
+    }
+}
+
+.btn-half-secondary {
+    background-color: transparent;
+
+    a {
+        color: #000;
+    }
+}
+
+.btn-half-primary {
+    background-color: #000;
+
+    a {
+        color: #fff;
+    }
+}
+
+.progressbar-wrapper {
+
+    .progressbar-line {
+        margin: 0 auto 10px;
+        display: block;
+        height: 50px;
+        position: relative;
+        border-radius: 8px;
+        width: 85.51vw;
+        background-color: #ffdcc6;
+
+        &::before {
+            content: "";
+            width: 33.3%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            background-color: #ed6c21;
+            border-radius: 8px 0 0 8px;
+        }
     }
 
     .progressbar-section-colored {
@@ -965,11 +1044,12 @@ footer {
 
     .progressbar-text {
         text-align: center;
-        font-size: 14px;
+        font-size: 13px;
         line-height: 18px;
         color: #000;
         position: absolute;
-        padding: 0 15px;
+        padding: 0 30px;
+        width: 100vw;
     }
 }
 
@@ -1137,7 +1217,7 @@ footer {
         }
 
         .btn {
-            width: 85vw;
+            width: 85.51vw;
             border-radius: 50px;
             padding: 14px 15px 10px;
         }

@@ -105,7 +105,7 @@ class BlockSliderTableSeeder extends Seeder
                 'image' => 'build/images/info/1/1.png',
                 'number' => '6',
                 'block_id' => '4'
-            ]
+            ],
         ];
 
         DB::table('block_slider')->insert($block_sliders);

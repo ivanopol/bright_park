@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\AutoruService;
 use App\Services\BasePageService;
 use Illuminate\Http\Request;
 
@@ -48,7 +49,9 @@ class HomeController extends Controller
 
     public function model_details()
     {
-        return view('model_details');
+        $raw = new AutoruService();
+        $brands = $raw->getBrands();
+        return view('model_details', [ 'brands' => $brands ]);
     }
 
     public function trade_in_calc()
@@ -64,5 +67,9 @@ class HomeController extends Controller
     public function trade_in_cash()
     {
         return view('trade_in_cash');
+    }
+
+    public function get_brands()
+    {
     }
 }
