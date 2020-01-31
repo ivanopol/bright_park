@@ -6,7 +6,7 @@
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
-            <v-select disabled class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Модель" taggable :options="[]">
+            <v-select @search:focus="uploadModels" :disabled="!step_one" class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Модель" taggable :options="[]">
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
@@ -67,6 +67,7 @@
             OpenIndicator: {
                 render: createElement => createElement('span', {class: {'toggle': true}}),
             },
+            step_one: false,
         }),
         components: {
             vSelect
@@ -76,8 +77,18 @@
                 return {};
             },
             stepOne: function (input) {
-                this.$children[1].disabled = false;
-                console.log();
+                this.step_one = true;
+                //this.$children[1].disabled = false;
+            },
+            uploadModels: function () {
+                let options_count = this.$children[1].options.length;
+
+                if (options_count) {
+                    return false;
+                }
+
+
+                console.log("test");
             }
         }
     };
