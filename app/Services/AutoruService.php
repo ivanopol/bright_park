@@ -75,7 +75,7 @@ class AutoruService
      */
     public function getModels($brand_id) : array
     {
-        $brand_list = DB::select('select id, code, title from brand where id = :brand_id', ['brand_id'=>$brand_id]);
+        $brand_list = DB::select('select id, code, title from brands where id = :brand_id', ['brand_id'=>$brand_id]);
 
         if (sizeof($brand_list) == 0) {
             return [];
@@ -84,23 +84,23 @@ class AutoruService
         $brand = $brand_list[0];
 
         $model_list = DB::select('select * from brand_models where brand_id = :brand_id', ['brand_id'=>$brand_id]);
-
         if (sizeof($model_list) == 0) {
             $res = $this->request('GET', 'search/cars/breadcrumbs', [
-                'bc_lookup' => $brand['code'],
-                'rid'       => 50,
-                'state'     => 'USED',
+                'rid'   => 50,
+                'state' => 'USED',
+                'bc_lookup'=>$brand->code
             ]);
 
             if (!$this->isError && !empty($res['breadcrumbs'])) {
                 foreach ($res['breadcrumbs'] as $level) {
                     if ($level['meta_level'] == 'MODEL_LEVEL') {
                         foreach ($level['entities'] as $model) {
-                            DB::table('brand_models')->insert([
-                                'code'     => $model['id'],
-                                'title'    => $model['name'],
-                                'brand_id' => $brand['id'],
-                            ]);
+                            DB::insert('insert into brand_models(brand_id, code, title) values(?, ?, ?)',
+                                [
+                                    $brand->id,
+                                    $model['id'],
+                                    $model['name'],
+                                ]);
                         }
                     }
                 }
