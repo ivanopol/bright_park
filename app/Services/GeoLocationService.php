@@ -4,6 +4,7 @@
 namespace App\Services;
 
 use Illuminate\Support\Facades\DB;
+use Symfony\Component\HttpFoundation\Response;
 use Torann\GeoIP\Facades\GeoIP;
 
 /**
@@ -19,12 +20,12 @@ class GeoLocationService
     {
         $title_en = geoip($ip=null)->getLocation($ip_address)->getAttribute('city');
 
-        $city = DB::selectOne("select * from city where title_en = :title_en", ['title_en'=>$title_en]);
+        $city = DB::selectOne("select * from city left join contact c on c.city_id = city.id where title_en = :title_en", ['title_en'=>$title_en]);
 
         if($city == null){
-            return Response::json(DB::select("select * from city where title_en = :title_en", ['title_en'=>$title_en]));
+            return (DB::select("select * from city left join contact c on c.city_id = city.id where title_en = :title_en", ['title_en'=>'Perm']));
         }
 
-        return geoip($ip=null)->getLocation($ip_address)->getAttribute('city');
+        return $city;
     }
 }
