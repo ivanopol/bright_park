@@ -8,7 +8,7 @@ class BitrixService
 {
 
     // Сюда добавляются ID ответственных через запятую. Должен быть как минимум 1 ID
-    private $arr_responsible_id = [1201]; //Мурыга Милана
+    private $arr_responsible_id = [1447]; //Мурыга Милана
 
     public function __construct()
     {
@@ -22,7 +22,8 @@ class BitrixService
 
         $phone = $data['phone'];
 
-        $responsible_id = $this->arr_responsible_id[mt_rand(0, count($this->arr_responsible_id) - 1)];
+        $responsible_id = 1447;
+        $this->arr_responsible_id[mt_rand(0, count($this->arr_responsible_id) - 1)];
 
         $request = [
             'type' => "PHONE",
@@ -42,6 +43,10 @@ class BitrixService
         $result = curl_exec($curl);
         curl_close($curl);
         $result = json_decode($result, 1);
+
+        echo '<pre>';
+        print_r($result);
+        echo '</pre>';
 
         $report = 'Поиск по телефону:<br><pre>Запрос: ' . print_r($request, true) . '</pre><br><pre>Ответ: ' . print_r($result, true) . '</pre><br><br>';
 
@@ -83,6 +88,7 @@ class BitrixService
             $result = curl_exec($curl);
             curl_close($curl);
             $result = json_decode($result, 1);
+            var_dump($result);
 
             $report .= 'Поиск ответственного:<br><pre>Запрос: ' . print_r($request, true) . '</pre><br><pre>Ответ: ' . print_r($result, true) . '</pre><br><br>';
 
@@ -131,11 +137,10 @@ class BitrixService
             curl_close($curl);
             $result = json_decode($result, 1);
 
-            $this->report .= 'Создание лида:<br><pre>Запрос: ' . print_r($request, true) . '</pre><br><pre>Ответ: ' . print_r($result, true) . '</pre><br><br>';
+            $report .= 'Создание лида:<br><pre>Запрос: ' . print_r($request, true) . '</pre><br><pre>Ответ: ' . print_r($result, true) . '</pre><br><br>';
 
             $id = $result['result'];
             $type = 1;
-
         }
 
 // Прикрепление дела
@@ -170,7 +175,7 @@ class BitrixService
         curl_close($curl);
         $result = json_decode($result, 1);
 
-        $this->report .= 'Создание активности:<br><pre>Запрос: ' . print_r($request, true) . '</pre><br><pre>Ответ: ' . print_r($result, true) . '</pre><br><br>';
+        $report .= 'Создание активности:<br><pre>Запрос: ' . print_r($request, true) . '</pre><br><pre>Ответ: ' . print_r($result, true) . '</pre><br><br>';
 
         //$modx->logEvent(0, 1, $report, 'Bitrix24 заявка ' . $phone);
 
@@ -191,5 +196,7 @@ class BitrixService
             //setcookie($key, $value, time() + 60 * 60 * 24 * 365, MODX_BASE_URL, $secure, $cookieDomain, true);
             setcookie($key, $value, time() + 60 * 60 * 24 * 365, MODX_BASE_URL, $cookieDomain, true);
         }
+
+        var_dump($result);
     }
 }

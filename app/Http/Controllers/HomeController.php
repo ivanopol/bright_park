@@ -35,9 +35,6 @@ class HomeController extends Controller
     public function main()
     {
         $city = $this->geo_service->get_user_city_by_ip($_SERVER['REMOTE_ADDR']);
-        echo "<pre>";
-        print_r($city);
-        echo "</pre>";
 
         return view('main');
     }
@@ -50,7 +47,6 @@ class HomeController extends Controller
     public function basic()
     {
         $service = new BasePageService();
-
         $data = $service->get_base_page_data();
 
         return view('basic', [ 'data' => $data ]);
