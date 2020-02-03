@@ -52,8 +52,7 @@ class HomeController extends Controller
     {
         $raw = new AutoruService();
         $brands = $raw->getBrands();
-        var_dump($raw->getGenerations(6));
-        return view('model_details', ['brands' => $brands]);
+        return view('model_details', [ 'brands' => $brands]);
     }
 
     public function trade_in_calc()
@@ -75,8 +74,11 @@ class HomeController extends Controller
     {
     }
 
-    public function get_brand_models($brand_id)
+    public function get_brand_models(Request $request)
     {
+
+        $brand_id = $request->input('model_id');
+
         $raw = new AutoruService();
         $models = $raw->getModels($brand_id);
         return Response::json(['models' => $models]);

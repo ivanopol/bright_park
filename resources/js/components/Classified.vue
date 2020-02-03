@@ -6,7 +6,7 @@
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
-            <v-select @search:focus="uploadModels" :disabled="!step_one" class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Модель" taggable :options="[]">
+            <v-select @search:focus="uploadModels" :disabled="!step_one" class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Модель"  taggable :options="[]">
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
@@ -56,6 +56,7 @@
 <script>
     import vSelect from 'vue-select';
     import 'vue-select/dist/vue-select.css';
+    import axios from 'axios';
 
     export default {
         name: 'App',
@@ -68,15 +69,33 @@
                 render: createElement => createElement('span', {class: {'toggle': true}}),
             },
             step_one: false,
+            models: []
         }),
         components: {
-            vSelect
+            vSelect,
+            axios
         },
         methods: {
             mutableLoading() {
                 return {};
             },
             stepOne: function (input) {
+
+                axios.get('/get_brand_models', {
+                    params: {
+                        model_id: input.code
+                    }
+                })
+                .then(function (response) {
+                    console.log(response.data);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+                .then(function () {
+                   // console.log('always');
+                });
+
                 this.step_one = true;
                 //this.$children[1].disabled = false;
             },

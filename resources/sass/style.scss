@@ -1059,18 +1059,19 @@ footer {
 
 .disabled-input {
     input {
-        border-radius: 5px;
+        border-radius: 18px;
         box-shadow: none;
         border: 1px solid #606060;
         width: 20%;
         margin-left: 30%;
-        background: white
+        background: white;
+        padding: 5px 10px;
     }
 }
 
 .range-slider-wrapper {
-    width: 90%;
-    margin: 5%;
+    width: 82%;
+    margin: 5% auto;
 }
 
 .radio-buttons-group {
@@ -1237,6 +1238,35 @@ footer {
             color: #000;
             background-color: transparent;
         }
+    }
+}
+
+.conditions {
+    width: 70vw;
+    display: block;
+    margin:  0 auto;
+}
+
+.conditions ul li {
+    margin-bottom: 5px;
+    display: flex;
+
+    &>span {
+        float: left;
+        display: block;
+    }
+
+    i {
+        color: #ff8351;
+    }
+
+    span {
+
+        margin-left: 10px;
+        clear: both;
+    }
+    &::before {
+
     }
 }
 

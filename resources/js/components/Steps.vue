@@ -6,14 +6,14 @@
 
         <div class="buy-steps-wrapper">
             <div class="buy-step-block">
-                <div class="buy-step-circle-colored divided">
+                <div class="divided" :class="[ grade > 0 ? 'buy-step-circle-colored' : 'buy-step-circle' ]">
                     <p class="buy-step-number">1</p>
                 </div>
                 <p class="buy-step-text">Оцените автомобиль</p>
             </div>
 
             <div class="buy-step-block">
-                <div class="divided" :class="[ grade > 0 ? 'buy-step-circle-colored' : 'buy-step-circle' ]">
+                <div class="divided" :class="[ grade > 1 ? 'buy-step-circle-colored' : 'buy-step-circle' ]">
                     <p class="buy-step-number">2</p>
                 </div>
                 <p class="buy-step-text">Рассчитайте платеж</p>

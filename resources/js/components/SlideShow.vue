@@ -36,20 +36,6 @@
                 </li>
             </ul>
         </div>
-<!--        <hooper group="slideshow" :itemsToShow="3">
-            <slide>
-                <img @click="change_slide" data-index="0" width="100%" src="build/images/photos/models/granta/preview/1.jpg">
-            </slide>
-            <slide>
-                <img @click="change_slide" data-index="1" width="100%" src="build/images/photos/models/granta/preview/2.jpg">
-            </slide>
-            <slide>
-                <img @click="change_slide" data-index="2" width="100%" src="build/images/photos/models/granta/preview/3.jpg">
-            </slide>
-            <slide>
-                <img @click="change_slide" data-index="3" width="100%" src="build/images/photos/models/granta/preview/4.jpg">
-            </slide>
-        </hooper>-->
     </div>
 </template>
 
