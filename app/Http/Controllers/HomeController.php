@@ -45,14 +45,15 @@ class HomeController extends Controller
 
         $data = $service->get_base_page_data();
 
-        return view('basic', [ 'data' => $data ]);
+        return view('basic', ['data' => $data]);
     }
 
     public function model_details()
     {
         $raw = new AutoruService();
         $brands = $raw->getBrands();
-        return view('model_details', [ 'brands' => $brands]);
+        var_dump($raw->getGenerations(6));
+        return view('model_details', ['brands' => $brands]);
     }
 
     public function trade_in_calc()
@@ -78,20 +79,32 @@ class HomeController extends Controller
     {
         $raw = new AutoruService();
         $models = $raw->getModels($brand_id);
-        return Response::json([ 'models' => $models]);
+        return Response::json(['models' => $models]);
+    }
+
+    public function getComplectations($brand_id, $model_id)
+    {
+        $raw = new AutoruService();
+        return $raw->getComplectations($brand_id, $model_id);
+    }
+
+    public function getEstimations($data)
+    {
+        $raw = new AutoruService();
+        return $raw->getEstimations($data);
     }
 
     public function getYearsRange()
     {
         $raw = new AutoruService();
         $getYearsRange = $raw->getYearsRange();
-        return Response::json([ 'yearsRange' => $getYearsRange]);
+        return Response::json(['yearsRange' => $getYearsRange]);
     }
 
     public function getMileageRange()
     {
         $raw = new AutoruService();
         $getMileageRange = $raw->getMileageRange();
-        return Response::json([ 'mileageRange' => $getMileageRange]);
+        return Response::json(['mileageRange' => $getMileageRange]);
     }
 }

@@ -108,8 +108,73 @@ class AutoruService
                 throw new Exception('Models collecting failed!');
             }
         }
+        $res = DB::select('select id, title from brand_models where brand_id = :brand_id', ['brand_id' => $brand_id]);
+        var_dump($res);
+        return $res;
+    }
 
-        return DB::select('select id, title from brand_models where brand_id = :brand_id', ['brand_id' => $brand_id]);
+    public function getGenerations($model_id)
+    {
+        return $this->getCached('generations' . $model_id, function () use ($model_id) {
+            $brand_models = DB::select("SELECT brands.code AS brand_code, brand_models.code AS model_code
+                FROM  brand_models
+                JOIN brands ON brands.id = brand_models.brand_id
+                WHERE brand_models.id = :model_id", ['model_id' => $model_id]);
+
+            if (sizeof($brand_models) == 0) {
+                return [];
+            }
+
+            var_dump($brand_models);
+
+            $raw = $this->request('GET', 'search/cars/breadcrumbs', [
+                'bc_lookup' => $brand_models[0]->brand_code . '#' . $brand_models[0]->model_code,
+                'rid' => 50,
+                'state' => 'USED',
+            ]);
+
+            var_dump($brand_models[0]->brand_code . '#' . $brand_models[0]->model_code);
+
+            $result = [];
+
+            if (!$this->isError && !empty($raw['breadcrumbs'])) {
+                foreach ($raw['breadcrumbs'] as $level) {
+                    var_dump($raw);
+                    if ($level['meta_level'] == 'GENERATION_LEVEL') {
+                        var_dump($level);
+                        foreach ($level['entities'] as $row) {
+                            $years = $row['super_gen']['year_from'] . '-' . (!empty($row['super_gen']['year_to']) ? $row['super_gen']['year_to'] : 'наст.время');
+
+                            $result[] = [
+                                'id' => implode('#', $brand_models) . '#' . $row['id'],
+                                'text' => !empty($row['name']) ? $row['name'] . ' (' . $years . ')' : $years,
+                            ];
+                        }
+                    }
+                }
+            } else {
+                throw new Exception('Generations collecting failed!');
+            }
+
+            return $result;
+        });
+    }
+
+    public function getComplectations($brand_id, $model_id)
+    {
+        return [
+          '1.5 MT 109 л.с.',
+            '1.6 MT 109 л.с.',
+            '1.7 MT 109 л.с.',
+        ];
+    }
+
+    public function getEstimations($data)
+    {
+        return [
+            'min'=>500000,
+            'max'=>650000
+        ];
     }
 
     public function getMileageRange()
