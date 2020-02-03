@@ -6,31 +6,27 @@ namespace App\Services;
 
 class BitrixService
 {
-    private $phone;
-    private $report;
-    private $data;
-    private $responsible_id;
 
     // Сюда добавляются ID ответственных через запятую. Должен быть как минимум 1 ID
     private $arr_responsible_id = [1201]; //Мурыга Милана
 
-    public function __construct($data)
+    public function __construct()
+    {
+    }
+
+    public function sendFeedbackForm($data)
     {
         if (empty($data['phone'])) {
             return;
         }
 
         $phone = $data['phone'];
-        $responsible_id = $this->arr_responsible_id[mt_rand(0, count($this->arr_responsible_id) - 1)];
-    }
 
-    public function sendForm()
-    {
         $responsible_id = $this->arr_responsible_id[mt_rand(0, count($this->arr_responsible_id) - 1)];
 
         $request = [
             'type' => "PHONE",
-            'values' => [$this->phone],
+            'values' => [$phone],
         ];
 
         $curl = curl_init();
@@ -47,7 +43,7 @@ class BitrixService
         curl_close($curl);
         $result = json_decode($result, 1);
 
-        $this->report .= 'Поиск по телефону:<br><pre>Запрос: ' . print_r($request, true) . '</pre><br><pre>Ответ: ' . print_r($result, true) . '</pre><br><br>';
+        $report = 'Поиск по телефону:<br><pre>Запрос: ' . print_r($request, true) . '</pre><br><pre>Ответ: ' . print_r($result, true) . '</pre><br><br>';
 
         if (!empty($result['result'])) {
             if (!empty($result['result']["CONTACT"])) {
@@ -88,7 +84,7 @@ class BitrixService
             curl_close($curl);
             $result = json_decode($result, 1);
 
-            $this->report .= 'Поиск ответственного:<br><pre>Запрос: ' . print_r($request, true) . '</pre><br><pre>Ответ: ' . print_r($result, true) . '</pre><br><br>';
+            $report .= 'Поиск ответственного:<br><pre>Запрос: ' . print_r($request, true) . '</pre><br><pre>Ответ: ' . print_r($result, true) . '</pre><br><br>';
 
             $responsible_id = $result['result']["ASSIGNED_BY_ID"];
 
@@ -105,8 +101,8 @@ class BitrixService
                     "ASSIGNED_BY_ID" => $responsible_id,
                     "UF_CRM_1471411617" => '3755', // источник=lada-rostov.ru
                     "SOURCE_ID" => "SELF",
-                    "NAME" => $this->data['name'], //имя из поля
-                    "PHONE" => [["VALUE" => $this->phone, "VALUE_TYPE" => "MOBILE"]],
+                    "NAME" => $data['name'], //имя из поля
+                    "PHONE" => [["VALUE" => $phone, "VALUE_TYPE" => "MOBILE"]],
                 ],
                 'params' => ["REGISTER_SONET_EVENT" => "Y"],
             ];
@@ -148,7 +144,7 @@ class BitrixService
                 'OWNER_ID' => $id, //ID Сущности: лид/контакт/компания
                 'OWNER_TYPE_ID' => $type, //1 лид, 3 контакт, 4 компания
                 'TYPE_ID' => 2,
-                'COMMUNICATIONS' => [['VALUE' => $this->phone]],
+                'COMMUNICATIONS' => [['VALUE' => $phone]],
                 'SUBJECT' => 'Заявка с сайта!',
                 // 'START_TIME' => date('Y-m-d H:i:s'),
                 'END_TIME' => date('Y-m-d H:i:s'),
