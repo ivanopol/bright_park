@@ -13,6 +13,7 @@ class CreateCityTable extends Migration
             $table->bigIncrements('id');
             $table->string('title_ru');
             $table->string('title_en');
+            $table->string('alias');
         });
         Artisan::call('db:seed', [
             '--class' => CityTableSeeder::class

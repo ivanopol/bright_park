@@ -11,25 +11,25 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::any('/basic', 'HomeController@basic')->name('basic');
-Route::any('/alt_menu', 'HomeController@alt_menu')->name('alt_menu');
-Route::any('/model_details', 'HomeController@model_details')->name('model_details');
-Route::any('/basic', 'HomeController@basic')->name('basic');
-Route::any('/alt_menu', 'HomeController@alt_menu')->name('alt_menu');
-Route::any('/trade_in_calc', 'HomeController@trade_in_calc')->name('trade_in_calc');
-Route::any('/main', 'HomeController@main')->name('main');
-Route::any('/trade_in_credit', 'HomeController@trade_in_credit')->name('trade_in_credit');
-Route::any('/trade_in_cash', 'HomeController@trade_in_cash')->name('trade_in_cash');
-Route::any('/get_brand_models', 'HomeController@get_brand_models')->name('get_brand_models');
-Route::any('/send_contact_form', 'ContactFormController@sendContactForm')->name('sendContactForm');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/', 'HomeController@index')->name('index');
+    Route::get('/model', 'HomeController@model')->name('model');
+    Route::get('/alt_menu', 'HomeController@alt_menu')->name('alt_menu');
+    Route::get('/model_details', 'HomeController@model_details')->name('model_details');
+    Route::get('/trade_in_calc', 'HomeController@trade_in_calc')->name('trade_in_calc');
+    Route::get('/main', 'HomeController@main')->name('main');
+    Route::get('/trade_in_credit', 'HomeController@trade_in_credit')->name('trade_in_credit');
+    Route::get('/trade_in_cash', 'HomeController@trade_in_cash')->name('trade_in_cash');
+    Route::get('/get_brands', 'HomeController@get_brands')->name('get_brands');
+    Route::get('/get_brand_models', 'HomeController@get_brand_models')->name('get_brand_models');
+    Route::any('/send_contact_form', 'ContactFormController@sendContactForm')->name('sendContactForm');
+});
 
 
 

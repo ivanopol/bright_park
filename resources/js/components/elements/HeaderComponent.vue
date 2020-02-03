@@ -2,7 +2,7 @@
     <header class="fixed">
         <div class="logo-wrap" :class="theme">
             <div class="logo-bright-park">
-                <a href="/home">
+                <a href="/">
                     <logo-bright-park :theme="theme"></logo-bright-park>
                 </a>
             </div>
