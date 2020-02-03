@@ -267,4 +267,33 @@ class AutoruService
 
         return $data;
     }
+
+
+    public function getResult () {
+        $data = [
+            'make'=> 77,
+            'model'=> 396,
+            'generation'=> 'FORD#FOCUS#2306579',
+            'body'=> 'FORD#FOCUS#2306579#2306709',
+            'package'=> 2306713,
+            'year'=> 2008,
+            'kilometrage'=> 125000,
+            'owners_count'=> 2,
+        ];
+
+        $color['hex'] = 'CACECB';
+
+        $params = [
+            'rid'             => 50,
+            'tech_param_id'   => $data['package'],
+            'km_age'          => $data['kilometrage'],
+            'dealer_org_type' => 4,
+            'color'           => $color['hex'],
+            'owning_time'     => (date('Y') - $data['year']) * 12,
+            'owners_count'    => $data['owners_count'],
+            'year'            => $data['year'],
+        ];
+
+        return $this->request('POST', 'stats/predict', $params);
+    }
 }
