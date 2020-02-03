@@ -6,21 +6,25 @@ use App\Services\AutoruService;
 use App\Services\BasePageService;
 use Illuminate\Http\Request;
 use App\Services\GeoLocationService;
+use Illuminate\Support\Facades\URL;
 
 class HomeController extends Controller
 {
     public $geo_service;
-    public $city;
+    public $geo_data;
     /**
      * Create a new controller instance.
      *
-     * @return void
+     *
      */
-    public function __construct(GeoLocationService $geo_service)
+    public function __construct(GeoLocationService $geo_service, Request $request)
     {
-        $this->middleware('auth');
+/*        $this->middleware('auth');
         $this->geo_service = $geo_service;
-        $this->city = $this->geo_service->get_user_city_by_ip($_SERVER['REMOTE_ADDR']);
+        $this->geo_data = $this->geo_service->get_user_city_by_ip($_SERVER['REMOTE_ADDR']);
+        $city = strtolower($this->geo_data->alias);
+        $route = $city . "/" . $request->path();
+        echo redirect($route);*/
     }
 
     /**
@@ -33,23 +37,18 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function main()
-    {
-        return view('main');
-    }
-
     /**
      * Show first version of design.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function basic()
+    public function model()
     {
         $service = new BasePageService();
 
         $data = $service->get_base_page_data();
 
-        return view('basic', [ 'data' => $data ]);
+        return view('model', [ 'data' => $data ]);
     }
 
     public function model_details()
