@@ -13,4 +13,12 @@ class CarType extends Model
      * @var string
      */
     protected $table = 'car_types';
+
+    /**
+     * Модели относящиеся к кузову.
+     */
+    public function models()
+    {
+        return $this->belongsToMany('App\CarModel');
+    }
 }
