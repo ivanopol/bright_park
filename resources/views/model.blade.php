@@ -67,7 +67,7 @@
                 <a class="btn" href="#" onclick="return false;">Проложить маршрут</a>
             </div>
             <div class="map">
-                <script type="application/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A835db353a68100909105f85f9e9a5b504f478330f77575a2b3f5ee8fd1053d2b&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"/>
+                <yandex-map-component></yandex-map-component>
             </div>
         </footer>
     </div>
