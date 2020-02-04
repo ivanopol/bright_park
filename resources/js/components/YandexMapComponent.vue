@@ -11,7 +11,7 @@
 
     function getCoords() {
         axios
-            .get('https://0.0.0.0:8080/api/get_city_by_ip')
+            .get('/api/get_city_by_ip')
             .then(response => createMap(response.data['coordinates']));
     }
 
