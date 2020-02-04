@@ -9,48 +9,64 @@ class ColorTableSeeder extends Seeder
     {
         $colors = [
             [
+                'type_id' => 1,
+                'model_id' => 1,
                 'title' => 'Голубая планета',
                 'image' => '/build/images/colors/lada/granta/lada_granta_blue_planet.png',
                 'class' => 'color-blue-planet',
                 'is_active' => true
             ],
             [
+                'type_id' => 1,
+                'model_id' => 1,
                 'title' => 'Сердолик',
                 'image' => '/build/images/colors/lada/granta/lada_granta_cornelian.png',
                 'class' => 'color-cornelian',
                 'is_active' => false
             ],
             [
+                'type_id' => 1,
+                'model_id' => 1,
                 'title' => 'Белое облако',
                 'image' => '/build/images/colors/lada/granta/lada_granta_white_cloud.png',
                 'class' => 'color-white-cloud',
                 'is_active' => false
             ],
             [
+                'type_id' => 1,
+                'model_id' => 1,
                 'title' => 'Пантера',
                 'image' => '/build/images/colors/lada/granta/lada_granta_panther.png',
                 'class' => 'color-panther',
                 'is_active' => false
             ],
             [
+                'type_id' => 1,
+                'model_id' => 1,
                 'title' => 'Рислинг',
                 'image' => '/build/images/colors/lada/granta/lada_granta_riesling.png',
                 'class' => 'color-riesling',
                 'is_active' => false
             ],
             [
+                'type_id' => 1,
+                'model_id' => 1,
                 'title' => 'Техно',
                 'image' => '/build/images/colors/lada/granta/lada_granta_techno.png',
                 'class' => 'color-techno',
                 'is_active' => false
             ],
             [
+                'type_id' => 1,
+                'model_id' => 1,
                 'title' => 'Борнео',
                 'image' => '/build/images/colors/lada/granta/lada_granta_borneo.png',
                 'class' => 'color-borneo',
                 'is_active' => false
             ],
             [
+                'type_id' => 1,
+                'model_id' => 1,
                 'title' => 'Кориандр',
                 'image' => '/build/images/colors/lada/granta/lada_granta_coriander.png',
                 'class' => 'color-coriander',
