@@ -66,7 +66,7 @@
                 <p>Брайт парк ближе, чем кажется<br> Проложите маршрут до&nbsp;ближайшего салона</p>
                 <a class="btn" href="#" onclick="return false;">Проложить маршрут</a>
             </div>
-            <div class="map">
+            <div class="map-wrapper">
                 <yandex-map-component></yandex-map-component>
             </div>
         </footer>

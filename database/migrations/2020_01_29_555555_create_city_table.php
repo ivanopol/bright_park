@@ -14,6 +14,7 @@ class CreateCityTable extends Migration
             $table->string('title_ru');
             $table->string('title_en');
             $table->string('alias');
+            $table->string('coordinates');
         });
         Artisan::call('db:seed', [
             '--class' => CityTableSeeder::class
