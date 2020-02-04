@@ -28,6 +28,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/trade_in_cash', 'HomeController@trade_in_cash')->name('trade_in_cash');
     Route::get('/get_brands', 'HomeController@get_brands')->name('get_brands');
     Route::get('/get_brand_models', 'HomeController@get_brand_models')->name('get_brand_models');
+    Route::any('/send_contact_form', 'ContactFormController@sendContactForm')->name('sendContactForm');
 });
 
 

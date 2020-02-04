@@ -6,8 +6,10 @@
                 <span>Меню</span>
             </li>
             <li>
+                <a href="tel:+73422338231">
                 <icon-call></icon-call>
                 <span>Звонок</span>
+                </a>
             </li>
             <li>
                 <icon-route></icon-route>
@@ -81,16 +83,18 @@
                 text-align: center;
                 margin: 0 15px;
 
+                & > a div,
                 & > div {
                     width: 20px;
                     height: 20px;
                     display: block;
                     margin: 0 auto 2px;
                 }
-
+                & > a span,
                 & > span {
                     font-size: 12px;
                 }
+
             }
         }
     }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Services\AutoruService;
 use App\Services\BasePageService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 use App\Services\GeoLocationService;
 use App\CarModel;
 
@@ -85,7 +86,32 @@ class HomeController extends Controller
 
         $raw = new AutoruService();
         $models = $raw->getModels($brand_id);
+        return Response::json(['models' => $models]);
+    }
 
-        echo json_encode($models);
+    public function getComplectations($brand_id, $model_id)
+    {
+        $raw = new AutoruService();
+        return $raw->getComplectations($brand_id, $model_id);
+    }
+
+    public function getEstimations($data)
+    {
+        $raw = new AutoruService();
+        return $raw->getEstimations($data);
+    }
+
+    public function getYearsRange()
+    {
+        $raw = new AutoruService();
+        $getYearsRange = $raw->getYearsRange();
+        return Response::json(['yearsRange' => $getYearsRange]);
+    }
+
+    public function getMileageRange()
+    {
+        $raw = new AutoruService();
+        $getMileageRange = $raw->getMileageRange();
+        return Response::json(['mileageRange' => $getMileageRange]);
     }
 }

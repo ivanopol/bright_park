@@ -32,18 +32,18 @@ class AutoruService
      *
      * @return array
      */
-    public function getBrands() : array
+    public function getBrands(): array
     {
         return $this->getCached('brands', function () {
             $brands = [];
             $res = $this->request('GET', 'search/cars/breadcrumbs', [
-                'rid'   => 50,
+                'rid' => 50,
                 'state' => 'USED',
             ]);
 
             if (!$this->isError && !empty($res['breadcrumbs'][0]['entities'])) {
                 foreach ($res['breadcrumbs'][0]['entities'] as $brand) {
-                     DB::insert('insert into brands (code, title, logo) values(?, ?, ?)',
+                    DB::insert('insert into brands (code, title, logo) values(?, ?, ?)',
                         [
                             $brand['id'],
                             $brand['name'],
@@ -73,9 +73,9 @@ class AutoruService
      *
      * return array
      */
-    public function getModels($brand_id) : array
+    public function getModels($brand_id): array
     {
-        $brand_list = DB::select('select id, code, title from brands where id = :brand_id', ['brand_id'=>$brand_id]);
+        $brand_list = DB::select('select id, code, title from brands where id = :brand_id', ['brand_id' => $brand_id]);
 
         if (sizeof($brand_list) == 0) {
             return [];
@@ -83,12 +83,12 @@ class AutoruService
 
         $brand = $brand_list[0];
 
-        $model_list = DB::select('select * from brand_models where brand_id = :brand_id', ['brand_id'=>$brand_id]);
+        $model_list = DB::select('select * from brand_models where brand_id = :brand_id', ['brand_id' => $brand_id]);
         if (sizeof($model_list) == 0) {
             $res = $this->request('GET', 'search/cars/breadcrumbs', [
-                'rid'   => 50,
+                'rid' => 50,
                 'state' => 'USED',
-                'bc_lookup'=>$brand->code
+                'bc_lookup' => $brand->code
             ]);
 
             if (!$this->isError && !empty($res['breadcrumbs'])) {
@@ -108,8 +108,92 @@ class AutoruService
                 throw new Exception('Models collecting failed!');
             }
         }
+        $res = DB::select('select id, title from brand_models where brand_id = :brand_id', ['brand_id' => $brand_id]);
+        var_dump($res);
+        return $res;
+    }
 
-        return DB::select('select id, title from brand_models where brand_id = :brand_id', ['brand_id'=>$brand_id]);
+    public function getGenerations($model_id)
+    {
+        return $this->getCached('generations' . $model_id, function () use ($model_id) {
+            $brand_models = DB::select("SELECT brands.code AS brand_code, brand_models.code AS model_code
+                FROM  brand_models
+                JOIN brands ON brands.id = brand_models.brand_id
+                WHERE brand_models.id = :model_id", ['model_id' => $model_id]);
+
+            if (sizeof($brand_models) == 0) {
+                return [];
+            }
+
+            var_dump($brand_models);
+
+            $raw = $this->request('GET', 'search/cars/breadcrumbs', [
+                'bc_lookup' => $brand_models[0]->brand_code . '#' . $brand_models[0]->model_code,
+                'rid' => 50,
+                'state' => 'USED',
+            ]);
+
+            var_dump($brand_models[0]->brand_code . '#' . $brand_models[0]->model_code);
+
+            $result = [];
+
+            if (!$this->isError && !empty($raw['breadcrumbs'])) {
+                foreach ($raw['breadcrumbs'] as $level) {
+                    var_dump($raw);
+                    if ($level['meta_level'] == 'GENERATION_LEVEL') {
+                        var_dump($level);
+                        foreach ($level['entities'] as $row) {
+                            $years = $row['super_gen']['year_from'] . '-' . (!empty($row['super_gen']['year_to']) ? $row['super_gen']['year_to'] : 'наст.время');
+
+                            $result[] = [
+                                'id' => implode('#', $brand_models) . '#' . $row['id'],
+                                'text' => !empty($row['name']) ? $row['name'] . ' (' . $years . ')' : $years,
+                            ];
+                        }
+                    }
+                }
+            } else {
+                throw new Exception('Generations collecting failed!');
+            }
+
+            return $result;
+        });
+    }
+
+    public function getComplectations($brand_id, $model_id)
+    {
+        return [
+          '1.5 MT 109 л.с.',
+            '1.6 MT 109 л.с.',
+            '1.7 MT 109 л.с.',
+        ];
+    }
+
+    public function getEstimations($data)
+    {
+        return [
+            'min'=>500000,
+            'max'=>650000
+        ];
+    }
+
+    public function getMileageRange()
+    {
+        return [
+            1 => 'До 10 000',
+            2 => '10 000 - 30 000',
+            3 => '30 000 - 50 000',
+            4 => '50 000 - 75 000',
+            5 => '75 000 - 100 000',
+            6 => '100 000 - 150 000',
+            7 => '150 000 - 200 000',
+            8 => 'более 200 000'
+        ];
+    }
+
+    public function getYearsRange()
+    {
+        return range(2000, date("Y"), $step = 1);
     }
 
     /**
@@ -172,10 +256,9 @@ class AutoruService
      * @param $callback
      * @return array
      */
-    private function getCached($key, $callback) : array
+    private function getCached($key, $callback): array
     {
-        if (Cache::has($key))
-        {
+        if (Cache::has($key)) {
             $data = json_decode(Cache::get($key), true);
         } else {
             $data = call_user_func($callback);
