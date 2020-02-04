@@ -13,6 +13,7 @@ class CreateCarModelTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->string('slug');
+            $table->string('preview');
         });
         Artisan::call('db:seed', [
             '--class' => CarModelTableSeeder::class
