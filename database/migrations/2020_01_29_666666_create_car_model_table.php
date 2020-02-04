@@ -12,6 +12,7 @@ class CreateCarModelTable extends Migration
             $table->engine = "InnoDB";
             $table->bigIncrements('id');
             $table->string('title');
+            $table->string('slug');
         });
         Artisan::call('db:seed', [
             '--class' => CarModelTableSeeder::class

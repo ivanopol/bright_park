@@ -13,6 +13,7 @@ class CreateCarTypeTable extends Migration
             $table->bigIncrements('id');
             $table->string('title_en')->nullable();
             $table->string('title_ru')->nullable();
+            $table->string('slug')->nullable();
         });
         Artisan::call('db:seed', [
             '--class' => CarTypeTableSeeder::class
