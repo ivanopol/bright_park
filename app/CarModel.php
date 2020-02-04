@@ -21,4 +21,14 @@ class CarModel extends Model
     {
         return $this->belongsToMany('App\CarType')->withPivot('preview')->wherePivot('preview', 1);
     }
+
+    /**
+     * Получаем ключ роута для таблицы.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use App\Services\GeoLocationService;
 use App\CarModel;
+use App\CarType;
 
 class HomeController extends Controller
 {
@@ -44,11 +45,11 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function model($car_model, $car_type)
+    public function model(CarModel $car_model, CarType $car_type)
     {
         $service = new BasePageService();
 
-        $data = $service->get_base_page_data();
+        $data = $service->get_base_page_data($car_model, $car_type);
 
         return view('model', [ 'data' => $data ]);
     }
