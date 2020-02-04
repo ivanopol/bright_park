@@ -8,7 +8,7 @@ class CreateCarModelTable extends Migration
 {
     public function up()
     {
-        Schema::create('car_model', function (Blueprint $table) {
+        Schema::create('car_models', function (Blueprint $table) {
             $table->engine = "InnoDB";
             $table->bigIncrements('id');
             $table->string('title');
@@ -25,6 +25,6 @@ class CreateCarModelTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('car_model');
+        Schema::dropIfExists('car_models');
     }
 }

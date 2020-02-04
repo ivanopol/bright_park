@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 6.13.1 on 2020-01-30 10:06:18.
+ * Generated for Laravel 6.13.1 on 2020-02-04 06:30:53.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -3451,32 +3451,8 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function flush()
         {
-                        /** @var \Illuminate\Cache\FileStore $instance */
+                        /** @var \Illuminate\Cache\ArrayStore $instance */
                         return $instance->flush();
-        }
-        
-        /**
-         * Get the Filesystem instance.
-         *
-         * @return \Illuminate\Filesystem\Filesystem 
-         * @static 
-         */ 
-        public static function getFilesystem()
-        {
-                        /** @var \Illuminate\Cache\FileStore $instance */
-                        return $instance->getFilesystem();
-        }
-        
-        /**
-         * Get the working directory of the cache.
-         *
-         * @return string 
-         * @static 
-         */ 
-        public static function getDirectory()
-        {
-                        /** @var \Illuminate\Cache\FileStore $instance */
-                        return $instance->getDirectory();
         }
         
         /**
@@ -3487,8 +3463,37 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function getPrefix()
         {
-                        /** @var \Illuminate\Cache\FileStore $instance */
+                        /** @var \Illuminate\Cache\ArrayStore $instance */
                         return $instance->getPrefix();
+        }
+        
+        /**
+         * Get a lock instance.
+         *
+         * @param string $name
+         * @param int $seconds
+         * @param string|null $owner
+         * @return \Illuminate\Contracts\Cache\Lock 
+         * @static 
+         */ 
+        public static function lock($name, $seconds = 0, $owner = null)
+        {
+                        /** @var \Illuminate\Cache\ArrayStore $instance */
+                        return $instance->lock($name, $seconds, $owner);
+        }
+        
+        /**
+         * Restore a lock instance using the owner identifier.
+         *
+         * @param string $name
+         * @param string $owner
+         * @return \Illuminate\Contracts\Cache\Lock 
+         * @static 
+         */ 
+        public static function restoreLock($name, $owner)
+        {
+                        /** @var \Illuminate\Cache\ArrayStore $instance */
+                        return $instance->restoreLock($name, $owner);
         }
          
     }
@@ -14922,6 +14927,95 @@ namespace Illuminate\Support {
  
 }
 
+namespace Torann\GeoIP\Facades { 
+
+    /**
+     * 
+     *
+     */ 
+    class GeoIP {
+        
+        /**
+         * Get the location from the provided IP.
+         *
+         * @param string $ip
+         * @return \Torann\GeoIP\Location 
+         * @static 
+         */ 
+        public static function getLocation($ip = null)
+        {
+                        /** @var \Torann\GeoIP\GeoIP $instance */
+                        return $instance->getLocation($ip);
+        }
+        
+        /**
+         * Get the currency code from ISO.
+         *
+         * @param string $iso
+         * @return string 
+         * @static 
+         */ 
+        public static function getCurrency($iso)
+        {
+                        /** @var \Torann\GeoIP\GeoIP $instance */
+                        return $instance->getCurrency($iso);
+        }
+        
+        /**
+         * Get service instance.
+         *
+         * @return \Torann\GeoIP\Contracts\ServiceInterface 
+         * @throws Exception
+         * @static 
+         */ 
+        public static function getService()
+        {
+                        /** @var \Torann\GeoIP\GeoIP $instance */
+                        return $instance->getService();
+        }
+        
+        /**
+         * Get cache instance.
+         *
+         * @return \Torann\GeoIP\Cache 
+         * @static 
+         */ 
+        public static function getCache()
+        {
+                        /** @var \Torann\GeoIP\GeoIP $instance */
+                        return $instance->getCache();
+        }
+        
+        /**
+         * Get the client IP address.
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getClientIP()
+        {
+                        /** @var \Torann\GeoIP\GeoIP $instance */
+                        return $instance->getClientIP();
+        }
+        
+        /**
+         * Get configuration value.
+         *
+         * @param string $key
+         * @param mixed $default
+         * @return mixed 
+         * @static 
+         */ 
+        public static function config($key, $default = null)
+        {
+                        /** @var \Torann\GeoIP\GeoIP $instance */
+                        return $instance->config($key, $default);
+        }
+         
+    }
+ 
+}
+
 namespace Barryvdh\Debugbar { 
 
     /**
@@ -15787,95 +15881,6 @@ namespace Facade\Ignition\Facades {
         {
                         /** @var \Facade\FlareClient\Flare $instance */
                         return $instance->group($groupName, $properties);
-        }
-         
-    }
- 
-}
-
-namespace Torann\GeoIP\Facades { 
-
-    /**
-     * 
-     *
-     */ 
-    class GeoIP {
-        
-        /**
-         * Get the location from the provided IP.
-         *
-         * @param string $ip
-         * @return \Torann\GeoIP\Location 
-         * @static 
-         */ 
-        public static function getLocation($ip = null)
-        {
-                        /** @var \Torann\GeoIP\GeoIP $instance */
-                        return $instance->getLocation($ip);
-        }
-        
-        /**
-         * Get the currency code from ISO.
-         *
-         * @param string $iso
-         * @return string 
-         * @static 
-         */ 
-        public static function getCurrency($iso)
-        {
-                        /** @var \Torann\GeoIP\GeoIP $instance */
-                        return $instance->getCurrency($iso);
-        }
-        
-        /**
-         * Get service instance.
-         *
-         * @return \Torann\GeoIP\Contracts\ServiceInterface 
-         * @throws Exception
-         * @static 
-         */ 
-        public static function getService()
-        {
-                        /** @var \Torann\GeoIP\GeoIP $instance */
-                        return $instance->getService();
-        }
-        
-        /**
-         * Get cache instance.
-         *
-         * @return \Torann\GeoIP\Cache 
-         * @static 
-         */ 
-        public static function getCache()
-        {
-                        /** @var \Torann\GeoIP\GeoIP $instance */
-                        return $instance->getCache();
-        }
-        
-        /**
-         * Get the client IP address.
-         *
-         * @return string 
-         * @static 
-         */ 
-        public static function getClientIP()
-        {
-                        /** @var \Torann\GeoIP\GeoIP $instance */
-                        return $instance->getClientIP();
-        }
-        
-        /**
-         * Get configuration value.
-         *
-         * @param string $key
-         * @param mixed $default
-         * @return mixed 
-         * @static 
-         */ 
-        public static function config($key, $default = null)
-        {
-                        /** @var \Torann\GeoIP\GeoIP $instance */
-                        return $instance->config($key, $default);
         }
          
     }
@@ -18764,11 +18769,11 @@ namespace  {
 
     class View extends \Illuminate\Support\Facades\View {}
 
+    class GeoIP extends \Torann\GeoIP\Facades\GeoIP {}
+
     class Debugbar extends \Barryvdh\Debugbar\Facade {}
 
     class Flare extends \Facade\Ignition\Facades\Flare {}
-
-    class GeoIP extends \Torann\GeoIP\Facades\GeoIP {}
  
 }
 

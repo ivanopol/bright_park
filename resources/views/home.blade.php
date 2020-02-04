@@ -42,7 +42,7 @@
         <h2>Модели</h2>
         <ul>
             <li>
-                <a href="/basic">
+                <a href="/granta/sedan">
                     <div class="img_wrap">
                         <img src="build/images/photos/models/granta/granta.png" alt="Granta">
                     </div>
@@ -50,7 +50,7 @@
                 </a>
             </li>
             <li>
-                <a href="/basic">
+                <a href="/vesta/sedan">
                     <div class="img_wrap">
                         <img src="build/images/photos/models/vesta/vesta.png" alt="Vesta">
                     </div>
@@ -58,7 +58,7 @@
                 </a>
             </li>
             <li>
-                <a href="/basic">
+                <a href="/xray/xray">
                     <div class="img_wrap">
                         <img src="build/images/photos/models/xray/xray.png" alt="Xray">
                     </div>
@@ -66,7 +66,7 @@
                 </a>
             </li>
             <li>
-                <a href="/basic">
+                <a href="/4x4/five-door">
                     <div class="img_wrap">
                         <img src="build/images/photos/models/4x4/4x4.png" alt="4x4">
                     </div>
@@ -74,7 +74,7 @@
                 </a>
             </li>
             <li>
-                <a href="/basic">
+                <a href="/largus/van">
                     <div class="img_wrap">
                         <img src="build/images/photos/models/largus/largus.png" alt="Largus">
                     </div>

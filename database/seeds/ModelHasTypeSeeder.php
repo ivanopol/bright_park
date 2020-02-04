@@ -33,6 +33,6 @@ class ModelHasTypeSeeder extends Seeder
             ['car_model_id' => '5', 'car_type_id' => '19'],
         ];
 
-        DB::table('model_has_type')->insert($model_types);
+        DB::table('model_has_types')->insert($model_types);
     }
 }

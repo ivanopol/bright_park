@@ -58,6 +58,6 @@ class ColorTableSeeder extends Seeder
             ],
         ];
 
-        DB::table('color')->insert($colors);
+        DB::table('colors')->insert($colors);
     }
 }

@@ -7,11 +7,11 @@ class CreateContactTable extends Migration
 {
     public function up()
     {
-        Schema::create('contact', function (Blueprint $table) {
+        Schema::create('contacts', function (Blueprint $table) {
             $table->engine = "InnoDB";
             $table->bigIncrements('id');
             $table->bigInteger('city_id')->unsigned()->index();
-            $table->foreign('city_id')->references('id')->on('city');
+            $table->foreign('city_id')->references('id')->on('cities');
             $table->string('address')->nullable();
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
@@ -33,6 +33,6 @@ class CreateContactTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contact');
+        Schema::dropIfExists('contacts');
     }
 }

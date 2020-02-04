@@ -30,6 +30,6 @@ class CarTypeTableSeeder extends Seeder
             ['title_ru' => null, 'title_en' => null],
         ];
 
-        DB::table('car_type')->insert($model_types);
+        DB::table('car_types')->insert($model_types);
     }
 }

@@ -15,6 +15,6 @@ class CarModelTableSeeder extends Seeder
             ['title' => 'Largus'],
         ];
 
-        DB::table('car_model')->insert($models);
+        DB::table('car_models')->insert($models);
     }
 }

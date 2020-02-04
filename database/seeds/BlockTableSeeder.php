@@ -42,6 +42,6 @@ class BlockTableSeeder extends Seeder
             ]
         ];
 
-        DB::table('block')->insert($blocks);
+        DB::table('blocks')->insert($blocks);
     }
 }

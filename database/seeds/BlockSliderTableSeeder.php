@@ -108,6 +108,6 @@ class BlockSliderTableSeeder extends Seeder
             ],
         ];
 
-        DB::table('block_slider')->insert($block_sliders);
+        DB::table('block_sliders')->insert($block_sliders);
     }
 }

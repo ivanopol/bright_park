@@ -57,6 +57,6 @@ class ContactsTableSeeder extends Seeder
                 'ok_url' => 'https://ok.ru/brightpark.rus'],
         ];
 
-        DB::table('contact')->insert($contacts);
+        DB::table('contacts')->insert($contacts);
     }
 }
