@@ -4,19 +4,20 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateModelHasTypeTable extends Migration
+class CreateCarModelCarTypeTable extends Migration
 {
     public function up()
     {
-        Schema::create('model_has_types', function (Blueprint $table) {
+        Schema::create('car_model_car_type', function (Blueprint $table) {
             $table->engine = "InnoDB";
             $table->bigInteger('car_model_id')->unsigned();
             $table->foreign('car_model_id')->references('id')->on('car_models');
             $table->bigInteger('car_type_id')->unsigned();
             $table->foreign('car_type_id')->references('id')->on('car_types');
+            $table->boolean('preview');
         });
         Artisan::call('db:seed', [
-            '--class' => ModelHasTypeSeeder::class
+            '--class' => CarModelCarTypeTableSeeder::class
         ]);
     }
 
@@ -27,6 +28,6 @@ class CreateModelHasTypeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('model_has_types');
+        Schema::dropIfExists('car_model_car_type');
     }
 }
