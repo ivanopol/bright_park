@@ -35,8 +35,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $models = CarModel::all();
-        return view('home', ['models' => $models->toArray()]);
+        $models = CarModel::with('types_preview')->get();
+        return view('home', ['models' => $models]);
     }
 
     /**

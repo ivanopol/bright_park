@@ -41,46 +41,16 @@
     <section id="models" class="models_wrap">
         <h2>Модели</h2>
         <ul>
-            <li>
-                <a href="model/granta/sedan">
-                    <div class="img_wrap">
-                        <img src="/build/images/photos/models/granta/granta.png" alt="Granta">
-                    </div>
-                    <div class="title">Granta</div>
-                </a>
-            </li>
-            <li>
-                <a href="model/vesta/sedan">
-                    <div class="img_wrap">
-                        <img src="/build/images/photos/models/vesta/vesta.png" alt="Vesta">
-                    </div>
-                    <div class="title">Vesta</div>
-                </a>
-            </li>
-            <li>
-                <a href="model/xray/xray">
-                    <div class="img_wrap">
-                        <img src="/build/images/photos/models/xray/xray.png" alt="Xray">
-                    </div>
-                    <div class="title">Xray</div>
-                </a>
-            </li>
-            <li>
-                <a href="model/4x4/five-door">
-                    <div class="img_wrap">
-                        <img src="/build/images/photos/models/4x4/4x4.png" alt="4x4">
-                    </div>
-                    <div class="title">4x4</div>
-                </a>
-            </li>
-            <li>
-                <a href="model/largus/van">
-                    <div class="img_wrap">
-                        <img src="/build/images/photos/models/largus/largus.png" alt="Largus">
-                    </div>
-                    <div class="title">Largus</div>
-                </a>
-            </li>
+            @foreach ($models as $model)
+                <li>
+                    <a href="{{ route('model', ['car_model' => $model->slug, 'car_type' => $model->types_preview[0]->slug]) }}">
+                        <div class="img_wrap">
+                            <img src="{{ $model->preview }}" alt="{{ $model->title }}">
+                        </div>
+                        <div class="title">{{ $model->title }}</div>
+                    </a>
+                </li>
+            @endforeach
         </ul>
     </section>
     <div id="demo">
