@@ -7,7 +7,7 @@ class CreateBlockSliderTable extends Migration
 {
     public function up()
     {
-        Schema::create('block_slider', function (Blueprint $table) {
+        Schema::create('block_sliders', function (Blueprint $table) {
             $table->engine = "InnoDB";
             $table->charset = 'utf8mb4';
             $table->collation = 'utf8mb4_general_ci';
@@ -30,6 +30,6 @@ class CreateBlockSliderTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('block_slider');
+        Schema::dropIfExists('block_sliders');
     }
 }

@@ -7,7 +7,7 @@ use Illuminate\Database\Schema\Blueprint;
 class CreateCityTable extends Migration
 {
     public function up(){
-        Schema::create('city', function (Blueprint $table) {
+        Schema::create('cities', function (Blueprint $table) {
             $table->engine = "InnoDB";
             $table->collation = 'utf8mb4_general_ci';
             $table->bigIncrements('id');
@@ -27,6 +27,6 @@ class CreateCityTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('city');
+        Schema::dropIfExists('cities');
     }
 }

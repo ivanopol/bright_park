@@ -9,12 +9,12 @@
     "license": "MIT",
     "require": {
         "php": "^7.2",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "cviebrock/eloquent-sluggable": "^6.0",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.2",
         "laravel/tinker": "^2.0",
-        "predis/predis": "^1.1",
-		"ext-json": "*",
-        "ext-curl": "*",
         "predis/predis": "^1.1",
         "torann/geoip": "^1.1"
     },

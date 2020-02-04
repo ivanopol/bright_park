@@ -25,13 +25,13 @@
             </div>
             <div class="photo_block">
                 <div class="feedback_01">
-                    <img src="build/images/photos/feedback/feedback_01.png" alt="">
+                    <img src="{{asset('/build/images/photos/feedback/feedback_01.png')}}" alt="">
                 </div>
                 <div class="feedback_02">
-                    <img src="build/images/photos/feedback/feedback_02.png" alt="">
+                    <img src="{{asset('/build/images/photos/feedback/feedback_02.png')}}" alt="">
                 </div>
                 <div class="feedback_03">
-                    <img src="build/images/photos/feedback/feedback_03.png" alt="">
+                    <img src="{{asset('/build/images/photos/feedback/feedback_03.png')}}" alt="">
                 </div>
             </div>
         </section>

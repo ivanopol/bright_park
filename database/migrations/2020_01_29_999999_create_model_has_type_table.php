@@ -8,12 +8,12 @@ class CreateModelHasTypeTable extends Migration
 {
     public function up()
     {
-        Schema::create('model_has_type', function (Blueprint $table) {
+        Schema::create('model_has_types', function (Blueprint $table) {
             $table->engine = "InnoDB";
             $table->bigInteger('car_model_id')->unsigned();
-            $table->foreign('car_model_id')->references('id')->on('car_model');
+            $table->foreign('car_model_id')->references('id')->on('car_models');
             $table->bigInteger('car_type_id')->unsigned();
-            $table->foreign('car_type_id')->references('id')->on('car_type');
+            $table->foreign('car_type_id')->references('id')->on('car_types');
         });
         Artisan::call('db:seed', [
             '--class' => ModelHasTypeSeeder::class
@@ -27,6 +27,6 @@ class CreateModelHasTypeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('model_has_type');
+        Schema::dropIfExists('model_has_types');
     }
 }

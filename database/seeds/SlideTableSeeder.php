@@ -52,6 +52,6 @@ class SlideTableSeeder extends Seeder
             ]
         ];
 
-        DB::table('slide')->insert($slides);
+        DB::table('slides')->insert($slides);
     }
 }

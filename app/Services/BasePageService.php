@@ -11,11 +11,11 @@ class BasePageService
     public function get_base_page_data()
     {
 
-        $reviews = DB::select('select * from review');
-        $colors = DB::select('select * from color');
-        $blocks = DB::select('select * from block');
-        $blocks_slider = DB::select('select * from block_slider');
-        $slides = DB::select('select * from slide');
+        $reviews = DB::select('select * from reviews');
+        $colors = DB::select('select * from colors');
+        $blocks = DB::select('select * from blocks');
+        $blocks_slider = DB::select('select * from block_sliders');
+        $slides = DB::select('select * from slides');
         $slide_mini = DB::select('select * from slide_mini');
 
         foreach ($blocks as &$block) {

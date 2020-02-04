@@ -15,6 +15,6 @@ class CityTableSeeder extends Seeder
             ['title_ru' => 'Волгоград', 'title_en' => 'volgograd', 'alias' => 'volgograd' ],
         ];
 
-        DB::table('city')->insert($cities);
+        DB::table('cities')->insert($cities);
     }
 }

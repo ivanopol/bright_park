@@ -42,41 +42,41 @@
         <h2>Модели</h2>
         <ul>
             <li>
-                <a href="/basic">
+                <a href="model/granta/sedan">
                     <div class="img_wrap">
-                        <img src="build/images/photos/models/granta/granta.png" alt="Granta">
+                        <img src="/build/images/photos/models/granta/granta.png" alt="Granta">
                     </div>
                     <div class="title">Granta</div>
                 </a>
             </li>
             <li>
-                <a href="/basic">
+                <a href="model/vesta/sedan">
                     <div class="img_wrap">
-                        <img src="build/images/photos/models/vesta/vesta.png" alt="Vesta">
+                        <img src="/build/images/photos/models/vesta/vesta.png" alt="Vesta">
                     </div>
                     <div class="title">Vesta</div>
                 </a>
             </li>
             <li>
-                <a href="/basic">
+                <a href="model/xray/xray">
                     <div class="img_wrap">
-                        <img src="build/images/photos/models/xray/xray.png" alt="Xray">
+                        <img src="/build/images/photos/models/xray/xray.png" alt="Xray">
                     </div>
                     <div class="title">Xray</div>
                 </a>
             </li>
             <li>
-                <a href="/basic">
+                <a href="model/4x4/five-door">
                     <div class="img_wrap">
-                        <img src="build/images/photos/models/4x4/4x4.png" alt="4x4">
+                        <img src="/build/images/photos/models/4x4/4x4.png" alt="4x4">
                     </div>
                     <div class="title">4x4</div>
                 </a>
             </li>
             <li>
-                <a href="/basic">
+                <a href="model/largus/van">
                     <div class="img_wrap">
-                        <img src="build/images/photos/models/largus/largus.png" alt="Largus">
+                        <img src="/build/images/photos/models/largus/largus.png" alt="Largus">
                     </div>
                     <div class="title">Largus</div>
                 </a>
