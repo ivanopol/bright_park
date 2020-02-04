@@ -10,99 +10,99 @@ class BlockSliderTableSeeder extends Seeder
         $block_sliders = [
             [
                 'text' => 'Современная форма кузова Улучшенная аэродинамика автомобиля',
-                'image' => 'build/images/info/1/1.png',
+                'image' => '/build/images/info/1/1.png',
                 'number' => '1',
                 'block_id' => '2'
             ],
             [
                 'text' => 'Большие зеркала - Гарантия отличной обзорности',
-                'image' => 'build/images/info/1/2.png',
+                'image' => '/build/images/info/1/2.png',
                 'number' => '2',
                 'block_id' => '2'
             ],
             [
                 'text' => 'Новые диски 15’’ Легкосплавные диски оригинального дизайна с чередующимися двухразмерными спицами и полированной поверхностью',
-                'image' => 'build/images/info/1/3.png',
+                'image' => '/build/images/info/1/3.png',
                 'number' => '3',
                 'block_id' => '2'
             ],
             [
                 'text' => 'Легкое открытие багажника Наружная электрокнопка отпирания багажника - неотъемлемый атрибут современного комфорта и стиля',
-                'image' => 'build/images/info/1/4.png',
+                'image' => '/build/images/info/1/4.png',
                 'number' => '4',
                 'block_id' => '2'
             ],
             [
                 'text' => 'Настройка сиденья водителя Регулировка в диапазоне 40 мм',
-                'image' => 'build/images/info/1/5.png',
+                'image' => '/build/images/info/1/5.png',
                 'number' => '5',
                 'block_id' => '2'
             ],
 
             [
                 'text' => 'Настройка сиденья водителя Регулировка в диапазоне 40 мм',
-                'image' => 'build/images/info/1/1.png',
+                'image' => '/build/images/info/1/1.png',
                 'number' => '1',
                 'block_id' => '3'
             ],
             [
                 'text' => 'Круиз контроль Повысит контроль и поможет избежать нарушений скоростного режима во время дальних поездок',
-                'image' => 'build/images/info/1/1.png',
+                'image' => '/build/images/info/1/1.png',
                 'number' => '2',
                 'block_id' => '3'
             ],
             [
                 'text' => 'Освещение салона Функция задержки освещения салона после закрытия двери: освещение гаснет через 25 секунд или сразу после включения зажигания',
-                'image' => 'build/images/info/1/1.png',
+                'image' => '/build/images/info/1/1.png',
                 'number' => '3',
                 'block_id' => '3'
             ],
             [
                 'text' => '«Проводи меня домой» Функция задержки выключения света фар: забота о водителе и пассажирах даже после того, как они покидают машину',
-                'image' => 'build/images/info/1/1.png',
+                'image' => '/build/images/info/1/1.png',
                 'number' => '4',
                 'block_id' => '3'
             ],
             [
                 'text' => 'Акустический комфорт Дополнительная шумоизоляция улучшает виброакустику салона: мягкие подкрылки в арках колес - из специального материала, эффективно гасит «пескоструй» и удары гравия',
-                'image' => 'build/images/info/1/1.png',
+                'image' => '/build/images/info/1/1.png',
                 'number' => '5',
                 'block_id' => '3'
             ],
 
             [
                 'text' => 'Подушки безопасности Две фронтальные подушки безопасности – необходимая защита водителя и пассажира 1',
-                'image' => 'build/images/info/1/1.png',
+                'image' => '/build/images/info/1/1.png',
                 'number' => '1',
                 'block_id' => '4'
             ],
             [
                 'text' => 'Подушки безопасности Две фронтальные подушки безопасности – необходимая защита водителя и пассажира 2',
-                'image' => 'build/images/info/1/1.png',
+                'image' => '/build/images/info/1/1.png',
                 'number' => '2',
                 'block_id' => '4'
             ],
             [
                 'text' => 'Подушки безопасности Две фронтальные подушки безопасности – необходимая защита водителя и пассажира 3',
-                'image' => 'build/images/info/1/1.png',
+                'image' => '/build/images/info/1/1.png',
                 'number' => '3',
                 'block_id' => '4'
             ],
             [
                 'text' => 'Подушки безопасности Две фронтальные подушки безопасности – необходимая защита водителя и пассажира 4',
-                'image' => 'build/images/info/1/1.png',
+                'image' => '/build/images/info/1/1.png',
                 'number' => '4',
                 'block_id' => '4'
             ],
             [
                 'text' => 'Подушки безопасности Две фронтальные подушки безопасности – необходимая защита водителя и пассажира 5',
-                'image' => 'build/images/info/1/1.png',
+                'image' => '/build/images/info/1/1.png',
                 'number' => '5',
                 'block_id' => '4'
             ],
             [
                 'text' => 'Подушки безопасности Две фронтальные подушки безопасности – необходимая защита водителя и пассажира 6',
-                'image' => 'build/images/info/1/1.png',
+                'image' => '/build/images/info/1/1.png',
                 'number' => '6',
                 'block_id' => '4'
             ],
