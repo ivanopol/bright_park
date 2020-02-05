@@ -18,7 +18,7 @@
             <div class="block-aside">
                 <div class="aside_wrap" >
                     <hooper class="info-aside">
-                        <slide v-for="slide in data.slider" :key="slide.key">
+                        <slide v-for="slide in data.slider" :key="slide.id">
                             <img :src="slide.image" alt="">
                             <p v-text="slide.text"></p>
                         </slide>
