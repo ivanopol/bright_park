@@ -59,6 +59,9 @@
         },
         methods: {
             activate: function (event) {
+                // Получаем номер слайда из класса нажатого плюса
+                let activeSlide = Number (event.target.classList[1].replace('p', ''));
+                this.$children[0].slideTo(activeSlide-1);
                 let dots = document.querySelectorAll('#pointer_' + this.n + ' ul li span');
                 dots.forEach(function(item, i, arr) {
                     item.className += ' is_opacity';
