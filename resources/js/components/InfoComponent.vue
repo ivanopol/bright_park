@@ -22,8 +22,9 @@
                             <img :src="slide.image" alt="">
                             <p v-text="slide.text"></p>
                         </slide>
+                        <hooper-pagination slot="hooper-addons"></hooper-pagination>
                     </hooper>
-                    <!--<div class="aside_text" v-text="data.slider"></div>-->
+
                     <div class="close" v-on:click="deactivate"></div>
                 </div>
             </div>
@@ -32,8 +33,9 @@
 </template>
 
 <script>
-    import { Hooper, Slide } from 'hooper';
+    import { Hooper, Slide,  Pagination as HooperPagination } from 'hooper';
     import 'hooper/dist/hooper.css';
+
 
     export default {
         name: 'App',
@@ -44,7 +46,8 @@
         },
         components: {
             Hooper,
-            Slide
+            Slide,
+            HooperPagination
         },
         computed: {
             point_id: function () {

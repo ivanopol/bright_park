@@ -15,11 +15,17 @@ class BasePageService
             ['type_id', '=', $car_type->id],
         ];
 
+        $blocks_ids = [];
 
         $reviews = DB::table('reviews')->select('*')->where($condition)->get();
         $colors = DB::table('colors')->select('*')->where($condition)->get();
         $blocks = DB::table('blocks')->select('*')->where($condition)->get();
-        $blocks_slider = DB::table('block_sliders')->select('*')->get();
+
+        foreach ($blocks as $block) {
+            $blocks_ids[] = $block->id;
+        }
+
+        $blocks_slider = DB::table('block_sliders')->select('*')->whereIn('block_id', $blocks_ids)->get();
         $slides = DB::table('slides')->select('*')->where($condition)->get();
         $slide_mini = DB::table('slide_mini')->select('*')->where([
             ['model_id', '=', $car_model->id]
@@ -30,7 +36,7 @@ class BasePageService
 
             foreach ($blocks_slider as $slider) {
                 if ($block->id == $slider->block_id) {
-                    $block->slider = $slider;
+                    $block->slider[] = $slider;
                 }
             }
         }
