@@ -11,7 +11,7 @@ class SlideTableSeeder extends Seeder
             [
                 'model_id' => 1,
                 'type_id' => 1,
-                'class' => 'slide_1',
+                'class' => 'granta_1',
                 'title' => 'LADA Granta седан',
                 'reduction' => 'Granta седан',
                 'subtitle' => 'динамический дизайн<br> и вместительность',
@@ -20,7 +20,7 @@ class SlideTableSeeder extends Seeder
             [
                 'model_id' => 1,
                 'type_id' => 2,
-                'class' => 'slide_2',
+                'class' => 'granta_2',
                 'title' => 'LADA Granta лифтбек',
                 'reduction' => 'Granta лифтбек',
                 'subtitle' => 'динамический дизайн<br> и вместительность',
@@ -29,7 +29,7 @@ class SlideTableSeeder extends Seeder
             [
                 'model_id' => 1,
                 'type_id' => 3,
-                'class' => 'slide_3',
+                'class' => 'granta_3',
                 'title' => 'LADA Granta универсал',
                 'reduction' => 'Granta универсал',
                 'subtitle' => 'динамический дизайн<br> и вместительность',
@@ -38,7 +38,7 @@ class SlideTableSeeder extends Seeder
             [
                 'model_id' => 1,
                 'type_id' => 4,
-                'class' => 'slide_4',
+                'class' => 'granta_4',
                 'title' => 'LADA Granta Cross',
                 'reduction' => 'Granta Cross',
                 'subtitle' => 'динамический дизайн<br> и вместительность',
@@ -47,7 +47,7 @@ class SlideTableSeeder extends Seeder
             [
                 'model_id' => 1,
                 'type_id' => 5,
-                'class' => 'slide_5',
+                'class' => 'granta_5',
                 'title' => 'LADA Granta Drive Active',
                 'reduction' => 'Granta drive active',
                 'subtitle' => 'динамический дизайн<br> и вместительность',
@@ -56,12 +56,21 @@ class SlideTableSeeder extends Seeder
             [
                 'model_id' => 1,
                 'type_id' => 6,
-                'class' => 'slide_6',
+                'class' => 'granta_6',
                 'title' => 'LADA Granta хэтчбек',
                 'reduction' => 'Granta хэтчбек',
                 'subtitle' => 'динамический дизайн<br> и вместительность',
                 'link' => '/model_details',
-            ]
+            ],
+            [
+                'model_id' => 2,
+                'type_id' => 1,
+                'class' => 'vesta_1',
+                'title' => 'LADA Vesta седан',
+                'reduction' => 'Vesta седан',
+                'subtitle' => 'Классический стиль,</br> оптимальный выбор',
+                'link' => '/model_details'
+            ],
         ];
 
         DB::table('slides')->insert($slides);

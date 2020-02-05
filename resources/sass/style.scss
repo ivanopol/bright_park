@@ -1292,33 +1292,63 @@ footer {
         padding: 20px 30px;
         width: 100%;
 
-        &.slide_1 {
+        &.granta_1 {
             background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/granta/lada_granta_sedan.png) no-repeat center center;
             background-size: cover;
         }
 
-        &.slide_2 {
+        &.granta_2 {
+            background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/vesta/lada_granta_liftback.png) no-repeat center center;
+            background-size: cover;
+        }
+
+        &.granta_3 {
+            background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/granta/lada_granta_universal.png) no-repeat center center;
+            background-size: cover;
+        }
+
+        &.granta_4 {
+            background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/granta/lada_granta_cross.png) no-repeat center center;
+            background-size: cover;
+        }
+
+        &.granta_5 {
+            background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/granta/lada_granta_drive_active.png) no-repeat center center;
+            background-size: cover;
+        }
+
+        &.granta_6 {
+            background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/granta/lada_granta_hatchback.png) no-repeat center center;
+            background-size: cover;
+        }
+
+        &.vesta_1 {
             background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/vesta/lada_vesta_sedan.png) no-repeat center center;
             background-size: cover;
         }
 
-        &.slide_3 {
-            background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/granta/lada_granta_sedan.png) no-repeat center center;
+        &.vesta_2 {
+            background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/vesta/lada_vesta_cross.png) no-repeat center center;
             background-size: cover;
         }
 
-        &.slide_4 {
-            background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/granta/lada_granta_sedan.png) no-repeat center center;
+        &.vesta_3 {
+            background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/vesta/lada_vesta_sw.png) no-repeat center center;
             background-size: cover;
         }
 
-        &.slide_5 {
-            background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/granta/lada_granta_sedan.png) no-repeat center center;
+        &.vesta_4 {
+            background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/vesta/lada_vesta_sw_cross.png) no-repeat center center;
             background-size: cover;
         }
 
-        &.slide_6 {
-            background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/granta/lada_granta_sedan.png) no-repeat center center;
+        &.vesta_5 {
+            background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/vesta/lada_vesta_cng.png) no-repeat center center;
+            background-size: cover;
+        }
+
+        &.vesta_6 {
+            background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/vesta/lada_vesta_sport.png) no-repeat center center;
             background-size: cover;
         }
 

@@ -19,6 +19,10 @@ class BasePageService
         $blocks_ids = [];
         $blocks = DB::table('blocks')->select('*')->where($condition)->get();
 
+/*        echo "<pre>";
+        print_r($blocks);
+        echo "</pre>";*/
+
         foreach ($blocks as $block) {
             $blocks_ids[] = $block->id;
         }
