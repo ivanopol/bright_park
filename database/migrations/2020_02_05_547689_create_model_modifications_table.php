@@ -1,10 +1,10 @@
 <?php
 
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
 
-class CreateBrandModelsTable extends Migration
+class CreateModelModificationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,17 @@ class CreateBrandModelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('brand_models', function (Blueprint $table) {
+        Schema::create('model_modifications', function (Blueprint $table) {
             $table->engine = "InnoDB";
             $table->bigIncrements('id');
-            $table->bigInteger('brand_id')->unsigned()->index();
-            $table->string('code');
-            $table->string('title');
-            $table->integer('order')->nullable();
+            $table->string('model_code');
+            $table->string('brand_code');
+            $table->bigInteger('tech_param_id');
+            $table->string('modification');
         });
 
         Artisan::call('db:seed', [
-            '--class' => BrandModelsTableSeeder::class
+            '--class' => ModelModificationsTableSeeder::class
         ]);
     }
 
@@ -34,6 +34,6 @@ class CreateBrandModelsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('brand_models');
+        Schema::dropIfExists('model_modifications');
     }
 }

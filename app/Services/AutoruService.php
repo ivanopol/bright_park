@@ -196,6 +196,35 @@ class AutoruService
         return range(2000, date("Y"), $step = 1);
     }
 
+    public function fetchModels($brand)
+    {
+        $model_list = DB::select('select * from brand_models where brand_id = :brand_id', ['brand_id' => $brand->id]);
+        if (sizeof($model_list) == 0) {
+            $res = $this->request('GET', 'search/cars/breadcrumbs', [
+                'rid' => 50,
+                'state' => 'USED',
+                'bc_lookup' => $brand->code
+            ]);
+
+            if (!$this->isError && !empty($res['breadcrumbs'])) {
+                foreach ($res['breadcrumbs'] as $level) {
+                    if ($level['meta_level'] == 'MODEL_LEVEL') {
+                        foreach ($level['entities'] as $model) {
+                            DB::insert('insert into brand_models(brand_id, code, title) values(?, ?, ?)',
+                                [
+                                    $brand->id,
+                                    $model['id'],
+                                    $model['name'],
+                                ]);
+                        }
+                    }
+                }
+            } else {
+                throw new Exception($this->isError);
+            }
+        }
+    }
+
     /**
      * Запрос к Auto.ru
      *

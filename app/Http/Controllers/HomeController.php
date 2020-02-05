@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Services\AutoruService;
 use App\Services\BasePageService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Response;
 use App\Services\GeoLocationService;
 use App\CarModel;
@@ -13,6 +14,7 @@ class HomeController extends Controller
 {
     public $geo_service;
     public $geo_data;
+
     /**
      * Create a new controller instance.
      *
@@ -20,12 +22,12 @@ class HomeController extends Controller
      */
     public function __construct(GeoLocationService $geo_service, Request $request)
     {
-/*        $this->middleware('auth');
-        $this->geo_service = $geo_service;
-        $this->geo_data = $this->geo_service->get_user_city_by_ip($_SERVER['REMOTE_ADDR']);
-        $city = strtolower($this->geo_data->alias);
-        $route = $city . "/" . $request->path();
-        echo redirect($route);*/
+        /*        $this->middleware('auth');
+                $this->geo_service = $geo_service;
+                $this->geo_data = $this->geo_service->get_user_city_by_ip($_SERVER['REMOTE_ADDR']);
+                $city = strtolower($this->geo_data->alias);
+                $route = $city . "/" . $request->path();
+                echo redirect($route);*/
     }
 
     /**
@@ -47,17 +49,16 @@ class HomeController extends Controller
     public function model($car_model, $car_type)
     {
         $service = new BasePageService();
-
         $data = $service->get_base_page_data();
 
-        return view('model', [ 'data' => $data ]);
+        return view('model', ['data' => $data]);
     }
 
     public function model_details()
     {
         $raw = new AutoruService();
         $brands = $raw->getBrands();
-        return view('model_details', [ 'brands' => $brands]);
+        return view('model_details', ['brands' => $brands]);
     }
 
     public function trade_in_calc()
