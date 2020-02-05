@@ -21,7 +21,9 @@ class BasePageService
         $blocks = DB::table('blocks')->select('*')->where($condition)->get();
         $blocks_slider = DB::table('block_sliders')->select('*')->get();
         $slides = DB::table('slides')->select('*')->where($condition)->get();
-        $slide_mini = DB::table('slide_mini')->select('*')->where($condition)->get();
+        $slide_mini = DB::table('slide_mini')->select('*')->where([
+            ['model_id', '=', $car_model->id]
+        ])->get();
 
         foreach ($blocks as &$block) {
             $block->slider = [];

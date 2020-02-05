@@ -89,10 +89,12 @@
                     height: 20px;
                     display: block;
                     margin: 0 auto 2px;
+                    font-weight: normal;
                 }
                 & > a span,
                 & > span {
                     font-size: 12px;
+                    font-weight: normal;
                 }
 
             }
