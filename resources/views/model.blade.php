@@ -25,7 +25,10 @@
                         <p>98% клиентов оставили положительные отзывы о&nbsp;{{ $data['model_full'] }}</p>
                     </div>
                     <div class="photo_block">
-                        <div class="feedback_01">
+                        <div class="feedback">
+                            <img src="{{asset('/build/images/photos/feedback/feedback_04.jpg')}}" alt="">
+                        </div>
+{{--                        <div class="feedback_01">
                             <img src="{{asset('/build/images/photos/feedback/feedback_01.jpg')}}" alt="">
                         </div>
                         <div class="feedback_02">
@@ -33,7 +36,7 @@
                         </div>
                         <div class="feedback_03">
                             <img src="{{asset('/build/images/photos/feedback/feedback_03.jpg')}}" alt="">
-                        </div>
+                        </div>--}}
                     </div>
                 </section>
                 <section class="block block_5">
