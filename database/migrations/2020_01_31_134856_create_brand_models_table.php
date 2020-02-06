@@ -19,7 +19,12 @@ class CreateBrandModelsTable extends Migration
             $table->bigInteger('brand_id')->unsigned()->index();
             $table->string('code');
             $table->string('title');
+            $table->integer('order')->nullable();
         });
+
+/*        Artisan::call('db:seed', [
+            '--class' => BrandModelsTableSeeder::class
+        ]);*/
     }
 
     /**

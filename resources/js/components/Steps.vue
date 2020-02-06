@@ -34,7 +34,7 @@
         <section class="buttons_other mt-20" v-if="!grade">
             <div class="item-buttons-other">
                <!-- <a href="#" class="btn btn-primary" v-on:click.prevent="!grade">Да, оценить мой атомобиль</a>-->
-                <a href="#" class="btn btn-primary" v-on:click.prevent="gradeShow">Да, оценить мой атомобиль</a>
+                <a href="#" class="btn btn-primary" v-on:click.prevent="gradeShow">Да, оценить мой автомобиль</a>
                 <a href="#" class="btn btn-secondary">У меня нет автомобиля</a>
             </div>
         </section>
