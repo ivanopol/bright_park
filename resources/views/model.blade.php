@@ -5,10 +5,10 @@
     <header-component :line="true" :theme="'light'"></header-component>
     <div class="container">
         <hooper-component :data='@json($data['slider'])' ></hooper-component>
-        <info-component :data='@json($data['blocks'][0])' :model='@json($data['model_id'])' :type='@json($data['type_id'])'></info-component>
-        <info-component :data='@json($data['blocks'][1])' :n="1" :model='@json($data['model_id'])' :type='@json($data['type_id'])'></info-component>
-        <info-component :data='@json($data['blocks'][2])' :n="2" :model='@json($data['model_id'])' :type='@json($data['type_id'])'></info-component>
-        <info-component :data='@json($data['blocks'][3])' :model='@json($data['model_id'])' :type='@json($data['type_id'])'></info-component>
+
+        @foreach ($data['blocks'] as $key => $block)
+            <info-component :data='@json($block)' :n='@json($key)' :model='@json($data['model_id'])' :type='@json($data['type_id'])'></info-component>
+        @endforeach
 
         <color-choose-component :colors='@json($data['colors'])'></color-choose-component>
         <form-component></form-component>
