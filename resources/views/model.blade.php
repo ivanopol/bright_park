@@ -5,23 +5,24 @@
     <header-component :line="true" :theme="'light'"></header-component>
     <div class="container">
         <hooper-component :data='@json($data['slider'])' ></hooper-component>
-        <info-component :data='@json($data['blocks'][0])'></info-component>
-        {{--        <info-component :data='@json($data['blocks'][1])' :n="1"></info-component>
-                <info-component :data='@json($data['blocks'][2])' :n="2"></info-component>
-                <info-component :data='@json($data['blocks'][3])' :n="3"></info-component>
-                <color-choose-component :colors='@json($data['colors'])'></color-choose-component>
+        <info-component :data='@json($data['blocks'][0])' :model='@json($data['model_id'])' :type='@json($data['type_id'])'></info-component>
+        <info-component :data='@json($data['blocks'][1])' :n="1" :model='@json($data['model_id'])' :type='@json($data['type_id'])'></info-component>
+        <info-component :data='@json($data['blocks'][2])' :n="2" :model='@json($data['model_id'])' :type='@json($data['type_id'])'></info-component>
+        <info-component :data='@json($data['blocks'][3])' :model='@json($data['model_id'])' :type='@json($data['type_id'])'></info-component>
+
+        <color-choose-component :colors='@json($data['colors'])'></color-choose-component>
                 <form-component></form-component>
 
                 <section class="block block_4">
                     <div class="block-text">
-                        <h2><span class="c_orange">Эксперты</span> о Lada Granta</h2>
+                        <h2><span class="c_orange">Эксперты</span> о {{ $data['model_full'] }}</h2>
                     </div>
 
                     <div class="opinions">
                         <review-component :reviews='@json($data['reviews'])'></review-component>
                     </div>
                     <div class="trigger-wrap">
-                        <p>98% клиентов оставили положительные отзывы о&nbsp;Granta лифтбек</p>
+                        <p>98% клиентов оставили положительные отзывы о&nbsp;{{ $data['model_full'] }}</p>
                     </div>
                     <div class="photo_block">
                         <div class="feedback_01">
@@ -38,7 +39,7 @@
                 <section class="block block_5">
                     <div class="block-text">
                         <h2><span class="c_orange">Гарантия</span> 3 года</h2>
-                        <p>На&nbsp;вашу новенькую LADA Granta лифтбек действует расширенная гарантия 3&nbsp;года.</p>
+                        <p>На&nbsp;вашу новенькую Лада {{ $data['model_full'] }} действует расширенная гарантия 3&nbsp;года.</p>
                     </div>
                 </section>
                 <section class="block next_action">
@@ -69,6 +70,6 @@
                     <div class="map-wrapper">
                         <yandex-map-component></yandex-map-component>
                     </div>
-                </footer>--}}
+                </footer>
     </div>
 @endsection

@@ -55,7 +55,12 @@ class BasePageService
             ],
             'blocks' => $blocks,
             'reviews' => $reviews,
-            'colors' => $colors
+            'colors' => $colors,
+            'model' => $car_model->title,
+            'type' => $car_type->title_ru,
+            'model_id' => $car_model->id,
+            'type_id' => $car_type->id,
+            'model_full' => $car_model->title . ' ' . $car_type->title_ru,
         ];
 
         return $data;

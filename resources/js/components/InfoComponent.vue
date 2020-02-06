@@ -6,7 +6,7 @@
         </div>
         <div class="pointers_wrap" :id="point_id">
             <div :v-if="data.pointers">
-                <ul :class="'pointers-' + data.pnum">
+                <ul :class="'pointers-' + model + '-' + type + '-' + data.pnum " >
                     <li v-for="n in data.pointers">
                         <span :class="'pointer p' + n" v-on:click="activate"></span>
                     </li>
@@ -39,7 +39,7 @@
 
     export default {
         name: 'App',
-        props : ['data', 'n'],
+        props : ['data', 'n', 'model', 'type'],
         data: function () {
             return {
             }
