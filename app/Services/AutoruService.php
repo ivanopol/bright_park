@@ -72,6 +72,9 @@ class AutoruService
     /**
      *
      * return array
+     * @param $brand_id
+     * @return array
+     * @throws Exception
      */
     public function getModels($brand_id): array
     {
@@ -109,7 +112,6 @@ class AutoruService
             }
         }
         $res = DB::select('select id, title from brand_models where brand_id = :brand_id', ['brand_id' => $brand_id]);
-        var_dump($res);
         return $res;
     }
 
@@ -125,23 +127,18 @@ class AutoruService
                 return [];
             }
 
-            var_dump($brand_models);
-
             $raw = $this->request('GET', 'search/cars/breadcrumbs', [
                 'bc_lookup' => $brand_models[0]->brand_code . '#' . $brand_models[0]->model_code,
                 'rid' => 50,
                 'state' => 'USED',
             ]);
 
-            var_dump($brand_models[0]->brand_code . '#' . $brand_models[0]->model_code);
 
             $result = [];
 
             if (!$this->isError && !empty($raw['breadcrumbs'])) {
                 foreach ($raw['breadcrumbs'] as $level) {
-                    var_dump($raw);
                     if ($level['meta_level'] == 'GENERATION_LEVEL') {
-                        var_dump($level);
                         foreach ($level['entities'] as $row) {
                             $years = $row['super_gen']['year_from'] . '-' . (!empty($row['super_gen']['year_to']) ? $row['super_gen']['year_to'] : 'наст.время');
 
@@ -160,20 +157,22 @@ class AutoruService
         });
     }
 
+    /**
+     * @param $brand_id
+     * @param $model_id
+     * @return array
+     */
     public function getComplectations($brand_id, $model_id)
     {
-        return [
-          '1.5 MT 109 л.с.',
-            '1.6 MT 109 л.с.',
-            '1.7 MT 109 л.с.',
-        ];
+        return DB::select('select * from model_modification where brand_id = :brand_id and model_id = :model_id',
+            ['brand_id' => $brand_id, 'model_id' => $model_id]);
     }
 
     public function getEstimations($data)
     {
         return [
-            'min'=>500000,
-            'max'=>650000
+            'min' => 500000,
+            'max' => 650000
         ];
     }
 
@@ -196,34 +195,6 @@ class AutoruService
         return range(2000, date("Y"), $step = 1);
     }
 
-    public function fetchModels($brand)
-    {
-        $model_list = DB::select('select * from brand_models where brand_id = :brand_id', ['brand_id' => $brand->id]);
-        if (sizeof($model_list) == 0) {
-            $res = $this->request('GET', 'search/cars/breadcrumbs', [
-                'rid' => 50,
-                'state' => 'USED',
-                'bc_lookup' => $brand->code
-            ]);
-
-            if (!$this->isError && !empty($res['breadcrumbs'])) {
-                foreach ($res['breadcrumbs'] as $level) {
-                    if ($level['meta_level'] == 'MODEL_LEVEL') {
-                        foreach ($level['entities'] as $model) {
-                            DB::insert('insert into brand_models(brand_id, code, title) values(?, ?, ?)',
-                                [
-                                    $brand->id,
-                                    $model['id'],
-                                    $model['name'],
-                                ]);
-                        }
-                    }
-                }
-            } else {
-                throw new Exception($this->isError);
-            }
-        }
-    }
 
     /**
      * Запрос к Auto.ru
@@ -233,7 +204,8 @@ class AutoruService
      * @param array $data
      * @return array|mixed
      */
-    private function request(string $method, string $url, array $data)
+    private
+    function request(string $method, string $url, array $data)
     {
         $this->headers = [
             'Content-Type: application/json; charset=utf-8',
@@ -245,6 +217,8 @@ class AutoruService
         if ($method == 'GET') {
             $this->url .= '?' . http_build_query($data);
         }
+
+        var_dump($url);
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $this->url);
@@ -272,6 +246,7 @@ class AutoruService
 
         if ($json['status'] != 'SUCCESS') {
             $this->error = $code . ' ' . $json['detailed_error'];
+            print_r($json);
             $this->isError = true;
         }
 
@@ -285,7 +260,8 @@ class AutoruService
      * @param $callback
      * @return array
      */
-    private function getCached($key, $callback): array
+    private
+    function getCached($key, $callback): array
     {
         if (Cache::has($key)) {
             $data = json_decode(Cache::get($key), true);
@@ -298,29 +274,18 @@ class AutoruService
     }
 
 
-    public function getResult () {
-        $data = [
-            'make'=> 77,
-            'model'=> 396,
-            'generation'=> 'FORD#FOCUS#2306579',
-            'body'=> 'FORD#FOCUS#2306579#2306709',
-            'package'=> 2306713,
-            'year'=> 2008,
-            'kilometrage'=> 125000,
-            'owners_count'=> 2,
-        ];
-
-        $color['hex'] = 'CACECB';
-
+    public
+    function getResult($tech_param_id, $year, $mileage, $owners_count, $owning_time)
+    {
+        //$color['hex'] = 'CACECB';
         $params = [
-            'rid'             => 50,
-            'tech_param_id'   => $data['package'],
-            'km_age'          => $data['kilometrage'],
+            'rid' => 50,
+            'tech_param_id' => $tech_param_id,
+            'km_age' => $mileage,
             'dealer_org_type' => 4,
-            'color'           => $color['hex'],
-            'owning_time'     => (date('Y') - $data['year']) * 12,
-            'owners_count'    => $data['owners_count'],
-            'year'            => $data['year'],
+            'owning_time' => (date('Y') - $owning_time['year']) * 12,
+            'owners_count' => $owners_count,
+            'year' => $year,
         ];
 
         return $this->request('POST', 'stats/predict', $params);

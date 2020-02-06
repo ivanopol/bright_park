@@ -22,9 +22,9 @@ class CreateBrandModelsTable extends Migration
             $table->integer('order')->nullable();
         });
 
-        Artisan::call('db:seed', [
+/*        Artisan::call('db:seed', [
             '--class' => BrandModelsTableSeeder::class
-        ]);
+        ]);*/
     }
 
     /**

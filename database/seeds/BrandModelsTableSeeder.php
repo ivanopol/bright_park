@@ -10,10 +10,10 @@ class BrandModelsTableSeeder extends Seeder
     {
         $service = new AutoruService();
 
-        $brands = DB::select('select id, code from brands');
+        $brands = DB::select('select id from brands');
 
-        foreach ($brands as $brand) {
-            $service->fetchModels($brand);
+        foreach ($brands as $brand_id) {
+            $service->getModels($brand_id->id);
         }
     }
 
