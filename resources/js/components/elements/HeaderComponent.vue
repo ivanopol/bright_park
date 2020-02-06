@@ -1,5 +1,5 @@
 <template>
-    <header class="fixed">
+    <header :class="[ absolute ? 'absolute' : '' ]">
         <div class="logo-wrap" :class="theme">
             <div class="logo-bright-park">
                 <a href="/">
@@ -25,10 +25,14 @@
         props: {
             theme: {
                 default: 'light',
-                type: String,
+                type: String
             },
             line: {
                 default: true,
+                type: Boolean
+            },
+            absolute: {
+                default: false,
                 type: Boolean
             }
         },
@@ -52,9 +56,14 @@
     header {
         z-index: 1000;
         width: 100%;
+        position: relative;
+
+        &.absolute {
+            position: absolute;
+        }
 
         .logo-wrap {
-            padding: 15px 15px 0;
+            padding: 15px 15px 5px;
             display: flex;
             justify-content: space-between;
 
@@ -77,7 +86,7 @@
             }
         }
         .lada-line {
-            background: #fff url(/build/images/lada_line.svg) no-repeat;
+            background: url(/build/images/lada_line.svg) no-repeat;
             width: 100%;
             height: 100%;
             min-height: 31px;

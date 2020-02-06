@@ -21,4 +21,14 @@ class CarType extends Model
     {
         return $this->belongsToMany('App\CarModel');
     }
+
+    /**
+     * Получаем ключ роута для таблицы.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

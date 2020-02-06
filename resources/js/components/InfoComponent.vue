@@ -18,12 +18,13 @@
             <div class="block-aside">
                 <div class="aside_wrap" >
                     <hooper class="info-aside">
-                        <slide v-for="slide in data.slider" :key="slide.key">
+                        <slide v-for="slide in data.slider" :key="slide.id">
                             <img :src="slide.image" alt="">
                             <p v-text="slide.text"></p>
                         </slide>
+                        <hooper-pagination slot="hooper-addons"></hooper-pagination>
                     </hooper>
-                    <!--<div class="aside_text" v-text="data.slider"></div>-->
+
                     <div class="close" v-on:click="deactivate"></div>
                 </div>
             </div>
@@ -32,8 +33,9 @@
 </template>
 
 <script>
-    import { Hooper, Slide } from 'hooper';
+    import { Hooper, Slide,  Pagination as HooperPagination } from 'hooper';
     import 'hooper/dist/hooper.css';
+
 
     export default {
         name: 'App',
@@ -44,7 +46,8 @@
         },
         components: {
             Hooper,
-            Slide
+            Slide,
+            HooperPagination
         },
         computed: {
             point_id: function () {
@@ -56,6 +59,9 @@
         },
         methods: {
             activate: function (event) {
+                // Получаем номер слайда из класса нажатого плюса
+                let activeSlide = Number (event.target.classList[1].replace('p', ''));
+                this.$children[0].slideTo(activeSlide-1);
                 let dots = document.querySelectorAll('#pointer_' + this.n + ' ul li span');
                 dots.forEach(function(item, i, arr) {
                     item.className += ' is_opacity';
