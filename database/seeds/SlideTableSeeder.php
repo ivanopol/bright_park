@@ -71,6 +71,15 @@ class SlideTableSeeder extends Seeder
                 'subtitle' => 'Классический стиль,</br> оптимальный выбор',
                 'link' => '/model_details'
             ],
+            [
+                'model_id' => 3,
+                'type_id' => 20,
+                'class' => 'xray_1',
+                'title' => 'LADA X-Ray',
+                'reduction' => 'X-Ray',
+                'subtitle' => 'Классический стиль,</br> оптимальный выбор',
+                'link' => '/model_details'
+            ],
         ];
 
         DB::table('slides')->insert($slides);

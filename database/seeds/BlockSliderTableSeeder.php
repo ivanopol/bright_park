@@ -106,6 +106,66 @@ class BlockSliderTableSeeder extends Seeder
                 'number' => '6',
                 'block_id' => '4'
             ],
+            [
+                'text' => 'Бескаркасные стеклоочистители – работают эффективно и не склонны к обмерзанию',
+                'image' => '/build/images/photos/models/vesta/blocks/block_02/plus/vesta_2_1.jpg',
+                'number' => '1',
+                'block_id' => '6'
+            ],
+            [
+                'text' => 'Антенна в форме акульего плавника',
+                'image' => '/build/images/photos/models/vesta/blocks/block_02/plus/vesta_2_2.jpg',
+                'number' => '2',
+                'block_id' => '6'
+            ],
+            [
+                'text' => 'Мультимедийная система с 7-дюймовым экраном поможет создать нужное настроение в поездке.',
+                'image' => '/build/images/photos/models/vesta/blocks/block_03/plus/vesta_1.jpg',
+                'number' => '1',
+                'block_id' => '7'
+            ],
+            [
+                'text' => 'Бесступенчатая автоматическая коробка передач японской фирмы Jatco',
+                'image' => '/build/images/photos/models/vesta/blocks/block_03/plus/vesta_3_1.jpg',
+                'number' => '2',
+                'block_id' => '7'
+            ],
+            [
+                'text' => 'Теплая опция для российских зим – обогрев руля. LADA Vesta согревает!',
+                'image' => '/build/images/photos/models/vesta/blocks/block_03/plus/vesta_3_2.jpg',
+                'number' => '3',
+                'block_id' => '7'
+            ],
+            [
+                'text' => 'Трансформация багажного отсека',
+                'image' => '/build/images/photos/models/vesta/blocks/block_03/plus/vesta_4.jpg',
+                'number' => '4',
+                'block_id' => '7'
+            ],
+            [
+                'text' => 'Охлаждаемый перчаточный ящик',
+                'image' => '/build/images/photos/models/xray/blocks/block_02/plus/xray_2_1.jpg',
+                'number' => '1',
+                'block_id' => '10'
+            ],
+            [
+                'text' => 'Просторный салон с нишами для хранения',
+                'image' => '/build/images/photos/models/xray/blocks/block_02/plus/xray_2_2.jpg',
+                'number' => '2',
+                'block_id' => '10'
+            ],
+            [
+                'text' => 'климат-контроль',
+                'image' => '/build/images/photos/models/xray/blocks/block_02/plus/xray_2_3.jpg',
+                'number' => '3',
+                'block_id' => '10'
+            ],
+            [
+                'text' => 'мультимедийная система с 7" цветным дисплеем',
+                'image' => '/build/images/photos/models/xray/blocks/block_02/plus/xray_2_4.jpg',
+                'number' => '4',
+                'block_id' => '10'
+            ],
         ];
 
         DB::table('block_sliders')->insert($block_sliders);

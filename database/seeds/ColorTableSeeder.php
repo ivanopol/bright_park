@@ -72,6 +72,126 @@ class ColorTableSeeder extends Seeder
                 'class' => 'color-coriander',
                 'is_active' => false
             ],
+            [
+                'type_id' => 1,
+                'model_id' => 2,
+                'title' => 'Ледниковый',
+                'image' => '/build/images/colors/lada/vesta/lada_vesta_sedan_white.png',
+                'class' => 'color-white-glacial',
+                'is_active' => true
+            ],
+            [
+                'type_id' => 1,
+                'model_id' => 2,
+                'title' => 'Сердолик',
+                'image' => '/build/images/colors/lada/vesta/lada_vesta_sedan_red.png',
+                'class' => 'color-red-cornelian',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 1,
+                'model_id' => 2,
+                'title' => 'Ангкор',
+                'image' => '/build/images/colors/lada/vesta/lada_vesta_sedan_brawn.png',
+                'class' => 'color-angkor',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 1,
+                'model_id' => 2,
+                'title' => 'Карфаген',
+                'image' => '/build/images/colors/lada/vesta/lada_vesta_sedan_carfagen.png',
+                'class' => 'color-carfagen',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 1,
+                'model_id' => 2,
+                'title' => 'Дайвинг',
+                'image' => '/build/images/colors/lada/vesta/lada_vesta_sedan_daiving.png',
+                'class' => 'color-daiving',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 1,
+                'model_id' => 2,
+                'title' => 'Фантом',
+                'image' => '/build/images/colors/lada/vesta/lada_vesta_sedan_phantom.png',
+                'class' => 'color-phantom',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 1,
+                'model_id' => 2,
+                'title' => 'Плутон',
+                'image' => '/build/images/colors/lada/vesta/lada_vesta_sedan_pluton.png',
+                'class' => 'color-pluton',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 1,
+                'model_id' => 2,
+                'title' => 'Маэстро',
+                'image' => '/build/images/colors/lada/vesta/lada_vesta_sedan_maestro.png',
+                'class' => 'color-maestro',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 1,
+                'model_id' => 2,
+                'title' => 'Платина',
+                'image' => '/build/images/colors/lada/vesta/lada_vesta_sedan_platina.png',
+                'class' => 'color-platina',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 20,
+                'model_id' => 3,
+                'title' => 'Ледниковый',
+                'image' => '/build/images/colors/lada/xray/lada_xray_glacial.png',
+                'class' => 'color-white-glacial',
+                'is_active' => true
+            ],
+            [
+                'type_id' => 20,
+                'model_id' => 3,
+                'title' => 'Огненно-красный',
+                'image' => '/build/images/colors/lada/xray/lada_xray_fiery_red.png',
+                'class' => 'color-fiery-red',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 20,
+                'model_id' => 3,
+                'title' => 'Серый базальт',
+                'image' => '/build/images/colors/lada/xray/lada_xray_basalt_gray.png',
+                'class' => 'color-basalt-gray',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 20,
+                'model_id' => 3,
+                'title' => 'Пума',
+                'image' => '/build/images/colors/lada/xray/lada_xray_light_brown_cougar.png',
+                'class' => 'color-light-brown-cougar',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 20,
+                'model_id' => 3,
+                'title' => 'Черная жемчужина',
+                'image' => '/build/images/colors/lada/xray/lada_xray_black_pearl.png',
+                'class' => 'color-black-pearl',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 20,
+                'model_id' => 3,
+                'title' => 'Платина',
+                'image' => '/build/images/colors/lada/xray/lada_xray_platina.png',
+                'class' => 'color-platina',
+                'is_active' => false
+            ],
         ];
 
         DB::table('colors')->insert($colors);

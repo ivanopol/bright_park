@@ -23,17 +23,22 @@ class BasePageService
         print_r($blocks);
         echo "</pre>";*/
 
-        foreach ($blocks as $block) {
-            $blocks_ids[] = $block->id;
+        if ($blocks) {
+            foreach ($blocks as $block) {
+                $blocks_ids[] = $block->id;
+            }
         }
 
         $blocks_slider = DB::table('block_sliders')->select('*')->whereIn('block_id', $blocks_ids)->orderBy('id', 'asc')->get();
-        foreach ($blocks as &$block) {
-            $block->slider = [];
 
-            foreach ($blocks_slider as $slider) {
-                if ($block->id == $slider->block_id) {
-                    $block->slider[$slider->number] = $slider;
+        if ($blocks && $blocks_slider) {
+            foreach ($blocks as &$block) {
+                $block->slider = [];
+
+                foreach ($blocks_slider as $slider) {
+                    if ($block->id == $slider->block_id) {
+                        $block->slider[$slider->number] = $slider;
+                    }
                 }
             }
         }
@@ -55,7 +60,12 @@ class BasePageService
             ],
             'blocks' => $blocks,
             'reviews' => $reviews,
-            'colors' => $colors
+            'colors' => $colors,
+            'model' => $car_model->title,
+            'type' => $car_type->title_ru,
+            'model_id' => $car_model->id,
+            'type_id' => $car_type->id,
+            'model_full' => $car_model->title . ' ' . $car_type->title_ru,
         ];
 
         return $data;
