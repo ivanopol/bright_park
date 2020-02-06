@@ -92,6 +92,20 @@ class SlideMiniTableSeeder extends Seeder
                 'alt' => 'Лада Веста Sport',
                 'title' => 'Sport'
             ],
+            [
+                'model_id' => 3,
+                'type_id' => 20,
+                'image' => '/build/images/slider/mini/xray/mobile/xray.png',
+                'alt' => 'X-Ray',
+                'title' => 'X-Ray'
+            ],
+            [
+                'model_id' => 3,
+                'type_id' => 5,
+                'image' => '/build/images/slider/mini/xray/mobile/xray_cross.png',
+                'alt' => 'Лада X-Ray Cross',
+                'title' => 'X-Ray Cross'
+            ],
         ];
 
         DB::table('slide_mini')->insert($slides_mini);
