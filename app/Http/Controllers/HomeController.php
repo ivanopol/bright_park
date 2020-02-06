@@ -49,6 +49,7 @@ class HomeController extends Controller
     {
         $service = new BasePageService();
 
+        $data = [];
         $data = $service->get_base_page_data($car_model, $car_type);
 
         return view('model', [ 'data' => $data ]);
