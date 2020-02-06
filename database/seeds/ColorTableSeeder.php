@@ -144,6 +144,54 @@ class ColorTableSeeder extends Seeder
                 'class' => 'color-platina',
                 'is_active' => false
             ],
+            [
+                'type_id' => 20,
+                'model_id' => 3,
+                'title' => 'Ледниковый',
+                'image' => '/build/images/colors/lada/xray/lada_xray_glacial.png',
+                'class' => 'color-white-glacial',
+                'is_active' => true
+            ],
+            [
+                'type_id' => 20,
+                'model_id' => 3,
+                'title' => 'Огненно-красный',
+                'image' => '/build/images/colors/lada/xray/lada_xray_fiery_red.png',
+                'class' => 'color-fiery-red',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 20,
+                'model_id' => 3,
+                'title' => 'Серый базальт',
+                'image' => '/build/images/colors/lada/xray/lada_xray_basalt_gray.png',
+                'class' => 'color-basalt-gray',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 20,
+                'model_id' => 3,
+                'title' => 'Пума',
+                'image' => '/build/images/colors/lada/xray/lada_xray_light_brown_cougar.png',
+                'class' => 'color-light-brown-cougar',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 20,
+                'model_id' => 3,
+                'title' => 'Черная жемчужина',
+                'image' => '/build/images/colors/lada/xray/lada_xray_black_pearl.png',
+                'class' => 'color-black-pearl',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 20,
+                'model_id' => 3,
+                'title' => 'Платина',
+                'image' => '/build/images/colors/lada/xray/lada_xray_platina.png',
+                'class' => 'color-platina',
+                'is_active' => false
+            ],
         ];
 
         DB::table('colors')->insert($colors);

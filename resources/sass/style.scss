@@ -512,7 +512,7 @@ $context: 375;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: left;
             align-content: space-between;
 
             li {
@@ -602,6 +602,26 @@ $context: 375;
 
                     &maestro {
                         background-color: #111112;
+                    }
+
+                    &platina {
+                        background-color: #C3C4C4;
+                    }
+
+                    &fiery-red {
+                        background-color: #DA0F23;
+                    }
+
+                    &basalt-gray {
+                        background-color: #A8B9A0;
+                    }
+
+                    &light-brown-cougar {
+                        background-color: #986F59;
+                    }
+
+                    &black-pearl {
+                        background-color: #1C1D1A;
                     }
 
                     &platina {
