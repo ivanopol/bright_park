@@ -9,6 +9,6 @@ class BrandsTableSeeder extends Seeder
     public function run()
     {
         $auto_ru_service = new AutoruService();
-        $auto_ru_service->getBrands();
+        $auto_ru_service->fetchBrands();
     }
 }

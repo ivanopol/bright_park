@@ -88,7 +88,6 @@ class BitrixService
             $result = curl_exec($curl);
             curl_close($curl);
             $result = json_decode($result, 1);
-            var_dump($result);
 
             $report .= 'Поиск ответственного:<br><pre>Запрос: ' . print_r($request, true) . '</pre><br><pre>Ответ: ' . print_r($result, true) . '</pre><br><br>';
 
@@ -196,7 +195,5 @@ class BitrixService
             //setcookie($key, $value, time() + 60 * 60 * 24 * 365, MODX_BASE_URL, $secure, $cookieDomain, true);
             setcookie($key, $value, time() + 60 * 60 * 24 * 365, MODX_BASE_URL, $cookieDomain, true);
         }
-
-        var_dump($result);
     }
 }

@@ -36,37 +36,56 @@ class AutoruService
     {
         return $this->getCached('brands', function () {
             $brands = [];
-            $res = $this->request('GET', 'search/cars/breadcrumbs', [
-                'rid' => 50,
-                'state' => 'USED',
-            ]);
 
-            if (!$this->isError && !empty($res['breadcrumbs'][0]['entities'])) {
-                foreach ($res['breadcrumbs'][0]['entities'] as $brand) {
-                    DB::insert('insert into brands (code, title, logo) values(?, ?, ?)',
-                        [
-                            $brand['id'],
-                            $brand['name'],
-                            $brand['mark']['logo']['sizes']['logo'],
-                        ]);
-                }
-            } else {
-                throw new Exception('Brands collecting failed!');
-            }
-
-            $rows = DB::select('select `id`, `title` FROM `brands`');
+            $rows = DB::select('select `id`, code, `title` FROM `brands`');
 
             if ($rows) {
                 foreach ($rows as $row) {
                     $brands[] = [
-                        'code' => $row->id,
+                        'id' => $row->id,
                         'label' => $row->title,
+                        'code' => $row->code
                     ];
                 }
             }
 
             return $brands;
         });
+    }
+
+    public function fetchBrands(): array
+    {
+        $brands = [];
+        $res = $this->request('GET', 'search/cars/breadcrumbs', [
+            'rid' => 50,
+            'state' => 'USED',
+        ]);
+
+        if (!$this->isError && !empty($res['breadcrumbs'][0]['entities'])) {
+            foreach ($res['breadcrumbs'][0]['entities'] as $brand) {
+                DB::insert('insert into brands (code, title, logo) values(?, ?, ?)',
+                    [
+                        $brand['id'],
+                        $brand['name'],
+                        $brand['mark']['logo']['sizes']['logo'],
+                    ]);
+            }
+        } else {
+            throw new Exception('Brands collecting failed!');
+        }
+
+        $rows = DB::select('select `id`, `title` FROM `brands`');
+
+        if ($rows) {
+            foreach ($rows as $row) {
+                $brands[] = [
+                    'code' => $row->id,
+                    'label' => $row->title,
+                ];
+            }
+        }
+
+        return $brands;
     }
 
     /**
@@ -111,7 +130,7 @@ class AutoruService
                 throw new Exception('Models collecting failed!');
             }
         }
-        $res = DB::select('select id, title from brand_models where brand_id = :brand_id', ['brand_id' => $brand_id]);
+        $res = DB::select('select id, title as `label`, code from brand_models where brand_id = :brand_id', ['brand_id' => $brand_id]);
         return $res;
     }
 
@@ -158,14 +177,14 @@ class AutoruService
     }
 
     /**
-     * @param $brand_id
-     * @param $model_id
+     * @param $brand_code
+     * @param $model_code
      * @return array
      */
-    public function getComplectations($brand_id, $model_id)
+    public function getComplectations($brand_code, $model_code)
     {
-        return DB::select('select * from model_modification where brand_id = :brand_id and model_id = :model_id',
-            ['brand_id' => $brand_id, 'model_id' => $model_id]);
+        return DB::select('select id, modification as label, tech_param_id from model_modifications where brand_code = :brand_code and model_code = :model_code',
+            ['brand_code' => $brand_code, 'model_code' => $model_code]);
     }
 
     public function getEstimations($data)
@@ -217,8 +236,6 @@ class AutoruService
         if ($method == 'GET') {
             $this->url .= '?' . http_build_query($data);
         }
-
-        var_dump($url);
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $this->url);
@@ -275,19 +292,24 @@ class AutoruService
 
 
     public
-    function getResult($tech_param_id, $year, $mileage, $owners_count, $owning_time)
+    function getEstimation($data)
     {
+        //TODO откуда брать количество владельцев? цвет? как считать время владения автомобилем?
+        $owners_count = 1;
+        $data = json_decode($data);
+        $owning_time = (int)date('Y') - $data->year;
         //$color['hex'] = 'CACECB';
         $params = [
             'rid' => 50,
-            'tech_param_id' => $tech_param_id,
-            'km_age' => $mileage,
+            'tech_param_id' => $data->tech_param_id,
+            'km_age' => (int)$data->km_age,
             'dealer_org_type' => 4,
-            'owning_time' => (date('Y') - $owning_time['year']) * 12,
+            'owning_time' => $owning_time * 12,
             'owners_count' => $owners_count,
-            'year' => $year,
+            'year' => $data->year,
         ];
 
-        return $this->request('POST', 'stats/predict', $params);
+        $res = $this->request('POST', 'stats/predict', $params);
+        return $res;
     }
 }
