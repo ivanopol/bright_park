@@ -192,6 +192,94 @@ class ColorTableSeeder extends Seeder
                 'class' => 'color-platina',
                 'is_active' => false
             ],
+            [
+                'type_id' => 11,
+                'model_id' => 4,
+                'title' => 'Белое облако',
+                'image' => '/build/images/colors/lada/4x4/4x4_white_cloud.png',
+                'class' => 'color-white-cloud',
+                'is_active' => true
+            ],
+            [
+                'type_id' => 11,
+                'model_id' => 4,
+                'title' => 'Несси 2',
+                'image' => '/build/images/colors/lada/4x4/4x4_nessi_2.png',
+                'class' => 'color-nessi-2',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 11,
+                'model_id' => 4,
+                'title' => 'Пантера',
+                'image' => '/build/images/colors/lada/4x4/4x4_panthera.png',
+                'class' => 'color-panthera',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 11,
+                'model_id' => 4,
+                'title' => 'Бенефис',
+                'image' => '/build/images/colors/lada/4x4/4x4_benefis.png',
+                'class' => 'color-benefis',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 11,
+                'model_id' => 4,
+                'title' => 'Барокко',
+                'image' => '/build/images/colors/lada/4x4/4x4_barokko.png',
+                'class' => 'color-barokko',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 11,
+                'model_id' => 4,
+                'title' => 'Голубая планета',
+                'image' => '/build/images/colors/lada/4x4/4x4_blue_planet.png',
+                'class' => 'color-blue-planet',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 11,
+                'model_id' => 4,
+                'title' => 'Терра',
+                'image' => '/build/images/colors/lada/4x4/4x4_terra.png',
+                'class' => 'color-terra',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 11,
+                'model_id' => 4,
+                'title' => 'Борнео',
+                'image' => '/build/images/colors/lada/4x4/4x4_borneo.png',
+                'class' => 'color-borneo-dark',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 11,
+                'model_id' => 4,
+                'title' => 'Снежная королева',
+                'image' => '/build/images/colors/lada/4x4/4x4_snow_queen.png',
+                'class' => 'color-snow-queen',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 11,
+                'model_id' => 4,
+                'title' => 'Кориандр',
+                'image' => '/build/images/colors/lada/4x4/4x4_coriander.png',
+                'class' => 'color-coriander-dark',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 11,
+                'model_id' => 4,
+                'title' => 'Камуфляж джунгли',
+                'image' => '/build/images/colors/lada/4x4/4x4_camouflage_jungle.png',
+                'class' => 'color-camouflage-jungle',
+                'is_active' => false
+            ],
         ];
 
         DB::table('colors')->insert($colors);
