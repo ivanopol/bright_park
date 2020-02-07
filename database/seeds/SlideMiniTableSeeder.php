@@ -17,35 +17,35 @@ class SlideMiniTableSeeder extends Seeder
             ],
             [
                 'model_id' => 1,
-                'type_id' => 2,
+                'type_id' => 3,
                 'image' => '/build/images/slider/mini/granta/mobile/lada_granta_liftback.png',
                 'alt' =>  'Лада Гранта лифтбек',
                 'title' => 'Лифтбек'
             ],
             [
                 'model_id' => 1,
-                'type_id' => 3,
+                'type_id' => 4,
                 'image' => '/build/images/slider/mini/granta/mobile/lada_granta_universal.png',
                 'alt' => 'Лада Гранта универсал',
                 'title' => 'Универсал'
             ],
             [
                 'model_id' => 1,
-                'type_id' => 4,
+                'type_id' => 5,
                 'image' => '/build/images/slider/mini/granta/mobile/lada_granta_cross.png',
                 'alt'=> 'Лада Гранта cross',
                 'title' => 'Cross'
             ],
             [
                 'model_id' => 1,
-                'type_id' => 5,
+                'type_id' => 6,
                 'image' => '/build/images/slider/mini/granta/mobile/lada_granta_drive_active.png',
                 'alt' => 'Лада Гранта Drive Active',
                 'title' => 'Drive Active'
             ],
             [
                 'model_id' => 1,
-                'type_id' => 6,
+                'type_id' => 1,
                 'image' => '/build/images/slider/mini/granta/mobile/lada_granta_hatcback.png',
                 'alt' => 'Лада Гранта хэтчбек',
                 'title' => 'Хэтчбек'
@@ -59,35 +59,35 @@ class SlideMiniTableSeeder extends Seeder
             ],
             [
                 'model_id' => 2,
-                'type_id' => 2,
+                'type_id' => 5,
                 'image' => '/build/images/slider/mini/vesta/mobile/lada_vesta_cross.png',
                 'alt' =>  'Лада Веста Cross',
                 'title' => 'Cross'
             ],
             [
                 'model_id' => 2,
-                'type_id' => 3,
+                'type_id' => 7,
                 'image' => '/build/images/slider/mini/vesta/mobile/lada_vesta_sw.png',
                 'alt' => 'Лада Веста SW',
                 'title' => 'SW'
             ],
             [
                 'model_id' => 2,
-                'type_id' => 4,
+                'type_id' => 8,
                 'image' => '/build/images/slider/mini/vesta/mobile/lada_vesta_sw_cross.png',
                 'alt'=> 'Лада Веста SW Cross',
                 'title' => 'SW Cross'
             ],
             [
                 'model_id' => 2,
-                'type_id' => 5,
+                'type_id' => 9,
                 'image' => '/build/images/slider/mini/vesta/mobile/lada_vesta_cng.png',
                 'alt' => 'Лада Веста CNG',
                 'title' => 'CNG'
             ],
             [
                 'model_id' => 2,
-                'type_id' => 6,
+                'type_id' => 10,
                 'image' => '/build/images/slider/mini/vesta/mobile/lada_vesta_sport.png',
                 'alt' => 'Лада Веста Sport',
                 'title' => 'Sport'

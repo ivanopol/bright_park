@@ -46,15 +46,25 @@ class BasePageService
             ['model_id', '=', $car_model->id]
         ])->get();
 
+        // Создаем ссылки и формируем массив для мини слайдера
+        // с ссылками и указываем активный слайд
         $car_types = DB::select('SELECT `ct`.`slug`, `ct`.`id`
                                 FROM `car_types` as `ct`
                                 INNER JOIN `car_model_car_type` as `cmct` ON `cmct`.`car_type_id`=`ct`.`id`
                                  WHERE `cmct`.`car_model_id`=:model_id ORDER BY `ct`.`id` ASC', ['model_id' => $car_model->id]);
 
-        foreach ($slide_mini as &$slide) {
+        $active_slide = 0;
+        foreach ($slide_mini as $key => &$slide) {
             foreach ($car_types as $type) {
                 if ($slide->type_id == $type->id) {
-                    $slide->url = $car_model->slug . '/' . $type->slug;
+                    $slide->url = '/model/' . $car_model->slug . '/' . $type->slug;
+                }
+
+                if ($slide->type_id == $car_type->id && $slide->model_id == $car_model->id) {
+                    $slide->active = 1;
+                    $active_slide = $key;
+                } else {
+                    $slide->active = 0;
                 }
             }
         }
@@ -67,6 +77,7 @@ class BasePageService
             'slider' => [
                 'slides_mini' => $slide_mini,
                 'slides' => $slides,
+                'active' => $active_slide,
             ],
             'blocks' => $blocks,
             'reviews' => $reviews,

@@ -39,6 +39,10 @@
         data: function () {
             return {};
         },
+        mounted: function() {
+          this.$children[0].slideTo(this.data.active);
+          //console.log(this.data.slides_mini);
+        },
         methods: {
             change_line: function(event) {
 /*                let current_model = document.querySelectorAll('#items ul li')[event.currentSlide];
