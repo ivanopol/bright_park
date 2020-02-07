@@ -8,11 +8,13 @@ class ColorTableSeeder extends Seeder
     public function run()
     {
         $colors = [
+            // Granta
+            // sedan
             [
                 'type_id' => 1,
                 'model_id' => 1,
                 'title' => 'Голубая планета',
-                'image' => '/build/images/colors/lada/granta/lada_granta_blue_planet.png',
+                'image' => '/build/images/colors/lada/granta/sedan/lada_granta_blue_planet.png',
                 'class' => 'color-blue-planet',
                 'is_active' => true
             ],
@@ -20,7 +22,7 @@ class ColorTableSeeder extends Seeder
                 'type_id' => 1,
                 'model_id' => 1,
                 'title' => 'Сердолик',
-                'image' => '/build/images/colors/lada/granta/lada_granta_cornelian.png',
+                'image' => '/build/images/colors/lada/granta/sedan/lada_granta_cornelian.png',
                 'class' => 'color-cornelian',
                 'is_active' => false
             ],
@@ -28,7 +30,7 @@ class ColorTableSeeder extends Seeder
                 'type_id' => 1,
                 'model_id' => 1,
                 'title' => 'Белое облако',
-                'image' => '/build/images/colors/lada/granta/lada_granta_white_cloud.png',
+                'image' => '/build/images/colors/lada/granta/sedan/lada_granta_white_cloud.png',
                 'class' => 'color-white-cloud',
                 'is_active' => false
             ],
@@ -36,7 +38,7 @@ class ColorTableSeeder extends Seeder
                 'type_id' => 1,
                 'model_id' => 1,
                 'title' => 'Пантера',
-                'image' => '/build/images/colors/lada/granta/lada_granta_panther.png',
+                'image' => '/build/images/colors/lada/granta/sedan/lada_granta_panther.png',
                 'class' => 'color-panther',
                 'is_active' => false
             ],
@@ -44,7 +46,7 @@ class ColorTableSeeder extends Seeder
                 'type_id' => 1,
                 'model_id' => 1,
                 'title' => 'Рислинг',
-                'image' => '/build/images/colors/lada/granta/lada_granta_riesling.png',
+                'image' => '/build/images/colors/lada/granta/sedan/lada_granta_riesling.png',
                 'class' => 'color-riesling',
                 'is_active' => false
             ],
@@ -52,7 +54,7 @@ class ColorTableSeeder extends Seeder
                 'type_id' => 1,
                 'model_id' => 1,
                 'title' => 'Техно',
-                'image' => '/build/images/colors/lada/granta/lada_granta_techno.png',
+                'image' => '/build/images/colors/lada/granta/sedan/lada_granta_techno.png',
                 'class' => 'color-techno',
                 'is_active' => false
             ],
@@ -60,7 +62,7 @@ class ColorTableSeeder extends Seeder
                 'type_id' => 1,
                 'model_id' => 1,
                 'title' => 'Борнео',
-                'image' => '/build/images/colors/lada/granta/lada_granta_borneo.png',
+                'image' => '/build/images/colors/lada/granta/sedan/lada_granta_borneo.png',
                 'class' => 'color-borneo',
                 'is_active' => false
             ],
@@ -68,10 +70,77 @@ class ColorTableSeeder extends Seeder
                 'type_id' => 1,
                 'model_id' => 1,
                 'title' => 'Кориандр',
-                'image' => '/build/images/colors/lada/granta/lada_granta_coriander.png',
+                'image' => '/build/images/colors/lada/granta/sedan/lada_granta_coriander.png',
                 'class' => 'color-coriander',
                 'is_active' => false
             ],
+            // liftback
+            [
+                'type_id' => 2,
+                'model_id' => 1,
+                'title' => 'Голубая планета',
+                'image' => '/build/images/colors/lada/granta/liftback/lada_granta_blue_planet.png',
+                'class' => 'color-blue-planet',
+                'is_active' => true
+            ],
+            [
+                'type_id' => 2,
+                'model_id' => 1,
+                'title' => 'Сердолик',
+                'image' => '/build/images/colors/lada/granta/liftback/lada_granta_cornelian.png',
+                'class' => 'color-cornelian',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 2,
+                'model_id' => 1,
+                'title' => 'Белое облако',
+                'image' => '/build/images/colors/lada/granta/liftback/lada_granta_white_cloud.png',
+                'class' => 'color-white-cloud',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 2,
+                'model_id' => 1,
+                'title' => 'Пантера',
+                'image' => '/build/images/colors/lada/granta/liftback/lada_granta_panther.png',
+                'class' => 'color-panther',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 2,
+                'model_id' => 1,
+                'title' => 'Рислинг',
+                'image' => '/build/images/colors/lada/granta/liftback/lada_granta_riesling.png',
+                'class' => 'color-riesling',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 2,
+                'model_id' => 1,
+                'title' => 'Техно',
+                'image' => '/build/images/colors/lada/granta/liftback/lada_granta_techno.png',
+                'class' => 'color-techno',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 2,
+                'model_id' => 1,
+                'title' => 'Борнео',
+                'image' => '/build/images/colors/lada/granta/liftback/lada_granta_borneo.png',
+                'class' => 'color-borneo',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 2,
+                'model_id' => 1,
+                'title' => 'Кориандр',
+                'image' => '/build/images/colors/lada/granta/liftback/lada_granta_coriander.png',
+                'class' => 'color-coriander',
+                'is_active' => false
+            ],
+            // Vesta
+            // sedan
             [
                 'type_id' => 1,
                 'model_id' => 2,
@@ -144,6 +213,8 @@ class ColorTableSeeder extends Seeder
                 'class' => 'color-platina',
                 'is_active' => false
             ],
+            // XRay
+            // xray
             [
                 'type_id' => 20,
                 'model_id' => 3,
@@ -192,6 +263,8 @@ class ColorTableSeeder extends Seeder
                 'class' => 'color-platina',
                 'is_active' => false
             ],
+            // 4x4
+            // 3 doors
             [
                 'type_id' => 11,
                 'model_id' => 4,
