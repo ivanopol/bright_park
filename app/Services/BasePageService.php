@@ -4,6 +4,7 @@
 namespace App\Services;
 
 
+use App\CarModel;
 use Illuminate\Support\Facades\DB;
 
 class BasePageService
@@ -18,10 +19,6 @@ class BasePageService
         // Получаем информацию по блокам
         $blocks_ids = [];
         $blocks = DB::table('blocks')->select('*')->where($condition)->get();
-
-/*        echo "<pre>";
-        print_r($blocks);
-        echo "</pre>";*/
 
         if ($blocks) {
             foreach ($blocks as $block) {
@@ -48,6 +45,19 @@ class BasePageService
         $slide_mini = DB::table('slide_mini')->select('*')->where([
             ['model_id', '=', $car_model->id]
         ])->get();
+
+        $car_types = DB::select('SELECT `ct`.`slug`, `ct`.`id`
+                                FROM `car_types` as `ct`
+                                INNER JOIN `car_model_car_type` as `cmct` ON `cmct`.`car_type_id`=`ct`.`id`
+                                 WHERE `cmct`.`car_model_id`=:model_id ORDER BY `ct`.`id` ASC', ['model_id' => $car_model->id]);
+
+        foreach ($slide_mini as &$slide) {
+            foreach ($car_types as $type) {
+                if ($slide->type_id == $type->id) {
+                    $slide->url = $car_model->slug . '/' . $type->slug;
+                }
+            }
+        }
 
         // Получаем информацию по отзывам и по цветам
         $reviews = DB::table('reviews')->select('*')->where($condition)->get();

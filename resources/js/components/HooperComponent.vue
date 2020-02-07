@@ -3,8 +3,10 @@
         <div class="items-mini_wrap">
             <hooper class="items-mini" :itemsToShow="3" :centerMode="true" v-on:slide="change_line">
                 <slide v-for="slide in data.slides_mini" v-bind:key="slide.id">
-                    <img :src="slide.image" :alt="slide.alt">
-                    <span v-text="slide.title">Седан</span>
+                    <a :href="slide.url">
+                        <img :src="slide.image" :alt="slide.alt">
+                        <span v-text="slide.title">Седан</span>
+                    </a>
                 </slide>
             </hooper>
             <span class="indicator"></span>
