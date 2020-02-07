@@ -109,28 +109,28 @@ class SlideMiniTableSeeder extends Seeder
             [
                 'model_id' => 4,
                 'type_id' => 11,
-                'image' => '/build/images/slider/mini/4x4/mobile/4x4_three-doors.png',
+                'image' => '/build/images/slider/mini/4x4/mobile/4x4_three.png',
                 'alt' => 'Лада 4x4 3 дв.',
                 'title' => '4x4 3 дв.'
             ],
             [
                 'model_id' => 4,
                 'type_id' => 12,
-                'image' => '/build/images/slider/mini/4x4/mobile/4x4_three-doors-urban.png',
+                'image' => '/build/images/slider/mini/4x4/mobile/4x4_three_urban.png',
                 'alt' => 'Лада 4x4 Urban 3 дв.',
                 'title' => '4x4 Urban 3 дв.'
             ],
             [
                 'model_id' => 4,
                 'type_id' => 13,
-                'image' => '/build/images/slider/mini/4x4/mobile/4x4_five-doors.png',
+                'image' => '/build/images/slider/mini/4x4/mobile/4x4_five.png',
                 'alt' => 'Лада 4x4 5 дв.',
                 'title' => '4x4 5 дв.'
             ],
             [
                 'model_id' => 4,
                 'type_id' => 14,
-                'image' => '/build/images/slider/mini/4x4/mobile/4x4_five-doors-urban.png',
+                'image' => '/build/images/slider/mini/4x4/mobile/4x4_five_urban.png',
                 'alt' => 'Лада 4x4 Urban 5 дв.',
                 'title' => '4x4 Urban 5 дв.'
             ],

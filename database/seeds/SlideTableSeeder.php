@@ -80,6 +80,15 @@ class SlideTableSeeder extends Seeder
                 'subtitle' => 'Классический стиль,</br> оптимальный выбор',
                 'link' => '/model_details'
             ],
+            [
+                'model_id' => 4,
+                'type_id' => 11,
+                'class' => 'l4x4_1',
+                'title' => 'LADA 4x4',
+                'reduction' => '4x4',
+                'subtitle' => 'Классический стиль,</br> оптимальный выбор',
+                'link' => '/model_details'
+            ],
         ];
 
         DB::table('slides')->insert($slides);

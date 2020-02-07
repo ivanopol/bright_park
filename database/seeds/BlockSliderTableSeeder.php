@@ -166,6 +166,24 @@ class BlockSliderTableSeeder extends Seeder
                 'number' => '4',
                 'block_id' => '10'
             ],
+            [
+                'text' => 'Более комфортные передние кресла получили развитую боковую поддержку и новый механизм складывания.',
+                'image' => '/build/images/photos/models/4x4/blocks/block_01/plus/1.jpg',
+                'number' => '1',
+                'block_id' => '15'
+            ],
+            [
+                'text' => 'Система экстренного оповещения обязательна для современных автомобилей',
+                'image' => '/build/images/photos/models/4x4/blocks/block_01/plus/2.jpg',
+                'number' => '2',
+                'block_id' => '15'
+            ],
+            [
+                'text' => 'Новая эргономичная панель приборов. Увеличенный вещевой ящик, а главное – более удобная система управления отоплением и вентиляцией с тремя вращающимися рукоятками и электроприводом заслонок отопителя.',
+                'image' => '/build/images/photos/models/4x4/blocks/block_01/plus/3.jpg',
+                'number' => '3',
+                'block_id' => '15'
+            ],
         ];
 
         DB::table('block_sliders')->insert($block_sliders);

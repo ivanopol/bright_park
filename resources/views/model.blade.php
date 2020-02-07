@@ -10,7 +10,7 @@
             <info-component :data='@json($block)' :n='@json($key)' :model='@json($data['model_id'])' :type='@json($data['type_id'])'></info-component>
         @endforeach
 
-        <color-choose-component :colors='@json($data['colors'])'></color-choose-component>
+       {{-- <color-choose-component :colors='@json($data['colors'])'></color-choose-component>--}}
         <form-component></form-component>
 
         <section class="block block_4">
