@@ -6,10 +6,10 @@
 
 //require('./bootstrap');
 window.Vue = require('vue');
-window.Vuex = require('vuex');
+//window.Vuex = require('vuex');
 //import Vuex from 'vuex';
 
-Vue.use(Vuex);
+//Vue.use(Vuex);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -37,7 +37,7 @@ Vue.component('classified', require('./components/Classified').default);
 Vue.component('steps', require('./components/Steps').default);
 Vue.component('yandex-map-component', require('./components/YandexMapComponent').default);
 
-const store = new Vuex.Store({
+/*const store = new Vuex.Store({
     state: {
         model: 0
     },
@@ -46,7 +46,7 @@ const store = new Vuex.Store({
             state.model = current_model;
         }
     }
-});
+});*/
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -55,6 +55,6 @@ const store = new Vuex.Store({
  */
 
 const app = new Vue({
-    el: '#app',
-    store
+    el: '#app'
+   // store
 });

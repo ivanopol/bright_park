@@ -93,13 +93,15 @@ class HomeController extends Controller
     public function getComplectations($brand_id, $model_id)
     {
         $raw = new AutoruService();
-        return $raw->getComplectations($brand_id, $model_id);
+
+        return Response::json(['modifications'=>$raw->getComplectations($brand_id, $model_id)]);
     }
 
-    public function getEstimations($data)
+    public function getEstimation(Request $request)
     {
         $raw = new AutoruService();
-        return $raw->getEstimations($data);
+        $data = $request->getContent();
+        return Response::json(['estimation'=>$raw->getEstimation($data)]);
     }
 
     public function getYearsRange()

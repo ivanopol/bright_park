@@ -104,9 +104,10 @@ $context: 375;
 .pointers_wrap {
     position: relative;
     overflow: hidden;
-    background-color: #000;
-    height: 211px;
+    /*background-color: #000;*/
+   /* height: 211px;*/
 
+    /*
     &#pointer_1 {
         height: 211px;
     }
@@ -118,11 +119,15 @@ $context: 375;
     &#pointer_3 {
         height: 238px;
     }
+    */
 
-
-    .pointers-1,
-    .pointers-2,
-    .pointers-3 {
+    .pointers-1-1-1,
+    .pointers-1-1-2,
+    .pointers-1-1-3,
+    .pointers-2-1-1,
+    .pointers-2-1-2,
+    .pointers-4-11-1,
+    .pointers-3-20-1 {
         width: 100%;
         height: 100%;
 
@@ -198,9 +203,12 @@ $context: 375;
             }
         }
 
+        &-aside {
+            position: absolute;
+        }
+
         &-aside,
         &-img {
-            position: absolute;
             top: 0;
             right: 0;
             bottom: 0;
@@ -285,7 +293,7 @@ $context: 375;
     }
 
 
-    .pointers-1 {
+    .pointers-1-1-1 {
         .p1 {
             left: get-vw(50px, $context);
             top: get-vw(60px, $context);
@@ -312,7 +320,7 @@ $context: 375;
         }
     }
 
-    .pointers-2 {
+    .pointers-1-1-2 {
         .p1 {
             left: get-vw(103px, $context);
             top: get-vw(75px, $context);
@@ -339,7 +347,7 @@ $context: 375;
         }
     }
 
-    .pointers-3 {
+    .pointers-1-1-3 {
         .p1 {
             left: get-vw(156px, $context);
             top: get-vw(25px, $context);
@@ -370,6 +378,81 @@ $context: 375;
             top: get-vw(129px, $context);
         }
     }
+
+    .pointers-2-1-1 {
+        .p1 {
+            left: get-vw(195px, $context);
+            top: get-vw(50px, $context);
+        }
+
+        .p2 {
+            left: get-vw(113px, $context);
+            top: get-vw(7px, $context);
+        }
+    }
+
+    .pointers-2-1-2 {
+        .p1 {
+            left: get-vw(178px, $context);
+            top: get-vw(95px, $context);
+        }
+
+        .p2 {
+            left: get-vw(178px, $context);
+            top: get-vw(160px, $context);
+        }
+
+        .p3 {
+            left: get-vw(115px, $context);
+            top: get-vw(90px, $context);
+        }
+
+        .p4 {
+            left: get-vw(100px, $context);
+            top: get-vw(175px, $context);
+        }
+    }
+
+    .pointers-3-20-1 {
+        .p1 {
+            left: get-vw(234px, $context);
+            top: get-vw(95px, $context);
+        }
+
+        .p2 {
+            left: get-vw(58px, $context);
+            top: get-vw(142px, $context);
+        }
+
+        .p3 {
+            left: get-vw(173px, $context);
+            top: get-vw(108px, $context);
+        }
+
+        .p4 {
+            left: get-vw(173px, $context);
+            top: get-vw(68px, $context);
+        }
+    }
+
+    .pointers-4-11-1 {
+        .p1 {
+            right: get-vw(100px, $context);
+            bottom: get-vw(10px, $context);
+        }
+
+        .p2 {
+            left: get-vw(175px, $context);
+            top: get-vw(8px, $context);
+        }
+
+        .p3 {
+            left: get-vw(231px, $context);
+            top: get-vw(93px, $context);
+        }
+    }
+
+
 
     @media only screen and (max-width: 321px) {
 
@@ -447,12 +530,12 @@ $context: 375;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: left;
             align-content: space-between;
-            height: get-vw(140px, $context);
 
             li {
                 width: 25%;
+                margin-bottom: 20px;
 
                 &.active div {
                     box-shadow: none;
@@ -505,6 +588,102 @@ $context: 375;
 
                     &coriander {
                         background-color: #857d7a;
+                    }
+
+                    &white-glacial {
+                        background-color: #ffffff;
+                    }
+
+                    &red-cornelian {
+                        background-color: #860E02;
+                    }
+
+                    &angkor {
+                        background-color: #3F3A32;
+                    }
+
+                    &carfagen {
+                        background-color: #E8E5CD;
+                    }
+
+                    &daiving {
+                        background-color: #1449BF;
+                    }
+
+                    &phantom {
+                        background-color: #686866;
+                    }
+
+                    &pluton {
+                        background-color: #515958;
+                    }
+
+                    &maestro {
+                        background-color: #111112;
+                    }
+
+                    &platina {
+                        background-color: #C3C4C4;
+                    }
+
+                    &fiery-red {
+                        background-color: #DA0F23;
+                    }
+
+                    &basalt-gray {
+                        background-color: #A8B9A0;
+                    }
+
+                    &light-brown-cougar {
+                        background-color: #986F59;
+                    }
+
+                    &black-pearl {
+                        background-color: #1C1D1A;
+                    }
+
+                    &platina {
+                        background-color: #C3C4C4;
+                    }
+
+                    &white-cloud {
+                        background-color: #FEFAF4;
+                    }
+
+                    &nessi-2 {
+                        background-color: #112717;
+                    }
+
+                    &panthera {
+                        background-color: #161313;
+                    }
+
+                    &benefis {
+                        background-color: #430D45;
+                    }
+
+                    &barokko {
+                        background-color: #850D34;
+                    }
+
+                    &terra {
+                        background-color: #6C2003;
+                    }
+
+                    &borneo-dark {
+                        background-color: #444E4E;
+                    }
+
+                    &snow-queen {
+                        background-color: #D0D8E2;
+                    }
+
+                    &coriander-dark {
+                        background-color: #706c62;
+                    }
+
+                    &camouflage-jungle {
+                        background-color: #1E4526;
                     }
                 }
             }
@@ -735,7 +914,7 @@ form {
         justify-content: center;
         align-items: center;
 
-        &.feedback_01,
+/*        &.feedback_01,
         &.feedback_02 {
             height: 170px;
         }
@@ -752,7 +931,7 @@ form {
             width: 100%;
             height: 200px;
         }
-
+*/
         & > img {
             object-fit: cover;
             height: 100%;
@@ -1349,6 +1528,21 @@ footer {
 
         &.vesta_6 {
             background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/vesta/lada_vesta_sport.png) no-repeat center center;
+            background-size: cover;
+        }
+
+        &.xray_1 {
+            background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/xray/lada_xray.png) no-repeat center center;
+            background-size: cover;
+        }
+
+        &.xray_2 {
+            background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/xray/lada_xray_cross.png) no-repeat center center;
+            background-size: cover;
+        }
+
+        &.l4x4_1 {
+            background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/4x4/lada_4x4.jpg) no-repeat center center;
             background-size: cover;
         }
 

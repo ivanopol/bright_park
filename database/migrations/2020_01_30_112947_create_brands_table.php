@@ -18,7 +18,12 @@ class CreateBrandsTable extends Migration
             $table->string('code');
             $table->string('title');
             $table->string('logo');
+            $table->integer('order')->nullable();
         });
+
+        Artisan::call('db:seed', [
+            '--class' => BrandsTableSeeder::class
+        ]);
     }
 
     /**

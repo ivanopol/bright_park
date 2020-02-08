@@ -2,23 +2,33 @@
     <section id="classified">
         <div class="option-text">Оцените свой автомобиль</div>
         <div class="dropdown-group">
-            <v-select class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Марка" taggable :options="brands" v-on:input="stepOne">
+            <v-select class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Марка" taggable
+                      :options="brands" v-on:input="stepOne">
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
-            <v-select @search:focus="uploadModels" :disabled="!step_one" class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Модель"  taggable :options="[]">
+            <v-select @search:focus="uploadModels" :disabled="!step_one" class="select_wrap"
+                      :components="{OpenIndicator, Deselect}" placeholder="Модель" v-on:input="stepTwo" taggable
+                      :options="models">
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
-            <v-select disabled class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Год выпуска" taggable :options="[]">
+            <v-select :disabled="!step_two" class="select_wrap" :components="{OpenIndicator, Deselect}"
+                      placeholder="Комплектация"
+                      taggable :options="modifications" v-on:input="stepThree">
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
-            <v-select disabled class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Комплектация" taggable :options="[]">
+            <v-select :disabled="!step_three" class="select_wrap" :components="{OpenIndicator, Deselect}"
+                      placeholder="Год выпуска"
+                      v-on:input="stepFour"
+                      taggable :options="years">
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
-            <v-select disabled class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Пробег" taggable :options="[]">
+            <v-select :disabled="!step_four" class="select_wrap" :components="{OpenIndicator, Deselect}"
+                      placeholder="Пробег" taggable
+                      :options="mileage" v-on:input="stepFive">
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
@@ -69,7 +79,32 @@
                 render: createElement => createElement('span', {class: {'toggle': true}}),
             },
             step_one: false,
-            models: []
+            step_two: false,
+            step_three: false,
+            step_four: false,
+            models: [],
+            model_objects: [],
+            modifications: [],
+            selected_model: null,
+            selected_modification: null,
+            selected_brand: null,
+            selected_year: null,
+            selected_mileage: null,
+            selected_tech_param_id: null,
+            estimation: null,
+            tradeInEstimation: 0,
+            brightParkEstimation: 0,
+            mileage: [
+                'До 10 000',
+                '10 000 - 30 000',
+                '30 000 - 50 000',
+                '50 000 - 75 000',
+                '75 000 - 100 000',
+                '100 000 - 150 000',
+                '150 000 - 200 000',
+                'более 200 000'
+            ],
+            years: []
         }),
         components: {
             vSelect,
@@ -80,43 +115,82 @@
                 return {};
             },
             stepOne: function (input) {
-
                 axios.get('/get_brand_models', {
                     params: {
-                        model_id: input.code
+                        model_id: input.id
                     }
                 })
-                .then(function (response) {
-                    console.log(response.data);
-                })
-                .catch(function (error) {
-                    console.log(error);
-                })
-                .then(function () {
-                   // console.log('always');
-                });
+                    .then((response) => {
+                        this.models = response.data.models;
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    })
+                    .finally(() => {
+                    });
 
                 this.step_one = true;
+                this.selected_brand = input.code;
                 //this.$children[1].disabled = false;
             },
             uploadModels: function () {
-                let options_count = this.$children[1].options.length;
 
-                if (options_count) {
-                    return false;
+            },
+            stepTwo: function (input) {
+                axios.get('/get_complectations/' + this.selected_brand.toString() + '/' + input.code.toString(),
+                    {})
+                    .then((response) => {
+                        this.modifications = response.data.modifications;
+                    }).catch((error) => {
+
+                });
+
+                this.step_two = true;
+                this.selected_model = input.code
+            },
+            stepThree: function (input) {
+                this.step_three = true;
+                this.selected_tech_param_id = input.tech_param_id;
+                var currentYear = new Date().getFullYear(), years = [];
+                var startYear = 1980;
+                while (startYear <= currentYear) {
+                    years.push(startYear++);
                 }
+                this.years = years.sort((a, b) => a > b ? a : b);
+            },
+            stepFour: function (input) {
+                this.step_four = true;
+                this.selected_year = input;
+            },
+            stepFive: function (input) {
+                this.selected_mileage = input.split(' - ')[0].trim();
 
+                let data = {
+                    'km_age': this.selected_mileage,
+                    'year': this.selected_year,
+                    'tech_param_id': this.selected_tech_param_id
+                };
 
-                console.log("test");
+                axios(
+                    {
+                        method: 'post',
+                        url: '/get_estimation',
+                        data: data
+
+                    })
+                        .then((response) => {
+                            this.estimation = response.data.estimation;
+                        });
             }
         }
     };
 </script>
 
-<style lang="scss" >
+<style lang="scss">
 
     .dropdown-group {
         margin: 0 30px;
+
         .select_wrap {
             position: relative;
             margin-bottom: 18px;
@@ -165,7 +239,7 @@
 
             &.vs--open .vs__dropdown-toggle {
                 background-color: #fff;
-                border: 2px solid #000;//rgba(60, 60, 60, 0.26);
+                border: 2px solid #000; //rgba(60, 60, 60, 0.26);
                 border-radius: 6px 6px 0 0;
                 border-bottom: none;
             }
