@@ -23,9 +23,9 @@ class GeoLocationService
 
         $city = (array) DB::selectOne("select * from cities left join contacts c on c.city_id = cities.id where alias = :title_en", ['title_en'=>$title_en]);
 
-/*        if($city == null){
+        if($city == null){
             return (array) DB::selectOne("select * from cities left join contacts c on c.city_id = cities.id where alias = :title_en", ['title_en'=>'Perm']);
-        }*/
+        }
 
         return $city ? $city : [];
     }

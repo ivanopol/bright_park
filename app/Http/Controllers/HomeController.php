@@ -63,6 +63,7 @@ class HomeController extends Controller
         $service = new BasePageService();
 
         $data = $service->get_base_page_data($car_model, $car_type, $this->city);
+        $data['coordinates'] = explode(",", $city['coordinates']);
 
         return view('model', [ 'data' => $data ]);
     }
