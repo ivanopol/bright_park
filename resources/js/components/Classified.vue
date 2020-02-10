@@ -22,8 +22,8 @@
             <v-select :disabled="!step_three" class="select_wrap" :components="{OpenIndicator, Deselect}"
                       placeholder="Год выпуска"
                       v-on:input="stepFour"
-                      taggable :options="years">
-                <div class="spinner" v-show="mutableLoading" v-model="selected_year">Загрузка...</div>
+                      taggable :options="years" v-model="selected_year">
+                <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
             <v-select :disabled="!step_four" class="select_wrap" :components="{OpenIndicator, Deselect}"
@@ -34,7 +34,7 @@
             </v-select>
         </div>
 
-        <div class="trigger-wrap">
+        <div id="prices_block" class="trigger-wrap" hidden>
             <div class="trigger-block">
                 <div class="trigger-row">
                     <div class="trigger-half trigger-left trigger-text">Рыночная оценка</div>
@@ -52,7 +52,17 @@
             </div>
         </div>
 
-        <div class="model-choose-text">
+        <section id="count_button" class="buttons_other mt-20">
+            <div class="item-buttons-other">
+                <button v-on:click="showPrices" class="btn btn-primary">Рассчитать стоимость</button>
+            </div>
+        </section>
+
+        <div id="warning" class="model-choose-text" style="color: darkred;" hidden>
+            <p>Заполните все поля!</p>
+        </div>
+
+        <div id="special_offer_text" class="model-choose-text" hidden>
             <p>Предложение действует до 16 января</p>
         </div>
 
@@ -99,14 +109,14 @@
             tradeInEstimation: 0,
             brightParkEstimation: 0,
             mileage: [
-                'До 10 000',
-                '10 000 - 30 000',
-                '30 000 - 50 000',
-                '50 000 - 75 000',
-                '75 000 - 100 000',
-                '100 000 - 150 000',
-                '150 000 - 200 000',
-                'более 200 000'
+                {label: 'До 10 000', value: 5000},
+                {label: '10 000 - 30 000', value: 20000},
+                {label: '30 000 - 50 000', value: 40000},
+                {label: '50 000 - 75 000', value: 62000},
+                {label: '75 000 - 100 000', value: 90000},
+                {label: '100 000 - 150 000', value: 1250000},
+                {label: '150 000 - 200 000', value: 1250000},
+                {label: 'более 200 000', value: 1250000}
             ],
             years: []
         }),
@@ -156,13 +166,11 @@
                     {})
                     .then((response) => {
                         this.modifications = response.data.modifications;
-                    }).catch((error) => {
-
-                });
+                    });
 
                 if (this.selected_model != null) {
                     this.selected_tech_param_id = null;
-                    this.selected_year = null;
+                    this.selected_year = undefined;
                     this.selected_mileage = null;
                     this.estimation = null;
                     this.tradeInEstimation = 0;
@@ -172,23 +180,29 @@
                 }
 
                 this.step_two = true;
-                this.selected_model = input
+                this.selected_model = input;
             },
 
             stepThree: function (input) {
                 this.step_three = true;
                 this.selected_tech_param_id = input;
+
                 var currentYear = new Date().getFullYear(), years = [];
+
                 var startYear = 1980;
-                while (startYear <= currentYear) {
-                    years.push(startYear++);
+
+                while (currentYear >= startYear) {
+                    years.push({label: currentYear, value: currentYear});
+                    currentYear--;
                 }
-                this.years = years.sort((a, b) => a > b ? a : b);
+
+                this.years = years;
             },
 
             stepFour: function (input) {
                 this.step_four = true;
                 this.selected_year = input;
+                console.log(input);
 
                 if (this.selected_mileage != null){
                     console.log(this.selected_mileage);
@@ -197,19 +211,14 @@
             },
 
             stepFive: function (input) {
-                try{
-                    this.selected_mileage = parseInt(input.split(' - ')[1].trim()) / 2;
-
-                } catch (e) {
-                    this.selected_mileage = parseInt((input.split(' ')[1].trim()) * 1000) / 2;
-                }
+                this.selected_mileage = input;
                 this.getEstimation();
             },
 
             getEstimation: function () {
                 let data = {
-                    'km_age': this.selected_mileage,
-                    'year': this.selected_year,
+                    'km_age': this.selected_mileage.value,
+                    'year': this.selected_year.value,
                     'tech_param_id': this.selected_tech_param_id.tech_param_id
                 };
 
@@ -224,31 +233,28 @@
                         this.estimation = response.data.estimation;
                         this.brightParkEstimation = this.estimation['prices']['autoru']['to'];
                         this.tradeInEstimation = this.estimation['prices']['tradein']['to'];
-                        console.log(this.brightParkEstimation)
                     });
-            },
-
-            reset: function () {
-                this.step_one = false;
-                this.step_two = false;
-                this.step_three = false;
-                this.step_four = false;
-                this.models = [];
-                this.model_objects = [];
-                this.modifications = [];
-                this.selected_model = null;
-                this.selected_modification = null;
-                this.selected_year = null;
-                this.selected_mileage = null;
-                this.selected_tech_param_id = null;
-                this.estimation = null;
-                this.tradeInEstimation = 0;
-                this.brightParkEstimation = 0;
             },
 
             formatPrice(value) {
                 let val = (value / 1).toFixed(2).replace('.', ',');
                 return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+            },
+
+            showPrices: function () {
+                if(this.estimation) {
+                    let warning = document.getElementById('warning');
+                    let prices_block = document.getElementById('prices_block');
+                    let count_button = document.getElementById('count_button');
+                    let special_offer_text = document.getElementById('special_offer_text');
+                    warning.hidden = true;
+                    prices_block.hidden = false;
+                    count_button.hidden = true;
+                    special_offer_text.hidden = false;
+                } else {
+                    let warning = document.getElementById('warning');
+                    warning.hidden = false;
+                }
             }
         }
     };
