@@ -5,54 +5,92 @@
             <p class="note_1">Расширенный тест-драйв в Брайт парке</p>
         </div>
         <form action="#" id="form_test-drive" method="POST" name="feedback" @submit="send">
-            <input type="text" class="" name="name" placeholder="Имя" required>
-            <input
-                type="tel"
-                v-model="phone"
-                name="phone"
-                id="phone"
-                placeholder="Телефон"
-                autocomplete="tel"
-                maxlength="14"
-                class="form-control"
-                v-phone
-                pattern="[(][0-9]{3}[)] [0-9]{3}-[0-9]{4}"
-                required
-            />
+            <input id="name" type="text" class="" name="name" placeholder="Имя" required>
+            <the-mask id="phone" pattern=".{18,}" mask="+# (###)-###-##-##" type="tel" required="true"
+                      placeholder="Телефон"></the-mask>
             <button :click="send">Записаться</button>
+            <div id="warning" class="model-choose-text" style="color: darkred;" hidden>
+                <p>Введите 11-значный номер!</p>
+            </div>
+            <div id="success" class="model-choose-text" style="color: darkgreen;" hidden>
+                <p>Заявка отправлена!</p>
+            </div>
         </form>
     </section>
 </template>
 
 <script>
+    import axios from 'axios';
+    import VueTheMask from 'vue-the-mask'
 
-    Vue.directive('phone', {
-        bind(el) {
-            el.oninput = function(e) {
-                if (!e.isTrusted) {
-                    return;
-                }
-
-                let x = this.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
-                this.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
-                el.dispatchEvent(new Event('input'));
-            }
-        }
-    });
+    Vue.use(VueTheMask);
 
     export default {
         name: 'App',
-        props : [],
+        beforeMount() {
+            this.attachHandler();
+        },
+        props: [],
         data: function () {
             return {
                 phone: ''
             };
         },
         methods: {
-            send(event) {
+            send: function (event) {
                 event.preventDefault();
+
+                let formData = {
+                    "phone": this.clearMask(document.getElementById('phone').value),
+                    "name": document.getElementById('name').value
+                };
+
+                console.log(formData);
+
+                axios(
+                    {
+                        method: 'post',
+                        url: '/send_contact_form',
+                        data: formData
+                    })
+                    .then((response) => {
+                        this.clearInput();
+                        document.getElementById('success').hidden = false;
+                    }).catch((error) => {
+                        document.getElementById('warning').hidden = false;
+                    this.clearInput();
+                })
+            },
+
+            clearInput: function () {
+                document.getElementById('phone').value = null;
+                document.getElementById('name').value = null;
+            },
+
+            clearMask: function(value) {
+              return value.replace(/\D/g,'');
+            },
+
+            showModal: function() {
+            },
+
+            attachHandler: function () {
+                function attachHandler(el, evtname, fn) {
+                    if (el.addEventListener) {
+                        el.addEventListener(evtname, fn.bind(el), false);
+                    } else if (el.attachEvent) {
+                        el.attachEvent('on' + evtname, fn.bind(el));
+                    }
+                }
+
+                attachHandler(window, "load", function () {
+                    var ele = document.querySelector("input[id=phone]");
+                    attachHandler(ele, "invalid", function () {
+                        this.setCustomValidity("Please enter at least 5 characters.");
+                        this.setCustomValidity("");
+                    });
+                });
             }
         }
     }
 </script>
-

@@ -4,6 +4,8 @@
 namespace App\Services;
 
 
+use Exception;
+
 class BitrixService
 {
 
@@ -14,11 +16,15 @@ class BitrixService
     {
     }
 
-    public function sendFeedbackForm($data)
+    public function sendContactForm($data)
     {
-        if (empty($data['phone'])) {
-            return;
+        $data = json_decode($data, true);
+
+        if ($data['phone'] == null || strlen((string)$data['phone']) < 11) {
+            throw new Exception();
         }
+
+        var_dump($data);
 
         $phone = $data['phone'];
 
@@ -193,7 +199,7 @@ class BitrixService
             ]));
 
             //setcookie($key, $value, time() + 60 * 60 * 24 * 365, MODX_BASE_URL, $secure, $cookieDomain, true);
-            setcookie($key, $value, time() + 60 * 60 * 24 * 365, MODX_BASE_URL, $cookieDomain, true);
+            setcookie($key, $value, time() + 60 * 60 * 24 * 365, $cookieDomain, true);
         }
     }
 }
