@@ -3,19 +3,19 @@
         <div class="option-text">Оцените свой автомобиль</div>
         <div class="dropdown-group">
             <v-select class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Марка" taggable
-                      :options="brands" v-on:input="stepOne">
+                      :options="brands" v-on:input="stepOne" v-model="selected_brand">
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
-            <v-select @search:focus="uploadModels" :disabled="!step_one" class="select_wrap"
+            <v-select :disabled="!step_one" class="select_wrap"
                       :components="{OpenIndicator, Deselect}" placeholder="Модель" v-on:input="stepTwo" taggable
-                      :options="models">
+                      :options="models" v-model="selected_model">
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
             <v-select :disabled="!step_two" class="select_wrap" :components="{OpenIndicator, Deselect}"
                       placeholder="Комплектация"
-                      taggable :options="modifications" v-on:input="stepThree">
+                      taggable :options="modifications" v-on:input="stepThree" v-model="selected_tech_param_id">
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
@@ -23,12 +23,12 @@
                       placeholder="Год выпуска"
                       v-on:input="stepFour"
                       taggable :options="years">
-                <div class="spinner" v-show="mutableLoading">Загрузка...</div>
+                <div class="spinner" v-show="mutableLoading" v-model="selected_year">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
             <v-select :disabled="!step_four" class="select_wrap" :components="{OpenIndicator, Deselect}"
                       placeholder="Пробег" taggable
-                      :options="mileage" v-on:input="stepFive">
+                      :options="mileage" v-on:input="stepFive" v-model="selected_mileage">
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
@@ -38,12 +38,16 @@
             <div class="trigger-block">
                 <div class="trigger-row">
                     <div class="trigger-half trigger-left trigger-text">Рыночная оценка</div>
-                    <div class="trigger-half trigger-right trigger-price">300 000 руб.</div>
+                    <div class="trigger-half trigger-right trigger-price">{{formatPrice($data.tradeInEstimation)}}
+                        руб.
+                    </div>
                 </div>
 
                 <div class="trigger-row">
                     <div class="trigger-half trigger-left trigger-text">Оценка Bright Park</div>
-                    <div class="trigger-half trigger-right trigger-price trigger-price-accent">320 000 руб.</div>
+                    <div class="trigger-half trigger-right trigger-price trigger-price-accent">
+                        {{formatPrice($data.brightParkEstimation)}} руб.
+                    </div>
                 </div>
             </div>
         </div>
@@ -129,15 +133,26 @@
                     .finally(() => {
                     });
 
+                if (this.selected_brand != null && this.selected_brand !== input.code) {
+                    this.selected_model = null;
+                    this.selected_modification = null;
+                    this.selected_year = null;
+                    this.selected_mileage = null;
+                    this.selected_tech_param_id = null;
+                    this.estimation = null;
+                    this.tradeInEstimation = 0;
+                    this.brightParkEstimation = 0;
+                    this.step_two = false;
+                    this.step_three = false;
+                    this.step_four = false;
+                }
                 this.step_one = true;
-                this.selected_brand = input.code;
+                this.selected_brand = input;
                 //this.$children[1].disabled = false;
             },
-            uploadModels: function () {
 
-            },
             stepTwo: function (input) {
-                axios.get('/get_complectations/' + this.selected_brand.toString() + '/' + input.code.toString(),
+                axios.get('/get_complectations/' + this.selected_brand.code.toString() + '/' + input.code.toString(),
                     {})
                     .then((response) => {
                         this.modifications = response.data.modifications;
@@ -145,12 +160,24 @@
 
                 });
 
+                if (this.selected_model != null) {
+                    this.selected_tech_param_id = null;
+                    this.selected_year = null;
+                    this.selected_mileage = null;
+                    this.estimation = null;
+                    this.tradeInEstimation = 0;
+                    this.brightParkEstimation = 0;
+                    this.step_three = false;
+                    this.step_four = false;
+                }
+
                 this.step_two = true;
-                this.selected_model = input.code
+                this.selected_model = input
             },
+
             stepThree: function (input) {
                 this.step_three = true;
-                this.selected_tech_param_id = input.tech_param_id;
+                this.selected_tech_param_id = input;
                 var currentYear = new Date().getFullYear(), years = [];
                 var startYear = 1980;
                 while (startYear <= currentYear) {
@@ -158,17 +185,32 @@
                 }
                 this.years = years.sort((a, b) => a > b ? a : b);
             },
+
             stepFour: function (input) {
                 this.step_four = true;
                 this.selected_year = input;
-            },
-            stepFive: function (input) {
-                this.selected_mileage = input.split(' - ')[0].trim();
 
+                if (this.selected_mileage != null){
+                    console.log(this.selected_mileage);
+                    this.getEstimation();
+                }
+            },
+
+            stepFive: function (input) {
+                try{
+                    this.selected_mileage = parseInt(input.split(' - ')[1].trim()) / 2;
+
+                } catch (e) {
+                    this.selected_mileage = parseInt((input.split(' ')[1].trim()) * 1000) / 2;
+                }
+                this.getEstimation();
+            },
+
+            getEstimation: function () {
                 let data = {
                     'km_age': this.selected_mileage,
                     'year': this.selected_year,
-                    'tech_param_id': this.selected_tech_param_id
+                    'tech_param_id': this.selected_tech_param_id.tech_param_id
                 };
 
                 axios(
@@ -178,9 +220,35 @@
                         data: data
 
                     })
-                        .then((response) => {
-                            this.estimation = response.data.estimation;
-                        });
+                    .then((response) => {
+                        this.estimation = response.data.estimation;
+                        this.brightParkEstimation = this.estimation['prices']['autoru']['to'];
+                        this.tradeInEstimation = this.estimation['prices']['tradein']['to'];
+                        console.log(this.brightParkEstimation)
+                    });
+            },
+
+            reset: function () {
+                this.step_one = false;
+                this.step_two = false;
+                this.step_three = false;
+                this.step_four = false;
+                this.models = [];
+                this.model_objects = [];
+                this.modifications = [];
+                this.selected_model = null;
+                this.selected_modification = null;
+                this.selected_year = null;
+                this.selected_mileage = null;
+                this.selected_tech_param_id = null;
+                this.estimation = null;
+                this.tradeInEstimation = 0;
+                this.brightParkEstimation = 0;
+            },
+
+            formatPrice(value) {
+                let val = (value / 1).toFixed(2).replace('.', ',');
+                return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
             }
         }
     };
