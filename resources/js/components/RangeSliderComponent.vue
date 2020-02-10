@@ -1,5 +1,8 @@
 <template>
-    <vue-slider v-model="value"  :interval="1" :marks="marks" :drag-on-click="true" :min="15" :max="50"/>
+    <div>
+        <vue-slider v-model="sliderOne.value" :interval="1" :marks="sliderOne.marks" :drag-on-click="true" :min="sliderOne.min" :max="sliderOne.max"/>
+        <vue-slider v-model="sliderTwo.value" :interval="1" :marks="sliderTwo.marks" :drag-on-click="true" :min="sliderTwo.min" :max="sliderTwo.max"/>
+    </div>
 </template>
 
 <script>
@@ -10,10 +13,21 @@
         components: {
             VueSlider
         },
-        data () {
+        data() {
             return {
-                value: 15,
-                marks: [15, 50]
+                'sliderOne':
+                    {
+                        value: 15,
+                        marks: [15, 50],
+                        min: 15,
+                        max: 50
+                    }, 'sliderTwo':
+                    {
+                        value: 12,
+                        marks: [12, 60],
+                        min: 12,
+                        max: 60
+                    }
             }
         }
     }
@@ -25,6 +39,7 @@
         border-radius: 15px;
         transition: background-color 0.3s;
     }
+
     .vue-slider:hover .vue-slider-process {
         background-color: #ff8351;
     }
@@ -34,41 +49,35 @@
         width: 100%;
         height: 100%;
         border-radius: 50%;
-        background-color:
-            #ff8351;
-        border: 2px solid  #ff8351;
+        background-color: #ff8351;
+        border: 2px solid #ff8351;
         box-sizing: border-box;
         -webkit-transition: box-shadow 0.3s, border-color 0.3s;
         transition: box-shadow 0.3s, border-color 0.3s;
     }
 
     .vue-slider:hover .vue-slider-dot-handle:hover {
-        border-color:
-            #ff8351;
+        border-color: #ff8351;
     }
 
     .vue-slider:hover .vue-slider-dot-handle {
-        border-color:
-            #ff8351;
+        border-color: #ff8351;
     }
 
-    .vue-slider-dot-handle-focus{
+    .vue-slider-dot-handle-focus {
         box-shadow: #ff8351;
     }
 
     .vue-slider:hover .vue-slider-mark-step-active {
-        box-shadow: 0 0 0 2px
-        #ff8351;
+        box-shadow: 0 0 0 2px #ff8351;
     }
 
     .vue-slider .vue-slider-mark-step-active {
-        box-shadow: 0 0 0 2px
-        #ff8351;
+        box-shadow: 0 0 0 2px #ff8351;
     }
 
     .vue-slider-mark-step {
-        box-shadow: 0 0 0 2px
-        #ff8351;
+        box-shadow: 0 0 0 2px #ff8351;
     }
 
 </style>
