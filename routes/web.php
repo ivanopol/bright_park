@@ -17,9 +17,9 @@
 
 Auth::routes();
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'city'])->group(function () {
     Route::get('/', 'HomeController@index')->name('index');
-    Route::get('model/{car_model}/{car_type}', 'HomeController@model')->name('model');
+    Route::get('{city?}/model/{car_model}/{car_type}', 'HomeController@model')->name('model');
     Route::get('/alt_menu', 'HomeController@alt_menu')->name('alt_menu');
     Route::get('/model_details', 'HomeController@model_details')->name('model_details');
     Route::get('/trade_in_calc', 'HomeController@trade_in_calc')->name('trade_in_calc');
