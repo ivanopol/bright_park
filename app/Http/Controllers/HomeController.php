@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Response;
 use App\Services\GeoLocationService;
 use App\CarModel;
 use App\CarType;
+use App\City;
 
 class HomeController extends Controller
 {
@@ -45,7 +46,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function model(CarModel $car_model, CarType $car_type)
+    public function model(City $city, CarModel $car_model, CarType $car_type)
     {
         $service = new BasePageService();
 

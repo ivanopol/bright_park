@@ -20,10 +20,10 @@ class GeoLocationService
     {
         $title_en = geoip($ip=null)->getLocation($ip_address)->getAttribute('city');
 
-        $city = DB::selectOne("select * from cities left join contacts c on c.city_id = cities.id where title_en = :title_en", ['title_en'=>$title_en]);
+        $city = DB::selectOne("select * from cities left join contacts c on c.city_id = cities.id where alias = :title_en", ['title_en'=>$title_en]);
 
         if($city == null){
-            return (DB::selectOne("select * from cities left join contacts c on c.city_id = cities.id where title_en = :title_en", ['title_en'=>'Perm']));
+            return (DB::selectOne("select * from cities left join contacts c on c.city_id = cities.id where alias = :title_en", ['title_en'=>'Perm']));
         }
 
         return $city;
