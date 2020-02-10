@@ -51,10 +51,10 @@
         },
         computed: {
             point_id: function () {
-                if (this.n) {
+                //if (this.n) {
                     return 'pointer_' + this.n;
-                }
-                return '';
+               // }
+              //  return '';
             }
         },
         methods: {

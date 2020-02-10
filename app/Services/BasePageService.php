@@ -4,6 +4,7 @@
 namespace App\Services;
 
 
+use App\CarModel;
 use Illuminate\Support\Facades\DB;
 
 class BasePageService
@@ -18,10 +19,6 @@ class BasePageService
         // Получаем информацию по блокам
         $blocks_ids = [];
         $blocks = DB::table('blocks')->select('*')->where($condition)->get();
-
-/*        echo "<pre>";
-        print_r($blocks);
-        echo "</pre>";*/
 
         if ($blocks) {
             foreach ($blocks as $block) {
@@ -49,6 +46,29 @@ class BasePageService
             ['model_id', '=', $car_model->id]
         ])->get();
 
+        // Создаем ссылки и формируем массив для мини слайдера
+        // с ссылками и указываем активный слайд
+        $car_types = DB::select('SELECT `ct`.`slug`, `ct`.`id`
+                                FROM `car_types` as `ct`
+                                INNER JOIN `car_model_car_type` as `cmct` ON `cmct`.`car_type_id`=`ct`.`id`
+                                 WHERE `cmct`.`car_model_id`=:model_id ORDER BY `ct`.`id` ASC', ['model_id' => $car_model->id]);
+
+        $active_slide = 0;
+        foreach ($slide_mini as $key => &$slide) {
+            foreach ($car_types as $type) {
+                if ($slide->type_id == $type->id) {
+                    $slide->url = '/model/' . $car_model->slug . '/' . $type->slug;
+                }
+
+                if ($slide->type_id == $car_type->id && $slide->model_id == $car_model->id) {
+                    $slide->active = 1;
+                    $active_slide = $key;
+                } else {
+                    $slide->active = 0;
+                }
+            }
+        }
+
         // Получаем информацию по отзывам и по цветам
         $reviews = DB::table('reviews')->select('*')->where($condition)->get();
         $colors = DB::table('colors')->select('*')->where($condition)->get();
@@ -57,6 +77,7 @@ class BasePageService
             'slider' => [
                 'slides_mini' => $slide_mini,
                 'slides' => $slides,
+                'active' => $active_slide,
             ],
             'blocks' => $blocks,
             'reviews' => $reviews,

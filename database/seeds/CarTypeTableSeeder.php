@@ -60,28 +60,28 @@ class CarTypeTableSeeder extends Seeder
                 'slug' => Str::slug('Sport'),
             ],
             [
-                'title_ru' => '4х4 3 дв.',
-                'title_en' => '4x4 3 doors',
+                'title_ru' => '3 дв.',
+                'title_en' => '3 doors',
                 'slug' => Str::slug('Three Doors'),
             ],
             [
-                'title_ru' => '4х4 3 Urban дв.',
-                'title_en' => '4x4 Urban 3 doors',
+                'title_ru' => '3 Urban дв.',
+                'title_en' => 'Urban 3 doors',
                 'slug' => Str::slug('Urban Three Doors'),
             ],
             [
-                'title_ru' => '4х4 5 дв.',
-                'title_en' => '4x4 5 doors',
+                'title_ru' => '5 дв.',
+                'title_en' => '5 doors',
                 'slug' => Str::slug('Five Doors'),
             ],
             [
-                'title_ru' => '4х4 5 Urban дв.',
-                'title_en' => '4x4 Urban 5 doors',
+                'title_ru' => '5 Urban дв.',
+                'title_en' => 'Urban 5 doors',
                 'slug' => Str::slug('Urban Five Doors'),
             ],
             [
-                'title_ru' => '4х4 Bronto',
-                'title_en' => '4x4 Bronto',
+                'title_ru' => 'Bronto',
+                'title_en' => 'Bronto',
                 'slug' => Str::slug('Bronto'),
 
             ],

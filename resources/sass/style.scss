@@ -4,7 +4,7 @@
 }
 
 body {
-    font-family: HelveticaRegular, Helvetica, sans-serif;
+    font-family: PragmaticaLightC, Helvetica, sans-serif;
     font-size: 16px;
     background-color: #fff;
     //overflow: hidden;
@@ -126,6 +126,7 @@ $context: 375;
     .pointers-1-1-3,
     .pointers-2-1-1,
     .pointers-2-1-2,
+    .pointers-4-11-1,
     .pointers-3-20-1 {
         width: 100%;
         height: 100%;
@@ -434,6 +435,23 @@ $context: 375;
         }
     }
 
+    .pointers-4-11-1 {
+        .p1 {
+            right: get-vw(100px, $context);
+            bottom: get-vw(10px, $context);
+        }
+
+        .p2 {
+            left: get-vw(175px, $context);
+            top: get-vw(8px, $context);
+        }
+
+        .p3 {
+            left: get-vw(231px, $context);
+            top: get-vw(93px, $context);
+        }
+    }
+
 
 
     @media only screen and (max-width: 321px) {
@@ -626,6 +644,46 @@ $context: 375;
 
                     &platina {
                         background-color: #C3C4C4;
+                    }
+
+                    &white-cloud {
+                        background-color: #FEFAF4;
+                    }
+
+                    &nessi-2 {
+                        background-color: #112717;
+                    }
+
+                    &panthera {
+                        background-color: #161313;
+                    }
+
+                    &benefis {
+                        background-color: #430D45;
+                    }
+
+                    &barokko {
+                        background-color: #850D34;
+                    }
+
+                    &terra {
+                        background-color: #6C2003;
+                    }
+
+                    &borneo-dark {
+                        background-color: #444E4E;
+                    }
+
+                    &snow-queen {
+                        background-color: #D0D8E2;
+                    }
+
+                    &coriander-dark {
+                        background-color: #706c62;
+                    }
+
+                    &camouflage-jungle {
+                        background-color: #1E4526;
                     }
                 }
             }
@@ -1480,6 +1538,11 @@ footer {
 
         &.xray_2 {
             background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/xray/lada_xray_cross.png) no-repeat center center;
+            background-size: cover;
+        }
+
+        &.l4x4_1 {
+            background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/4x4/lada_4x4.jpg) no-repeat center center;
             background-size: cover;
         }
 

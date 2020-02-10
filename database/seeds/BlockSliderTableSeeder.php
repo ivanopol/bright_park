@@ -110,61 +110,79 @@ class BlockSliderTableSeeder extends Seeder
                 'text' => 'Бескаркасные стеклоочистители – работают эффективно и не склонны к обмерзанию',
                 'image' => '/build/images/photos/models/vesta/blocks/block_02/plus/vesta_2_1.jpg',
                 'number' => '1',
-                'block_id' => '6'
+                'block_id' => '26'
             ],
             [
                 'text' => 'Антенна в форме акульего плавника',
                 'image' => '/build/images/photos/models/vesta/blocks/block_02/plus/vesta_2_2.jpg',
                 'number' => '2',
-                'block_id' => '6'
+                'block_id' => '26'
             ],
             [
                 'text' => 'Мультимедийная система с 7-дюймовым экраном поможет создать нужное настроение в поездке.',
                 'image' => '/build/images/photos/models/vesta/blocks/block_03/plus/vesta_1.jpg',
                 'number' => '1',
-                'block_id' => '7'
+                'block_id' => '27'
             ],
             [
                 'text' => 'Бесступенчатая автоматическая коробка передач японской фирмы Jatco',
                 'image' => '/build/images/photos/models/vesta/blocks/block_03/plus/vesta_3_1.jpg',
                 'number' => '2',
-                'block_id' => '7'
+                'block_id' => '27'
             ],
             [
                 'text' => 'Теплая опция для российских зим – обогрев руля. LADA Vesta согревает!',
                 'image' => '/build/images/photos/models/vesta/blocks/block_03/plus/vesta_3_2.jpg',
                 'number' => '3',
-                'block_id' => '7'
+                'block_id' => '27'
             ],
             [
                 'text' => 'Трансформация багажного отсека',
                 'image' => '/build/images/photos/models/vesta/blocks/block_03/plus/vesta_4.jpg',
                 'number' => '4',
-                'block_id' => '7'
+                'block_id' => '27'
             ],
             [
                 'text' => 'Охлаждаемый перчаточный ящик',
                 'image' => '/build/images/photos/models/xray/blocks/block_02/plus/xray_2_1.jpg',
                 'number' => '1',
-                'block_id' => '10'
+                'block_id' => '30'
             ],
             [
                 'text' => 'Просторный салон с нишами для хранения',
                 'image' => '/build/images/photos/models/xray/blocks/block_02/plus/xray_2_2.jpg',
                 'number' => '2',
-                'block_id' => '10'
+                'block_id' => '30'
             ],
             [
                 'text' => 'климат-контроль',
                 'image' => '/build/images/photos/models/xray/blocks/block_02/plus/xray_2_3.jpg',
                 'number' => '3',
-                'block_id' => '10'
+                'block_id' => '30'
             ],
             [
                 'text' => 'мультимедийная система с 7" цветным дисплеем',
                 'image' => '/build/images/photos/models/xray/blocks/block_02/plus/xray_2_4.jpg',
                 'number' => '4',
-                'block_id' => '10'
+                'block_id' => '30'
+            ],
+            [
+                'text' => 'Более комфортные передние кресла получили развитую боковую поддержку и новый механизм складывания.',
+                'image' => '/build/images/photos/models/4x4/blocks/block_01/plus/1.jpg',
+                'number' => '1',
+                'block_id' => '35'
+            ],
+            [
+                'text' => 'Система экстренного оповещения обязательна для современных автомобилей',
+                'image' => '/build/images/photos/models/4x4/blocks/block_01/plus/2.jpg',
+                'number' => '2',
+                'block_id' => '35'
+            ],
+            [
+                'text' => 'Новая эргономичная панель приборов. Увеличенный вещевой ящик, а главное – более удобная система управления отоплением и вентиляцией с тремя вращающимися рукоятками и электроприводом заслонок отопителя.',
+                'image' => '/build/images/photos/models/4x4/blocks/block_01/plus/3.jpg',
+                'number' => '3',
+                'block_id' => '35'
             ],
         ];
 
