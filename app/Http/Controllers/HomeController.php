@@ -2,55 +2,67 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Services\AutoruService;
 use App\Services\BasePageService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
-use App\Services\GeoLocationService;
+use Illuminate\Http\RedirectResponse;
 use App\CarModel;
 use App\CarType;
 use App\City;
+use App\Http\Router\CityPath;
 
 class HomeController extends Controller
 {
-    public $geo_service;
-    public $geo_data;
+    public $city;
+
     /**
      * Create a new controller instance.
      *
-     *
+     * @param Request $request
      */
-    public function __construct(GeoLocationService $geo_service, Request $request)
+    public function __construct( Request $request)
     {
-/*        $this->middleware('auth');
-        $this->geo_service = $geo_service;
-        $this->geo_data = $this->geo_service->get_user_city_by_ip($_SERVER['REMOTE_ADDR']);
-        $city = strtolower($this->geo_data->alias);
-        $route = $city . "/" . $request->path();
-        echo redirect($route);*/
     }
 
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @param City|null $city
      */
-    public function index()
+    public function index(City $city = null)
     {
+         if ($city['alias']) {
+            $this->city = $city['alias'];
+        } else {
+            return redirect()->route('index', ['city' => 'perm']);
+        }
+
         $models = CarModel::with('types_preview')->get();
-        return view('home', ['models' => $models]);
+
+        return view('home', ['models' => $models, 'city' => $this->city]);
     }
 
     /**
      * Show first version of design.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @param City|null $city
+     * @param CarModel $car_model
+     * @param CarType $car_type
+     * @return mixed
      */
-    public function model(City $city, CarModel $car_model, CarType $car_type)
+    public function model(City $city = null, CarModel $car_model, CarType $car_type)
     {
+        if ($city['alias']) {
+            $this->city = $city['alias'];
+        } else {
+            return redirect()->route('model', ['city' => 'perm', 'car_model' => $car_model->slug, 'car_type' => $car_type->slug]);
+        }
+
         $service = new BasePageService();
 
-        $data = $service->get_base_page_data($car_model, $car_type);
+        $data = $service->get_base_page_data($car_model, $car_type, $this->city);
 
         return view('model', [ 'data' => $data ]);
     }

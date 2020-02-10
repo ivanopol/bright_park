@@ -7,8 +7,6 @@ use Illuminate\Support\Facades\Route;
 use App\CarModel;
 use App\CarType;
 use App\City;
-use Arr;
-use Redirect;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -35,11 +33,11 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Route::model('cities', City::class);
+        parent::boot();
+
+        Route::model('city', City::class);
         Route::model('car_model', CarModel::class);
         Route::model('car_type', CarType::class);
-
-        parent::boot();
     }
 
     /**

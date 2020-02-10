@@ -2,8 +2,9 @@
 
 namespace App;
 
-use App\Services\GeoLocationService;
 use Illuminate\Database\Eloquent\Model;
+use Torann\GeoIP\Facades\GeoIP;
+use Illuminate\Support\Facades\DB;
 
 class City extends Model
 {
@@ -21,9 +22,35 @@ class City extends Model
     public function __construct(array $attributes = array())
     {
         parent::__construct($attributes);
-        $geo_service = new GeoLocationService;
-        $this->geo_data = $geo_service->get_user_city_by_ip($_SERVER['REMOTE_ADDR']);
-        $this->city = strtolower($this->geo_data->alias);
+    }
+
+    /**
+     * Получаем город по умолчанию
+     *
+     * @return array
+     */
+    public function defaultCity() : array
+    {
+        return (array) DB::selectOne("SELECT *
+                                     FROM `cities`
+                                     LEFT JOIN `contacts` `c` ON `c`.`city_id`=`cities`.`id`
+                                     WHERE `alias` = :alias", ['alias'=> self::DEFAULT_CITY]);
+
+    }
+
+    /**
+     * Получаем город по IP-адресу посетителя
+     *
+     * @param string $ip IP-адрес
+     * @return array
+     */
+    public function getCityByIP(string $ip) : array
+    {
+        $alias = geoip($ip=null)->getLocation($ip)->getAttribute('city');
+        return (array) DB::selectOne("SELECT *
+                                      FROM `cities`
+                                      LEFT JOIN `contacts` `c` ON `c`.`city_id`=`cities`.`id`
+                                      WHERE `alias`=:alias", ['alias'=>$alias]);
     }
 
     /**

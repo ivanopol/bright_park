@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class BasePageService
 {
-    public function get_base_page_data($car_model, $car_type)
+    public function get_base_page_data($car_model, $car_type, $city)
     {
         $condition = [
             ['model_id', '=', $car_model->id],
@@ -42,6 +42,10 @@ class BasePageService
 
         // Получаем информацию по слайдам
         $slides = DB::table('slides')->select('*')->where($condition)->get();
+        foreach ($slides as &$slide) {
+            $slide->link = '/' . $city . $slide->link;
+        }
+
         $slide_mini = DB::table('slide_mini')->select('*')->where([
             ['model_id', '=', $car_model->id]
         ])->get();
@@ -57,7 +61,7 @@ class BasePageService
         foreach ($slide_mini as $key => &$slide) {
             foreach ($car_types as $type) {
                 if ($slide->type_id == $type->id) {
-                    $slide->url = '/model/' . $car_model->slug . '/' . $type->slug;
+                    $slide->url = '/' . $city . '/' . $car_model->slug . '/' . $type->slug;
                 }
 
                 if ($slide->type_id == $car_type->id && $slide->model_id == $car_model->id) {
