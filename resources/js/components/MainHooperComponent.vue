@@ -139,14 +139,14 @@
             .title-model {
                 font-family: PragmaticaLightCBold, Helvetica, sans-serif;
                 font-size: 213%;
-                font-weight: bold;
+                //font-weight: bold;
                 margin-bottom: 10px;
 
             }
 
             .title-tagline {
                 font-size: 150%;
-                font-weight: bold;
+                //font-weight: bold;
                 width: 78vw;
                 margin: 0 auto;
                 line-height: 1.2;

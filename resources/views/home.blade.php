@@ -14,7 +14,7 @@
                 <li>
                     <div class="advantage">
                         <span class="value">12</span>
-                        <span class="text">банков-﻿партнеров</span>
+                        <span class="text">банков-<br>﻿партнеров</span>
                     </div>
                 </li>
                 <li>
