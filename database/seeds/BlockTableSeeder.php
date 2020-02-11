@@ -343,7 +343,7 @@ class BlockTableSeeder extends Seeder
                 'type_id' => 7,
                 'title' => '<span class="c_orange">Трансформация</span> багажного отсека',
                 'text' => 'Машины с кузовом типа «SW» ориентированы на активный отдых и длительные путешествия. Поэтому здесь увеличено пространство для пассажиров и предусмотрено много ниш для хранения.',
-                'url' => '/build/images/photos/models/vesta/blocks/sw/block_05/mobile/block_05.jpg',
+                'url' => '/build/images/photos/models/vesta/blocks/sw/block_05/mobile/block_05.png',
                 'pointers' => 0,
                 'pnum' => 0,
                 'show' => false
