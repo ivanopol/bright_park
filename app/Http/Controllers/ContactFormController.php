@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 
 
 use App\Services\BitrixService;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class ContactFormController extends \Illuminate\Routing\Controller
 {
@@ -15,8 +17,14 @@ class ContactFormController extends \Illuminate\Routing\Controller
         $this->bitrix_service = $bitrix_service;
     }
 
-    public function sendForm($data)
+    public function sendContactForm(Request $request)
     {
-        $this->bitrix_service->sendFeedbackForm($data);
+        try {
+            $this->bitrix_service->sendContactForm($request->getContent());
+            return Response::HTTP_OK;
+        } catch (Exception $e){
+            var_dump($e);
+            return Response::HTTP_BAD_REQUEST;
+        }
     }
 }

@@ -37,7 +37,7 @@ class AutoruService
         return $this->getCached('brands', function () {
             $brands = [];
 
-            $rows = DB::select('select `id`, code, `title` FROM `brands`');
+            $rows = DB::select('select `id`, code, `title` FROM `brands` order by `order` desc, code');
 
             if ($rows) {
                 foreach ($rows as $row) {
