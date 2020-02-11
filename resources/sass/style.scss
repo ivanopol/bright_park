@@ -1119,6 +1119,20 @@ footer {
     margin: 0 30px;
 }
 
+#success {
+    text-align: center;
+    line-height: 1.2;
+    font-weight: bold;
+    margin: 18px auto;
+    background-color: #dafbcc;
+    border-radius: 8px;
+    padding: 15px;
+
+    p {
+        margin: 0 !important;
+    }
+}
+
 .trade-in-price-text {
     text-align: center;
     font-size: 18px;
@@ -1261,7 +1275,7 @@ footer {
             height: 100%;
             position: absolute;
             left: 0;
-            background-color: #ed6c21;
+            background-color: #FF8351;
             border-radius: 8px 0 0 8px;
         }
 

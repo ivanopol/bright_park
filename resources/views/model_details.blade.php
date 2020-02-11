@@ -2,7 +2,7 @@
 
 @section('content')
     <tab-bar></tab-bar>
-    <header-component :line="true" :theme="'light'" :city="'{{$city}}'"></header-component>
+    <header-component :line="true" :theme="'light'"></header-component>
     <section class="container m-bottom-120">
         <slide-show></slide-show>
         <section>
