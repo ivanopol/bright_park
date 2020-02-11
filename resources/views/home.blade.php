@@ -4,7 +4,7 @@
     <tab-bar :theme="'dark'"></tab-bar>
     <header-component :absolute="true"  :theme="'light'"></header-component>
     <section class="main-screen">
-        <main-hooper-component></main-hooper-component>
+        <main-hooper-component :city="'{{$city}}'"></main-hooper-component>
     </section>
     <div class="container">
         <div id="advantages" class="advantages_wrap">

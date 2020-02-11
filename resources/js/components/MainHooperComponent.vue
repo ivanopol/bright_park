@@ -9,7 +9,7 @@
                     <p class="title-model">LADA Vesta</p>
                     <p class="title-tagline">Доплата при обмене <span>40 000 руб.</span></p>
                     <div class="item-buttons">
-                        <a href="/model/granta/sedan" class="btn btn-primary">Подробнее о модели</a>
+                        <a :href="city + '/granta/sedan'" class="btn btn-primary">Подробнее о модели</a>
                         <a href="" class="btn btn-secondary">Условия акции</a>
                     </div>
                 </div>
@@ -22,7 +22,7 @@
                     <p class="title-model">LADA Vesta</p>
                     <p class="title-tagline">Доплата при обмене <span>40 000 руб.</span></p>
                     <div class="item-buttons">
-                        <a href="/model/granta/sedan" class="btn btn-primary">Подробнее о модели</a>
+                        <a :href="city + '/granta/sedan'" class="btn btn-primary">Подробнее о модели</a>
                         <a href="" class="btn btn-secondary">Условия акции</a>
                     </div>
                 </div>
@@ -35,7 +35,7 @@
                     <p class="title-model">LADA Vesta</p>
                     <p class="title-tagline">Доплата при обмене <span>40 000 руб.</span></p>
                     <div class="item-buttons">
-                        <a href="/model/granta/sedan" class="btn btn-primary">Подробнее о модели</a>
+                        <a :href="city + '/granta/sedan'" class="btn btn-primary">Подробнее о модели</a>
                         <a href="" class="btn btn-secondary">Условия акции</a>
                     </div>
                 </div>
@@ -55,7 +55,8 @@
             Hooper,
             Slide,
             HooperPagination
-        }
+        },
+        props: ['city']
     };
 </script>
 
