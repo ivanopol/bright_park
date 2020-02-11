@@ -2,7 +2,7 @@
 
 @section('content')
     <tab-bar :theme="'dark'"></tab-bar>
-    <header-component :absolute="true"  :theme="'light'"></header-component>
+    <header-component :absolute="true"  :theme="'light'" :city="'{{$city}}'" ></header-component>
     <section class="main-screen">
         <main-hooper-component :city="'{{$city}}'"></main-hooper-component>
     </section>

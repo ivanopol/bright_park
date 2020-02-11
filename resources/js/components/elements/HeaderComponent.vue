@@ -2,7 +2,7 @@
     <header :class="[ absolute ? 'absolute' : '' ]">
         <div class="logo-wrap" :class="theme">
             <div class="logo-bright-park">
-                <a href="/">
+                <a :href="'/' + city">
                     <logo-bright-park :theme="theme"></logo-bright-park>
                 </a>
             </div>
@@ -34,6 +34,9 @@
             absolute: {
                 default: false,
                 type: Boolean
+            },
+            city: {
+                type: String
             }
         },
         data: function () {

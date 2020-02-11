@@ -43,7 +43,7 @@ class BasePageService
         // Получаем информацию по слайдам
         $slides = DB::table('slides')->select('*')->where($condition)->get();
         foreach ($slides as &$slide) {
-            $slide->link = '/' . $city . $slide->link;
+            $slide->link = '/' . $city . '/' . $car_model->slug . '/' . $car_type->slug . $slide->link;
         }
 
         $slide_mini = DB::table('slide_mini')->select('*')->where([

@@ -65,14 +65,20 @@ class HomeController extends Controller
         $data = $service->get_base_page_data($car_model, $car_type, $this->city);
         $data['coordinates'] = explode(",", $city['coordinates']);
 
-        return view('model', [ 'data' => $data ]);
+        return view('model', [ 'data' => $data, 'city' => $this->city ]);
     }
 
-    public function model_details()
+    public function model_details(City $city = null, CarModel $car_model, CarType $car_type)
     {
+        if ($city['alias']) {
+            $this->city = $city['alias'];
+        } else {
+            return redirect()->route('model_details', ['city' => 'perm', 'car_model' => $car_model->slug, 'car_type' => $car_type->slug]);
+        }
+
         $raw = new AutoruService();
         $brands = $raw->getBrands();
-        return view('model_details', [ 'brands' => $brands]);
+        return view('model_details', [ 'brands' => $brands, 'city' => $this->city]);
     }
 
     public function trade_in_calc()

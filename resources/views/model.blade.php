@@ -2,7 +2,7 @@
 
 @section('content')
     <tab-bar></tab-bar>
-    <header-component :line="true" :theme="'light'"></header-component>
+    <header-component :line="true" :theme="'light'" :city="'{{$city}}'"></header-component>
     <div class="container">
         <hooper-component :data='@json($data['slider'])' ></hooper-component>
 
