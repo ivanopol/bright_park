@@ -1,26 +1,45 @@
 <template>
-    <section id="panel" >
-        <ul :class="theme">
-            <li>
-                <icon-menu></icon-menu>
-                <span>Меню</span>
-            </li>
-            <li>
-                <a href="tel:+73422338231">
-                <icon-call></icon-call>
-                <span>Звонок</span>
-                </a>
-            </li>
-            <li>
-                <icon-route></icon-route>
-                <span>Маршрут</span>
-            </li>
-            <li>
-                <icon-chat></icon-chat>
-                <span>Чат</span>
-            </li>
-        </ul>
-    </section>
+    <div>
+        <section id="panel" >
+            <ul :class="theme">
+                <li @click="openMenu">
+                    <icon-menu ></icon-menu>
+                    <span>Меню</span>
+                </li>
+                <li>
+                    <a href="tel:+73422338231">
+                    <icon-call></icon-call>
+                    <span>Звонок</span>
+                    </a>
+                </li>
+                <li>
+                    <icon-route></icon-route>
+                    <span>Маршрут</span>
+                </li>
+                <li>
+                    <icon-chat></icon-chat>
+                    <span>Чат</span>
+                </li>
+            </ul>
+        </section>
+        <section id="menu" :class="{ active: open }">
+            <ul>
+                <li>Пермь</li>
+                <li>Москва</li>
+                <li>Магнитогорск</li>
+                <li>Ростов-на-Дону</li>
+                <li>Екатеринбург</li>
+                <li>Волгоград</li>
+            </ul>
+            <ul>
+                <li>Granta</li>
+                <li>Vesta</li>
+                <li>XRAY</li>
+                <li>4x4</li>
+                <li>Largus</li>
+            </ul>
+        </section>
+    </div>
 </template>
 
 <script>
@@ -36,6 +55,16 @@
                 type: String
             }
         },
+        data: function () {
+            return {
+                open: false
+            };
+        },
+        methods: {
+            openMenu: function() {
+                return this.open = !this.open;
+            }
+        },
         components: {
             IconMenu,
             IconCall,
@@ -46,6 +75,35 @@
 </script>
 
 <style scoped lang="scss">
+    #menu {
+        display: block;
+        position: fixed;
+        width: 100%;
+        background-color: #fff;
+        bottom:0;
+        z-index:4;
+        border-radius: 20px 20px 0 0;
+        padding: 30px 40px 52px;
+        box-shadow: 0 -2px 20px 0 rgba(0, 0, 0, 0.4);
+        margin-bottom: -130%;
+        /* Переход */
+        -webkit-transition: all ease-out 0.5s;
+        -moz-transition: all ease-out 0.5s;
+        -o-transition: all ease-out 0.5s;
+        transition: all ease-out 0.5s;
+
+        &.active {
+            margin-bottom: 0%;
+        }
+
+        ul {
+            li {
+                font-family: PragmaticaLightCBold, Helvetica, sans-serif;
+                padding: 10px;
+            }
+        }
+    }
+
     #panel {
         display: block;
         position: fixed;

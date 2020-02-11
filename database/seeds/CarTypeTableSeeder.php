@@ -106,9 +106,9 @@ class CarTypeTableSeeder extends Seeder
                 'slug' => Str::slug('Minivan CNG'),
             ],
             [
-                'title_ru' => 'X-Ray',
-                'title_en' => 'X-Ray',
-                'slug' => Str::slug('X-Ray'),
+                'title_ru' => 'XRAY',
+                'title_en' => 'XRAY',
+                'slug' => Str::slug('XRAY'),
             ],
             [
                 'title_ru' => null, 'title_en' => null, 'slug' => null],
