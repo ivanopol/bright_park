@@ -15,11 +15,6 @@ class CarTypeTableSeeder extends Seeder
                 'slug' => Str::slug('Sedan'),
             ],
             [
-                'title_ru' => 'Хэтчбек',
-                'title_en' => 'Hatchback',
-                'slug' => Str::slug('Hatchback'),
-            ],
-            [
                 'title_ru' => 'Лифтбек',
                 'title_en' => 'Liftback',
                 'slug' => Str::slug('Liftback'),
@@ -38,6 +33,11 @@ class CarTypeTableSeeder extends Seeder
                 'title_ru' => 'Drive Active',
                 'title_en' => 'Drive Active',
                 'slug' => Str::slug('Drive Active'),
+            ],
+            [
+                'title_ru' => 'Хэтчбек',
+                'title_en' => 'Hatchback',
+                'slug' => Str::slug('Hatchback'),
             ],
             [
                 'title_ru' => 'SW',
