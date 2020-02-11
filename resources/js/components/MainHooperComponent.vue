@@ -3,11 +3,10 @@
         <hooper class="main-screen-wrap">
             <slide>
                 <div class="asset-container">
-                    <img class="asset-image" src="build/images/main_bg.jpg" alt="" />
+                    <img class="asset-image" src="build/images/main/main_granta_red.jpg" alt="Брайт Парк: Доплата 40 000 рублей при обмене на Lada Granta" />
                 </div>
                 <div class="product-content">
-                    <p class="title-model">LADA Vesta</p>
-                    <p class="title-tagline">Доплата при обмене <span>40 000 руб.</span></p>
+                    <p class="title-tagline bold">Доплата<br> 40 000 рублей<br> при обмене на <span class="highlight">LADA Granta</span></p>
                     <div class="item-buttons">
                         <a :href="city + '/granta/sedan'" class="btn btn-primary">Подробнее о модели</a>
                         <a href="" class="btn btn-secondary">Условия акции</a>
@@ -16,11 +15,22 @@
             </slide>
             <slide>
                 <div class="asset-container">
-                    <img class="asset-image" src="build/images/main_bg.jpg" alt="" />
+                    <img class="asset-image" src="build/images/main/main_vesta_gray.jpg" alt="Брайт Парк: LADA Vesta выгода 10% по госпрограмме" />
                 </div>
                 <div class="product-content">
-                    <p class="title-model">LADA Vesta</p>
-                    <p class="title-tagline">Доплата при обмене <span>40 000 руб.</span></p>
+                    <p class="title-tagline bold">LADA Vesta<br> выгода 10%<br> по госпрограмме</p>
+                    <div class="item-buttons">
+                        <a :href="city + '/vesta/sedan'" class="btn btn-primary">Подробнее о модели</a>
+                        <a href="" class="btn btn-secondary">Условия акции</a>
+                    </div>
+                </div>
+            </slide>
+            <slide>
+                <div class="asset-container">
+                    <img class="asset-image" src="build/images/main/main_granta_gray.jpg" alt="Брайт Парк: LADA Granta 0% первоначальный взнос" />
+                </div>
+                <div class="product-content">
+                    <p class="title-tagline bold">LADA Granta<br>0% первоначальный взнос</p>
                     <div class="item-buttons">
                         <a :href="city + '/granta/sedan'" class="btn btn-primary">Подробнее о модели</a>
                         <a href="" class="btn btn-secondary">Условия акции</a>
@@ -29,11 +39,10 @@
             </slide>
             <slide>
                 <div class="asset-container">
-                    <img class="asset-image" src="build/images/main_bg.jpg" alt="" />
+                    <img class="asset-image" src="build/images/main/main_vesta_red.jpg" alt="Брайт Парк: Обмен на LADA Vesta выше рыночной цены" />
                 </div>
                 <div class="product-content">
-                    <p class="title-model">LADA Vesta</p>
-                    <p class="title-tagline">Доплата при обмене <span>40 000 руб.</span></p>
+                    <p class="title-tagline bold">Обмен на LADA Vesta выше рыночной<br> цены</p>
                     <div class="item-buttons">
                         <a :href="city + '/granta/sedan'" class="btn btn-primary">Подробнее о модели</a>
                         <a href="" class="btn btn-secondary">Условия акции</a>
@@ -62,20 +71,27 @@
 
 
 <style lang="scss" scoped>
+
     .item-buttons {
-        margin-top: 41vh;
+        /*margin-top: 41vh;*/
+        position: absolute;
+        bottom: 0;
         &>a {
             margin-bottom: 15px;
         }
         .btn {
-            width: 85vw;
+            width: 100%;
             border-radius: 50px;
             padding: 14px 15px 10px;
 
+            @media only screen and (max-width: 340px) {
+                padding: 11px 15px 7px;
+            }
+
             &.btn-primary {
-                border: 2px solid #fff;
-                color: #606060;
-                background-color: #fff;
+                border: 2px solid #FF8351;
+                color: #fff;
+                background-color: #FF8351;
             }
 
             &.btn-secondary {
@@ -84,9 +100,6 @@
                 background-color: transparent;
             }
         }
-    }
-    .main-screen-wrap {
-        background-color: #000;
     }
 
     .main-screen-wrap ul li {
@@ -121,26 +134,33 @@
             top: 15vh;
             color: white;
             text-align: center;
+            height: 72.5vh;
 
             .title-model {
+                font-family: PragmaticaLightCBold, Helvetica, sans-serif;
                 font-size: 213%;
                 font-weight: bold;
-                margin-bottom: 20px;
+                margin-bottom: 10px;
+
             }
 
             .title-tagline {
                 font-size: 150%;
+                font-weight: bold;
+                width: 78vw;
+                margin: 0 auto;
+                line-height: 1.2;
 
-                span {
+                &.bold {
+                    font-family: PragmaticaLightCBold, Helvetica, sans-serif;
+                    font-size: 170%;
+                }
+
+                .highlight {
                     display: block;
                     font-size: 117%;
-                    margin-top: 10px;
                 }
             }
         }
-    }
-
-    @media only screen and (max-width: 321px) {
-
     }
 </style>

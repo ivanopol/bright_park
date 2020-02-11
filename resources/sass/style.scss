@@ -807,15 +807,15 @@ form {
     top: 65vh;
 
     .hooper-indicator:hover, .hooper-indicator.is-active {
-        background-color: #666;
+        background-color: #fff;
         border-color: #fff;
     }
 
     .hooper-indicator {
-        width: 8px;
-        height: 8px;
-        border: 2px solid #fff;
-        background-color: #fff;
+        width: 10px;
+        height: 10px;
+        border: 1px solid #fff;
+        background-color: transparent;
         border-radius: 8px;
         margin: 0 4px;
         -webkit-transition: all ease-out 0.3s;
@@ -1406,9 +1406,9 @@ footer {
         }
 
         .btn-primary {
-            border: 2px solid #000;
+            border: 2px solid #FF8351;
             color: #fff;
-            background-color: #000;
+            background-color: #FF8351;
         }
 
         .btn-secondary {
