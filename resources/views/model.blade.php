@@ -24,17 +24,7 @@
             <div class="trigger-wrap">
                 <p>98% клиентов оставили положительные отзывы о&nbsp;{{ $data['model_full'] }}</p>
             </div>
-            <div class="photo_block">
-                <div class="feedback">
-                    <img src="{{asset('/build/images/photos/feedback/feedback_04.jpg')}}" alt="">
-                </div>
-            </div>
-        </section>
-        <section class="block block_5">
-            <div class="block-text">
-                <h2><span class="c_orange">Гарантия</span> 3 года</h2>
-                <p>На&nbsp;вашу новенькую Лада {{ $data['model_full'] }} действует расширенная гарантия 3&nbsp;года.</p>
-            </div>
+
         </section>
         <section class="block next_action">
             <div class="block-text">
@@ -55,9 +45,21 @@
                 </li>
             </ul>
         </section>
+        <section class="block block_5">
+            <div class="block-text">
+                <h2><span class="c_orange">Гарантия</span> 3 года</h2>
+                <p>На&nbsp;вашу новенькую Лада {{ $data['model_full'] }} действует расширенная гарантия 3&nbsp;года.</p>
+            </div>
+            <div class="photo_block">
+                <div class="feedback">
+                    <img src="{{asset('/build/images/photos/feedback/feedback_04.jpg')}}" alt="">
+                </div>
+            </div>
+        </section>
         <footer class="block footer">
             <div class="block-text center mb">
-                <p>Помощь при покупке<br> У&nbsp;вас есть вопросы? Пообщайтесь со&nbsp;специалистом по&nbsp;телефону&nbsp;<br><a class="phone" href="tel:+73422148800">+7 (342) 214-88-00</a></p>
+                <h2><span class="c_orange">Помощь</span> при покупке</h2>
+                <p>У&nbsp;вас есть вопросы? Пообщайтесь со&nbsp;специалистом по&nbsp;телефону&nbsp;<br>+7 (342) 214-88-00</p>
                 <p>Брайт парк ближе, чем кажется<br> Проложите маршрут до&nbsp;ближайшего салона</p>
                 <a class="btn" href="#" onclick="return false;">Проложить маршрут</a>
             </div>

@@ -16,7 +16,7 @@
             <div :class="data.slides[0].class">
                 <p class="title" v-text="data.slides[0].title"></p>
                 <p class="sub_title" v-html="data.slides[0].subtitle"></p>
-                <a :href="data.slides[0].link">Купить</a>
+                <a :href="data.slides[0].link">Условия покупки</a>
                 <span class="more_details">
                     <span>Подробнее</span>
                 </span>
