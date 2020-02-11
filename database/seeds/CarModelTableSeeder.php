@@ -20,8 +20,8 @@ class CarModelTableSeeder extends Seeder
                 'preview' => '/build/images/photos/models/vesta/vesta.png',
             ],
             [
-                'title' => 'X-Ray',
-                'slug' => Str::slug('X-Ray'),
+                'title' => 'XRAY',
+                'slug' => Str::slug('XRAY'),
                 'preview' => '/build/images/photos/models/xray/xray.png',
             ],
             [
