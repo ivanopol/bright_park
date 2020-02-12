@@ -11,6 +11,17 @@ const mix = require('laravel-mix');
  |
  */
 
+/*
+var LiveReloadPlugin = require('webpack-livereload-plugin');
+
+mix.webpackConfig({
+    plugins: [
+        new LiveReloadPlugin()
+    ]
+});
+*/
+
+
 mix
     .setPublicPath('public/build')
     .setResourceRoot('build')
@@ -18,3 +29,6 @@ mix
     .sass('resources/sass/app.scss', 'css/app.css')
     .sass('resources/sass/app2.scss', 'css/app2.css')
     .version();
+
+//mix.browserSync('https://localhost:8080');
+
