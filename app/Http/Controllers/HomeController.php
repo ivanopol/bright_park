@@ -95,48 +95,4 @@ class HomeController extends Controller
     {
         return view('trade_in_cash');
     }
-
-    public function get_brands()
-    {
-    }
-
-    public function get_brand_models(Request $request)
-    {
-
-        $brand_id = $request->input('model_id');
-
-        var_dump($request);
-
-        $raw = new AutoruService();
-        $models = $raw->getModels($brand_id);
-        return Response::json(['models' => $models]);
-    }
-
-    public function getComplectations($brand_id, $model_id)
-    {
-        $raw = new AutoruService();
-
-        return Response::json(['modifications'=>$raw->getComplectations($brand_id, $model_id)]);
-    }
-
-    public function getEstimation(Request $request)
-    {
-        $raw = new AutoruService();
-        $data = $request->getContent();
-        return Response::json(['estimation'=>$raw->getEstimation($data)]);
-    }
-
-    public function getYearsRange()
-    {
-        $raw = new AutoruService();
-        $getYearsRange = $raw->getYearsRange();
-        return Response::json(['yearsRange' => $getYearsRange]);
-    }
-
-    public function getMileageRange()
-    {
-        $raw = new AutoruService();
-        $getMileageRange = $raw->getMileageRange();
-        return Response::json(['mileageRange' => $getMileageRange]);
-    }
 }

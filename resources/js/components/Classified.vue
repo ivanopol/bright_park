@@ -129,7 +129,7 @@
                 return {};
             },
             stepOne: function (input) {
-                axios.get('/get_brand_models', {
+                axios.get('https://0.0.0.0:8080/api/get_brand_models', {
                     params: {
                         model_id: input.id
                     }
@@ -162,7 +162,7 @@
             },
 
             stepTwo: function (input) {
-                axios.get('/get_complectations/' + this.selected_brand.code.toString() + '/' + input.code.toString(),
+                axios.get('https://0.0.0.0:8080/api/get_complectations/' + this.selected_brand.code.toString() + '/' + input.code.toString(),
                     {})
                     .then((response) => {
                         this.modifications = response.data.modifications;
@@ -225,7 +225,7 @@
                 axios(
                     {
                         method: 'post',
-                        url: '/get_estimation',
+                        url: 'https://0.0.0.0:8080/api/get_estimation',
                         data: data
 
                     })
