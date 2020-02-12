@@ -105,6 +105,8 @@ class HomeController extends Controller
 
         $brand_id = $request->input('model_id');
 
+        var_dump($request);
+
         $raw = new AutoruService();
         $models = $raw->getModels($brand_id);
         return Response::json(['models' => $models]);
