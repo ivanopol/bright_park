@@ -92,6 +92,7 @@
             OpenIndicator: {
                 render: createElement => createElement('span', {class: {'toggle': true}}),
             },
+            host_url: window.location.protocol + '//' + window.location.host,
             step_one: false,
             step_two: false,
             step_three: false,
@@ -129,7 +130,7 @@
                 return {};
             },
             stepOne: function (input) {
-                axios.get('https://0.0.0.0:8080/api/get_brand_models', {
+                axios.get(this.host_url + '/api/get_brand_models', {
                     params: {
                         model_id: input.id
                     }
@@ -162,7 +163,7 @@
             },
 
             stepTwo: function (input) {
-                axios.get('https://0.0.0.0:8080/api/get_complectations/' + this.selected_brand.code.toString() + '/' + input.code.toString(),
+                axios.get(this.host_url + '/api/get_complectations/' + this.selected_brand.code.toString() + '/' + input.code.toString(),
                     {})
                     .then((response) => {
                         this.modifications = response.data.modifications;
@@ -225,7 +226,7 @@
                 axios(
                     {
                         method: 'post',
-                        url: 'https://0.0.0.0:8080/api/get_estimation',
+                        url: this.host_url + '/api/get_estimation',
                         data: data
 
                     })
