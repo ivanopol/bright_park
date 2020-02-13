@@ -72,7 +72,6 @@
             this.createMap(this.coordinates);
         },
     }
-
 </script>
 
 <style lang="scss" scoped>

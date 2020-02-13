@@ -23,9 +23,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/{city?}/{car_model}/{car_type}/model_details', 'HomeController@model_details')->name('model_details');
     Route::get('/alt_menu', 'HomeController@alt_menu')->name('alt_menu');
     Route::get('/model_details', 'HomeController@model_details')->name('model_details');
-    Route::get('/trade_in_calc', 'HomeController@trade_in_calc')->name('trade_in_calc');
+    Route::get('/{city?}/{car_model}/{car_type}/trade_in_calc', 'HomeController@trade_in_calc')->name('trade_in_calc');
     Route::get('/main', 'HomeController@main')->name('main');
-    Route::get('/trade_in_credit', 'HomeController@trade_in_credit')->name('trade_in_credit');
+    Route::get('/{city?}/{car_model}/{car_type}/trade_in_credit', 'HomeController@trade_in_credit')->name('trade_in_credit');
     Route::get('/trade_in_cash', 'HomeController@trade_in_cash')->name('trade_in_cash');
     Route::get('/get_brands', 'HomeController@get_brands')->name('get_brands');
     Route::any('/send_contact_form', 'ContactFormController@sendContactForm')->name('sendContactForm');

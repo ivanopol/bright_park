@@ -4,10 +4,11 @@
     <tab-bar></tab-bar>
     <header-component :line="true" :theme="'light'" :city="'{{$city}}'"></header-component>
     <div class="container">
-        <hooper-component :data='@json($data['slider'])' ></hooper-component>
+        <hooper-component :data='@json($data['slider'])'></hooper-component>
 
         @foreach ($data['blocks'] as $key => $block)
-            <info-component :data='@json($block)' :n='@json($key)' :model='@json($data['model_id'])' :type='@json($data['type_id'])'></info-component>
+            <info-component :data='@json($block)' :n='@json($key)' :model='@json($data['model_id'])'
+                            :type='@json($data['type_id'])'></info-component>
         @endforeach
 
         <color-choose-component :colors='@json($data['colors'])'></color-choose-component>
@@ -35,10 +36,12 @@
                     <a class="btn" href="#" onclick="return false;">Записаться на тест-драйв</a>
                 </li>
                 <li>
-                    <a class="btn" href="#" onclick="return false;">Рассчитать кредит</a>
+                    <a class="btn" href="{{request()->segment(count(request()->segments()))}}/trade_in_credit">Рассчитать
+                        кредит</a>
                 </li>
                 <li>
-                    <a class="btn" href="#" onclick="return false;">Оценить свой автомобиль</a>
+                    <a class="btn" href="{{request()->segment(count(request()->segments()))}}/model_details">Оценить
+                        свой автомобиль</a>
                 </li>
                 <li>
                     <a class="btn" href="#" onclick="return false;">Получить спецпредложение</a>
@@ -59,7 +62,8 @@
         <footer class="block footer">
             <div class="block-text center mb">
                 <h2><span class="c_orange">Помощь</span> при покупке</h2>
-                <p>У&nbsp;вас есть вопросы? Пообщайтесь со&nbsp;специалистом по&nbsp;телефону&nbsp;<br>+7 (342) 214-88-00</p>
+                <p>У&nbsp;вас есть вопросы? Пообщайтесь со&nbsp;специалистом по&nbsp;телефону&nbsp;<br>+7 (342)
+                    214-88-00</p>
                 <p>Брайт парк ближе, чем кажется<br> Проложите маршрут до&nbsp;ближайшего салона</p>
                 <a class="btn" href="#" onclick="return false;">Проложить маршрут</a>
             </div>

@@ -362,7 +362,7 @@ class BlockTableSeeder extends Seeder
             //SW CROSS
             [
                 'model_id' => 2,
-                'type_id' => 7,
+                'type_id' => 8,
                 'title' => '<span class="c_orange">Обновлённая</span> LADA Vesta',
                 'text' => 'Больше возможностей на дороге и вне ее пределов – вот философия LADA Vesta SW Cross! Контрастный спортивный стиль сочетается с комфортом и отличной проходимостью: у LADA Vesta SW Cross дорожный просвет, достойный кроссовера. 203 миллиметра клиренса позволяют не переживать о высоте бордюра, глубине снега или грунтовой колеи. ',
                 'url' => '/build/images/photos/models/vesta/blocks/sw_cross/block_01/mobile/block_01.jpg',
@@ -372,7 +372,7 @@ class BlockTableSeeder extends Seeder
             ],
             [
                 'model_id' => 2,
-                'type_id' => 7,
+                'type_id' => 8,
                 'title' => '<span class="c_orange">Совершенство</span> в графике и характере',
                 'text' => 'Стремительный автомобиль на мощных колесах. Высоко приподнятый кузов, окаймленный полосой защитного пластика. Пластиковый обвес порогов, арок колес и дверей защитит эмаль кузова при поездках по лёгкому бездорожью. А еще эти стильные элементы делают автомобиль зрительно крупнее! ',
                 'url' => '/build/images/photos/models/vesta/blocks/sw_cross/block_02/mobile/block_02.jpg',
@@ -382,40 +382,40 @@ class BlockTableSeeder extends Seeder
             ],
             [
                 'model_id' => 2,
-                'type_id' => 7,
+                'type_id' => 8,
                 'title' => '<span class="c_orange">Самый просторный</span> в классе салон',
                 'text' => 'Самый просторный в классе салон – это возможность разместиться с максимальным удобством. А полный комплект опций для достижения наибольшего комфорта позволяет сконцентрироваться на главном — удовольствии от вождения. Особое внимание уделено пассажирам – для них предусмотрен обогрев заднего сиденья, отдельный плафон освещения и USB-гнездо для подзарядки гаджетов. ',
-                'url' => '/build/images/photos/models/vesta/blocks/sw/block_03/mobile/vesta_3.jpg',
+                'url' => '/build/images/photos/models/vesta/blocks/sw_cross/block_03/mobile/vesta_3.jpg',
                 'pointers' => 4,
                 'pnum' => 2,
                 'show' => false
             ],
             [
                 'model_id' => 2,
-                'type_id' => 7,
+                'type_id' => 8,
                 'title' => '<span class="c_orange">Мультимедийная</span> система',
                 'text' => 'Мультимедийная система с 7-дюймовым экраном – это любимая музыка, новости по радио, телефонная связь hands free. Отличный гаджет для того, чтобы послушать музыку, проложить путь в навигаторе - и в итоге сделать каждую поездку приятней.',
-                'url' => '/build/images/photos/models/vesta/blocks/sw/block_04/mobile/block_04.jpg',
+                'url' => '/build/images/photos/models/vesta/blocks/sw_cross/block_04/mobile/block_04.jpg',
                 'pointers' => 0,
                 'pnum' => 0,
                 'show' => false
             ],
             [
                 'model_id' => 2,
-                'type_id' => 7,
+                'type_id' => 8,
                 'title' => '<span class="c_orange">Трансформация</span> багажного отсека',
                 'text' => '«Органайзер на колесах» - лучший комплимент для автомобиля такого класса. Двойной пол багажника, множество ниш и крепежа для самого разнообразного груза, раскладная спинка сиденья – каждая деталь LADA Vesta SW Cross говорит о практичности семейного автомобиля. Объем багажного отделения – 480 л (до полки-шторки), а при сложенных сиденьях второго ряда – 825 л (до подоконной линии). ',
-                'url' => '/build/images/photos/models/vesta/blocks/sw/block_05/mobile/block_05.jpg',
+                'url' => '/build/images/photos/models/vesta/blocks/sw_cross/block_05/mobile/block_05.jpg',
                 'pointers' => 0,
                 'pnum' => 0,
                 'show' => false
             ],
             [
                 'model_id' => 2,
-                'type_id' => 7,
+                'type_id' => 8,
                 'title' => '<span class="c_orange">Высокий</span> уровень защиты',
                 'text' => 'Высокий уровень безопасности, начиная с базовой комплектации – это часть философии LADA Vesta. Система контроля устойчивости ESC позволяет уверенно маневрировать на дорогах с любым покрытием. Система экстренного оповещения ЭРА-ГЛОНАСС, мощный каркас кузова с применением сталей повышенной прочности и фронтальные подушки безопасности – это надежная защита водителя пассажиров. ',
-                'url' => '/build/images/photos/models/vesta/blocks/sw/block_06/mobile/block_06.jpg',
+                'url' => '/build/images/photos/models/vesta/blocks/sw_cross/block_06/mobile/block_06.jpg',
                 'pointers' => 0,
                 'pnum' => 0,
                 'show' => false
