@@ -1,7 +1,7 @@
 @extends('layouts.app2')
 
 @section('content')
-    <tab-bar></tab-bar>
+    <tab-bar :cities='@json($cities)' :models='@json($models)'></tab-bar>
     <header-component :line="true" :theme="'light'" :city="'{{$city}}'"></header-component>
     <div class="container">
         <hooper-component :data='@json($data['slider'])' ></hooper-component>

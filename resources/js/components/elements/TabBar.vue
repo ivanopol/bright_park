@@ -35,7 +35,7 @@
                 <div class="models_wrap">
                     <ul class="">
                         <li v-for="model in models" v-bind:key="model.id">
-                            <a href="">
+                            <a :href="'/' + cities.active.value + '/' + model.slug + '/' + model.types_preview[0].slug">
                                 <div class="title" v-text="model.title"></div>
                             </a>
                         </li>
@@ -113,6 +113,9 @@
             IconRoute,
             IconChat,
             vSelect
+        },
+        created: function() {
+            console.log(this.models);
         }
     }
 </script>

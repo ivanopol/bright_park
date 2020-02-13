@@ -56,34 +56,40 @@ class HomeController extends Controller
      */
     public function model(City $city = null, CarModel $car_model, CarType $car_type)
     {
-        $cities = $city->getCities();
-
         if ($city['alias']) {
             $this->city = $city['alias'];
         } else {
             return redirect()->route('model', ['city' => 'perm', 'car_model' => $car_model->slug, 'car_type' => $car_type->slug]);
         }
 
+        $cities = $city->getCities($this->city);
+
         $service = new BasePageService();
+
+        $models = CarModel::with('types_preview')->get();
 
         $data = $service->get_base_page_data($car_model, $car_type, $this->city);
         $data['coordinates'] = explode(",", $city['coordinates']);
 
-        return view('model', [ 'data' => $data, 'city' => $this->city, 'cities' => $cities]);
+
+
+        return view('model', [ 'data' => $data, 'models' => $models, 'city' => $this->city, 'cities' => $cities]);
     }
 
     public function model_details(City $city = null, CarModel $car_model, CarType $car_type)
     {
-        $cities = $city->getCities();
         if ($city['alias']) {
             $this->city = $city['alias'];
         } else {
             return redirect()->route('model_details', ['city' => 'perm', 'car_model' => $car_model->slug, 'car_type' => $car_type->slug]);
         }
 
+        $cities = $city->getCities($this->city);
+        $models = CarModel::with('types_preview')->get();
+
         $raw = new AutoruService();
         $brands = $raw->getBrands();
-        return view('model_details', [ 'brands' => $brands, 'city' => $this->city, 'cities' => $cities]);
+        return view('model_details', [ 'brands' => $brands, 'models' => $models, 'city' => $this->city, 'cities' => $cities]);
     }
 
     public function trade_in_calc()
