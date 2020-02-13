@@ -39,7 +39,7 @@ class HomeController extends Controller
             return redirect()->route('index', ['city' => 'perm']);
         }
 
-        $cities = $city->getCities();
+        $cities = $city->getCities($this->city);
 
         $models = CarModel::with('types_preview')->get();
 

@@ -27,7 +27,7 @@
             <div class="close" @click="closeMenu"></div>
             <div class="menu_wrap">
                 <v-select class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Выбрать город" taggable
-                          :options="cities">
+                          :options="cities.list" :searchable="false" v-model="cities.active" @input="selected">
                     <div class="spinner">Загрузка...</div>
                     <div slot="no-options">Нет совпадений</div>
                 </v-select>
@@ -50,11 +50,8 @@
                 default: 'light',
                 type: String
             },
-            city: {
-                type: String
-            },
             cities: {
-                type: Array
+                type: Object
             }
         },
         data: function () {
@@ -74,6 +71,10 @@
             },
             closeMenu: function() {
                 return this.open = false;
+            },
+            selected: function(event) {
+                window.location.href = window.location.protocol + '//' + window.location.host + '/' + event.value;
+               // this.cities.active = event;
             }
         },
         components: {
