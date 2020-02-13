@@ -97,7 +97,7 @@ class City extends Model
 
             if ($city->alias === $city_active) {
                 $cities['active'] = [
-                    'alias' => $city->alias,
+                    'value' => $city->alias,
                     'label' => $city->title_ru,
                 ];
             }
