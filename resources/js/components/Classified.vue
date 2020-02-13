@@ -71,7 +71,7 @@
                 <a href='/trade_in_cash'>Наличный расчет</a>
             </button>
             <button class="btn-half-primary">
-                <a href="/trade_in_credit">В кредит</a>
+                <a href="" id="creditButton">В кредит</a>
             </button>
         </div>
     </section>
@@ -93,6 +93,7 @@
                 render: createElement => createElement('span', {class: {'toggle': true}}),
             },
             host_url: window.location.protocol + '//' + window.location.host,
+            creditPath: window.location.href,
             step_one: false,
             step_two: false,
             step_three: false,
@@ -232,8 +233,9 @@
                     })
                     .then((response) => {
                         this.estimation = response.data.estimation;
-                        this.brightParkEstimation = this.estimation['prices']['tradein']['to'];
+                        this.brightParkEstimation = this.estimation['prices']['tradein']['from'] + this.estimation['prices']['tradein']['from'] * 0.1;
                         this.tradeInEstimation = this.estimation['prices']['tradein']['from'];
+                        this.setCookie(this.estimation['prices']['tradein']['from'] + this.estimation['prices']['tradein']['from'] * 0.1)
                     });
             },
 
@@ -256,7 +258,22 @@
                     let warning = document.getElementById('warning');
                     warning.hidden = false;
                 }
-            }
+            },
+
+            setHrefCreditButton() {
+                document.getElementById("creditButton").
+                setAttribute("href", this.creditPath.replace("model_details", "trade_in_credit"));
+            },
+            setCookie(price) {
+                let current_date = new Date();
+                current_date.setTime(current_date.getTime() + 3600 ); // will last 3600 seconds (1 hour)
+                let cookieexpire = current_date.toUTCString();
+
+                document.cookie = "trade_in_price=" + price + ";expires= + cookieexpire; path=/";
+            },
+        },
+        mounted() {
+            this.setHrefCreditButton();
         }
     };
 </script>

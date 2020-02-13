@@ -29,7 +29,7 @@
             </div>
 
             <div>
-                <range-slider-component :reviews='@json($data['car'])'></range-slider-component>
+                <range-slider-component :car='@json($data['car'])'></range-slider-component>
             </div>
 
             <div class="progressbar-wrapper">
