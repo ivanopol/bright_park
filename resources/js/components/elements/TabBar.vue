@@ -27,7 +27,7 @@
             <div class="close" @click="closeMenu"></div>
             <div class="menu_wrap">
                 <v-select class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Выбрать город" taggable
-                          :options="['Пермь', 'Екатеринбург', 'Москвва']">
+                          :options="cities">
                     <div class="spinner">Загрузка...</div>
                     <div slot="no-options">Нет совпадений</div>
                 </v-select>
@@ -49,6 +49,12 @@
             theme: {
                 default: 'light',
                 type: String
+            },
+            city: {
+                type: String
+            },
+            cities: {
+                type: Array
             }
         },
         data: function () {
@@ -189,12 +195,16 @@
                 line-height: 2;
                 padding: 0 17px;
                 color: #fff;
+                font-family: PragmaticaLightC, Helvetica, sans-serif;
+                font-size: 1em;
+                font-weight: bold;
             }
 
             .vs__selected {
                 padding: 0 25px 0 14px;
                 height: 34px;
                 color:#fff;
+                font-weight: bold;
             }
 
             &.vs--single.vs--open .vs__selected {
@@ -217,10 +227,16 @@
             }
 
             .vs__dropdown-menu {
-                border: 2px solid transparent;
+               // border: 2px solid transparent;
+                border: none;
                 border-top: none;
-                background-color: #000;
+               // background-color: #000;
                 color: #000;
+                padding: 0;
+            }
+
+            .vs__dropdown-option--highlight {
+                background-color: #FF8351;
             }
 
             .vs__fade-enter-active,

@@ -74,6 +74,27 @@ class City extends Model
     }
 
     /**
+     * Получаем список городов для выпадающего списка в меню
+     *
+     * @return array
+     */
+    public function getCities() {
+        $cities = [];
+
+        $cities_list = City::all();
+
+        foreach ($cities_list as $city)
+        {
+            $cities[] = [
+                'value' => $city->alias,
+                'label' => $city->title_ru
+            ];
+        }
+
+        return $cities;
+    }
+
+    /**
      * Получаем гео данные
      *
      * return array
