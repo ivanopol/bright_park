@@ -54,7 +54,7 @@ class BasePageService
         // с ссылками и указываем активный слайд
         $car_types = DB::select('SELECT `ct`.`slug`, `ct`.`id`
                                 FROM `car_types` as `ct`
-                                INNER JOIN `car` as `cmct` ON `cmct`.`car_type_id`=`ct`.`id`
+                                INNER JOIN `car_model_car_type` as `cmct` ON `cmct`.`car_type_id`=`ct`.`id`
                                  WHERE `cmct`.`car_model_id`=:model_id ORDER BY `ct`.`id` ASC', ['model_id' => $car_model->id]);
 
         $active_slide = 0;

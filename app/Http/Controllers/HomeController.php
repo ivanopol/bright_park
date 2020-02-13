@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 
+use App\Car;
 use App\Services\AutoruService;
 use App\Services\BasePageService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Http\RedirectResponse;
 use App\CarModel;
@@ -97,14 +99,20 @@ class HomeController extends Controller
 
     public function trade_in_credit(City $city = null, CarModel $car_model, CarType $car_type)
     {
+        $data = ['city' => 'perm', 'car_model' => $car_model->slug, 'car_type' => $car_type->slug,
+            'car' =>
+                DB::select("select * from car_model_car_type where `car_model_id` = :car_model_id and `car_type_id` = :car_type_id",
+                    ['car_model_id'=>$car_model->getAttribute('id'), 'car_type_id'=>$car_type->getAttribute('id')])];
+
         if ($city['alias']) {
             $this->city = $city['alias'];
         } else {
-            return redirect()->route('trade_in_credit', ['city' => 'perm',
+            return redirect()->route('trade_in_calc', ['city' => 'perm',
                 'car_model' => $car_model->slug,
                 'car_type' => $car_type->slug]);
         }
-        return view('trade_in_credit', ['city' => 'perm', 'car_model' => $car_model->slug, 'car_type' => $car_type->slug]);
+
+        return view('trade_in_credit', ['data'=>$data, 'city'=>$this->city]);
     }
 
     public function trade_in_cash()

@@ -4,11 +4,11 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateCarTable extends Migration
+class CreateCarModelCarTypeTable extends Migration
 {
     public function up()
     {
-        Schema::create('car', function (Blueprint $table) {
+        Schema::create('car_model_car_type', function (Blueprint $table) {
             $table->engine = "InnoDB";
             $table->bigInteger('car_model_id')->unsigned();
             $table->foreign('car_model_id')->references('id')->on('car_models');
@@ -19,7 +19,7 @@ class CreateCarTable extends Migration
             $table->integer('special_price');
         });
         Artisan::call('db:seed', [
-            '--class' => CarTableSeeder::class
+            '--class' => CreateCarModelCarTypeTable::class
         ]);
     }
 
@@ -30,6 +30,6 @@ class CreateCarTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('car');
+        Schema::dropIfExists('car_model_car_type');
     }
 }

@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class CarTableSeeder extends Seeder
+class CarModelCarTypeTableSeeder extends Seeder
 {
     public function run()
     {
@@ -32,6 +32,6 @@ class CarTableSeeder extends Seeder
             ['car_model_id' => '5', 'car_type_id' => '19', 'preview' => false, 'price' => 444900, 'special_price' => 378810],
         ];
 
-        DB::table('car')->insert($model_types);
+        DB::table('car_model_car_type')->insert($model_types);
     }
 }
