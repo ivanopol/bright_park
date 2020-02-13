@@ -232,8 +232,8 @@
                     })
                     .then((response) => {
                         this.estimation = response.data.estimation;
-                        this.brightParkEstimation = this.estimation['prices']['autoru']['to'];
-                        this.tradeInEstimation = this.estimation['prices']['tradein']['to'];
+                        this.brightParkEstimation = this.estimation['prices']['tradein']['to'];
+                        this.tradeInEstimation = this.estimation['prices']['tradein']['from'];
                     });
             },
 

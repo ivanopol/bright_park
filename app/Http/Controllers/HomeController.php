@@ -92,6 +92,7 @@ class HomeController extends Controller
                 'car_model' => $car_model->slug,
                 'car_type' => $car_type->slug]);
         }
+        return redirect()->route('trade_in_calc', ['city' => 'perm', 'car_model' => $car_model->slug, 'car_type' => $car_type->slug]);
     }
 
     public function trade_in_credit(City $city = null, CarModel $car_model, CarType $car_type)
@@ -103,6 +104,7 @@ class HomeController extends Controller
                 'car_model' => $car_model->slug,
                 'car_type' => $car_type->slug]);
         }
+        return redirect()->route('trade_in_credit', ['city' => 'perm', 'car_model' => $car_model->slug, 'car_type' => $car_type->slug]);
     }
 
     public function trade_in_cash()

@@ -30,6 +30,6 @@ class CreateCarTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('car_model_car_type');
+        Schema::dropIfExists('car');
     }
 }
