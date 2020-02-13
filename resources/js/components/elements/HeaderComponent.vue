@@ -57,7 +57,7 @@
     }
 
     header {
-        z-index: 1000;
+        z-index: 1;
         width: 100%;
         position: relative;
 
