@@ -71,7 +71,7 @@
                 <a href='/trade_in_cash'>Наличный расчет</a>
             </button>
             <button class="btn-half-primary">
-                <a href="/trade_in_credit">В кредит</a>
+                <a href="" id="creditButton">В кредит</a>
             </button>
         </div>
     </section>
@@ -92,6 +92,8 @@
             OpenIndicator: {
                 render: createElement => createElement('span', {class: {'toggle': true}}),
             },
+            host_url: window.location.protocol + '//' + window.location.host,
+            creditPath: window.location.href,
             step_one: false,
             step_two: false,
             step_three: false,
@@ -129,7 +131,7 @@
                 return {};
             },
             stepOne: function (input) {
-                axios.get('/get_brand_models', {
+                axios.get(this.host_url + '/api/get_brand_models', {
                     params: {
                         model_id: input.id
                     }
@@ -162,7 +164,7 @@
             },
 
             stepTwo: function (input) {
-                axios.get('/get_complectations/' + this.selected_brand.code.toString() + '/' + input.code.toString(),
+                axios.get(this.host_url + '/api/get_complectations/' + this.selected_brand.code.toString() + '/' + input.code.toString(),
                     {})
                     .then((response) => {
                         this.modifications = response.data.modifications;
@@ -225,14 +227,15 @@
                 axios(
                     {
                         method: 'post',
-                        url: '/get_estimation',
+                        url: this.host_url + '/api/get_estimation',
                         data: data
 
                     })
                     .then((response) => {
                         this.estimation = response.data.estimation;
-                        this.brightParkEstimation = this.estimation['prices']['autoru']['to'];
-                        this.tradeInEstimation = this.estimation['prices']['tradein']['to'];
+                        this.brightParkEstimation = this.estimation['prices']['tradein']['from'] + this.estimation['prices']['tradein']['from'] * 0.1;
+                        this.tradeInEstimation = this.estimation['prices']['tradein']['from'];
+                        this.setCookie(this.estimation['prices']['tradein']['from'] + this.estimation['prices']['tradein']['from'] * 0.1)
                     });
             },
 
@@ -255,7 +258,22 @@
                     let warning = document.getElementById('warning');
                     warning.hidden = false;
                 }
-            }
+            },
+
+            setHrefCreditButton() {
+                document.getElementById("creditButton").
+                setAttribute("href", this.creditPath.replace("model_details", "trade_in_credit"));
+            },
+            setCookie(price) {
+                let current_date = new Date();
+                current_date.setTime(current_date.getTime() + 3600 );
+                let cookieexpire = current_date.toLocaleString();
+
+                document.cookie = "trade_in_price=" + price + ";expires=" + cookieexpire + "path=/";
+            },
+        },
+        mounted() {
+            this.setHrefCreditButton();
         }
     };
 </script>

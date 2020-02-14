@@ -1,7 +1,64 @@
 <template>
     <div>
-        <vue-slider v-model="sliderOne.value" :interval="1" :marks="sliderOne.marks" :drag-on-click="true" :min="sliderOne.min" :max="sliderOne.max"/>
-        <vue-slider v-model="sliderTwo.value" :interval="1" :marks="sliderTwo.marks" :drag-on-click="true" :min="sliderTwo.min" :max="sliderTwo.max"/>
+        <div class="option-text">
+            <p>В Bright Park выгодные условия кредитования!</p>
+        </div>
+
+        <div class="conditions">
+            <ul>
+                <li><span><i class="fas fa-check"></i></span> <span>12 банков-партнеров</span></li>
+                <li><span><i class="fas fa-check"></i></span> <span>Одобрение по кредиту 30 минут</span></li>
+                <li><span><i class="fas fa-check"></i></span> <span>Вероятность одобрения 96%</span></li>
+            </ul>
+        </div>
+
+        <div class="credit-profit-text">
+            <p>
+                Первоначальный взнос
+            </p>
+        </div>
+
+        <div class="range-slider-wrapper">
+            <vue-slider v-model="firstPaymentPercent" :interval="1" :marks="sliderOne.marks" :drag-on-click="true"
+                        :min="sliderOne.min" :max="sliderOne.max" v-on:change="changeFirstPayment"/>
+        </div>
+
+        <div class="disabled-input">
+            <input readonly v-model="firstPayment"/> руб.
+        </div>
+
+        <div class="credit-profit-text">
+            <p>Срок в месяцах</p>
+        </div>
+
+        <div class="range-slider-wrapper">
+            <vue-slider v-model="period" :interval="1" :marks="sliderTwo.marks" :drag-on-click="true"
+                        :min="sliderTwo.min" :max="sliderTwo.max" v-on:change="changePeriod" :change="changePeriod"/>
+        </div>
+
+        <div class="disabled-input">
+            <input readonly v-model="period"/> мес.
+        </div>
+
+        <div class="radio-buttons-group">
+            <div>
+                <input type="radio" name="program"> Обычная программа <span>{{monthlyPaymentRegularProgram.toFixed(2)}}</span> руб./мес
+            </div>
+            <div>
+                <input type="radio" name="program"> Программа LADA Finance <span>{{monthlyPaymentLadaFinanceProgram.toFixed(2)}}</span> руб./мес<br>
+            </div>
+            <div>
+                <input type="radio" name="program"> Специальный рассчет <span>{{monthlyPaymentSpecialProgram.toFixed(2)}}</span> руб./мес<br>
+
+            </div>
+        </div>
+
+        <div class="buttons_other">
+            <div class="item-buttons-other">
+                <a href="#" class="btn btn-primary">Закрепить условия</a>
+            </div>
+        </div>
+
     </div>
 </template>
 
@@ -10,6 +67,7 @@
     import 'vue-slider-component/theme/antd.css'
 
     export default {
+        props: ['car'],
         components: {
             VueSlider
         },
@@ -21,15 +79,79 @@
                         marks: [15, 50],
                         min: 15,
                         max: 50
-                    }, 'sliderTwo':
+                    },
+                'sliderTwo':
                     {
                         value: 12,
                         marks: [12, 60],
                         min: 12,
                         max: 60
-                    }
+                    },
+                regularPercentRate: 15,
+                ladaFinancePercentRate: 12,
+                specialPercentRate: 5,
+                tradeInPrice: 0,
+                carPrice: this.car[0]['price'],
+                monthlyPaymentRegularProgram: 0,
+                monthlyPaymentLadaFinanceProgram: 0,
+                monthlyPaymentSpecialProgram: 0,
+                firstPaymentPercent: 15,
+                annualPercent: 12,
+                firstPayment: this.car[0]['price'] / 100 * 15,
+                period: 12
             }
-        }
+        },
+        methods: {
+            changePeriod() {
+                this.$emit('changePeriod', this.period);
+                this.calculateMonthlyPayment();
+            },
+            changeFirstPayment() {
+                this.firstPayment = this.car[0]['price'] / 100 * this.firstPaymentPercent;
+                this.calculateMonthlyPayment();
+            },
+            getCookie(name) {
+                let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+                if (match) return match[2];
+            },
+            calculatePercentFromTradeInPrice() {
+                this.firstPaymentPercent = Math.round(this.firstPayment / this.carPrice * 100)
+            },
+            calculateMonthlyPayment() {
+                let debt = this.carPrice - this.firstPayment;
+
+                let monthlyPercentRate = this.regularPercentRate / 12 / 100;
+                let mathPow1 = Math.pow(1 + monthlyPercentRate, this.period);
+                let res1 = monthlyPercentRate * mathPow1;
+                let res2 = mathPow1 - 1;
+                let annualCoefficient = (res1 / res2);
+                this.monthlyPaymentRegularProgram = debt * annualCoefficient;
+
+                monthlyPercentRate = this.ladaFinancePercentRate / 12 / 100;
+                mathPow1 = Math.pow(1 + monthlyPercentRate, this.period);
+                res1 = monthlyPercentRate * mathPow1;
+                res2 = mathPow1 - 1;
+                annualCoefficient = (res1 / res2);
+                this.monthlyPaymentLadaFinanceProgram = debt * annualCoefficient;
+
+                monthlyPercentRate = this.specialPercentRate / 12 / 100;
+                mathPow1 = Math.pow(1 + monthlyPercentRate, this.period);
+                res1 = monthlyPercentRate * mathPow1;
+                res2 = mathPow1 - 1;
+                annualCoefficient = (res1 / res2);
+                this.monthlyPaymentSpecialProgram = debt * annualCoefficient;
+            },
+            selectCreditProgram(input) {
+                this.annualPercent = input.percentRate;
+            }
+        },
+        mounted() {
+            if (this.getCookie('trade_in_price') != null && this.getCookie('trade_in_price') > 0) {
+                this.firstPayment = this.getCookie('trade_in_price');
+                this.calculatePercentFromTradeInPrice();
+                this.calculateMonthlyPayment();
+            }
+        },
     }
 </script>
 

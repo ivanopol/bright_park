@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Services\AutoruService;
 use App\Services\BasePageService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Http\RedirectResponse;
 use App\CarModel;
@@ -22,7 +23,7 @@ class HomeController extends Controller
      *
      * @param Request $request
      */
-    public function __construct( Request $request)
+    public function __construct(Request $request)
     {
     }
 
@@ -92,60 +93,38 @@ class HomeController extends Controller
         return view('model_details', [ 'brands' => $brands, 'models' => $models, 'city' => $this->city, 'cities' => $cities]);
     }
 
-    public function trade_in_calc()
+    public function trade_in_calc(City $city = null, CarModel $car_model, CarType $car_type)
     {
-        return view('trade_in_calc');
+        if ($city['alias']) {
+            $this->city = $city['alias'];
+        } else {
+            return redirect()->route('trade_in_calc', ['city' => 'perm',
+                'car_model' => $car_model->slug,
+                'car_type' => $car_type->slug]);
+        }
+        return view('trade_in_calc', ['city' => 'perm', 'car_model' => $car_model->slug, 'car_type' => $car_type->slug]);
     }
 
-    public function trade_in_credit()
+    public function trade_in_credit(City $city = null, CarModel $car_model, CarType $car_type)
     {
-        return view('trade_in_credit');
+        $data = ['city' => 'perm', 'car_model' => $car_model->slug, 'car_type' => $car_type->slug,
+            'car' =>
+                DB::select("select * from car_model_car_type where `car_model_id` = :car_model_id and `car_type_id` = :car_type_id",
+                    ['car_model_id'=>$car_model->getAttribute('id'), 'car_type_id'=>$car_type->getAttribute('id')])];
+
+        if ($city['alias']) {
+            $this->city = $city['alias'];
+        } else {
+            return redirect()->route('trade_in_calc', ['city' => 'perm',
+                'car_model' => $car_model->slug,
+                'car_type' => $car_type->slug]);
+        }
+
+        return view('trade_in_credit', ['data'=>$data, 'city'=>$this->city]);
     }
 
     public function trade_in_cash()
     {
         return view('trade_in_cash');
-    }
-
-    public function get_brands()
-    {
-    }
-
-    public function get_brand_models(Request $request)
-    {
-
-        $brand_id = $request->input('model_id');
-
-        $raw = new AutoruService();
-        $models = $raw->getModels($brand_id);
-        return Response::json(['models' => $models]);
-    }
-
-    public function getComplectations($brand_id, $model_id)
-    {
-        $raw = new AutoruService();
-
-        return Response::json(['modifications'=>$raw->getComplectations($brand_id, $model_id)]);
-    }
-
-    public function getEstimation(Request $request)
-    {
-        $raw = new AutoruService();
-        $data = $request->getContent();
-        return Response::json(['estimation'=>$raw->getEstimation($data)]);
-    }
-
-    public function getYearsRange()
-    {
-        $raw = new AutoruService();
-        $getYearsRange = $raw->getYearsRange();
-        return Response::json(['yearsRange' => $getYearsRange]);
-    }
-
-    public function getMileageRange()
-    {
-        $raw = new AutoruService();
-        $getMileageRange = $raw->getMileageRange();
-        return Response::json(['mileageRange' => $getMileageRange]);
     }
 }

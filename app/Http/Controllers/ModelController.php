@@ -1,24 +1,58 @@
 <?php
 
+namespace App\Http\Controllers;
 
-use App\Services\ModelService;
+use App\Services\AutoruService;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Response;
+
 
 /**
- * @property ModelService model_service
+ * @property AutoruService autoruService
  */
 class ModelController extends Controller
 {
-    public function __construct(ModelService $model_service)
+    public function __construct(AutoruService $autoruService)
     {
-        $this->model_service = $model_service;
-        $this->middleware("auth");
+        $this->autoruService = $autoruService;
     }
 
-    public function basic()
+    public function get_brand_models(Request $request)
     {
-        $data = $this->model_service->get_model_page_view_data();
 
-        return view('basic', [ 'data' => $data ]);
+        $brand_id = $request->input('model_id');
+
+        $raw = new AutoruService();
+        $models = $raw->getModels($brand_id);
+        return Response::json(['models' => $models]);
+    }
+
+    public function getComplectations($brand_id, $model_id)
+    {
+        $raw = new AutoruService();
+
+        return Response::json(['modifications'=>$raw->getComplectations($brand_id, $model_id)]);
+    }
+
+    public function getEstimation(Request $request)
+    {
+        $raw = new AutoruService();
+        $data = $request->getContent();
+        return Response::json(['estimation'=>$raw->getEstimation($data)]);
+    }
+
+    public function getYearsRange()
+    {
+        $raw = new AutoruService();
+        $getYearsRange = $raw->getYearsRange();
+        return Response::json(['yearsRange' => $getYearsRange]);
+    }
+
+    public function getMileageRange()
+    {
+        $raw = new AutoruService();
+        $getMileageRange = $raw->getMileageRange();
+        return Response::json(['mileageRange' => $getMileageRange]);
     }
 }

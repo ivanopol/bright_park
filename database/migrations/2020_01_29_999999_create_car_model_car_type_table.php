@@ -15,9 +15,11 @@ class CreateCarModelCarTypeTable extends Migration
             $table->bigInteger('car_type_id')->unsigned();
             $table->foreign('car_type_id')->references('id')->on('car_types');
             $table->boolean('preview');
+            $table->integer('price');
+            $table->integer('special_price');
         });
         Artisan::call('db:seed', [
-            '--class' => CarModelCarTypeTableSeeder::class
+            '--class' => CreateCarModelCarTypeTable::class
         ]);
     }
 

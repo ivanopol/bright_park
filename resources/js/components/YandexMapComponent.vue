@@ -15,7 +15,7 @@
                 function init() {
                     var geolocation = ymaps.geolocation,
                         myMap = new ymaps.Map('map', {
-                            center: [60, 34],
+                            center: coords,
                             zoom: 10
                         }, {
                             searchControlProvider: 'yandex#search'
@@ -72,7 +72,6 @@
             this.createMap(this.coordinates);
         },
     }
-
 </script>
 
 <style lang="scss" scoped>
