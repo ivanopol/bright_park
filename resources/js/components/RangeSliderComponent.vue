@@ -42,7 +42,7 @@
 
         <div class="radio-buttons-group">
             <div>
-                <input type="radio" name="program"> Обычная программа <span>{{monthlyPaymentRegularProgram.toFixed(2)}}</span> руб./мес
+                <input checked="checked" type="radio" name="program"> Обычная программа <span>{{monthlyPaymentRegularProgram.toFixed(2)}}</span> руб./мес
             </div>
             <div>
                 <input type="radio" name="program"> Программа LADA Finance <span>{{monthlyPaymentLadaFinanceProgram.toFixed(2)}}</span> руб./мес<br>
