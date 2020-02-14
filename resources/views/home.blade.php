@@ -2,6 +2,7 @@
 
 @section('content')
     <tab-bar :theme="'dark'" :cities='@json($cities)' :models='@json($models)'></tab-bar>
+    <header-sticky-component :theme="'light'" :city="'{{$city}}'"></header-sticky-component>
     <header-component :absolute="true"  :theme="'light'" :city="'{{$city}}'" ></header-component>
     <section class="main-screen">
         <main-hooper-component :city="'{{$city}}'"></main-hooper-component>
