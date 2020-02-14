@@ -145,7 +145,7 @@
         height: 100vh;
         background-color: #000;
         top:0;
-        z-index:10;
+        z-index:30;
         padding: 60px 40px 90px;
         margin-left: -200vw;
         /* Переход */
@@ -408,7 +408,7 @@
         width: 100%;
         bottom: 0;
         left: 0;
-        z-index: 20;
+        z-index: 40;
 
         ul {
 

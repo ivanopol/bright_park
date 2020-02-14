@@ -1,7 +1,7 @@
 <template>
     <section>
         <div class="model-choose-text">
-            <p>Подберите выгодные условия на LADA Grant LiftBack</p>
+            <p>Подберите выгодные условия на LADA {{car_model.title}} {{car_type.title_ru}}</p>
         </div>
 
         <div class="buy-steps-wrapper">
@@ -54,7 +54,9 @@
     export default {
         name: 'App',
         props: [
-            'brands'
+            'brands',
+            'car_model',
+            'car_type'
         ],
         data: function() {
             return {

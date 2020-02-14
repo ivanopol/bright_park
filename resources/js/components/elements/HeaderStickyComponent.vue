@@ -61,7 +61,7 @@
 
 <style scoped lang="scss">
     header {
-        z-index: 2;
+        z-index: 20;
         width: 100%;
         margin-top: -50px;
         position: fixed;
@@ -75,6 +75,7 @@
         &.show {
             margin-top: 0;
             opacity: 1;
+            box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
         }
 
         &.absolute {

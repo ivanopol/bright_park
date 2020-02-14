@@ -16,10 +16,10 @@
             </div>
 
             <div class="trigger-wrap">
-                <p class="trigger-wrap-text">Осталось <span class="model-count-text">333</span> Granta Лифтбек по спеццене</p>
+                <p class="trigger-wrap-text">Осталось <span class="model-count-text">333</span> {{$car_model->title}} {{$car_type->title_ru}} по спеццене</p>
             </div>
 
-            <steps :brands='@json($brands)'></steps>
+            <steps :brands='@json($brands)' :car_model='@json($car_model)' :car_type='@json($car_type)'></steps>
         </section>
     </section>
 @endsection
