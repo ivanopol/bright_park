@@ -42,13 +42,13 @@
 
         <div class="radio-buttons-group">
             <div>
-                <input type="radio" name="program"> Обычная программа 19 700 руб./мес
+                <input type="radio" name="program"> Обычная программа <span>{{monthlyPaymentRegularProgram.toFixed(2)}}</span> руб./мес
             </div>
             <div>
-                <input type="radio" name="program"> Программа LADA Finance 12 700 руб./мес<br>
+                <input type="radio" name="program"> Программа LADA Finance <span>{{monthlyPaymentLadaFinanceProgram.toFixed(2)}}</span> руб./мес<br>
             </div>
             <div>
-                <input type="radio" name="program"> Специальный рассчет 11 700 руб./мес<br>
+                <input type="radio" name="program"> Специальный рассчет <span>{{monthlyPaymentSpecialProgram.toFixed(2)}}</span> руб./мес<br>
 
             </div>
         </div>
@@ -87,9 +87,14 @@
                         min: 12,
                         max: 60
                     },
+                regularPercentRate: 15,
+                ladaFinancePercentRate: 12,
+                specialPercentRate: 5,
                 tradeInPrice: 0,
                 carPrice: this.car[0]['price'],
-                monthlyPayment: 0,
+                monthlyPaymentRegularProgram: 0,
+                monthlyPaymentLadaFinanceProgram: 0,
+                monthlyPaymentSpecialProgram: 0,
                 firstPaymentPercent: 15,
                 annualPercent: 12,
                 firstPayment: this.car[0]['price'] / 100 * 15,
@@ -99,29 +104,53 @@
         methods: {
             changePeriod() {
                 this.$emit('changePeriod', this.period);
+                this.calculateMonthlyPayment();
+                console.log(this.monthlyPaymentRegularProgram);
             },
             changeFirstPayment() {
                 this.firstPayment = this.car[0]['price'] / 100 * this.firstPaymentPercent;
                 this.calculateMonthlyPayment();
             },
-            calculateMonthlyPayment() {
-                let yearCoefficient = this.period / 12;
-
-                if (yearCoefficient < 1) {
-                    yearCoefficient = 1;
-                }
-
-                this.monthlyPayment =
-                    (this.carPrice + (this.carPrice / 100 * this.annualPercent)) / this.period - this.firstPayment
-            },
-
             getCookie(name) {
                 let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
                 if (match) return match[2];
+            },
+            calculatePercentFromTradeInPrice() {
+                this.firstPaymentPercent = Math.round(this.firstPayment / this.carPrice * 100)
+            },
+            calculateMonthlyPayment() {
+                let debt = this.carPrice - this.firstPayment;
+                let monthlyPercentRate = this.regularPercentRate / 12 / 100;
+                let mathPow1 = Math.pow(1 + monthlyPercentRate, this.period);
+                let res1 = monthlyPercentRate * mathPow1;
+                let res2 = mathPow1 - 1;
+                let annualCoefficient = (res1 / res2);
+                this.monthlyPaymentRegularProgram = debt * annualCoefficient;
+
+                monthlyPercentRate = this.ladaFinancePercentRate / 12 / 100;
+                mathPow1 = Math.pow(1 + monthlyPercentRate, this.period);
+                res1 = monthlyPercentRate * mathPow1;
+                res2 = mathPow1 - 1;
+                annualCoefficient = (res1 / res2);
+                this.monthlyPaymentLadaFinanceProgram = debt * annualCoefficient;
+
+                monthlyPercentRate = this.specialPercentRate / 12 / 100;
+                mathPow1 = Math.pow(1 + monthlyPercentRate, this.period);
+                res1 = monthlyPercentRate * mathPow1;
+                res2 = mathPow1 - 1;
+                annualCoefficient = (res1 / res2);
+                this.monthlyPaymentSpecialProgram = debt * annualCoefficient;
+            },
+            selectCreditProgram(input) {
+                this.annualPercent = input.percentRate;
             }
         },
         mounted() {
-            this.tradeInPrice = this.getCookie('trade_in_price');
+            if (this.getCookie('trade_in_price') != null && this.getCookie('trade_in_price') > 0) {
+                this.firstPayment = this.getCookie('trade_in_price');
+                this.calculatePercentFromTradeInPrice();
+                this.calculateMonthlyPayment();
+            }
         },
     }
 </script>

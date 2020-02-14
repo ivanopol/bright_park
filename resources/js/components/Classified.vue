@@ -266,10 +266,10 @@
             },
             setCookie(price) {
                 let current_date = new Date();
-                current_date.setTime(current_date.getTime() + 3600 ); // will last 3600 seconds (1 hour)
-                let cookieexpire = current_date.toUTCString();
+                current_date.setTime(current_date.getTime() + 3600 );
+                let cookieexpire = current_date.toLocaleString();
 
-                document.cookie = "trade_in_price=" + price + ";expires= + cookieexpire; path=/";
+                document.cookie = "trade_in_price=" + price + ";expires=" + cookieexpire + "path=/";
             },
         },
         mounted() {
