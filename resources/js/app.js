@@ -28,6 +28,7 @@ Vue.component('form-component', require('./components/FormComponent.vue').defaul
 Vue.component('review-component', require('./components/ReviewComponent.vue').default);
 Vue.component('model-details-component', require('./components/ModelDetailsComponent').default);
 Vue.component('header-component', require('./components/elements/HeaderComponent').default);
+Vue.component('header-sticky-component', require('./components/elements/HeaderStickyComponent').default);
 Vue.component('main-hooper-component', require('./components/MainHooperComponent').default);
 Vue.component('range-slider-component', require('./components/RangeSliderComponent').default);
 Vue.component('range-slider-component-period', require('./components/RangeSliderComponentPeriod').default);

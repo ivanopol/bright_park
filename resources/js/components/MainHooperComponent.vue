@@ -73,6 +73,7 @@
 <style lang="scss" scoped>
 
     .item-buttons {
+
         /*margin-top: 41vh;*/
         position: absolute;
         bottom: 0;
@@ -100,6 +101,10 @@
                 background-color: transparent;
             }
         }
+    }
+
+    .main-screen-wrap.hooper {
+        background-color: #000;
     }
 
     .main-screen-wrap ul li {
@@ -134,7 +139,7 @@
             top: 15vh;
             color: white;
             text-align: center;
-            height: 72.5vh;
+            height: 75vh;
 
             .title-model {
                 font-family: PragmaticaLightCBold, Helvetica, sans-serif;

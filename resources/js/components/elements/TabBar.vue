@@ -27,10 +27,37 @@
             <div class="close" @click="closeMenu"></div>
             <div class="menu_wrap">
                 <v-select class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Выбрать город" taggable
-                          :options="cities">
+                          :options="cities.list" :searchable="false" v-model="cities.active" @input="selected">
                     <div class="spinner">Загрузка...</div>
                     <div slot="no-options">Нет совпадений</div>
                 </v-select>
+
+                <div class="models_wrap">
+                    <ul class="">
+                        <li v-for="model in models" v-bind:key="model.id">
+                            <a :href="'/' + cities.active.value + '/' + model.slug + '/' + model.types_preview[0].slug">
+                                <div class="title" v-text="model.title"></div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="other_links">
+                    <ul>
+                        <li>
+                            <a :href="'/' + cities.active.value"><div class="title">Главная страница</div></a>
+                        </li>
+                        <li>
+                            <a :href="'/' + cities.active.value + '/contacts'"><div class="title">Контакты</div></a>
+                        </li>
+                        <li>
+                            <a :href="'/' + cities.active.value + '/actions'"><div class="title">Акции</div></a>
+                        </li>
+                        <li>
+                            <a :href="'/' + cities.active.value + '/news'"><div class="title">Новости</div></a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
     </div>
@@ -50,10 +77,10 @@
                 default: 'light',
                 type: String
             },
-            city: {
-                type: String
-            },
             cities: {
+                type: Object
+            },
+            models: {
                 type: Array
             }
         },
@@ -74,6 +101,9 @@
             },
             closeMenu: function() {
                 return this.open = false;
+            },
+            selected: function(event) {
+                window.location.href = window.location.protocol + '//' + window.location.host + '/' + event.value;
             }
         },
         components: {
@@ -82,6 +112,8 @@
             IconRoute,
             IconChat,
             vSelect
+        },
+        created: function() {
         }
     }
 </script>
@@ -170,9 +202,72 @@
             }
         }
 
+        .other_links,
+        .models_wrap {
+            padding: 0;
+            background: none;
+            margin-bottom: 30px;
+
+            ul {
+                padding: 0;
+
+                li {
+                    padding: 0;
+                    width: 100%;
+                    display: flex;
+                    justify-content: left;
+                    flex-wrap: nowrap;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+                    -webkit-box-align: center;
+                    align-items: center;
+                    a {
+                        display:block;
+                        width: 100%;
+                        padding: 15px 10px;
+                        color: #fff;
+
+                        .title {
+                            width: 100%;
+                            font-size: 16px;
+                            padding-left: 10px;
+                            color: #fff;
+                            font-size:16px;
+                            text-transform: uppercase;
+                            position: relative;
+                            font-weight: normal;
+                            font-weight: normal;
+                            &:after {
+                                width: 10px;
+                                height: 10px;
+                                position: absolute;
+                                content: "";
+                                display: block;
+                                -webkit-transform: rotate(45deg);
+                                transform: rotate(45deg);
+                                border: 2px solid #FF8351;
+                                right: 0;
+                                top: 0;
+                                border-left: none;
+                                border-bottom: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .other_links {
+            ul li a .title {
+                text-transform: none;
+                font-family: PragmaticaLightC, Helvetica, sans-serif;
+                font-weight: bold;
+            }
+        }
+
         .select_wrap {
             position: relative;
-            margin-bottom: 18px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.18);
 
             &.vs--disabled .vs__clear,
             &.vs--disabled .vs__dropdown-toggle,
@@ -290,8 +385,8 @@
                 top: 50%;
                 margin-top: -11px;
                 right: 18px;
-                width: 15px;
-                height: 15px;
+                width: 10px;
+                height: 10px;
                 border: 2px solid #FF8351;
                 border-top: none;
                 border-left: none;

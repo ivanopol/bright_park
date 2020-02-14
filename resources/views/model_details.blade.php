@@ -1,8 +1,9 @@
 @extends('layouts.app2')
 
 @section('content')
-    <tab-bar></tab-bar>
-    <header-component :line="true" :theme="'light'"></header-component>
+    <tab-bar :cities='@json($cities)' :models='@json($models)'></tab-bar>
+    <header-sticky-component :theme="'light'" :city="'{{$city}}'"></header-sticky-component>
+    <header-component :line="true" :theme="'light'" :city="'{{$city}}'"></header-component>
     <section class="container m-bottom-120">
         <slide-show></slide-show>
         <section>

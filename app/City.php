@@ -76,19 +76,31 @@ class City extends Model
     /**
      * Получаем список городов для выпадающего списка в меню
      *
+     * @param string $city_active
      * @return array
      */
-    public function getCities() {
-        $cities = [];
+    public function getCities($city_active) : array
+    {
+        $cities = [
+            'active' => [],
+            'list' => []
+        ];
 
         $cities_list = City::all();
 
         foreach ($cities_list as $city)
         {
-            $cities[] = [
+            $cities['list'][] = [
                 'value' => $city->alias,
                 'label' => $city->title_ru
             ];
+
+            if ($city->alias === $city_active) {
+                $cities['active'] = [
+                    'value' => $city->alias,
+                    'label' => $city->title_ru,
+                ];
+            }
         }
 
         return $cities;
