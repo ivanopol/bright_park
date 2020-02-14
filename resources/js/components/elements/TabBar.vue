@@ -104,7 +104,6 @@
             },
             selected: function(event) {
                 window.location.href = window.location.protocol + '//' + window.location.host + '/' + event.value;
-               // this.cities.active = event;
             }
         },
         components: {
@@ -115,7 +114,6 @@
             vSelect
         },
         created: function() {
-            console.log(this.models);
         }
     }
 </script>
