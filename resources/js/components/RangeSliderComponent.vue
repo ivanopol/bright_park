@@ -105,7 +105,6 @@
             changePeriod() {
                 this.$emit('changePeriod', this.period);
                 this.calculateMonthlyPayment();
-                console.log(this.monthlyPaymentRegularProgram);
             },
             changeFirstPayment() {
                 this.firstPayment = this.car[0]['price'] / 100 * this.firstPaymentPercent;
@@ -120,6 +119,7 @@
             },
             calculateMonthlyPayment() {
                 let debt = this.carPrice - this.firstPayment;
+
                 let monthlyPercentRate = this.regularPercentRate / 12 / 100;
                 let mathPow1 = Math.pow(1 + monthlyPercentRate, this.period);
                 let res1 = monthlyPercentRate * mathPow1;
