@@ -38,5 +38,4 @@
             </div>
         </section>
     </div>
-    <script src="https://kit.fontawesome.com/f17735271b.js" crossorigin="anonymous"></script>
 @endsection
