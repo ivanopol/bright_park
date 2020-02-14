@@ -21,7 +21,7 @@ class CreateCreditProgramsTable extends Migration
         });
 
         Artisan::call('db:seed', [
-            '--class' => CreditProgramTableSeeder::class
+            '--class' => CreditProgramsTableSeeder::class
         ]);
     }
 
