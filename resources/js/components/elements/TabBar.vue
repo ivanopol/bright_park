@@ -124,7 +124,7 @@
         &.active {
             content: "";
             display: block;
-            z-index: 9;
+            z-index: 29;
             top: 0;
             left: 0;
             bottom: 0;
