@@ -1,19 +1,19 @@
 <template>
     <div>
         <div id="layout" :class="{ active: open }" @click="closeMenu"></div>
-        <section id="panel" >
+        <section id="panel">
             <ul :class="theme">
                 <li @click="openMenu">
-                    <icon-menu ></icon-menu>
+                    <icon-menu></icon-menu>
                     <span>Меню</span>
                 </li>
                 <li>
                     <a href="tel:+73422338231">
-                    <icon-call></icon-call>
-                    <span>Звонок</span>
+                        <icon-call></icon-call>
+                        <span>Звонок</span>
                     </a>
                 </li>
-                <li>
+                <li >
                     <icon-route></icon-route>
                     <span>Маршрут</span>
                 </li>
@@ -26,7 +26,8 @@
         <section id="menu" :class="{ active: open }">
             <div class="close" @click="closeMenu"></div>
             <div class="menu_wrap">
-                <v-select class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Выбрать город" taggable
+                <v-select class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Выбрать город"
+                          taggable
                           :options="cities.list" :searchable="false" v-model="cities.active" @input="selected">
                     <div class="spinner">Загрузка...</div>
                     <div slot="no-options">Нет совпадений</div>
@@ -45,16 +46,24 @@
                 <div class="other_links">
                     <ul>
                         <li>
-                            <a :href="'/' + cities.active.value"><div class="title">Главная страница</div></a>
+                            <a :href="'/' + cities.active.value">
+                                <div class="title">Главная страница</div>
+                            </a>
                         </li>
                         <li>
-                            <a :href="'/' + cities.active.value + '/contacts'"><div class="title">Контакты</div></a>
+                            <a :href="'/' + cities.active.value + '/contacts'">
+                                <div class="title">Контакты</div>
+                            </a>
                         </li>
                         <li>
-                            <a :href="'/' + cities.active.value + '/actions'"><div class="title">Акции</div></a>
+                            <a :href="'/' + cities.active.value + '/actions'">
+                                <div class="title">Акции</div>
+                            </a>
                         </li>
                         <li>
-                            <a :href="'/' + cities.active.value + '/news'"><div class="title">Новости</div></a>
+                            <a :href="'/' + cities.active.value + '/news'">
+                                <div class="title">Новости</div>
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -96,15 +105,15 @@
             };
         },
         methods: {
-            openMenu: function() {
+            openMenu: function () {
                 return this.open = !this.open;
             },
-            closeMenu: function() {
+            closeMenu: function () {
                 return this.open = false;
             },
-            selected: function(event) {
+            selected: function (event) {
                 window.location.href = window.location.protocol + '//' + window.location.host + '/' + event.value;
-            }
+            },
         },
         components: {
             IconMenu,
@@ -113,7 +122,7 @@
             IconChat,
             vSelect
         },
-        created: function() {
+        created: function () {
         }
     }
 </script>
@@ -144,8 +153,8 @@
         width: 80vw;
         height: 100vh;
         background-color: #000;
-        top:0;
-        z-index:10;
+        top: 0;
+        z-index: 10;
         padding: 60px 40px 90px;
         margin-left: -200vw;
         /* Переход */
@@ -220,8 +229,9 @@
                     border-bottom: 1px solid rgba(255, 255, 255, 0.18);
                     -webkit-box-align: center;
                     align-items: center;
+
                     a {
-                        display:block;
+                        display: block;
                         width: 100%;
                         padding: 15px 10px;
                         color: #fff;
@@ -231,11 +241,12 @@
                             font-size: 16px;
                             padding-left: 10px;
                             color: #fff;
-                            font-size:16px;
+                            font-size: 16px;
                             text-transform: uppercase;
                             position: relative;
                             font-weight: normal;
                             font-weight: normal;
+
                             &:after {
                                 width: 10px;
                                 height: 10px;
@@ -298,7 +309,7 @@
             .vs__selected {
                 padding: 0 25px 0 14px;
                 height: 34px;
-                color:#fff;
+                color: #fff;
                 font-weight: bold;
             }
 
@@ -322,10 +333,10 @@
             }
 
             .vs__dropdown-menu {
-               // border: 2px solid transparent;
+                // border: 2px solid transparent;
                 border: none;
                 border-top: none;
-               // background-color: #000;
+                // background-color: #000;
                 color: #000;
                 padding: 0;
             }
@@ -422,6 +433,7 @@
 
             &.light {
                 background-color: rgba(255, 255, 255, 0.7);
+
                 span {
                     color: #000;
                 }
@@ -447,6 +459,7 @@
                     margin: 0 auto 2px;
                     font-weight: normal;
                 }
+
                 & > a span,
                 & > span {
                     font-size: 12px;
