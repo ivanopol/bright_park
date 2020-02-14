@@ -90,7 +90,15 @@ class HomeController extends Controller
 
         $raw = new AutoruService();
         $brands = $raw->getBrands();
-        return view('model_details', [ 'brands' => $brands, 'models' => $models, 'city' => $this->city, 'cities' => $cities]);
+
+        return view('model_details', [
+            'brands' => $brands,
+            'models' => $models,
+            'city' => $this->city,
+            'cities' => $cities,
+            'car_model' => $car_model,
+            'car_type' => $car_type,
+        ]);
     }
 
     public function trade_in_calc(City $city = null, CarModel $car_model, CarType $car_type)
