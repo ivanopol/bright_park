@@ -1,16 +1,17 @@
 <template>
     <div>
         <div class="option-text">
-            <p>В Bright Park выгодные условия кредитования!</p>
+            <p>В Брайт Парке выгодные условия кредитования!</p>
         </div>
 
         <div class="conditions">
             <ul>
-                <li><span><i class="fas fa-check"></i></span> <span>12 банков-партнеров</span></li>
-                <li><span><i class="fas fa-check"></i></span> <span>Одобрение по кредиту 30 минут</span></li>
-                <li><span><i class="fas fa-check"></i></span> <span>Вероятность одобрения 96%</span></li>
+                <li><check-icon class="check"></check-icon> <span>12 банков-партнеров</span></li>
+                <li><check-icon class="check"></check-icon> <span>Одобрение по кредиту 30 минут</span></li>
+                <li><check-icon class="check"></check-icon> <span>Вероятность одобрения 96%</span></li>
             </ul>
         </div>
+
 
         <div class="credit-profit-text">
             <p>
@@ -65,11 +66,13 @@
 <script>
     import VueSlider from 'vue-slider-component'
     import 'vue-slider-component/theme/antd.css'
+    import CheckIcon from './icons/CheckIcon.vue';
 
     export default {
         props: ['car'],
         components: {
-            VueSlider
+            VueSlider,
+            CheckIcon
         },
         data() {
             return {
@@ -91,13 +94,13 @@
                 ladaFinancePercentRate: 12,
                 specialPercentRate: 5,
                 tradeInPrice: 0,
-                carPrice: this.car[0]['price'],
+                carPrice: this.car.price,
                 monthlyPaymentRegularProgram: 0,
                 monthlyPaymentLadaFinanceProgram: 0,
                 monthlyPaymentSpecialProgram: 0,
                 firstPaymentPercent: 15,
                 annualPercent: 12,
-                firstPayment: this.car[0]['price'] / 100 * 15,
+                firstPayment: this.car.price / 100 * 15,
                 period: 12
             }
         },
@@ -107,7 +110,7 @@
                 this.calculateMonthlyPayment();
             },
             changeFirstPayment() {
-                this.firstPayment = this.car[0]['price'] / 100 * this.firstPaymentPercent;
+                this.firstPayment = this.car.price / 100 * this.firstPaymentPercent;
                 this.calculateMonthlyPayment();
             },
             getCookie(name) {
