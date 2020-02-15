@@ -63,19 +63,27 @@
     header {
         z-index: 20;
         width: 100%;
-        margin-top: -50px;
+        margin-top: -110px;
         position: fixed;
-        -webkit-transition: margin ease-in 0.3s, opacity linear 0.4s;
-        -moz-transition: margin ease-in 0.3s, opacity linear 0.4s;
-        -o-transition: margin ease-in 0.3s, opacity linear 0.4s;
-        transition: margin ease-in 0.3s, opacity linear 0.4s;
+        -webkit-transition: all ease-in 0.2s;
+        -moz-transition: all ease-in 0.2s;
+        -o-transition: all ease-in 0.2s;
+        transition: all ease-in 0.2s;
 
-        opacity: 0;
+
+        height: 100px;
+        background-color: #fff;
+        display: flex;
+        align-items: flex-end;
 
         &.show {
-            margin-top: 0;
+            margin-top: -60px;
             opacity: 1;
             box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+
+            .logo-wrap {
+                opacity: 1;
+            }
         }
 
         &.absolute {
@@ -86,6 +94,11 @@
             padding: 10px 15px 5px;
             display: flex;
             justify-content: space-between;
+            opacity: 0;
+            -webkit-transition: opacity ease-in 0.1s;
+            -moz-transition: opacity ease-in 0.1s;
+            -o-transition: opacity ease-in 0.1s;
+            transition: opacity ease-in 0.1s;
 
             .logo-bright-park {
                 width: 35%;
