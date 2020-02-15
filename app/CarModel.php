@@ -19,7 +19,15 @@ class CarModel extends Model
      */
     public function types_preview()
     {
-        return $this->belongsToMany('App\CarType')->withPivot('preview')->wherePivot('preview', 1);
+        return $this->belongsToMany('App\CarType')->using('App\CarModelCarType')->withPivot('preview')->wherePivot('preview', 1);
+    }
+
+    /**
+     * Получить модели с ценам по кузовам.
+     */
+    public function prices()
+    {
+        return $this->hasOne('App\CarType');
     }
 
     /**
