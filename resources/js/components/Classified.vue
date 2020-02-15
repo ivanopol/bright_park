@@ -67,12 +67,8 @@
         </div>
 
         <div class="button-wrapper-row">
-            <button class="btn-half-secondary">
-                <a href='/trade_in_cash'>Наличный расчет</a>
-            </button>
-            <button class="btn-half-primary">
-                <a href="" id="creditButton">В кредит</a>
-            </button>
+            <a class="btn-half-secondary" href='/trade_in_cash'>Наличный расчет</a>
+            <a class="btn-half-primary" href="" id="creditButton">В кредит</a>
         </div>
     </section>
 </template>
@@ -279,6 +275,11 @@
 </script>
 
 <style lang="scss">
+
+    #special_offer_text {
+        font-size: 16px;
+        line-height: 1.4;
+    }
 
     .dropdown-group {
         margin: 0 30px;

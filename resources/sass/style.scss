@@ -1045,8 +1045,7 @@ footer {
     width: 50px;
     height: 50px;
     background-color: #ff8351;
-    color: #000000;
-    box-shadow: 0 0 0px 7px rgba(255, 131, 81, 0.28);
+    color: #fff;
 }
 
 .buy-step-number {
@@ -1104,6 +1103,10 @@ footer {
     align-items: center;
     justify-content: center;
     margin: 0 auto 10px;
+    -webkit-transition: all ease-out 0.5s;
+    -moz-transition: all ease-out 0.5s;
+    -o-transition: all ease-out 0.5s;
+    transition: all ease-out 0.5s;
 }
 
 .divider {
@@ -1226,36 +1229,26 @@ footer {
 
 .btn-half-primary,
 .btn-half-secondary {
+    font-family: PragmaticaLightC, Helvetica, sans-serif;
     width: 47%;
     text-transform: uppercase;
-    padding: 11px 9px;
+    padding: 14px 15px 10px;
     text-align: center;
     border: 2px solid #000;
-    border-radius: 8px;
-    margin-bottom: 1%;
-
-    a {
-        font-weight: bold;
-        font-size: 14px;
-        line-height: 18px;
-        text-transform: uppercase;
-    }
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 12px;
 }
 
 .btn-half-secondary {
     background-color: transparent;
-
-    a {
-        color: #000;
-    }
+    color: #000;
 }
 
 .btn-half-primary {
-    background-color: #000;
-
-    a {
-        color: #fff;
-    }
+    background-color: #FF8351;
+    border: 2px solid #FF8351;
+    color: #fff;
 }
 
 .progressbar-wrapper {
