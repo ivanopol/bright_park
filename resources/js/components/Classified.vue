@@ -66,10 +66,6 @@
             <p>Предложение действует до 16 января</p>
         </div>
 
-        <div class="button-wrapper-row">
-            <a class="btn-half-secondary" href='/trade_in_cash'>Наличный расчет</a>
-            <a class="btn-half-primary" href="" id="creditButton">В кредит</a>
-        </div>
     </section>
 </template>
 
@@ -417,8 +413,7 @@
     }
 
     .credit-profit-text {
-        margin: 5% 5% 0;
-        padding: 5% 5% 0;
+        padding: 5%;
 
         ul {
             list-style: none;
