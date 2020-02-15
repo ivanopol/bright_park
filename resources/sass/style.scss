@@ -1268,7 +1268,8 @@ footer {
             position: absolute;
             left: 0;
             background: rgb(255,131,81);
-            background: linear-gradient(90deg, rgba(255,131,81,1) 0%, rgba(255,182,119,1) 70%);
+            background: url(/build/images/icons/progressbar.svg) repeat-x,linear-gradient(90deg, rgba(255,131,81,1) 0%, rgba(255,182,119,1) 70%);
+
         }
 
         &.step2::before {
