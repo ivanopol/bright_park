@@ -8,6 +8,6 @@ class CarModelCarType extends Pivot
 {
     protected $fillable = ['car_model_id', 'car_type_id', 'preview', 'price', 'special_price'];
 
-    //protected $table = 'car_model_car_type';
+    protected $table = 'car_model_car_type';
 
 }

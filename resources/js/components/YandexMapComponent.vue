@@ -58,7 +58,8 @@
                 let geolocation = ymaps.geolocation,
                     myMap = new ymaps.Map('map', {
                         center: this.coordinates,
-                        zoom: 10
+                        zoom: 15,
+                        controls: ['smallMapDefaultSet']
                     }, {
                         searchControlProvider: 'yandex#search'
                     }),
@@ -73,12 +74,10 @@
                         // Свойства.
                         properties: {
                             // Контент метки.
-                            iconContent: 'Брайт Парк',
                         }
                     }, {
                         // Опции.
                         // Иконка метки будет растягиваться под размер ее содержимого.
-                        preset: 'islands#redStretchyIcon',
                         // Метку можно перемещать.
                         draggable: false
                     });
