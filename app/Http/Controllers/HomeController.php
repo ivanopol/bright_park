@@ -96,7 +96,6 @@ class HomeController extends Controller
 
         $raw = new AutoruService();
         $brands = $raw->getBrands();
-
         return view('model_details', [
             'brands' => $brands,
             'models' => $models,

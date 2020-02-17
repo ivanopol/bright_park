@@ -82,7 +82,7 @@
                     },
                 'sliderTwo':
                     {
-                        value: 12,
+                        value: 60,
                         marks: [12, 60],
                         min: 12,
                         max: 60
@@ -91,14 +91,14 @@
                 ladaFinancePercentRate: 12,
                 specialPercentRate: 5,
                 tradeInPrice: 0,
-                carPrice: this.car.price,
+                carPrice: this.car['price'],
                 monthlyPaymentRegularProgram: 0,
                 monthlyPaymentLadaFinanceProgram: 0,
                 monthlyPaymentSpecialProgram: 0,
                 firstPaymentPercent: 15,
                 annualPercent: 12,
-                firstPayment: this.car.price / 100 * 15,
-                period: 12
+                firstPayment: this.car['price'] / 100 * 15,
+                period: 60
             }
         },
         methods: {
@@ -107,7 +107,7 @@
                 this.calculateMonthlyPayment();
             },
             changeFirstPayment() {
-                this.firstPayment = this.car.price / 100 * this.firstPaymentPercent;
+                this.firstPayment = this.car['price'] / 100 * this.firstPaymentPercent;
                 this.calculateMonthlyPayment();
             },
             getCookie(name) {
@@ -149,6 +149,10 @@
             if (this.getCookie('trade_in_price') != null && this.getCookie('trade_in_price') > 0) {
                 this.firstPayment = this.getCookie('trade_in_price');
                 this.calculatePercentFromTradeInPrice();
+                this.calculateMonthlyPayment();
+            } else {
+                this.firstPaymentPercent = 50;
+                this.changeFirstPayment();
                 this.calculateMonthlyPayment();
             }
         },
