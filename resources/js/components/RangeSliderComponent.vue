@@ -16,7 +16,7 @@
             <div class="credit-profit-text">Первоначальный взнос</div>
 
             <div class="range-slider-wrapper">
-                <vue-slider v-model="firstPaymentPercent" :interval="1" :marks="sliderOne.marks" :drag-on-click="true"
+                <vue-slider v-model="firstPaymentPercent" :height="6" :interval="1" :dotSize="25" :marks="sliderOne.marks" :drag-on-click="true"
                             :min="sliderOne.min" :max="sliderOne.max" v-on:change="changeFirstPayment"/>
             </div>
 
@@ -27,7 +27,7 @@
             <div class="credit-profit-text">Срок в месяцах</div>
 
             <div class="range-slider-wrapper">
-                <vue-slider v-model="period" :interval="1" :marks="sliderTwo.marks" :drag-on-click="true"
+                <vue-slider v-model="period" :height="6" :interval="1" :dotSize="25" :marks="sliderTwo.marks" :drag-on-click="true"
                             :min="sliderTwo.min" :max="sliderTwo.max" v-on:change="changePeriod" :change="changePeriod"/>
             </div>
 
@@ -39,13 +39,13 @@
         <div class="radio-buttons-group">
             <ul>
                 <li><input id="program_1" value="p_1" type="radio" name="program" v-model="picked" >
-                    <label for="program_1">Обычная программа <span class="program-cost">{{monthlyPaymentRegularProgram.toFixed(2)}}</span> руб./мес</label>
+                    <label for="program_1">Обычная программа <span class="program-cost">{{monthlyPaymentRegularProgram.toFixed(0)}}</span> руб./мес</label>
                 </li>
                 <li><input id="program_2" value="p_2" type="radio" name="program" v-model="picked">
-                    <label for="program_2">Программа LADA Finance <span class="program-cost" >{{monthlyPaymentLadaFinanceProgram.toFixed(2)}}</span> руб./мес</label>
+                    <label for="program_2">Программа LADA Finance <span class="program-cost" >{{monthlyPaymentLadaFinanceProgram.toFixed(0)}}</span> руб./мес</label>
                 </li>
                 <li><input id="program_3" value="p_3" type="radio" name="program" v-model="picked">
-                    <label for="program_3">Специальный рассчет <span class="program-cost">{{monthlyPaymentSpecialProgram.toFixed(2)}}</span> руб./мес</label>
+                    <label for="program_3">Специальный рассчет <span class="program-cost">{{monthlyPaymentSpecialProgram.toFixed(0)}}</span> руб./мес</label>
                 </li>
             </ul>
         </div>
@@ -73,16 +73,27 @@
         data() {
             return {
                 picked: 'p_1',
-                'sliderOne':
+                sliderOne:
                     {
-                        value: 15,
-                        marks: [15, 50],
+                       // value: 30,
+                        //marks: [0, 50],
+                        marks: {
+                            '0': {
+                                label: '0%'
+                            },
+                            '15': {
+                                label: '15%'
+                            },
+                            '50':{
+                                label: '50%'
+                            },
+                        },
                         min: 15,
                         max: 50
                     },
                 'sliderTwo':
                     {
-                        value: 60,
+                      //  value: 60,
                         marks: [12, 60],
                         min: 12,
                         max: 60
@@ -91,13 +102,13 @@
                 ladaFinancePercentRate: 12,
                 specialPercentRate: 5,
                 tradeInPrice: 0,
-                carPrice: this.car['price'],
+                carPrice: this.car[0].price,
                 monthlyPaymentRegularProgram: 0,
                 monthlyPaymentLadaFinanceProgram: 0,
                 monthlyPaymentSpecialProgram: 0,
-                firstPaymentPercent: 15,
+                firstPaymentPercent: 30,
                 annualPercent: 12,
-                firstPayment: this.car['price'] / 100 * 15,
+                firstPayment: this.car[0].price / 100 * 15,
                 period: 60
             }
         },
@@ -107,7 +118,7 @@
                 this.calculateMonthlyPayment();
             },
             changeFirstPayment() {
-                this.firstPayment = this.car['price'] / 100 * this.firstPaymentPercent;
+                this.firstPayment = Math.round(this.car[0].price / 100 * this.firstPaymentPercent);
                 this.calculateMonthlyPayment();
             },
             getCookie(name) {
@@ -125,21 +136,21 @@
                 let res1 = monthlyPercentRate * mathPow1;
                 let res2 = mathPow1 - 1;
                 let annualCoefficient = (res1 / res2);
-                this.monthlyPaymentRegularProgram = debt * annualCoefficient;
+                this.monthlyPaymentRegularProgram = Math.round(debt * annualCoefficient);
 
                 monthlyPercentRate = this.ladaFinancePercentRate / 12 / 100;
                 mathPow1 = Math.pow(1 + monthlyPercentRate, this.period);
                 res1 = monthlyPercentRate * mathPow1;
                 res2 = mathPow1 - 1;
                 annualCoefficient = (res1 / res2);
-                this.monthlyPaymentLadaFinanceProgram = debt * annualCoefficient;
+                this.monthlyPaymentLadaFinanceProgram = Math.round(debt * annualCoefficient);
 
                 monthlyPercentRate = this.specialPercentRate / 12 / 100;
                 mathPow1 = Math.pow(1 + monthlyPercentRate, this.period);
                 res1 = monthlyPercentRate * mathPow1;
                 res2 = mathPow1 - 1;
                 annualCoefficient = (res1 / res2);
-                this.monthlyPaymentSpecialProgram = debt * annualCoefficient;
+                this.monthlyPaymentSpecialProgram = Math.round(debt * annualCoefficient);
             },
             selectCreditProgram(input) {
                 this.annualPercent = input.percentRate;
@@ -149,10 +160,6 @@
             if (this.getCookie('trade_in_price') != null && this.getCookie('trade_in_price') > 0) {
                 this.firstPayment = this.getCookie('trade_in_price');
                 this.calculatePercentFromTradeInPrice();
-                this.calculateMonthlyPayment();
-            } else {
-                this.firstPaymentPercent = 50;
-                this.changeFirstPayment();
                 this.calculateMonthlyPayment();
             }
         },
@@ -289,6 +296,10 @@
         border-color: #ff8351;
     }
 
+    .vue-slider:hover .vue-slider-rail {
+        background-color: #9d9f9e;
+    }
+
     .vue-slider:hover .vue-slider-dot-handle {
         border-color: #ff8351;
     }
@@ -298,15 +309,31 @@
     }
 
     .vue-slider:hover .vue-slider-mark-step-active {
-        box-shadow: 0 0 0 2px #ff8351;
+        box-shadow: none;
+        background-color: transparent;
     }
 
     .vue-slider .vue-slider-mark-step-active {
-        box-shadow: 0 0 0 2px #ff8351;
+        box-shadow: none !important;
+        background-color: transparent;
     }
 
     .vue-slider-mark-step {
-        box-shadow: 0 0 0 2px #ff8351;
+        box-shadow: none !important;
+        background-color: transparent;
+    }
+
+    .vue-slider-rail {
+        background-color: #9d9f9e;
+    }
+
+    .vue-slider-mark-label {
+        font-size: 14px;
+        color: #9d9f9e;
+    }
+
+    .vue-slider-ltr .vue-slider-mark-label, .vue-slider-rtl .vue-slider-mark-label {
+        margin-top: 16px;
     }
 
 </style>
