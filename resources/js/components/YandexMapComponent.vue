@@ -40,7 +40,11 @@
                             params: {
                                 routingMode: 'driving'
                             }
-                        });
+                        },
+                            {
+                                boundsAutoApply: true
+                            }
+                        );
 
                         this.map.geoObjects.add(multiRoute);
                         this.routeExist = true;
@@ -69,8 +73,7 @@
                         // Свойства.
                         properties: {
                             // Контент метки.
-                            iconContent: 'BRIGHT PARK',
-                            hintContent: 'Брайт парк ближе, чем кажется'
+                            iconContent: 'Брайт Парк',
                         }
                     }, {
                         // Опции.

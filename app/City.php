@@ -92,13 +92,15 @@ class City extends Model
         {
             $cities['list'][] = [
                 'value' => $city->alias,
-                'label' => $city->title_ru
+                'label' => $city->title_ru,
+                'coords' => ($city->coordinates)
             ];
 
             if ($city->alias === $city_active) {
                 $cities['active'] = [
                     'value' => $city->alias,
                     'label' => $city->title_ru,
+                    'coords' => ($city->coordinates)
                 ];
             }
         }

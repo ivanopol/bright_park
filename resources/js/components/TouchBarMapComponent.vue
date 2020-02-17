@@ -31,13 +31,10 @@
                             // Свойства.
                             properties: {
                                 // Контент метки.
-                                iconContent: 'Брайт парк',
-                                hintContent: 'Брайт парк ближе, чем кажется'
                             }
                         }, {
                             // Опции.
                             // Иконка метки будет растягиваться под размер ее содержимого.
-                            preset: 'islands#redStretchyIcon',
                             // Метку можно перемещать.
                             draggable: false
                         });
@@ -60,8 +57,12 @@
                             ],
                             params: {
                                 routingMode: 'driving'
+                            },
+                        },
+                            {
+                                boundsAutoApply: true
                             }
-                        });
+                        );
 
                         myMap.geoObjects.add(multiRoute);
                     });

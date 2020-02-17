@@ -62,7 +62,7 @@
         </section>
         <section id="map_window" :class="{ active: openMap }">
             <div class="map_wrap">
-                <touch-bar-map-component :coordinates="[57.997388, 56.306636]"></touch-bar-map-component>
+                <touch-bar-map-component :coordinates="cities.active.coords.split(', ')"></touch-bar-map-component>
             </div>
         </section>
     </div>
