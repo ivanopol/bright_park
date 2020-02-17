@@ -102,13 +102,13 @@
                 ladaFinancePercentRate: 12,
                 specialPercentRate: 5,
                 tradeInPrice: 0,
-                carPrice: this.car[0].price,
+                carPrice: this.car[0].special_price,
                 monthlyPaymentRegularProgram: 0,
                 monthlyPaymentLadaFinanceProgram: 0,
                 monthlyPaymentSpecialProgram: 0,
                 firstPaymentPercent: 30,
                 annualPercent: 12,
-                firstPayment: this.car[0].price / 100 * 15,
+                firstPayment: this.car[0].special_price / 100 * 15,
                 period: 60
             }
         },
@@ -118,7 +118,7 @@
                 this.calculateMonthlyPayment();
             },
             changeFirstPayment() {
-                this.firstPayment = Math.round(this.car[0].price / 100 * this.firstPaymentPercent);
+                this.firstPayment = Math.round(this.car[0].special_price / 100 * this.firstPaymentPercent);
                 this.calculateMonthlyPayment();
             },
             getCookie(name) {
