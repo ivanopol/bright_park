@@ -46,7 +46,7 @@
             </div>
         </div>
 
-        <range-slider-component car='car_attrs' v-if="grade === 2"></range-slider-component>
+        <range-slider-component :car='car_attrs' v-if="grade === 2"></range-slider-component>
 
 
         <div class="progressbar-wrapper">
