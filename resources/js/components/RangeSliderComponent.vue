@@ -36,6 +36,10 @@
             </div>
         </div>
 
+        <div class="trigger-wrap" v-if="trigger">
+            <p class="trigger-wrap-text">Триггер ...</p>
+        </div>
+
         <div class="radio-buttons-group">
             <ul>
                 <li><input id="program_1" value="p_1" type="radio" name="program" v-model="picked" >
@@ -73,6 +77,7 @@
         data() {
             return {
                 picked: 'p_1',
+                trigger: false,
                 sliderOne:
                     {
                         marks: {
@@ -89,7 +94,7 @@
                         min: 0,
                         max: 50
                     },
-                'sliderTwo':
+                sliderTwo:
                     {
                         marks: [12, 60],
                         min: 12,
@@ -116,6 +121,10 @@
             },
             changeFirstPayment() {
                 this.firstPayment = Math.round(this.car[0].price / 100 * this.firstPaymentPercent);
+
+                var percent_from_value = Math.round( this.firstPayment/this.car[0].price * 100);
+
+                this.trigger = percent_from_value < 15 ? true : false;
                 this.calculateMonthlyPayment();
             },
             getCookie(name) {
