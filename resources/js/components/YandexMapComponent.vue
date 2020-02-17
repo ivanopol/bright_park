@@ -1,75 +1,91 @@
 <template>
-    <div class="map-wrapper">
-        <div id="map" class="map"></div>
-    </div>
+    <section>
+        <div style="padding-bottom: 2%">
+            <a class="btn" v-on:click="createRoute">Проложить маршрут</a>
+        </div>
+        <div class="map-wrapper">
+            <div id="map" class="map"></div>
+        </div>
+    </section>
 </template>
 
 <script>
     export default {
         name: "YandexMapComponent",
         props: ['coordinates'],
+        data: () => ({
+            geolocation: null,
+            userLocation: null,
+            brightParkLocation: null,
+            map: null,
+            routeExist: false
+        }),
         methods: {
-            createMap: function(coords) {
-                ymaps.ready(init);
-
-                function init() {
-                    var geolocation = ymaps.geolocation,
-                        myMap = new ymaps.Map('map', {
-                            center: coords,
-                            zoom: 10
-                        }, {
-                            searchControlProvider: 'yandex#search'
-                        }),
-
-                        // Создаем геообъект с типом геометрии "Точка".
-                        myGeoObject = new ymaps.GeoObject({
-                            // Описание геометрии.
-                            geometry: {
-                                type: "Point",
-                                coordinates: coords
-                            },
-                            // Свойства.
-                            properties: {
-                                // Контент метки.
-                                iconContent: 'BRIGHT PARK',
-                                hintContent: 'Брайт парк ближе, чем кажется'
-                            }
-                        }, {
-                            // Опции.
-                            // Иконка метки будет растягиваться под размер ее содержимого.
-                            preset: 'islands#blackStretchyIcon',
-                            // Метку можно перемещать.
-                            draggable: false
-                        });
-
-                    myMap.geoObjects.add(myGeoObject);
-
-                    geolocation.get({
+            createRoute: function () {
+                if(!this.routeExist){
+                    this.geolocation.get({
                         provider: 'browser',
                         mapStateAutoApply: true
-                    }).then(function (result) {
+                    }).then((result) => {
                         result.geoObjects.options.set('preset', 'islands#redCircleIcon');
                         result.geoObjects.get(0).properties.set({
                             balloonContentBody: 'Мое местоположение'
                         });
-                        myMap.geoObjects.add(result.geoObjects);
+                        this.map.geoObjects.add(result.geoObjects);
 
                         var multiRoute = new ymaps.multiRouter.MultiRoute({
                             referencePoints: [result.geoObjects.get(0).geometry.getCoordinates(),
-                                myGeoObject
+                                this.brightParkLocation
                             ],
                             params: {
                                 routingMode: 'driving'
                             }
                         });
 
-                        myMap.geoObjects.add(multiRoute);
+                        this.map.geoObjects.add(multiRoute);
+                        this.routeExist = true;
                     });
                 }
             }
         },
-        mounted () {
-            this.createMap(this.coordinates);
+
+        mounted() {
+            ymaps.ready(()=>{
+                let geolocation = ymaps.geolocation,
+                    myMap = new ymaps.Map('map', {
+                        center: this.coordinates,
+                        zoom: 10
+                    }, {
+                        searchControlProvider: 'yandex#search'
+                    }),
+
+                    // Создаем геообъект с типом геометрии "Точка".
+                    brightParkLocation = new ymaps.GeoObject({
+                        // Описание геометрии.
+                        geometry: {
+                            type: "Point",
+                            coordinates: this.coordinates
+                        },
+                        // Свойства.
+                        properties: {
+                            // Контент метки.
+                            iconContent: 'BRIGHT PARK',
+                            hintContent: 'Брайт парк ближе, чем кажется'
+                        }
+                    }, {
+                        // Опции.
+                        // Иконка метки будет растягиваться под размер ее содержимого.
+                        preset: 'islands#redStretchyIcon',
+                        // Метку можно перемещать.
+                        draggable: false
+                    });
+
+                myMap.geoObjects.add(brightParkLocation);
+
+                this.brightParkLocation = brightParkLocation;
+                this.geolocation = geolocation;
+                this.map = myMap;
+            });
         },
     }
 </script>

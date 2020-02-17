@@ -61,9 +61,8 @@
             </div>
         </section>
         <section id="map_window" :class="{ active: openMap }">
-            <div class="close" @click="closeMap"></div>
             <div class="map_wrap">
-                <yandex-map-component :coordinates="[57.997388, 56.306636]"></yandex-map-component>
+                <touch-bar-map-component :coordinates="[57.997388, 56.306636]"></touch-bar-map-component>
             </div>
         </section>
     </div>
@@ -113,6 +112,7 @@
                 window.location.href = window.location.protocol + '//' + window.location.host + '/' + event.value;
             },
             openMapWindow: function() {
+                console.log(this.cities);
                 return this.openMap = !this.openMap;
             },
             closeMap: function() {
