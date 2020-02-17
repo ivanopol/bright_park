@@ -67,9 +67,8 @@
                     214-88-00</p>
                 <p>Брайт парк ближе, чем кажется<br> Проложите маршрут до&nbsp;ближайшего салона</p>
                 <a class="btn" href="#" onclick="return false;">Проложить маршрут</a>
+                <yandex-map-component :coordinates='@json($data['coordinates'])'></yandex-map-component>
             </div>
-
-            <yandex-map-component :coordinates='@json($data['coordinates'])'></yandex-map-component>
         </footer>
     </div>
 @endsection

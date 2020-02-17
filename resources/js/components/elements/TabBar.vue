@@ -13,7 +13,7 @@
                     <span>Звонок</span>
                     </a>
                 </li>
-                <li>
+                <li @click="openMapWindow">
                     <icon-route></icon-route>
                     <span>Маршрут</span>
                 </li>
@@ -60,6 +60,12 @@
                 </div>
             </div>
         </section>
+        <section id="map_window" :class="{ active: openMap }">
+            <div class="close" @click="closeMap"></div>
+            <div class="map_wrap">
+                <yandex-map-component :coordinates="[57.997388, 56.306636]"></yandex-map-component>
+            </div>
+        </section>
     </div>
 </template>
 
@@ -87,6 +93,7 @@
         data: function () {
             return {
                 open: false,
+                openMap: false,
                 Deselect: {
                     render: createElement => createElement('span'),
                 },
@@ -104,7 +111,13 @@
             },
             selected: function(event) {
                 window.location.href = window.location.protocol + '//' + window.location.host + '/' + event.value;
-            }
+            },
+            openMapWindow: function() {
+                return this.openMap = !this.openMap;
+            },
+            closeMap: function() {
+                return this.openMap = false;
+            },
         },
         components: {
             IconMenu,
@@ -454,6 +467,70 @@
                 }
 
             }
+        }
+    }
+
+    #map_window {
+        display: block;
+        position: fixed;
+        width: 100vw;
+        height: 60vh;
+        background-color: #000;
+        top:40vh;
+        z-index:30;
+        margin-left: -200vw;
+        /* Переход */
+        -webkit-transition: all ease-in 0.3s;
+        -moz-transition: all ease-in 0.3s;
+        -o-transition: all ease-in 0.3s;
+        transition: all ease-in 0.3s;
+
+        .close {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 20px;
+            height: 20px;
+            color: #FF8351;
+            font-weight: bold;
+            padding: 12px;
+            box-sizing: content-box;
+            border-radius: 20px;
+
+            &:before,
+            &:after {
+                content: "";
+                width: 25px;
+                height: 2px;
+                background-color: #FF8351;
+                display: block;
+                position: absolute;
+            }
+
+            &:before {
+                -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+                top: 20px;
+                left: 10px;
+            }
+
+            &:after {
+                -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+                left: 10px;
+                top: 20px;
+            }
+        }
+
+        &.active {
+            margin-left: 0;
+        }
+
+        .map_wrap {
+            padding-top: 10%;
+            padding-bottom: 10%;
+            height: 50%;
+            max-height: 60%;
         }
     }
 </style>
