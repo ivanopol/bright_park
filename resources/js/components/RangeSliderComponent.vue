@@ -43,13 +43,13 @@
         <div class="radio-buttons-group">
             <ul>
                 <li><input id="program_1" value="p_1" type="radio" name="program" v-model="picked" >
-                    <label for="program_1">Обычная программа <span class="program-cost">{{monthlyPaymentRegularProgram.toFixed(0)}}</span> руб./мес</label>
+                    <label for="program_1">Обычная программа <span class="program-cost">{{monthlyPaymentRegularProgram | formatPrice}}</span> руб./мес</label>
                 </li>
                 <li><input id="program_2" value="p_2" type="radio" name="program" v-model="picked">
-                    <label for="program_2">Программа LADA Finance <span class="program-cost" >{{monthlyPaymentLadaFinanceProgram.toFixed(0)}}</span> руб./мес</label>
+                    <label for="program_2">Программа LADA Finance <span class="program-cost" >{{monthlyPaymentLadaFinanceProgram | formatPrice}}</span> руб./мес</label>
                 </li>
                 <li><input id="program_3" value="p_3" type="radio" name="program" v-model="picked">
-                    <label for="program_3">Специальный рассчет <span class="program-cost">{{monthlyPaymentSpecialProgram.toFixed(0)}}</span> руб./мес</label>
+                    <label for="program_3">Специальный рассчет <span class="program-cost">{{monthlyPaymentSpecialProgram | formatPrice}}</span> руб./мес</label>
                 </li>
             </ul>
         </div>
@@ -114,7 +114,29 @@
                 period: 60
             }
         },
+        filters: {
+            formatPrice: function(price) {
+                if (!parseInt(price)) { return "";}
+                if(price > 999) {
+                    var priceString = (price / 1).toFixed(0);
+                    var priceArray = priceString.split("").reverse();
+                    var index = 0;
+                    while (priceArray.length > index + 3) {
+                        priceArray.splice(index+3, 0, " ");
+                        index +=4;
+                    }
+                    return priceArray.reverse().join("");
+                } else {
+                    return (price / 1).toFixed(0);
+                }
+            }
+        },
         methods: {
+            inputChangePayment() {
+
+                this.firstPaymentPercent = Math.round( this.firstPayment/this.car[0].price * 100);
+                console.log(this.firstPaymentPercent);
+            },
             changePeriod() {
                 this.$emit('changePeriod', this.period);
                 this.calculateMonthlyPayment();
@@ -122,7 +144,7 @@
             changeFirstPayment() {
                 this.firstPayment = Math.round(this.car[0].price / 100 * this.firstPaymentPercent);
 
-                var percent_from_value = Math.round( this.firstPayment/this.car[0].price * 100);
+                let percent_from_value = Math.round( this.firstPayment/this.car[0].price * 100);
 
                 this.trigger = percent_from_value < 15 ? true : false;
                 this.calculateMonthlyPayment();
@@ -247,7 +269,7 @@
 
     .range-slider-wrapper {
         width: 75vw;
-        margin: 0 auto 20px;
+        margin: 0 auto 25px;
     }
 
     .radio-buttons-group {
@@ -263,7 +285,7 @@
 
                 .program-cost {
                     font-family: PragmaticaLightCBold, Helvetica, sans-serif;
-                    font-size: 14px;
+                    font-size: 16px;
                     font-weight: normal;
                 }
             }
