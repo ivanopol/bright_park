@@ -75,25 +75,22 @@
                 picked: 'p_1',
                 sliderOne:
                     {
-                       // value: 30,
-                        //marks: [0, 50],
                         marks: {
-                            '0': {
+                            0: {
                                 label: '0%'
                             },
-                            '15': {
+                            15: {
                                 label: '15%'
                             },
-                            '50':{
+                            50:{
                                 label: '50%'
                             },
                         },
-                        min: 15,
+                        min: 0,
                         max: 50
                     },
                 'sliderTwo':
                     {
-                      //  value: 60,
                         marks: [12, 60],
                         min: 12,
                         max: 60
@@ -106,9 +103,9 @@
                 monthlyPaymentRegularProgram: 0,
                 monthlyPaymentLadaFinanceProgram: 0,
                 monthlyPaymentSpecialProgram: 0,
-                firstPaymentPercent: 30,
+                firstPaymentPercent: 50,
                 annualPercent: 12,
-                firstPayment: this.car[0].price / 100 * 15,
+                firstPayment: Math.round(this.car[0].price / 100 * 15),
                 period: 60
             }
         },
@@ -229,7 +226,7 @@
         input {
             border-radius: 18px;
             box-shadow: none;
-            border: 1px solid #606060;
+            border: 2px solid #9d9f9e;
             width: 20%;
             background: white;
             padding: 5px 10px;
@@ -269,7 +266,6 @@
         }
     }
 
-
     .vue-slider-process {
         background-color: #ff8351;
         border-radius: 15px;
@@ -308,17 +304,19 @@
         box-shadow: #ff8351;
     }
 
-    .vue-slider:hover .vue-slider-mark-step-active {
+/*    .vue-slider .vue-slider-mark-step-active {
         box-shadow: none;
         background-color: transparent;
-    }
+    }*/
 
-    .vue-slider .vue-slider-mark-step-active {
+    .vue-slider .vue-slider-marks :first-child .vue-slider-mark-step,
+    .vue-slider .vue-slider-marks :last-child .vue-slider-mark-step {
         box-shadow: none !important;
         background-color: transparent;
     }
 
-    .vue-slider-mark-step {
+    .vue-slider .vue-slider-marks :first-child .vue-slider-mark-step,
+    .vue-slider .vue-slider-marks :last-child .vue-slider-mark-step {
         box-shadow: none !important;
         background-color: transparent;
     }
@@ -329,11 +327,13 @@
 
     .vue-slider-mark-label {
         font-size: 14px;
-        color: #9d9f9e;
+        color: #666;
     }
+
 
     .vue-slider-ltr .vue-slider-mark-label, .vue-slider-rtl .vue-slider-mark-label {
         margin-top: 16px;
     }
+
 
 </style>
