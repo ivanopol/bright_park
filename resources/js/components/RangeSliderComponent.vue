@@ -12,46 +12,42 @@
             </ul>
         </div>
 
+        <div class="credit-wrap">
+            <div class="credit-profit-text">Первоначальный взнос</div>
 
-        <div class="credit-profit-text">
-            <p>
-                Первоначальный взнос
-            </p>
-        </div>
+            <div class="range-slider-wrapper">
+                <vue-slider v-model="firstPaymentPercent" :interval="1" :marks="sliderOne.marks" :drag-on-click="true"
+                            :min="sliderOne.min" :max="sliderOne.max" v-on:change="changeFirstPayment"/>
+            </div>
 
-        <div class="range-slider-wrapper">
-            <vue-slider v-model="firstPaymentPercent" :interval="1" :marks="sliderOne.marks" :drag-on-click="true"
-                        :min="sliderOne.min" :max="sliderOne.max" v-on:change="changeFirstPayment"/>
-        </div>
+            <div class="disabled-input">
+                <span class="credit-first-payment"><input name="first-payment" v-model="firstPayment"/> руб.</span>
+            </div>
 
-        <div class="disabled-input">
-            <input readonly v-model="firstPayment"/> руб.
-        </div>
+            <div class="credit-profit-text">Срок в месяцах</div>
 
-        <div class="credit-profit-text">
-            <p>Срок в месяцах</p>
-        </div>
+            <div class="range-slider-wrapper">
+                <vue-slider v-model="period" :interval="1" :marks="sliderTwo.marks" :drag-on-click="true"
+                            :min="sliderTwo.min" :max="sliderTwo.max" v-on:change="changePeriod" :change="changePeriod"/>
+            </div>
 
-        <div class="range-slider-wrapper">
-            <vue-slider v-model="period" :interval="1" :marks="sliderTwo.marks" :drag-on-click="true"
-                        :min="sliderTwo.min" :max="sliderTwo.max" v-on:change="changePeriod" :change="changePeriod"/>
-        </div>
-
-        <div class="disabled-input">
-            <input readonly v-model="period"/> мес.
+            <div class="disabled-input">
+                <span class="credit-period"><input name="period" v-model="period"/> мес.</span>
+            </div>
         </div>
 
         <div class="radio-buttons-group">
-            <div>
-                <input checked="checked" type="radio" name="program"> Обычная программа <span>{{monthlyPaymentRegularProgram.toFixed(2)}}</span> руб./мес
-            </div>
-            <div>
-                <input type="radio" name="program"> Программа LADA Finance <span>{{monthlyPaymentLadaFinanceProgram.toFixed(2)}}</span> руб./мес<br>
-            </div>
-            <div>
-                <input type="radio" name="program"> Специальный рассчет <span>{{monthlyPaymentSpecialProgram.toFixed(2)}}</span> руб./мес<br>
-
-            </div>
+            <ul>
+                <li><input id="program_1" value="p_1" type="radio" name="program" v-model="picked" >
+                    <label for="program_1">Обычная программа <span class="program-cost">{{monthlyPaymentRegularProgram.toFixed(2)}}</span> руб./мес</label>
+                </li>
+                <li><input id="program_2" value="p_2" type="radio" name="program" v-model="picked">
+                    <label for="program_2">Программа LADA Finance <span class="program-cost" >{{monthlyPaymentLadaFinanceProgram.toFixed(2)}}</span> руб./мес</label>
+                </li>
+                <li><input id="program_3" value="p_3" type="radio" name="program" v-model="picked">
+                    <label for="program_3">Специальный рассчет <span class="program-cost">{{monthlyPaymentSpecialProgram.toFixed(2)}}</span> руб./мес</label>
+                </li>
+            </ul>
         </div>
 
         <div class="buttons_other">
@@ -76,6 +72,7 @@
         },
         data() {
             return {
+                picked: 'p_1',
                 'sliderOne':
                     {
                         value: 15,
@@ -159,6 +156,109 @@
 </script>
 
 <style lang="scss">
+    .credit-wrap {
+        width: 75vw;
+        margin: 40px auto;
+    }
+
+    .credit-profit-text {
+        padding: 5% 0;
+    }
+
+    .conditions {
+        width: 70vw;
+        display: block;
+        margin: 40px auto;
+    }
+
+    .conditions ul li {
+        margin-bottom: 5px;
+        display: flex;
+
+        &>span {
+            float: left;
+            display: block;
+        }
+
+        i {
+            color: #ff8351;
+        }
+
+        .check {
+            width: 16px;
+            height: auto;
+        }
+
+        span {
+            margin-left: 10px;
+            clear: both;
+        }
+        &::before {
+
+        }
+    }
+
+
+    .disabled-input {
+        display: block;
+        text-align: center;
+
+        .credit-first-payment {
+            input {
+                width: 28%;
+            }
+        }
+
+        .credit-period {
+            input {
+                width: 15%;
+            }
+        }
+
+        input {
+            border-radius: 18px;
+            box-shadow: none;
+            border: 1px solid #606060;
+            width: 20%;
+            background: white;
+            padding: 5px 10px;
+        }
+    }
+
+    .range-slider-wrapper {
+        width: 75vw;
+        margin: 0 auto 20px;
+    }
+
+    .radio-buttons-group {
+        font-size: 14px;
+        display: block;
+        width: 80vw;
+        margin: 0 auto 40px;
+
+        ul {
+            li {
+                margin-bottom: 15px;
+                font-weight: bold;
+
+                .program-cost {
+                    font-family: PragmaticaLightCBold, Helvetica, sans-serif;
+                    font-size: 14px;
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+
+    .radio-buttons-group-option {
+        grid-column: span 1;
+
+        p {
+            grid-column: span 11;
+        }
+    }
+
+
     .vue-slider-process {
         background-color: #ff8351;
         border-radius: 15px;

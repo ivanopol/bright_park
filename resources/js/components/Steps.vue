@@ -13,7 +13,7 @@
             </div>
 
             <div class="buy-step-block">
-                <div class="divided" :class="[ grade == 1 ? 'buy-step-circle-colored' : 'buy-step-circle' ]">
+                <div class="divided" :class="[ grade == 1 || grade == 2 ? 'buy-step-circle-colored' : 'buy-step-circle' ]">
                     <p class="buy-step-number">2</p>
                 </div>
                 <p class="buy-step-text">Рассчитайте платеж</p>
@@ -50,9 +50,10 @@
 
 
         <div class="progressbar-wrapper">
-            <div class="progressbar-line" :class="[ grade === 1 ? 'step2' : '' ]"></div>
+            <div class="progressbar-line" :class="[ grade === 1 || grade === 2 ? 'step2' : '' ]"></div>
             <span class="progressbar-text" v-if="!grade">Осталось всего 2 шага до получения выгодных условий</span>
             <span class="progressbar-text" v-if="grade === 1">Мы готовы выкупить ваш автомобиль на 10% дороже рынка при обмене на новенькую LADA</span>
+            <span class="progressbar-text" v-if="grade === 2">Вы у цели! Закрепите выгодные условия</span>
         </div>
     </section>
 </template>

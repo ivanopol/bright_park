@@ -129,7 +129,6 @@
                         priceArray.splice(index+3, 0, " ");
                         index +=4;
                     }
-                    console.log(priceArray);
                     return priceArray.reverse().join("");
                 } else {
                     return (price / 1).toFixed(0);
@@ -247,12 +246,6 @@
                         this.tradeInEstimation = this.estimation['prices']['tradein']['from'];
                         this.setCookie(this.estimation['prices']['tradein']['from'] + this.estimation['prices']['tradein']['from'] * 0.1)
                     });
-            },
-
-            formatPrice(value) {
-               // let val = (value / 1).toFixed(2).replace('.', ',');
-              //  return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
-                return value;
             },
 
             showPrices: function () {
@@ -431,7 +424,7 @@
         padding-top: 5%;
     }
 
-    .credit-profit-text {
+/*    .credit-profit-text {
         padding: 5%;
 
         ul {
@@ -447,5 +440,5 @@
         .hollow-button {
             border-radius: 25px;
         }
-    }
+    }*/
 </style>
