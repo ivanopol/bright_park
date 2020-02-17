@@ -867,18 +867,18 @@ form {
         }
 
         .trigger-text {
-            font-size: 16px;
+            font-size: 14px;
         }
 
-        @media only screen and (max-width: 340px) {
+/*        @media only screen and (max-width: 340px) {
             .trigger-text {
                 font-size: 14px;
             }
-        }
+        }*/
 
         .trigger-price {
-            font-size: 24px;
-            font-weight: bold;
+            font-size: 22px;
+           // font-weight: bold;
         }
 
         @media only screen and (max-width: 340px) {
@@ -1045,14 +1045,12 @@ footer {
     width: 50px;
     height: 50px;
     background-color: #ff8351;
-    color: #000000;
-    box-shadow: 0 0 0px 7px rgba(255, 131, 81, 0.28);
+    color: #fff;
 }
 
 .buy-step-number {
-    font-size: 20px;
-    font-weight: bold;
-    height: 15px;
+    font-size: 35px;
+    height: 30px;
 }
 
 .buy-step-text {
@@ -1105,6 +1103,10 @@ footer {
     align-items: center;
     justify-content: center;
     margin: 0 auto 10px;
+    -webkit-transition: all ease-out 0.5s;
+    -moz-transition: all ease-out 0.5s;
+    -o-transition: all ease-out 0.5s;
+    transition: all ease-out 0.5s;
 }
 
 .divider {
@@ -1113,11 +1115,18 @@ footer {
 }
 
 .model-choose-text {
-    text-align: center;
+    font-family: PragmaticaLightCBold, Helvetica, sans-serif;
+    text-align: left;
     font-size: 18px;
     line-height: 1.6;
-    font-weight: bold;
     margin: 0 30px;
+}
+
+.option-text {
+    font-family: PragmaticaLightCBold, Helvetica, sans-serif;
+    margin: 10% 30px 5%;
+    text-align: left;
+    font-size: 18px;
 }
 
 #success {
@@ -1161,13 +1170,6 @@ footer {
     margin: 5%;
     text-align: center;
     font-size: 22px;
-}
-
-.option-text {
-    margin: 10% 30px 5%;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
 }
 
 .button-wrapper {
@@ -1227,36 +1229,26 @@ footer {
 
 .btn-half-primary,
 .btn-half-secondary {
+    font-family: PragmaticaLightC, Helvetica, sans-serif;
     width: 47%;
     text-transform: uppercase;
-    padding: 11px 9px;
+    padding: 14px 15px 10px;
     text-align: center;
     border: 2px solid #000;
-    border-radius: 8px;
-    margin-bottom: 1%;
-
-    a {
-        font-weight: bold;
-        font-size: 14px;
-        line-height: 18px;
-        text-transform: uppercase;
-    }
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 12px;
 }
 
 .btn-half-secondary {
     background-color: transparent;
-
-    a {
-        color: #000;
-    }
+    color: #000;
 }
 
 .btn-half-primary {
-    background-color: #000;
-
-    a {
-        color: #fff;
-    }
+    background-color: #FF8351;
+    border: 2px solid #FF8351;
+    color: #fff;
 }
 
 .progressbar-wrapper {
@@ -1266,9 +1258,8 @@ footer {
         display: block;
         height: 50px;
         position: relative;
-        border-radius: 8px;
-        width: 85.51vw;
-        background-color: #ffdcc6;
+        width: 100vw;
+        border: 2px solid #000;
 
         &::before {
             content: "";
@@ -1276,8 +1267,9 @@ footer {
             height: 100%;
             position: absolute;
             left: 0;
-            background-color: #FF8351;
-            border-radius: 8px 0 0 8px;
+            background: rgb(255,131,81);
+            background: url(/build/images/icons/progressbar.svg) repeat-x,linear-gradient(90deg, rgba(255,131,81,1) 0%, rgba(255,182,119,1) 70%);
+
         }
 
         &.step2::before {
@@ -1316,9 +1308,8 @@ footer {
 }
 
 .range-slider-wrapper {
-    width: 82%;
-    margin-right: 5%;
-    margin-left: 5%;
+    width: 75vw;
+    margin: 0 auto 20px;
 }
 
 .radio-buttons-group {
@@ -1473,6 +1464,7 @@ footer {
         }
 
         .btn {
+            font-family: PragmaticaLightC, Helvetica, sans-serif;
             width: 85.51vw;
             border-radius: 50px;
             padding: 14px 15px 10px;
@@ -1495,7 +1487,7 @@ footer {
 .conditions {
     width: 70vw;
     display: block;
-    margin:  0 auto;
+    margin:  5% auto;
 }
 
 .conditions ul li {
@@ -1511,8 +1503,12 @@ footer {
         color: #ff8351;
     }
 
-    span {
+    .check {
+        width: 16px;
+        height: auto;
+    }
 
+    span {
         margin-left: 10px;
         clear: both;
     }
@@ -1545,12 +1541,12 @@ footer {
         width: 100%;
 
         &.granta_1 {
-            background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/granta/lada_granta_sedan.png) no-repeat center center;
+            background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/granta/lada_granta_sedan.jpg) no-repeat center center;
             background-size: cover;
         }
 
         &.granta_2 {
-            background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/vesta/lada_granta_liftback.png) no-repeat center center;
+            background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/granta/lada_granta_liftback.png) no-repeat center center;
             background-size: cover;
         }
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\CarModelCarType;
 use App\Services\AutoruService;
 use App\Services\BasePageService;
 use Illuminate\Http\Request;
@@ -88,6 +89,11 @@ class HomeController extends Controller
         $cities = $city->getCities($this->city);
         $models = CarModel::with('types_preview')->get();
 
+        $car_attrs = CarModelCarType::where([
+            ['car_model_id', '=', $car_model->id],
+            ['car_type_id', '=', $car_type->id],
+        ])->limit(1)->get();
+
         $raw = new AutoruService();
         $brands = $raw->getBrands();
 
@@ -98,6 +104,7 @@ class HomeController extends Controller
             'cities' => $cities,
             'car_model' => $car_model,
             'car_type' => $car_type,
+            'car_attrs' => $car_attrs,
         ]);
     }
 

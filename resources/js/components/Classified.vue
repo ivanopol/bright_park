@@ -38,15 +38,15 @@
             <div class="trigger-block">
                 <div class="trigger-row">
                     <div class="trigger-half trigger-left trigger-text">Рыночная оценка</div>
-                    <div class="trigger-half trigger-right trigger-price">{{formatPrice($data.tradeInEstimation)}}
+                    <div class="trigger-half trigger-right trigger-price">{{$data.tradeInEstimation | formatPrice}}
                         руб.
                     </div>
                 </div>
 
                 <div class="trigger-row">
-                    <div class="trigger-half trigger-left trigger-text">Оценка Bright Park</div>
+                    <div class="trigger-half trigger-left trigger-text">Оценка Брайт Парка</div>
                     <div class="trigger-half trigger-right trigger-price trigger-price-accent">
-                        {{formatPrice($data.brightParkEstimation)}} руб.
+                        {{$data.brightParkEstimation | formatPrice}} руб.
                     </div>
                 </div>
             </div>
@@ -66,14 +66,6 @@
             <p>Предложение действует до 16 января</p>
         </div>
 
-        <div class="button-wrapper-row">
-            <button class="btn-half-secondary">
-                <a href='/trade_in_cash'>Наличный расчет</a>
-            </button>
-            <button class="btn-half-primary">
-                <a href="" id="creditButton">В кредит</a>
-            </button>
-        </div>
     </section>
 </template>
 
@@ -125,6 +117,24 @@
         components: {
             vSelect,
             axios
+        },
+        filters: {
+            formatPrice: function(price) {
+                if (!parseInt(price)) { return "";}
+                if(price > 999) {
+                    var priceString = (price / 1).toFixed(0);
+                    var priceArray = priceString.split("").reverse();
+                    var index = 0;
+                    while (priceArray.length > index + 3) {
+                        priceArray.splice(index+3, 0, " ");
+                        index +=4;
+                    }
+                    console.log(priceArray);
+                    return priceArray.reverse().join("");
+                } else {
+                    return (price / 1).toFixed(0);
+                }
+            }
         },
         methods: {
             mutableLoading() {
@@ -240,8 +250,9 @@
             },
 
             formatPrice(value) {
-                let val = (value / 1).toFixed(2).replace('.', ',');
-                return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+               // let val = (value / 1).toFixed(2).replace('.', ',');
+              //  return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+                return value;
             },
 
             showPrices: function () {
@@ -279,6 +290,11 @@
 </script>
 
 <style lang="scss">
+
+    #special_offer_text {
+        font-size: 16px;
+        line-height: 1.4;
+    }
 
     .dropdown-group {
         margin: 0 30px;
@@ -416,8 +432,7 @@
     }
 
     .credit-profit-text {
-        margin: 5% 5% 0;
-        padding: 5% 5% 0;
+        padding: 5%;
 
         ul {
             list-style: none;

@@ -6,14 +6,14 @@
 
         <div class="buy-steps-wrapper">
             <div class="buy-step-block">
-                <div class="divided" :class="[ grade > 0 ? 'buy-step-circle-colored' : 'buy-step-circle' ]">
+                <div class="divided" :class="[ grade == 0 ? 'buy-step-circle-colored' : 'buy-step-circle' ]">
                     <p class="buy-step-number">1</p>
                 </div>
                 <p class="buy-step-text">Оцените автомобиль</p>
             </div>
 
             <div class="buy-step-block">
-                <div class="divided" :class="[ grade > 1 ? 'buy-step-circle-colored' : 'buy-step-circle' ]">
+                <div class="divided" :class="[ grade == 1 ? 'buy-step-circle-colored' : 'buy-step-circle' ]">
                     <p class="buy-step-number">2</p>
                 </div>
                 <p class="buy-step-text">Рассчитайте платеж</p>
@@ -27,19 +27,27 @@
             </div>
         </div>
 
-        <div class="option-text">
+        <div class="option-text" v-if="!grade">
             <p>Имеете ли вы автомобиль на обмен?</p>
         </div>
 
         <section class="buttons_other mt-20" v-if="!grade">
             <div class="item-buttons-other">
-               <!-- <a href="#" class="btn btn-primary" v-on:click.prevent="!grade">Да, оценить мой атомобиль</a>-->
-                <a href="#" class="btn btn-primary" v-on:click.prevent="gradeShow">Да, оценить мой автомобиль</a>
-                <a href="#" class="btn btn-secondary">У меня нет автомобиля</a>
+                <a href="#" class="btn btn-primary" v-on:click.prevent="gradeShow(1)">Да, оценить мой автомобиль</a>
+                <a href="#" class="btn btn-secondary" v-on:click.prevent="gradeShow(2)">У меня нет автомобиля</a>
             </div>
         </section>
 
-        <classified :brands='brands' v-if="grade === 1"></classified>
+        <div v-if="grade === 1">
+            <classified :brands='brands' ></classified>
+            <div class="button-wrapper-row">
+                <a class="btn-half-secondary" v-on:click.prevent="gradeShow(3)">Наличный расчет</a>
+                <a class="btn-half-primary" id="creditButton" v-on:click.prevent="gradeShow(2)">В кредит</a>
+            </div>
+        </div>
+
+        <range-slider-component car='car_attrs' v-if="grade === 2"></range-slider-component>
+
 
         <div class="progressbar-wrapper">
             <div class="progressbar-line" :class="[ grade === 1 ? 'step2' : '' ]"></div>
@@ -56,7 +64,8 @@
         props: [
             'brands',
             'car_model',
-            'car_type'
+            'car_type',
+            'car_attrs'
         ],
         data: function() {
             return {
@@ -64,8 +73,8 @@
             };
         },
         methods: {
-            gradeShow: function () {
-                this.grade = 1;
+            gradeShow: function (grade) {
+                this.grade = grade;
             }
         },
         components: {

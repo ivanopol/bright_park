@@ -19,7 +19,11 @@
                 <p class="trigger-wrap-text">Осталось <span class="model-count-text">333</span> {{$car_model->title}} {{$car_type->title_ru}} по спеццене</p>
             </div>
 
-            <steps :brands='@json($brands)' :car_model='@json($car_model)' :car_type='@json($car_type)'></steps>
+            <steps :brands='@json($brands)'
+                   :car_model='@json($car_model)'
+                   :car_type='@json($car_type)'
+                   :car_attrs='@json($car_attrs)'
+            ></steps>
         </section>
     </section>
 @endsection
