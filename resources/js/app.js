@@ -37,6 +37,7 @@ Vue.component('slide-show', require('./components/SlideShow').default);
 Vue.component('classified', require('./components/Classified').default);
 Vue.component('steps', require('./components/Steps').default);
 Vue.component('yandex-map-component', require('./components/YandexMapComponent').default);
+Vue.component('touch-bar-map-component', require('./components/TouchBarMapComponent').default);
 
 /*const store = new Vuex.Store({
     state: {
