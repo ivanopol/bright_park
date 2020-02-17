@@ -161,6 +161,9 @@
                 this.firstPayment = this.getCookie('trade_in_price');
                 this.calculatePercentFromTradeInPrice();
                 this.calculateMonthlyPayment();
+            } else {
+                this.changeFirstPayment();
+                this.calculateMonthlyPayment();
             }
         },
     }
