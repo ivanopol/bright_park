@@ -54,10 +54,10 @@
 
         <div class="radio-buttons-group">
             <ul class="control-group">
-                <li v-for="credit_program in credit_programs">
-                    <label class="control control-radio" for="program_1">{{credit_program['name']}} <span
+                <li v-for="(credit_program, index) in credit_programs">
+                    <label class="control control-radio" :for="'program_' + index">{{credit_program['name']}} <span
                         class="program-cost">{{credit_program['monthly_payment'] | formatPrice}}</span> руб./мес
-                        <input id="program_1" value="p_1" type="radio" name="program" v-model="picked">
+                        <input :id="'program_' + index" :value="'p_' + index" type="radio" name="program" v-model="picked">
                         <div class="control_indicator"></div>
                     </label>
                 </li>
@@ -80,7 +80,7 @@
         },
         data() {
             return {
-                picked: 'p_1',
+                picked: 'p_0',
                 trigger: false,
                 sliderOne:
                     {

@@ -39,7 +39,7 @@
                 type: String
             },
             car: {
-                default: {},
+                default: null,
                 type: Object
             }
         },
