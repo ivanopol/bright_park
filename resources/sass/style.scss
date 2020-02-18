@@ -1133,11 +1133,11 @@ footer {
 #success {
     text-align: center;
     line-height: 1.2;
-    font-weight: bold;
     margin: 18px auto;
     background-color: #dafbcc;
     border-radius: 8px;
     padding: 15px;
+    font-size: 16px;
 
     p {
         margin: 0 !important;
@@ -1276,6 +1276,10 @@ footer {
         &.step2::before {
             width: 66%;
         }
+
+        &.step4::before {
+            width: 100%;
+        }
     }
 
     .progressbar-section-colored {
@@ -1307,6 +1311,9 @@ footer {
     font-weight: bold;
 }
 
+.highlight {
+    color: #FF8351;
+}
 
 .advantages_wrap {
     padding: 80px 30px 100px;
