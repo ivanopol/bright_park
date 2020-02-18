@@ -21,7 +21,7 @@
             </div>
 
             <div class="disabled-input">
-                <span class="credit-first-payment"><input name="first-payment" v-model="firstPayment"/> руб.</span>
+                <span class="credit-first-payment"><input v-on:input="inputChangePayment" type="number" min="0" :max="Math.round(car[0].price /2)" name="first-payment" v-model="firstPayment"/> руб.</span>
             </div>
 
             <div class="credit-profit-text">Срок в месяцах</div>
@@ -32,7 +32,7 @@
             </div>
 
             <div class="disabled-input">
-                <span class="credit-period"><input name="period" v-model="period"/> мес.</span>
+                <span class="credit-period"><input v-on:input="changePeriod" type="number" :min="sliderTwo.min" :max="sliderTwo.max" name="period" v-model="period"/> мес.</span>
             </div>
         </div>
 
@@ -187,6 +187,12 @@
         mounted() {
             if (this.getCookie('trade_in_price') != null && this.getCookie('trade_in_price') > 0) {
                 this.firstPayment = this.getCookie('trade_in_price');
+                this.firstPaymentPercent = Math.round( this.firstPayment/this.car[0].price * 100);
+
+                if (this.firstPaymentPercent > this.sliderOne.max) {
+                    this.firstPayment = Math.round(this.car[0].price /2);
+                }
+
                 this.calculatePercentFromTradeInPrice();
                 this.calculateMonthlyPayment();
             } else {
