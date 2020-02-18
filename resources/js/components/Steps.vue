@@ -60,7 +60,7 @@
 
         </div>
 
-        <range-slider-component :credit_programs="credit_programs" :car='car_attrs'
+        <range-slider-component :car='car_attrs'
                                 v-if="grade === 2"></range-slider-component>
         <form-buy-component v-if="grade === 4"></form-buy-component>
 
@@ -82,8 +82,6 @@
 <script>
     import CheckIcon from './icons/CheckIcon.vue';
 
-    import axios from "axios";
-
     export default {
         name: 'App',
         props: [
@@ -95,8 +93,6 @@
         data: function() {
             return {
                 grade: 0,
-                credit_programs: null,
-                host_url: window.location.protocol + '//' + window.location.host
                 surcharge: this.car_attrs[0].special_price,
                 surchargeText: false
             };
@@ -146,12 +142,6 @@
             CheckIcon
         },
         mounted() {
-            axios.get(this.host_url + '/api/get_credit_programs')
-                .then((response) => {
-                    this.credit_programs = response.data;
-                }).catch(error => {
-                console.log(error)
-            });
             this.deleteCookie();
         }
     };
