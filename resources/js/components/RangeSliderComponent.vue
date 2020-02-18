@@ -57,7 +57,8 @@
                 <li v-for="(credit_program, index) in credit_programs">
                     <label class="control control-radio" :for="'program_' + index">{{credit_program['name']}} <span
                         class="program-cost">{{credit_program['monthly_payment'] | formatPrice}}</span> руб./мес
-                        <input :id="'program_' + index" :value="'p_' + index" type="radio" name="program" v-model="picked">
+                        <input :id="'program_' + index" :value="'p_' + index" type="radio" name="program"
+                               v-model="picked">
                         <div class="control_indicator"></div>
                     </label>
                 </li>
@@ -161,7 +162,7 @@
             calculateMonthlyPayment() {
                 let debt = this.carPrice - this.firstPayment;
 
-                if (this.credit_programs !== undefined ) {
+                if (this.credit_programs !== undefined) {
 
                     for (let i = 0; i <= this.credit_programs.length; i++) {
                         if (this.credit_programs[i] !== undefined) {
