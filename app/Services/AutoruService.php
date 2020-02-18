@@ -4,6 +4,7 @@
 namespace App\Services;
 
 
+use App\Helpers\BrandModelsOrderHelper;
 use Illuminate\Support\Facades\DB;
 use Exception;
 use Cache;
@@ -105,7 +106,7 @@ class AutoruService
 
         $brand = $brand_list[0];
 
-        $model_list = DB::select('select * from brand_models where brand_id = :brand_id', ['brand_id' => $brand_id]);
+        $model_list = DB::select('select * from brand_models where brand_id = :brand_id order by `order` desc ', ['brand_id' => $brand_id]);
         if (sizeof($model_list) == 0) {
             $res = $this->request('GET', 'search/cars/breadcrumbs', [
                 'rid' => 50,
@@ -117,11 +118,15 @@ class AutoruService
                 foreach ($res['breadcrumbs'] as $level) {
                     if ($level['meta_level'] == 'MODEL_LEVEL') {
                         foreach ($level['entities'] as $model) {
-                            DB::insert('insert into brand_models(brand_id, code, title) values(?, ?, ?)',
+
+                            $order = BrandModelsOrderHelper::setOrder($model['id']);
+
+                            DB::insert('insert into brand_models(brand_id, code, title, `order`) values(?, ?, ?, ?)',
                                 [
                                     $brand->id,
                                     $model['id'],
                                     $model['name'],
+                                    $order
                                 ]);
                         }
                     }
@@ -130,7 +135,7 @@ class AutoruService
                 throw new Exception('Models collecting failed!');
             }
         }
-        $res = DB::select('select id, title as `label`, code from brand_models where brand_id = :brand_id', ['brand_id' => $brand_id]);
+        $res = DB::select('select id, title as `label`, code from brand_models where brand_id = :brand_id order by `order` desc', ['brand_id' => $brand_id]);
         return $res;
     }
 
@@ -294,7 +299,6 @@ class AutoruService
     public
     function getEstimation($data)
     {
-        //TODO откуда брать количество владельцев? цвет? как считать время владения автомобилем?
         $owners_count = 1;
         $data = json_decode($data);
         $owning_time = (int)date('Y') - $data->year;

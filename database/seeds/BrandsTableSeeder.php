@@ -42,8 +42,26 @@ class BrandsTableSeeder extends Seeder
                 case("FORD"):
                     $this->insert_order(20, $brand->id);
                     break;
-                case("Volkswagen"):
+                case("MAZDA"):
+                    $this->insert_order(19, $brand->id);
+                    break;
+                case("NISSAN"):
+                    $this->insert_order(18, $brand->id);
+                    break;
+                case("VOLKSWAGEN"):
                     $this->insert_order(10, $brand->id);
+                    break;
+                case("SKODA"):
+                    $this->insert_order(9, $brand->id);
+                    break;
+                case("MITSUBISHI"):
+                    $this->insert_order(8, $brand->id);
+                    break;
+                case("OPEL"):
+                    $this->insert_order(7, $brand->id);
+                    break;
+                case("PEUGEOT"):
+                    $this->insert_order(6, $brand->id);
                     break;
                 default:
                     $this->insert_order(1, $brand->id);

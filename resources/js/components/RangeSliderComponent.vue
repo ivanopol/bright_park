@@ -21,7 +21,7 @@
             </div>
 
             <div class="disabled-input">
-                <span class="credit-first-payment"><input name="first-payment" v-model="firstPayment"/> руб.</span>
+                <span class="credit-first-payment"><input v-on:input="inputChangePayment" name="first-payment" v-model="firstPayment"/> руб.</span>
             </div>
 
             <div class="credit-profit-text">Срок в месяцах</div>
@@ -32,7 +32,7 @@
             </div>
 
             <div class="disabled-input">
-                <span class="credit-period"><input name="period" v-model="period"/> мес.</span>
+                <span class="credit-period"><input name="period" v-on:input="changePeriod" v-model="period"/> мес.</span>
             </div>
         </div>
 
