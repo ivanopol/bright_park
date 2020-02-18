@@ -244,10 +244,8 @@
                             font-size: 16px;
                             padding-left: 10px;
                             color: #fff;
-                            font-size:16px;
                             text-transform: uppercase;
                             position: relative;
-                            font-weight: normal;
                             font-weight: normal;
                             &:after {
                                 width: 10px;
@@ -326,6 +324,21 @@
 
             .vs__actions {
                 padding-right: 17px;
+            }
+
+            .vs__dropdown-option {
+                color: #fff;
+                font-weight: normal;
+                font-family: PragmaticaLightC, Helvetica, sans-serif;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.18)
+            }
+
+            .vs__dropdown-option:last-child {
+                border-bottom: none;
+            }
+
+            .vs__dropdown-menu {
+                background-color: #3e3e3e;
             }
 
             &.vs--open .vs__dropdown-toggle {

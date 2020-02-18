@@ -138,7 +138,6 @@
 
             inputChangePayment() {
                 this.firstPaymentPercent = Math.round(this.firstPayment / this.car[0].price * 100);
-                console.log(this.firstPaymentPercent);
             },
             changePeriod() {
                 this.$emit('changePeriod', this.period);

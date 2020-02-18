@@ -63,7 +63,7 @@ class ColorTableSeeder extends Seeder
                 'model_id' => 1,
                 'title' => 'Борнео',
                 'image' => '/build/images/colors/lada/granta/sedan/lada_granta_borneo.png',
-                'class' => 'color-borneo',
+                'class' => 'color-borneo-dark',
                 'is_active' => false
             ],
             [
