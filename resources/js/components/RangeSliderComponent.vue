@@ -41,25 +41,24 @@
         </div>
 
         <div class="radio-buttons-group">
-            <ul>
-                <li><input id="program_1" value="p_1" type="radio" name="program" v-model="picked" >
-                    <label for="program_1">Обычная программа <span class="program-cost">{{monthlyPaymentRegularProgram | formatPrice}}</span> руб./мес</label>
+            <ul class="control-group">
+                <li>
+                    <label class="control control-radio" for="program_1">Обычная программа <span class="program-cost">{{monthlyPaymentRegularProgram | formatPrice}}</span> руб./мес
+                        <input id="program_1" value="p_1" type="radio" name="program" v-model="picked" >
+                        <div class="control_indicator"></div></label>
                 </li>
-                <li><input id="program_2" value="p_2" type="radio" name="program" v-model="picked">
-                    <label for="program_2">Программа LADA Finance <span class="program-cost" >{{monthlyPaymentLadaFinanceProgram | formatPrice}}</span> руб./мес</label>
+                <li>
+                    <label class="control control-radio" for="program_2">Программа LADA Finance <span class="program-cost" >{{monthlyPaymentLadaFinanceProgram | formatPrice}}</span> руб./мес
+                        <input id="program_2" value="p_2" type="radio" name="program" v-model="picked" >
+                        <div class="control_indicator"></div></label>
                 </li>
-                <li><input id="program_3" value="p_3" type="radio" name="program" v-model="picked">
-                    <label for="program_3">Специальный рассчет <span class="program-cost">{{monthlyPaymentSpecialProgram | formatPrice}}</span> руб./мес</label>
+                <li>
+                    <label class="control control-radio" for="program_3">Специальный рассчет <span class="highlight"><span class="program-cost">{{monthlyPaymentSpecialProgram | formatPrice}}</span> руб./мес</span>
+                        <input id="program_3" value="p_3" type="radio" name="program" v-model="picked" >
+                        <div class="control_indicator"></div></label>
                 </li>
             </ul>
         </div>
-
-        <div class="buttons_other">
-            <div class="item-buttons-other">
-                <a href="#" class="btn btn-primary">Закрепить условия</a>
-            </div>
-        </div>
-
     </div>
 </template>
 
@@ -108,7 +107,7 @@
                 monthlyPaymentRegularProgram: 0,
                 monthlyPaymentLadaFinanceProgram: 0,
                 monthlyPaymentSpecialProgram: 0,
-                firstPaymentPercent: 15,
+                firstPaymentPercent: 50,
                 annualPercent: 12,
                 firstPayment: Math.round(this.car[0].price / 100 * 15),
                 period: 60
@@ -146,8 +145,7 @@
 
                 let percent_from_value = Math.round( this.firstPayment/this.car[0].price * 100);
 
-                this.trigger = percent_from_value < 15;
-                this.firstPayment = Math.round(this.car[0].price / 100 * this.firstPaymentPercent);
+                this.trigger = percent_from_value < 15 ? true : false;
                 this.calculateMonthlyPayment();
             },
             getCookie(name) {
@@ -300,7 +298,6 @@
             grid-column: span 11;
         }
     }
-
 
     .vue-slider-process {
         background-color: #ff8351;

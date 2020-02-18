@@ -19,8 +19,8 @@
                 <p class="buy-step-text">Рассчитайте платеж</p>
             </div>
 
-            <div class="buy-step-block">
-                <div class="buy-step-circle divided">
+            <div class="buy-step-block" >
+                <div class="buy-step-circle divided" :class="[ grade == 4 ? 'buy-step-circle-colored' : 'buy-step-circle' ]">
                     <p class="buy-step-number">3</p>
                 </div>
                 <p class="buy-step-text">Заполните форму</p>
@@ -47,10 +47,16 @@
         </div>
 
         <range-slider-component :car='car_attrs' v-if="grade === 2"></range-slider-component>
+        <form-buy-component v-if="grade === 4"></form-buy-component>
 
+        <div class="buttons_other" v-if="grade === 2">
+            <div class="item-buttons-other">
+                <a href="#" class="btn btn-primary" v-on:click.prevent="gradeShow(4)">Закрепить условия</a>
+            </div>
+        </div>
 
         <div class="progressbar-wrapper">
-            <div class="progressbar-line" :class="[ grade === 1 || grade === 2 ? 'step2' : '' ]"></div>
+            <div class="progressbar-line" :class="[ grade === 1 || grade === 2 ? 'step2' : '', grade === 4 ? 'step4' : '' ]"></div>
             <span class="progressbar-text" v-if="!grade">Осталось всего 2 шага до получения выгодных условий</span>
             <span class="progressbar-text" v-if="grade === 1">Мы готовы выкупить ваш автомобиль на 10% дороже рынка при обмене на новенькую LADA</span>
             <span class="progressbar-text" v-if="grade === 2">Вы у цели! Закрепите выгодные условия</span>
