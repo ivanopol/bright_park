@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="lada-line" v-if="line">
-            <p id="model-active"></p>
+            <p id="model-active" v-if="car">{{car.reduction}}</p>
         </div>
     </header>
 </template>
@@ -37,6 +37,10 @@
             },
             city: {
                 type: String
+            },
+            car: {
+                default: {},
+                type: Object
             }
         },
         data: function () {

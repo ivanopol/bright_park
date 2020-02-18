@@ -6,7 +6,11 @@
                     <logo-bright-park :theme="theme"></logo-bright-park>
                 </a>
             </div>
-            <div class="logo-lada">
+            <div class="model-button" v-if="button">
+                <span>{{car.reduction}}</span> <a :href="car.link">Купить</a>
+            </div>
+
+            <div class="logo-lada" v-if="!button">
                 <logo-lada :theme="theme"></logo-lada>
             </div>
         </div>
@@ -34,6 +38,13 @@
             },
             city: {
                 type: String
+            },
+            button: {
+                default: false,
+                type: Boolean
+            },
+            car: {
+                type: Object
             }
         },
         data: function () {
@@ -91,7 +102,7 @@
         }
 
         .logo-wrap {
-            padding: 10px 15px 5px;
+            padding: 10px 15px 6px;
             display: flex;
             justify-content: space-between;
             opacity: 0;
@@ -108,6 +119,32 @@
             .logo-lada {
                 width: 13%;
                 height: 25px;
+            }
+
+            .model-button {
+                width: 50%;
+                height: 25px;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+
+                span {
+                    display: inline-block;
+                    font-weight: bold;
+                    font-size: 14px;
+                    margin-right: 5px;
+                    margin-top: 2px;
+                }
+
+                a {
+                    background-color: #FF8351;
+                    color: #fff;
+                    font-size: 14px;
+                    padding: 7px 15px 3px;
+                    border-radius: 20px;
+                    display: inline-block;
+                    text-transform: uppercase;
+                }
             }
 
             &.dark {
