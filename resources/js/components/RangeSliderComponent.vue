@@ -187,6 +187,11 @@
         mounted() {
             if (this.getCookie('trade_in_price') != null && this.getCookie('trade_in_price') > 0) {
                 this.firstPayment = this.getCookie('trade_in_price');
+                this.firstPaymentPercent = Math.round( this.firstPayment/this.car[0].price * 100);
+
+                if (this.firstPaymentPercent > this.sliderOne.max) {
+                    this.firstPayment = Math.round(this.car[0].price /2);
+                }
                 this.calculatePercentFromTradeInPrice();
                 this.calculateMonthlyPayment();
             } else {
