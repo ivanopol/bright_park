@@ -60,7 +60,8 @@
 
         </div>
 
-        <range-slider-component :car='car_attrs' v-if="grade === 2"></range-slider-component>
+        <range-slider-component :car='car_attrs'
+                                v-if="grade === 2"></range-slider-component>
         <form-buy-component v-if="grade === 4"></form-buy-component>
 
         <div class="buttons_other" v-if="grade === 2 || grade === 3">

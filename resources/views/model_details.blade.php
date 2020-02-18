@@ -12,11 +12,11 @@
             </div>
 
             <div class="credit-price-text">
-                <p>В кредит от 4210 руб. / мес.</p>
+                <p>В кредит от {{\App\Helpers\Utilities::getMinimalPayment($car_attrs[0]['price'])}} руб. / мес.</p>
             </div>
 
             <div class="trigger-wrap">
-                <p class="trigger-wrap-text">Осталось <span class="model-count-text">333</span> {{$car_model->title}} {{$car_type->title_ru}} по спеццене</p>
+                <p class="trigger-wrap-text">Осталось <span class="model-count-text">{{$car_attrs[0]['count']}}</span> {{$car_model->title}} {{$car_type->title_ru}} по спеццене</p>
             </div>
 
             <steps :brands='@json($brands)'

@@ -97,6 +97,8 @@ class HomeController extends Controller
             ['car_type_id', '=', $car_type->id],
         ])->limit(1)->get();
 
+        $credit_programs = DB::select('select name, percent_rate from credit_programs');
+
         $raw = new AutoruService();
         $brands = $raw->getBrands();
         return view('model_details', [
