@@ -132,7 +132,7 @@
                     display: inline-block;
                     font-weight: bold;
                     font-size: 14px;
-                    margin-right: 5px;
+                    margin-right: 10px;
                     margin-top: 2px;
                 }
 
