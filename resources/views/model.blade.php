@@ -3,7 +3,7 @@
 @section('content')
     <tab-bar :cities='@json($cities)' :models='@json($models)'></tab-bar>
     <header-sticky-component :theme="'light'" :city="'{{$city}}'" :button=true :car='@json($data['slider']['slides'][0])'></header-sticky-component>
-    <header-component :line="true" :theme="'light'" :city="'{{$city}}'"></header-component>
+    <header-component :line="true" :theme="'light'" :city="'{{$city}}'" :car='@json($data['slider']['slides'][0])'></header-component>
     <div class="container">
         <hooper-component :data='@json($data['slider'])'></hooper-component>
 
