@@ -219,10 +219,10 @@
             stepFour: function (input) {
                 this.step_four = true;
                 this.selected_year = input;
-                console.log(input);
+                //console.log(input);
 
                 if (this.selected_mileage != null) {
-                    console.log(this.selected_mileage);
+                 //   console.log(this.selected_mileage);
                     this.getEstimation();
                 }
             },
