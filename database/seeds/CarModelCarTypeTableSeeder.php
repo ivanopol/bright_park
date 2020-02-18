@@ -19,7 +19,7 @@ class CarModelCarTypeTableSeeder extends Seeder
             ['car_model_id' => '2', 'car_type_id' => '8', 'preview' => false, 'price' => 791900, 'special_price' => 692010, 'count'=>333],
             ['car_model_id' => '2', 'car_type_id' => '9', 'preview' => false, 'price' => 821900, 'special_price' => 717210, 'count'=>333],
             ['car_model_id' => '2', 'car_type_id' => '10', 'preview' => false, 'price' => 1021900, 'special_price' => 893610, 'count'=>333],
-            ['car_model_id' => '3', 'car_type_id' => '5', 'preview' => false, 'price' => 759900, 'special_price' => 655110, 'count'=>333],
+            ['car_model_id' => '3', 'car_type_id' => '4', 'preview' => false, 'price' => 759900, 'special_price' => 655110, 'count'=>333],
             ['car_model_id' => '3', 'car_type_id' => '20', 'preview' => true, 'price' => 614900, 'special_price' => 521910, 'count'=>333],
             ['car_model_id' => '4', 'car_type_id' => '11', 'preview' => true, 'price' => 523900, 'special_price' => 471510, 'count'=>333],
             ['car_model_id' => '4', 'car_type_id' => '12', 'preview' => false, 'price' => 586900, 'special_price' => 539910, 'count'=>333],

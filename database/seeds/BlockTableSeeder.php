@@ -557,7 +557,7 @@ LADA Largus Cross - топ-предложение в модельной лине
             // XRAY CROSS
             [
                 'model_id' => 3,
-                'type_id' => 20,
+                'type_id' => 4,
                 'title' => '<span class="c_orange">ДОРОГ СТАНОВИТСЯ</span> БОЛЬШЕ',
                 'text' => 'Быть выше, быть ярче, быть заметней, быть свободным – это стиль тех, кто выбирает LADA XRAY. Максимум впечатлений уже ждёт Вас за рулём LADA XRAY!',
                 'url' => '/build/images/photos/models/xray/blocks/cross/block_01/mobile/block_01.jpg',
@@ -567,7 +567,7 @@ LADA Largus Cross - топ-предложение в модельной лине
             ],
             [
                 'model_id' => 3,
-                'type_id' => 20,
+                'type_id' => 4,
                 'title' => '<span class="c_orange">КРОССОВЕР, </span> ЗАБЫВШИЙ О ГОРОДЕ',
                 'text' => 'Легкая грубоватость, тщательно продуманная небрежность и несколько контрастных деталей… Это не просто стиль. Это прямое отражение характера, функций и предназначения.',
                 'url' => '/build/images/photos/models/xray/blocks/cross/block_02/mobile/block_02.jpg',
@@ -577,7 +577,7 @@ LADA Largus Cross - топ-предложение в модельной лине
             ],
             [
                 'model_id' => 3,
-                'type_id' => 20,
+                'type_id' => 4,
                 'title' => '<span class="c_orange">УДОБСТВО</span> В ДЕТАЛЯХ',
                 'text' => 'LADA XRAY Cross — это множество полезных систем, которые повышают качество жизни и каждый день помогают в решении самых разных задач.',
                 'url' => '/build/images/photos/models/xray/blocks/cross/block_03/mobile/xray_03.jpg',
@@ -587,7 +587,7 @@ LADA Largus Cross - топ-предложение в модельной лине
             ],
             [
                 'model_id' => 3,
-                'type_id' => 20,
+                'type_id' => 4,
                 'title' => '<span class="c_orange">ПОЛЕЗНЫЕ</span> ТРАНСФОРМАЦИИ',
                 'text' => 'Салон LADA XRAY Cross — это рационально организованное пространство. Каждый элемент салона продуман для того, чтобы LADA XRAY Cross был удобен и в туристической поездке, и для покупки новой мебели.',
                 'url' => '/build/images/photos/models/xray/blocks/cross/block_04/mobile/xray_04.jpg',
@@ -597,7 +597,7 @@ LADA Largus Cross - топ-предложение в модельной лине
             ],
             [
                 'model_id' => 3,
-                'type_id' => 20,
+                'type_id' => 4,
                 'title' => '<span class="c_orange">СИЛА</span> И ГИБКОСТЬ',
                 'text' => 'Проявить силу, где она необходима. А где нужно – быть гибким. Быть начеку каждую секунду и реагировать мгновенно.
 
@@ -609,7 +609,7 @@ LADA Largus Cross - топ-предложение в модельной лине
             ],
             [
                 'model_id' => 3,
-                'type_id' => 20,
+                'type_id' => 4,
                 'title' => '<span class="c_orange">LADA Ride Select: </span> 5 РЕЖИМОВ ДВИЖЕНИЯ',
                 'text' => 'Сложная дорога требует особой концентрации и нередко—решительности. А на хорошем шоссе порой хочется дать волю темпераменту…
 
@@ -621,7 +621,7 @@ LADA Largus Cross - топ-предложение в модельной лине
             ],
             [
                 'model_id' => 3,
-                'type_id' => 20,
+                'type_id' => 4,
                 'title' => '<span class="c_orange">Мультимедийная </span> система',
                 'text' => 'Системы Apple CarPlay и Android Auto позволят управлять мобильными приложениями прямо на 7” сенсорном дисплее автомобиля не отвлекаясь от дороги.
 
@@ -633,7 +633,7 @@ LADA Largus Cross - топ-предложение в модельной лине
             ],
             [
                 'model_id' => 3,
-                'type_id' => 20,
+                'type_id' => 4,
                 'title' => '<span class="c_orange">АВТОМАТИЧЕСКАЯ </span> ТРАНСМИССИЯ',
                 'text' => 'Это комфортное и уверенное движение по всем типам дорог. 
 
