@@ -36,16 +36,20 @@
             </div>
         </div>
 
+        <div class="trigger-wrap" v-if="trigger">
+            <p class="trigger-wrap-text">Триггер ...</p>
+        </div>
+
         <div class="radio-buttons-group">
             <ul>
                 <li><input id="program_1" value="p_1" type="radio" name="program" v-model="picked" >
-                    <label for="program_1">Обычная программа <span class="program-cost">{{monthlyPaymentRegularProgram.toFixed(0)}}</span> руб./мес</label>
+                    <label for="program_1">Обычная программа <span class="program-cost">{{monthlyPaymentRegularProgram | formatPrice}}</span> руб./мес</label>
                 </li>
                 <li><input id="program_2" value="p_2" type="radio" name="program" v-model="picked">
-                    <label for="program_2">Программа LADA Finance <span class="program-cost" >{{monthlyPaymentLadaFinanceProgram.toFixed(0)}}</span> руб./мес</label>
+                    <label for="program_2">Программа LADA Finance <span class="program-cost" >{{monthlyPaymentLadaFinanceProgram | formatPrice}}</span> руб./мес</label>
                 </li>
                 <li><input id="program_3" value="p_3" type="radio" name="program" v-model="picked">
-                    <label for="program_3">Специальный рассчет <span class="program-cost">{{monthlyPaymentSpecialProgram.toFixed(0)}}</span> руб./мес</label>
+                    <label for="program_3">Специальный рассчет <span class="program-cost">{{monthlyPaymentSpecialProgram | formatPrice}}</span> руб./мес</label>
                 </li>
             </ul>
         </div>
@@ -73,27 +77,25 @@
         data() {
             return {
                 picked: 'p_1',
+                trigger: false,
                 sliderOne:
                     {
-                       // value: 30,
-                        //marks: [0, 50],
                         marks: {
-                            '0': {
+                            0: {
                                 label: '0%'
                             },
-                            '15': {
+                            15: {
                                 label: '15%'
                             },
-                            '50':{
+                            50:{
                                 label: '50%'
                             },
                         },
-                        min: 15,
+                        min: 0,
                         max: 50
                     },
-                'sliderTwo':
+                sliderTwo:
                     {
-                      //  value: 60,
                         marks: [12, 60],
                         min: 12,
                         max: 60
@@ -106,18 +108,46 @@
                 monthlyPaymentRegularProgram: 0,
                 monthlyPaymentLadaFinanceProgram: 0,
                 monthlyPaymentSpecialProgram: 0,
-                firstPaymentPercent: 30,
+                firstPaymentPercent: 50,
                 annualPercent: 12,
+                firstPayment: Math.round(this.car[0].price / 100 * 15),
                 firstPayment: this.car[0].special_price / 100 * 15,
                 period: 60
             }
         },
+        filters: {
+            formatPrice: function(price) {
+                if (!parseInt(price)) { return "";}
+                if(price > 999) {
+                    var priceString = (price / 1).toFixed(0);
+                    var priceArray = priceString.split("").reverse();
+                    var index = 0;
+                    while (priceArray.length > index + 3) {
+                        priceArray.splice(index+3, 0, " ");
+                        index +=4;
+                    }
+                    return priceArray.reverse().join("");
+                } else {
+                    return (price / 1).toFixed(0);
+                }
+            }
+        },
         methods: {
+            inputChangePayment() {
+
+                this.firstPaymentPercent = Math.round( this.firstPayment/this.car[0].price * 100);
+                console.log(this.firstPaymentPercent);
+            },
             changePeriod() {
                 this.$emit('changePeriod', this.period);
                 this.calculateMonthlyPayment();
             },
             changeFirstPayment() {
+                this.firstPayment = Math.round(this.car[0].price / 100 * this.firstPaymentPercent);
+
+                let percent_from_value = Math.round( this.firstPayment/this.car[0].price * 100);
+
+                this.trigger = percent_from_value < 15 ? true : false;
                 this.firstPayment = Math.round(this.car[0].special_price / 100 * this.firstPaymentPercent);
                 this.calculateMonthlyPayment();
             },
@@ -232,7 +262,7 @@
         input {
             border-radius: 18px;
             box-shadow: none;
-            border: 1px solid #606060;
+            border: 2px solid #9d9f9e;
             width: 20%;
             background: white;
             padding: 5px 10px;
@@ -241,7 +271,7 @@
 
     .range-slider-wrapper {
         width: 75vw;
-        margin: 0 auto 20px;
+        margin: 0 auto 25px;
     }
 
     .radio-buttons-group {
@@ -257,7 +287,7 @@
 
                 .program-cost {
                     font-family: PragmaticaLightCBold, Helvetica, sans-serif;
-                    font-size: 14px;
+                    font-size: 16px;
                     font-weight: normal;
                 }
             }
@@ -311,17 +341,19 @@
         box-shadow: #ff8351;
     }
 
-    .vue-slider:hover .vue-slider-mark-step-active {
+/*    .vue-slider .vue-slider-mark-step-active {
         box-shadow: none;
         background-color: transparent;
-    }
+    }*/
 
-    .vue-slider .vue-slider-mark-step-active {
+    .vue-slider .vue-slider-marks :first-child .vue-slider-mark-step,
+    .vue-slider .vue-slider-marks :last-child .vue-slider-mark-step {
         box-shadow: none !important;
         background-color: transparent;
     }
 
-    .vue-slider-mark-step {
+    .vue-slider .vue-slider-marks :first-child .vue-slider-mark-step,
+    .vue-slider .vue-slider-marks :last-child .vue-slider-mark-step {
         box-shadow: none !important;
         background-color: transparent;
     }
@@ -332,11 +364,13 @@
 
     .vue-slider-mark-label {
         font-size: 14px;
-        color: #9d9f9e;
+        color: #666;
     }
+
 
     .vue-slider-ltr .vue-slider-mark-label, .vue-slider-rtl .vue-slider-mark-label {
         margin-top: 16px;
     }
+
 
 </style>
