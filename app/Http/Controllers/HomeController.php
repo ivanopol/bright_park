@@ -74,6 +74,9 @@ class HomeController extends Controller
         $data['coordinates'] = explode(",", $city['coordinates']);
 
 
+/*        echo "<pre>";
+        print_r($data);
+        echo "</pre>";*/
 
         return view('model', [ 'data' => $data, 'models' => $models, 'city' => $this->city, 'cities' => $cities]);
     }
