@@ -8,7 +8,7 @@
         <slide-show></slide-show>
         <section>
             <div class="model-price-text">
-                <p>От 421 600 руб.</p>
+                <p>от {{number_format($car_attrs[0]['special_price'], 2)}} руб.</p>
             </div>
 
             <div class="credit-price-text">
