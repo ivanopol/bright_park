@@ -46,10 +46,24 @@
             </div>
         </div>
 
+        <div class="" v-if="grade === 3">
+            <div class="model-choose-text center" v-if="surchargeText"><p>Ваша доплата составит</p></div>
+            <div class="your-surcharge">от {{surcharge | formatPrice}} руб.</div>
+            <div class="model-choose-text2"><p>В Брайт Парке выгодные условия при покупке за наличные!</p></div>
+            <div class="conditions">
+                <ul>
+                    <li><check-icon class="check"></check-icon> <span>Личный менеджер</span></li>
+                    <li><check-icon class="check"></check-icon> <span>Выгода 40 000 руб. при обмене</span></li>
+                    <li><check-icon class="check"></check-icon> <span>Зимняя резина в подарок <span class="block-highlight">только до 16/01</span></span></li>
+                </ul>
+            </div>
+
+        </div>
+
         <range-slider-component :car='car_attrs' v-if="grade === 2"></range-slider-component>
         <form-buy-component v-if="grade === 4"></form-buy-component>
 
-        <div class="buttons_other" v-if="grade === 2">
+        <div class="buttons_other" v-if="grade === 2 || grade === 3">
             <div class="item-buttons-other">
                 <a href="#" class="btn btn-primary" v-on:click.prevent="gradeShow(4)">Закрепить условия</a>
             </div>
@@ -65,6 +79,7 @@
 </template>
 
 <script>
+    import CheckIcon from './icons/CheckIcon.vue';
 
     export default {
         name: 'App',
@@ -76,19 +91,95 @@
         ],
         data: function() {
             return {
-                grade: 0
+                grade: 0,
+                surcharge: this.car_attrs[0].special_price,
+                surchargeText: false
             };
+        },
+        filters: {
+            formatPrice: function(price) {
+                if (!parseInt(price)) { return "";}
+                if(price > 999) {
+                    var priceString = (price / 1).toFixed(0);
+                    var priceArray = priceString.split("").reverse();
+                    var index = 0;
+                    while (priceArray.length > index + 3) {
+                        priceArray.splice(index+3, 0, " ");
+                        index +=4;
+                    }
+                    return priceArray.reverse().join("");
+                } else {
+                    return (price / 1).toFixed(0);
+                }
+            }
         },
         methods: {
             gradeShow: function (grade) {
                 this.grade = grade;
+
+                if (this.getCookie('trade_in_price') != null && this.getCookie('trade_in_price') > 0) {
+                    this.surcharge = this.car_attrs[0].special_price - this.getCookie('trade_in_price');
+                    this.surchargeText = true;
+                }
+            },
+            getCookie(name) {
+                let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+                if (match) return match[2];
+            },
+            setCookie(price) {
+                let current_date = new Date();
+                current_date.setTime(current_date.getTime() + 3600 );
+                let cookieexpire = current_date.toLocaleString();
+
+                document.cookie = "trade_in_price=" + price + ";expires=" + cookieexpire + "path=/";
+            },
+            deleteCookie(name) {
+                this.setCookie(0)
             }
         },
         components: {
+            CheckIcon
+        },
+        mounted() {
+            this.deleteCookie();
         }
     };
 </script>
 
 <style lang="scss" >
+    .conditions {
+        width: 70vw;
+        display: block;
+        margin: 20px auto 40px;
+    }
 
+    .conditions ul li {
+        margin-bottom: 5px;
+        display: flex;
+
+        &>span {
+            float: left;
+            display: block;
+            margin-left: 10px;
+            clear: both;
+        }
+
+        i {
+            color: #ff8351;
+        }
+
+        .check {
+            width: 16px;
+            height: 16px;
+        }
+
+    }
+
+    .your-surcharge {
+        font-family: PragmaticaLightCBold, Helvetica, sans-serif;
+        color: #FF8351;
+        text-align: center;
+        font-size: 30px;
+        margin: 16px 0;
+    }
 </style>

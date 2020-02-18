@@ -53,7 +53,7 @@
                         <div class="control_indicator"></div></label>
                 </li>
                 <li>
-                    <label class="control control-radio" for="program_3">Специальный рассчет <span class="highlight"><span class="program-cost">{{monthlyPaymentSpecialProgram | formatPrice}}</span> руб./мес</span>
+                    <label class="control control-radio" for="program_3">Специальный рассчет <span class="block-highlight"><span class="program-cost">{{monthlyPaymentSpecialProgram | formatPrice}}</span> руб./мес</span>
                         <input id="program_3" value="p_3" type="radio" name="program" v-model="picked" >
                         <div class="control_indicator"></div></label>
                 </li>
@@ -225,6 +225,8 @@
         &>span {
             float: left;
             display: block;
+            margin-left: 10px;
+            clear: both;
         }
 
         i {
@@ -234,14 +236,6 @@
         .check {
             width: 16px;
             height: auto;
-        }
-
-        span {
-            margin-left: 10px;
-            clear: both;
-        }
-        &::before {
-
         }
     }
 
