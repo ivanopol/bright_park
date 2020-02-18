@@ -6,9 +6,15 @@
 
         <div class="conditions">
             <ul>
-                <li><check-icon class="check"></check-icon> <span>12 банков-партнеров</span></li>
-                <li><check-icon class="check"></check-icon> <span>Одобрение по кредиту 30 минут</span></li>
-                <li><check-icon class="check"></check-icon> <span>Вероятность одобрения 96%</span></li>
+                <li>
+                    <check-icon class="check"></check-icon>
+                    <span>12 банков-партнеров</span></li>
+                <li>
+                    <check-icon class="check"></check-icon>
+                    <span>Одобрение по кредиту 30 минут</span></li>
+                <li>
+                    <check-icon class="check"></check-icon>
+                    <span>Вероятность одобрения 96%</span></li>
             </ul>
         </div>
 
@@ -16,23 +22,28 @@
             <div class="credit-profit-text">Первоначальный взнос</div>
 
             <div class="range-slider-wrapper">
-                <vue-slider v-model="firstPaymentPercent" :height="6" :interval="1" :dotSize="25" :marks="sliderOne.marks" :drag-on-click="true"
+                <vue-slider v-model="firstPaymentPercent" :height="6" :interval="1" :dotSize="25"
+                            :marks="sliderOne.marks" :drag-on-click="true"
                             :min="sliderOne.min" :max="sliderOne.max" v-on:change="changeFirstPayment"/>
             </div>
 
             <div class="disabled-input">
-                <span class="credit-first-payment"><input v-on:input="inputChangePayment" name="first-payment" v-model="firstPayment"/> руб.</span>
+                <span class="credit-first-payment"><input v-on:input="inputChangePayment" name="first-payment"
+                                                          v-model="firstPayment"/> руб.</span>
             </div>
 
             <div class="credit-profit-text">Срок в месяцах</div>
 
             <div class="range-slider-wrapper">
-                <vue-slider v-model="period" :height="6" :interval="1" :dotSize="25" :marks="sliderTwo.marks" :drag-on-click="true"
-                            :min="sliderTwo.min" :max="sliderTwo.max" v-on:change="changePeriod" :change="changePeriod"/>
+                <vue-slider v-model="period" :height="6" :interval="1" :dotSize="25" :marks="sliderTwo.marks"
+                            :drag-on-click="true"
+                            :min="sliderTwo.min" :max="sliderTwo.max" v-on:change="changePeriod"
+                            :change="changePeriod"/>
             </div>
 
             <div class="disabled-input">
-                <span class="credit-period"><input name="period" v-on:input="changePeriod" v-model="period"/> мес.</span>
+                <span class="credit-period"><input name="period" v-on:input="changePeriod"
+                                                   v-model="period"/> мес.</span>
             </div>
         </div>
 
@@ -42,20 +53,12 @@
 
         <div class="radio-buttons-group">
             <ul class="control-group">
-                <li>
-                    <label class="control control-radio" for="program_1">Обычная программа <span class="program-cost">{{monthlyPaymentRegularProgram | formatPrice}}</span> руб./мес
-                        <input id="program_1" value="p_1" type="radio" name="program" v-model="picked" >
-                        <div class="control_indicator"></div></label>
-                </li>
-                <li>
-                    <label class="control control-radio" for="program_2">Программа LADA Finance <span class="program-cost" >{{monthlyPaymentLadaFinanceProgram | formatPrice}}</span> руб./мес
-                        <input id="program_2" value="p_2" type="radio" name="program" v-model="picked" >
-                        <div class="control_indicator"></div></label>
-                </li>
-                <li>
-                    <label class="control control-radio" for="program_3">Специальный рассчет <span class="highlight"><span class="program-cost">{{monthlyPaymentSpecialProgram | formatPrice}}</span> руб./мес</span>
-                        <input id="program_3" value="p_3" type="radio" name="program" v-model="picked" >
-                        <div class="control_indicator"></div></label>
+                <li v-for="credit_program in credit_programs">
+                    <label class="control control-radio" for="program_1">{{credit_program['name']}} <span
+                        class="program-cost">{{credit_program['monthly_payment'] | formatPrice}}</span> руб./мес
+                        <input id="program_1" value="p_1" type="radio" name="program" v-model="picked">
+                        <div class="control_indicator"></div>
+                    </label>
                 </li>
             </ul>
         </div>
@@ -68,7 +71,7 @@
     import CheckIcon from './icons/CheckIcon.vue';
 
     export default {
-        props: ['car'],
+        props: ['car', 'credit_programs'],
         components: {
             VueSlider,
             CheckIcon
@@ -86,7 +89,7 @@
                             15: {
                                 label: '15%'
                             },
-                            50:{
+                            50: {
                                 label: '50%'
                             },
                         },
@@ -99,14 +102,8 @@
                         min: 12,
                         max: 60
                     },
-                regularPercentRate: 15,
-                ladaFinancePercentRate: 12,
-                specialPercentRate: 5,
                 tradeInPrice: 0,
                 carPrice: this.car[0].price,
-                monthlyPaymentRegularProgram: 0,
-                monthlyPaymentLadaFinanceProgram: 0,
-                monthlyPaymentSpecialProgram: 0,
                 firstPaymentPercent: 50,
                 annualPercent: 12,
                 firstPayment: Math.round(this.car[0].price / 100 * 15),
@@ -114,15 +111,17 @@
             }
         },
         filters: {
-            formatPrice: function(price) {
-                if (!parseInt(price)) { return "";}
-                if(price > 999) {
+            formatPrice: function (price) {
+                if (!parseInt(price)) {
+                    return "";
+                }
+                if (price > 999) {
                     var priceString = (price / 1).toFixed(0);
                     var priceArray = priceString.split("").reverse();
                     var index = 0;
                     while (priceArray.length > index + 3) {
-                        priceArray.splice(index+3, 0, " ");
-                        index +=4;
+                        priceArray.splice(index + 3, 0, " ");
+                        index += 4;
                     }
                     return priceArray.reverse().join("");
                 } else {
@@ -132,8 +131,7 @@
         },
         methods: {
             inputChangePayment() {
-
-                this.firstPaymentPercent = Math.round( this.firstPayment/this.car[0].price * 100);
+                this.firstPaymentPercent = Math.round(this.firstPayment / this.car[0].price * 100);
                 console.log(this.firstPaymentPercent);
             },
             changePeriod() {
@@ -143,9 +141,9 @@
             changeFirstPayment() {
                 this.firstPayment = Math.round(this.car[0].price / 100 * this.firstPaymentPercent);
 
-                let percent_from_value = Math.round( this.firstPayment/this.car[0].price * 100);
+                let percent_from_value = Math.round(this.firstPayment / this.car[0].price * 100);
 
-                this.trigger = percent_from_value < 15 ? true : false;
+                this.trigger = percent_from_value < 15;
                 this.calculateMonthlyPayment();
             },
             getCookie(name) {
@@ -158,32 +156,26 @@
             calculateMonthlyPayment() {
                 let debt = this.carPrice - this.firstPayment;
 
-                let monthlyPercentRate = this.regularPercentRate / 12 / 100;
-                let mathPow1 = Math.pow(1 + monthlyPercentRate, this.period);
-                let res1 = monthlyPercentRate * mathPow1;
-                let res2 = mathPow1 - 1;
-                let annualCoefficient = (res1 / res2);
-                this.monthlyPaymentRegularProgram = Math.round(debt * annualCoefficient);
+                if (this.credit_programs.length > 0) {
 
-                monthlyPercentRate = this.ladaFinancePercentRate / 12 / 100;
-                mathPow1 = Math.pow(1 + monthlyPercentRate, this.period);
-                res1 = monthlyPercentRate * mathPow1;
-                res2 = mathPow1 - 1;
-                annualCoefficient = (res1 / res2);
-                this.monthlyPaymentLadaFinanceProgram = Math.round(debt * annualCoefficient);
-
-                monthlyPercentRate = this.specialPercentRate / 12 / 100;
-                mathPow1 = Math.pow(1 + monthlyPercentRate, this.period);
-                res1 = monthlyPercentRate * mathPow1;
-                res2 = mathPow1 - 1;
-                annualCoefficient = (res1 / res2);
-                this.monthlyPaymentSpecialProgram = Math.round(debt * annualCoefficient);
+                    for (let i = 0; i <= this.credit_programs.length; i++) {
+                        if(this.credit_programs[i] !== undefined){
+                            let monthlyPercentRate = this.credit_programs[i]['percent_rate'] / 12 / 100;
+                            let mathPow1 = Math.pow(1 + monthlyPercentRate, this.period);
+                            let res1 = monthlyPercentRate * mathPow1;
+                            let res2 = mathPow1 - 1;
+                            let annualCoefficient = (res1 / res2);
+                            this.credit_programs[i]['monthly_payment'] = Math.round(debt * annualCoefficient);
+                        }
+                    }
+                }
             },
             selectCreditProgram(input) {
                 this.annualPercent = input.percentRate;
             }
         },
         mounted() {
+
             if (this.getCookie('trade_in_price') != null && this.getCookie('trade_in_price') > 0) {
                 this.firstPayment = this.getCookie('trade_in_price');
                 this.calculatePercentFromTradeInPrice();
@@ -216,7 +208,7 @@
         margin-bottom: 5px;
         display: flex;
 
-        &>span {
+        & > span {
             float: left;
             display: block;
         }
@@ -234,6 +226,7 @@
             margin-left: 10px;
             clear: both;
         }
+
         &::before {
 
         }
@@ -337,10 +330,10 @@
         box-shadow: #ff8351;
     }
 
-/*    .vue-slider .vue-slider-mark-step-active {
-        box-shadow: none;
-        background-color: transparent;
-    }*/
+    /*    .vue-slider .vue-slider-mark-step-active {
+            box-shadow: none;
+            background-color: transparent;
+        }*/
 
     .vue-slider .vue-slider-marks :first-child .vue-slider-mark-step,
     .vue-slider .vue-slider-marks :last-child .vue-slider-mark-step {

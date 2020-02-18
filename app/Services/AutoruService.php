@@ -295,6 +295,11 @@ class AutoruService
         return $data;
     }
 
+    public function getCreditPrograms()
+    {
+        return DB::select('select name, percent_rate from credit_programs');
+    }
+
 
     public
     function getEstimation($data)

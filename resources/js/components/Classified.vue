@@ -2,7 +2,8 @@
     <section id="classified">
         <div class="option-text">Оцените свой автомобиль</div>
         <div class="dropdown-group">
-            <v-select class="select_wrap" :components="{OpenIndicator, Deselect}" :searchable=false placeholder="Марка" taggable
+            <v-select class="select_wrap" :components="{OpenIndicator, Deselect}" :searchable=false placeholder="Марка"
+                      taggable
                       :options="brands" v-on:input="stepOne" v-model="selected_brand">
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
@@ -13,20 +14,23 @@
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
-            <v-select :disabled="!step_two" class="select_wrap" :components="{OpenIndicator, Deselect}" :searchable=false
+            <v-select :disabled="!step_two" class="select_wrap" :components="{OpenIndicator, Deselect}"
+                      :searchable=false
                       placeholder="Комплектация"
                       taggable :options="modifications" v-on:input="stepThree" v-model="selected_tech_param_id">
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
-            <v-select :disabled="!step_three" class="select_wrap" :components="{OpenIndicator, Deselect}" :searchable=false
+            <v-select :disabled="!step_three" class="select_wrap" :components="{OpenIndicator, Deselect}"
+                      :searchable=false
                       placeholder="Год выпуска"
                       v-on:input="stepFour"
                       taggable :options="years" v-model="selected_year">
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
-            <v-select :disabled="!step_four" class="select_wrap" :components="{OpenIndicator, Deselect}" :searchable=false
+            <v-select :disabled="!step_four" class="select_wrap" :components="{OpenIndicator, Deselect}"
+                      :searchable=false
                       placeholder="Пробег" taggable
                       :options="mileage" v-on:input="stepFive" v-model="selected_mileage">
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
@@ -119,15 +123,17 @@
             axios
         },
         filters: {
-            formatPrice: function(price) {
-                if (!parseInt(price)) { return "";}
-                if(price > 999) {
+            formatPrice: function (price) {
+                if (!parseInt(price)) {
+                    return "";
+                }
+                if (price > 999) {
                     var priceString = (price / 1).toFixed(0);
                     var priceArray = priceString.split("").reverse();
                     var index = 0;
                     while (priceArray.length > index + 3) {
-                        priceArray.splice(index+3, 0, " ");
-                        index +=4;
+                        priceArray.splice(index + 3, 0, " ");
+                        index += 4;
                     }
                     return priceArray.reverse().join("");
                 } else {
@@ -169,7 +175,7 @@
                 }
                 this.step_one = true;
                 this.selected_brand = input;
-                //this.$children[1].disabled = false;
+
             },
 
             stepTwo: function (input) {
@@ -215,7 +221,7 @@
                 this.selected_year = input;
                 console.log(input);
 
-                if (this.selected_mileage != null){
+                if (this.selected_mileage != null) {
                     console.log(this.selected_mileage);
                     this.getEstimation();
                 }
@@ -249,7 +255,7 @@
             },
 
             showPrices: function () {
-                if(this.estimation) {
+                if (this.estimation) {
                     let warning = document.getElementById('warning');
                     let prices_block = document.getElementById('prices_block');
                     let count_button = document.getElementById('count_button');
@@ -265,12 +271,11 @@
             },
 
             setHrefCreditButton() {
-                document.getElementById("creditButton").
-                setAttribute("href", this.creditPath.replace("model_details", "trade_in_credit"));
+                document.getElementById("creditButton").setAttribute("href", this.creditPath.replace("model_details", "trade_in_credit"));
             },
             setCookie(price) {
                 let current_date = new Date();
-                current_date.setTime(current_date.getTime() + 3600 );
+                current_date.setTime(current_date.getTime() + 3600);
                 let cookieexpire = current_date.toLocaleString();
 
                 document.cookie = "trade_in_price=" + price + ";expires=" + cookieexpire + "path=/";
@@ -424,21 +429,21 @@
         padding-top: 5%;
     }
 
-/*    .credit-profit-text {
-        padding: 5%;
+    /*    .credit-profit-text {
+            padding: 5%;
 
-        ul {
-            list-style: none;
-            font-size: 12px;
-        }
+            ul {
+                list-style: none;
+                font-size: 12px;
+            }
 
-        ul li:before {
-            content: '✓  ';
-            color: #1d643b;
-        }
+            ul li:before {
+                content: '✓  ';
+                color: #1d643b;
+            }
 
-        .hollow-button {
-            border-radius: 25px;
-        }
-    }*/
+            .hollow-button {
+                border-radius: 25px;
+            }
+        }*/
 </style>

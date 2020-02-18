@@ -13,14 +13,16 @@
             </div>
 
             <div class="buy-step-block">
-                <div class="divided" :class="[ grade == 1 || grade == 2 ? 'buy-step-circle-colored' : 'buy-step-circle' ]">
+                <div class="divided"
+                     :class="[ grade == 1 || grade == 2 ? 'buy-step-circle-colored' : 'buy-step-circle' ]">
                     <p class="buy-step-number">2</p>
                 </div>
                 <p class="buy-step-text">Рассчитайте платеж</p>
             </div>
 
-            <div class="buy-step-block" >
-                <div class="buy-step-circle divided" :class="[ grade == 4 ? 'buy-step-circle-colored' : 'buy-step-circle' ]">
+            <div class="buy-step-block">
+                <div class="buy-step-circle divided"
+                     :class="[ grade == 4 ? 'buy-step-circle-colored' : 'buy-step-circle' ]">
                     <p class="buy-step-number">3</p>
                 </div>
                 <p class="buy-step-text">Заполните форму</p>
@@ -39,14 +41,15 @@
         </section>
 
         <div v-if="grade === 1">
-            <classified :brands='brands' ></classified>
+            <classified :brands='brands'></classified>
             <div class="button-wrapper-row">
                 <a class="btn-half-secondary" v-on:click.prevent="gradeShow(3)">Наличный расчет</a>
                 <a class="btn-half-primary" id="creditButton" v-on:click.prevent="gradeShow(2)">В кредит</a>
             </div>
         </div>
 
-        <range-slider-component :car='car_attrs' v-if="grade === 2"></range-slider-component>
+        <range-slider-component :credit_programs="credit_programs" :car='car_attrs'
+                                v-if="grade === 2"></range-slider-component>
         <form-buy-component v-if="grade === 4"></form-buy-component>
 
         <div class="buttons_other" v-if="grade === 2">
@@ -56,7 +59,8 @@
         </div>
 
         <div class="progressbar-wrapper">
-            <div class="progressbar-line" :class="[ grade === 1 || grade === 2 ? 'step2' : '', grade === 4 ? 'step4' : '' ]"></div>
+            <div class="progressbar-line"
+                 :class="[ grade === 1 || grade === 2 ? 'step2' : '', grade === 4 ? 'step4' : '' ]"></div>
             <span class="progressbar-text" v-if="!grade">Осталось всего 2 шага до получения выгодных условий</span>
             <span class="progressbar-text" v-if="grade === 1">Мы готовы выкупить ваш автомобиль на 10% дороже рынка при обмене на новенькую LADA</span>
             <span class="progressbar-text" v-if="grade === 2">Вы у цели! Закрепите выгодные условия</span>
@@ -66,17 +70,21 @@
 
 <script>
 
+    import axios from "axios";
+
     export default {
         name: 'App',
         props: [
             'brands',
             'car_model',
             'car_type',
-            'car_attrs'
+            'car_attrs',
         ],
-        data: function() {
+        data: function () {
             return {
-                grade: 0
+                grade: 0,
+                credit_programs: null,
+                host_url: window.location.protocol + '//' + window.location.host
             };
         },
         methods: {
@@ -84,11 +92,18 @@
                 this.grade = grade;
             }
         },
-        components: {
+        components: {},
+        mounted() {
+            axios.get(this.host_url + '/api/get_credit_programs')
+                .then((response) => {
+                    this.credit_programs = response.data;
+                }).catch(error => {
+                console.log(error)
+            });
         }
     };
 </script>
 
-<style lang="scss" >
+<style lang="scss">
 
 </style>
