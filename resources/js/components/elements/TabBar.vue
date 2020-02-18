@@ -125,8 +125,6 @@
             IconRoute,
             IconChat,
             vSelect
-        },
-        created: function() {
         }
     }
 </script>
@@ -356,8 +354,10 @@
                 padding: 0;
             }
 
+            .vs__dropdown-option--selected,
             .vs__dropdown-option--highlight {
                 background-color: #FF8351;
+                color: #000;
             }
 
             .vs__fade-enter-active,
