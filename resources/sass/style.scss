@@ -1122,6 +1122,19 @@ footer {
     margin: 0 30px;
 }
 
+.center {
+    text-align: center;
+}
+
+.model-choose-text2 {
+    font-family: PragmaticaLightC, Helvetica, sans-serif;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.4;
+    margin: 0 50px;
+}
+
 .option-text {
     font-family: PragmaticaLightCBold, Helvetica, sans-serif;
     margin: 10% 30px 5%;
@@ -1270,6 +1283,10 @@ footer {
             left: 0;
             background: rgb(255,131,81);
             background: url(/build/images/icons/progressbar.svg) repeat-x,linear-gradient(90deg, rgba(255,131,81,1) 0%, rgba(255,182,119,1) 70%);
+            -webkit-transition: all ease-out 1s;
+            -moz-transition: all ease-out 1s;
+            -o-transition: all ease-out 1s;
+            transition: all ease-out 1s;
 
         }
 
@@ -1311,7 +1328,7 @@ footer {
     font-weight: bold;
 }
 
-.highlight {
+.block-highlight {
     color: #FF8351;
 }
 

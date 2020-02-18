@@ -6,15 +6,9 @@
 
         <div class="conditions">
             <ul>
-                <li>
-                    <check-icon class="check"></check-icon>
-                    <span>12 банков-партнеров</span></li>
-                <li>
-                    <check-icon class="check"></check-icon>
-                    <span>Одобрение по кредиту 30 минут</span></li>
-                <li>
-                    <check-icon class="check"></check-icon>
-                    <span>Вероятность одобрения 96%</span></li>
+                <li><check-icon class="check"></check-icon> <span>12 банков-партнеров</span></li>
+                <li><check-icon class="check"></check-icon> <span>Одобрение по кредиту 30 минут</span></li>
+                <li><check-icon class="check"></check-icon> <span>Вероятность одобрения 96%</span></li>
             </ul>
         </div>
 
@@ -28,8 +22,7 @@
             </div>
 
             <div class="disabled-input">
-                <span class="credit-first-payment"><input v-on:input="inputChangePayment" name="first-payment"
-                                                          v-model="firstPayment"/> руб.</span>
+                <span class="credit-first-payment"><input v-on:input="inputChangePayment" type="number" min="0" :max="Math.round(car[0].price /2)" name="first-payment" v-model="firstPayment"/> руб.</span>
             </div>
 
             <div class="credit-profit-text">Срок в месяцах</div>
@@ -42,8 +35,7 @@
             </div>
 
             <div class="disabled-input">
-                <span class="credit-period"><input name="period" v-on:input="changePeriod"
-                                                   v-model="period"/> мес.</span>
+                <span class="credit-period"><input v-on:input="changePeriod" type="number" :min="sliderTwo.min" :max="sliderTwo.max" name="period" v-model="period"/> мес.</span>
             </div>
         </div>
 
@@ -71,7 +63,7 @@
     import CheckIcon from './icons/CheckIcon.vue';
 
     export default {
-        props: ['car', 'credit_programs'],
+        props: ['car'],
         components: {
             VueSlider,
             CheckIcon
@@ -130,6 +122,7 @@
             }
         },
         methods: {
+
             inputChangePayment() {
                 this.firstPaymentPercent = Math.round(this.firstPayment / this.car[0].price * 100);
                 console.log(this.firstPaymentPercent);
@@ -175,9 +168,13 @@
             }
         },
         mounted() {
-
             if (this.getCookie('trade_in_price') != null && this.getCookie('trade_in_price') > 0) {
                 this.firstPayment = this.getCookie('trade_in_price');
+                this.firstPaymentPercent = Math.round( this.firstPayment/this.car[0].price * 100);
+
+                if (this.firstPaymentPercent > this.sliderOne.max) {
+                    this.firstPayment = Math.round(this.car[0].price /2);
+                }
                 this.calculatePercentFromTradeInPrice();
                 this.calculateMonthlyPayment();
             } else {
@@ -208,9 +205,11 @@
         margin-bottom: 5px;
         display: flex;
 
-        & > span {
+        &>span {
             float: left;
             display: block;
+            margin-left: 10px;
+            clear: both;
         }
 
         i {
@@ -220,15 +219,6 @@
         .check {
             width: 16px;
             height: auto;
-        }
-
-        span {
-            margin-left: 10px;
-            clear: both;
-        }
-
-        &::before {
-
         }
     }
 
@@ -274,7 +264,6 @@
             li {
                 margin-bottom: 15px;
                 font-weight: bold;
-
                 .program-cost {
                     font-family: PragmaticaLightCBold, Helvetica, sans-serif;
                     font-size: 16px;
@@ -330,10 +319,10 @@
         box-shadow: #ff8351;
     }
 
-    /*    .vue-slider .vue-slider-mark-step-active {
-            box-shadow: none;
-            background-color: transparent;
-        }*/
+/*    .vue-slider .vue-slider-mark-step-active {
+        box-shadow: none;
+        background-color: transparent;
+    }*/
 
     .vue-slider .vue-slider-marks :first-child .vue-slider-mark-step,
     .vue-slider .vue-slider-marks :last-child .vue-slider-mark-step {
@@ -360,6 +349,119 @@
     .vue-slider-ltr .vue-slider-mark-label, .vue-slider-rtl .vue-slider-mark-label {
         margin-top: 16px;
     }
+    .control {
+        display: block;
+        position: relative;
+        padding-left: 25px;
+        margin-bottom: 14px;
+        padding-top: 0;
+        cursor: pointer;
+    }
+    .control input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+    .control_indicator {
+        position: absolute;
+        top: -2px;
+        left: 0;
+        height: 15px;
+        width: 15px;
+        background: #e6e6e6;
+        border: 2px solid #9d9f9e;
+       /* border-radius: undefined;*/
+    }
+    .control:hover input ~ .control_indicator,
+    .control input:focus ~ .control_indicator {
+        background: #cccccc;
+    }
 
+    .control input:checked ~ .control_indicator {
+        background: #ffffff;
+    }
+    .control:hover input:not([disabled]):checked ~ .control_indicator,
+    .control input:checked:focus ~ .control_indicator {
+    /*    background: #0e6647;*/
+    }
+    .control input:disabled ~ .control_indicator {
+        background: #e6e6e6;
+        opacity: 2;
+        pointer-events: none;
+    }
+    .control_indicator:after {
+        box-sizing: unset;
+        content: '';
+        position: absolute;
+        display: none;
+    }
+    .control input:checked ~ .control_indicator:after {
+        display: block;
+    }
+    .control-radio .control_indicator {
+        border-radius: 50%;
+    }
+
+    .control-radio .control_indicator:after {
+        left: 2px;
+        top: 2px;
+        height: 7px;
+        width: 7px;
+        border-radius: 50%;
+        background: #8e8f8f;
+        transition: background 250ms;
+    }
+    .control-radio input:disabled ~ .control_indicator:after {
+         background: #7b7b7b;
+    }.control-radio .control_indicator::before {
+         content: '';
+         display: block;
+         position: absolute;
+         left: 0;
+         top: 0;
+         width: 4rem;
+         height: 4rem;
+         margin-left: -1.9rem;
+         margin-top: -1.9em;
+         background: #FF8351;
+         border-radius: 3rem;
+         opacity: 0.6;
+         z-index: 99999;
+         transform: scale(0);
+     }
+    @keyframes s-ripple {
+        0% {
+            opacity: 0;
+            transform: scale(0);
+        }
+        20% {
+            transform: scale(1);
+        }
+        100% {
+            opacity: 0.01;
+            transform: scale(1);
+        }
+    }
+    @keyframes s-ripple-dup {
+        0% {
+            transform: scale(0);
+        }
+        30% {
+            transform: scale(1);
+        }
+        60% {
+            transform: scale(1);
+        }
+        100% {
+            opacity: 0;
+            transform: scale(1);
+        }
+    }
+    .control-radio input + .control_indicator::before {
+        animation: s-ripple 250ms ease-out;
+    }
+    .control-radio input:checked + .control_indicator::before {
+        animation-name: s-ripple-dup;
+    }
 
 </style>
