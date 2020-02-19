@@ -30,5 +30,13 @@ mix
     .sass('resources/sass/app2.scss', 'css/app2.css')
     .version();
 
-//mix.browserSync('https://localhost:8080');
+/*
+mix.browserSync({
+    open: 'external',
+    watchTask: true,
+    proxy: 'https://0.0.0.0',
+    port: 8080,
+    browser: "chrome"
+});
+*/
 
