@@ -31,7 +31,7 @@ class CarModelCarTypeTableSeeder extends Seeder
             ['car_model_id' => '5', 'car_type_id' => '16', 'preview' => false, 'price' => 897900, 'special_price' => 897900, 'count'=>333],
             ['car_model_id' => '5', 'car_type_id' => '17', 'preview' => false, 'price' => 962900, 'special_price' => 944900, 'count'=>333],
             ['car_model_id' => '5', 'car_type_id' => '18', 'preview' => true, 'price' => 571900, 'special_price' => 476910, 'count'=>333],
-            ['car_model_id' => '5', 'car_type_id' => '19', 'preview' => false, 'price' => 954900, 'special_price' => 872900, 'count'=>333],
+            ['car_model_id' => '5', 'car_type_id' => '3', 'preview' => false, 'price' => 495810, 'special_price' => 597900, 'count'=>333],
         ];
 
         DB::table('car_model_car_type')->insert($model_types);
