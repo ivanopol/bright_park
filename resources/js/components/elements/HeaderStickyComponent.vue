@@ -122,7 +122,7 @@
             }
 
             .model-button {
-                width: 50%;
+                width: 60%;
                 height: 25px;
                 display: flex;
                 justify-content: flex-end;
