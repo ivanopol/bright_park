@@ -353,6 +353,64 @@ class ColorTableSeeder extends Seeder
                 'class' => 'color-camouflage-jungle',
                 'is_active' => false
             ],
+            // Largus
+            // универсал
+            [
+                'model_id' => 5,
+                'type_id' => 3,
+                'title' => 'Ледниковый',
+                'image' => '/build/images/colors/lada/largus/universal/largus_glacial.png',
+                'class' => 'color-white-glacial',
+                'is_active' => true
+            ],
+            [
+                'model_id' => 5,
+                'type_id' => 3,
+                'title' => 'Огненно-красный',
+                'image' => '/build/images/colors/lada/largus/universal/largus_fire_red.png',
+                'class' => 'color-fiery-red',
+                'is_active' => false
+            ],
+            [
+                'model_id' => 5,
+                'type_id' => 3,
+                'title' => 'Серый базальт',
+                'image' => '/build/images/colors/lada/largus/universal/largus_basalt_gray.png',
+                'class' => 'color-basalt-gray',
+                'is_active' => false
+            ],
+            [
+                'model_id' => 5,
+                'type_id' => 3,
+                'title' => 'Кашемир',
+                'image' => '/build/images/colors/lada/largus/universal/largus_cashmere.png',
+                'class' => 'color-cashemer',
+                'is_active' => false
+            ],
+            [
+                'model_id' => 5,
+                'type_id' => 3,
+                'title' => 'Лазурно-синий',
+                'image' => '/build/images/colors/lada/largus/universal/largus_sky_blue.png',
+                'class' => 'color-sky-blue',
+                'is_active' => false
+            ],
+            [
+                'model_id' => 5,
+                'type_id' => 3,
+                'title' => 'Черная жемчужина',
+                'image' => '/build/images/colors/lada/largus/universal/largus_black_pearl.png',
+                'class' => 'color-black-pearl',
+                'is_active' => false
+            ],
+            [
+                'model_id' => 5,
+                'type_id' => 3,
+                'title' => 'Платина',
+                'image' => '/build/images/colors/lada/largus/universal/largus_platinum.png',
+                'class' => 'color-platina',
+                'is_active' => false
+            ],
         ];
 
         DB::table('colors')->insert($colors);

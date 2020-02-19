@@ -1,13 +1,23 @@
 <template>
-    <hooper class="opinions">
-        <slide v-for="review in reviews" :key="reviews.key">
-            <blockquote :cite="review.url">
-                <p v-html="review.quote"></p>
-                <footer v-html="review.author"></footer>
-            </blockquote>
-        </slide>
-        <hooper-pagination slot="hooper-addons"></hooper-pagination>
-    </hooper>
+    <section class="block block_4">
+        <div class="block-text">
+            <h2><span class="c_orange">Эксперты</span> о {{model_name}}</h2>
+        </div>
+        <div class="opinions">
+            <hooper class="opinions">
+                <slide v-for="review in reviews" :key="reviews.key">
+                    <blockquote :cite="review.url">
+                        <p v-html="review.quote"></p>
+                        <footer v-html="review.author"></footer>
+                    </blockquote>
+                </slide>
+                <hooper-pagination slot="hooper-addons"></hooper-pagination>
+            </hooper>
+        </div>
+        <div class="trigger-wrap">
+            <p>98% клиентов оставили положительные отзывы о&nbsp;{{model_name}}</p>
+        </div>
+    </section>
 </template>
 
 <script>
@@ -20,7 +30,7 @@
 
     export default {
         name: 'App',
-        props : ['reviews'],
+        props : ['reviews', 'model_name'],
         components: {
             Hooper,
             Slide,
