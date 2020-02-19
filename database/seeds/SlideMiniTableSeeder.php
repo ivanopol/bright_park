@@ -96,15 +96,15 @@ class SlideMiniTableSeeder extends Seeder
                 'model_id' => 3,
                 'type_id' => 20,
                 'image' => '/build/images/slider/mini/xray/mobile/xray.png',
-                'alt' => 'X-Ray',
-                'title' => 'X-Ray'
+                'alt' => 'XRAY',
+                'title' => 'XRAY'
             ],
             [
                 'model_id' => 3,
                 'type_id' => 5,
                 'image' => '/build/images/slider/mini/xray/mobile/xray_cross.png',
-                'alt' => 'Лада X-Ray Cross',
-                'title' => 'X-Ray Cross'
+                'alt' => 'Лада XRAY Cross',
+                'title' => 'XRAY Cross'
             ],
             [
                 'model_id' => 4,
@@ -140,6 +140,48 @@ class SlideMiniTableSeeder extends Seeder
                 'image' => '/build/images/slider/mini/4x4/mobile/4x4_bronto.png',
                 'alt' => 'Лада 4x4 Bronto',
                 'title' => '4x4 Bronto',
+            ],
+            [
+                'model_id' => 5,
+                'type_id' => 3,
+                'image' => '/build/images/slider/mini/largus/mobile/largus_universal.png',
+                'alt' => 'Лада Largus универсал',
+                'title' => 'универсал'
+            ],
+            [
+                'model_id' => 5,
+                'type_id' => 16,
+                'image' => '/build/images/slider/mini/largus/mobile/largus_universal_cng.png',
+                'alt' => 'Лада Largus универсал CNG',
+                'title' => 'универсал CNG'
+            ],
+            [
+                'model_id' => 5,
+                'type_id' => 4,
+                'image' => '/build/images/slider/mini/largus/mobile/largus_cross.png',
+                'alt' => 'Лада Largus Cross',
+                'title' => 'Cross'
+            ],
+            [
+                'model_id' => 5,
+                'type_id' => 17,
+                'image' => '/build/images/slider/mini/largus/mobile/largus_cross_cng.png',
+                'alt' => 'Лада Largus Cross CNG',
+                'title' => 'Cross CNG'
+            ],
+            [
+                'model_id' => 5,
+                'type_id' => 18,
+                'image' => '/build/images/slider/mini/largus/mobile/largus_minivan.png',
+                'alt' => 'Лада Largus фургон',
+                'title' => 'фургон'
+            ],
+            [
+                'model_id' => 5,
+                'type_id' => 19,
+                'image' => '/build/images/slider/mini/largus/mobile/largus_minivan_cng.png',
+                'alt' => 'Лада Largus фургон CNG',
+                'title' => 'фургон CNG'
             ],
         ];
 

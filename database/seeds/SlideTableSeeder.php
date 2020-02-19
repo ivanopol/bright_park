@@ -75,8 +75,8 @@ class SlideTableSeeder extends Seeder
                 'model_id' => 3,
                 'type_id' => 20,
                 'class' => 'xray_1',
-                'title' => 'LADA X-Ray',
-                'reduction' => 'X-Ray',
+                'title' => 'LADA XRAY',
+                'reduction' => 'XRAY',
                 'subtitle' => 'Классический стиль,</br> оптимальный выбор',
                 'link' => '/model_details'
             ],
@@ -86,6 +86,15 @@ class SlideTableSeeder extends Seeder
                 'class' => 'l4x4_1',
                 'title' => 'LADA 4x4',
                 'reduction' => '4x4',
+                'subtitle' => 'Классический стиль,</br> оптимальный выбор',
+                'link' => '/model_details'
+            ],
+            [
+                'model_id' => 5,
+                'type_id' => 3,
+                'class' => 'largus_1',
+                'title' => 'LADA Largus универсал',
+                'reduction' => 'Largus универсал',
                 'subtitle' => 'Классический стиль,</br> оптимальный выбор',
                 'link' => '/model_details'
             ],
