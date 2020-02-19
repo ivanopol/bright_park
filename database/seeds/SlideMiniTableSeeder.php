@@ -19,7 +19,7 @@ class SlideMiniTableSeeder extends Seeder
                 'model_id' => 1,
                 'type_id' => 2,
                 'image' => '/build/images/slider/mini/granta/mobile/lada_granta_liftback.png',
-                'alt' =>  'Лада Гранта лифтбек',
+                'alt' => 'Лада Гранта лифтбек',
                 'title' => 'Лифтбек'
             ],
             [
@@ -33,7 +33,7 @@ class SlideMiniTableSeeder extends Seeder
                 'model_id' => 1,
                 'type_id' => 4,
                 'image' => '/build/images/slider/mini/granta/mobile/lada_granta_cross.png',
-                'alt'=> 'Лада Гранта cross',
+                'alt' => 'Лада Гранта cross',
                 'title' => 'Cross'
             ],
             [
@@ -45,7 +45,7 @@ class SlideMiniTableSeeder extends Seeder
             ],
             [
                 'model_id' => 1,
-                'type_id' =>6,
+                'type_id' => 6,
                 'image' => '/build/images/slider/mini/granta/mobile/lada_granta_hatcback.png',
                 'alt' => 'Лада Гранта хэтчбек',
                 'title' => 'Хэтчбек'
@@ -61,7 +61,7 @@ class SlideMiniTableSeeder extends Seeder
                 'model_id' => 2,
                 'type_id' => 5,
                 'image' => '/build/images/slider/mini/vesta/mobile/lada_vesta_cross.png',
-                'alt' =>  'Лада Веста Cross',
+                'alt' => 'Лада Веста Cross',
                 'title' => 'Cross'
             ],
             [
@@ -75,7 +75,7 @@ class SlideMiniTableSeeder extends Seeder
                 'model_id' => 2,
                 'type_id' => 8,
                 'image' => '/build/images/slider/mini/vesta/mobile/lada_vesta_sw_cross.png',
-                'alt'=> 'Лада Веста SW Cross',
+                'alt' => 'Лада Веста SW Cross',
                 'title' => 'SW Cross'
             ],
             [
@@ -139,7 +139,7 @@ class SlideMiniTableSeeder extends Seeder
                 'type_id' => 15,
                 'image' => '/build/images/slider/mini/4x4/mobile/4x4_bronto.png',
                 'alt' => 'Лада 4x4 Bronto',
-                'title' => '4x4 Bronto'
+                'title' => '4x4 Bronto',
             ],
             [
                 'model_id' => 5,

@@ -97,7 +97,7 @@ class BlockTableSeeder extends Seeder
                 'type_id' => 3,
                 'title' => '<span class="c_orange">Сочетая</span> самое лучшее',
                 'text' => 'Компактный внешне и удивительно просторный внутри. Быстрый, но экономичный. Способный одинаково успешно ездить в любых погодных условиях и в городе, и на трассе, и по проселку. Красивый, комфортный, недорогой. Казалось бы, автомобиль не может сочетать в себе так много плюсов, но LADA Granta — это под силу.',
-                'url' => '/build/images/photos/models/granta/blocks/block_01/mobile/block_01.jpg',
+                'url' => '/build/images/photos/models/granta/blocks/universal/block_01/mobile/block_01.jpg',
                 'pointers' => 0,
                 'pnum' => 0,
                 'show' => false
@@ -107,9 +107,9 @@ class BlockTableSeeder extends Seeder
                 'type_id' => 3,
                 'title' => '<span class="c_orange">Новое</span> в знакомом',
                 'text' => 'А ведь правда, мы становимся лучше, умнее, опытнее, сильнее. Мы радуемся, открывая что-то новое в себе и рядом с собой. Замечаем, когда меняется действительно что-то важное – стиль, комфорт, возможности любимого автомобиля.',
-                'url' => '/build/images/photos/models/granta/blocks/block_02/mobile/block_02.jpg',
+                'url' => '/build/images/photos/models/granta/blocks/universal/block_02/mobile/block_02.jpg',
                 'pointers' => 0,
-                'pnum' => 1,
+                'pnum' => 0,
                 'show' => false
             ],
             [
@@ -117,20 +117,22 @@ class BlockTableSeeder extends Seeder
                 'type_id' => 3,
                 'title' => '<span class="c_orange">Забота</span> о каждом',
                 'text' => 'Что может сравниться с той радостью, когда дарят подарок, который ты давно хотел? Только радость человека, которому даришь то, о чем он давно мечтал. Но потребности даже близких людей иногда понять непросто. Хорошо, что есть машина, умеющая учитывать самые разные запросы.',
-                'url' => '/build/images/photos/models/granta/blocks/block_03/mobile/block_03.jpg',
+                'url' => '/build/images/photos/models/granta/blocks/universal/block_03/mobile/block_03.jpg',
                 'pointers' => 0,
-                'pnum' => 2,
-                'show' => false,
+                'pnum' => 0,
+                'show' => false
             ],
             [
                 'model_id' => 1,
                 'type_id' => 3,
                 'title' => '<span class="c_orange">Ответственность</span> и безопасность',
-                'text' => 'Мир скоростей требует повышенного внимания. И повышенной отдачи: я слежу не только за собой, но и помогаю близким. А технологии помогают мне – ощутимо и эффективно! Особенно когда это комплекс электронных помощников водителя.<br><br> Благодаря проработанной силовой структуре кузова и современным системам безопасности LADA Granta лифтбек выполняет российские и европейские требования по защите водителя, пассажиров и пешеходов.',
-                'url' => '/build/images/photos/models/granta/blocks/block_04/mobile/block_04.jpg',
+                'text' => 'Мир скоростей требует повышенного внимания. И повышенной отдачи: я слежу не только за собой, но и помогаю близким. А технологии помогают мне – ощутимо и эффективно! Особенно когда это комплекс электронных помощников водителя.
+
+Благодаря проработанной силовой структуре кузова и современным системам безопасности LADA Granta универсал выполняет российские и европейские требования по защите водителя, пассажиров и пешеходов.',
+                'url' => '/build/images/photos/models/granta/blocks/universal/block_04/mobile/block_04.jpg',
                 'pointers' => 0,
-                'pnum' => 3,
-                'show' => false,
+                'pnum' => 0,
+                'show' => false
             ],
             // cross
             [
@@ -177,9 +179,9 @@ class BlockTableSeeder extends Seeder
             [
                 'model_id' => 1,
                 'type_id' => 5,
-                'title' => '<span class="c_orange">Сочетая</span> самое лучшее',
-                'text' => 'Компактный внешне и удивительно просторный внутри. Быстрый, но экономичный. Способный одинаково успешно ездить в любых погодных условиях и в городе, и на трассе, и по проселку. Красивый, комфортный, недорогой. Казалось бы, автомобиль не может сочетать в себе так много плюсов, но LADA Granta — это под силу.',
-                'url' => '/build/images/photos/models/granta/blocks/block_01/mobile/block_01.jpg',
+                'title' => '<span class="c_red">Активное вождение:</span> стильно и комфортно',
+                'text' => 'LADA Granta Drive Active – автомобиль, всегда готовый к драйву. Взгляды, прикосновения, перегрузки в виражах… каждое ощущение – особенное.',
+                'url' => '/build/images/photos/models/granta/blocks/drive_active/block_01/mobile/block_01.jpg',
                 'pointers' => 0,
                 'pnum' => 0,
                 'show' => false
@@ -187,9 +189,9 @@ class BlockTableSeeder extends Seeder
             [
                 'model_id' => 1,
                 'type_id' => 5,
-                'title' => '<span class="c_orange">Новое</span> в знакомом',
-                'text' => 'А ведь правда, мы становимся лучше, умнее, опытнее, сильнее. Мы радуемся, открывая что-то новое в себе и рядом с собой. Замечаем, когда меняется действительно что-то важное – стиль, комфорт, возможности любимого автомобиля.',
-                'url' => '/build/images/photos/models/granta/blocks/block_02/mobile/block_02.jpg',
+                'title' => '<span class="c_red">АЭРО­ДИНАМИЧЕСКИЙ</span> ОБВЕС',
+                'text' => 'Качество скоростного вождения обеспечивается аэродинамикой автомобиля. Стильные бамперы, обтекатели порога и спойлер на багажнике – эти лаконичные и характерные элементы появились после тщательной «продувки» в аэродинамической трубе.',
+                'url' => '/build/images/photos/models/granta/blocks/drive_active/block_02/mobile/block_02.jpg',
                 'pointers' => 0,
                 'pnum' => 1,
                 'show' => false
@@ -197,9 +199,11 @@ class BlockTableSeeder extends Seeder
             [
                 'model_id' => 1,
                 'type_id' => 5,
-                'title' => '<span class="c_orange">Забота</span> о каждом',
-                'text' => 'Что может сравниться с той радостью, когда дарят подарок, который ты давно хотел? Только радость человека, которому даришь то, о чем он давно мечтал. Но потребности даже близких людей иногда понять непросто. Хорошо, что есть машина, умеющая учитывать самые разные запросы.',
-                'url' => '/build/images/photos/models/granta/blocks/block_03/mobile/block_03.jpg',
+                'title' => '<span class="c_red">Спортивный</span> характер',
+                'text' => 'Granta Drive Active содержит 28 оригинальных деталей, которые преобразили внешний вид автомобиля и сформировали особый, задиристый характер. Новые стойки передней подвески, передние и задние пружины, амортизаторы улучшили устойчивость и управляемость автомобиля при динамичном вождении.
+
+Drive Active – это опыт, полученный командой LADA Sport в соревнованиях российского и международного уровня.',
+                'url' => '/build/images/photos/models/granta/blocks/drive_active/block_03/mobile/block_03.jpg',
                 'pointers' => 0,
                 'pnum' => 2,
                 'show' => false,
@@ -207,9 +211,11 @@ class BlockTableSeeder extends Seeder
             [
                 'model_id' => 1,
                 'type_id' => 5,
-                'title' => '<span class="c_orange">Ответственность</span> и безопасность',
-                'text' => 'Мир скоростей требует повышенного внимания. И повышенной отдачи: я слежу не только за собой, но и помогаю близким. А технологии помогают мне – ощутимо и эффективно! Особенно когда это комплекс электронных помощников водителя.<br><br> Благодаря проработанной силовой структуре кузова и современным системам безопасности LADA Granta лифтбек выполняет российские и европейские требования по защите водителя, пассажиров и пешеходов.',
-                'url' => '/build/images/photos/models/granta/blocks/block_04/mobile/block_04.jpg',
+                'title' => '<span class="c_red">ВОЖДЕНИЕ</span> С АЗАРТОМ',
+                'text' => 'LADA Granta Drive Active – необычный автомобиль с особыми характеристиками. Это автомобиль для тех, кто любит процесс управления, для тех, кто чувствует машину и умеет выбирать оптимальный режим движения.
+
+Два варианта трансмиссии позволяют еще более тонко настроить автомобиль под себя. Выбрать «механику» и постоянный контроль над автомобилем. Или АМТ – и комфортный автоматический режим с возможностью ручного переключения передач.',
+                'url' => '/build/images/photos/models/granta/blocks/drive_active/block_04/mobile/block_04.jpg',
                 'pointers' => 6,
                 'pnum' => 3,
                 'show' => false,
@@ -220,7 +226,7 @@ class BlockTableSeeder extends Seeder
                 'type_id' => 6,
                 'title' => '<span class="c_orange">Сочетая</span> самое лучшее',
                 'text' => 'Компактный внешне и удивительно просторный внутри. Быстрый, но экономичный. Способный одинаково успешно ездить в любых погодных условиях и в городе, и на трассе, и по проселку. Красивый, комфортный, недорогой. Казалось бы, автомобиль не может сочетать в себе так много плюсов, но LADA Granta — это под силу.',
-                'url' => '/build/images/photos/models/granta/blocks/block_01/mobile/block_01.jpg',
+                'url' => '/build/images/photos/models/granta/blocks/hatchback/block_01/mobile/block_01.jpg',
                 'pointers' => 0,
                 'pnum' => 0,
                 'show' => false
@@ -230,7 +236,7 @@ class BlockTableSeeder extends Seeder
                 'type_id' => 6,
                 'title' => '<span class="c_orange">Новое</span> в знакомом',
                 'text' => 'А ведь правда, мы становимся лучше, умнее, опытнее, сильнее. Мы радуемся, открывая что-то новое в себе и рядом с собой. Замечаем, когда меняется действительно что-то важное – стиль, комфорт, возможности любимого автомобиля.',
-                'url' => '/build/images/photos/models/granta/blocks/block_02/mobile/block_02.jpg',
+                'url' => '/build/images/photos/models/granta/blocks/hatchback/block_02/mobile/block_02.jpg',
                 'pointers' => 0,
                 'pnum' => 1,
                 'show' => false
@@ -240,7 +246,7 @@ class BlockTableSeeder extends Seeder
                 'type_id' => 6,
                 'title' => '<span class="c_orange">Забота</span> о каждом',
                 'text' => 'Что может сравниться с той радостью, когда дарят подарок, который ты давно хотел? Только радость человека, которому даришь то, о чем он давно мечтал. Но потребности даже близких людей иногда понять непросто. Хорошо, что есть машина, умеющая учитывать самые разные запросы.',
-                'url' => '/build/images/photos/models/granta/blocks/block_03/mobile/block_03.jpg',
+                'url' => '/build/images/photos/models/granta/blocks/hatchback/block_03/mobile/block_03.jpg',
                 'pointers' => 0,
                 'pnum' => 2,
                 'show' => false,
@@ -250,7 +256,7 @@ class BlockTableSeeder extends Seeder
                 'type_id' => 6,
                 'title' => '<span class="c_orange">Ответственность</span> и безопасность',
                 'text' => 'Мир скоростей требует повышенного внимания. И повышенной отдачи: я слежу не только за собой, но и помогаю близким. А технологии помогают мне – ощутимо и эффективно! Особенно когда это комплекс электронных помощников водителя.<br><br> Благодаря проработанной силовой структуре кузова и современным системам безопасности LADA Granta лифтбек выполняет российские и европейские требования по защите водителя, пассажиров и пешеходов.',
-                'url' => '/build/images/photos/models/granta/blocks/block_04/mobile/block_04.jpg',
+                'url' => '/build/images/photos/models/granta/blocks/hatchback/block_04/mobile/block_04.jpg',
                 'pointers' => 0,
                 'pnum' => 3,
                 'show' => false,
