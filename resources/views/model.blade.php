@@ -37,7 +37,7 @@
                     <a class="btn" href="#" onclick="return false;">Записаться на тест-драйв</a>
                 </li>
                 <li>
-                    <a class="btn" href="{{request()->segment(count(request()->segments()))}}/trade_in_credit">Рассчитать
+                    <a class="btn" href="{{request()->segment(count(request()->segments()))}}/model_details">Рассчитать
                         кредит</a>
                 </li>
                 <li>
