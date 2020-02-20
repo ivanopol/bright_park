@@ -54,13 +54,6 @@
             @endforeach
         </ul>
     </section>
-    <div id="demo">
+    <modal-component></modal-component>
 
-    </div>
-    <section id="buttons_other" class="buttons_other mt-40">
-        <div class="item-buttons-other">
-            <a href="/basic" class="btn btn-primary">Записаться на тест-драйв</a>
-            <a href="" class="btn btn-secondary">Записаться на сервис</a>
-        </div>
-    </section>
 @endsection

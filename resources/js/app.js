@@ -8,7 +8,9 @@
 window.Vue = require('vue');
 //window.Vuex = require('vuex');
 //import Vuex from 'vuex';
+import VModal from 'vue-js-modal';
 
+Vue.use(VModal);
 //Vue.use(Vuex);
 /**
  * The following block of code may be used to automatically register your
@@ -26,6 +28,7 @@ Vue.component('info-component', require('./components/InfoComponent.vue').defaul
 Vue.component('color-choose-component', require('./components/ColorChooseComponent.vue').default);
 Vue.component('form-component', require('./components/FormComponent.vue').default);
 Vue.component('form-buy-component', require('./components/FormBuyComponent.vue').default);
+Vue.component('form-buy2-component', require('./components/FormBuy2Component.vue').default);
 Vue.component('review-component', require('./components/ReviewComponent.vue').default);
 Vue.component('model-details-component', require('./components/ModelDetailsComponent').default);
 Vue.component('header-component', require('./components/elements/HeaderComponent').default);
@@ -39,6 +42,7 @@ Vue.component('classified', require('./components/Classified').default);
 Vue.component('steps', require('./components/Steps').default);
 Vue.component('yandex-map-component', require('./components/YandexMapComponent').default);
 Vue.component('touch-bar-map-component', require('./components/TouchBarMapComponent').default);
+Vue.component('modal-component', require('./components/elements/ModalComponent').default);
 
 /*const store = new Vuex.Store({
     state: {
