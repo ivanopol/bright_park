@@ -12,22 +12,13 @@
                             :type='@json($data['type_id'])'></info-component>
         @endforeach
 
-        <color-choose-component :colors='@json($data['colors'])'></color-choose-component>
+        @if(count($data['colors']))
+            <color-choose-component :colors='@json($data['colors'])'></color-choose-component>
+        @endif
         <form-component></form-component>
-
-        <section class="block block_4">
-            <div class="block-text">
-                <h2><span class="c_orange">Эксперты</span> о {{ $data['model_full'] }}</h2>
-            </div>
-
-            <div class="opinions">
-                <review-component :reviews='@json($data['reviews'])'></review-component>
-            </div>
-            <div class="trigger-wrap">
-                <p>98% клиентов оставили положительные отзывы о&nbsp;{{ $data['model_full'] }}</p>
-            </div>
-
-        </section>
+        @if(count($data['reviews']))
+            <review-component :reviews='@json($data['reviews'])' :model_name="'{{$data['model_full']}}'"></review-component>
+        @endif
         <section class="block next_action">
             <div class="block-text">
                 <h2><span class="c_orange">Ваше</span> следующее действие</h2>

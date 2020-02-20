@@ -116,6 +116,33 @@ class SlideTableSeeder extends Seeder
                 'subtitle' => 'динамический дизайн<br> и вместительность',
                 'link' => '/model_details'
             ],
+            [
+                'model_id' => 2,
+                'type_id' => 7,
+                'class' => 'vesta_1',
+                'title' => 'LADA Vesta SW',
+                'reduction' => 'SW',
+                'subtitle' => 'динамический дизайн<br> и вместительность',
+                'link' => '/model_details'
+            ],
+            [
+                'model_id' => 2,
+                'type_id' => 8,
+                'class' => 'vesta_2',
+                'title' => 'LADA Vesta SW Cross',
+                'reduction' => 'SW Cross',
+                'subtitle' => 'динамический дизайн<br> и вместительность',
+                'link' => '/model_details'
+            ],
+            [
+                'model_id' => 2,
+                'type_id' => 10,
+                'class' => 'vesta_3',
+                'title' => 'LADA Vesta Sport',
+                'reduction' => 'Sport',
+                'subtitle' => 'динамический дизайн<br> и вместительность',
+                'link' => '/model_details'
+            ],
         ];
 
         DB::table('slides')->insert($slides);
