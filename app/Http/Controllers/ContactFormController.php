@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 
 use App\Services\BitrixService;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -23,7 +24,18 @@ class ContactFormController extends \Illuminate\Routing\Controller
             $this->bitrix_service->sendContactForm($request->getContent());
             return Response::HTTP_OK;
         } catch (Exception $e){
-            var_dump($e);
+            var_dump($e->getMessage());
+            return Response::HTTP_BAD_REQUEST;
+        }
+    }
+
+    public function checkVisitorCookie()
+    {
+        try {
+            $this->bitrix_service->checkVisitorCookie();
+            return Response::HTTP_OK;
+        } catch (Exception $e){
+            var_dump($e->getMessage());
             return Response::HTTP_BAD_REQUEST;
         }
     }
