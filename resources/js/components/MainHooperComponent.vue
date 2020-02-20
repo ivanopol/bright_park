@@ -1,6 +1,6 @@
 <template>
     <section>
-        <hooper class="main-screen-wrap">
+        <hooper class="main-screen-wrap" :wheelControl="false" >
             <slide>
                 <div class="asset-container">
                     <img class="asset-image" src="build/images/main/main_granta_red.jpg" alt="Брайт Парк: Доплата 40 000 рублей при обмене на Lada Granta" />
@@ -103,9 +103,19 @@
         }
     }
 
+    .main-screen-wrap {
+
+    }
+
     .main-screen-wrap.hooper {
         background-color: #000;
+        top: -60px;
     }
+
+    .main-screen-wrap ul {
+        //will-change: scroll-position;
+    }
+
 
     .main-screen-wrap ul li {
         position: relative;
@@ -123,7 +133,7 @@
         overflow: hidden;
 
         .asset-container {
-            background-color: #000;
+            /*background-color: #000;*/
             height: 100vh;
         }
         .asset-image {
@@ -153,8 +163,9 @@
                 font-size: 150%;
                 //font-weight: bold;
                 width: 78vw;
-                margin: 0 auto;
+                margin: 40px auto 0;
                 line-height: 1.2;
+
 
                 &.bold {
                     font-family: PragmaticaLightCBold, Helvetica, sans-serif;
