@@ -28,15 +28,11 @@ mix
     .js('resources/js/app.js', 'js')
     .sass('resources/sass/app.scss', 'css/app.css')
     .sass('resources/sass/app2.scss', 'css/app2.css')
-    .version();
-
-/*
-mix.browserSync({
-    open: 'external',
-    watchTask: true,
-    proxy: 'https://0.0.0.0',
-    port: 8080,
-    browser: "chrome"
-});
-*/
+    .version().browserSync({
+        open: false,
+        watchTask: true,
+        proxy: 'https://0.0.0.0',
+        port: 8081,
+        browser: "chrome"
+    });
 
