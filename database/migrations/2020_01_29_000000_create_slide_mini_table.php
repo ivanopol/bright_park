@@ -15,6 +15,7 @@ class CreateSlideMiniTable extends Migration
             $table->string('image');
             $table->string('alt');
             $table->string('title');
+            $table->boolean('active');
         });
         Artisan::call('db:seed', [
             '--class' => SlideMiniTableSeeder::class

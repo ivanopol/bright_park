@@ -51,7 +51,8 @@ class BasePageService
 
 
         $slide_mini = DB::table('slide_mini')->select('*')->where([
-            ['model_id', '=', $car_model->id]
+            ['model_id', '=', $car_model->id],
+            ['active', '=', true],
         ])->get();
 
         // Создаем ссылки и формируем массив для мини слайдера
