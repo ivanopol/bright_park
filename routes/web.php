@@ -17,7 +17,7 @@
 
 Auth::routes();
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'cookie.check'])->group(function () {
     Route::get('/{city?}', 'HomeController@index')->name('index');
     Route::get('/{city?}/{car_model}/{car_type}', 'HomeController@model')->name('model');
     Route::get('/{city?}/{car_model}/{car_type}/model_details', 'HomeController@model_details')->name('model_details');
@@ -29,6 +29,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/trade_in_cash', 'HomeController@trade_in_cash')->name('trade_in_cash');
     Route::get('/get_brands', 'HomeController@get_brands')->name('get_brands');
     Route::any('/send_contact_form', 'ContactFormController@sendContactForm')->name('sendContactForm');
+    Route::any('/check_visitor_cookie', 'ContactFormController@checkVisitorCookie')->name('checkVisitorCookie');
 });
 
 
