@@ -242,6 +242,7 @@ class BitrixService
                 $result = curl_exec($curl);
                 curl_close($curl);
                 $result = json_decode($result, 1);
+
                 $lead = $result['result'];
 
 
@@ -261,7 +262,7 @@ class BitrixService
                             'RESPONSIBLE_ID' => $lead['ASSIGNED_BY_ID'], //ответственный
                             'DESCRIPTION_TYPE' => 1,
                             'DIRECTION' => 2, //Тип звонка: 0 без данных, 1 Входящее, 2 Исходящее
-                            'DESCRIPTION' => 'Звонок кроту!<br>Последние просмотренные страницы:<br>'
+                            'DESCRIPTION' => 'Звонок кроту!<br>Последние просмотренные страницы:<br>'.implode('; ', $cookie['pages'])
                         ],
                     ];
 
@@ -274,6 +275,7 @@ class BitrixService
                         CURLOPT_URL => 'https://team.brightpark.ru/rest/610/g1iski89ajvio040/crm.activity.add.json',
                         CURLOPT_POSTFIELDS => http_build_query($request),
                     ]);
+                    curl_exec($curl);
                     curl_close($curl);
                 }
             }
