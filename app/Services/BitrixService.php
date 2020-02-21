@@ -275,7 +275,6 @@ class BitrixService
                         CURLOPT_POSTFIELDS => http_build_query($request),
                     ]);
                     curl_close($curl);
-
                 }
             }
 
