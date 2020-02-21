@@ -13,126 +13,144 @@ class SlideMiniTableSeeder extends Seeder
                 'type_id' => 1,
                 'image' => '/build/images/slider/mini/granta/mobile/lada_granta_sedan.png',
                 'alt' => 'Лада Гранта седан',
-                'title' => 'Седан'
+                'title' => 'Седан',
+                'active' => true,
             ],
             [
                 'model_id' => 1,
                 'type_id' => 2,
                 'image' => '/build/images/slider/mini/granta/mobile/lada_granta_liftback.png',
                 'alt' => 'Лада Гранта лифтбек',
-                'title' => 'Лифтбек'
+                'title' => 'Лифтбек',
+                'active' => true,
             ],
             [
                 'model_id' => 1,
                 'type_id' => 3,
                 'image' => '/build/images/slider/mini/granta/mobile/lada_granta_universal.png',
                 'alt' => 'Лада Гранта универсал',
-                'title' => 'Универсал'
+                'title' => 'Универсал',
+                'active' => false,
             ],
             [
                 'model_id' => 1,
                 'type_id' => 4,
                 'image' => '/build/images/slider/mini/granta/mobile/lada_granta_cross.png',
                 'alt' => 'Лада Гранта cross',
-                'title' => 'Cross'
+                'title' => 'Cross',
+                'active' => true,
             ],
             [
                 'model_id' => 1,
                 'type_id' => 5,
                 'image' => '/build/images/slider/mini/granta/mobile/lada_granta_drive_active.png',
                 'alt' => 'Лада Гранта Drive Active',
-                'title' => 'Drive Active'
+                'title' => 'Drive Active',
+                'active' => true,
             ],
             [
                 'model_id' => 1,
                 'type_id' => 6,
                 'image' => '/build/images/slider/mini/granta/mobile/lada_granta_hatcback.png',
                 'alt' => 'Лада Гранта хэтчбек',
-                'title' => 'Хэтчбек'
+                'title' => 'Хэтчбек',
+                'active' => false,
             ],
             [
                 'model_id' => 2,
                 'type_id' => 1,
                 'image' => '/build/images/slider/mini/vesta/mobile/lada_vesta_sedan.png',
                 'alt' => 'Лада Веста седан',
-                'title' => 'Седан'
+                'title' => 'Седан',
+                'active' => true,
             ],
             [
                 'model_id' => 2,
                 'type_id' => 5,
                 'image' => '/build/images/slider/mini/vesta/mobile/lada_vesta_cross.png',
                 'alt' => 'Лада Веста Cross',
-                'title' => 'Cross'
+                'title' => 'Cross',
+                'active' => false,
             ],
             [
                 'model_id' => 2,
                 'type_id' => 7,
                 'image' => '/build/images/slider/mini/vesta/mobile/lada_vesta_sw.png',
                 'alt' => 'Лада Веста SW',
-                'title' => 'SW'
+                'title' => 'SW',
+                'active' => true,
             ],
             [
                 'model_id' => 2,
                 'type_id' => 8,
                 'image' => '/build/images/slider/mini/vesta/mobile/lada_vesta_sw_cross.png',
                 'alt' => 'Лада Веста SW Cross',
-                'title' => 'SW Cross'
+                'title' => 'SW Cross',
+                'active' => true,
             ],
             [
                 'model_id' => 2,
                 'type_id' => 9,
                 'image' => '/build/images/slider/mini/vesta/mobile/lada_vesta_cng.png',
                 'alt' => 'Лада Веста CNG',
-                'title' => 'CNG'
+                'title' => 'CNG',
+                'active' => false,
             ],
             [
                 'model_id' => 2,
                 'type_id' => 10,
                 'image' => '/build/images/slider/mini/vesta/mobile/lada_vesta_sport.png',
                 'alt' => 'Лада Веста Sport',
-                'title' => 'Sport'
+                'title' => 'Sport',
+                'active' => false,
             ],
             [
                 'model_id' => 3,
                 'type_id' => 20,
                 'image' => '/build/images/slider/mini/xray/mobile/xray.png',
                 'alt' => 'XRAY',
-                'title' => 'XRAY'
+                'title' => 'XRAY',
+                'active' => true,
             ],
             [
                 'model_id' => 3,
-                'type_id' => 5,
+                'type_id' => 4,
                 'image' => '/build/images/slider/mini/xray/mobile/xray_cross.png',
                 'alt' => 'Лада XRAY Cross',
-                'title' => 'XRAY Cross'
+                'title' => 'XRAY Cross',
+                'active' => true,
             ],
             [
                 'model_id' => 4,
                 'type_id' => 11,
                 'image' => '/build/images/slider/mini/4x4/mobile/4x4_three.png',
                 'alt' => 'Лада 4x4 3 дв.',
-                'title' => '4x4 3 дв.'
+                'title' => '4x4 3 дв.',
+                'active' => true,
             ],
             [
                 'model_id' => 4,
                 'type_id' => 12,
                 'image' => '/build/images/slider/mini/4x4/mobile/4x4_three_urban.png',
                 'alt' => 'Лада 4x4 Urban 3 дв.',
-                'title' => '4x4 Urban 3 дв.'
+                'title' => '4x4 Urban 3 дв.',
+                'active' => false,
             ],
             [
                 'model_id' => 4,
                 'type_id' => 13,
                 'image' => '/build/images/slider/mini/4x4/mobile/4x4_five.png',
                 'alt' => 'Лада 4x4 5 дв.',
-                'title' => '4x4 5 дв.'
+                'title' => '4x4 5 дв.',
+                'active' => false,
             ],
             [
                 'model_id' => 4,
                 'type_id' => 14,
                 'image' => '/build/images/slider/mini/4x4/mobile/4x4_five_urban.png',
                 'alt' => 'Лада 4x4 Urban 5 дв.',
-                'title' => '4x4 Urban 5 дв.'
+                'title' => '4x4 Urban 5 дв.',
+                'active' => false,
             ],
             [
                 'model_id' => 4,
@@ -140,48 +158,55 @@ class SlideMiniTableSeeder extends Seeder
                 'image' => '/build/images/slider/mini/4x4/mobile/4x4_bronto.png',
                 'alt' => 'Лада 4x4 Bronto',
                 'title' => '4x4 Bronto',
+                'active' => false,
             ],
             [
                 'model_id' => 5,
                 'type_id' => 3,
                 'image' => '/build/images/slider/mini/largus/mobile/largus_universal.png',
                 'alt' => 'Лада Largus универсал',
-                'title' => 'универсал'
+                'title' => 'универсал',
+                'active' => true,
             ],
             [
                 'model_id' => 5,
                 'type_id' => 16,
                 'image' => '/build/images/slider/mini/largus/mobile/largus_universal_cng.png',
                 'alt' => 'Лада Largus универсал CNG',
-                'title' => 'универсал CNG'
+                'title' => 'универсал CNG',
+                'active' => false,
             ],
             [
                 'model_id' => 5,
                 'type_id' => 4,
                 'image' => '/build/images/slider/mini/largus/mobile/largus_cross.png',
                 'alt' => 'Лада Largus Cross',
-                'title' => 'Cross'
+                'title' => 'Cross',
+                'active' => false,
             ],
             [
                 'model_id' => 5,
                 'type_id' => 17,
                 'image' => '/build/images/slider/mini/largus/mobile/largus_cross_cng.png',
                 'alt' => 'Лада Largus Cross CNG',
-                'title' => 'Cross CNG'
+                'title' => 'Cross CNG',
+                'active' => false,
             ],
             [
                 'model_id' => 5,
                 'type_id' => 18,
                 'image' => '/build/images/slider/mini/largus/mobile/largus_minivan.png',
                 'alt' => 'Лада Largus фургон',
-                'title' => 'фургон'
+                'title' => 'фургон',
+                'active' => false,
             ],
             [
                 'model_id' => 5,
                 'type_id' => 19,
                 'image' => '/build/images/slider/mini/largus/mobile/largus_minivan_cng.png',
                 'alt' => 'Лада Largus фургон CNG',
-                'title' => 'фургон CNG'
+                'title' => 'фургон CNG',
+                'active' => false,
             ],
         ];
 

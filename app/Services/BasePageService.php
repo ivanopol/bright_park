@@ -42,12 +42,17 @@ class BasePageService
 
         // Получаем информацию по слайдам
         $slides = DB::table('slides')->select('*')->where($condition)->get();
+
+
         foreach ($slides as &$slide) {
             $slide->link = '/' . $city . '/' . $car_model->slug . '/' . $car_type->slug . $slide->link;
         }
 
+
+
         $slide_mini = DB::table('slide_mini')->select('*')->where([
-            ['model_id', '=', $car_model->id]
+            ['model_id', '=', $car_model->id],
+            ['active', '=', true],
         ])->get();
 
         // Создаем ссылки и формируем массив для мини слайдера
@@ -76,6 +81,10 @@ class BasePageService
         // Получаем информацию по отзывам и по цветам
         $reviews = DB::table('reviews')->select('*')->where($condition)->get();
         $colors = DB::table('colors')->select('*')->where($condition)->get();
+
+        if (count($slides)) {
+            $slides = $slides[0];
+        }
 
         $data = [
             'slider' => [

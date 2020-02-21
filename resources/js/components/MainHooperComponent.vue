@@ -1,6 +1,6 @@
 <template>
     <section>
-        <hooper class="main-screen-wrap">
+        <hooper class="main-screen-wrap" :wheelControl="false" >
             <slide>
                 <div class="asset-container">
                     <img class="asset-image" src="build/images/main/main_granta_red.jpg" alt="Брайт Парк: Доплата 40 000 рублей при обмене на Lada Granta" />
@@ -9,7 +9,7 @@
                     <p class="title-tagline bold">Доплата<br> 40 000 рублей<br> при обмене на <span class="highlight">LADA Granta</span></p>
                     <div class="item-buttons">
                         <a :href="city + '/granta/sedan'" class="btn btn-primary">Подробнее о модели</a>
-                        <a href="" class="btn btn-secondary">Условия акции</a>
+                        <a :href="city + '/granta/sedan/model_details'" class="btn btn-secondary">Условия акции</a>
                     </div>
                 </div>
             </slide>
@@ -21,7 +21,7 @@
                     <p class="title-tagline bold">LADA Vesta<br> выгода 10%<br> по госпрограмме</p>
                     <div class="item-buttons">
                         <a :href="city + '/vesta/sedan'" class="btn btn-primary">Подробнее о модели</a>
-                        <a href="" class="btn btn-secondary">Условия акции</a>
+                        <a :href="city + '/vesta/sedan/model_details'" class="btn btn-secondary">Условия акции</a>
                     </div>
                 </div>
             </slide>
@@ -33,7 +33,7 @@
                     <p class="title-tagline bold">LADA Granta<br>0% первоначальный взнос</p>
                     <div class="item-buttons">
                         <a :href="city + '/granta/sedan'" class="btn btn-primary">Подробнее о модели</a>
-                        <a href="" class="btn btn-secondary">Условия акции</a>
+                        <a :href="city + '/granta/sedan/model_details'" class="btn btn-secondary">Условия акции</a>
                     </div>
                 </div>
             </slide>
@@ -45,7 +45,7 @@
                     <p class="title-tagline bold">Обмен на LADA Vesta выше рыночной<br> цены</p>
                     <div class="item-buttons">
                         <a :href="city + '/granta/sedan'" class="btn btn-primary">Подробнее о модели</a>
-                        <a href="" class="btn btn-secondary">Условия акции</a>
+                        <a :href="city + '/granta/sedan/model_details'" class="btn btn-secondary">Условия акции</a>
                     </div>
                 </div>
             </slide>
@@ -103,9 +103,19 @@
         }
     }
 
+    .main-screen-wrap {
+
+    }
+
     .main-screen-wrap.hooper {
         background-color: #000;
+        top: -60px;
     }
+
+    .main-screen-wrap ul {
+        //will-change: scroll-position;
+    }
+
 
     .main-screen-wrap ul li {
         position: relative;
@@ -123,7 +133,7 @@
         overflow: hidden;
 
         .asset-container {
-            background-color: #000;
+            /*background-color: #000;*/
             height: 100vh;
         }
         .asset-image {
@@ -153,8 +163,9 @@
                 font-size: 150%;
                 //font-weight: bold;
                 width: 78vw;
-                margin: 0 auto;
+                margin: 40px auto 0;
                 line-height: 1.2;
+
 
                 &.bold {
                     font-family: PragmaticaLightCBold, Helvetica, sans-serif;
