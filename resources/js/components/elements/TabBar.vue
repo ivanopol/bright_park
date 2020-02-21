@@ -157,7 +157,7 @@
         background-color: #000;
         top:0;
         z-index:30;
-        padding: 60px 40px 90px;
+        padding: 7.2vh 12.75vw;
         margin-left: -200vw;
         /* Переход */
         -webkit-transition: all ease-in 0.3s;
@@ -234,7 +234,8 @@
                     a {
                         display:block;
                         width: 100%;
-                        padding: 15px 10px;
+                        //padding: 15px 10px;
+                        padding: 6.8% 10px;
                         color: #fff;
 
                         .title {
