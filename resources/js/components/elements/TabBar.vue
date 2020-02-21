@@ -112,7 +112,6 @@
                 window.location.href = window.location.protocol + '//' + window.location.host + '/' + event.value;
             },
             openMapWindow: function() {
-                console.log(this.cities);
                 return this.openMap = !this.openMap;
             },
             closeMap: function() {

@@ -19,30 +19,10 @@
                             zoom: 10
                         }, {
                             searchControlProvider: 'yandex#search'
-                        }),
-
-                        // Создаем геообъект с типом геометрии "Точка".
-                        myGeoObject = new ymaps.GeoObject({
-                            // Описание геометрии.
-                            geometry: {
-                                type: "Point",
-                                coordinates: coords
-                            },
-                            // Свойства.
-                            properties: {
-                                // Контент метки.
-                            }
-                        }, {
-                            // Опции.
-                            // Иконка метки будет растягиваться под размер ее содержимого.
-                            // Метку можно перемещать.
-                            draggable: false
                         });
 
-                    myMap.geoObjects.add(myGeoObject);
-
                     geolocation.get({
-                        provider: 'browser',
+                        provider: 'yandex',
                         mapStateAutoApply: true
                     }).then(function (result) {
                         result.geoObjects.options.set('preset', 'islands#redCircleIcon');
@@ -53,7 +33,7 @@
 
                         var multiRoute = new ymaps.multiRouter.MultiRoute({
                             referencePoints: [result.geoObjects.get(0).geometry.getCoordinates(),
-                                myGeoObject
+                                coords
                             ],
                             params: {
                                 routingMode: 'driving'

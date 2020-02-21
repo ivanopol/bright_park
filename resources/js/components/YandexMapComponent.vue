@@ -22,44 +22,53 @@
         }),
         methods: {
             createRoute: function () {
-                if(!this.routeExist){
-                    this.geolocation.get({
-                        provider: 'browser',
-                        mapStateAutoApply: true
-                    }).then((result) => {
-                        result.geoObjects.options.set('preset', 'islands#redCircleIcon');
-                        result.geoObjects.get(0).properties.set({
-                            balloonContentBody: 'Мое местоположение'
-                        });
-                        this.map.geoObjects.add(result.geoObjects);
 
-                        var multiRoute = new ymaps.multiRouter.MultiRoute({
-                            referencePoints: [result.geoObjects.get(0).geometry.getCoordinates(),
-                                this.brightParkLocation
-                            ],
-                            params: {
-                                routingMode: 'driving'
-                            }
-                        },
+                ymaps.geolocation.get({
+                    provider: 'yandex'
+                }).then((result) => {
+
+                    if (!this.routeExist) {
+                        let userLocation = new ymaps.GeoObject({
+                            // Описание геометрии.
+                            geometry: {
+                                type: "Point",
+                                coordinates: result.geoObjects.position
+                            },
+                        }, {
+                            draggable: true
+                        });
+
+                        let Route = new ymaps.multiRouter.MultiRoute({
+                                referencePoints: [userLocation,
+                                    this.brightParkLocation
+                                ],
+                                params: {
+                                    routingMode: 'driving',
+                                    reverseGeocoding: true
+                                }
+                            },
                             {
                                 boundsAutoApply: true
                             }
                         );
 
-                        this.map.geoObjects.add(multiRoute);
+                        this.map.geoObjects.add(Route);
+                        this.map.geoObjects.remove(this.brightParkLocation);
                         this.routeExist = true;
-                    });
-                }
+                    }
+                }).catch((e) => {
+                    console.log(e)
+                });
             }
         },
 
         mounted() {
-            ymaps.ready(()=>{
+            ymaps.ready(() => {
                 let geolocation = ymaps.geolocation,
                     myMap = new ymaps.Map('map', {
                         center: this.coordinates,
                         zoom: 15,
-                        controls: ['smallMapDefaultSet']
+                        controls: ['geolocationControl', 'zoomControl']
                     }, {
                         searchControlProvider: 'yandex#search'
                     }),
