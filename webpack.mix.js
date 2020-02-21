@@ -31,7 +31,7 @@ mix
     .version().browserSync({
         open: false,
         watchTask: true,
-        proxy: 'https://0.0.0.0',
+        proxy: 'http://0.0.0.0',
         port: 8081,
         browser: "chrome"
     });
