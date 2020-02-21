@@ -19,7 +19,14 @@
         </div>
 
         <div class="credit-wrap">
-            <div class="credit-profit-text">Первоначальный взнос</div>
+            <div class="credit-profit-text disabled-input">Первоначальный взнос: <span class="credit-first-payment">
+                <input v-on:input="inputChangePayment"
+                       type="number"
+                       min="0"
+                       :max="Math.round(car[0].price /2)"
+                       name="first-payment"
+                       v-model="firstPayment"/> руб.</span>
+            </div>
 
             <div class="range-slider-wrapper">
                 <vue-slider v-model="firstPaymentPercent" :height="6" :interval="1" :dotSize="25"
@@ -27,13 +34,14 @@
                             :min="sliderOne.min" :max="sliderOne.max" v-on:change="changeFirstPayment"/>
             </div>
 
-            <div class="disabled-input">
-                <span class="credit-first-payment"><input v-on:input="inputChangePayment" type="number" min="0"
-                                                          :max="Math.round(car[0].price /2)" name="first-payment"
-                                                          v-model="firstPayment"/> руб.</span>
+            <div class="credit-profit-text disabled-input">Срок в месяцах: <span class="credit-period">
+                <input v-on:input="changePeriod"
+                       type="number"
+                       :min="sliderTwo.min"
+                       :max="sliderTwo.max"
+                       name="period"
+                       v-model="period"/> мес.</span>
             </div>
-
-            <div class="credit-profit-text">Срок в месяцах</div>
 
             <div class="range-slider-wrapper">
                 <vue-slider v-model="period" :height="6" :interval="1" :dotSize="25" :marks="sliderTwo.marks"
@@ -42,10 +50,6 @@
                             :change="changePeriod"/>
             </div>
 
-            <div class="disabled-input">
-                <span class="credit-period"><input v-on:input="changePeriod" type="number" :min="sliderTwo.min"
-                                                   :max="sliderTwo.max" name="period" v-model="period"/> мес.</span>
-            </div>
         </div>
 
         <div class="trigger-wrap" v-if="trigger">
@@ -207,12 +211,13 @@
 
 <style lang="scss">
     .credit-wrap {
-        width: 75vw;
+        width: 90vw;
         margin: 40px auto;
     }
 
     .credit-profit-text {
         padding: 5% 0;
+        font-weight: bold;
     }
 
     .conditions {
@@ -245,7 +250,8 @@
 
     .disabled-input {
         display: block;
-        text-align: center;
+        text-align: left;
+        margin-left: 12%;
 
         .credit-first-payment {
             input {
