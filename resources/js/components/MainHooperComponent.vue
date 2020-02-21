@@ -165,6 +165,10 @@
                 width: 78vw;
                 margin: 40px auto 0;
                 line-height: 1.2;
+/*                -webkit-transition: all ease-out 0.5s;
+                -moz-transition: all ease-out 0.5s;
+                -o-transition: all ease-out 0.5s;
+                transition: all ease-out 0.5s;*/
 
 
                 &.bold {
@@ -176,6 +180,20 @@
                     display: block;
                     font-size: 117%;
                 }
+            }
+
+            @media only screen and (max-width: 321px) {
+                .title-tagline {
+                    margin: 49px auto 0;
+                    line-height: 1.1;
+
+                    &.bold {
+                        font-size: 143%;
+                        font-weight: bold;
+                    }
+                }
+
+
             }
         }
     }
