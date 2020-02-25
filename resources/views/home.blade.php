@@ -7,6 +7,8 @@
     <section class="main-screen">
         <main-hooper-component :city="'{{$city}}'"></main-hooper-component>
     </section>
+    <body>
+
     <div class="container">
         <div id="advantages" class="advantages_wrap">
             <h1>Брайт Парк</h1>
@@ -57,5 +59,5 @@
         </div>
     </section>
     <modal-component></modal-component>
-
+    </body>
 @endsection
