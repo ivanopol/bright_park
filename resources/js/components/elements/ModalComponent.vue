@@ -1,12 +1,14 @@
 <template>
     <section id="buttons_other" class="buttons_other mt-40">
-        <div class="item-buttons-other">
-            <a href="" class="btn btn-primary" v-on:click.prevent="show()">Записаться на тест-драйв</a>
-            <a href="" class="btn btn-secondary" v-on:click.prevent="show()">Записаться на сервис</a>
+        <div class="container">
+            <div class="item-buttons-other">
+                <a href="" class="btn btn-primary" v-on:click.prevent="show()">Записаться на тест-драйв</a>
+                <a href="" class="btn btn-secondary" v-on:click.prevent="show()">Записаться на сервис</a>
+            </div>
+            <modal name="form-callback" :width="modalWidth" :height="354">
+                <form-buy2-component></form-buy2-component>
+            </modal>
         </div>
-        <modal name="form-callback" :width="modalWidth" :height="354">
-            <form-buy2-component></form-buy2-component>
-        </modal>
     </section>
 </template>
 
@@ -34,6 +36,48 @@
     }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
+    .buttons_other {
+        .item-buttons-other {
+            margin-bottom: 80px;
+            text-align: center;
+
+            & > a {
+                margin-bottom: 15px;
+            }
+
+            .btn {
+                font-family: PragmaticaLightC, Helvetica, sans-serif;
+                width: 85.51vw;
+                border-radius: 50px;
+                padding: 14px 15px 10px;
+            }
+
+            .btn-primary {
+                border: 2px solid #FF8351;
+                color: #fff;
+                background-color: #FF8351;
+            }
+
+            .btn-secondary {
+                border: 2px solid #000;
+                color: #000;
+                background-color: transparent;
+            }
+        }
+    }
+
+
+    @media only screen and (min-width: 576px) {
+        .buttons_other {
+            .item-buttons-other {
+                .btn {
+                    width: auto;
+                    margin-left: 5px;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
 
 </style>

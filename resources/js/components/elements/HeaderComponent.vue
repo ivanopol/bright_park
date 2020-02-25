@@ -64,9 +64,10 @@
         z-index: 1;
         width: 100%;
         position: relative;
+        overflow: hidden;
 
         &.absolute {
-            position: absolute;
+         //   position: absolute;
         }
 
         .logo-wrap {
@@ -94,10 +95,12 @@
         }
         .lada-line {
             background: url(/build/images/lada_line.svg) no-repeat;
-            width: 100%;
+            width: 112%;
             height: 100%;
             min-height: 31px;
             background-size: 101%;
+            margin-top: -2px;
+
 
             p {
                 padding-top: 15px;
