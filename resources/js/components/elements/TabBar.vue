@@ -1,5 +1,6 @@
 <template>
     <div>
+
         <div id="layout" :class="{ active: open }" @click="closeMenu"></div>
         <section id="panel" >
             <ul :class="theme">
@@ -17,11 +18,12 @@
                     <icon-route></icon-route>
                     <span>Маршрут</span>
                 </li>
-                <li>
-                    <icon-chat></icon-chat>
+                <li onclick="jivo_api.open();">
+                    <icon-chat ></icon-chat>
                     <span>Чат</span>
                 </li>
             </ul>
+
         </section>
         <section id="menu" :class="{ active: open }">
             <div class="close" @click="closeMenu"></div>
@@ -76,7 +78,7 @@
     import IconRoute from '../icons/tab_bar/IconRoute.vue';
     import IconChat from '../icons/tab_bar/IconChat.vue';
 
-    export default {
+export default {
         props: {
             theme: {
                 default: 'light',
@@ -87,7 +89,7 @@
             },
             models: {
                 type: Array
-            }
+            },
         },
         data: function () {
             return {
@@ -112,7 +114,6 @@
                 window.location.href = window.location.protocol + '//' + window.location.host + '/' + event.value;
             },
             openMapWindow: function() {
-                console.log(this.cities);
                 return this.openMap = !this.openMap;
             },
             closeMap: function() {
@@ -125,8 +126,13 @@
             IconRoute,
             IconChat,
             vSelect
-        }
+        },
+    mounted() {
+        let jivoScript = document.createElement('script');
+        jivoScript.setAttribute('src', '//code-ya.jivosite.com/widget/IFmL6hf3c9');
+        document.body.appendChild(jivoScript);
     }
+}
 </script>
 
 <style lang="scss">
@@ -547,4 +553,16 @@
             max-height: 60%;
         }
     }
+
+    ._orinationRight_25.wrap_mW {
+        right: 0;
+        display: none;
+    }
+
+    .label_39._bottom_3v._pad100_GR, .label_39._left_2d._pad100_GR, .label_39._right_1y._pad100_GR {
+        right: 30px;
+        left: auto;
+        display: none;
+    }
+
 </style>
