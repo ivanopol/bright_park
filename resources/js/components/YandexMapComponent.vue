@@ -21,45 +21,74 @@
             routeExist: false
         }),
         methods: {
-            createRoute: function () {
-                if(!this.routeExist){
-                    this.geolocation.get({
-                        provider: 'browser',
-                        mapStateAutoApply: true
-                    }).then((result) => {
-                        result.geoObjects.options.set('preset', 'islands#redCircleIcon');
-                        result.geoObjects.get(0).properties.set({
-                            balloonContentBody: 'Мое местоположение'
-                        });
-                        this.map.geoObjects.add(result.geoObjects);
+            createRoute () {
 
-                        var multiRoute = new ymaps.multiRouter.MultiRoute({
-                            referencePoints: [result.geoObjects.get(0).geometry.getCoordinates(),
-                                this.brightParkLocation
-                            ],
-                            params: {
-                                routingMode: 'driving'
-                            }
-                        },
+                if(!this.routeExist){
+                    let _self = this;
+
+                    function success(position){
+                        const latitude = position.coords.latitude;
+                        const longitude = position.coords.longitude;
+
+                        addUserLocation([latitude, longitude])
+                    }
+
+                    async function error(e) {
+
+                        const res = await fetch('https://location.services.mozilla.com/v1/geolocate?key=test').then(el=>el.json());
+                        const point = [res.location.lat, res.location.lng];
+
+                        addUserLocation(point);
+
+                        console.log(e)
+                    }
+
+                    if (!navigator.geolocation) {
+                        console.log('Geolocation is not supported by your browser');
+                    } else {
+                        navigator.geolocation.getCurrentPosition(success, error);
+                    }
+
+                    function addUserLocation(coords) {
+                        let userLocation = new ymaps.GeoObject({
+                            // Описание геометрии.
+                            geometry: {
+                                type: "Point",
+                                coordinates: coords
+                            },
+                        }, {
+                            draggable: true
+                        });
+
+                        let Route = new ymaps.multiRouter.MultiRoute({
+                                referencePoints: [userLocation,
+                                    _self.brightParkLocation
+                                ],
+                                params: {
+                                    routingMode: 'driving',
+                                    reverseGeocoding: true
+                                }
+                            },
                             {
                                 boundsAutoApply: true
                             }
                         );
 
-                        this.map.geoObjects.add(multiRoute);
-                        this.routeExist = true;
-                    });
+                        _self.map.geoObjects.add(Route);
+                        _self.map.geoObjects.remove(_self.brightParkLocation);
+                        _self.routeExist = true;
+                    }
                 }
             }
         },
 
         mounted() {
-            ymaps.ready(()=>{
+            ymaps.ready(() => {
                 let geolocation = ymaps.geolocation,
                     myMap = new ymaps.Map('map', {
                         center: this.coordinates,
                         zoom: 15,
-                        controls: ['smallMapDefaultSet']
+                        controls: ['geolocationControl', 'zoomControl']
                     }, {
                         searchControlProvider: 'yandex#search'
                     }),
