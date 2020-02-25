@@ -21,44 +21,63 @@
             routeExist: false
         }),
         methods: {
-            createRoute: function () {
+            createRoute () {
 
-                ymaps.geolocation.get({
-                    provider: 'yandex'
-                }).then((result) => {
+                let _self = this;
 
-                    if (!this.routeExist) {
-                        let userLocation = new ymaps.GeoObject({
-                            // Описание геометрии.
-                            geometry: {
-                                type: "Point",
-                                coordinates: result.geoObjects.position
-                            },
-                        }, {
-                            draggable: true
-                        });
+                function success(position){
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
 
-                        let Route = new ymaps.multiRouter.MultiRoute({
-                                referencePoints: [userLocation,
-                                    this.brightParkLocation
-                                ],
-                                params: {
-                                    routingMode: 'driving',
-                                    reverseGeocoding: true
-                                }
-                            },
-                            {
-                                boundsAutoApply: true
-                            }
-                        );
+                    addUserLocation([latitude, longitude])
+                }
 
-                        this.map.geoObjects.add(Route);
-                        this.map.geoObjects.remove(this.brightParkLocation);
-                        this.routeExist = true;
-                    }
-                }).catch((e) => {
+                async function error(e) {
+
+                    const res = await fetch('https://location.services.mozilla.com/v1/geolocate?key=test').then(el=>el.json());
+                    const point = [res.location.lat, res.location.lng];
+
+                    addUserLocation(point);
+
+                    console.log('Unable to retrieve your location');
                     console.log(e)
-                });
+                }
+
+                if (!navigator.geolocation) {
+                    console.log('Geolocation is not supported by your browser');
+                } else {
+                    navigator.geolocation.getCurrentPosition(success, error);
+                }
+
+                function addUserLocation(coords) {
+                    let userLocation = new ymaps.GeoObject({
+                        // Описание геометрии.
+                        geometry: {
+                            type: "Point",
+                            coordinates: coords
+                        },
+                    }, {
+                        draggable: true
+                    });
+
+                    let Route = new ymaps.multiRouter.MultiRoute({
+                            referencePoints: [userLocation,
+                                _self.brightParkLocation
+                            ],
+                            params: {
+                                routingMode: 'driving',
+                                reverseGeocoding: true
+                            }
+                        },
+                        {
+                            boundsAutoApply: true
+                        }
+                    );
+
+                    _self.map.geoObjects.add(Route);
+                    _self.map.geoObjects.remove(_self.brightParkLocation);
+                    _self.routeExist = true;
+                }
             }
         },
 
@@ -68,7 +87,7 @@
                     myMap = new ymaps.Map('map', {
                         center: this.coordinates,
                         zoom: 15,
-                        controls: ['geolocationControl', 'zoomControl']
+                        controls: ['zoomControl']
                     }, {
                         searchControlProvider: 'yandex#search'
                     }),
