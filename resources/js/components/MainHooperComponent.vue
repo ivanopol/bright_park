@@ -70,7 +70,7 @@
 </script>
 
 
-<style lang="scss" scoped>
+<style lang="scss" >
 
     .item-buttons {
 
@@ -109,7 +109,7 @@
 
     .main-screen-wrap.hooper {
        /* background-color: #000;*/
-        top: -60px;
+       /* top: -60px;*/
     }
 
     .main-screen-wrap ul {
@@ -124,6 +124,8 @@
     }
 
     .main-screen {
+        margin: -60px 0 40px;
+/*
         width: 100%;
         height: 100vh;
         left: 0;
@@ -131,6 +133,7 @@
         top: 0;
         bottom: 0;
         overflow: hidden;
+*/
 
         .asset-container {
             /*background-color: #000;*/
@@ -184,7 +187,7 @@
 
             @media only screen and (max-width: 321px) {
                 .title-tagline {
-                    margin: 49px auto 0;
+                    margin: 40px auto 0;
                     line-height: 1.1;
 
                     &.bold {

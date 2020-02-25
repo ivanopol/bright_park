@@ -157,7 +157,7 @@
         background-color: #000;
         top:0;
         z-index:30;
-        padding: 7.2vh 12.75vw;
+        padding: 3.2vh 12.75vw;
         margin-left: -200vw;
         /* Переход */
         -webkit-transition: all ease-in 0.3s;
@@ -217,7 +217,7 @@
         .models_wrap {
             padding: 0;
             background: none;
-            margin-bottom: 30px;
+            margin-bottom: 3vh;
 
             ul {
                 padding: 0;
@@ -276,7 +276,8 @@
 
         .select_wrap {
             position: relative;
-            margin-bottom: 30px;
+            /*margin-bottom: 30px;*/
+            margin-bottom: 3vh;
             border-bottom: 1px solid rgba(255, 255, 255, 0.18);
 
             &.vs--disabled .vs__clear,
