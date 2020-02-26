@@ -240,17 +240,17 @@
 
                     .title-tagline {
                         margin: 0 auto;
-                        width: 450px;
+                        width: 30vw;
 
                         &.bold {
-                            font-size: 40px;
+                            font-size: 2.35vw;
                             font-weight: bold;
                         }
                     }
 
                     .item-buttons {
                         position: relative;
-
+                        width: 30vw;
                         .btn {
                             width: auto;
                             display: inline-block;
@@ -276,17 +276,17 @@
 
                     .title-tagline {
                         margin: 30px 0 30px;
-                        width: 450px;
+                        width: 30vw;
 
                         &.bold {
-                            font-size: 40px;
+                            font-size: 2.35vw;
                             font-weight: bold;
                         }
                     }
 
                     .item-buttons {
                         position: relative;
-                        width: 450px;
+                        width: 30vw;
 
                         .btn {
                             width: auto;
@@ -294,6 +294,64 @@
                             margin: 0 5px;
                         }
                     }
+                }
+            }
+        }
+
+        @media only screen and (min-width: 580px) and  (max-width: 1365px) {
+            .main-screen-wrap .hooper-pagination {
+                bottom: 5%;
+            }
+
+            ul li {
+                .product-content {
+                    position: absolute;
+                    top: 10%;
+                    color: white;
+                    text-align: center;
+                    height: 78%;
+                    display: flex;
+                    flex-direction: column;
+                    -webkit-box-pack: justify;
+                    justify-content: center;
+                    width: 85vw;
+                    align-items: flex-end;
+
+                    .title-tagline {
+                        margin: 30px 0 30px;
+                        width: 25vw;
+
+                        &.bold {
+                            font-size: 30px;
+                            font-weight: normal;
+                        }
+                    }
+
+                    .item-buttons {
+                        position: relative;
+                        width: 25vw;
+
+                        .btn {
+                            width: auto;
+                            display: block;
+                            margin: 10px 5px;
+                        }
+                    }
+                }
+            }
+        }
+
+        @media only screen and (min-width: 580px) and  (max-width: 890px) {
+            ul li {
+                .title-tagline {
+                    width: 36vw !important;
+                    &.bold {
+                        font-size: 24px !important;
+                    }
+                }
+
+                .item-buttons {
+                    width: 36vw !important;
                 }
             }
         }
