@@ -104,7 +104,7 @@
 
             p {
                 padding-top: 15px;
-                padding-right: 15px;
+                padding-right: 55px;
                 text-align: right;
                 font-weight: bold;
             }

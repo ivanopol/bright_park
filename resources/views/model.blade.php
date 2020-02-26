@@ -57,8 +57,8 @@
                 <p>У&nbsp;вас есть вопросы? Пообщайтесь со&nbsp;специалистом по&nbsp;телефону&nbsp;<br>+7 (342)
                     214-88-00</p>
                 <p>Брайт парк ближе, чем кажется<br> Проложите маршрут до&nbsp;ближайшего салона</p>
-                <yandex-map-component :coordinates='@json($data['coordinates'])'></yandex-map-component>
             </div>
+            <yandex-map-component :coordinates='@json($data['coordinates'])'></yandex-map-component>
         </footer>
     </div>
 @endsection

@@ -18,7 +18,7 @@
                     <icon-route></icon-route>
                     <span>Маршрут</span>
                 </li>
-                <li onclick="jivo_api.open();">
+                <li @click="toggleJivo">
                     <icon-chat ></icon-chat>
                     <span>Чат</span>
                 </li>
@@ -94,6 +94,7 @@ export default {
         data: function () {
             return {
                 open: false,
+                jivoOpen: false,
                 openMap: false,
                 Deselect: {
                     render: createElement => createElement('span'),
@@ -104,19 +105,49 @@ export default {
             };
         },
         methods: {
+            toggleJivo: function() {
+                if (this.jivoOpen) {
+                    this.open = false;
+                    this.openMap = false;
+                    this.jivoOpen =false;
+                    jivo_api.close();
+                } else {
+                    this.open = false;
+                    this.openMap = false;
+                    this.jivoOpen = true;
+                    jivo_api.open();
+                }
+
+            },
             openMenu: function() {
+                this.openMap = false;
+                if (typeof jivo_api !== "undefined" && jivo_api !== null) {
+                    jivo_api.close();
+                }
                 return this.open = !this.open;
             },
             closeMenu: function() {
+                this.openMap = false;
+                if (typeof jivo_api !== "undefined" && jivo_api !== null) {
+                   jivo_api.close();
+                }
                 return this.open = false;
             },
             selected: function(event) {
                 window.location.href = window.location.protocol + '//' + window.location.host + '/' + event.value;
             },
             openMapWindow: function() {
+                this.open = false;
+                if (typeof jivo_api !== "undefined" && jivo_api !== null) {
+                    jivo_api.close();
+                }
                 return this.openMap = !this.openMap;
             },
             closeMap: function() {
+                this.open = false;
+                if (typeof jivo_api !== "undefined" && jivo_api !== null) {
+                    jivo_api.close();
+                }
                 return this.openMap = false;
             },
         },
@@ -131,6 +162,7 @@ export default {
         let jivoScript = document.createElement('script');
         jivoScript.setAttribute('src', '//code-ya.jivosite.com/widget/IFmL6hf3c9');
         document.body.appendChild(jivoScript);
+
     }
 }
 </script>
@@ -163,7 +195,7 @@ export default {
         background-color: #000;
         top:0;
         z-index:30;
-        padding: 7.2vh 12.75vw;
+        padding: 3.2vh 12.75vw;
         margin-left: -200vw;
         /* Переход */
         -webkit-transition: all ease-in 0.3s;
@@ -223,7 +255,7 @@ export default {
         .models_wrap {
             padding: 0;
             background: none;
-            margin-bottom: 30px;
+            margin-bottom: 3vh;
 
             ul {
                 padding: 0;
@@ -282,7 +314,8 @@ export default {
 
         .select_wrap {
             position: relative;
-            margin-bottom: 30px;
+            /*margin-bottom: 30px;*/
+            margin-bottom: 3vh;
             border-bottom: 1px solid rgba(255, 255, 255, 0.18);
 
             &.vs--disabled .vs__clear,
@@ -563,6 +596,15 @@ export default {
         right: 30px;
         left: auto;
         display: none;
+    }
+
+    #jcont {
+        bottom: 50px !important;
+        z-index: 10 !important;
+    }
+
+    .globalClass_ET .mobileContainer_2k {
+        z-index: 10 !important;
     }
 
 </style>
