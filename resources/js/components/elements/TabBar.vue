@@ -116,18 +116,22 @@ export default {
 
             },
             openMenu: function() {
+                jivo_api.close();
                 return this.open = !this.open;
             },
             closeMenu: function() {
+                jivo_api.close();
                 return this.open = false;
             },
             selected: function(event) {
                 window.location.href = window.location.protocol + '//' + window.location.host + '/' + event.value;
             },
             openMapWindow: function() {
+                jivo_api.close();
                 return this.openMap = !this.openMap;
             },
             closeMap: function() {
+                jivo_api.close();
                 return this.openMap = false;
             },
         },
@@ -580,6 +584,10 @@ export default {
 
     #jcont {
         bottom: 50px !important;
+        z-index: 10 !important;
+    }
+
+    .globalClass_ET .mobileContainer_2k {
         z-index: 10 !important;
     }
 
