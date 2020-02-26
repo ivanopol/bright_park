@@ -107,31 +107,47 @@ export default {
         methods: {
             toggleJivo: function() {
                 if (this.jivoOpen) {
+                    this.open = false;
+                    this.openMap = false;
+                    this.jivoOpen =false;
                     jivo_api.close();
-                    this.jivoOpen = false;
                 } else {
-                    jivo_api.open();
+                    this.open = false;
+                    this.openMap = false;
                     this.jivoOpen = true;
+                    jivo_api.open();
                 }
 
             },
             openMenu: function() {
-                jivo_api.close();
+                this.openMap = false;
+                if (typeof jivo_api !== "undefined" && jivo_api !== null) {
+                    jivo_api.close();
+                }
                 return this.open = !this.open;
             },
             closeMenu: function() {
-                jivo_api.close();
+                this.openMap = false;
+                if (typeof jivo_api !== "undefined" && jivo_api !== null) {
+                   jivo_api.close();
+                }
                 return this.open = false;
             },
             selected: function(event) {
                 window.location.href = window.location.protocol + '//' + window.location.host + '/' + event.value;
             },
             openMapWindow: function() {
-                jivo_api.close();
+                this.open = false;
+                if (typeof jivo_api !== "undefined" && jivo_api !== null) {
+                    jivo_api.close();
+                }
                 return this.openMap = !this.openMap;
             },
             closeMap: function() {
-                jivo_api.close();
+                this.open = false;
+                if (typeof jivo_api !== "undefined" && jivo_api !== null) {
+                    jivo_api.close();
+                }
                 return this.openMap = false;
             },
         },
