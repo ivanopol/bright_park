@@ -1,13 +1,15 @@
 <template>
     <header :class="[ absolute ? 'absolute' : '' ]">
         <div class="logo-wrap" :class="theme">
-            <div class="logo-bright-park">
-                <a :href="'/' + city">
-                    <logo-bright-park :theme="theme"></logo-bright-park>
-                </a>
-            </div>
-            <div class="logo-lada">
-                <logo-lada :theme="theme"></logo-lada>
+            <div class="container logo-wrap-row">
+                <div class="logo-bright-park">
+                    <a :href="'/' + city">
+                        <logo-bright-park :theme="theme"></logo-bright-park>
+                    </a>
+                </div>
+                <div class="logo-lada">
+                    <logo-lada :theme="theme"></logo-lada>
+                </div>
             </div>
         </div>
         <div class="lada-line" v-if="line">
@@ -71,18 +73,49 @@
         }
 
         .logo-wrap {
-            padding: 15px 15px 5px;
-            display: flex;
-            justify-content: space-between;
+            .logo-wrap-row {
+                padding: 15px 15px 5px;
+                display: flex;
+                justify-content: space-between;
+            }
 
             .logo-bright-park {
                 width: 49%;
                 height: 25px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                a {
+                    display: block;
+                    float:left;
+                    height: 100%;
+                }
             }
 
             .logo-lada {
                 width: 16%;
-                height: 25px;
+                height: 20px;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+            }
+
+            @media only screen and (min-width: 1366px) {
+                .logo-bright-park {
+                    width: 25%;
+                }
+                .logo-lada {
+                    width: 16%;
+                }
+            }
+
+            @media only screen and (min-width: 580px) and  (max-width: 890px) {
+
+            }
+
+            @media only screen and (min-width: 891px) and  (max-width: 1365px) {
+
             }
 
             &.dark {
@@ -94,6 +127,7 @@
             }
         }
         .lada-line {
+            display: none;
             background: url(/build/images/lada_line.svg) no-repeat;
             width: 112%;
             height: 100%;
@@ -107,6 +141,20 @@
                 padding-right: 55px;
                 text-align: right;
                 font-weight: bold;
+            }
+        }
+
+        @media only screen and (max-width: 321px) {
+
+            .logo-wrap-row {
+                padding: 10px 10px 0 10px;
+            }
+
+            .lada-line {
+                p {
+                    padding: 13px 10px 0 0;
+                    font-size: 0.9rem;
+                }
             }
         }
     }

@@ -287,6 +287,8 @@
                     .item-buttons {
                         position: relative;
                         width: 30vw;
+                        display: flex;
+                        justify-content: center;
 
                         .btn {
                             width: auto;

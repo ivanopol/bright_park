@@ -19,8 +19,9 @@
 
 <style lang="scss" scoped>
     .logo-lada-svg {
-        width: 100%;
+        width: auto;
         height: 100%;
+        display: block;
     }
 
     .dark .cls-1 {
