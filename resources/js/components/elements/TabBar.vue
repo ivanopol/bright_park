@@ -142,6 +142,7 @@ export default {
         let jivoScript = document.createElement('script');
         jivoScript.setAttribute('src', '//code-ya.jivosite.com/widget/IFmL6hf3c9');
         document.body.appendChild(jivoScript);
+
     }
 }
 </script>
@@ -575,6 +576,11 @@ export default {
         right: 30px;
         left: auto;
         display: none;
+    }
+
+    #jcont {
+        bottom: 50px !important;
+        z-index: 10 !important;
     }
 
 </style>
