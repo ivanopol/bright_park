@@ -18,7 +18,7 @@
                     <icon-route></icon-route>
                     <span>Маршрут</span>
                 </li>
-                <li onclick="jivo_api.open();">
+                <li @click="toggleJivo">
                     <icon-chat ></icon-chat>
                     <span>Чат</span>
                 </li>
@@ -94,6 +94,7 @@ export default {
         data: function () {
             return {
                 open: false,
+                jivoOpen: false,
                 openMap: false,
                 Deselect: {
                     render: createElement => createElement('span'),
@@ -104,6 +105,16 @@ export default {
             };
         },
         methods: {
+            toggleJivo: function() {
+                if (this.jivoOpen) {
+                    jivo_api.close();
+                    this.jivoOpen = false;
+                } else {
+                    jivo_api.open();
+                    this.jivoOpen = true;
+                }
+
+            },
             openMenu: function() {
                 return this.open = !this.open;
             },
