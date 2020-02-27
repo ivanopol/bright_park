@@ -117,11 +117,33 @@
             .logo-bright-park {
                 width: 35%;
                 height: 25px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+
+                a {
+                    display: block;
+                    float:left;
+                    height: 100%;
+                }
             }
 
             .logo-lada {
-                width: 13%;
-                height: 25px;
+                width: 16%;
+                height: 20px;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+            }
+
+            @media only screen and (min-width: 1366px) {
+                .logo-bright-park {
+                    width: 25%;
+                }
+                .logo-lada {
+                    width: 16%;
+                }
             }
 
             .model-button {
