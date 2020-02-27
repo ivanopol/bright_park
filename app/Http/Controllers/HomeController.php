@@ -8,12 +8,9 @@ use App\Services\AutoruService;
 use App\Services\BasePageService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Response;
-use Illuminate\Http\RedirectResponse;
 use App\CarModel;
 use App\CarType;
 use App\City;
-use App\Http\Router\CityPath;
 
 class HomeController extends Controller
 {
@@ -35,7 +32,7 @@ class HomeController extends Controller
      */
     public function index(City $city = null)
     {
-         if ($city['alias']) {
+        if ($city['alias']) {
             $this->city = $city['alias'];
         } else {
             return redirect()->route('index', ['city' => 'perm']);
@@ -58,6 +55,7 @@ class HomeController extends Controller
      */
     public function model(City $city = null, CarModel $car_model, CarType $car_type)
     {
+
         if ($city['alias']) {
             $this->city = $city['alias'];
         } else {

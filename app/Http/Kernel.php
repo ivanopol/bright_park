@@ -4,7 +4,6 @@ namespace App\Http;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redis;
 
@@ -90,9 +89,27 @@ class Kernel extends HttpKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->call(function () {
-            $daily_visits = Cache::get(date('Y-d-m'));
-            DB::insert('insert into dayly_visits (date, visitors) values (:date, :visitors)',
-                ['date'=>date('Y-m-d'), 'visitors'=>$daily_visits]);
+            $today_visits = DB::select('select visitors from daily_visits where `date` = :date', ['date' => date('Y-m-d')]);
+
+            if ($today_visits == null) {
+                $current_visits = Redis::get(date('Y-d-m'));
+
+                if ($current_visits == null) {
+                    $current_visits = 0;
+                }
+
+                DB::insert('insert into daily_visits (date, visitors) values (:date, :visitors)',
+                    ['date' => date('Y-m-d'), 'visitors' => $current_visits]);
+            } else {
+                $current_visits = Redis::get(date('Y-d-m'));
+
+                if ($current_visits == null) {
+                    $current_visits = 0;
+                }
+
+                DB::update('update daily_visits set `visitors` = :visitors where `date` = :date',
+                    ['date' => date('Y-m-d'), 'visitors' => ($current_visits + $today_visits)]);
+            }
         })->everyTenMinutes();
     }
 }
