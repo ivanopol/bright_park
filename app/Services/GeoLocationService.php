@@ -4,7 +4,6 @@
 namespace App\Services;
 
 use Illuminate\Support\Facades\DB;
-use Symfony\Component\HttpFoundation\Response;
 use Torann\GeoIP\Facades\GeoIP;
 
 /**

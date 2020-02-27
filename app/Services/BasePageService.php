@@ -4,7 +4,6 @@
 namespace App\Services;
 
 
-use App\CarModel;
 use Illuminate\Support\Facades\DB;
 
 class BasePageService

@@ -162,7 +162,6 @@ export default {
         let jivoScript = document.createElement('script');
         jivoScript.setAttribute('src', '//code-ya.jivosite.com/widget/IFmL6hf3c9');
         document.body.appendChild(jivoScript);
-
     }
 }
 </script>
