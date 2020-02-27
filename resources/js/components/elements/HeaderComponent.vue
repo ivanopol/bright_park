@@ -66,6 +66,8 @@
         z-index: 1;
         width: 100%;
         position: relative;
+        margin-bottom: 26px;
+
 
         &.absolute {
          //   position: absolute;
@@ -127,11 +129,12 @@
         }
         .lada-line {
             background: url(/build/images/lada-line.svg) no-repeat;
-            width: 100%;
-            height: 31px;
-            background-size: 100%;
+            width: 100vw;
+            height: 40px;
             margin-top: -2px;
-
+          //  background-position: 100% -85px;
+            position: absolute;
+            left: 0;
 
             p {
                 padding-top: 15px;
@@ -148,6 +151,7 @@
             }
 
             .lada-line {
+
                 p {
                     padding: 13px 10px 0 0;
                     font-size: 0.9rem;
@@ -157,9 +161,9 @@
 
         @media only screen and (min-width: 580px) {
             .lada-line {
-                background: url(/build/images/lada-line-big.svg) no-repeat;
-                height: 75px;
-
+                height: 100px;
+                background: url(/build/images/lada-line.png) no-repeat;
+                background-position: 100% -85px;
                 p {
                     width: 100%;
                     max-width: 960px;
@@ -172,6 +176,12 @@
             .lada-line p {
                 padding-top: 35px;
             }
+        }
+    }
+
+    @media only screen and (min-width: 580px) {
+        header {
+            margin-bottom: 40px;
         }
     }
 </style>

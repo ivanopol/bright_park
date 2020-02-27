@@ -110,6 +110,9 @@
             -moz-transition: opacity ease-in 0.1s;
             -o-transition: opacity ease-in 0.1s;
             transition: opacity ease-in 0.1s;
+            width: 100%;
+            max-width: 960px;
+            margin: 0 auto;
 
             .logo-bright-park {
                 width: 35%;

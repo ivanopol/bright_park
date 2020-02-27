@@ -142,12 +142,10 @@
 
     .main-screen-wrap ul li {
         position: relative;
-        display: flex;
-        justify-content: center;
     }
 
     .main-screen {
-        margin: -60px 0 40px;
+        margin: -40px 0 40px;
 /*
         width: 100%;
         height: 100vh;
@@ -176,6 +174,9 @@
             color: white;
             text-align: center;
             height: 78%;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
 
             .title-model {
                 font-family: PragmaticaLightCBold, Helvetica, sans-serif;
@@ -240,7 +241,7 @@
 
                     .title-tagline {
                         margin: 0 auto;
-                        width: 30vw;
+                        width: 100vw;
 
                         &.bold {
                             font-size: 2.35vw;
@@ -250,7 +251,7 @@
 
                     .item-buttons {
                         position: relative;
-                        width: 30vw;
+                        width: 100vw;
                         .btn {
                             width: auto;
                             display: inline-block;
@@ -263,15 +264,20 @@
             ul li:nth-child(odd) {
                 .product-content {
                     position: absolute;
-                    top: 10%;
+                    top: 0;
+                    left: 0;
                     color: white;
                     text-align: center;
-                    height: 78%;
+                    height: 100%;
+                    display: -webkit-box;
                     display: flex;
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
                     flex-direction: column;
                     -webkit-box-pack: justify;
                     justify-content: center;
-                    width: 75vw;
+                    width: 100%;
+                    -webkit-box-align: end;
                     align-items: flex-end;
 
                     .title-tagline {
@@ -308,15 +314,20 @@
             ul li {
                 .product-content {
                     position: absolute;
-                    top: 10%;
+                    top: 0;
+                    left: 0;
                     color: white;
                     text-align: center;
-                    height: 78%;
+                    height: 100%;
+                    display: -webkit-box;
                     display: flex;
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
                     flex-direction: column;
                     -webkit-box-pack: justify;
                     justify-content: center;
-                    width: 85vw;
+                    width: 100%;
+                    -webkit-box-align: end;
                     align-items: flex-end;
 
                     .title-tagline {

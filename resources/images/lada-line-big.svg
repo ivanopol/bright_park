@@ -3,15 +3,17 @@
 <svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1920 77" style="enable-background:new 0 0 1920 77;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:url(#SVGID_1_);}
+	.st0{fill:#FFFFFF;}
+	.st1{fill:url(#SVGID_1_);}
 </style>
 <g id="Слой_x0020_1">
+	<polygon class="st0" points="0,0 0,68.7 1920,6.4 1920,0 	"/>
 	
-		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="62.02" y1="38.62" x2="1850.89" y2="38.62" gradientTransform="matrix(1 0 0 -1 0 77.285)">
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="62.0187" y1="753.2197" x2="1851.0806" y2="753.2197" gradientTransform="matrix(1 0 0 1 0 -714.715)">
 		<stop  offset="0" style="stop-color:#EE7430"/>
 		<stop  offset="0.8784" style="stop-color:#FAB72D"/>
 		<stop  offset="1" style="stop-color:#FAB72D"/>
 	</linearGradient>
-	<polygon class="st0" points="1919.8,0 1919.8,8.1 0,77.3 0,50.5 	"/>
+	<polygon class="st1" points="1920,0 1920,8.1 0,77 0,50.5 	"/>
 </g>
 </svg>
