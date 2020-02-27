@@ -2,7 +2,10 @@
 
 namespace App\Http;
 
+use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redis;
 
 class Kernel extends HttpKernel
 {
@@ -61,7 +64,8 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        'cookie.check' => \App\Http\Middleware\CheckVisitorCookie::class
+        'cookie.check' => \App\Http\Middleware\CheckVisitorCookie::class,
+        'counter' => \App\Http\Middleware\CountUniqueVisitors::class
         //'city' => \App\Http\Middleware\CheckCity::class,
     ];
 
@@ -81,4 +85,31 @@ class Kernel extends HttpKernel
         \Illuminate\Routing\Middleware\SubstituteBindings::class,
         \Illuminate\Auth\Middleware\Authorize::class,
     ];
+
+    protected function schedule(Schedule $schedule)
+    {
+        $schedule->call(function () {
+            $today_visits = DB::select('select visitors from daily_visits where `date` = :date', ['date' => date('Y-m-d')]);
+
+            if ($today_visits == null) {
+                $current_visits = Redis::get(date('Y-d-m'));
+
+                if ($current_visits == null) {
+                    $current_visits = 0;
+                }
+
+                DB::insert('insert into daily_visits (date, visitors) values (:date, :visitors)',
+                    ['date' => date('Y-m-d'), 'visitors' => $current_visits]);
+            } else {
+                $current_visits = Redis::get(date('Y-d-m'));
+
+                if ($current_visits == null) {
+                    $current_visits = 0;
+                }
+
+                DB::update('update daily_visits set `visitors` = :visitors where `date` = :date',
+                    ['date' => date('Y-m-d'), 'visitors' => ($current_visits + $today_visits)]);
+            }
+        })->everyTenMinutes();
+    }
 }
