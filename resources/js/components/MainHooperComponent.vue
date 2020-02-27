@@ -96,8 +96,6 @@
 <style lang="scss" >
 
     .item-buttons {
-
-        /*margin-top: 41vh;*/
         position: absolute;
         bottom: 0;
         width: 85.5vw;

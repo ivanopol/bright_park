@@ -102,7 +102,7 @@
                 align-items: center;
             }
 
-            @media only screen and (min-width: 1366px) {
+            @media only screen and (min-width: 1367px) {
                 .logo-bright-park {
                     width: 25%;
                 }
@@ -115,7 +115,7 @@
 
             }
 
-            @media only screen and (min-width: 891px) and  (max-width: 1365px) {
+            @media only screen and (min-width: 891px) and  (max-width: 1366px) {
 
             }
 
