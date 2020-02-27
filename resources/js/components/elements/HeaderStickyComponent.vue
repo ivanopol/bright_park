@@ -81,7 +81,6 @@
         -o-transition: all ease-in 0.2s;
         transition: all ease-in 0.2s;
 
-
         height: 100px;
         background-color: #fff;
         display: flex;
@@ -180,6 +179,13 @@
                 background-color: #fff;
             }
         }
+
+        @media only screen and (min-width: 1367px) {
+            .logo-wrap {
+                max-width: 1200px;
+            }
+        }
+
         .lada-line {
             background: url(/build/images/lada_line.svg) no-repeat;
             width: 100%;

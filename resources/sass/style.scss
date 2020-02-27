@@ -108,6 +108,12 @@ $context: 375;
     margin: 0 auto;
 }
 
+@media only screen and (min-width: 1367px) {
+    .container {
+        max-width: 1200px;
+    }
+}
+
 .pointers_wrap {
     position: relative;
     overflow: hidden;

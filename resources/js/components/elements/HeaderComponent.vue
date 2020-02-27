@@ -172,9 +172,12 @@
             }
         }
 
-        @media only screen and (min-width: 1100px) {
-            .lada-line p {
-                padding-top: 35px;
+        @media only screen and (min-width: 1367px) {
+            .lada-line {
+                background: url(/build/images/lada-line-big.svg) no-repeat;
+                p {
+                    padding-top: 35px;
+                }
             }
         }
     }

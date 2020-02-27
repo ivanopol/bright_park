@@ -100,6 +100,7 @@
         /*margin-top: 41vh;*/
         position: absolute;
         bottom: 0;
+        width: 85.5vw;
         &>a {
             margin-bottom: 15px;
         }
@@ -145,7 +146,7 @@
     }
 
     .main-screen {
-        margin: -40px 0 40px;
+        margin: -60px 0 40px;
 /*
         width: 100%;
         height: 100vh;
@@ -279,6 +280,7 @@
                     width: 100%;
                     -webkit-box-align: end;
                     align-items: flex-end;
+                    padding-right: 10%;
 
                     .title-tagline {
                         margin: 30px 0 30px;
@@ -329,6 +331,7 @@
                     width: 100%;
                     -webkit-box-align: end;
                     align-items: flex-end;
+                    padding-right: 10%;
 
                     .title-tagline {
                         margin: 30px 0 30px;
@@ -356,15 +359,18 @@
 
         @media only screen and (min-width: 580px) and  (max-width: 890px) {
             ul li {
+                .product-content {
+                    padding-right: 5%;
+                }
                 .title-tagline {
-                    width: 36vw !important;
+                    width: 30vw !important;
                     &.bold {
                         font-size: 24px !important;
                     }
                 }
 
                 .item-buttons {
-                    width: 36vw !important;
+                    width: 30vw !important;
                 }
             }
         }
