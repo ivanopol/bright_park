@@ -66,7 +66,6 @@
         z-index: 1;
         width: 100%;
         position: relative;
-        overflow: hidden;
 
         &.absolute {
          //   position: absolute;
@@ -127,18 +126,16 @@
             }
         }
         .lada-line {
-            display: none;
-            background: url(/build/images/lada_line.svg) no-repeat;
-            width: 112%;
-            height: 100%;
-            min-height: 31px;
-            background-size: 101%;
+            background: url(/build/images/lada-line.svg) no-repeat;
+            width: 100%;
+            height: 31px;
+            background-size: 100%;
             margin-top: -2px;
 
 
             p {
                 padding-top: 15px;
-                padding-right: 55px;
+                padding-right: 15px;
                 text-align: right;
                 font-weight: bold;
             }
@@ -155,6 +152,25 @@
                     padding: 13px 10px 0 0;
                     font-size: 0.9rem;
                 }
+            }
+        }
+
+        @media only screen and (min-width: 580px) {
+            .lada-line {
+                background: url(/build/images/lada-line-big.svg) no-repeat;
+                height: 75px;
+
+                p {
+                    width: 100%;
+                    max-width: 960px;
+                    margin: 0 auto;
+                }
+            }
+        }
+
+        @media only screen and (min-width: 1100px) {
+            .lada-line p {
+                padding-top: 35px;
             }
         }
     }
