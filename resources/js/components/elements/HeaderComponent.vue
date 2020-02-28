@@ -137,7 +137,7 @@
             left: 0;
 
             p {
-                padding-top: 15px;
+                padding-top: 3.4%;
                 padding-right: 15px;
                 text-align: right;
                 font-weight: bold;
@@ -177,6 +177,8 @@
                 background: url(/build/images/lada-line-big.svg) no-repeat;
                 p {
                     padding-top: 35px;
+                    max-width: 1200px;
+                    margin: 0 auto;
                 }
             }
         }
