@@ -13,13 +13,19 @@
                 </ul>
             </div>
             <div class="block-img">
-                <img :src="data.url" alt="">
+                <picture>
+                    <source :srcset="get_source(data.url)" media="(min-width: 580px)">
+                    <img :src="data.url" alt="">
+                </picture>
             </div>
             <div class="block-aside">
                 <div class="aside_wrap" >
                     <hooper class="info-aside">
                         <slide v-for="slide in data.slider" :key="slide.id">
-                            <img :src="slide.image" alt="">
+                            <picture>
+                                <source :srcset="get_source(slide.image)" media="(min-width: 580px)">
+                                <img :src="slide.image" alt="">
+                            </picture>
                             <p v-text="slide.text"></p>
                         </slide>
                         <hooper-pagination slot="hooper-addons"></hooper-pagination>
@@ -58,6 +64,10 @@
             }
         },
         methods: {
+            get_source: function(path) {
+                let new_path = path.replace('mobile/', '');
+                return new_path + ', ' + new_path + ' 2x';
+            },
             activate: function (event) {
                 // Получаем номер слайда из класса нажатого плюса
                 let activeSlide = Number (event.target.classList[1].replace('p', ''));

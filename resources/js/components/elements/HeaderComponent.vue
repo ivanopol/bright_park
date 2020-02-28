@@ -189,4 +189,10 @@
             margin-bottom: 40px;
         }
     }
+
+    @media only screen and (min-width: 1366px) {
+        header {
+            margin-bottom: 70px;
+        }
+    }
 </style>

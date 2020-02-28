@@ -4,7 +4,10 @@
             <hooper class="items-mini" :settings="hooperSettings" v-on:slide="change_line">
                 <slide v-for="slide in data.slides_mini" v-bind:key="slide.id">
                     <a :href="slide.url">
-                        <img :src="slide.image" :alt="slide.alt">
+                        <picture>
+                            <source :srcset="get_source(slide.image)" media="(min-width: 580px)">
+                            <img :src="slide.image" :alt="slide.alt">
+                        </picture>
                         <span v-text="slide.title">Седан</span>
                     </a>
                 </slide>
@@ -45,7 +48,7 @@
                     trimWhiteSpace: false,
                     mouseDrag: false,
                     breakpoints: {
-                        1366: {
+                        580: {
                             infiniteScroll: false,
                             itemsToShow: 6,
                             centerMode: false,
@@ -57,9 +60,13 @@
             };
         },
         mounted: function() {
-         this.$children[0].slideTo(this.data.active);
+            this.$children[0].slideTo(this.data.active);
         },
         methods: {
+            get_source: function(path) {
+                let new_path = path.replace('mobile/', '');
+                return new_path + ', ' + new_path + ' 2x';
+            },
             change_line: function(event) {
             },
             elem() {
