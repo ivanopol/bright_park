@@ -114,6 +114,12 @@ $context: 375;
     }
 }
 
+.container-max {
+    overflow: hidden;
+    max-width: 1980px;
+    margin: 0 auto;
+}
+
 .pointers_wrap {
     position: relative;
     overflow: hidden;

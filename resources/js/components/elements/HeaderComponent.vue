@@ -87,6 +87,11 @@
                 justify-content: flex-start;
                 align-items: center;
 
+                -webkit-transition: all ease-out 0.3s;
+                -moz-transition: all ease-out 0.3s;
+                -o-transition: all ease-out 0.3s;
+                transition: all ease-out 0.3s;
+
                 a {
                     display: block;
                     float:left;
@@ -193,6 +198,16 @@
     @media only screen and (min-width: 1366px) {
         header {
             margin-bottom: 70px;
+
+            .logo-wrap {
+                .logo-bright-park {
+                    height: 30px;
+                }
+
+                .logo-wrap-row {
+                    padding: 20px 0 0;
+                }
+            }
         }
     }
 </style>
