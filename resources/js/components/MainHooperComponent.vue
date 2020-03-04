@@ -96,10 +96,9 @@
 <style lang="scss" >
 
     .item-buttons {
-
-        /*margin-top: 41vh;*/
         position: absolute;
         bottom: 0;
+        width: 85.5vw;
         &>a {
             margin-bottom: 15px;
         }
@@ -131,9 +130,17 @@
     }
 
     .main-screen-wrap.hooper {
-       /* background-color: #000;*/
-       /* top: -60px;*/
+        /* background-color: #000;*/
+        top: 0px;
     }
+
+    @media only screen and (min-width: 900px) {
+        .main-screen-wrap.hooper {
+            /* background-color: #000;*/
+            top: -30px;
+        }
+    }
+
 
     .main-screen-wrap ul {
         //will-change: scroll-position;
@@ -142,8 +149,6 @@
 
     .main-screen-wrap ul li {
         position: relative;
-        display: flex;
-        justify-content: center;
     }
 
     .main-screen {
@@ -176,6 +181,9 @@
             color: white;
             text-align: center;
             height: 78%;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
 
             .title-model {
                 font-family: PragmaticaLightCBold, Helvetica, sans-serif;
@@ -240,7 +248,7 @@
 
                     .title-tagline {
                         margin: 0 auto;
-                        width: 30vw;
+                        width: 100vw;
 
                         &.bold {
                             font-size: 2.35vw;
@@ -250,7 +258,7 @@
 
                     .item-buttons {
                         position: relative;
-                        width: 30vw;
+                        width: 100vw;
                         .btn {
                             width: auto;
                             display: inline-block;
@@ -263,16 +271,22 @@
             ul li:nth-child(odd) {
                 .product-content {
                     position: absolute;
-                    top: 10%;
+                    top: 0;
+                    left: 0;
                     color: white;
                     text-align: center;
-                    height: 78%;
+                    height: 100%;
+                    display: -webkit-box;
                     display: flex;
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
                     flex-direction: column;
                     -webkit-box-pack: justify;
                     justify-content: center;
-                    width: 75vw;
+                    width: 100%;
+                    -webkit-box-align: end;
                     align-items: flex-end;
+                    padding-right: 10%;
 
                     .title-tagline {
                         margin: 30px 0 30px;
@@ -308,16 +322,22 @@
             ul li {
                 .product-content {
                     position: absolute;
-                    top: 10%;
+                    top: 0;
+                    left: 0;
                     color: white;
                     text-align: center;
-                    height: 78%;
+                    height: 100%;
+                    display: -webkit-box;
                     display: flex;
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
                     flex-direction: column;
                     -webkit-box-pack: justify;
                     justify-content: center;
-                    width: 85vw;
+                    width: 100%;
+                    -webkit-box-align: end;
                     align-items: flex-end;
+                    padding-right: 10%;
 
                     .title-tagline {
                         margin: 30px 0 30px;
@@ -345,15 +365,18 @@
 
         @media only screen and (min-width: 580px) and  (max-width: 890px) {
             ul li {
+                .product-content {
+                    padding-right: 5%;
+                }
                 .title-tagline {
-                    width: 36vw !important;
+                    width: 30vw !important;
                     &.bold {
                         font-size: 24px !important;
                     }
                 }
 
                 .item-buttons {
-                    width: 36vw !important;
+                    width: 30vw !important;
                 }
             }
         }

@@ -66,7 +66,8 @@
         z-index: 1;
         width: 100%;
         position: relative;
-        overflow: hidden;
+        margin-bottom: 26px;
+
 
         &.absolute {
          //   position: absolute;
@@ -86,6 +87,11 @@
                 justify-content: flex-start;
                 align-items: center;
 
+                -webkit-transition: all ease-out 0.3s;
+                -moz-transition: all ease-out 0.3s;
+                -o-transition: all ease-out 0.3s;
+                transition: all ease-out 0.3s;
+
                 a {
                     display: block;
                     float:left;
@@ -101,7 +107,7 @@
                 align-items: center;
             }
 
-            @media only screen and (min-width: 1366px) {
+            @media only screen and (min-width: 1367px) {
                 .logo-bright-park {
                     width: 25%;
                 }
@@ -114,7 +120,7 @@
 
             }
 
-            @media only screen and (min-width: 891px) and  (max-width: 1365px) {
+            @media only screen and (min-width: 891px) and  (max-width: 1366px) {
 
             }
 
@@ -127,18 +133,17 @@
             }
         }
         .lada-line {
-            display: none;
-            background: url(/build/images/lada_line.svg) no-repeat;
-            width: 112%;
-            height: 100%;
-            min-height: 31px;
-            background-size: 101%;
+            background: url(/build/images/lada-line.svg) no-repeat;
+            width: 100vw;
+            height: 40px;
             margin-top: -2px;
-
+          //  background-position: 100% -85px;
+            position: absolute;
+            left: 0;
 
             p {
-                padding-top: 15px;
-                padding-right: 55px;
+                padding-top: 3.4%;
+                padding-right: 15px;
                 text-align: right;
                 font-weight: bold;
             }
@@ -151,9 +156,56 @@
             }
 
             .lada-line {
+
                 p {
                     padding: 13px 10px 0 0;
                     font-size: 0.9rem;
+                }
+            }
+        }
+
+        @media only screen and (min-width: 580px) {
+            .lada-line {
+                height: 100px;
+                background: url(/build/images/lada-line.png) no-repeat;
+                background-position: 100% -85px;
+                p {
+                    width: 100%;
+                    max-width: 960px;
+                    margin: 0 auto;
+                }
+            }
+        }
+
+        @media only screen and (min-width: 1367px) {
+            .lada-line {
+                background: url(/build/images/lada-line-big.svg) no-repeat top center;
+                p {
+                    padding-top: 35px;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 580px) {
+        header {
+            margin-bottom: 40px;
+        }
+    }
+
+    @media only screen and (min-width: 1366px) {
+        header {
+            margin-bottom: 70px;
+
+            .logo-wrap {
+                .logo-bright-park {
+                    height: 30px;
+                }
+
+                .logo-wrap-row {
+                    padding: 20px 0 0;
                 }
             }
         }

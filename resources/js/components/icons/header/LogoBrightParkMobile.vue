@@ -41,6 +41,15 @@
     .logo-bright-park-mobile-svg {
         width: 100%;
         height: 100%;
+        display: block;
+    }
+
+    @media only screen and (min-width: 580px) {
+        .logo-bright-park-mobile-svg {
+            width: auto;
+            height: 100%;
+            display: block;
+        }
     }
 
     .dark .cls-1 {

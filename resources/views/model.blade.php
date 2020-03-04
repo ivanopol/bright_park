@@ -4,7 +4,7 @@
     <tab-bar :cities='@json($cities)' :models='@json($models)'></tab-bar>
     <header-sticky-component :theme="'light'" :city="'{{$city}}'" :button=true :car='@json($data['slider']['slides'])'></header-sticky-component>
     <header-component :line="true" :theme="'light'" :city="'{{$city}}'" :car='@json($data['slider']['slides'])'></header-component>
-    <div class="container">
+    <div class="container-max">
         <hooper-component :data='@json($data['slider'])'></hooper-component>
 
         @foreach ($data['blocks'] as $key => $block)

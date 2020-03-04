@@ -81,7 +81,6 @@
         -o-transition: all ease-in 0.2s;
         transition: all ease-in 0.2s;
 
-
         height: 100px;
         background-color: #fff;
         display: flex;
@@ -110,15 +109,40 @@
             -moz-transition: opacity ease-in 0.1s;
             -o-transition: opacity ease-in 0.1s;
             transition: opacity ease-in 0.1s;
+            width: 100%;
+            max-width: 960px;
+            margin: 0 auto;
 
             .logo-bright-park {
                 width: 35%;
                 height: 25px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+
+                a {
+                    display: block;
+                    float:left;
+                    height: 100%;
+                }
             }
 
             .logo-lada {
-                width: 13%;
-                height: 25px;
+                width: 16%;
+                height: 20px;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+            }
+
+            @media only screen and (min-width: 1366px) {
+                .logo-bright-park {
+                    width: 25%;
+                }
+                .logo-lada {
+                    width: 16%;
+                }
             }
 
             .model-button {
@@ -155,6 +179,13 @@
                 background-color: #fff;
             }
         }
+
+        @media only screen and (min-width: 1367px) {
+            .logo-wrap {
+                max-width: 1200px;
+            }
+        }
+
         .lada-line {
             background: url(/build/images/lada_line.svg) no-repeat;
             width: 100%;

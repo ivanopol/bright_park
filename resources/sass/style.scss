@@ -12,6 +12,7 @@ body {
 
 .wrapper {
     min-width: 320px;
+    overflow: hidden;
 }
 
 a {
@@ -104,6 +105,18 @@ $context: 375;
 .container {
     overflow: hidden;
     max-width: 960px;
+    margin: 0 auto;
+}
+
+@media only screen and (min-width: 1367px) {
+    .container {
+        max-width: 1200px;
+    }
+}
+
+.container-max {
+    overflow: hidden;
+    max-width: 1980px;
     margin: 0 auto;
 }
 
@@ -1518,99 +1531,117 @@ footer {
         padding: 20px 30px;
         width: 100%;
 
+        //background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/granta/lada_granta_cross.png) no-repeat center center;
         &.granta_1 {
-            //background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/granta/lada_granta_sedan.jpg) no-repeat center center;
             background: url(/build/images/slider/full/granta/lada_granta_sedan.jpg) no-repeat center center;
             background-size: cover;
         }
 
         &.granta_2 {
-            //background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/granta/lada_granta_liftback.png) no-repeat center center;
             background: url(/build/images/slider/full/granta/lada_granta_liftback.png) no-repeat center center;
             background-size: cover;
         }
 
         &.granta_3 {
-            //background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/granta/lada_granta_universal.png) no-repeat center center;
             background: url(/build/images/slider/full/granta/lada_granta_universal.png) no-repeat center center;
             background-size: cover;
         }
 
         &.granta_4 {
-            //background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/granta/lada_granta_cross.png) no-repeat center center;
             background: url(/build/images/slider/full/granta/lada_granta_cross.png) no-repeat center center;
             background-size: cover;
         }
 
         &.granta_5 {
-            //background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/granta/lada_granta_drive_active.png) no-repeat center center;
             background: url(/build/images/slider/full/granta/lada_granta_drive_active.png) no-repeat center center;
             background-size: cover;
         }
 
         &.granta_6 {
-            //background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/granta/lada_granta_hatchback.png) no-repeat center center;
             background: url(/build/images/slider/full/granta/lada_granta_hatchback.png) no-repeat center center;
             background-size: cover;
         }
 
         &.vesta_1 {
-            //background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/vesta/lada_vesta_sedan.png) no-repeat center center;
             background: url(/build/images/slider/full/vesta/lada_vesta_sedan.png) no-repeat center center;
             background-size: cover;
         }
 
         &.vesta_2 {
-            background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/vesta/lada_vesta_cross.png) no-repeat center center;
+            background: url(/build/images/slider/full/vesta/lada_vesta_cross.png) no-repeat center center;
             background-size: cover;
         }
 
         &.vesta_3 {
-            //background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/vesta/lada_vesta_sw.png) no-repeat center center;
             background: url(/build/images/slider/full/vesta/lada_vesta_sw.png) no-repeat center center;
             background-size: cover;
         }
 
         &.vesta_4 {
-            //background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/vesta/lada_vesta_sw_cross.png) no-repeat center center;
             background: url(/build/images/slider/full/vesta/lada_vesta_sw_cross.png) no-repeat center center;
             background-size: cover;
         }
 
         &.vesta_5 {
-            //background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/vesta/lada_vesta_cng.png) no-repeat center center;
             background: url(/build/images/slider/full/vesta/lada_vesta_cng.png) no-repeat center center;
             background-size: cover;
         }
 
         &.vesta_6 {
-            //background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/vesta/lada_vesta_sport.png) no-repeat center center;
             background: url(/build/images/slider/full/vesta/lada_vesta_sport.png) no-repeat center center;
             background-size: cover;
         }
 
         &.xray_1 {
-            //background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/xray/lada_xray.png) no-repeat center center;
             background: url(/build/images/slider/full/xray/lada_xray.png) no-repeat center center;
             background-size: cover;
         }
 
         &.xray_2 {
-            //background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/xray/lada_xray_cross.png) no-repeat center center;
             background: url(/build/images/slider/full/xray/lada_xray_cross.png) no-repeat center center;
             background-size: cover;
         }
 
         &.l4x4_1 {
-            //background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/4x4/lada_4x4.jpg) no-repeat center center;
             background: url(/build/images/slider/full/4x4/lada_4x4.jpg) no-repeat center center;
             background-size: cover;
         }
 
         &.largus_1 {
-            //background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/4x4/lada_4x4.jpg) no-repeat center center;
             background: url(/build/images/slider/full/largus/largus_universal.jpg) no-repeat center center;
             background-size: cover;
+        }
+
+        @media only screen and (min-width: 580px) {
+
+
+            &.granta_1 {
+                background: url(/build/images/slider/full/granta/desktop/lada_granta_sedan.jpg) no-repeat 50% -2px;
+                background-size: cover;
+            }
+
+            &.granta_2 {
+                background: url(/build/images/slider/full/granta/desktop/lada_granta_liftback.png) no-repeat 50% -2px;
+                background-size: cover;
+            }
+
+
+            & {
+                min-width: 0px;
+                margin-left: auto;
+                margin-right: auto;
+                clear: none;
+                width: 100%;
+                top: 0px;
+                left: 0px;
+                height: 300px;
+            }
+        }
+
+        @media only screen and (min-width: 1366px) {
+            & {
+                height: 441px;
+            }
         }
 
         p {
