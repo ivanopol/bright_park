@@ -130,9 +130,17 @@
     }
 
     .main-screen-wrap.hooper {
-       /* background-color: #000;*/
-       /* top: -60px;*/
+        /* background-color: #000;*/
+        top: 0px;
     }
+
+    @media only screen and (min-width: 900px) {
+        .main-screen-wrap.hooper {
+            /* background-color: #000;*/
+            top: -30px;
+        }
+    }
+
 
     .main-screen-wrap ul {
         //will-change: scroll-position;
