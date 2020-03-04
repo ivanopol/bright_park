@@ -179,7 +179,7 @@
 
         @media only screen and (min-width: 1367px) {
             .lada-line {
-                background: url(/build/images/lada-line-big.svg) no-repeat;
+                background: url(/build/images/lada-line-big.svg) no-repeat top center;
                 p {
                     padding-top: 35px;
                     max-width: 1200px;
