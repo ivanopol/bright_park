@@ -116,7 +116,7 @@ $context: 375;
 
 .container-max {
     overflow: hidden;
-    max-width: 1980px;
+    max-width: 1366px;
     margin: 0 auto;
 }
 
@@ -1538,7 +1538,7 @@ footer {
         }
 
         &.granta_2 {
-            background: url(/build/images/slider/full/granta/lada_granta_liftback.png) no-repeat center center;
+            background: url(/build/images/slider/full/granta/lada_granta_liftback.jpg) no-repeat center center;
             background-size: cover;
         }
 
@@ -1547,8 +1547,8 @@ footer {
             background-size: cover;
         }
 
-        &.granta_4 {
-            background: url(/build/images/slider/full/granta/lada_granta_cross.png) no-repeat center center;
+        &.granta_cross {
+            background: url(/build/images/slider/full/granta/lada_granta_cross.jpg) no-repeat center center;
             background-size: cover;
         }
 
@@ -1621,7 +1621,12 @@ footer {
             }
 
             &.granta_2 {
-                background: url(/build/images/slider/full/granta/desktop/lada_granta_liftback.png) no-repeat 50% -2px;
+                background: linear-gradient(117deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 13%, rgba(0,0,0,0) 44%), url(/build/images/slider/full/granta/desktop/lada_granta_liftback.jpg) no-repeat 50% -2px;
+                background-size: cover;
+            }
+
+            &.granta_cross {
+                background: linear-gradient(117deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 13%, rgba(0,0,0,0) 44%), url(/build/images/slider/full/granta/desktop/lada_granta_cross.jpg) no-repeat 50% -2px;
                 background-size: cover;
             }
 

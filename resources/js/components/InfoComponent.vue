@@ -1,6 +1,6 @@
 <template>
     <section class="block" >
-        <div class="block-text">
+        <div class="block-text container">
             <h2 v-html="data.title"></h2>
             <p v-html="data.text"></p>
         </div>

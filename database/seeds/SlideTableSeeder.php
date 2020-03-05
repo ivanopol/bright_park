@@ -38,7 +38,7 @@ class SlideTableSeeder extends Seeder
             [
                 'model_id' => 1,
                 'type_id' => 4,
-                'class' => 'granta_4',
+                'class' => 'granta_cross',
                 'title' => 'LADA Granta Cross',
                 'reduction' => 'Granta Cross',
                 'subtitle' => 'динамический дизайн<br> и вместительность',
