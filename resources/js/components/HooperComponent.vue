@@ -20,9 +20,11 @@
 
         <div id="items" class="items">
             <div :class="data.slides.class">
-                <p class="title" v-text="data.slides.title"></p>
-                <p class="sub_title" v-html="data.slides.subtitle"></p>
-                <a :href="data.slides.link">Условия покупки</a>
+                <div class="items-data">
+                    <p class="title" v-text="data.slides.title"></p>
+                    <p class="sub_title" v-html="data.slides.subtitle"></p>
+                    <a :href="data.slides.link">Условия покупки</a>
+                </div>
                 <span class="more_details">
                     <span>Подробнее</span>
                 </span>

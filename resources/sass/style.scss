@@ -1521,7 +1521,7 @@ footer {
 
 .items {
     border-top: 8px solid #000;
-    div {
+    &>div {
         height: 388px;
         overflow: hidden;
         display: inline-block;
@@ -1552,8 +1552,8 @@ footer {
             background-size: cover;
         }
 
-        &.granta_5 {
-            background: url(/build/images/slider/full/granta/lada_granta_drive_active.png) no-repeat center center;
+        &.granta_drive_active {
+            background: url(/build/images/slider/full/granta/lada_granta_drive_active.jpg) no-repeat center center;
             background-size: cover;
         }
 
@@ -1616,12 +1616,17 @@ footer {
 
 
             &.granta_1 {
-                background: url(/build/images/slider/full/granta/desktop/lada_granta_sedan.jpg) no-repeat 50% -2px;
+                background: linear-gradient(117deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 13%, rgba(0,0,0,0) 44%),url(/build/images/slider/full/granta/desktop/lada_granta_sedan.jpg) no-repeat 50% -2px;
                 background-size: cover;
             }
 
             &.granta_2 {
                 background: url(/build/images/slider/full/granta/desktop/lada_granta_liftback.png) no-repeat 50% -2px;
+                background-size: cover;
+            }
+
+            &.granta_drive_active {
+                background: linear-gradient(117deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 13%, rgba(0,0,0,0) 44%), url(/build/images/slider/full/granta/desktop/lada_granta_drive_active.jpg) no-repeat 50% -2px;
                 background-size: cover;
             }
 
@@ -1638,9 +1643,15 @@ footer {
             }
         }
 
-        @media only screen and (min-width: 1366px) {
+        @media only screen and (min-width: 880px) {
             & {
-                height: 441px;
+                height: 400px
+            }
+        }
+
+        @media only screen and (min-width: 1100px) {
+            & {
+                height: 500px;
             }
         }
 
@@ -1708,6 +1719,41 @@ footer {
 
                     animation: animationDetails 1s infinite ease-in;
                 }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 580px) {
+    .items {
+        border-top: 4px solid #000;
+        &>div {
+            padding: 5% 5%;
+
+            .items-data {
+                width: 52%;
+                text-align: left;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    .items {
+        max-width: 1366px;
+        margin-left: auto;
+        margin-right: auto;
+
+        &>div {
+            padding: 5% 7%;
+
+            p {
+                font-size: 26px;
+                line-height: 32px;
+            }
+
+            p.title {
+                font-size: 34px;
             }
         }
     }

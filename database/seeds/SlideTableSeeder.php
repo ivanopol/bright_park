@@ -47,7 +47,7 @@ class SlideTableSeeder extends Seeder
             [
                 'model_id' => 1,
                 'type_id' => 5,
-                'class' => 'granta_5',
+                'class' => 'granta_drive_active',
                 'title' => 'LADA Granta Drive Active',
                 'reduction' => 'Granta drive active',
                 'subtitle' => 'динамический дизайн<br> и вместительность',
