@@ -381,6 +381,9 @@ $context: 375;
                     &cashemer {
                         background-color: #311500;
                     }
+                    &amber {
+                        background-color: #FF9225;
+                    }
                 }
             }
         }
@@ -452,9 +455,15 @@ form {
     }
 }
 
+.opinions-wrap {
+    width: 80%;
+    margin: 0 auto;
+}
+
 .opinions {
     margin-bottom: 45px;
     margin-top: 45px;
+
 
     ul {
         margin-bottom: 15px;
@@ -538,6 +547,7 @@ form {
 
 .trigger-wrap {
     margin: 30px;
+    text-align: center;
 
     .trigger-row {
         color: #000;
@@ -586,10 +596,11 @@ form {
     .trigger-block,
     p {
         font-family: PragmaticaLightCBold, Helvetica, sans-serif;
-        width: 80vw;
+/*        width: 80vw;
         display: block;
-        margin: 0 auto;
+        margin: 0 auto;*/
         position: relative;
+        display: inline-block;
 
         &::before,
         &::after {
