@@ -45,6 +45,7 @@ $context: 375;
 
         img {
             width: 80vw;
+            max-width: 500px;
             margin: 0 auto;
             position: relative;
         }
@@ -53,7 +54,9 @@ $context: 375;
             background: rgb(255, 255, 255);
             background: radial-gradient(ellipse, rgba(255, 255, 255, 0.6) 10%, rgba(255, 255, 255, 0) 72%);
             width: 100vw;
+            max-width: 625px;
             height: get-vw(200px, $context);
+            max-height: 332px;
             position: absolute;
             top: 0;
             left: 0;
@@ -64,7 +67,10 @@ $context: 375;
     }
 
     .palette {
+        width: 100%;
+        max-width: 580px;
         padding: 30px 50px 20px;
+        margin: 0 auto;
 
         ul {
             display: flex;
@@ -95,6 +101,8 @@ $context: 375;
                     border-radius: 100px;
                     width: get-vw(53px, $context);
                     height: get-vw(53px, $context);
+                    max-width: 80px;
+                    max-height: 80px;
                     margin: 0 auto;
                 }
 
