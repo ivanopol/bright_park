@@ -38,3 +38,86 @@
         }
     }
 </script>
+
+<style lang="scss">
+
+    .opinions-wrap {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    @media only screen and (min-width: 580px) {
+        .opinions-wrap {
+            width: 80%;
+        }
+    }
+
+    @media only screen and (min-width: 800px) {
+        .opinions-wrap {
+            width: 60%;
+        }
+    }
+
+    .opinions {
+        margin-bottom: 45px;
+        margin-top: 45px;
+
+        ul {
+            margin-bottom: 15px;
+
+            li {
+                width: 375px;
+                display: inline-block;
+
+                blockquote {
+                    margin: 0 30px;
+
+                    p {
+                        font-family: PragmaticaLightCBold, Helvetica, sans-serif;
+                        font-size: 18px;
+
+                        &::after {
+                             content: '»';
+                        }
+
+                        &::before {
+                             content: '«';
+                        }
+                    }
+
+                    footer {
+                        font-weight: bold;
+                        text-align: right;
+                        padding-bottom: 20px;
+                    }
+                }
+            }
+        }
+
+        .hooper-pagination {
+            bottom: -26px;
+
+            .hooper-indicator:hover, .hooper-indicator.is-active {
+                background-color: #666;
+                border-color: #666;
+            }
+
+            ol {
+                li {
+                    .hooper-indicator {
+                        width: 7px;
+                        height: 7px;
+                        border: 1px solid #ccc;
+                        background-color: #ccc;
+                        border-radius: 6px;
+                        margin: 0 4px;
+                        -webkit-transition: all ease-out 0.3s;
+                        -moz-transition: all ease-out 0.3s;
+                        -o-transition: all ease-out 0.3s;
+                        transition: all ease-out 0.3s;
+                    }
+                }
+            }
+        }
+    }
+</style>
