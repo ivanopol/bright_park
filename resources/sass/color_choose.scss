@@ -248,3 +248,33 @@ $context: 375;
         }
     }
 }
+
+@media only screen and (min-width: 800px) {
+    .change-color {
+        background-color: #000;
+        padding-top: 30px;
+        padding-bottom: 30px;
+
+        .block-text,
+        .color-name {
+            width: 30%;
+            margin-left: 20%;
+            padding-left: 30px;
+        }
+
+        .block-text {
+            h2 {
+                color: #fff;
+                text-align: left;
+
+                span {
+                    display: inline;
+                }
+            }
+        }
+
+        .color-name {
+            text-align: left;
+        }
+    }
+}
