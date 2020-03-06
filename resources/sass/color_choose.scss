@@ -76,11 +76,11 @@ $context: 375;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            justify-content: left;
+            justify-content: center;
             align-content: space-between;
 
             li {
-                width: 25%;
+                width: 22%;
                 margin-bottom: 20px;
 
                 &.active div {
@@ -101,8 +101,8 @@ $context: 375;
                     border-radius: 100px;
                     width: get-vw(53px, $context);
                     height: get-vw(53px, $context);
-                    max-width: 80px;
-                    max-height: 80px;
+                    max-width: 60px;
+                    max-height: 60px;
                     margin: 0 auto;
                 }
 
@@ -255,9 +255,14 @@ $context: 375;
         padding-top: 30px;
         padding-bottom: 30px;
 
+        &-container {
+            max-width: 1366px;
+            margin: 0 auto;
+        }
+
         .block-text,
         .color-name {
-            width: 30%;
+            width: 40%;
             margin-left: 20%;
             padding-left: 30px;
         }
@@ -275,6 +280,36 @@ $context: 375;
 
         .color-name {
             text-align: left;
+        }
+    }
+}
+
+@media only screen and (min-width: 1367px) {
+    .change-color {
+        .color-name {
+            width: 50%;
+        }
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+
+    .change-color {
+        .palette {
+            max-width: 980px;
+            margin-bottom: 30px;
+            ul{
+                justify-content: center;
+                li {
+                    width: 9.6%;
+                    margin: 0 0 20px 0;
+                    .circle {
+
+                        max-width: 60px;
+                        max-height: 60px;
+                    }
+                }
+            }
         }
     }
 }

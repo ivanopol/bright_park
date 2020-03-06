@@ -1,5 +1,5 @@
 <template>
-    <div class="carcasses-wrap">
+    <div class="carcasses-wrap container-max">
         <div class="items-mini_wrap container">
             <hooper class="items-mini" id="items-mini" :settings="hooperSettings" v-on:slide="change_line">
                 <slide v-for="slide in data.slides_mini" v-bind:key="slide.id">
