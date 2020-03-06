@@ -60,6 +60,8 @@ $context: 375;
     }
 }
 
+
+
 @media only screen and (max-width: 375px) {
     $context: 375;
 }
@@ -353,19 +355,31 @@ form {
     overflow: hidden;
 
     div {
-        float: left;
+        width: 100%;
+/*        float: left;
         overflow: hidden;
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: center;
         align-items: center;
-        width: 100vw;
+        width: 100vw;*/
 
-        & > img {
+        & img {
             object-fit: cover;
             height: 100%;
             width: 100%;
+        }
+    }
+}
+
+@media only screen and (min-width: 580px) {
+    .photo_block {
+        div {
+            width: 100%;
+             img {
+                width: 100%;
+            }
         }
     }
 }
@@ -1145,5 +1159,15 @@ footer {
                 font-size: 34px;
             }
         }
+    }
+}
+
+@media only screen and (min-width: 1367px) {
+    body {
+        font-size: 22px;
+    }
+
+    h2 {
+        font-size: 42px;
     }
 }

@@ -4,7 +4,7 @@
     <tab-bar :cities='@json($cities)' :models='@json($models)'></tab-bar>
     <header-sticky-component :theme="'light'" :city="'{{$city}}'" :button=true :car='@json($data['slider']['slides'])'></header-sticky-component>
     <header-component :line="true" :theme="'light'" :city="'{{$city}}'" :car='@json($data['slider']['slides'])'></header-component>
-    <div class="container-max">
+    <div class="">
         <hooper-component :data='@json($data['slider'])'></hooper-component>
 
         @foreach ($data['blocks'] as $key => $block)
@@ -45,9 +45,12 @@
                 <h2><span class="c_orange">Гарантия</span> 3 года</h2>
                 <p>На&nbsp;вашу новенькую Лада {{ $data['model_full'] }} действует расширенная гарантия 3&nbsp;года.</p>
             </div>
-            <div class="photo_block">
+            <div class="photo_block container-max">
                 <div class="feedback">
-                    <img src="{{asset('/build/images/photos/feedback/feedback_04.jpg')}}" alt="">
+                    <picture>
+                        <source srcset="{{asset('/build/images/photos/feedback/feedback-desktop.jpg')}}" media="(min-width: 660px)">
+                        <img src="{{asset('/build/images/photos/feedback/feedback_04.jpg')}}" alt="">
+                    </picture>
                 </div>
             </div>
         </section>
