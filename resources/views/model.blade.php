@@ -4,6 +4,9 @@
     <tab-bar :cities='@json($cities)' :models='@json($models)'></tab-bar>
     <header-sticky-component :theme="'light'" :city="'{{$city}}'" :button=true :car='@json($data['slider']['slides'])'></header-sticky-component>
     <header-component :line="true" :theme="'light'" :city="'{{$city}}'" :car='@json($data['slider']['slides'])'></header-component>
+    <body>
+    <script>{{$cities['active']['begin_script']}}</script>
+    </body>
     <div class="container-max">
         <hooper-component :data='@json($data['slider'])'></hooper-component>
 
@@ -15,7 +18,7 @@
         @if(count($data['colors']))
             <color-choose-component :colors='@json($data['colors'])'></color-choose-component>
         @endif
-        <form-component></form-component>
+        <form-component :cities='@json($cities)'></form-component>
         @if(count($data['reviews']))
             <review-component :reviews='@json($data['reviews'])' :model_name="'{{$data['model_full']}}'"></review-component>
         @endif

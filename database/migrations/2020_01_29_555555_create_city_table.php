@@ -15,6 +15,10 @@ class CreateCityTable extends Migration
             $table->string('title_en');
             $table->string('alias');
             $table->string('coordinates');
+            $table->string('jivosite_token');
+            $table->text('begin_script');
+            $table->text('end_script');
+            $table->integer('bitrix_responsible_id');
         });
         Artisan::call('db:seed', [
             '--class' => CityTableSeeder::class

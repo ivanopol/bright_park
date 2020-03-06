@@ -29,7 +29,7 @@
         beforeMount() {
             this.attachHandler();
         },
-        props: [],
+        props: ['cities'],
         data: function () {
             return {
                 phone: ''
@@ -41,7 +41,8 @@
 
                 let formData = {
                     "phone": this.clearMask(document.getElementById('phone').value),
-                    "name": document.getElementById('name').value
+                    "name": document.getElementById('name').value,
+                    "responsible_id": this.cities.active.bitrix_responsible_id
                 };
 
                 console.log(formData);

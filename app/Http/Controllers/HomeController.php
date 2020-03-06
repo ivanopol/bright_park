@@ -29,6 +29,7 @@ class HomeController extends Controller
      * Show the application dashboard.
      *
      * @param City|null $city
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
     public function index(City $city = null)
     {
@@ -43,6 +44,23 @@ class HomeController extends Controller
         $models = CarModel::with('types_preview')->get();
 
         return view('home', ['models' => $models, 'city' => $this->city, 'cities' => $cities]);
+    }
+
+    public function special_offers(City $city = null, Request $request)
+    {
+        if ($city['alias']) {
+            $this->city = $city['alias'];
+        } else {
+            return redirect()->route('index', ['city' => 'perm']);
+        }
+
+        $cities = $city->getCities($this->city);
+
+        $offers = DB::select('select * from special_offers');
+
+        $models = CarModel::with('types_preview')->get();
+
+        return view('offers', ['offers' => $offers, 'city' => $this->city, 'cities' => $cities, 'models'=>$models]);
     }
 
     /**
@@ -70,10 +88,6 @@ class HomeController extends Controller
 
         $data = $service->get_base_page_data($car_model, $car_type, $this->city);
         $data['coordinates'] = explode(",", $city['coordinates']);
-
-/*        echo "<pre>";
-        print_r($data);
-        echo "</pre>";*/
 
         return view('model', [ 'data' => $data, 'models' => $models, 'city' => $this->city, 'cities' => $cities]);
     }

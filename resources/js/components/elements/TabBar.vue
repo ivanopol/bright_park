@@ -160,7 +160,7 @@ export default {
         },
     mounted() {
         let jivoScript = document.createElement('script');
-        jivoScript.setAttribute('src', '//code-ya.jivosite.com/widget/IFmL6hf3c9');
+        jivoScript.setAttribute('src', '//code-ya.jivosite.com/widget/' + this.cities.active.jivosite_token);
         document.body.appendChild(jivoScript);
     }
 }
