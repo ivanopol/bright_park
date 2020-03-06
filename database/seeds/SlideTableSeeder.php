@@ -38,7 +38,7 @@ class SlideTableSeeder extends Seeder
             [
                 'model_id' => 1,
                 'type_id' => 4,
-                'class' => 'granta_4',
+                'class' => 'granta_cross',
                 'title' => 'LADA Granta Cross',
                 'reduction' => 'Granta Cross',
                 'subtitle' => 'динамический дизайн<br> и вместительность',
@@ -47,7 +47,7 @@ class SlideTableSeeder extends Seeder
             [
                 'model_id' => 1,
                 'type_id' => 5,
-                'class' => 'granta_5',
+                'class' => 'granta_drive_active',
                 'title' => 'LADA Granta Drive Active',
                 'reduction' => 'Granta drive active',
                 'subtitle' => 'динамический дизайн<br> и вместительность',
@@ -74,7 +74,7 @@ class SlideTableSeeder extends Seeder
             [
                 'model_id' => 3,
                 'type_id' => 20,
-                'class' => 'xray_1',
+                'class' => 'xray',
                 'title' => 'LADA XRAY',
                 'reduction' => 'XRAY',
                 'subtitle' => 'Классический стиль,</br> оптимальный выбор',
@@ -101,9 +101,9 @@ class SlideTableSeeder extends Seeder
             [
                 'model_id' => 3,
                 'type_id' => 4,
-                'class' => 'xray_1',
-                'title' => 'LADA X-Ray',
-                'reduction' => 'X-Ray',
+                'class' => 'xray_cross',
+                'title' => 'LADA XRAY Cross',
+                'reduction' => 'XRAY Coss',
                 'subtitle' => 'Классический стиль,</br> оптимальный выбор',
                 'link' => '/model_details'
             ],

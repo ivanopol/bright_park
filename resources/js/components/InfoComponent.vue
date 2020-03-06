@@ -1,8 +1,12 @@
 <template>
-    <section class="block" >
-        <div class="block-text">
-            <h2 v-html="data.title"></h2>
-            <p v-html="data.text"></p>
+    <section class="block-info" >
+        <div class="block-info-text container">
+            <span class="block-info-text-title">
+                <h2 v-html="data.title"></h2>
+            </span>
+            <span class="block-info-text-text">
+                <p v-html="data.text"></p>
+            </span>
         </div>
         <div class="pointers_wrap" :id="point_id">
             <div :v-if="data.pointers">
@@ -12,13 +16,13 @@
                     </li>
                 </ul>
             </div>
-            <div class="block-img">
+            <div class="block-info-img">
                 <picture>
                     <source :srcset="get_source(data.url)" media="(min-width: 580px)">
                     <img :src="data.url" alt="">
                 </picture>
             </div>
-            <div class="block-aside">
+            <div class="block-info-aside">
                 <div class="aside_wrap" >
                     <hooper class="info-aside">
                         <slide v-for="slide in data.slider" :key="slide.id">
@@ -76,9 +80,9 @@
                 dots.forEach(function(item, i, arr) {
                     item.className += ' is_opacity';
                 });
-                let aside = document.querySelectorAll('#pointer_' + this.n + ' .block-aside');
+                let aside = document.querySelectorAll('#pointer_' + this.n + ' .block-info-aside');
                 aside[0].className += ' show';
-                let image = document.querySelectorAll('#pointer_' + this.n + ' .block-img');
+                let image = document.querySelectorAll('#pointer_' + this.n + ' .block-info-img');
                 image[0].className += ' show';
             },
             deactivate: function (event) {
@@ -87,9 +91,9 @@
                 dots.forEach(function(item, i, arr) {
                     item.classList.remove("is_opacity");
                 });
-                let aside = document.querySelectorAll('#pointer_' + this.n + ' .block-aside');
+                let aside = document.querySelectorAll('#pointer_' + this.n + ' .block-info-aside');
                 aside[0].classList.remove("show");
-                let image = document.querySelectorAll('#pointer_' + this.n + ' .block-img');
+                let image = document.querySelectorAll('#pointer_' + this.n + ' .block-info-img');
                 image[0].classList.remove("show");
             }
         }

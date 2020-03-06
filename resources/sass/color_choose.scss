@@ -1,0 +1,280 @@
+$context: 375;
+
+@media only screen and (max-width: 321px) {
+    $context: 320;
+}
+
+@media only screen and (max-width: 375px) {
+    $context: 375;
+}
+
+@media only screen and (max-width: 414px) {
+    $context: 414;
+}
+
+@function get-vw($target, $context) {
+    $vw-context: ($context*.01) * 1px;
+    @return ($target/$vw-context) * 1vw;
+}
+
+.change-color {
+    background-color: #000;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    h2 {
+        color: #fff;
+        text-align: center;
+
+        span {
+            display: inline;
+        }
+    }
+
+    .color-name {
+        color: #FF8351;
+        margin: 0 0 40px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .car-color {
+        position: relative;
+        text-align: center;
+        margin-bottom: 20px;
+
+        img {
+            width: 80vw;
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .backlight {
+            background: rgb(255, 255, 255);
+            background: radial-gradient(ellipse, rgba(255, 255, 255, 0.6) 10%, rgba(255, 255, 255, 0) 72%);
+            width: 100vw;
+            max-width: 625px;
+            height: get-vw(200px, $context);
+            max-height: 332px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: 0 auto;
+        }
+    }
+
+    .palette {
+        width: 100%;
+        max-width: 580px;
+        padding: 30px 50px 20px;
+        margin: 0 auto;
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: left;
+            align-content: space-between;
+
+            li {
+                width: 25%;
+                margin-bottom: 20px;
+
+                &.active div {
+                    box-shadow: none;
+                    border: 2px solid #fff;
+                }
+
+                &.active div.color-white-cloud {
+                    border: 2px solid #b5b5b5;
+                }
+
+                & > div {
+                    //box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.8);
+                    box-shadow: 0 0 9px 5px rgba(255, 255, 255, 0.4);
+                }
+
+                .circle {
+                    border-radius: 100px;
+                    width: get-vw(53px, $context);
+                    height: get-vw(53px, $context);
+                    max-width: 80px;
+                    max-height: 80px;
+                    margin: 0 auto;
+                }
+
+                .color- {
+                    &blue-planet {
+                        background-color: #0057ae;
+                    }
+
+                    &cornelian {
+                        background-color: #860e0c;
+                    }
+
+                    &white-cloud {
+                        background-color: #fefaf4;
+                    }
+
+                    &panther {
+                        background-color: #161313;
+                    }
+
+                    &riesling {
+                        background-color: #b4b2ae;
+                    }
+
+                    &techno {
+                        background-color: #aea297;
+                    }
+
+                    &borneo {
+                        background-color: #98a5ac;
+                    }
+
+                    &coriander {
+                        background-color: #857d7a;
+                    }
+
+                    &white-glacial {
+                        background-color: #ffffff;
+                    }
+
+                    &red-cornelian {
+                        background-color: #860E02;
+                    }
+
+                    &angkor {
+                        background-color: #3F3A32;
+                    }
+
+                    &carfagen {
+                        background-color: #E8E5CD;
+                    }
+
+                    &daiving {
+                        background-color: #1449BF;
+                    }
+
+                    &phantom {
+                        background-color: #686866;
+                    }
+
+                    &pluton {
+                        background-color: #515958;
+                    }
+
+                    &maestro {
+                        background-color: #111112;
+                    }
+
+                    &platina {
+                        background-color: #C3C4C4;
+                    }
+
+                    &fiery-red {
+                        background-color: #DA0F23;
+                    }
+
+                    &basalt-gray {
+                        background-color: #A8B9A0;
+                    }
+
+                    &light-brown-cougar {
+                        background-color: #986F59;
+                    }
+
+                    &black-pearl {
+                        background-color: #1C1D1A;
+                    }
+
+                    &platina {
+                        background-color: #C3C4C4;
+                    }
+
+                    &white-cloud {
+                        background-color: #FEFAF4;
+                    }
+
+                    &nessi-2 {
+                        background-color: #112717;
+                    }
+
+                    &panthera {
+                        background-color: #161313;
+                    }
+
+                    &benefis {
+                        background-color: #430D45;
+                    }
+
+                    &barokko {
+                        background-color: #850D34;
+                    }
+
+                    &terra {
+                        background-color: #6C2003;
+                    }
+
+                    &borneo-dark {
+                        background-color: #444E4E;
+                    }
+
+                    &snow-queen {
+                        background-color: #D0D8E2;
+                    }
+
+                    &coriander-dark {
+                        background-color: #706c62;
+                    }
+
+                    &camouflage-jungle {
+                        background-color: #1E4526;
+                    }
+                    &sky-blue {
+                        background-color: #1279BC;
+                    }
+                    &cashemer {
+                        background-color: #311500;
+                    }
+                    &amber {
+                        background-color: #FF9225;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .change-color {
+        background-color: #000;
+        padding-top: 30px;
+        padding-bottom: 30px;
+
+        .block-text,
+        .color-name {
+            width: 30%;
+            margin-left: 20%;
+            padding-left: 30px;
+        }
+
+        .block-text {
+            h2 {
+                color: #fff;
+                text-align: left;
+
+                span {
+                    display: inline;
+                }
+            }
+        }
+
+        .color-name {
+            text-align: left;
+        }
+    }
+}
