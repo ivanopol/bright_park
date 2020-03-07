@@ -453,6 +453,7 @@ $context: 375;
     .block-info {
         h2 {
             font-size: 36px;
+            line-height: 1.1;
         }
     }
 }
@@ -460,7 +461,8 @@ $context: 375;
 @media only screen and (min-width: 1367px) {
     .block-info {
         h2 {
-            font-size: 48px;
+            font-size: 38px;
+            line-height: 1.1;
         }
     }
 }
