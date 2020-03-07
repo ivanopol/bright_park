@@ -1,21 +1,6 @@
-$context: 375;
+@import "_variables.scss";
 
-@media only screen and (max-width: 321px) {
-    $context: 320;
-}
 
-@media only screen and (max-width: 375px) {
-    $context: 375;
-}
-
-@media only screen and (max-width: 414px) {
-    $context: 414;
-}
-
-@function get-vw($target, $context) {
-    $vw-context: ($context*.01) * 1px;
-    @return ($target/$vw-context) * 1vw;
-}
 
 .change-color {
     background-color: #000;
@@ -251,7 +236,7 @@ $context: 375;
 
 @media only screen and (min-width: 800px) {
     .change-color {
-        background-color: #000;
+        background-color: $bg_dark_desktop;
         padding-top: 30px;
         padding-bottom: 30px;
 

@@ -1,3 +1,5 @@
+@import "_variables.scss";
+
 * {
     box-sizing: border-box;
     outline: none;
@@ -30,6 +32,29 @@ h2 {
     }
 }
 
+@media only screen and (max-width: 321px) {
+    h2 {
+        font-size: 21px;
+    }
+}
+
+@media only screen and (min-width: 580px) {
+    h2 {
+        font-size: 48px;
+    }
+}
+
+@media only screen and (min-width: 1367px) {
+    body {
+        font-size: 22px;
+    }
+
+    h2 {
+        font-size: 60px;
+    }
+}
+
+
 .center {
     text-align: center;
 }
@@ -48,31 +73,6 @@ h2 {
 
 .mt-40 {
     margin-top: 40px;
-}
-
-$context: 375;
-
-@media only screen and (max-width: 321px) {
-    $context: 320;
-
-    h2 {
-        font-size: 21px;
-    }
-}
-
-
-
-@media only screen and (max-width: 375px) {
-    $context: 375;
-}
-
-@media only screen and (max-width: 414px) {
-    $context: 414;
-}
-
-@function get-vw($target, $context) {
-    $vw-context: ($context*.01) * 1px;
-    @return ($target/$vw-context) * 1vw;
 }
 
 .btn {
@@ -168,9 +168,29 @@ $context: 375;
     }
 }
 
-form {
-    margin-bottom: 60px;
+@media only screen and (min-width: 580px) {
+    .block {
+        h2 {
+            margin-bottom: 100px;
+        }
+    }
+}
 
+
+
+@media only screen and (min-width: 1367px) {
+    .block {
+        h2 {
+            margin-bottom: 128px;
+        }
+    }
+}
+
+.inline-form {
+
+}
+
+form {
     & > * {
         margin: 0 auto;
         display: block;
@@ -233,6 +253,70 @@ form {
     }
 }
 
+#form_test-drive {
+   // margin-bottom: 120px;
+}
+
+.form-wrapper {
+    p.note_1 {
+        font-weight: normal;
+        margin-bottom: 20px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+}
+
+@media only screen and (min-width: 580px) {
+    .inline-form {
+        background-color: $bg_dark_desktop;
+
+        h2 {
+            color: #fff;
+
+            span {
+                display: inline;
+            }
+        }
+    }
+
+    .form-wrapper {
+        background-color: #fff;
+        width: 530px;
+        margin: 0 auto;
+        padding: 80px 50px 300px;
+        border-radius: 20px 20px 0 0;
+
+        p.note_1 {
+            font-family: PragmaticaLightCBold, Helvetica, sans-serif;
+            width: 80%;
+            margin: 0 auto 48px;
+        }
+    }
+
+    form {
+        & > * {
+            width: 100%;
+        }
+
+        button {
+            margin-top: 50px;
+        }
+    }
+}
+
+@media only screen and (min-width: 1366px) {
+    .form-wrapper {
+        max-width: 530px;
+        padding: 80px 50px 300px;
+        border-radius: 20px 20px 0 0;
+    }
+
+    form {
+        button {
+            margin-top: 50px;
+        }
+    }
+}
 
 .main-screen-wrap .hooper-pagination {
     bottom: 37.5%;
@@ -432,9 +516,7 @@ footer {
     }
 }
 
-#form_test-drive {
-    margin-bottom: 120px;
-}
+
 
 .buy-step-block {
     width: 25%;
@@ -1159,15 +1241,5 @@ footer {
                 font-size: 34px;
             }
         }
-    }
-}
-
-@media only screen and (min-width: 1367px) {
-    body {
-        font-size: 22px;
-    }
-
-    h2 {
-        font-size: 42px;
     }
 }
