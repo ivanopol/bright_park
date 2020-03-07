@@ -449,7 +449,23 @@ $context: 375;
     }
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 580px) and (max-width: 1366px) {
+    .block-info {
+        h2 {
+            font-size: 36px;
+        }
+    }
+}
+
+@media only screen and (min-width: 1367px) {
+    .block-info {
+        h2 {
+            font-size: 48px;
+        }
+    }
+}
+
+@media only screen and (min-width: 1000px) {
     .block-info {
         h2 {
             margin: 0;
