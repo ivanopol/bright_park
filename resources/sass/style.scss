@@ -50,7 +50,7 @@ h2 {
     }
 
     h2 {
-        font-size: 60px;
+        font-size: 48px;
     }
 }
 
@@ -518,7 +518,7 @@ footer {
     }
 
     p {
-        padding-top: 20px;
+        /*padding-top: 20px;*/
         font-family: PragmaticaLightCBold, Helvetica, sans-serif;
         font-size: 18px;
     }
@@ -975,6 +975,11 @@ footer {
     }
 }
 
+.route-button-wrap {
+    padding-bottom: 50px;
+    text-align: center
+}
+
 .map {
     width: 100%;
     height: 100%;
@@ -984,6 +989,20 @@ footer {
     width: 100vw;
     height: 300px;
 }
+@media only screen and (min-width: 580px) {
+    .map-wrapper{
+        width: 100vw;
+        height: 450px;
+    }
+}
+
+@media only screen and (min-width: 1367px) {
+    .map-wrapper{
+        width: 100vw;
+        height: 550px;
+    }
+}
+
 
 .map-wrapper-bar{
     margin-right: 2%;

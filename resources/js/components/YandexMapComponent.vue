@@ -1,6 +1,6 @@
 <template>
     <section>
-        <div style="padding-bottom: 10%; text-align: center">
+        <div class="route-button-wrap">
             <a class="btn" v-on:click="createRoute">Проложить маршрут</a>
         </div>
         <div class="map-wrapper">
