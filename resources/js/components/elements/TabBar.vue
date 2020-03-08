@@ -24,7 +24,7 @@
             </ul>
         </section>
 
-        <section id="panel-desktop" :class="{scroll : scrolled}">
+        <section id="panel-desktop" >
             <div class="panel-wrap">
                 <ul :class="theme">
                     <li class="menu-wrap" @click="toggleMenu">
@@ -116,7 +116,7 @@ export default {
                 OpenIndicator: {
                     render: createElement => createElement('span', {class: {'toggle': true}}),
                 },
-                scrolled: false
+               // scrolled: false
             };
         },
         methods: {
@@ -172,7 +172,7 @@ export default {
                 this.jivoOpen = false;
             },
             handleScroll: function() {
-                this.scrolled = window.scrollY > 165;
+             //   this.scrolled = window.scrollY > 60;
             }
         },
         components: {
@@ -188,10 +188,10 @@ export default {
         document.body.appendChild(jivoScript);
     },
     created () {
-        window.addEventListener('scroll', this.handleScroll);
+    //    window.addEventListener('scroll', this.handleScroll);
     },
     destroyed () {
-        window.removeEventListener('scroll', this.handleScroll);
+     //   window.removeEventListener('scroll', this.handleScroll);
     }
 }
 </script>
@@ -515,18 +515,18 @@ export default {
         max-width: 1366px;
         padding-right: 10px;
         z-index: 40;
-        top: 300px;
+        top: 100px;
 
-        &.scroll {
+/*        &.scroll {
             top: 100px;
             .panel-wrap {
                 position: fixed;
             }
-        }
+        }*/
 
         .panel-wrap {
 
-            position: absolute;
+            position: fixed;
             ul {
                 display: flex;
                 flex-direction: column;
