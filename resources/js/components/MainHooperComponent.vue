@@ -130,22 +130,8 @@
     }
 
     .main-screen-wrap.hooper {
-        /* background-color: #000;*/
         top: 0px;
     }
-
-    @media only screen and (min-width: 900px) {
-        .main-screen-wrap.hooper {
-            /* background-color: #000;*/
-            top: -30px;
-        }
-    }
-
-
-    .main-screen-wrap ul {
-        //will-change: scroll-position;
-    }
-
 
     .main-screen-wrap ul li {
         position: relative;
@@ -153,26 +139,23 @@
 
     .main-screen {
         margin: -60px 0 40px;
-/*
-        width: 100%;
-        height: 100vh;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        overflow: hidden;
-*/
 
         .asset-container {
-            /*background-color: #000;*/
             height: 100%;
         }
         .asset-image {
             object-fit: cover;
             margin: -75px 0 0 0;
-            width: 100vw;
-            //position: absolute;
-            //bottom: 0;
+            width: 100%;
+        }
+
+        @media only screen and (min-width: 900px) {
+            & {
+                margin: -80px auto 40px;
+                max-width: 1980px;
+                max-height: 800px;
+                overflow: hidden;
+            }
         }
 
         .product-content {
@@ -238,31 +221,49 @@
             ul li:nth-child(even) {
                 .product-content {
                     position: absolute;
-                    top: 10%;
+                    top: 0;
+                    left: 0;
                     color: white;
                     text-align: center;
-                    height: 78%;
+                    height: 100%;
+                    display: -webkit-box;
                     display: flex;
                     flex-direction: column;
-                    justify-content: space-between;
+                    justify-content: end;
+                    width: 100%;
+                    -webkit-box-align: end;
+                    align-items: flex-start;
+                    max-width: 1200px;
+                    right: 0;
+                    margin: 8% auto 0;
+                    padding-left: 0;
 
                     .title-tagline {
-                        margin: 0 auto;
-                        width: 100vw;
+                        margin: 0 0 30px;
+                        width: 41%;
 
                         &.bold {
-                            font-size: 2.35vw;
-                            font-weight: bold;
+                            font-size: 46px;
+                            font-weight: normal;
+                            text-align: left;
+
+                            .highlight {
+                                font-weight: bold;
+                            }
                         }
                     }
 
                     .item-buttons {
                         position: relative;
-                        width: 100vw;
+                        width: 26%;
+                        display: flex;
+                        justify-content: flex-end;
+                        flex-direction: column;
+
                         .btn {
                             width: auto;
-                            display: inline-block;
-                            margin: 0 5px;
+                            display: block;
+                            margin: 0 0 15px 0;
                         }
                     }
                 }
@@ -278,37 +279,65 @@
                     height: 100%;
                     display: -webkit-box;
                     display: flex;
-                    -webkit-box-orient: vertical;
-                    -webkit-box-direction: normal;
                     flex-direction: column;
-                    -webkit-box-pack: justify;
-                    justify-content: center;
+                    justify-content: end;
                     width: 100%;
                     -webkit-box-align: end;
                     align-items: flex-end;
-                    padding-right: 10%;
+                    max-width: 1200px;
+                    right: 0;
+                    margin: 8% auto 0;
+                    padding-right: 20px;
 
                     .title-tagline {
-                        margin: 30px 0 30px;
-                        width: 30vw;
+                        margin: 0 0 30px;
+                        width: 41%;
 
                         &.bold {
-                            font-size: 2.35vw;
-                            font-weight: bold;
+                            font-size: 46px;
+                            font-weight: normal;
+                            text-align: right;
+
+                            .highlight {
+                                font-weight: bold;
+                            }
                         }
                     }
 
                     .item-buttons {
                         position: relative;
-                        width: 30vw;
+                        width: 26%;
                         display: flex;
-                        justify-content: center;
+                        justify-content: flex-end;
+                        flex-direction: column;
 
                         .btn {
                             width: auto;
-                            display: inline-block;
-                            margin: 0 5px;
+                            display: block;
+                            margin: 0 0 15px 0;
                         }
+                    }
+                }
+            }
+        }
+
+        @media only screen and (min-width: 1366px) and (max-width: 1979px) {
+            ul li:nth-child(even),
+            ul li:nth-child(odd) {
+                .product-content {
+                    padding-right: 50px;
+
+                    .title-tagline {
+                        margin: 0 0 30px;
+                        width: 35%;
+
+                        &.bold {
+                            font-size: 36px;
+                        }
+                    }
+
+                    .item-buttons {
+                        width: 22%;
                     }
                 }
             }
