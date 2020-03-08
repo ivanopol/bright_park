@@ -155,6 +155,8 @@
     @media only screen and (min-width: 1367px) {
         .map-wrapper{
             width: 100vw;
+           // max-width: 1366px;
+            margin: 0 auto;
             height: 550px;
         }
     }
