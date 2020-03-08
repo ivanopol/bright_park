@@ -1,6 +1,6 @@
 <template>
     <section>
-        <div style="padding-bottom: 10%; text-align: center">
+        <div class="route-button-wrap">
             <a class="btn" v-on:click="createRoute">Проложить маршрут</a>
         </div>
         <div class="map-wrapper">
@@ -121,6 +121,36 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
+    .route-button-wrap {
+        padding-bottom: 50px;
+        text-align: center
+    }
+
+    .map {
+        width: 100%;
+        height: 100%;
+    }
+
+    .map-wrapper{
+        width: 100vw;
+        height: 300px;
+    }
+
+    @media only screen and (min-width: 580px) {
+        .map-wrapper{
+            width: 100vw;
+            height: 450px;
+        }
+    }
+
+    @media only screen and (min-width: 1367px) {
+        .map-wrapper{
+            width: 100vw;
+            margin: 0 auto;
+            height: 550px;
+        }
+    }
+
 
 </style>

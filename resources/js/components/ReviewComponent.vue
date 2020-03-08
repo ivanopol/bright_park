@@ -4,7 +4,7 @@
             <h2><span class="c_orange">Эксперты</span> о {{model_name}}</h2>
         </div>
         <div class="opinions-wrap">
-            <hooper class="opinions">
+            <hooper class="opinions" :wheelControl="false">
                 <slide v-for="review in reviews" :key="reviews.key">
                     <blockquote :cite="review.url">
                         <p v-html="review.quote"></p>
@@ -82,6 +82,14 @@
 
                         &::before {
                              content: '«';
+                        }
+                    }
+
+                    @media only screen and (min-width: 1000px) {
+                        p {
+                            font-size: 22px;
+                            line-height: 1.3;
+                            text-align: center;
                         }
                     }
 

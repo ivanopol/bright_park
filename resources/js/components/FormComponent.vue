@@ -1,21 +1,23 @@
 <template>
-    <section class="block form">
+    <section class="block form inline-form">
         <div class="block-text">
             <h2><span class="c_orange">Попробуйте</span> сами</h2>
-            <p class="note_1">Расширенный тест-драйв в Брайт парке</p>
         </div>
-        <form action="#" id="form_test-drive" method="POST" name="feedback" @submit="send">
-            <input id="name" type="text" class="" name="name" placeholder="Имя" required>
-            <the-mask id="phone" pattern=".{18,}" mask="+# (###)-###-##-##" type="tel" required="true"
-                      placeholder="Телефон"></the-mask>
-            <button :click="send">Записаться</button>
-            <div id="warning" class="model-choose-text" style="color: darkred;" hidden>
-                <p>Введите 11-значный номер!</p>
-            </div>
-            <div id="success" class="model-choose-text" style="color: darkgreen;" hidden>
-                <p>Заявка отправлена!</p>
-            </div>
-        </form>
+        <div class="form-wrapper">
+            <p class="note_1">Расширенный тест-драйв в Брайт парке</p>
+            <form action="#" id="form_test-drive" method="POST" name="feedback" @submit="send">
+                <input id="name" type="text" class="" name="name" placeholder="Имя" required>
+                <the-mask id="phone" pattern=".{18,}" mask="+# (###)-###-##-##" type="tel" required="true"
+                          placeholder="Телефон"></the-mask>
+                <button :click="send">Записаться</button>
+                <div id="warning" class="model-choose-text" style="color: darkred;" hidden>
+                    <p>Введите 11-значный номер!</p>
+                </div>
+                <div id="success" class="model-choose-text" style="color: darkgreen;" hidden>
+                    <p>Заявка отправлена!</p>
+                </div>
+            </form>
+        </div>
     </section>
 </template>
 

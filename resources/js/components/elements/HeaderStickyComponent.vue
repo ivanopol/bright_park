@@ -181,8 +181,29 @@
         }
 
         @media only screen and (min-width: 1367px) {
+            &.show {
+                margin-top: -40px;
+            }
+
             .logo-wrap {
                 max-width: 1200px;
+                padding: 16px 15px 13px;
+
+                .logo-bright-park {
+                    height: 30px;
+                }
+
+                .logo-wrap-row {
+                    padding: 20px 0 0;
+                }
+
+                .model-button {
+                    height: 30px;
+
+                    span {
+                        font-size: 16px;
+                    }
+                }
             }
         }
 
