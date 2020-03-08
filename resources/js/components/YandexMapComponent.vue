@@ -121,7 +121,7 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
     .route-button-wrap {
         padding-bottom: 50px;
         text-align: center
@@ -155,7 +155,6 @@
     @media only screen and (min-width: 1367px) {
         .map-wrapper{
             width: 100vw;
-           // max-width: 1366px;
             margin: 0 auto;
             height: 550px;
         }
