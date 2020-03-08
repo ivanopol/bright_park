@@ -1,5 +1,5 @@
 <template>
-    <section class="block-info container-max" >
+    <section class="block-info container" >
         <div class="block-info-text">
             <span class="block-info-text-title">
                 <h2 v-html="data.title"></h2>
