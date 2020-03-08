@@ -16,8 +16,9 @@ class CreateCityTable extends Migration
             $table->string('alias');
             $table->string('coordinates');
             $table->string('jivosite_token');
-            $table->text('begin_script');
-            $table->text('end_script');
+            $table->text('open_script')->nullable();
+            $table->text('begin_script')->nullable();
+            $table->text('end_script')->nullable();
             $table->integer('bitrix_responsible_id');
         });
         Artisan::call('db:seed', [

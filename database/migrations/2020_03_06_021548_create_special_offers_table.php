@@ -17,16 +17,16 @@ class CreateSpecialOffersTable extends Migration
             $table->bigIncrements('id');
             $table->date('start_date');
             $table->date('end_date');
-            $table->string('img_mobile');
-            $table->string('img_desktop');
-            $table->string('title');
-            $table->text('description');
-            $table->integer('count');
-            $table->boolean('is_active');
-            $table->integer('city_id');
-            $table->integer('car_model_id');
-            $table->integer('car_type_id');
-            $table->string('utm_tags');
+            $table->string('img_mobile')->nullable();
+            $table->string('img_desktop')->nullable();
+            $table->string('title')->nullable();
+            $table->text('description')->nullable();
+            $table->integer('count')->nullable();
+            $table->boolean('is_active')->nullable();
+            $table->integer('city_id')->nullable();
+            $table->integer('car_model_id')->nullable();
+            $table->integer('car_type_id')->nullable();
+            $table->string('utm_tags')->nullable();
         });
 
         Artisan::call('db:seed', [
