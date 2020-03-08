@@ -370,7 +370,7 @@
 
                     .title-tagline {
                         margin: 30px 0 30px;
-                        width: 25vw;
+                        width: 40%;
 
                         &.bold {
                             font-size: 30px;
@@ -380,32 +380,37 @@
 
                     .item-buttons {
                         position: relative;
-                        width: 25vw;
+                        width: 40%;
 
                         .btn {
-                            width: auto;
+                            width: 55%;
                             display: block;
-                            margin: 10px 5px;
+                            margin: 10px auto;
                         }
                     }
                 }
             }
         }
 
-        @media only screen and (min-width: 580px) and  (max-width: 890px) {
+        @media only screen and (min-width: 580px) and  (max-width: 1000px) {
             ul li {
                 .product-content {
-                    padding-right: 5%;
+                    padding-right: 0;
                 }
                 .title-tagline {
-                    width: 30vw !important;
+                    width: 50%!important;
                     &.bold {
                         font-size: 24px !important;
                     }
                 }
 
                 .item-buttons {
-                    width: 30vw !important;
+                    width: 50%!important;
+
+                    a {
+                        font-size: 12px;
+                        min-width: 185px!important;
+                    }
                 }
             }
         }
