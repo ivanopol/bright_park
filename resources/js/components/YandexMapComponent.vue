@@ -137,12 +137,7 @@
         height: 300px;
     }
 
-    .map-wrapper-bar{
-        margin-right: 2%;
-        margin-left: 5%;
-        width: 90vw;
-        height: 45vh;
-    }
+
 
 
     @media only screen and (min-width: 580px) {

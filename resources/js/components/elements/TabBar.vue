@@ -1,19 +1,19 @@
 <template>
     <div>
-        <div id="layout" :class="{ active: open }" @click="closeMenu"></div>
+        <div id="layout" :class="{ active: layout }" @click="close"></div>
         <section id="panel" >
             <ul :class="theme">
-                <li class="menu-wrap" @click="openMenu">
+                <li class="menu-wrap" @click="toggleMenu">
                     <icon-menu ></icon-menu>
                     <span>Меню</span>
                 </li>
-                <li class="call-wrap">
+                <li class="call-wrap" @click="toggleCall">
                     <a href="tel:+73422338231">
                     <icon-call></icon-call>
                     <span>Звонок</span>
                     </a>
                 </li>
-                <li class="route-map" @click="openMapWindow">
+                <li class="route-map" @click="toggleMapWindow">
                     <icon-route></icon-route>
                     <span>Маршрут</span>
                 </li>
@@ -27,10 +27,10 @@
         <section id="panel-desktop" :class="{scroll : scrolled}">
             <div class="panel-wrap">
                 <ul :class="theme">
-                    <li class="menu-wrap" @click="openMenu">
+                    <li class="menu-wrap" @click="toggleMenu">
                         <div class="menu-desktop"></div>
                     </li>
-                    <li class="route-map" @click="openMapWindow">
+                    <li class="route-map" @click="toggleMapWindow">
                         <div class="route-desktop"></div>
                     </li>
                 </ul>
@@ -38,7 +38,7 @@
         </section>
 
         <section id="menu" :class="{ active: open }">
-            <div class="close" @click="closeMenu"></div>
+            <div class="close" @click="close"></div>
             <div class="menu_wrap">
                 <v-select class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Выбрать город" taggable
                           :options="cities.list" :searchable="false" v-model="cities.active" @input="selected">
@@ -76,6 +76,7 @@
         </section>
         <section id="map_window" :class="{ active: openMap }">
             <div class="map_wrap">
+                <div class="close" @click="close"></div>
                 <touch-bar-map-component :coordinates="cities.active.coords.split(', ')"></touch-bar-map-component>
             </div>
         </section>
@@ -108,6 +109,7 @@ export default {
                 open: false,
                 jivoOpen: false,
                 openMap: false,
+                layout: false,
                 Deselect: {
                     render: createElement => createElement('span'),
                 },
@@ -123,45 +125,51 @@ export default {
                     this.open = false;
                     this.openMap = false;
                     this.jivoOpen =false;
+                    this.layout = false;
                     jivo_api.close();
                 } else {
                     this.open = false;
                     this.openMap = false;
                     this.jivoOpen = true;
+                    this.layout = true;
                     jivo_api.open();
                 }
 
             },
-            openMenu: function() {
+            toggleMenu: function() {
                 this.openMap = false;
                 if (typeof jivo_api !== "undefined" && jivo_api !== null) {
                     jivo_api.close();
                 }
-                return this.open = !this.open;
+                this.open = !this.open;
+                this.layout = this.open ? true : false;
+                return this.open;
             },
-            closeMenu: function() {
+            close: function() {
                 this.openMap = false;
                 if (typeof jivo_api !== "undefined" && jivo_api !== null) {
                    jivo_api.close();
                 }
+                this.layout = false;
                 return this.open = false;
             },
             selected: function(event) {
                 window.location.href = window.location.protocol + '//' + window.location.host + '/' + event.value;
             },
-            openMapWindow: function() {
+            toggleMapWindow: function() {
                 this.open = false;
                 if (typeof jivo_api !== "undefined" && jivo_api !== null) {
                     jivo_api.close();
                 }
-                return this.openMap = !this.openMap;
+                this.openMap = !this.openMap
+                this.layout = this.openMap ? true : false;
+                return this.openMap;
             },
-            closeMap: function() {
+            toggleCall: function() {
+                this.layout = false;
+                this.openMap = false;
                 this.open = false;
-                if (typeof jivo_api !== "undefined" && jivo_api !== null) {
-                    jivo_api.close();
-                }
-                return this.openMap = false;
+                this.jivoOpen = false;
             },
             handleScroll: function() {
                 this.scrolled = window.scrollY > 165;
@@ -216,6 +224,44 @@ export default {
         }
     }
 
+    .close {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        width: 20px;
+        height: 20px;
+        color: #FF8351;
+        font-weight: bold;
+        padding: 12px;
+        box-sizing: content-box;
+        border-radius: 20px;
+        z-index: 1;
+
+        &:before,
+        &:after {
+            content: "";
+            width: 25px;
+            height: 2px;
+            background-color: #FF8351;
+            display: block;
+            position: absolute;
+        }
+
+        &:before {
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            top: 20px;
+            left: 10px;
+        }
+
+        &:after {
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            left: 10px;
+            top: 20px;
+        }
+    }
+
     #menu {
         display: block;
         position: fixed;
@@ -231,43 +277,6 @@ export default {
         -moz-transition: all ease-in 0.3s;
         -o-transition: all ease-in 0.3s;
         transition: all ease-in 0.3s;
-
-        .close {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            width: 20px;
-            height: 20px;
-            color: #FF8351;
-            font-weight: bold;
-            padding: 12px;
-            box-sizing: content-box;
-            border-radius: 20px;
-
-            &:before,
-            &:after {
-                content: "";
-                width: 25px;
-                height: 2px;
-                background-color: #FF8351;
-                display: block;
-                position: absolute;
-            }
-
-            &:before {
-                -webkit-transform: rotate(-45deg);
-                transform: rotate(-45deg);
-                top: 20px;
-                left: 10px;
-            }
-
-            &:after {
-                -webkit-transform: rotate(45deg);
-                transform: rotate(45deg);
-                left: 10px;
-                top: 20px;
-            }
-        }
 
         &.active {
             margin-left: 0;
@@ -608,12 +617,12 @@ export default {
     #map_window {
         display: block;
         position: fixed;
-        width: 100vw;
-        height: 60vh;
-        background-color: #000;
-        top:40vh;
+        width: 80vw;
+        height: 100vh;
+        background-color: #fff;
         z-index:30;
         margin-left: -200vw;
+        padding: 0 0 51px;
         /* Переход */
         -webkit-transition: all ease-in 0.3s;
         -moz-transition: all ease-in 0.3s;
@@ -662,10 +671,13 @@ export default {
         }
 
         .map_wrap {
-            padding-top: 10%;
-            padding-bottom: 10%;
-            height: 50%;
-            max-height: 60%;
+            padding: 0;
+            height: 100%;
+        }
+
+        .map-wrapper-bar{
+            width: 100%;
+            height: 100%;
         }
     }
 
@@ -686,7 +698,7 @@ export default {
     }
 
     .globalClass_ET .mobileContainer_2k {
-        z-index: 10 !important;
+        z-index: 30 !important;
     }
 
     @media only screen and (max-width: 1024px) {
