@@ -708,29 +708,18 @@ export default {
             display: flex;
             justify-content: flex-end;
         }
-/*            bottom: auto;
-            left: auto;
-            top: 20%;
+    }
 
-            ul {
-                flex-direction: column;
-                padding: 0;
+    @media only screen and (min-width: 580px) {
+        #menu {
+            width: 70vw;
+            max-width: 500px;
+            padding: 35px 56px;
 
-                &.light,
-                &.dark {
-                    max-width: 1200px;
-                    margin: 0 auto;
-                    background-color: transparent;
-                    backdrop-filter: none;
-
-                    chat-wrap,
-                    .call-wrap {
-                        display: none;
-                    }
-                }
+            .other_links ul li a,
+            .models_wrap ul li a {
+                padding-top: 22px;
             }
-
-
-        }*/
+        }
     }
 </style>
