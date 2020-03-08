@@ -164,7 +164,7 @@ export default {
                 return this.openMap = false;
             },
             handleScroll: function() {
-                this.scrolled = window.scrollY > 100;
+                this.scrolled = window.scrollY > 165;
             }
         },
         components: {
