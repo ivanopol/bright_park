@@ -122,5 +122,42 @@
 </script>
 
 <style lang="scss" scoped>
+    .route-button-wrap {
+        padding-bottom: 50px;
+        text-align: center
+    }
+
+    .map {
+        width: 100%;
+        height: 100%;
+    }
+
+    .map-wrapper{
+        width: 100vw;
+        height: 300px;
+    }
+
+    .map-wrapper-bar{
+        margin-right: 2%;
+        margin-left: 5%;
+        width: 90vw;
+        height: 45vh;
+    }
+
+
+    @media only screen and (min-width: 580px) {
+        .map-wrapper{
+            width: 100vw;
+            height: 450px;
+        }
+    }
+
+    @media only screen and (min-width: 1367px) {
+        .map-wrapper{
+            width: 100vw;
+            height: 550px;
+        }
+    }
+
 
 </style>

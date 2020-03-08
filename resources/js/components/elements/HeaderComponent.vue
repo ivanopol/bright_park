@@ -195,13 +195,13 @@
         }
     }
 
-    @media only screen and (min-width: 1366px) {
+    @media only screen and (min-width: 1367px) {
         header {
             margin-bottom: 70px;
 
             .logo-wrap {
                 .logo-bright-park {
-                    height: 30px;
+                    height: 35px;
                 }
 
                 .logo-wrap-row {
