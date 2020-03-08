@@ -849,22 +849,49 @@ footer {
 }
 
 .advantages_wrap {
-    padding: 0 30px;
+    padding: 80px 30px;
 
     h1 {
         font-family: PragmaticaLightCBold, Helvetica, sans-serif;
-        font-size: 28px;
+        font-size: 30px;
         font-weight: bold;
-        line-height: 34px;
+        line-height: 1.1;
         text-align: center;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
+    }
+
+    @media only screen and (min-width: 580px) {
+        h1 {
+            font-size: 48px;
+            margin-bottom: 60px;
+        }
     }
 
     p {
-        margin-bottom: 30px;
-        line-height: 20px;
-        font-weight: bold;
+        font-family: PragmaticaLightCBold, Helvetica, sans-serif;
+        margin-bottom: 50px;
+        line-height: 1.4;
+        font-weight: normal;
+        text-align: center;
     }
+
+    @media only screen and (min-width: 580px) and (max-width: 919px) {
+        p {
+            margin-bottom: 80px;
+            padding: 0 5%;
+            font-size: 22px;
+        }
+    }
+
+    @media only screen and (min-width: 920px) {
+        p {
+            margin-bottom: 100px;
+            font-size: 25px;
+            padding: 0 16%;
+        }
+    }
+
+
 
     ul {
         display: flex;

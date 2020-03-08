@@ -151,7 +151,7 @@
 
         @media only screen and (min-width: 900px) {
             & {
-                margin: -80px auto 40px;
+                margin: -80px auto 0;
                 max-width: 1980px;
                 max-height: 800px;
                 overflow: hidden;
