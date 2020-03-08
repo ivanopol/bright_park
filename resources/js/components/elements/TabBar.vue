@@ -679,6 +679,10 @@ export default {
             width: 100%;
             height: 100%;
         }
+
+        .map-wrapper{
+            height: 100%;
+        }
     }
 
     ._orinationRight_25.wrap_mW {
@@ -723,15 +727,23 @@ export default {
     }
 
     @media only screen and (min-width: 580px) {
+        #map_window {
+            padding: 0;
+        }
+
+        #map_window,
         #menu {
             width: 70vw;
             max-width: 500px;
+        }
+        #menu {
             padding: 35px 56px;
-
             .other_links ul li a,
             .models_wrap ul li a {
                 padding-top: 22px;
             }
         }
+
+
     }
 </style>
