@@ -18,6 +18,7 @@
 Auth::routes();
 Route::middleware(['auth', 'cookie.check', 'counter'])->group(function () {
     Route::get('/{city?}', 'HomeController@index')->name('index');
+    Route::get('/{city?}/special_offers', 'HomeController@special_offers')->name('special_offers');
     Route::get('/{city?}/{car_model}/{car_type}', 'HomeController@model')->name('model');
     Route::get('/{city?}/{car_model}/{car_type}/model_details', 'HomeController@model_details')->name('model_details');
     Route::get('/alt_menu', 'HomeController@alt_menu')->name('alt_menu');

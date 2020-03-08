@@ -8,7 +8,6 @@
         <main-hooper-component :city="'{{$city}}'"></main-hooper-component>
     </section>
     <body>
-    <script>{{$cities['active']['begin_script']}}</script>
     <div class="container">
         <div id="advantages" class="advantages_wrap">
             <h1>Брайт Парк</h1>
@@ -40,7 +39,6 @@
                 </li>
             </ul>
         </div>
-    </div>
     <section id="models" class="models_wrap">
         <div class="container">
             <h2>Модели</h2>

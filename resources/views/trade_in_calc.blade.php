@@ -1,8 +1,9 @@
 @extends('layouts.app2')
 
 @section('content')
-    <tab-bar></tab-bar>
+    <tab-bar :cities='@json($cities)'></tab-bar>
     <header-component :line="true" :theme="'light'"></header-component>
+    <script>{{$cities['active']['begin_script']}}</script>
     <div class="container p-top-90">
         <section>
             <div class="buy-steps-wrapper">

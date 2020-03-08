@@ -26,8 +26,7 @@ class BitrixService
 
         $phone = $data['phone'];
 
-        $responsible_id = 1447;
-        $this->arr_responsible_id[mt_rand(0, count($this->arr_responsible_id) - 1)];
+        $responsible_id = $data['responsible_id'];
 
         $request = [
             'type' => "PHONE",

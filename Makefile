@@ -4,7 +4,7 @@ docker-up:
 docker-down:
 	docker-compose down
 
-docker-build: unperm perm
+docker-build:
 	docker-compose up --build -d
 
 test:

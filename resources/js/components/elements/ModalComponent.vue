@@ -6,7 +6,7 @@
                 <a href="" class="btn btn-secondary" v-on:click.prevent="show()">Записаться на сервис</a>
             </div>
             <modal name="form-callback" :width="modalWidth" :height="354">
-                <form-buy2-component></form-buy2-component>
+                <form-buy2-component :cities=cities></form-buy2-component>
             </modal>
         </div>
     </section>
@@ -17,6 +17,7 @@
    // const MODAL_WIDTH = 300;
     export default {
         name: "App",
+        props: ['cities'],
         methods: {
             show () {
                 this.$modal.show('form-callback');

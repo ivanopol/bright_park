@@ -23,6 +23,7 @@
                    :car_model='@json($car_model)'
                    :car_type='@json($car_type)'
                    :car_attrs='@json($car_attrs)'
+                   :cities='@json($cities)'
             ></steps>
         </section>
     </section>

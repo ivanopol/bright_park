@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class City extends Model
 {
-    protected $fillable = ['title_en', 'title_ru', 'alias', 'coordinates'];
+    protected $fillable = ['title_en', 'title_ru', 'alias', 'coordinates', 'jivosite_token', 'begin_script', 'bitrix_responsible_id'];
     /**
      * Таблица, связанная с моделью.
      *
@@ -29,12 +29,12 @@ class City extends Model
      *
      * @return array
      */
-    public function defaultCity() : array
+    public function defaultCity(): array
     {
-        return (array) DB::selectOne("SELECT *
+        return (array)DB::selectOne("SELECT *
                                      FROM `cities`
                                      LEFT JOIN `contacts` `c` ON `c`.`city_id`=`cities`.`id`
-                                     WHERE `alias` = :alias", ['alias'=> self::DEFAULT_CITY]);
+                                     WHERE `alias` = :alias", ['alias' => self::DEFAULT_CITY]);
 
     }
 
@@ -44,13 +44,13 @@ class City extends Model
      * @param string $ip IP-адрес
      * @return array
      */
-    public function getCityByIP(string $ip) : array
+    public function getCityByIP(string $ip): array
     {
-        $alias = geoip($ip=null)->getLocation($ip)->getAttribute('city');
-        return (array) DB::selectOne("SELECT *
+        $alias = geoip($ip = null)->getLocation($ip)->getAttribute('city');
+        return (array)DB::selectOne("SELECT *
                                       FROM `cities`
                                       LEFT JOIN `contacts` `c` ON `c`.`city_id`=`cities`.`id`
-                                      WHERE `alias`=:alias", ['alias'=>$alias]);
+                                      WHERE `alias`=:alias", ['alias' => $alias]);
     }
 
     /**
@@ -58,7 +58,7 @@ class City extends Model
      *
      * @return string
      */
-    public function getRouteKeyName() : string
+    public function getRouteKeyName(): string
     {
         return 'alias';
     }
@@ -68,7 +68,7 @@ class City extends Model
      *
      * return string
      */
-    public function getCity() : string
+    public function getCity(): string
     {
         return $this->city;
     }
@@ -79,7 +79,7 @@ class City extends Model
      * @param string $city_active
      * @return array
      */
-    public function getCities($city_active) : array
+    public function getCities($city_active): array
     {
         $cities = [
             'active' => [],
@@ -88,19 +88,24 @@ class City extends Model
 
         $cities_list = City::all();
 
-        foreach ($cities_list as $city)
-        {
+        foreach ($cities_list as $city) {
             $cities['list'][] = [
                 'value' => $city->alias,
                 'label' => $city->title_ru,
-                'coords' => $city->coordinates
+                'coords' => $city->coordinates,
+                'jivosite_token' => $city->jivosite_token,
+                'begin_script' => $city->begin_script,
+                'bitrix_responsible_id' => $city->bitrix_responsible_id
             ];
 
             if ($city->alias === $city_active) {
                 $cities['active'] = [
                     'value' => $city->alias,
                     'label' => $city->title_ru,
-                    'coords' => $city->coordinates
+                    'coords' => $city->coordinates,
+                    'jivosite_token' => $city->jivosite_token,
+                    'begin_script' => $city->begin_script,
+                    'bitrix_responsible_id' => $city->bitrix_responsible_id
                 ];
             }
         }
@@ -113,7 +118,7 @@ class City extends Model
      *
      * return array
      */
-    public function getGeoData() : array
+    public function getGeoData(): array
     {
         return $this->geo_data;
     }
@@ -124,7 +129,7 @@ class City extends Model
      * @param string $city Город
      * @return bool
      */
-    public function setCookie(string $city) : bool
+    public function setCookie(string $city): bool
     {
 
     }
