@@ -1,30 +1,42 @@
 <template>
     <div>
-
         <div id="layout" :class="{ active: open }" @click="closeMenu"></div>
         <section id="panel" >
             <ul :class="theme">
-                <li @click="openMenu">
+                <li class="menu-wrap" @click="openMenu">
                     <icon-menu ></icon-menu>
                     <span>Меню</span>
                 </li>
-                <li>
+                <li class="call-wrap">
                     <a href="tel:+73422338231">
                     <icon-call></icon-call>
                     <span>Звонок</span>
                     </a>
                 </li>
-                <li @click="openMapWindow">
+                <li class="route-map" @click="openMapWindow">
                     <icon-route></icon-route>
                     <span>Маршрут</span>
                 </li>
-                <li @click="toggleJivo">
+                <li class="chat-wrap" @click="toggleJivo">
                     <icon-chat ></icon-chat>
                     <span>Чат</span>
                 </li>
             </ul>
-
         </section>
+
+        <section id="panel-desktop" :class="{scroll : scrolled}">
+            <div class="panel-wrap">
+                <ul :class="theme">
+                    <li class="menu-wrap" @click="openMenu">
+                        <div class="menu-desktop"></div>
+                    </li>
+                    <li class="route-map" @click="openMapWindow">
+                        <div class="route-desktop"></div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
         <section id="menu" :class="{ active: open }">
             <div class="close" @click="closeMenu"></div>
             <div class="menu_wrap">
@@ -102,6 +114,7 @@ export default {
                 OpenIndicator: {
                     render: createElement => createElement('span', {class: {'toggle': true}}),
                 },
+                scrolled: false
             };
         },
         methods: {
@@ -150,6 +163,9 @@ export default {
                 }
                 return this.openMap = false;
             },
+            handleScroll: function() {
+                this.scrolled = window.scrollY > 100;
+            }
         },
         components: {
             IconMenu,
@@ -162,13 +178,27 @@ export default {
         let jivoScript = document.createElement('script');
         jivoScript.setAttribute('src', '//code-ya.jivosite.com/widget/IFmL6hf3c9');
         document.body.appendChild(jivoScript);
+    },
+    created () {
+        window.addEventListener('scroll', this.handleScroll);
+    },
+    destroyed () {
+        window.removeEventListener('scroll', this.handleScroll);
     }
 }
 </script>
 
 <style lang="scss">
-    #layout {
 
+    .menu-desktop {
+        background: url('/build/images/icons/menu-desktop.png') no-repeat;
+    }
+
+    .route-desktop {
+        background: url('/build/images/icons/route-desktop.png') no-repeat;
+    }
+
+    #layout {
         &.active {
             content: "";
             display: block;
@@ -467,6 +497,59 @@ export default {
         }
     }
 
+    #panel-desktop {
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-width: 1366px;
+        padding-right: 10px;
+        z-index: 40;
+        top: 300px;
+
+        &.scroll {
+            top: 100px;
+            .panel-wrap {
+                position: fixed;
+            }
+        }
+
+        .panel-wrap {
+
+            position: absolute;
+            ul {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                padding: 0;
+
+                li {
+                    text-align: center;
+                    margin: 0;
+
+                    & > a div,
+                    & > div {
+                        width: 64px;
+                        height: 64px;
+                        display: block;
+                        margin: 0 auto 2px;
+                        font-weight: normal;
+                        cursor:pointer;
+                    }
+
+                    & > a span,
+                    & > span {
+                        font-size: 12px;
+                        font-weight: normal;
+                    }
+
+                }
+            }
+        }
+    }
+
+
     #panel {
         display: block;
         position: fixed;
@@ -606,4 +689,48 @@ export default {
         z-index: 10 !important;
     }
 
+    @media only screen and (max-width: 1024px) {
+        #panel {
+            display: block;
+        }
+
+        #panel-desktop {
+            display: none;
+        }
+    }
+
+    @media only screen and (min-width: 1025px) {
+        #panel {
+            display: none;
+        }
+
+        #panel-desktop {
+            display: flex;
+            justify-content: flex-end;
+        }
+/*            bottom: auto;
+            left: auto;
+            top: 20%;
+
+            ul {
+                flex-direction: column;
+                padding: 0;
+
+                &.light,
+                &.dark {
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    background-color: transparent;
+                    backdrop-filter: none;
+
+                    chat-wrap,
+                    .call-wrap {
+                        display: none;
+                    }
+                }
+            }
+
+
+        }*/
+    }
 </style>
