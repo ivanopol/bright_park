@@ -33,7 +33,7 @@
 </head>
 <body>
 <div id="app">
-    <div class="wrapper">
+    <div class="wrapper @isset($class) {{ $class  }} @endisset">
         @yield('content')
     </div>
 </div>

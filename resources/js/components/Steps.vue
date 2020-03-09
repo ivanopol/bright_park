@@ -162,8 +162,6 @@
     }
 
     .steps-wrap {
-
-
         .btn-half-primary,
         .btn-half-secondary {
             font-family: PragmaticaLightC, Helvetica, sans-serif;
@@ -230,6 +228,30 @@
         }
     }
 
+    @media only screen and (min-width: 580px) {
+        .option-text {
+            text-align: center;
+            font-weight: normal;
+            font-size: 22px;
+            margin-bottom: 50px;
+        }
+
+        .steps-wrap {
+            .buttons_other {
+                .item-buttons-other {
+                    .btn {
+                        width: 46%;
+                        max-width: 320px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 800px) {
+
+    }
+
     .conditions {
         width: 70vw;
         display: block;
@@ -268,7 +290,9 @@
 
     .progressbar-wrapper {
         text-align: center;
-        margin-bottom: 80px;
+        max-width: 580px;
+        margin: 0 auto 80px;
+
         .progressbar-line {
             margin: 0 auto 10px;
             display: block;
@@ -314,6 +338,18 @@
             font-size: 12px;
             line-height: 18px;
             color: #000;
+        }
+
+        @media only screen and (min-width: 580px) and (max-width: 1099px) {
+            .progressbar-text {
+                font-size: 14px;
+            }
+        }
+
+        @media only screen and (min-width: 1100px) {
+            .progressbar-text {
+                font-size: 16px;
+            }
         }
     }
 </style>

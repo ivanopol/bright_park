@@ -600,7 +600,20 @@ footer {
 @media only screen and (min-width: 580px) {
     .car-preview-wrap {
         max-width: 580px;
+        margin: 0;
     }
+
+    .container-special {
+        background-color: #fff;
+        margin-top: -100px;
+        padding-top: 100px;
+        box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .bg-gray {
+        background-color: #ebedec;
+    }
+
 }
 
 @media only screen and (min-width: 800px) {
@@ -608,6 +621,7 @@ footer {
         display: flex;
         justify-content: center;
         align-items: center;
+        margin: 0;
     }
 }
 
@@ -631,22 +645,6 @@ footer {
         font-size: 18px;
         line-height: 1.4;
         margin: 0 30px;
-    }
-
-    @media only screen and (min-width: 580px) {
-        .model-choose-text {
-            margin-bottom: 5%;
-        }
-    }
-
-    @media only screen and (min-width: 800px) {
-        .trigger-wrap {
-            margin: 80px auto;
-        }
-
-        .model-choose-text {
-            text-align: center;
-        }
     }
 
     .buy-step-block {
@@ -682,6 +680,7 @@ footer {
         display: block;
         color: #000000;
         text-align: center;
+        height: 40px;
     }
 
     .buy-steps-wrapper {
@@ -690,6 +689,7 @@ footer {
         justify-content: space-between;
         align-items: center;
         position: relative;
+        max-width: 580px;
 
         &:before {
             content: '';
@@ -702,6 +702,46 @@ footer {
             margin: 0 auto;
             background-color: #000;
             z-index: -1;
+        }
+    }
+
+    @media only screen and (min-width: 580px) {
+        .model-choose-text {
+            font-weight: normal;
+            font-size: 22px;
+            text-align: center;
+        }
+
+        .buy-steps-wrapper {
+            margin: 60px auto 80px;
+            z-index: 1;
+        }
+    }
+
+    @media only screen and (min-width: 800px) {
+        .trigger-wrap {
+            margin: 80px auto;
+        }
+
+        .model-choose-text {
+            text-align: center;
+        }
+    }
+
+    @media only screen and (min-width: 1366px) {
+        .buy-step-circle {
+            width: 60px;
+            height: 60px;
+        }
+
+        .buy-step-circle-colored {
+            width: 60px;
+            height: 60px;
+        }
+
+        .buy-step-number {
+            font-size: 42px;
+            height: 34px;
         }
     }
 }
