@@ -5,17 +5,22 @@
     <header-sticky-component :theme="'light'" :city="'{{$city}}'" ></header-sticky-component>
     <header-component :line="true" :theme="'light'" :city="'{{$city}}'"></header-component>
     <section class="container">
-        <div class="car-preview-wrap">
-           <img src="{{$data['car_preview']->image}}" alt="{{$data['car_preview']->alt}}">
+        <div class="car-info-wrap">
+            <div class="car-preview-wrap">
+               <img src="{{$data['car_preview']->image}}" alt="{{$data['car_preview']->alt}}">
+            </div>
+            <div class="prices-wrap">
+                <div class="model-price-text">
+                    <p>от {{number_format($car_attrs[0]['special_price'], 0, ',', ' ')}} руб.</p>
+                </div>
+
+                <div class="credit-price-text">
+                    <p>В кредит от {{number_format(\App\Helpers\Utilities::getMinimalPayment($car_attrs[0]['price']), 0, ',', ' ')}} руб. / мес.</p>
+                </div>
+            </div>
         </div>
         <section class="model-details">
-            <div class="model-price-text">
-                <p>от {{number_format($car_attrs[0]['special_price'], 0, ',', ' ')}} руб.</p>
-            </div>
 
-           <div class="credit-price-text">
-                <p>В кредит от {{number_format(\App\Helpers\Utilities::getMinimalPayment($car_attrs[0]['price']), 0, ',', ' ')}} руб. / мес.</p>
-            </div>
 
             <div class="trigger-wrap">
                 <p class="trigger-wrap-text">Осталось <span class="model-count-text">{{$car_attrs[0]['count']}}</span> {{$car_model->title}} {{$car_type->title_ru}} по спеццене</p>

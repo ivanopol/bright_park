@@ -580,17 +580,13 @@ footer {
         width: 100%;
     }
 }
-.model-details {
+
+.prices-wrap {
     .model-price-text {
         font-family: PragmaticaLightCBold, Helvetica, sans-serif;
-        margin: 20 auto;
+        margin: 20px auto;
         text-align: center;
         font-size: 36px;
-    }
-
-    .model-count-text {
-        font-size: 20px;
-        color: #ee6723
     }
 
     .credit-price-text {
@@ -599,7 +595,28 @@ footer {
         text-align: center;
         font-size: 19px;
     }
+}
 
+@media only screen and (min-width: 580px) {
+    .car-preview-wrap {
+        max-width: 580px;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .car-info-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.model-details {
+
+    .model-count-text {
+        font-size: 20px;
+        color: #ee6723
+    }
     .trigger-wrap {
         p {
             line-height: 1.4;
@@ -614,6 +631,22 @@ footer {
         font-size: 18px;
         line-height: 1.4;
         margin: 0 30px;
+    }
+
+    @media only screen and (min-width: 580px) {
+        .model-choose-text {
+            margin-bottom: 5%;
+        }
+    }
+
+    @media only screen and (min-width: 800px) {
+        .trigger-wrap {
+            margin: 80px auto;
+        }
+
+        .model-choose-text {
+            text-align: center;
+        }
     }
 
     .buy-step-block {
