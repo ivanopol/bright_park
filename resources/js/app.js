@@ -37,7 +37,7 @@ Vue.component('main-hooper-component', require('./components/MainHooperComponent
 Vue.component('range-slider-component', require('./components/RangeSliderComponent').default);
 Vue.component('range-slider-component-period', require('./components/RangeSliderComponentPeriod').default);
 Vue.component('tab-bar', require('./components/elements/TabBar').default);
-Vue.component('slide-show', require('./components/SlideShow').default);
+//Vue.component('slide-show', require('./components/SlideShow').default);
 Vue.component('classified', require('./components/Classified').default);
 Vue.component('steps', require('./components/Steps').default);
 Vue.component('yandex-map-component', require('./components/YandexMapComponent').default);

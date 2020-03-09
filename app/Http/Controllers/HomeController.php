@@ -103,6 +103,10 @@ class HomeController extends Controller
 
         $cities = $city->getCities($this->city);
         $models = CarModel::with('types_preview')->get();
+        $data = [];
+/*        $service = new BasePageService();
+        $data = $service->get_base_page_data($car_model, $car_type, $this->city);
+        $data['coordinates'] = explode(",", $city['coordinates']);*/
 
         $car_attrs = CarModelCarType::where([
             ['car_model_id', '=', $car_model->id],
@@ -114,6 +118,7 @@ class HomeController extends Controller
         $raw = new AutoruService();
         $brands = $raw->getBrands();
         return view('model_details', [
+            'data' => $data,
             'brands' => $brands,
             'models' => $models,
             'city' => $this->city,
