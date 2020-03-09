@@ -294,6 +294,50 @@
         line-height: 1.4;
     }
 
+    .trigger-wrap {
+        .trigger-block {
+            display: block;
+        }
+
+        .trigger-row {
+            color: #000;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+
+            .trigger-left {
+                text-align: right;
+            }
+
+            .trigger-right {
+                text-align: left;
+            }
+
+            .trigger-half {
+                width: 48%;
+            }
+
+            .trigger-text {
+                font-size: 14px;
+            }
+
+            .trigger-price-accent {
+                color: #ee6723;
+            }
+
+            .trigger-price {
+                font-size: 20px;
+            }
+
+            @media only screen and (max-width: 340px) {
+                .trigger-price {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
     .dropdown-group {
         margin: 0 30px;
 

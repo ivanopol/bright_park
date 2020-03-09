@@ -358,50 +358,6 @@ form {
     margin: 30px;
     text-align: center;
 
-    .trigger-row {
-        color: #000;
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        margin-bottom: 10px;
-
-        .trigger-left {
-            text-align: right;
-        }
-
-        .trigger-right {
-            text-align: left;
-        }
-
-        .trigger-half {
-            width: 48%;
-        }
-
-        .trigger-text {
-            font-size: 14px;
-        }
-
-/*        @media only screen and (max-width: 340px) {
-            .trigger-text {
-                font-size: 14px;
-            }
-        }*/
-
-        .trigger-price {
-            font-size: 22px;
-           // font-weight: bold;
-        }
-
-        @media only screen and (max-width: 340px) {
-            .trigger-price {
-                font-size: 20px;
-            }
-        }
-
-        .trigger-price-accent {
-            color: #ee6723;
-        }
-    }
     .trigger-block,
     p {
         font-family: PragmaticaLightCBold, Helvetica, sans-serif;
