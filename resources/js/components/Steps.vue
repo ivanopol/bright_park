@@ -173,6 +173,7 @@
             border-radius: 50px;
             font-weight: bold;
             font-size: 12px;
+            max-width: 320px;
         }
 
         .btn-half-secondary {
@@ -229,6 +230,20 @@
     }
 
     @media only screen and (min-width: 580px) {
+        #classified {
+            max-width: 580px;
+            margin: 0 auto;
+        }
+        .steps-wrap {
+            .button-wrapper-row {
+                justify-content: center;
+
+                a {
+                    margin: 0 10px
+                }
+            }
+        }
+
         .option-text {
             text-align: center;
             font-weight: normal;

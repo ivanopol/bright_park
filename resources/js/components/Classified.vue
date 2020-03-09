@@ -2,26 +2,26 @@
     <section id="classified">
         <div class="option-text">Оцените свой автомобиль</div>
         <div class="dropdown-group">
-            <v-select class="select_wrap" :components="{OpenIndicator, Deselect}" :searchable=false placeholder="Марка"
+            <v-select class="select_wrap" :class="{ active : step_one }" :components="{OpenIndicator, Deselect}" :searchable=false placeholder="Марка"
                       taggable
                       :options="brands" v-on:input="stepOne" v-model="selected_brand">
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
-            <v-select :disabled="!step_one" class="select_wrap" :searchable=false
+            <v-select :disabled="!step_one" class="select_wrap" :class="{ active : step_two }" :searchable=false
                       :components="{OpenIndicator, Deselect}" placeholder="Модель" v-on:input="stepTwo" taggable
                       :options="models" v-model="selected_model">
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
-            <v-select :disabled="!step_two" class="select_wrap" :components="{OpenIndicator, Deselect}"
+            <v-select :disabled="!step_two" class="select_wrap" :class="{ active : step_three }" :components="{OpenIndicator, Deselect}"
                       :searchable=false
                       placeholder="Комплектация"
                       taggable :options="modifications" v-on:input="stepThree" v-model="selected_tech_param_id">
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
-            <v-select :disabled="!step_three" class="select_wrap" :components="{OpenIndicator, Deselect}"
+            <v-select :disabled="!step_three" class="select_wrap" :class="{ active : step_four }" :components="{OpenIndicator, Deselect}"
                       :searchable=false
                       placeholder="Год выпуска"
                       v-on:input="stepFour"
@@ -29,7 +29,7 @@
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
-            <v-select :disabled="!step_four" class="select_wrap" :components="{OpenIndicator, Deselect}"
+            <v-select :disabled="!step_four" class="select_wrap" :class="{ active : step_five }" :components="{OpenIndicator, Deselect}"
                       :searchable=false
                       placeholder="Пробег" taggable
                       :options="mileage" v-on:input="stepFive" v-model="selected_mileage">
@@ -94,6 +94,7 @@
             step_two: false,
             step_three: false,
             step_four: false,
+            step_five: false,
             models: [],
             model_objects: [],
             modifications: [],
@@ -179,6 +180,7 @@
                     this.step_two = false;
                     this.step_three = false;
                     this.step_four = false;
+                    this.step_five = false;
                 }
                 this.step_one = true;
                 this.selected_brand = input;
@@ -202,6 +204,7 @@
                     this.brightParkEstimation = 0;
                     this.step_three = false;
                     this.step_four = false;
+                    this.step_five = false;
                 }
 
                 this.step_two = true;
@@ -240,6 +243,7 @@
             stepFive: function (input) {
                 this.hidePrices();
                 this.selected_mileage = input;
+                this.step_five = true;
                 this.getEstimation();
             },
 
@@ -352,6 +356,13 @@
     .dropdown-group {
         margin: 0 30px;
 
+        .select_wrap.active {
+             .vs__dropdown-toggle {
+                border-color: green;
+                 background-color: #e0ffe0;
+            }
+        }
+
         .select_wrap {
             position: relative;
             margin-bottom: 18px;
@@ -386,12 +397,12 @@
             }
 
             .vs__selected {
-                padding: 3px 25px 0 14px;
+                padding: 8px 25px 0 14px;
                 height: 39px;
                 font-weight: bold;
                 font-family: PragmaticaLightC, Helvetica, sans-serif;
-                width: 100%;
-                background-color: #cdefc8;
+/*                width: 100%;
+                background-color: #cdefc8;*/
                 margin: 0;
             }
 
@@ -402,13 +413,18 @@
 
             &.vs--searching .vs__search {
                 color: #000;
+              //  display: none;
+            }
+
+            &.vs--unsearchable .vs__search {
+
             }
 
             .vs__actions {
                 padding-right: 17px;
 
-                position: absolute;
-                right: 0;
+/*                position: absolute;
+                right: 0;*/
             }
 
             &.vs--open .vs__dropdown-toggle {
