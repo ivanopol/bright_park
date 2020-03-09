@@ -1002,7 +1002,6 @@ footer {
         font-family: PragmaticaLightCBold, Helvetica, sans-serif;
         color: #fff;
         font-size: 28px;
-        //font-weight: bold;
         line-height: 34px;
         text-align: center;
         margin-bottom: 20px;
@@ -1072,6 +1071,72 @@ footer {
     @media only screen and (min-width: 580px) {
         & {
             background-color: #fff;
+
+            h2 {
+                font-size: 48px;
+                line-height: 1.3;
+                color: #000;
+                text-align: center;
+                margin-bottom: 60px;
+            }
+
+            ul {
+                padding: 0;
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                li {
+                    width: 20%;
+                    border-bottom: none;
+                    flex-wrap: wrap;
+                    a {
+                        flex-direction: column;
+                        .img_wrap {
+                            height: 121px;
+                            width: 90%;
+                            margin-bottom: 30px;
+                            -webkit-transition: width ease-out 0.3s;
+                            -moz-transition: width ease-out 0.3s;
+                            -o-transition: width ease-out 0.3s;
+                            transition: width ease-out 0.3s;
+
+                            img {
+                            }
+                        }
+
+                        .title {
+                            font-family: PragmaticaLightCBold, Helvetica, sans-serif;
+                            color: #000;
+                            padding: 7px 15px 2px;
+                            border-radius: 3px;
+                            -webkit-transition: all ease-out 0.3s;
+                            -moz-transition: all ease-out 0.3s;
+                            -o-transition: all ease-out 0.3s;
+                            transition: all ease-out 0.3s;
+
+                            &::after {
+                                width: 13px;
+                                height: 13px;
+                                top: 8px;
+                                right: 9px;
+                            }
+                        }
+
+                        &:hover {
+                            .img_wrap {
+
+                            }
+
+                            .title {
+                                background-color: #FF8351;
+                                &::after {
+                                    border-color: #fff;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -1081,9 +1146,6 @@ footer {
         }
     }
 }
-
-
-
 
 .items {
     border-top: 8px solid #000;
