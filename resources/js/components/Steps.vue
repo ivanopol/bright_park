@@ -269,8 +269,9 @@
         }
 
         .progressbar-text {
+            font-family: PragmaticaLightCBold, Helvetica, sans-serif;
             text-align: center;
-            font-size: 13px;
+            font-size: 12px;
             line-height: 18px;
             color: #000;
         }
