@@ -103,4 +103,32 @@ class BasePageService
 
         return $data;
     }
+
+    /**
+     * Получаем путь к изображению кузова
+     *
+     * @param integer $model_id ID модели
+     * @param integer $type_id ID кузова
+     *
+     * @return array
+     */
+    public function getCarPreviewPath(int $model_id, int $type_id) {
+        $path = [];
+
+        $row = DB::table('slide_mini')
+                        ->select(['image', 'alt'])
+                        ->where([
+                            ['model_id', '=', $model_id],
+                            ['type_id', '=', $type_id],
+                        ])
+                        ->limit(1)
+                        ->get()
+                        ->toArray();
+
+        if ($row[0]) {
+            $path = $row[0];
+            $path->image = str_replace('mobile/', '', $path->image);
+        }
+        return $path;
+    }
 }
