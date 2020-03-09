@@ -313,7 +313,7 @@
 
             .vs__dropdown-toggle {
                 background-color: #fff;
-                border-radius: 6px;
+                border-radius: 30px;
                 border: 2px solid #000;
                 height: 42px;
                 overflow: hidden;
@@ -323,16 +323,26 @@
                 line-height: 2;
                 padding: 0 17px;
                 color: #000;
+                font-family: PragmaticaLightC, Helvetica, sans-serif;
+                font-weight: bold;
+            }
+            .vs__selected-options {
+                padding: 0;
             }
 
             .vs__selected {
-                padding: 0 25px 0 14px;
-                height: 34px;
+                padding: 3px 25px 0 14px;
+                height: 39px;
+                font-weight: bold;
+                font-family: PragmaticaLightC, Helvetica, sans-serif;
+                width: 100%;
+                background-color: #cdefc8;
+                margin: 0;
             }
 
             &.vs--single.vs--open .vs__selected {
                 line-height: 2;
-                height: 34px;
+                height: 39px;
             }
 
             &.vs--searching .vs__search {
@@ -341,6 +351,9 @@
 
             .vs__actions {
                 padding-right: 17px;
+
+                position: absolute;
+                right: 0;
             }
 
             &.vs--open .vs__dropdown-toggle {
@@ -354,6 +367,8 @@
                 border-radius: 0 0 6px 6px;
                 border: 2px solid #000;
                 border-top: none;
+                font-weight: bold;
+                font-family: PragmaticaLightC, Helvetica, sans-serif;
             }
 
             .vs__fade-enter-active,
@@ -404,7 +419,8 @@
             .toggle {
                 display: block;
                 position: absolute;
-                top: 50%;
+                //top: 50%;
+                top: 20px;
                 margin-top: -6px;
                 right: 18px;
                 width: 7px;
@@ -428,22 +444,4 @@
         font-weight: bold;
         padding-top: 5%;
     }
-
-    /*    .credit-profit-text {
-            padding: 5%;
-
-            ul {
-                list-style: none;
-                font-size: 12px;
-            }
-
-            ul li:before {
-                content: '✓  ';
-                color: #1d643b;
-            }
-
-            .hollow-button {
-                border-radius: 25px;
-            }
-        }*/
 </style>
