@@ -39,11 +39,12 @@ class HomeController extends Controller
             return redirect()->route('index', ['city' => 'perm']);
         }
 
+        $data = [];
         $cities = $city->getCities($this->city);
-
+        $data['coordinates'] = explode(",", $city['coordinates']);
         $models = CarModel::with('types_preview')->get();
 
-        return view('home', ['models' => $models, 'city' => $this->city, 'cities' => $cities]);
+        return view('home', ['data' =>  $data, 'models' => $models, 'city' => $this->city, 'cities' => $cities]);
     }
 
     public function special_offers(City $city = null, Request $request)
