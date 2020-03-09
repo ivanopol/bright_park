@@ -5,6 +5,9 @@
     <header-sticky-component :theme="'light'" :city="'{{$city}}'" ></header-sticky-component>
     <header-component :line="true" :theme="'light'" :city="'{{$city}}'"></header-component>
     <section class="container">
+        <div class="car-preview-wrap">
+            <img src="/build/images/slider/mini/{{ $car_model->slug }}/lada_{{ $car_model->slug }}_{{ str_replace("-", "_", $car_type->slug) }}.png" alt="{{ $car_model->title }} {{ $car_type->title_ru }}">
+        </div>
         {{--<slide-show></slide-show>--}}
         <section>
             <div class="model-price-text">
