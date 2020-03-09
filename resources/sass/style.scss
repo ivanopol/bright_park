@@ -1069,7 +1069,7 @@ footer {
     }
 
     @media only screen and (min-width: 580px) {
-        & {
+        &#models {
             background-color: #fff;
 
             h2 {
@@ -1111,32 +1111,30 @@ footer {
         }
     }
 
-    @media only screen and (min-width: 580px) and (max-width: 960px) {
-        ul {
-            padding: 0 15px;
-            flex-wrap: wrap;
-            justify-content: left;
-            li {
-                width: 30%;
-                margin-bottom: 30px;
-            }
-
-        }
-    }
 
     @media only screen and (min-width: 580px) and (max-width: 1099px) {
 
-        & {
-            ul li a {
-                .img_wrap {
-                    margin-bottom: 15px;
+        &#models {
+            padding: 60px 0;
+            ul {
+                padding: 0 15px;
+                flex-wrap: wrap;
+                justify-content: left;
+                li {
+                    width: 30%;
+                    margin-bottom: 30px;
+                    a {
+                        .img_wrap {
+                            margin-bottom: 15px;
+                        }
+                    }
                 }
             }
         }
     }
 
     @media only screen and (min-width: 1100px) {
-        & {
+        &#models {
             ul li a {
                 flex-direction: column;
                 .img_wrap {
