@@ -34,12 +34,19 @@
         <section class="buttons_other mt-20" v-if="!grade">
             <div class="item-buttons-other">
                 <a href="#" class="btn btn-primary" v-on:click.prevent="gradeShow(1)">Да, оценить мой автомобиль</a>
-                <a href="#" class="btn btn-secondary" v-on:click.prevent="gradeShow(2)">У меня нет автомобиля</a>
+                <a href="#" class="btn btn-secondary" v-on:click.prevent="gradeShow(5)">У меня нет автомобиля</a>
             </div>
         </section>
 
         <div v-if="grade === 1">
             <classified :brands='brands' ></classified>
+            <div class="button-wrapper-row">
+                <a class="btn-half-secondary" v-on:click.prevent="gradeShow(3)">Наличный расчет</a>
+                <a class="btn-half-primary" id="creditButton" v-on:click.prevent="gradeShow(2)">В кредит</a>
+            </div>
+        </div>
+
+        <div v-if="grade === 1 || grade === 5">
             <div class="button-wrapper-row">
                 <a class="btn-half-secondary" v-on:click.prevent="gradeShow(3)">Наличный расчет</a>
                 <a class="btn-half-primary" id="creditButton" v-on:click.prevent="gradeShow(2)">В кредит</a>
@@ -159,6 +166,13 @@
     }
 
     .steps-wrap {
+
+        .button-wrapper-row {
+            margin: 50px 30px;
+            display: flex;
+            justify-content: space-between;
+        }
+
         .buttons_other {
             .item-buttons-other {
                 margin-bottom: 40px;
