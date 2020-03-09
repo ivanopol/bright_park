@@ -546,62 +546,6 @@ footer {
     }
 }
 
-.buy-step-block {
-    width: 25%;
-}
-
-.buy-step-circle {
-    border-radius: 50%;
-    border: 2px solid #000;
-    width: 50px;
-    height: 50px;
-    background-color: #fff;
-    z-index: 10;
-}
-
-.buy-step-circle-colored {
-    border-radius: 50%;
-    border: 2px;
-    width: 50px;
-    height: 50px;
-    background-color: #ff8351;
-    color: #fff;
-}
-
-.buy-step-number {
-    font-size: 35px;
-    height: 30px;
-}
-
-.buy-step-text {
-    font-size: 14px;
-    line-height: 18px;
-    display: block;
-    color: #000000;
-    text-align: center;
-}
-
-.buy-steps-wrapper {
-    margin: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-
-    &:before {
-        content: '';
-        position: absolute;
-        height: 2px;
-        display: block;
-        top: 25%;
-        left: 10%;
-        right: 10%;
-        margin: 0 auto;
-        background-color: #000;
-        z-index: -1;
-    }
-}
-
 .car-pictures-wrapper {
     margin: 0;
 
@@ -634,13 +578,7 @@ footer {
     border-bottom: 1.5px solid rgba(96, 96, 96, 0.5);
 }
 
-.model-choose-text {
-    font-family: PragmaticaLightCBold, Helvetica, sans-serif;
-    text-align: left;
-    font-size: 18px;
-    line-height: 1.4;
-    margin: 0 30px;
-}
+
 
 .center {
     text-align: center;
@@ -653,14 +591,6 @@ footer {
     font-weight: bold;
     line-height: 1.4;
     margin: 0 50px;
-}
-
-.option-text {
-    font-family: PragmaticaLightCBold, Helvetica, sans-serif;
-    margin: 10% 30px 5%;
-    text-align: left;
-    font-size: 18px;
-    line-height: 1.4;
 }
 
 #success {
@@ -718,6 +648,71 @@ footer {
         p {
             line-height: 1.4;
             margin: 35px auto;
+        }
+    }
+
+    .model-choose-text {
+        font-family: PragmaticaLightCBold, Helvetica, sans-serif;
+        font-weight: bold;
+        text-align: left;
+        font-size: 18px;
+        line-height: 1.4;
+        margin: 0 30px;
+    }
+
+    .buy-step-block {
+        width: 25%;
+    }
+
+    .buy-step-circle {
+        border-radius: 50%;
+        border: 2px solid #000;
+        width: 50px;
+        height: 50px;
+        background-color: #fff;
+        z-index: 10;
+    }
+
+    .buy-step-circle-colored {
+        border-radius: 50%;
+        border: 2px;
+        width: 50px;
+        height: 50px;
+        background-color: #ff8351;
+        color: #fff;
+    }
+
+    .buy-step-number {
+        font-size: 35px;
+        height: 30px;
+    }
+
+    .buy-step-text {
+        font-size: 16px;
+        line-height: 1.2;
+        display: block;
+        color: #000000;
+        text-align: center;
+    }
+
+    .buy-steps-wrapper {
+        margin: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            height: 2px;
+            display: block;
+            top: 25%;
+            left: 10%;
+            right: 10%;
+            margin: 0 auto;
+            background-color: #000;
+            z-index: -1;
         }
     }
 }

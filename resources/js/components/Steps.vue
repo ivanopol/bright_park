@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section class="steps-wrap">
         <div class="model-choose-text">
             <p>Подберите выгодные условия на LADA {{car_model.title}} {{car_type.title_ru}}</p>
         </div>
@@ -148,7 +148,48 @@
     };
 </script>
 
-<style lang="scss" >
+<style lang="scss">
+    .option-text {
+        font-family: PragmaticaLightCBold, Helvetica, sans-serif;
+        margin: 50px 30px 25px;
+        text-align: left;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 1.4;
+    }
+
+    .steps-wrap {
+        .buttons_other {
+            .item-buttons-other {
+                margin-bottom: 40px;
+                text-align: center;
+
+                & > a {
+                    margin-bottom: 15px;
+                }
+
+                .btn {
+                    font-family: PragmaticaLightC, Helvetica, sans-serif;
+                    width: 85.51vw;
+                    border-radius: 50px;
+                    padding: 14px 15px 10px;
+                }
+
+                .btn-primary {
+                    border: 2px solid #FF8351;
+                    color: #fff;
+                    background-color: #FF8351;
+                }
+
+                .btn-secondary {
+                    border: 2px solid #000;
+                    color: #000;
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+
     .conditions {
         width: 70vw;
         display: block;

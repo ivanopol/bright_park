@@ -40,7 +40,7 @@
 <style lang="scss">
     .buttons_other {
         .item-buttons-other {
-            margin-bottom: 80px;
+            margin-bottom: 40px;
             text-align: center;
 
             & > a {
