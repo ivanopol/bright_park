@@ -215,6 +215,13 @@
         margin: 40px auto;
     }
 
+    @media only screen and (min-width: 580px) {
+        .credit-wrap {
+            width: 580px;
+            margin: 60px auto;
+        }
+    }
+
     .credit-profit-text {
         padding: 5% 0;
         font-weight: bold;
@@ -284,6 +291,22 @@
         margin: 0 auto 25px;
     }
 
+    @media only screen and (min-width: 580px) {
+        .range-slider-wrapper {
+            width: 100%;
+            margin: 0 auto 50px;
+        }
+
+        .disabled-input {
+            font-size: 18px;
+
+            .credit-first-payment input,
+            .credit-period input {
+                font-size: 18px;
+            }
+        }
+    }
+
     .radio-buttons-group {
         font-size: 14px;
         display: block;
@@ -299,6 +322,22 @@
                     font-family: PragmaticaLightCBold, Helvetica, sans-serif;
                     font-size: 16px;
                     font-weight: normal;
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 580px) {
+        .radio-buttons-group {
+            width: 580px;
+
+            ul {
+                li {
+                    font-size: 18px;
+
+                    .program-cost {
+                        font-size: 22px;
+                    }
                 }
             }
         }
@@ -405,6 +444,12 @@
         background: #e6e6e6;
         border: 2px solid #9d9f9e;
         /* border-radius: undefined;*/
+    }
+
+    @media only screen and (min-width: 580px) {
+        .control_indicator {
+            top: 2px;
+        }
     }
 
     .control:hover input ~ .control_indicator,
