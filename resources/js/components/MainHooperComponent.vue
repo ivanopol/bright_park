@@ -125,10 +125,6 @@
         }
     }
 
-    .main-screen-wrap {
-
-    }
-
     .main-screen-wrap.hooper {
         top: 0px;
     }
@@ -226,12 +222,10 @@
                     color: white;
                     text-align: center;
                     height: 100%;
-                    display: -webkit-box;
                     display: flex;
                     flex-direction: column;
-                    justify-content: end;
+                    justify-content: flex-start;
                     width: 100%;
-                    -webkit-box-align: end;
                     align-items: flex-start;
                     max-width: 1200px;
                     right: 0;
@@ -257,7 +251,7 @@
                         position: relative;
                         width: 26%;
                         display: flex;
-                        justify-content: flex-end;
+                        justify-content: flex-start;
                         flex-direction: column;
 
                         .btn {
@@ -277,12 +271,10 @@
                     color: white;
                     text-align: center;
                     height: 100%;
-                    display: -webkit-box;
                     display: flex;
                     flex-direction: column;
-                    justify-content: end;
+                    justify-content: flex-start;
                     width: 100%;
-                    -webkit-box-align: end;
                     align-items: flex-end;
                     max-width: 1200px;
                     right: 0;
@@ -308,7 +300,7 @@
                         position: relative;
                         width: 26%;
                         display: flex;
-                        justify-content: flex-end;
+                        justify-content: flex-start;
                         flex-direction: column;
 
                         .btn {
@@ -356,15 +348,10 @@
                     color: white;
                     text-align: center;
                     height: 100%;
-                    display: -webkit-box;
                     display: flex;
-                    -webkit-box-orient: vertical;
-                    -webkit-box-direction: normal;
                     flex-direction: column;
-                    -webkit-box-pack: justify;
                     justify-content: center;
                     width: 100%;
-                    -webkit-box-align: end;
                     align-items: flex-end;
                     padding-right: 10%;
 
