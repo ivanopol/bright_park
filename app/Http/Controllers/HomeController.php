@@ -117,6 +117,11 @@ class HomeController extends Controller
 
         $raw = new AutoruService();
         $brands = $raw->getBrands();
+
+/*        echo "<pre>";
+        print_r($car_model->toArray());
+        print_r($car_type->toArray());
+        echo "</pre>";*/
         return view('model_details', [
             'data' => $data,
             'brands' => $brands,

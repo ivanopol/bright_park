@@ -107,7 +107,7 @@ class SlideMiniTableSeeder extends Seeder
             [
                 'model_id' => 3,
                 'type_id' => 20,
-                'image' => '/build/images/slider/mini/xray/mobile/xray.png',
+                'image' => '/build/images/slider/mini/xray/mobile/lada_xray_xray.png',
                 'alt' => 'XRAY',
                 'title' => 'XRAY',
                 'active' => true,
@@ -115,7 +115,7 @@ class SlideMiniTableSeeder extends Seeder
             [
                 'model_id' => 3,
                 'type_id' => 4,
-                'image' => '/build/images/slider/mini/xray/mobile/xray_cross.png',
+                'image' => '/build/images/slider/mini/xray/mobile/lada_xray_cross.png',
                 'alt' => 'Лада XRAY Cross',
                 'title' => 'XRAY Cross',
                 'active' => true,
@@ -123,7 +123,7 @@ class SlideMiniTableSeeder extends Seeder
             [
                 'model_id' => 4,
                 'type_id' => 11,
-                'image' => '/build/images/slider/mini/4x4/mobile/4x4_three.png',
+                'image' => '/build/images/slider/mini/4x4/mobile/lada_4x4_three.png',
                 'alt' => 'Лада 4x4 3 дв.',
                 'title' => '4x4 3 дв.',
                 'active' => true,
@@ -131,7 +131,7 @@ class SlideMiniTableSeeder extends Seeder
             [
                 'model_id' => 4,
                 'type_id' => 12,
-                'image' => '/build/images/slider/mini/4x4/mobile/4x4_three_urban.png',
+                'image' => '/build/images/slider/mini/4x4/mobile/lada_4x4_three_urban.png',
                 'alt' => 'Лада 4x4 Urban 3 дв.',
                 'title' => '4x4 Urban 3 дв.',
                 'active' => false,
@@ -139,7 +139,7 @@ class SlideMiniTableSeeder extends Seeder
             [
                 'model_id' => 4,
                 'type_id' => 13,
-                'image' => '/build/images/slider/mini/4x4/mobile/4x4_five.png',
+                'image' => '/build/images/slider/mini/4x4/mobile/lada_4x4_five.png',
                 'alt' => 'Лада 4x4 5 дв.',
                 'title' => '4x4 5 дв.',
                 'active' => false,
@@ -147,7 +147,7 @@ class SlideMiniTableSeeder extends Seeder
             [
                 'model_id' => 4,
                 'type_id' => 14,
-                'image' => '/build/images/slider/mini/4x4/mobile/4x4_five_urban.png',
+                'image' => '/build/images/slider/mini/4x4/mobile/lada_4x4_five_urban.png',
                 'alt' => 'Лада 4x4 Urban 5 дв.',
                 'title' => '4x4 Urban 5 дв.',
                 'active' => false,
@@ -155,7 +155,7 @@ class SlideMiniTableSeeder extends Seeder
             [
                 'model_id' => 4,
                 'type_id' => 15,
-                'image' => '/build/images/slider/mini/4x4/mobile/4x4_bronto.png',
+                'image' => '/build/images/slider/mini/4x4/mobile/lada_4x4_bronto.png',
                 'alt' => 'Лада 4x4 Bronto',
                 'title' => '4x4 Bronto',
                 'active' => false,
@@ -163,7 +163,7 @@ class SlideMiniTableSeeder extends Seeder
             [
                 'model_id' => 5,
                 'type_id' => 3,
-                'image' => '/build/images/slider/mini/largus/mobile/largus_universal.png',
+                'image' => '/build/images/slider/mini/largus/mobile/lada_largus_universal.png',
                 'alt' => 'Лада Largus универсал',
                 'title' => 'универсал',
                 'active' => true,
@@ -171,7 +171,7 @@ class SlideMiniTableSeeder extends Seeder
             [
                 'model_id' => 5,
                 'type_id' => 16,
-                'image' => '/build/images/slider/mini/largus/mobile/largus_universal_cng.png',
+                'image' => '/build/images/slider/mini/largus/mobile/lada_largus_universal_cng.png',
                 'alt' => 'Лада Largus универсал CNG',
                 'title' => 'универсал CNG',
                 'active' => false,
@@ -179,7 +179,7 @@ class SlideMiniTableSeeder extends Seeder
             [
                 'model_id' => 5,
                 'type_id' => 4,
-                'image' => '/build/images/slider/mini/largus/mobile/largus_cross.png',
+                'image' => '/build/images/slider/mini/largus/mobile/lada_largus_cross.png',
                 'alt' => 'Лада Largus Cross',
                 'title' => 'Cross',
                 'active' => false,
@@ -187,7 +187,7 @@ class SlideMiniTableSeeder extends Seeder
             [
                 'model_id' => 5,
                 'type_id' => 17,
-                'image' => '/build/images/slider/mini/largus/mobile/largus_cross_cng.png',
+                'image' => '/build/images/slider/mini/largus/mobile/lada_largus_cross_cng.png',
                 'alt' => 'Лада Largus Cross CNG',
                 'title' => 'Cross CNG',
                 'active' => false,
@@ -195,7 +195,7 @@ class SlideMiniTableSeeder extends Seeder
             [
                 'model_id' => 5,
                 'type_id' => 18,
-                'image' => '/build/images/slider/mini/largus/mobile/largus_minivan.png',
+                'image' => '/build/images/slider/mini/largus/mobile/lada_largus_minivan.png',
                 'alt' => 'Лада Largus фургон',
                 'title' => 'фургон',
                 'active' => false,
@@ -203,7 +203,7 @@ class SlideMiniTableSeeder extends Seeder
             [
                 'model_id' => 5,
                 'type_id' => 19,
-                'image' => '/build/images/slider/mini/largus/mobile/largus_minivan_cng.png',
+                'image' => '/build/images/slider/mini/largus/mobile/lada_largus_minivan_cng.png',
                 'alt' => 'Лада Largus фургон CNG',
                 'title' => 'фургон CNG',
                 'active' => false,
