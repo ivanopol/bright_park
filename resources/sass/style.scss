@@ -1426,6 +1426,12 @@ footer {
         &>div {
             padding: 5% 7%;
 
+            .items-data {
+                a {
+                    margin-top: 5%;
+                }
+            }
+
             p {
                 font-size: 26px;
                 line-height: 32px;
@@ -1434,6 +1440,7 @@ footer {
             p.title {
                 font-size: 34px;
             }
+
         }
     }
 }
