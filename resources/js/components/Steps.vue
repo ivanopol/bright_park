@@ -173,7 +173,7 @@
             border-radius: 50px;
             font-weight: bold;
             font-size: 12px;
-            max-width: 320px;
+            max-width: 250px;
         }
 
         .btn-half-secondary {
@@ -263,10 +263,6 @@
         }
     }
 
-    @media only screen and (min-width: 800px) {
-
-    }
-
     .conditions {
         width: 70vw;
         display: block;
@@ -292,8 +288,26 @@
             width: 16px;
             height: 16px;
         }
-
     }
+
+    @media only screen and (min-width: 580px) {
+        .conditions {
+            width: 430px;
+            margin: 40px auto 60px;
+
+            ul {
+                li {
+                    margin-bottom: 12px;
+                    font-size: 20px;
+
+                    .check {
+                        width: 26px;
+                    }
+                }
+            }
+        }
+    }
+
 
     .your-surcharge {
         font-family: PragmaticaLightCBold, Helvetica, sans-serif;

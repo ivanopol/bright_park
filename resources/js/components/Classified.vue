@@ -309,6 +309,13 @@
         line-height: 1.4;
     }
 
+    @media only screen and (min-width: 580px) {
+        #special_offer_text {
+            font-size: 22px;
+            line-height: 1.2;
+        }
+    }
+
     .trigger-wrap {
         .trigger-block {
             display: block;
@@ -348,6 +355,16 @@
             @media only screen and (max-width: 340px) {
                 .trigger-price {
                     font-size: 20px;
+                }
+            }
+
+            @media only screen and (min-width: 580px) {
+                .trigger-text {
+                    font-size: 20px;
+                }
+
+                .trigger-price {
+                    font-size: 30px;
                 }
             }
         }

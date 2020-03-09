@@ -540,14 +540,6 @@ footer {
     text-align: center;
 }
 
-.model-choose-text2 {
-    font-family: PragmaticaLightC, Helvetica, sans-serif;
-    text-align: left;
-    font-size: 16px;
-    font-weight: bold;
-    line-height: 1.4;
-    margin: 0 50px;
-}
 
 #success {
     text-align: center;
@@ -638,6 +630,15 @@ footer {
         }
     }
 
+    .model-choose-text2 {
+        font-family: PragmaticaLightCBold, Helvetica, sans-serif;
+        text-align: left;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 1.4;
+        margin: 0 50px;
+    }
+
     .model-choose-text {
         font-family: PragmaticaLightCBold, Helvetica, sans-serif;
         font-weight: bold;
@@ -706,6 +707,7 @@ footer {
     }
 
     @media only screen and (min-width: 580px) {
+        .model-choose-text2,
         .model-choose-text {
             font-weight: normal;
             font-size: 22px;
@@ -721,10 +723,6 @@ footer {
     @media only screen and (min-width: 800px) {
         .trigger-wrap {
             margin: 80px auto;
-        }
-
-        .model-choose-text {
-            text-align: center;
         }
     }
 
