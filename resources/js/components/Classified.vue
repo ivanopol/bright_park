@@ -145,7 +145,14 @@
             mutableLoading() {
                 return {};
             },
+            hidePrices: function() {
+                let prices_block = document.getElementById('prices_block');
+                let count_button = document.getElementById('count_button');
+                prices_block.hidden = true;
+                count_button.hidden = false;
+            },
             stepOne: function (input) {
+                this.hidePrices();
                 axios.get(this.host_url + '/api/get_brand_models', {
                     params: {
                         model_id: input.id
@@ -179,6 +186,7 @@
             },
 
             stepTwo: function (input) {
+                this.hidePrices();
                 axios.get(this.host_url + '/api/get_complectations/' + this.selected_brand.code.toString() + '/' + input.code.toString(),
                     {})
                     .then((response) => {
@@ -201,6 +209,7 @@
             },
 
             stepThree: function (input) {
+                this.hidePrices();
                 this.step_three = true;
                 this.selected_tech_param_id = input;
 
@@ -217,6 +226,7 @@
             },
 
             stepFour: function (input) {
+                this.hidePrices();
                 this.step_four = true;
                 this.selected_year = input;
                 //console.log(input);
@@ -228,6 +238,7 @@
             },
 
             stepFive: function (input) {
+                this.hidePrices();
                 this.selected_mileage = input;
                 this.getEstimation();
             },
