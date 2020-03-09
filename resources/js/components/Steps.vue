@@ -187,7 +187,7 @@
 
     .progressbar-wrapper {
         text-align: center;
-        margin-bottom: 120px;
+        margin-bottom: 80px;
         .progressbar-line {
             margin: 0 auto 10px;
             display: block;
@@ -232,9 +232,6 @@
             font-size: 13px;
             line-height: 18px;
             color: #000;
-            //position: absolute;
-            //padding: 0 30px;
-            //width: 100%;
         }
     }
 </style>
