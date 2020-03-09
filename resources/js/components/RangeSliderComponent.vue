@@ -251,17 +251,21 @@
     .disabled-input {
         display: block;
         text-align: left;
-        margin-left: 12%;
+        /*margin-left: 12%;*/
 
         .credit-first-payment {
             input {
                 width: 28%;
+                font-size: 16px;
+                line-height: 1.2;
             }
         }
 
         .credit-period {
             input {
                 width: 15%;
+                font-size: 16px;
+                line-height: 1.2;
             }
         }
 

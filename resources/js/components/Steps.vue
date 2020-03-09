@@ -40,10 +40,6 @@
 
         <div v-if="grade === 1">
             <classified :brands='brands' ></classified>
-            <div class="button-wrapper-row">
-                <a class="btn-half-secondary" v-on:click.prevent="gradeShow(3)">Наличный расчет</a>
-                <a class="btn-half-primary" id="creditButton" v-on:click.prevent="gradeShow(2)">В кредит</a>
-            </div>
         </div>
 
         <div v-if="grade === 1 || grade === 5">
@@ -166,6 +162,36 @@
     }
 
     .steps-wrap {
+
+
+        .btn-half-primary,
+        .btn-half-secondary {
+            font-family: PragmaticaLightC, Helvetica, sans-serif;
+            width: 48%;
+            text-transform: uppercase;
+            padding: 14px 10px 10px;
+            text-align: center;
+            border: 2px solid #000;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .btn-half-secondary {
+            background-color: transparent;
+            color: #000;
+        }
+
+        .btn-half-primary {
+            background-color: #FF8351;
+            border: 2px solid #FF8351;
+            color: #fff;
+        }
+
+
+        form {
+            margin-bottom: 40px;
+        }
 
         .button-wrapper-row {
             margin: 50px 30px;
