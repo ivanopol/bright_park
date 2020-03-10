@@ -10,31 +10,30 @@
     <body>
     <div class="container">
         <div id="advantages" class="advantages_wrap">
-            <h1>Брайт Парк</h1>
-            <p>Мы - федеральный дилер LADA, работающий в Москве и ещё 5 регионах с 2008 года.</p>
+            <h1><span class="c_orange">Преимущества</span> покупки сейчас</h1>
             <ul>
                 <li>
                     <div class="advantage">
-                        <span class="value">12</span>
-                        <span class="text">банков-<br>﻿партнеров</span>
+                        <span class="value"></span>
+                        <span class="text">Дорога до салона за наш счет</span>
                     </div>
                 </li>
                 <li>
                     <div class="advantage">
-                        <span class="value">15 мин.</span>
-                        <span class="text">на одобрение по кредиту</span>
+                        <span class="value"></span>
+                        <span class="text">Подберем выгодную ставку до 3%</span>
                     </div>
                 </li>
                 <li>
                     <div class="advantage">
-                        <span class="value">1 час</span>
-                        <span class="text">обмен авто на новенькую LADA</span>
+                        <span class="value"></span>
+                        <span class="text">КАСКО в подарок</span>
                     </div>
                 </li>
                 <li>
                     <div class="advantage">
-                        <span class="value">500</span>
-                        <span class="text">авто с ПТС в наличии</span>
+                        <span class="value"></span>
+                        <span class="text">Зимняя резина в комплекте</span>
                     </div>
                 </li>
             </ul>
