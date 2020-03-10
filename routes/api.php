@@ -23,5 +23,7 @@ Route::get('/get_brand_models', 'ModelController@get_brand_models');
 Route::post('/get_estimation', 'ModelController@getEstimation');
 Route::get('/get_complectations/{brand_id}/{model_id}', 'ModelController@getComplectations');
 Route::get('/get_credit_programs', 'ModelController@getCreditPrograms');
+Route::post('/write_event', 'EventController@write_event');
+
 
 

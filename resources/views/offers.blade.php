@@ -8,6 +8,7 @@
         <main-hooper-component :city="'{{$city}}'"></main-hooper-component>
     </section>
     <body>
+    {!! html_entity_decode($cities['active']['begin_script']) !!}
     <div class="container">
         <div id="advantages" class="advantages_wrap">
             <h1>Брайт Парк</h1>

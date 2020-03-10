@@ -77,6 +77,7 @@
     import vSelect from 'vue-select';
     import 'vue-select/dist/vue-select.css';
     import axios from 'axios';
+    import {sendEvent} from "../mixins/SendEventMixin";
 
     export default {
         name: 'App',
@@ -185,6 +186,15 @@
                 this.step_one = true;
                 this.selected_brand = input;
 
+                let data = {
+                    'btn_id': null,
+                    'url_from': window.location.href,
+                    'url_to': null,
+                    'type': 'option_select',
+                    'content': input.id
+                };
+
+                sendEvent(data);
             },
 
             stepTwo: function (input) {
@@ -209,6 +219,16 @@
 
                 this.step_two = true;
                 this.selected_model = input;
+
+                let data = {
+                    'btn_id': null,
+                    'url_from': window.location.href,
+                    'url_to': null,
+                    'type': 'option_select',
+                    'content': input.code
+                };
+
+                sendEvent(data);
             },
 
             stepThree: function (input) {
@@ -226,6 +246,16 @@
                 }
 
                 this.years = years;
+
+                let data = {
+                    'btn_id': null,
+                    'url_from': window.location.href,
+                    'url_to': null,
+                    'type': 'option_select',
+                    'content': input
+                };
+
+                sendEvent(data);
             },
 
             stepFour: function (input) {
@@ -238,6 +268,16 @@
                  //   console.log(this.selected_mileage);
                     this.getEstimation();
                 }
+
+                let data = {
+                    'btn_id': null,
+                    'url_from': window.location.href,
+                    'url_to': null,
+                    'type': 'option_select',
+                    'content': input
+                };
+
+                sendEvent(data);
             },
 
             stepFive: function (input) {
@@ -245,6 +285,16 @@
                 this.selected_mileage = input;
                 this.step_five = true;
                 this.getEstimation();
+
+                let data = {
+                    'btn_id': null,
+                    'url_from': window.location.href,
+                    'url_to': null,
+                    'type': 'option_select',
+                    'content': input
+                };
+
+                sendEvent(data);
             },
 
             getEstimation: function () {
@@ -283,6 +333,18 @@
                     let warning = document.getElementById('warning');
                     warning.hidden = false;
                 }
+
+                let data = {
+                    'btn_id': 'show_price',
+                    'url_from': window.location.href,
+                    'url_to': null,
+                    'type': 'btn_click',
+                    'content': this.estimation
+                };
+
+                console.log(data);
+
+                sendEvent(data);
             },
 
             setHrefCreditButton() {

@@ -145,7 +145,7 @@ export default {
                     jivo_api.close();
                 }
                 this.open = !this.open;
-                this.layout = this.open ? true : false;
+                this.layout = this.open;
                 return this.open;
             },
             close: function() {
@@ -164,8 +164,8 @@ export default {
                 if (typeof jivo_api !== "undefined" && jivo_api !== null) {
                     jivo_api.close();
                 }
-                this.openMap = !this.openMap
-                this.layout = this.openMap ? true : false;
+                this.openMap = !this.openMap;
+                this.layout = this.openMap;
                 return this.openMap;
             },
             toggleCall: function() {

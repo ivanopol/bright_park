@@ -5,6 +5,7 @@
     <header-sticky-component :theme="'light'" :city="'{{$city}}'" ></header-sticky-component>
     <header-component :line="true" :theme="'light'" :city="'{{$city}}'"></header-component>
     <section class="container container-special">
+        {!! html_entity_decode($cities['active']['begin_script']) !!}
         <div class="car-info-wrap">
             <div class="car-preview-wrap">
                <img src="{{$data['car_preview']->image}}" alt="{{$data['car_preview']->alt}}">
