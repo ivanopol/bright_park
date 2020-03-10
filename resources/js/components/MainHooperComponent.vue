@@ -4,10 +4,10 @@
             <slide>
                 <div class="asset-container">
                     <picture>
-                        <source srcset="build/images/main/mobile/main_granta_red.jpg, build/images/main/mobile/main_granta_red.jpg 2x" media="(max-width: 580px)">
-                        <source srcset="build/images/main/tablet/main_granta_red.jpg, build/images/main/tablet/main_granta_red.jpg 2x" media="(max-width: 1365px)">
-                        <source srcset="build/images/main/desktop/main_granta_red.jpg, build/images/main/desktop/main_granta_red.jpg 2x" media="(min-width: 1366px)">
-                        <img class="asset-image" src="build/images/main/mobile/main_granta_red.jpg" srcset="build/images/main/mobile/main_granta_red.jpg, build/images/main/mobile/main_granta_red.jpg 2x" alt="Брайт Парк: Доплата 40 000 рублей при обмене на Lada Granta" />
+                        <source srcset="/build/images/main/mobile/main_granta_red.jpg, /build/images/main/mobile/main_granta_red.jpg 2x" media="(max-width: 580px)">
+                        <source srcset="/build/images/main/tablet/main_granta_red.jpg, /build/images/main/tablet/main_granta_red.jpg 2x" media="(max-width: 1365px)">
+                        <source srcset="/build/images/main/desktop/main_granta_red.jpg, /build/images/main/desktop/main_granta_red.jpg 2x" media="(min-width: 1366px)">
+                        <img class="asset-image" src="/build/images/main/mobile/main_granta_red.jpg" srcset="/build/images/main/mobile/main_granta_red.jpg, /build/images/main/mobile/main_granta_red.jpg 2x" alt="Брайт Парк: Доплата 40 000 рублей при обмене на Lada Granta" />
                     </picture>
                 </div>
                 <div class="product-content">
@@ -21,11 +21,11 @@
             <slide>
                 <div class="asset-container">
                     <picture>
-                        <source srcset="build/images/main/mobile/main_vesta_gray.jpg, build/images/main/mobile/main_vesta_gray.jpg 2x" media="(max-width: 580px)">
-                        <source srcset="build/images/main/tablet/main_vesta_gray.jpg, build/images/main/tablet/main_vesta_gray.jpg 2x" media="(max-width: 1365px)">
-                        <source srcset="build/images/main/desktop/main_vesta_gray.jpg, build/images/main/desktop/main_vesta_gray.jpg 2x" media="(min-width: 1366px)">
-                        <img class="asset-image" src="build/images/main/mobile/main_vesta_gray.jpg"
-                         srcset="build/images/main/mobile/main_vesta_gray.jpg, build/images/main/mobile/main_vesta_gray.jpg 2x" alt="Брайт Парк: LADA Vesta выгода 10% по госпрограмме" />
+                        <source srcset="/build/images/main/mobile/main_vesta_gray.jpg, /build/images/main/mobile/main_vesta_gray.jpg 2x" media="(max-width: 580px)">
+                        <source srcset="/build/images/main/tablet/main_vesta_gray.jpg, /build/images/main/tablet/main_vesta_gray.jpg 2x" media="(max-width: 1365px)">
+                        <source srcset="/build/images/main/desktop/main_vesta_gray.jpg, /build/images/main/desktop/main_vesta_gray.jpg 2x" media="(min-width: 1366px)">
+                        <img class="asset-image" src="/build/images/main/mobile/main_vesta_gray.jpg"
+                         srcset="/build/images/main/mobile/main_vesta_gray.jpg, /build/images/main/mobile/main_vesta_gray.jpg 2x" alt="Брайт Парк: LADA Vesta выгода 10% по госпрограмме" />
                     </picture>
                 </div>
                 <div class="product-content">
@@ -39,11 +39,11 @@
             <slide>
                 <div class="asset-container">
                     <picture>
-                        <source srcset="build/images/main/mobile/main_granta_gray.jpg, build/images/main/mobile/main_granta_gray.jpg 2x" media="(max-width: 580px)">
-                        <source srcset="build/images/main/tablet/main_granta_gray.jpg, build/images/main/tablet/main_granta_gray.jpg 2x" media="(max-width: 1365px)">
-                        <source srcset="build/images/main/desktop/main_granta_gray.jpg, build/images/main/desktop/main_granta_gray.jpg 2x" media="(min-width: 1366px)">
-                        <img class="asset-image" src="build/images/main/mobile/main_granta_gray.jpg"
-                            srcset="build/images/main/mobile/main_granta_gray.jpg, build/images/main/mobile/main_granta_gray.jpg 2x" alt="Брайт Парк: LADA Granta 0% первоначальный взнос" />
+                        <source srcset="/build/images/main/mobile/main_granta_gray.jpg, /build/images/main/mobile/main_granta_gray.jpg 2x" media="(max-width: 580px)">
+                        <source srcset="/build/images/main/tablet/main_granta_gray.jpg, /build/images/main/tablet/main_granta_gray.jpg 2x" media="(max-width: 1365px)">
+                        <source srcset="/build/images/main/desktop/main_granta_gray.jpg, /build/images/main/desktop/main_granta_gray.jpg 2x" media="(min-width: 1366px)">
+                        <img class="asset-image" src="/build/images/main/mobile/main_granta_gray.jpg"
+                            srcset="/build/images/main/mobile/main_granta_gray.jpg, /build/images/main/mobile/main_granta_gray.jpg 2x" alt="Брайт Парк: LADA Granta 0% первоначальный взнос" />
                     </picture>
                 </div>
                 <div class="product-content">
@@ -57,11 +57,11 @@
             <slide>
                 <div class="asset-container">
                     <picture>
-                        <source srcset="build/images/main/mobile/main_vesta_red.jpg, build/images/main/mobile/main_vesta_red.jpg 2x" media="(max-width: 580px)">
-                        <source srcset="build/images/main/tablet/main_vesta_red.jpg, build/images/main/tablet/main_vesta_red.jpg 2x" media="(max-width: 1365px)">
-                        <source srcset="build/images/main/desktop/main_vesta_red.jpg, build/images/main/desktop/main_vesta_red.jpg 2x" media="(min-width: 1366px)">
-                        <img class="asset-image" src="build/images/main/mobile/main_vesta_red.jpg"
-                             srcset="build/images/main/mobile/main_vesta_red.jpg, build/images/main/mobile/main_vesta_red.jpg 2x" alt="Брайт Парк: Обмен на LADA Vesta выше рыночной цены" />
+                        <source srcset="/build/images/main/mobile/main_vesta_red.jpg, /build/images/main/mobile/main_vesta_red.jpg 2x" media="(max-width: 580px)">
+                        <source srcset="/build/images/main/tablet/main_vesta_red.jpg, /build/images/main/tablet/main_vesta_red.jpg 2x" media="(max-width: 1365px)">
+                        <source srcset="/build/images/main/desktop/main_vesta_red.jpg, /build/images/main/desktop/main_vesta_red.jpg 2x" media="(min-width: 1366px)">
+                        <img class="asset-image" src="/build/images/main/mobile/main_vesta_red.jpg"
+                             srcset="/build/images/main/mobile/main_vesta_red.jpg, /build/images/main/mobile/main_vesta_red.jpg 2x" alt="Брайт Парк: Обмен на LADA Vesta выше рыночной цены" />
                     </picture>
                 </div>
                 <div class="product-content">

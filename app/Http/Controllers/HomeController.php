@@ -56,7 +56,7 @@ class HomeController extends Controller
         }
 
         $cities = $city->getCities($this->city);
-
+        $data['coordinates'] = explode(",", $city['coordinates']);
         $offers = DB::select('select * from special_offers');
 
         $models = CarModel::with('types_preview')->get();
