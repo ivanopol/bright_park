@@ -8,7 +8,7 @@
                     <span>Меню</span>
                 </li>
                 <li class="call-wrap" @click="toggleCall">
-                    <a href="tel:+73422338231">
+                    <a :href="'tel:' + this.phone">
                     <icon-call></icon-call>
                     <span>Звонок</span>
                     </a>
@@ -103,6 +103,9 @@ export default {
             models: {
                 type: Array
             },
+            phone: {
+                type: String
+            }
         },
         data: function () {
             return {
