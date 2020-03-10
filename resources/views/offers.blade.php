@@ -39,23 +39,7 @@
                 </li>
             </ul>
         </div>
-    <section id="models" class="models_wrap">
-        <div class="container">
-            <h2>Модели</h2>
-            <ul>
-                @foreach ($models as $model)
-                    <li>
-                        <a href="{{ route('model', ['city' => $city, 'car_model' => $model->slug, 'car_type' => $model->types_preview[0]->slug])}}">
-                            <div class="img_wrap">
-                                <img src="{{ $model->preview }}" alt="{{ $model->title }}">
-                            </div>
-                            <div class="title">{{ $model->title }}</div>
-                        </a>
-                    </li>
-                @endforeach
-            </ul>
-        </div>
-    </section>
-    <modal-component :cities='@json($cities)'></modal-component>
+    </div>
+
     </body>
 @endsection
