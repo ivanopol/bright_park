@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Torann\GeoIP\Facades\GeoIP;
 use Illuminate\Support\Facades\DB;
+use App\Contacts;
 
 class City extends Model
 {
@@ -87,9 +88,11 @@ class City extends Model
         ];
 
         $cities_list = City::all();
+        $contacts_list = Contacts::all()->sortBy('city_id');
 
+        $i = 0;
         foreach ($cities_list as $city) {
-            $cities['list'][] = [
+            $cities['list'][$i] = [
                 'value' => $city->alias,
                 'label' => $city->title_ru,
                 'coords' => $city->coordinates,
@@ -99,6 +102,7 @@ class City extends Model
             ];
 
             if ($city->alias === $city_active) {
+
                 $cities['active'] = [
                     'value' => $city->alias,
                     'label' => $city->title_ru,
@@ -107,7 +111,14 @@ class City extends Model
                     'begin_script' => $city->begin_script,
                     'bitrix_responsible_id' => $city->bitrix_responsible_id
                 ];
+
+                foreach($contacts_list as $contact) {
+                    if ($city->id == $contact->city_id) {
+                        $cities['active']['phone'] = str_replace(' ', '', $contact->phone);
+                    }
+                }
             }
+            $i++;
         }
 
         return $cities;
@@ -132,5 +143,10 @@ class City extends Model
     public function setCookie(string $city): bool
     {
 
+    }
+
+   public function contacts()
+    {
+        return $this->belongsTo('App\Contacts', 'city_id');
     }
 }
