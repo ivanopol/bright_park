@@ -92,7 +92,24 @@
             justify-content: space-around;
             & > span {
                 display: block;
-                widtj: 25%;
+                width: 25%;
+            }
+        }
+
+        @media only screen and (min-width: 1366px) {
+            & {
+                width: 290px;
+                &-title {
+                    font-size: 24px;
+                }
+
+                &-block {
+                    font-size: 36px;
+                }
+
+                &-sign {
+                    font-size: 16px;
+                }
             }
         }
     }
