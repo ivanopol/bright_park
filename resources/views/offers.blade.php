@@ -48,7 +48,12 @@
                 <p class="allocated">Выгода 80&nbsp;000&nbsp;руб.&nbsp;по&nbsp;программам Трейд-ин и&nbsp;LADA Finance</p>
             </div>
             <div class="retarget-trigger-image">
-                <img src="/build/images/retarget/retarget-trigger.jpg" alt="Вы не успели">
+                <picture>
+                    <source srcset="/build/images/retarget/retarget-trigger.jpg, /build/images/retarget/retarget-trigger.jpg 2x" media="(max-width: 579px)">
+                    <source srcset="/build/images/retarget/retarget-trigger-desktop.jpg, /build/images/retarget/retarget-trigger-desktop.jpg 2x" media="(min-width: 580px)">
+                    <img src="/build/images/retarget/retarget-trigger.jpg"
+                         srcset="/build/images/retarget/retarget-trigger.jpg, /build/images/retarget/retarget-trigger.jpg 2x" alt="Вы не успели" />
+                </picture>
             </div>
         </div>
     </div>
