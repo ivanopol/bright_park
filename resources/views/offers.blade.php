@@ -5,7 +5,7 @@
     <header-sticky-component :theme="'light'" :city="'{{$city}}'"></header-sticky-component>
     <header-component :absolute="true"  :theme="'light'" :city="'{{$city}}'" ></header-component>
     <section class="main-screen">
-        <main-hooper-component :city="'{{$city}}'"></main-hooper-component>
+        <retargeting-component :city="'{{$city}}'"></retargeting-component>
     </section>
     <body>
     <div class="container">
