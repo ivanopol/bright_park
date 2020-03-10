@@ -54,6 +54,10 @@
                     <img src="/build/images/retarget/retarget-trigger.jpg"
                          srcset="/build/images/retarget/retarget-trigger.jpg, /build/images/retarget/retarget-trigger.jpg 2x" alt="Вы не успели" />
                 </picture>
+                <div class="retarget-message">
+                    <h3>Вы не успели!</h3>
+                    <p><span>ваша модель популярна, эта акция закончилась</span> <span>22.01.2020</span></p>
+                </div>
             </div>
         </div>
     </div>
