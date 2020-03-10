@@ -27,6 +27,7 @@ Vue.component('hooper-component', require('./components/HooperComponent.vue').de
 Vue.component('info-component', require('./components/InfoComponent.vue').default);
 Vue.component('color-choose-component', require('./components/ColorChooseComponent.vue').default);
 Vue.component('form-component', require('./components/FormComponent.vue').default);
+Vue.component('form-retarget-component', require('./components/FormRetargetComponent.vue').default);
 Vue.component('form-buy-component', require('./components/FormBuyComponent.vue').default);
 Vue.component('form-buy2-component', require('./components/FormBuy2Component.vue').default);
 Vue.component('review-component', require('./components/ReviewComponent.vue').default);

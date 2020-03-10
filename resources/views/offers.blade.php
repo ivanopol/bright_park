@@ -60,6 +60,7 @@
                 </div>
             </div>
         </div>
+        <form-retarget-component :cities='@json($cities)'></form-retarget-component>
     </div>
 
     </body>
