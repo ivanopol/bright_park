@@ -153,7 +153,7 @@
     }
 
     .main-screen {
-        margin: -60px 0 40px;
+        margin: -60px 0 0;
 
         .asset-container {
             height: 100%;

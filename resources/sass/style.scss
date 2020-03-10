@@ -32,6 +32,20 @@ h2 {
     }
 }
 
+h3 {
+    font-family: PragmaticaLightCBold, Helvetica, sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 24px;
+}
+
+.allocated {
+    font-family: PragmaticaLightCBold, Helvetica, sans-serif;
+    padding: 0 15px;
+    font-size: 18px;
+    text-align: center;
+}
+
 @media only screen and (max-width: 321px) {
     h2 {
         font-size: 21px;
@@ -108,6 +122,10 @@ h2 {
     color: #E62423;
 }
 
+.big_value {
+    font-size: 120%;
+}
+
 .container {
     overflow: hidden;
     max-width: 960px;
@@ -141,7 +159,7 @@ h2 {
     }
 
     &-text {
-        padding: 30px 30px 0;
+        padding: 60px 30px 0;
 
         p.note_1 {
             font-weight: bold;
@@ -815,7 +833,7 @@ footer {
 }
 
 .advantages_wrap {
-    padding: 40px 30px;
+    padding: 60px 30px;
 
     h1 {
         font-family: PragmaticaLightCBold, Helvetica, sans-serif;
@@ -826,6 +844,17 @@ footer {
         margin-bottom: 30px;
     }
 
+    .retarget-trigger {
+        padding-top: 60px;
+    }
+
+    .trigger-wrap {
+        margin: 30px 30px 0;
+        p {
+            margin:0;
+            padding: 0;
+        }
+    }
 
     p {
         font-family: PragmaticaLightCBold, Helvetica, sans-serif;
@@ -995,7 +1024,7 @@ footer {
 
 
 .models_wrap {
-    padding: 80px 0 100px;
+    padding: 60px 0;
     background-color: #000;
     h2 {
         font-family: PragmaticaLightCBold, Helvetica, sans-serif;

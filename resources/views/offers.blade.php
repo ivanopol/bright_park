@@ -37,6 +37,19 @@
                     </div>
                 </li>
             </ul>
+            <div class="retarget-trigger">
+                <h3>Осталось по акции</h3>
+                <div class="trigger-wrap"><p><span class="c_orange big_value">17</span> автомобилей с ПТС</p></div>
+            </div>
+        </div>
+        <div class="block">
+            <div class="block-text">
+                <h2><span class="c_orange">Эти акции</span> уже закончились</h2>
+                <p class="allocated">Выгода 80&nbsp;000&nbsp;руб.&nbsp;по&nbsp;программам Трейд-ин и&nbsp;LADA Finance</p>
+            </div>
+            <div class="retarget-trigger-image">
+                <img src="/build/images/retarget/retarget-trigger.jpg" alt="Вы не успели">
+            </div>
         </div>
     </div>
 
