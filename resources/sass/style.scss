@@ -845,6 +845,17 @@ footer {
             margin-bottom: 55px;
 
             .advantage {
+                .icon {
+                    width: 100%;
+                    margin-bottom: 10%;
+                    display: block;
+                    img {
+                        width: 35%;
+                        margin: 0 auto;
+                        display: block;
+                    }
+                }
+
                 .value {
                     font-family: PragmaticaLightCBold, Helvetica, sans-serif;
                     display: block;
@@ -868,6 +879,23 @@ footer {
         }
     }
 
+    &.retargeting_wrap {
+        ul {
+            li {
+                border-bottom: 3px solid #ff8351;
+                .advantage {
+
+                    .icon {
+                    }
+
+                    .text {
+                        text-align: center;
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
 
     @media only screen and (min-width: 580px) {
         & {
@@ -964,6 +992,7 @@ footer {
         }
     }
 }
+
 
 .models_wrap {
     padding: 80px 0 100px;
