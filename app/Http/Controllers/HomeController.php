@@ -13,6 +13,7 @@ use App\CarType;
 use App\City;
 use App\Retarget;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Redis;
 
 class HomeController extends Controller
 {

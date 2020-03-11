@@ -7,36 +7,49 @@
 
     export default {
         name: "EventHandlerComponent",
+        data: () => ({
+            elements: [],
+            events: []
+        }),
+        methods: {
+            async sendData(data, href) {
+                axios({
+                    method: 'post',
+                    url: '/api/write_event',
+                    data: data
+                }).then((response) => {
+                    if (href !== null) {
+                        window.location = href;
+                    }
+                });
+            }
+        },
         mounted() {
-            let elements = document.getElementsByClassName("event");
+            let self = this;
 
-            let handle = function() {
+            this.elements = document.getElementsByClassName("event");
+
+            let handle = async function (event) {
+                event.preventDefault();
+
                 let data = {
                     'btn_id': this.getAttribute("id"),
                     'href': this.getAttribute("href"),
                     'location': window.location.pathname,
-                    'timestamp': new Date().toUTCString()
+                    'timestamp': new Date().toISOString()
                 };
 
-                console.log(data);
-
-                axios(
-                    {
-                        method: 'post',
-                        url: '/api/write_event',
-                        data: data
-                    });
+                await self.sendData(data, this.getAttribute('href'));
             };
 
-            //test
-/*            var handler = function() {
-                var attribute = this.getAttribute("href");
-                console.log(attribute);
-                alert(attribute);
-            };*/
+            for (let i = 0; i < this.elements.length; i++) {
+                this.elements[i].addEventListener('click', handle, false);
+            }
+        },
 
-            for (let i = 0; i < elements.length; i++) {
-                elements[i].addEventListener('click', handle, false);
+        destroyed() {
+            for (let i = 0; i < this.events.length; i++) {
+                this.sendData(this.events[i]);
             }
         }
     }

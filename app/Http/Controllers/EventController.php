@@ -21,8 +21,8 @@ class EventController extends Controller
             'timestamp' => date("Y-m-d H:i:s")
         ];
 
-        print_r(json_encode($event));
+        Redis::set('btn_event_'.$_SERVER['REMOTE_ADDR'].'_'. $content->btn_id.'_'. date("Y-m-d H:i:s"), json_encode($event));
 
-        Redis::set($_SERVER['REMOTE_ADDR'].$content->btn_id.date("Y-m-d H:i:s"), json_encode($event));
+        return \Response::noContent();
     }
 }
