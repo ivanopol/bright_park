@@ -45,7 +45,8 @@ Vue.component('yandex-map-component', require('./components/YandexMapComponent')
 Vue.component('touch-bar-map-component', require('./components/TouchBarMapComponent').default);
 Vue.component('modal-component', require('./components/elements/ModalComponent').default);
 Vue.component('modal-retarget-component', require('./components/elements/ModalRetargetComponent').default);
-Vue.component('countdown-timer-component', require('./components/CountdownTimerComponent').default);
+Vue.component('next-action-component', require('./components/elements/NextActionComponent').default);
+//Vue.component('countdown-timer-component', require('./components/CountdownTimerComponent').default);
 
 /*const store = new Vuex.Store({
     state: {

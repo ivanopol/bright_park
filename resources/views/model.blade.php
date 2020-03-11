@@ -5,7 +5,7 @@
     <header-sticky-component :theme="'light'" :city="'{{$city}}'" :button=true :car='@json($data['slider']['slides'])'></header-sticky-component>
     <header-component :line="true" :theme="'light'" :city="'{{$city}}'" :car='@json($data['slider']['slides'])'></header-component>
     <body>
-    <script>{{$cities['active']['begin_script']}}</script>
+    {{$cities['active']['begin_script']}}
     </body>
     <div class="">
         <hooper-component :data='@json($data['slider'])'></hooper-component>
@@ -22,27 +22,7 @@
         @if(count($data['reviews']))
             <review-component :reviews='@json($data['reviews'])' :model_name="'{{$data['model_full']}}'"></review-component>
         @endif
-        <section class="block next_action">
-            <div class="block-text">
-                <h2><span class="c_orange">Ваше</span> следующее действие</h2>
-            </div>
-            <ul>
-                <li>
-                    <a class="btn" href="#" onclick="return false;">Записаться на тест-драйв</a>
-                </li>
-                <li>
-                    <a class="btn" href="{{request()->segment(count(request()->segments()))}}/model_details">Рассчитать
-                        кредит</a>
-                </li>
-                <li>
-                    <a class="btn" href="{{request()->segment(count(request()->segments()))}}/model_details">Оценить
-                        свой автомобиль</a>
-                </li>
-                <li>
-                    <a class="btn" href="#" onclick="return false;">Получить спецпредложение</a>
-                </li>
-            </ul>
-        </section>
+        <next-action-component :link="'{{request()->segment(count(request()->segments()))}}'" :cities='@json($cities)'></next-action-component>
         <section class="block block_5">
             <div class="block-text">
                 <h2><span class="c_orange">Гарантия</span> 3 года</h2>
