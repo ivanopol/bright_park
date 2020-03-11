@@ -112,36 +112,43 @@ class Kernel extends HttpKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->call(function () {
+            $today = date('Y-m-d');
             $redis = Redis::connection();
 
-            $today_visits = DB::select('select visitors from daily_visits where `date` = :date',
-                ['date' => date('Y-m-d')])[0]->visitors;
+            $today_visits =
+                DB::table('daily_visits')->first('visitors')->where('date', $today)->visitors;
 
             if ($today_visits == null) {
-                $current_visits = $redis->get(date('Y-m-d'));
+                $current_visits = $redis->get($today);
 
                 if ($current_visits == null) {
                     $current_visits = 0;
                 }
 
-                DB::insert('insert into daily_visits (date, visitors) values (:date, :visitors)',
-                    ['date' => date('Y-m-d'), 'visitors' => $current_visits]);
+                $values = [
+                    'date' => $today,
+                    'visitors' => $current_visits
+                ];
 
-                $redis->set(date('Y-m-d'), 0);
+                DB::table('daily_visits')->insert($values);
+
+                $redis->set($today, 0);
             } else {
-                $current_visits = $redis->get(date('Y-m-d'));
+                $current_visits = $redis->get($today);
 
                 if ($current_visits == null) {
                     $current_visits = 0;
                 }
 
                 $visitors_sum = $current_visits + $today_visits;
-                $date = date('Y-m-d');
 
-                DB::update('update daily_visits set `visitors` = :visitors where `date` = :date',
-                    ['date' => $date, 'visitors' => ($visitors_sum)]);
+                $values = [
+                    'visitors' => $visitors_sum
+                ];
 
-                $redis->set(date('Y-m-d'), 0);
+                DB::table('daily_visits')->where('date', '=', $today)->update($values);
+
+                $redis->set($today, 0);
             }
         })->everyTenMinutes();
 
@@ -152,15 +159,16 @@ class Kernel extends HttpKernel
 
             foreach ($button_keys as $button_key) {
                 $button_event = json_decode($redis->get($button_key));
-                var_dump($button_event->timestamp);
 
-                DB::insert('insert into button_events (`timestamp`, button_id, user_ip, href, location)
-                            values (:timestamp, :button_id, :user_ip, :href, :location )',
-                    ['timestamp' => $button_event->timestamp,
-                        'button_id' => $button_event->btn_id,
-                        'user_ip' => $button_event->user_ip,
-                        'href' => $button_event->href,
-                        'location' => $button_event->location]);
+                $values = [
+                    'timestamp' => $button_event->timestamp,
+                    'button_id' => $button_event->btn_id,
+                    'user_ip' => $button_event->user_ip,
+                    'href' => $button_event->href,
+                    'location' => $button_event->location
+                ];
+
+                DB::table('button_events')->insert($values);
 
                 $redis->del($button_key);
             }
