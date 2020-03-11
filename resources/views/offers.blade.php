@@ -61,21 +61,7 @@
             </div>
         </div>
         <form-retarget-component :cities='@json($cities)'></form-retarget-component>
-        <div class="c-block">
-            <div class="retarget-warning">
-                <div class="retarget-warning-row">
-                    <div class="retarget-warning-icon">
-                        <img src="/build/images/icons/icon-warning.svg" alt="Автомобили сильно подорожают в 2020 году">
-                    </div>
-                    <div class="retarget-warning-title">Автомобили сильно подорожают в 2020 году</div>
-                </div>
-                <div class="retarget-warning-body">
-                    <div class="retarget-warning-row">В 2020 году эсперты ожидают рост цен на автомобили на 7-8%</div>
-                    <div class="retarget-warning-row retarget-warning-text-source">Источник: autonews.ru</div>
-                    <a href="#" class="btn btn-primary retarget-warning-button">Получить лучшие условия</a>
-                </div>
-            </div>
-        </div>
+        <modal-retarget-component></modal-retarget-component>
     </div>
 
     </body>

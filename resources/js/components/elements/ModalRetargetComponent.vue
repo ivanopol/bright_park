@@ -1,20 +1,25 @@
 <template>
-    <section id="buttons_other" class="buttons_other mt-40">
-        <div class="container">
-            <div class="item-buttons-other">
-                <a href="" class="btn btn-primary" v-on:click.prevent="show()">Записаться на тест-драйв</a>
-                <a href="" class="btn btn-secondary" v-on:click.prevent="show()">Записаться на сервис</a>
+    <div class="c-block">
+        <div class="retarget-warning">
+            <div class="retarget-warning-row">
+                <div class="retarget-warning-icon">
+                    <img src="/build/images/icons/icon-warning.svg" alt="Автомобили сильно подорожают в 2020 году">
+                </div>
+                <div class="retarget-warning-title">Автомобили сильно подорожают в 2020 году</div>
             </div>
-            <modal name="form-callback" :width="modalWidth" :height="354">
-                <form-buy2-component :cities=cities></form-buy2-component>
-            </modal>
+            <div class="retarget-warning-body">
+                <div class="retarget-warning-row">В 2020 году эсперты ожидают рост цен на автомобили на 7-8%</div>
+                <div class="retarget-warning-row retarget-warning-text-source">Источник: autonews.ru</div>
+                <a href="#" v-on:click.prevent="show()" class="btn btn-primary retarget-warning-button">Получить лучшие условия</a>
+            </div>
         </div>
-    </section>
+        <modal name="form-callback" :width="modalWidth" :height="354">
+            <form-buy2-component :cities=cities></form-buy2-component>
+        </modal>
+    </div>
 </template>
 
 <script>
-   // import {  } from 'hooper';
-   // const MODAL_WIDTH = 300;
     export default {
         name: "App",
         props: ['cities'],
@@ -36,6 +41,7 @@
         }
     }
 </script>
+
 
 <style lang="scss">
     .buttons_other {
