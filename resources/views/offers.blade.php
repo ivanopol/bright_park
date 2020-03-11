@@ -39,7 +39,7 @@
             </ul>
             <div class="retarget-trigger">
                 <h3>Осталось по акции</h3>
-                <div class="trigger-wrap"><p><span class="c_orange big_value">17</span> автомобилей с ПТС</p></div>
+                <div class="trigger-wrap"><p><span class="c_orange big_value">{{$offer->count}}</span> автомобилей с ПТС</p></div>
             </div>
         </div>
         <div class="block">
