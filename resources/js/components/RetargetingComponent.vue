@@ -5,16 +5,16 @@
                 <li>
                     <div class="asset-container">
                         <picture>
-                            <source srcset="/build/images/main/mobile/main_granta_red.jpg, /build/images/main/mobile/main_granta_red.jpg 2x" media="(max-width: 580px)">
-                            <source srcset="/build/images/main/tablet/main_granta_red.jpg, /build/images/main/tablet/main_granta_red.jpg 2x" media="(max-width: 1365px)">
-                            <source srcset="/build/images/main/desktop/main_granta_red.jpg, /build/images/main/desktop/main_granta_red.jpg 2x" media="(min-width: 1366px)">
-                            <img class="asset-image" src="/build/images/main/mobile/main_granta_red.jpg" srcset="/build/images/main/mobile/main_granta_red.jpg, /build/images/main/mobile/main_granta_red.jpg 2x" alt="Брайт Парк: Доплата 40 000 рублей при обмене на Lada Granta" />
+                            <source :srcset="offer.img_mobile + ', ' + offer.img_mobile + ' 2x'" media="(max-width: 580px)">
+                            <source :srcset="offer.img_tablet + ', ' + offer.img_tablet + ' 2x'" media="(max-width: 1365px)">
+                            <source :srcset="offer.img_desktop + ', ' + offer.img_desktop + ' 2x'" media="(min-width: 1366px)">
+                            <img class="asset-image" :src="offer.img_mobile" :srcset="offer.img_mobile + ', ' + offer.img_mobile + ' 2x'" :alt="offer.description" />
                         </picture>
                     </div>
                     <div class="product-content">
-                        <p class="title-tagline bold">Доплата<br> 40 000 рублей<br> при обмене на <span class="highlight">LADA Granta</span></p>
+                        <p class="title-tagline bold" v-html="offer.description"></p>
                         <div class="item-buttons">
-                            <vue-countdown :time="2 * 24 * 60 * 60 * 1000" >
+                            <vue-countdown :time="5*12*60*60*1000" >
                                 <template slot-scope="props">
                                     <div class="countdown">
                                         <div class="countdown-title">
@@ -50,6 +50,9 @@
         props: {
             city: {
 
+            },
+            offer: {
+                type: Array
             }
         },
         data: function () {

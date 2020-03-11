@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\DB;
 use App\CarModel;
 use App\CarType;
 use App\City;
+use App\Retarget;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -57,11 +59,13 @@ class HomeController extends Controller
 
         $cities = $city->getCities($this->city);
         $data['coordinates'] = explode(",", $city['coordinates']);
-        $offers = DB::select('select * from special_offers');
+        //$offers = DB::select('select * from special_offers');
 
+        $service = new BasePageService();
+        $offer = $service->getRetargetOffers(new Retarget(), $request);
         $models = CarModel::with('types_preview')->get();
 
-        return view('offers', ['offers' => $offers, 'city' => $this->city, 'cities' => $cities, 'models'=>$models]);
+        return view('offers', ['offer' => $offer, 'city' => $this->city, 'cities' => $cities, 'models'=>$models]);
     }
 
     /**

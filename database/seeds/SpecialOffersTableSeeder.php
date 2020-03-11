@@ -2,6 +2,7 @@
 
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
 class SpecialOffersTableSeeder extends Seeder
 {
@@ -9,12 +10,25 @@ class SpecialOffersTableSeeder extends Seeder
     {
         $special_offers = [
             [
-                'start_date' => date('Y-m-d', 1583068523),
-                'end_date' => date('Y-m-d', 1585660523),
+                'date' => null,
                 'title'=>'LADA VESTA',
-                'description'=>'Доплата при обмене до 40 000 т. р.',
+                'description'=>'Доплата<br> 40 000 рублей<br> при обмене на <span class="highlight">LADA Granta</span>',
                 'count'=>17,
-                'is_active'=>true
+                'is_active'=>true,
+                'img_mobile' => '/build/images/main/mobile/main_granta_red.jpg',
+                'img_tablet' => '/build/images/main/tablet/main_granta_red.jpg',
+                'img_desktop' => '/build/images/main/desktop/main_granta_red.jpg',
+            ],
+
+            [
+                'date' => Carbon::create(2020, 03, 30, 0, 0, 0),
+                'title'=>'LADA VESTA',
+                'description'=>'LADA Vesta<br> выгода 10%<br> по госпрограмме',
+                'count'=>6,
+                'is_active'=>true,
+                'img_mobile' => '/build/images/main/mobile/main_vesta_gray.jpg',
+                'img_tablet' => '/build/images/main/tablet/main_vesta_gray.jpg',
+                'img_desktop' => '/build/images/main/desktop/main_vesta_gray.jpg',
             ],
         ];
 
