@@ -118,7 +118,7 @@ class Kernel extends HttpKernel
                 ['date' => date('Y-m-d')])[0]->visitors;
 
             if ($today_visits == null) {
-                $current_visits = $redis->get(str_replace('brightpark_database_', '', date('Y-m-d')));
+                $current_visits = $redis->get(date('Y-m-d'));
 
                 if ($current_visits == null) {
                     $current_visits = 0;
@@ -126,8 +126,10 @@ class Kernel extends HttpKernel
 
                 DB::insert('insert into daily_visits (date, visitors) values (:date, :visitors)',
                     ['date' => date('Y-m-d'), 'visitors' => $current_visits]);
+
+                $redis->set(date('Y-m-d'), 0);
             } else {
-                $current_visits = $redis->get(str_replace('brightpark_database_', '', date('Y-m-d')));
+                $current_visits = $redis->get(date('Y-m-d'));
 
                 if ($current_visits == null) {
                     $current_visits = 0;
@@ -138,6 +140,8 @@ class Kernel extends HttpKernel
 
                 DB::update('update daily_visits set `visitors` = :visitors where `date` = :date',
                     ['date' => $date, 'visitors' => ($visitors_sum)]);
+
+                $redis->set(date('Y-m-d'), 0);
             }
         })->everyTenMinutes();
 
@@ -147,7 +151,7 @@ class Kernel extends HttpKernel
             $button_keys = $redis->keys('*btn*');
 
             foreach ($button_keys as $button_key) {
-                $button_event = json_decode($redis->get(str_replace('brightpark_database_', '', $button_key)));
+                $button_event = json_decode($redis->get($button_key));
                 var_dump($button_event->timestamp);
 
                 DB::insert('insert into button_events (`timestamp`, button_id, user_ip, href, location)
@@ -158,7 +162,7 @@ class Kernel extends HttpKernel
                         'href' => $button_event->href,
                         'location' => $button_event->location]);
 
-                $redis->del(str_replace('brightpark_database_', '', $button_key));
+                $redis->del($button_key);
             }
 
         })->everyFifteenMinutes();
