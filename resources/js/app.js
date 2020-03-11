@@ -27,6 +27,7 @@ Vue.component('hooper-component', require('./components/HooperComponent.vue').de
 Vue.component('info-component', require('./components/InfoComponent.vue').default);
 Vue.component('color-choose-component', require('./components/ColorChooseComponent.vue').default);
 Vue.component('form-component', require('./components/FormComponent.vue').default);
+Vue.component('form-retarget-component', require('./components/FormRetargetComponent.vue').default);
 Vue.component('form-buy-component', require('./components/FormBuyComponent.vue').default);
 Vue.component('form-buy2-component', require('./components/FormBuy2Component.vue').default);
 Vue.component('review-component', require('./components/ReviewComponent.vue').default);
@@ -34,10 +35,10 @@ Vue.component('model-details-component', require('./components/ModelDetailsCompo
 Vue.component('header-component', require('./components/elements/HeaderComponent').default);
 Vue.component('header-sticky-component', require('./components/elements/HeaderStickyComponent').default);
 Vue.component('main-hooper-component', require('./components/MainHooperComponent').default);
+Vue.component('retargeting-component', require('./components/RetargetingComponent').default);
 Vue.component('range-slider-component', require('./components/RangeSliderComponent').default);
 Vue.component('range-slider-component-period', require('./components/RangeSliderComponentPeriod').default);
 Vue.component('tab-bar', require('./components/elements/TabBar').default);
-//Vue.component('slide-show', require('./components/SlideShow').default);
 Vue.component('classified', require('./components/Classified').default);
 Vue.component('steps', require('./components/Steps').default);
 Vue.component('yandex-map-component', require('./components/YandexMapComponent').default);

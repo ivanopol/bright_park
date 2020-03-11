@@ -1,99 +1,121 @@
 <template>
     <section>
-        <hooper class="main-screen-wrap" :wheelControl="false" >
-            <slide>
-                <div class="asset-container">
-                    <picture>
-                        <source srcset="/build/images/main/mobile/main_granta_red.jpg, /build/images/main/mobile/main_granta_red.jpg 2x" media="(max-width: 580px)">
-                        <source srcset="/build/images/main/tablet/main_granta_red.jpg, /build/images/main/tablet/main_granta_red.jpg 2x" media="(max-width: 1365px)">
-                        <source srcset="/build/images/main/desktop/main_granta_red.jpg, /build/images/main/desktop/main_granta_red.jpg 2x" media="(min-width: 1366px)">
-                        <img class="asset-image" src="/build/images/main/mobile/main_granta_red.jpg" srcset="/build/images/main/mobile/main_granta_red.jpg, /build/images/main/mobile/main_granta_red.jpg 2x" alt="Брайт Парк: Доплата 40 000 рублей при обмене на Lada Granta" />
-                    </picture>
-                </div>
-                <div class="product-content">
-                    <p class="title-tagline bold">Доплата<br> 40 000 рублей<br> при обмене на <span class="highlight">LADA Granta</span></p>
-                    <div class="item-buttons">
-                        <a :href="city + '/granta/sedan'" class="btn btn-primary">Подробнее о модели</a>
-                        <a :href="city + '/granta/sedan/model_details'" class="btn btn-secondary">Условия акции</a>
+        <div class="main-screen-wrap" >
+            <ul>
+                <li>
+                    <div class="asset-container">
+                        <picture>
+                            <source :srcset="offer.img_mobile + ', ' + offer.img_mobile + ' 2x'" media="(max-width: 580px)">
+                            <source :srcset="offer.img_tablet + ', ' + offer.img_tablet + ' 2x'" media="(max-width: 1365px)">
+                            <source :srcset="offer.img_desktop + ', ' + offer.img_desktop + ' 2x'" media="(min-width: 1366px)">
+                            <img class="asset-image" :src="offer.img_mobile" :srcset="offer.img_mobile + ', ' + offer.img_mobile + ' 2x'" :alt="offer.description" />
+                        </picture>
                     </div>
-                </div>
-            </slide>
-            <slide>
-                <div class="asset-container">
-                    <picture>
-                        <source srcset="/build/images/main/mobile/main_vesta_gray.jpg, /build/images/main/mobile/main_vesta_gray.jpg 2x" media="(max-width: 580px)">
-                        <source srcset="/build/images/main/tablet/main_vesta_gray.jpg, /build/images/main/tablet/main_vesta_gray.jpg 2x" media="(max-width: 1365px)">
-                        <source srcset="/build/images/main/desktop/main_vesta_gray.jpg, /build/images/main/desktop/main_vesta_gray.jpg 2x" media="(min-width: 1366px)">
-                        <img class="asset-image" src="/build/images/main/mobile/main_vesta_gray.jpg"
-                         srcset="/build/images/main/mobile/main_vesta_gray.jpg, /build/images/main/mobile/main_vesta_gray.jpg 2x" alt="Брайт Парк: LADA Vesta выгода 10% по госпрограмме" />
-                    </picture>
-                </div>
-                <div class="product-content">
-                    <p class="title-tagline bold">LADA Vesta<br> выгода 10%<br> по госпрограмме</p>
-                    <div class="item-buttons">
-                        <a :href="city + '/vesta/sedan'" class="btn btn-primary">Подробнее о модели</a>
-                        <a :href="city + '/vesta/sedan/model_details'" class="btn btn-secondary">Условия акции</a>
+                    <div class="product-content">
+                        <p class="title-tagline bold" v-html="offer.description"></p>
+                        <div class="item-buttons">
+                            <vue-countdown :time="5*12*60*60*1000" >
+                                <template slot-scope="props">
+                                    <div class="countdown">
+                                        <div class="countdown-title">
+                                            <span>До конца акции</span>
+                                        </div>
+                                        <div class="countdown-block">{{ props.days }} : {{  props.hours }} : {{  props.minutes }} : {{  props.seconds }}</div>
+                                        <div class="countdown-sign">
+                                            <span>дня</span>
+                                            <span>часов</span>
+                                            <span>минут</span>
+                                            <span>секунд</span>
+                                        </div>
+                                    </div>
+                                </template>
+                            </vue-countdown>
+                        </div>
                     </div>
-                </div>
-            </slide>
-            <slide>
-                <div class="asset-container">
-                    <picture>
-                        <source srcset="/build/images/main/mobile/main_granta_gray.jpg, /build/images/main/mobile/main_granta_gray.jpg 2x" media="(max-width: 580px)">
-                        <source srcset="/build/images/main/tablet/main_granta_gray.jpg, /build/images/main/tablet/main_granta_gray.jpg 2x" media="(max-width: 1365px)">
-                        <source srcset="/build/images/main/desktop/main_granta_gray.jpg, /build/images/main/desktop/main_granta_gray.jpg 2x" media="(min-width: 1366px)">
-                        <img class="asset-image" src="/build/images/main/mobile/main_granta_gray.jpg"
-                            srcset="/build/images/main/mobile/main_granta_gray.jpg, /build/images/main/mobile/main_granta_gray.jpg 2x" alt="Брайт Парк: LADA Granta 0% первоначальный взнос" />
-                    </picture>
-                </div>
-                <div class="product-content">
-                    <p class="title-tagline bold">LADA Granta<br>0% первоначальный взнос</p>
-                    <div class="item-buttons">
-                        <a :href="city + '/granta/sedan'" class="btn btn-primary">Подробнее о модели</a>
-                        <a :href="city + '/granta/sedan/model_details'" class="btn btn-secondary">Условия акции</a>
-                    </div>
-                </div>
-            </slide>
-            <slide>
-                <div class="asset-container">
-                    <picture>
-                        <source srcset="/build/images/main/mobile/main_vesta_red.jpg, /build/images/main/mobile/main_vesta_red.jpg 2x" media="(max-width: 580px)">
-                        <source srcset="/build/images/main/tablet/main_vesta_red.jpg, /build/images/main/tablet/main_vesta_red.jpg 2x" media="(max-width: 1365px)">
-                        <source srcset="/build/images/main/desktop/main_vesta_red.jpg, /build/images/main/desktop/main_vesta_red.jpg 2x" media="(min-width: 1366px)">
-                        <img class="asset-image" src="/build/images/main/mobile/main_vesta_red.jpg"
-                             srcset="/build/images/main/mobile/main_vesta_red.jpg, /build/images/main/mobile/main_vesta_red.jpg 2x" alt="Брайт Парк: Обмен на LADA Vesta выше рыночной цены" />
-                    </picture>
-                </div>
-                <div class="product-content">
-                    <p class="title-tagline bold">Обмен на LADA Vesta выше рыночной<br> цены</p>
-                    <div class="item-buttons">
-                        <a id="model_details" :href="city + '/granta/sedan'" class="btn btn-primary event">Подробнее о модели</a>
-                        <a id="offer_conditions" :href="city + '/granta/sedan/model_details'" class="btn btn-secondary event">Условия акции</a>
-                    </div>
-                </div>
-            </slide>
-            <hooper-pagination slot="hooper-addons"></hooper-pagination>
-        </hooper>
+                </li>
+            </ul>
+        </div>
     </section>
 </template>
 
 <script>
-    import { Hooper, Slide, Pagination as HooperPagination } from 'hooper';
-    import 'hooper/dist/hooper.css';
+    import VueCountdown from '@chenfengyuan/vue-countdown';
+
 
     export default {
         name: 'App',
         components: {
-            Hooper,
-            Slide,
-            HooperPagination
+            VueCountdown
         },
-        props: ['city']
+        props: {
+            city: {
+
+            },
+            offer: {
+                type: Array
+            }
+        },
+        data: function () {
+            return {};
+        },
+        methods: {
+        }
     };
 </script>
 
 
 <style lang="scss" >
+
+    .countdown {
+        font-family: PragmaticaLightCBold, Helvetica, sans-serif;
+        width: 256px;
+        margin: 0 auto 15px;
+        &-title {
+            width: 100%;
+            font-size: 20px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        &-block {
+            width: 100%;
+            border: 4px solid #fff;
+            border-radius: 30px;
+            font-size: 30px;
+            padding: 10px 20px 7px;
+            display: inline-block;
+            margin-bottom: 10px;
+
+        }
+
+        &-sign {
+            width: 100%;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-around;
+            & > span {
+                display: block;
+                width: 25%;
+            }
+        }
+
+        @media only screen and (min-width: 1366px) {
+            & {
+                width: 290px;
+                &-title {
+                    font-size: 24px;
+                }
+
+                &-block {
+                    font-size: 36px;
+                }
+
+                &-sign {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
 
     .item-buttons {
         position: absolute;

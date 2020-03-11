@@ -4,7 +4,10 @@
 namespace App\Services;
 
 
+use App\Retarget;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class BasePageService
 {
@@ -130,5 +133,35 @@ class BasePageService
             $path->image = str_replace('mobile/', '', $path->image);
         }
         return $path;
+    }
+
+    /**
+     * Получаем данные для ретаргетинговой страницы
+     *
+     * @param Retarget $retarget
+     * @param Request $request Параметры запроса
+     *
+     * @return array
+     */
+    public function getRetargetOffers(Retarget $retarget, Request $request) : object
+    {
+        $result = [];
+        $params = $request->all();
+
+        if (isset($params['utm_campain'])) {
+            switch($params['utm_campain']) {
+                case 'test':
+                    $result = $retarget->find(2);
+                    break;
+                default:
+                    $result = $retarget->find(1);
+                    break;
+            }
+
+        } else {
+            $result = $retarget->find(1);
+        }
+
+        return $result;
     }
 }

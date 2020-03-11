@@ -15,9 +15,11 @@ class CreateSpecialOffersTable extends Migration
     {
         Schema::create('special_offers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->date('start_date');
-            $table->date('end_date');
+            $table->date('start_date')->nullable();
+            $table->date('end_date')->nullable();
+            $table->dateTime('date')->nullable();
             $table->string('img_mobile')->nullable();
+            $table->string('img_tablet')->nullable();
             $table->string('img_desktop')->nullable();
             $table->string('title')->nullable();
             $table->text('description')->nullable();
