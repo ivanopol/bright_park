@@ -13,7 +13,7 @@
                 <a href="#" v-on:click.prevent="show()" class="btn btn-primary retarget-warning-button">Получить лучшие условия</a>
             </div>
         </div>
-        <modal name="form-callback" :width="modalWidth" :height="354">
+        <modal name="form-callback"  adaptive="true" height="auto">
             <form-buy2-component :cities=cities></form-buy2-component>
         </modal>
     </div>
@@ -44,6 +44,8 @@
 
 
 <style lang="scss">
+    @import "./resources/sass/modal.scss";
+
     .buttons_other {
         .item-buttons-other {
             margin-bottom: 40px;

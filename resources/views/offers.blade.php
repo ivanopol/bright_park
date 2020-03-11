@@ -61,7 +61,7 @@
             </div>
         </div>
         <form-retarget-component :cities='@json($cities)'></form-retarget-component>
-        <modal-retarget-component></modal-retarget-component>
+        <modal-retarget-component :cities='@json($cities)'></modal-retarget-component>
     </div>
 
     </body>

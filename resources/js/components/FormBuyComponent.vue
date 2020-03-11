@@ -8,11 +8,13 @@
             <the-mask id="phone" pattern=".{18,}" mask="+# (###)-###-##-##" type="tel" required="true"
                       placeholder="Телефон"></the-mask>
             <button :click="send">Закрепить условия</button>
-            <div id="warning" class="model-choose-text" hidden>
-                <p>Введите 11-значный номер!</p>
-            </div>
-            <div id="success" class="model-choose-text" hidden>
-                <p>Заявка отправлена!</p>
+            <div class="validation-message-wrap">
+                <div id="warning" class="model-choose-text validation-message" style="color: darkred;" v-show="error">
+                    <p>Введите 11-значный номер!</p>
+                </div>
+                <div id="success" class="model-choose-text validation-message" style="color: darkgreen;" v-show="success">
+                    <p>Заявка отправлена!</p>
+                </div>
             </div>
         </form>
     </section>
@@ -55,9 +57,9 @@
                     })
                     .then((response) => {
                         this.clearInput();
-                        document.getElementById('success').hidden = false;
+                        this.success = true;
                     }).catch((error) => {
-                        document.getElementById('warning').hidden = false;
+                        this.error = true;
                     this.clearInput();
                 })
             },
@@ -94,3 +96,9 @@
         }
     }
 </script>
+
+<style lang="scss">
+    .validation-message-wrap {
+        height: 52px;
+    }
+</style>
