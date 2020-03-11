@@ -7,7 +7,7 @@
             <input id="name" type="text" class="" name="name" placeholder="Имя" required>
             <the-mask id="phone" pattern=".{18,}" mask="+# (###)-###-##-##" type="tel" required="true"
                       placeholder="Телефон"></the-mask>
-            <button :click="send">Закрепить условия</button>
+            <button id="form_test-drive_1" class="event" :click="send">Закрепить условия</button>
             <div id="warning" class="model-choose-text" hidden>
                 <p>Введите 11-значный номер!</p>
             </div>

@@ -14,11 +14,9 @@ class EventController extends Controller
         $content = json_decode($request->getContent());
 
         $event = [
-            'type' => $content->type,
-            'url_from' => $content->url_from,
-            'url_to' => $content->url_to,
+            'location' => $content->location,
+            'href' => $content->href,
             'btn_id' => $content->btn_id,
-            'content' => $content->content,
             'user_ip' => $_SERVER['REMOTE_ADDR'],
             'timestamp' => date("Y-m-d H:i:s")
         ];

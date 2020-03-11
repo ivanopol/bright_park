@@ -3,7 +3,7 @@
         <div class="logo-wrap" :class="theme">
             <div class="container logo-wrap-row">
                 <div class="logo-bright-park">
-                    <a :href="'/' + city">
+                    <a id="header_city" class="event" :href="'/' + city">
                         <logo-bright-park :theme="theme"></logo-bright-park>
                     </a>
                 </div>

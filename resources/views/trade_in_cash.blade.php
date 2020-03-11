@@ -71,7 +71,7 @@
                     </div>
                 </div>
             </div>
-
+            <event-handler-component></event-handler-component>
         </section>
     </div>
 @endsection

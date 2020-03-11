@@ -1,7 +1,7 @@
 <template>
     <section>
         <div class="route-button-wrap">
-            <a id="create_route" class="btn" v-on:click="createRoute">Проложить маршрут</a>
+            <a id="create_route" class="btn event" v-on:click="createRoute">Проложить маршрут</a>
         </div>
         <div class="map-wrapper">
             <div id="map" class="map"></div>
@@ -10,8 +10,6 @@
 </template>
 
 <script>
-    import {sendEvent} from "../mixins/SendEventMixin";
-
     export default {
         name: "YandexMapComponent",
         mixins: ['sendEvent'],
@@ -25,17 +23,6 @@
         }),
         methods: {
             createRoute() {
-
-                let data = {
-                    'btn_id': 'create_route',
-                    'url_from': window.location.href,
-                    'url_to': null,
-                    'type': 'btn_click',
-                    'content': null
-                };
-
-                sendEvent(data);
-
                 if (!this.routeExist) {
                     let _self = this;
 
@@ -93,10 +80,6 @@
                     }
                 }
             },
-
-            sendData() {
-
-            }
         },
 
         mounted() {

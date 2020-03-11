@@ -28,18 +28,18 @@
             </div>
             <ul>
                 <li>
-                    <a class="btn" href="#" onclick="return false;">Записаться на тест-драйв</a>
+                    <a id="form_test_drive_model" class="btn event" href="#" onclick="return false;">Записаться на тест-драйв</a>
                 </li>
                 <li>
-                    <a class="btn" href="{{request()->segment(count(request()->segments()))}}/model_details">Рассчитать
+                    <a id="count_payment" class="btn event" href="{{request()->segment(count(request()->segments()))}}/model_details">Рассчитать
                         кредит</a>
                 </li>
                 <li>
-                    <a class="btn" href="{{request()->segment(count(request()->segments()))}}/model_details">Оценить
+                    <a id="estimate_car" class="btn event" href="{{request()->segment(count(request()->segments()))}}/model_details">Оценить
                         свой автомобиль</a>
                 </li>
                 <li>
-                    <a class="btn" href="#" onclick="return false;">Получить спецпредложение</a>
+                    <a id="get_offer" class="btn event" href="#" onclick="return false;">Получить спецпредложение</a>
                 </li>
             </ul>
         </section>
@@ -66,5 +66,6 @@
             </div>
             <yandex-map-component :coordinates='@json($data['coordinates'])'></yandex-map-component>
         </footer>
+        <event-handler-component></event-handler-component>
     </div>
 @endsection

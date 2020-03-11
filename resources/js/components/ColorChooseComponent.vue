@@ -12,7 +12,7 @@
             <div class="palette">
                 <ul>
                     <li v-for="(color, id) in colors" :class="{ active : color.is_active }">
-                        <div class="circle" :class="color.class" :data-name="color.title" :data-image="color.image" @click="change_color(color)"></div>
+                        <div :id="'color_picker_' + color.title" class="circle event" :class="color.class" :data-name="color.title" :data-image="color.image" @click="change_color(color)"></div>
                     </li>
                 </ul>
             </div>

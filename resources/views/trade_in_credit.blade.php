@@ -38,6 +38,7 @@
                 <div class="progressbar-line step2"></div>
                 <span class="progressbar-text" >Остался всего 1 шаг до получения выгодных условий</span>
             </div>
+            <event-handler-component></event-handler-component>
         </section>
     </div>
 @endsection

@@ -2,8 +2,8 @@
     <section id="buttons_other" class="buttons_other mt-40">
         <div class="container">
             <div class="item-buttons-other">
-                <a href="" class="btn btn-primary" v-on:click.prevent="show()">Записаться на тест-драйв</a>
-                <a href="" class="btn btn-secondary" v-on:click.prevent="show()">Записаться на сервис</a>
+                <a id="from_test_drive" href="" class="btn btn-primary event" v-on:click.prevent="show()">Записаться на тест-драйв</a>
+                <a id="form_service" href="" class="btn btn-secondary event" v-on:click.prevent="show()">Записаться на сервис</a>
             </div>
             <modal name="form-callback" :width="modalWidth" :height="354">
                 <form-buy2-component :cities=cities></form-buy2-component>
