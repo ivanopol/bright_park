@@ -1,25 +1,33 @@
 <template>
-    <section id="buttons_other" class="buttons_other mt-40">
-        <div class="container">
-            <div class="item-buttons-other">
-                <a id="from_test_drive" href="" class="btn btn-primary event" v-on:click.prevent="show()">Записаться на тест-драйв</a>
-                <a id="form_service" href="" class="btn btn-secondary event" v-on:click.prevent="show()">Записаться на сервис</a>
+    <div class="c-block">
+        <div class="retarget-warning">
+            <div class="retarget-warning-row">
+                <div class="retarget-warning-icon">
+                    <img src="/build/images/icons/icon-warning.svg" alt="Автомобили сильно подорожают в 2020 году">
+                </div>
+                <div class="retarget-warning-title">Автомобили сильно подорожают в 2020 году</div>
             </div>
-            <modal name="form-callback" adaptive="true" height="auto">
-                <div class="close" @click="hide"></div>
-                <form-buy2-component :cities=cities></form-buy2-component>
-            </modal>
+            <div class="retarget-warning-body">
+                <div class="retarget-warning-row">В 2020 году эсперты ожидают рост цен на автомобили на 7-8%</div>
+                <div class="retarget-warning-row retarget-warning-text-source">Источник: autonews.ru</div>
+                <a href="#" v-on:click.prevent="show()" class="btn btn-primary retarget-warning-button">Получить лучшие условия</a>
+            </div>
         </div>
-    </section>
+        <modal name="form-callback"  adaptive="true" height="auto">
+            <div class="close" @click="hide"></div>
+            <form-buy2-component :cities="cities" ></form-buy2-component>
+        </modal>
+    </div>
 </template>
 
 <script>
-   // import {  } from 'hooper';
-   // const MODAL_WIDTH = 300;
     export default {
         name: "App",
         props: ['cities'],
         methods: {
+            close: function() {
+                return this.open = false;
+            },
             show () {
                 this.$modal.show('form-callback');
             },
@@ -38,7 +46,10 @@
     }
 </script>
 
+
 <style lang="scss">
+    @import "./resources/sass/modal.scss";
+
     .buttons_other {
         .item-buttons-other {
             margin-bottom: 40px;

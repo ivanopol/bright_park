@@ -109,7 +109,7 @@ h3 {
     line-height: 14px;
 
     &:hover,
-    &:focus {
+    &:active {
         background-color: #edb321;
         -webkit-transition: all 0.3s ease-out;
         -moz-transition: all 0.3s ease-out;
@@ -476,6 +476,10 @@ form {
         }
     }
 
+    .form-modal h2 {
+        color: #000;
+    }
+
     ul {
 /*        padding-top: 30px;
         padding-bottom: 20px;*/
@@ -817,6 +821,45 @@ footer {
     }
 }
 
+.close {
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    color: #FF8351;
+    font-weight: bold;
+    padding: 12px;
+    box-sizing: content-box;
+    border-radius: 20px;
+    z-index: 1;
+
+    &:before,
+    &:after {
+        content: "";
+        width: 25px;
+        height: 2px;
+        background-color: #FF8351;
+        display: block;
+        position: absolute;
+    }
+
+    &:before {
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        top: 20px;
+        left: 10px;
+    }
+
+    &:after {
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        left: 10px;
+        top: 20px;
+    }
+}
+
 .hollow-button-recolored:focus {
     background-color: #92d36e;
 
@@ -895,7 +938,7 @@ footer {
 }
 
 .retarget-warning {
-    padding: 0px 30px 30px;
+    padding: 0 0 30px;
     max-width: 580px;
     margin: 0 auto;
     &-row {
@@ -939,6 +982,10 @@ footer {
     }
 
     @media only screen and (min-width: 580px) {
+        & {
+            padding: 0 30px 30px;
+        }
+
         &-icon {
             margin-left: 0;
             justify-content: flex-end;

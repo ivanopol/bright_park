@@ -22,27 +22,7 @@
         @if(count($data['reviews']))
             <review-component :reviews='@json($data['reviews'])' :model_name="'{{$data['model_full']}}'"></review-component>
         @endif
-        <section class="block next_action">
-            <div class="block-text">
-                <h2><span class="c_orange">Ваше</span> следующее действие</h2>
-            </div>
-            <ul>
-                <li>
-                    <a id="form_test_drive_model" class="btn event" href="#" onclick="return false;">Записаться на тест-драйв</a>
-                </li>
-                <li>
-                    <a id="count_payment" class="btn event" href="{{request()->segment(count(request()->segments()))}}/model_details">Рассчитать
-                        кредит</a>
-                </li>
-                <li>
-                    <a id="estimate_car" class="btn event" href="{{request()->segment(count(request()->segments()))}}/model_details">Оценить
-                        свой автомобиль</a>
-                </li>
-                <li>
-                    <a id="get_offer" class="btn event" href="#" onclick="return false;">Получить спецпредложение</a>
-                </li>
-            </ul>
-        </section>
+        <next-action-component :link="'{{request()->segment(count(request()->segments()))}}'" :cities='@json($cities)'></next-action-component>
         <section class="block block_5">
             <div class="block-text">
                 <h2><span class="c_orange">Гарантия</span> 3 года</h2>

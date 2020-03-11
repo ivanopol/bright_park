@@ -52,7 +52,7 @@
 
             },
             offer: {
-                type: Array
+                type: Object
             }
         },
         data: function () {

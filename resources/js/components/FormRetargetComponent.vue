@@ -3,8 +3,8 @@
         <div class="form-wrapper">
             <h3><span class="c_orange">Оставьте</span> заявку сейчас</h3>
             <form action="#" id="form_test-drive" method="POST" name="feedback" @submit="send">
-                <input id="name" type="text" class="" name="name" placeholder="Имя" required>
-                <the-mask id="phone" pattern=".{18,}" mask="+# (###)-###-##-##" type="tel" required="true"
+                <input id="name_retarget" type="text" class="" name="name" placeholder="Имя" required>
+                <the-mask id="phone_retarget" pattern=".{18,}" mask="+# (###)-###-##-##" type="tel" required="true"
                           placeholder="Телефон"></the-mask>
                 <button :click="send">Получить лучшие условия</button>
                 <div class="validation-message-wrap">
@@ -44,8 +44,8 @@
                 event.preventDefault();
 
                 let formData = {
-                    "phone": this.clearMask(document.getElementById('phone').value),
-                    "name": document.getElementById('name').value,
+                    "phone": this.clearMask(document.getElementById('phone_retarget').value),
+                    "name": document.getElementById('name_retarget').value,
                     "responsible_id": this.cities.active.bitrix_responsible_id
                 };
 
@@ -69,8 +69,8 @@
             },
 
             clearInput: function () {
-                document.getElementById('phone').value = null;
-                document.getElementById('name').value = null;
+                document.getElementById('phone_retarget').value = null;
+                document.getElementById('name_retarget').value = null;
             },
 
             clearMask: function(value) {
@@ -90,7 +90,7 @@
                 }
 
                 attachHandler(window, "load", function () {
-                    var ele = document.querySelector("input[id=phone]");
+                    var ele = document.querySelector("input[id=phone_retarget]");
                     attachHandler(ele, "invalid", function () {
                         this.setCustomValidity("Please enter at least 5 characters.");
                         this.setCustomValidity("");
