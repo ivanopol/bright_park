@@ -5,7 +5,8 @@
                 <a href="" class="btn btn-primary" v-on:click.prevent="show()">Записаться на тест-драйв</a>
                 <a href="" class="btn btn-secondary" v-on:click.prevent="show()">Записаться на сервис</a>
             </div>
-            <modal name="form-callback" :width="modalWidth" :height="354">
+            <modal name="form-callback" adaptive="true" height="auto">
+                <div class="close" @click="hide"></div>
                 <form-buy2-component :cities=cities></form-buy2-component>
             </modal>
         </div>

@@ -14,7 +14,8 @@
             </div>
         </div>
         <modal name="form-callback"  adaptive="true" height="auto">
-            <form-buy2-component :cities=cities></form-buy2-component>
+            <div class="close" @click="hide"></div>
+            <form-buy2-component :cities="cities" ></form-buy2-component>
         </modal>
     </div>
 </template>
@@ -24,6 +25,9 @@
         name: "App",
         props: ['cities'],
         methods: {
+            close: function() {
+                return this.open = false;
+            },
             show () {
                 this.$modal.show('form-callback');
             },

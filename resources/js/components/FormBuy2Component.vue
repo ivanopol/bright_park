@@ -106,7 +106,7 @@
 
     .form-modal {
         form {
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
         .block-text {
             padding-top: 30px;

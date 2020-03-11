@@ -817,6 +817,45 @@ footer {
     }
 }
 
+.close {
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    color: #FF8351;
+    font-weight: bold;
+    padding: 12px;
+    box-sizing: content-box;
+    border-radius: 20px;
+    z-index: 1;
+
+    &:before,
+    &:after {
+        content: "";
+        width: 25px;
+        height: 2px;
+        background-color: #FF8351;
+        display: block;
+        position: absolute;
+    }
+
+    &:before {
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        top: 20px;
+        left: 10px;
+    }
+
+    &:after {
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        left: 10px;
+        top: 20px;
+    }
+}
+
 .hollow-button-recolored:focus {
     background-color: #92d36e;
 
