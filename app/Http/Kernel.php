@@ -113,7 +113,9 @@ class Kernel extends HttpKernel
     {
         $schedule->call(function () {
             $redis = Redis::connection();
-            $today_visits = DB::select('select visitors from daily_visits where `date` = :date', ['date' => date('Y-m-d')]);
+
+            $today_visits = DB::select('select visitors from daily_visits where `date` = :date',
+                ['date' => date('Y-m-d')])[0]->visitors;
 
             if ($today_visits == null) {
                 $current_visits = $redis->get(str_replace('brightpark_database_', '', date('Y-m-d')));
@@ -131,8 +133,11 @@ class Kernel extends HttpKernel
                     $current_visits = 0;
                 }
 
+                $visitors_sum = $current_visits + $today_visits;
+                $date = date('Y-m-d');
+
                 DB::update('update daily_visits set `visitors` = :visitors where `date` = :date',
-                    ['date' => date('Y-m-d'), 'visitors' => ($current_visits + $today_visits)]);
+                    ['date' => $date, 'visitors' => ($visitors_sum)]);
             }
         })->everyTenMinutes();
 
