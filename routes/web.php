@@ -40,4 +40,6 @@ Route::middleware(['auth', 'cookie.check', 'counter'])->group(function () {
     Route::get('/get_brands', 'HomeController@get_brands')->name('get_brands');
     Route::any('/send_contact_form', 'ContactFormController@sendContactForm')->name('sendContactForm');
     Route::any('/check_visitor_cookie', 'ContactFormController@checkVisitorCookie')->name('checkVisitorCookie');
+    Route::get('/{city}/news', 'HomeController@news')->name('news');
+    Route::get('/{city}/news/{news_title}', 'HomeController@news_detail')->name('news_details');
 });

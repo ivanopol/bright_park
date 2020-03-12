@@ -12,6 +12,7 @@ use App\CarModel;
 use App\CarType;
 use App\City;
 use App\Retarget;
+use App\News;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Redis;
 
@@ -168,5 +169,46 @@ class HomeController extends Controller
     public function trade_in_cash()
     {
         return view('trade_in_cash');
+    }
+
+    public function news(City $city = null) {
+
+        if ($city['alias']) {
+            $this->city = $city['alias'];
+        } else {
+            return redirect()->route('news', ['city' => $this->city]);
+        }
+
+
+
+        $cities = $city->getCities($this->city);
+        $models = CarModel::with('types_preview')->get();
+
+        $data = [];
+
+        $news = News::all();
+
+        return view('news', [
+            'data'=>$data,
+            'city'=>$this->city,
+            'city_info' => $city,
+            'cities' => $cities,
+            'models' => $models,
+            'news' => $news,
+        ]);
+    }
+
+    public function news_details(City $city = null, News $news_title) {
+
+        if ($city['alias']) {
+            $this->city = $city['alias'];
+        } else {
+            return redirect()->route('news_details', ['city' => 'perm']);
+        }
+
+        $data = [];
+
+
+        return view('news', ['data'=>$data, 'city'=>$this->city]);
     }
 }

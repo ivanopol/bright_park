@@ -38,6 +38,7 @@ class RouteServiceProvider extends ServiceProvider
         Route::model('city', City::class);
         Route::model('car_model', CarModel::class);
         Route::model('car_type', CarType::class);
+        Route::model('news_title', News::class);
     }
 
     /**
