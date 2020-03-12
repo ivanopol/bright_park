@@ -543,6 +543,80 @@ class ColorTableSeeder extends Seeder
                 'class' => 'color-coriander',
                 'is_active' => false
             ],
+            // Vesta
+            // SW
+            [
+                'type_id' => 7,
+                'model_id' => 2,
+                'title' => 'Ледниковый',
+                'image' => '/build/images/colors/lada/vesta/sw/vesta_sw_lednikovyy.png',
+                'class' => 'color-white-glacial',
+                'is_active' => true
+            ],
+            [
+                'type_id' => 7,
+                'model_id' => 2,
+                'title' => 'Сердолик',
+                'image' => '/build/images/colors/lada/vesta/sw/vesta_sw_serdolyk.png',
+                'class' => 'color-red-cornelian',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 7,
+                'model_id' => 2,
+                'title' => 'Ангкор',
+                'image' => '/build/images/colors/lada/vesta/sw/vesta_sw_angkor.png',
+                'class' => 'color-angkor',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 7,
+                'model_id' => 2,
+                'title' => 'Карфаген',
+                'image' => '/build/images/colors/lada/vesta/sw/vesta_sw_karfagen.png',
+                'class' => 'color-carfagen',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 7,
+                'model_id' => 2,
+                'title' => 'Дайвинг',
+                'image' => '/build/images/colors/lada/vesta/sw/vesta_sw_dayving.png',
+                'class' => 'color-daiving',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 7,
+                'model_id' => 2,
+                'title' => 'Фантом',
+                'image' => '/build/images/colors/lada/vesta/sw/vesta_sw_fantom.png',
+                'class' => 'color-phantom',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 7,
+                'model_id' => 2,
+                'title' => 'Плутон',
+                'image' => '/build/images/colors/lada/vesta/sw/vesta_sw_pluton.png',
+                'class' => 'color-pluton',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 7,
+                'model_id' => 2,
+                'title' => 'Маэстро',
+                'image' => '/build/images/colors/lada/vesta/sw/vesta_sw_maestro.png',
+                'class' => 'color-maestro',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 7,
+                'model_id' => 2,
+                'title' => 'Платина',
+                'image' => '/build/images/colors/lada/vesta/sw/vesta_sw_platina.png',
+                'class' => 'color-platina',
+                'is_active' => false
+            ],
         ];
 
         DB::table('colors')->insert($colors);
