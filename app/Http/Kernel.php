@@ -2,6 +2,8 @@
 
 namespace App\Http;
 
+use App\Console\Commands\UpdateButtonEvents;
+use App\Console\Commands\UpdateVisitsCount;
 use App\Http\Middleware\Authenticate;
 use App\Http\Middleware\CheckForMaintenanceMode;
 use App\Http\Middleware\CheckVisitorCookie;
@@ -26,8 +28,6 @@ use Illuminate\Routing\Middleware\ThrottleRequests;
 use Illuminate\Routing\Middleware\ValidateSignature;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Redis;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 
 class Kernel extends HttpKernel
@@ -109,62 +109,26 @@ class Kernel extends HttpKernel
         Authorize::class,
     ];
 
+    protected $commands = [
+        UpdateButtonEvents::class,
+        UpdateVisitsCount::class
+    ];
+
     protected function schedule(Schedule $schedule)
     {
-        $schedule->call(function () {
-            $redis = Redis::connection();
+        $schedule->call('update:buttons')->everyFifteenMinutes();
+        $schedule->call('update:visits')->everyTenMinutes();
+    }
 
-            $today_visits = DB::select('select visitors from daily_visits where `date` = :date',
-                ['date' => date('Y-m-d')])[0]->visitors;
+    /**
+     * Register the commands for the application.
+     *
+     * @return void
+     */
+    protected function commands()
+    {
+        $this->load(__DIR__.'/Commands');
 
-            if ($today_visits == null) {
-                $current_visits = $redis->get(date('Y-m-d'));
-
-                if ($current_visits == null) {
-                    $current_visits = 0;
-                }
-
-                DB::insert('insert into daily_visits (date, visitors) values (:date, :visitors)',
-                    ['date' => date('Y-m-d'), 'visitors' => $current_visits]);
-
-                $redis->set(date('Y-m-d'), 0);
-            } else {
-                $current_visits = $redis->get(date('Y-m-d'));
-
-                if ($current_visits == null) {
-                    $current_visits = 0;
-                }
-
-                $visitors_sum = $current_visits + $today_visits;
-                $date = date('Y-m-d');
-
-                DB::update('update daily_visits set `visitors` = :visitors where `date` = :date',
-                    ['date' => $date, 'visitors' => ($visitors_sum)]);
-
-                $redis->set(date('Y-m-d'), 0);
-            }
-        })->everyTenMinutes();
-
-        $schedule->call(function () {
-            $redis = Redis::connection();
-
-            $button_keys = $redis->keys('*btn*');
-
-            foreach ($button_keys as $button_key) {
-                $button_event = json_decode($redis->get($button_key));
-                var_dump($button_event->timestamp);
-
-                DB::insert('insert into button_events (`timestamp`, button_id, user_ip, href, location)
-                            values (:timestamp, :button_id, :user_ip, :href, :location )',
-                    ['timestamp' => $button_event->timestamp,
-                        'button_id' => $button_event->btn_id,
-                        'user_ip' => $button_event->user_ip,
-                        'href' => $button_event->href,
-                        'location' => $button_event->location]);
-
-                $redis->del($button_key);
-            }
-
-        })->everyFifteenMinutes();
+        require base_path('routes/console.php');
     }
 }
