@@ -119,7 +119,7 @@ class SlideTableSeeder extends Seeder
             [
                 'model_id' => 2,
                 'type_id' => 7,
-                'class' => 'vesta_1',
+                'class' => 'vesta_sw',
                 'title' => 'LADA Vesta SW',
                 'reduction' => 'SW',
                 'subtitle' => 'динамический дизайн<br> и вместительность',
@@ -128,7 +128,7 @@ class SlideTableSeeder extends Seeder
             [
                 'model_id' => 2,
                 'type_id' => 8,
-                'class' => 'vesta_2',
+                'class' => 'vesta_sw_cross',
                 'title' => 'LADA Vesta SW Cross',
                 'reduction' => 'SW Cross',
                 'subtitle' => 'динамический дизайн<br> и вместительность',

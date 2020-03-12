@@ -11,11 +11,21 @@
 |
 */
 
+//use Spatie\Sitemap\SitemapGenerator;
+
 /*Route::get('/', function () {
     return view('welcome');
 });*/
 
+
+/*Route::any('/sitemap.xml', function() {
+    ini_set('max_execution_time', 500);
+    SitemapGenerator::create(config('app.url'))->setConcurrency(1)->writeToFile("sitemap.xml");
+    return 'completed';
+});*/
+
 Auth::routes();
+
 Route::middleware(['auth', 'cookie.check', 'counter'])->group(function () {
     Route::get('/{city?}', 'HomeController@index')->name('index');
     Route::get('/{city?}/special_offers', 'HomeController@special_offers')->name('special_offers');
@@ -31,6 +41,3 @@ Route::middleware(['auth', 'cookie.check', 'counter'])->group(function () {
     Route::any('/send_contact_form', 'ContactFormController@sendContactForm')->name('sendContactForm');
     Route::any('/check_visitor_cookie', 'ContactFormController@checkVisitorCookie')->name('checkVisitorCookie');
 });
-
-
-

@@ -477,6 +477,228 @@ class ColorTableSeeder extends Seeder
                 'class' => 'color-platina',
                 'is_active' => false
             ],
+            // Granta
+            // Drive active
+            [
+                'type_id' => 5,
+                'model_id' => 1,
+                'title' => 'Белое облако',
+                'image' => '/build/images/colors/lada/granta/drive_active/granta_drive_active_white_apple.png',
+                'class' => 'color-white-cloud',
+                'is_active' => true
+            ],
+            [
+                'type_id' => 5,
+                'model_id' => 1,
+                'title' => 'Пантера',
+                'image' => '/build/images/colors/lada/granta/drive_active/granta_drive_active_panther.png',
+                'class' => 'color-panther',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 5,
+                'model_id' => 1,
+                'title' => 'Сердолик',
+                'image' => '/build/images/colors/lada/granta/drive_active/granta_drive_active_cornelian.png',
+                'class' => 'color-red-cornelian',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 5,
+                'model_id' => 1,
+                'title' => 'Голубая планета',
+                'image' => '/build/images/colors/lada/granta/drive_active/granta_drive_active_blue_planet.png',
+                'class' => 'color-blue-planet',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 5,
+                'model_id' => 1,
+                'title' => 'Рислинг',
+                'image' => '/build/images/colors/lada/granta/drive_active/granta_drive_active_riesling.png',
+                'class' => 'color-riesling',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 5,
+                'model_id' => 1,
+                'title' => 'Техно',
+                'image' => '/build/images/colors/lada/granta/drive_active/granta_drive_active_techno.png',
+                'class' => 'color-techno',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 5,
+                'model_id' => 1,
+                'title' => 'Борнео',
+                'image' => '/build/images/colors/lada/granta/drive_active/granta_drive_active_borneo.png',
+                'class' => 'color-borneo-dark',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 5,
+                'model_id' => 1,
+                'title' => 'Кориандр',
+                'image' => '/build/images/colors/lada/granta/drive_active/granta_drive_active_coriander.png',
+                'class' => 'color-coriander',
+                'is_active' => false
+            ],
+            // Vesta
+            // SW
+            [
+                'type_id' => 7,
+                'model_id' => 2,
+                'title' => 'Ледниковый',
+                'image' => '/build/images/colors/lada/vesta/sw/vesta_sw_lednikovyy.png',
+                'class' => 'color-white-glacial',
+                'is_active' => true
+            ],
+            [
+                'type_id' => 7,
+                'model_id' => 2,
+                'title' => 'Сердолик',
+                'image' => '/build/images/colors/lada/vesta/sw/vesta_sw_serdolyk.png',
+                'class' => 'color-red-cornelian',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 7,
+                'model_id' => 2,
+                'title' => 'Ангкор',
+                'image' => '/build/images/colors/lada/vesta/sw/vesta_sw_angkor.png',
+                'class' => 'color-angkor',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 7,
+                'model_id' => 2,
+                'title' => 'Карфаген',
+                'image' => '/build/images/colors/lada/vesta/sw/vesta_sw_karfagen.png',
+                'class' => 'color-carfagen',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 7,
+                'model_id' => 2,
+                'title' => 'Дайвинг',
+                'image' => '/build/images/colors/lada/vesta/sw/vesta_sw_dayving.png',
+                'class' => 'color-daiving',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 7,
+                'model_id' => 2,
+                'title' => 'Фантом',
+                'image' => '/build/images/colors/lada/vesta/sw/vesta_sw_fantom.png',
+                'class' => 'color-phantom',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 7,
+                'model_id' => 2,
+                'title' => 'Плутон',
+                'image' => '/build/images/colors/lada/vesta/sw/vesta_sw_pluton.png',
+                'class' => 'color-pluton',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 7,
+                'model_id' => 2,
+                'title' => 'Маэстро',
+                'image' => '/build/images/colors/lada/vesta/sw/vesta_sw_maestro.png',
+                'class' => 'color-maestro',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 7,
+                'model_id' => 2,
+                'title' => 'Платина',
+                'image' => '/build/images/colors/lada/vesta/sw/vesta_sw_platina.png',
+                'class' => 'color-platina',
+                'is_active' => false
+            ],
+            // Vesta
+            // SW CROSS
+            [
+                'type_id' => 8,
+                'model_id' => 2,
+                'title' => 'Ледниковый',
+                'image' => '/build/images/colors/lada/vesta/sw_cross/vesta_sw_cross_lednikovyy.png',
+                'class' => 'color-white-glacial',
+                'is_active' => true
+            ],
+            [
+                'type_id' => 8,
+                'model_id' => 2,
+                'title' => 'Марс',
+                'image' => '/build/images/colors/lada/vesta/sw_cross/vesta_sw_cross_mars.png',
+                'class' => 'color-red-mars',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 8,
+                'model_id' => 2,
+                'title' => 'Сердолик',
+                'image' => '/build/images/colors/lada/vesta/sw_cross/vesta_sw_cross_serdolyk.png',
+                'class' => 'color-red-cornelian',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 8,
+                'model_id' => 2,
+                'title' => 'Ангкор',
+                'image' => '/build/images/colors/lada/vesta/sw_cross/vesta_sw_cross_angkor.png',
+                'class' => 'color-angkor',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 8,
+                'model_id' => 2,
+                'title' => 'Карфаген',
+                'image' => '/build/images/colors/lada/vesta/sw_cross/vesta_sw_cross_karfagen.png',
+                'class' => 'color-carfagen',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 8,
+                'model_id' => 2,
+                'title' => 'Дайвинг',
+                'image' => '/build/images/colors/lada/vesta/sw_cross/vesta_sw_cross_dayving.png',
+                'class' => 'color-daiving',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 8,
+                'model_id' => 2,
+                'title' => 'Фантом',
+                'image' => '/build/images/colors/lada/vesta/sw_cross/vesta_sw_cross_fantom.png',
+                'class' => 'color-phantom',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 8,
+                'model_id' => 2,
+                'title' => 'Плутон',
+                'image' => '/build/images/colors/lada/vesta/sw_cross/vesta_sw_cross_pluton.png',
+                'class' => 'color-pluton',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 8,
+                'model_id' => 2,
+                'title' => 'Маэстро',
+                'image' => '/build/images/colors/lada/vesta/sw_cross/vesta_sw_cross_maestro.png',
+                'class' => 'color-maestro',
+                'is_active' => false
+            ],
+            [
+                'type_id' => 8,
+                'model_id' => 2,
+                'title' => 'Платина',
+                'image' => '/build/images/colors/lada/vesta/sw_cross/vesta_sw_cross_platina.png',
+                'class' => 'color-platina',
+                'is_active' => false
+            ],
         ];
 
         DB::table('colors')->insert($colors);
