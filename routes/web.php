@@ -11,24 +11,22 @@
 |
 */
 
-use Spatie\Sitemap\SitemapGenerator;
+//use Spatie\Sitemap\SitemapGenerator;
 
 /*Route::get('/', function () {
     return view('welcome');
 });*/
 
 
-Route::any('/sitemap.xml', function() {
+/*Route::any('/sitemap.xml', function() {
     ini_set('max_execution_time', 500);
     SitemapGenerator::create(config('app.url'))->setConcurrency(1)->writeToFile("sitemap.xml");
     return 'completed';
-});
+});*/
 
 Auth::routes();
 
-Route::middleware([ 'cookie.check', 'counter'])->group(function () {
-
-
+Route::middleware(['auth', 'cookie.check', 'counter'])->group(function () {
     Route::get('/{city?}', 'HomeController@index')->name('index');
     Route::get('/{city?}/special_offers', 'HomeController@special_offers')->name('special_offers');
     Route::get('/{city?}/{car_model}/{car_type}', 'HomeController@model')->name('model');
@@ -42,10 +40,4 @@ Route::middleware([ 'cookie.check', 'counter'])->group(function () {
     Route::get('/get_brands', 'HomeController@get_brands')->name('get_brands');
     Route::any('/send_contact_form', 'ContactFormController@sendContactForm')->name('sendContactForm');
     Route::any('/check_visitor_cookie', 'ContactFormController@checkVisitorCookie')->name('checkVisitorCookie');
-});
-
-Route::any('/sitemap.xml', function() {
-    ini_set('max_execution_time', 300);
-    SitemapGenerator::create('http://localhost:8080')->setConcurrency(1)->writeToFile("sitemap.xml");
-    return 'completed';
 });
