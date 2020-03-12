@@ -8,7 +8,7 @@
         <main-hooper-component :city="'{{$city}}'"></main-hooper-component>
     </section>
     <body>
-   {{-- <script>{{$cities['active']['begin_script']}}</script>--}}
+    {!! html_entity_decode($cities['active']['begin_script']) !!}
     <div class="container">
         <div id="advantages" class="advantages_wrap">
             <h1>Брайт Парк</h1>
@@ -47,7 +47,7 @@
             <ul>
                 @foreach ($models as $model)
                     <li>
-                        <a href="{{ route('model', ['city' => $city, 'car_model' => $model->slug, 'car_type' => $model->types_preview[0]->slug])}}">
+                        <a id="model_link" class="event" href="{{ route('model', ['city' => $city, 'car_model' => $model->slug, 'car_type' => $model->types_preview[0]->slug])}}">
                             <div class="img_wrap">
                                 <img src="{{ $model->preview }}" alt="{{ $model->title }}">
                             </div>
@@ -68,5 +68,6 @@
        </div>
        <yandex-map-component :coordinates='@json($data['coordinates'])'></yandex-map-component>
    </footer>
+    <event-handler-component></event-handler-component>
     </body>
 @endsection

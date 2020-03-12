@@ -67,8 +67,8 @@
                 <div class="product-content">
                     <p class="title-tagline bold">Обмен на LADA Vesta выше рыночной<br> цены</p>
                     <div class="item-buttons">
-                        <a :href="city + '/granta/sedan'" class="btn btn-primary">Подробнее о модели</a>
-                        <a :href="city + '/granta/sedan/model_details'" class="btn btn-secondary">Условия акции</a>
+                        <a id="model_details" :href="city + '/granta/sedan'" class="btn btn-primary event">Подробнее о модели</a>
+                        <a id="offer_conditions" :href="city + '/granta/sedan/model_details'" class="btn btn-secondary event">Условия акции</a>
                     </div>
                 </div>
             </slide>

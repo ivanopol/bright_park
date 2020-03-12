@@ -5,16 +5,16 @@
         </div>
         <ul>
             <li>
-                <a class="btn" href="#" v-on:click.prevent="show()">Записаться на тест-драйв</a>
+                <a id="form_test_drive_model" class="btn event" href="#" v-on:click.prevent="show()">Записаться на тест-драйв</a>
             </li>
             <li>
-                <a class="btn" :href="this.link + '/model_details'">Рассчитать кредит</a>
+                <a id="count_payment" class="btn event" :href="this.link + '/model_details'">Рассчитать кредит</a>
             </li>
             <li>
-                <a class="btn" :href="this.link + '/model_details'">Оценить свой автомобиль</a>
+                <a id="estimate_car" class="btn event" :href="this.link + '/model_details'">Оценить свой автомобиль</a>
             </li>
             <li>
-                <a class="btn" href="#" v-on:click.prevent="show()">Получить спецпредложение</a>
+                <a id="get_offer" class="btn event" href="#" v-on:click.prevent="show()">Получить спецпредложение</a>
             </li>
         </ul>
         <modal name="form-callback"   height="auto">
@@ -23,7 +23,6 @@
         </modal>
     </section>
 </template>
-
 
 <script>
     export default {

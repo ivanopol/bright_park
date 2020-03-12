@@ -3,21 +3,21 @@
         <div id="layout" :class="{ active: layout }" @click="close"></div>
         <section id="panel" >
             <ul :class="theme">
-                <li class="menu-wrap" @click="toggleMenu">
+                <li id="bar_menu" class="menu-wrap event" @click="toggleMenu">
                     <icon-menu ></icon-menu>
                     <span>Меню</span>
                 </li>
-                <li class="call-wrap" @click="toggleCall">
+                <li id="bar_call" class="call-wrap event" @click="toggleCall">
                     <a :href="'tel:' + this.phone">
                     <icon-call></icon-call>
                     <span>Звонок</span>
                     </a>
                 </li>
-                <li class="route-map" @click="toggleMapWindow">
+                <li id="bar_route" class="route-map event" @click="toggleMapWindow">
                     <icon-route></icon-route>
                     <span>Маршрут</span>
                 </li>
-                <li class="chat-wrap" @click="toggleJivo">
+                <li id="bar_chat" class="chat-wrap event" @click="toggleJivo">
                     <icon-chat ></icon-chat>
                     <span>Чат</span>
                 </li>
@@ -40,7 +40,7 @@
         <section id="menu" :class="{ active: open }">
             <div class="close" @click="close"></div>
             <div class="menu_wrap">
-                <v-select class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Выбрать город" taggable
+                <v-select id="bar_menu_select_city" class="select_wrap event" :components="{OpenIndicator, Deselect}" placeholder="Выбрать город" taggable
                           :options="cities.list" :searchable="false" v-model="cities.active" @input="selected">
                     <div class="spinner">Загрузка...</div>
                     <div slot="no-options">Нет совпадений</div>
@@ -49,7 +49,7 @@
                 <div class="models_wrap">
                     <ul class="">
                         <li v-for="model in models" v-bind:key="model.id">
-                            <a :href="'/' + cities.active.value + '/' + model.slug + '/' + model.types_preview[0].slug">
+                            <a id="bar_menu_city_link" class="event" :href="'/' + cities.active.value + '/' + model.slug + '/' + model.types_preview[0].slug">
                                 <div class="title" v-text="model.title"></div>
                             </a>
                         </li>
@@ -59,16 +59,16 @@
                 <div class="other_links">
                     <ul>
                         <li>
-                            <a :href="'/' + cities.active.value"><div class="title">Главная страница</div></a>
+                            <a id="bar_menu_main" :href="'/' + cities.active.value"><div class="title event">Главная страница</div></a>
                         </li>
                         <li>
-                            <a :href="'/' + cities.active.value + '/contacts'"><div class="title">Контакты</div></a>
+                            <a id="bar_menu_contacts" :href="'/' + cities.active.value + '/contacts'"><div class="title event">Контакты</div></a>
                         </li>
                         <li>
-                            <a :href="'/' + cities.active.value + '/actions'"><div class="title">Акции</div></a>
+                            <a id="bar_menu_offers" :href="'/' + cities.active.value + '/actions'"><div class="title event">Акции</div></a>
                         </li>
                         <li>
-                            <a :href="'/' + cities.active.value + '/news'"><div class="title">Новости</div></a>
+                            <a id="bar_menu_news" :href="'/' + cities.active.value + '/news'"><div class="title event">Новости</div></a>
                         </li>
                     </ul>
                 </div>
@@ -145,7 +145,7 @@ export default {
                     jivo_api.close();
                 }
                 this.open = !this.open;
-                this.layout = this.open ? true : false;
+                this.layout = this.open;
                 return this.open;
             },
             close: function() {
@@ -164,8 +164,8 @@ export default {
                 if (typeof jivo_api !== "undefined" && jivo_api !== null) {
                     jivo_api.close();
                 }
-                this.openMap = !this.openMap
-                this.layout = this.openMap ? true : false;
+                this.openMap = !this.openMap;
+                this.layout = this.openMap;
                 return this.openMap;
             },
             toggleCall: function() {

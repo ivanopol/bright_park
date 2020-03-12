@@ -1,7 +1,7 @@
 <template>
     <section>
         <div class="route-button-wrap">
-            <a class="btn" v-on:click="createRoute">Проложить маршрут</a>
+            <a id="create_route" class="btn event" v-on:click="createRoute">Проложить маршрут</a>
         </div>
         <div class="map-wrapper">
             <div id="map" class="map"></div>
@@ -12,6 +12,7 @@
 <script>
     export default {
         name: "YandexMapComponent",
+        mixins: ['sendEvent'],
         props: ['coordinates'],
         data: () => ({
             geolocation: null,
@@ -21,12 +22,11 @@
             routeExist: false
         }),
         methods: {
-            createRoute () {
-
-                if(!this.routeExist){
+            createRoute() {
+                if (!this.routeExist) {
                     let _self = this;
 
-                    function success(position){
+                    function success(position) {
                         const latitude = position.coords.latitude;
                         const longitude = position.coords.longitude;
 
@@ -35,7 +35,7 @@
 
                     async function error(e) {
 
-                        const res = await fetch('https://location.services.mozilla.com/v1/geolocate?key=test').then(el=>el.json());
+                        const res = await fetch('https://location.services.mozilla.com/v1/geolocate?key=test').then(el => el.json());
                         const point = [res.location.lat, res.location.lng];
 
                         addUserLocation(point);
@@ -79,7 +79,7 @@
                         _self.routeExist = true;
                     }
                 }
-            }
+            },
         },
 
         mounted() {
@@ -121,7 +121,7 @@
     }
 </script>
 
-<style lang="scss" >
+<style lang="scss">
     .route-button-wrap {
         padding-bottom: 50px;
         text-align: center
@@ -132,20 +132,20 @@
         height: 100%;
     }
 
-    .map-wrapper{
+    .map-wrapper {
         width: 100vw;
         height: 300px;
     }
 
     @media only screen and (min-width: 580px) {
-        .map-wrapper{
+        .map-wrapper {
             width: 100vw;
             height: 450px;
         }
     }
 
     @media only screen and (min-width: 1367px) {
-        .map-wrapper{
+        .map-wrapper {
             width: 100vw;
             margin: 0 auto;
             height: 550px;

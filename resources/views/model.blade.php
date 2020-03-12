@@ -5,7 +5,7 @@
     <header-sticky-component :theme="'light'" :city="'{{$city}}'" :button=true :car='@json($data['slider']['slides'])'></header-sticky-component>
     <header-component :line="true" :theme="'light'" :city="'{{$city}}'" :car='@json($data['slider']['slides'])'></header-component>
     <body>
-    {{$cities['active']['begin_script']}}
+    {!! html_entity_decode($cities['active']['begin_script']) !!}
     </body>
     <div class="">
         <hooper-component :data='@json($data['slider'])'></hooper-component>
@@ -46,5 +46,6 @@
             </div>
             <yandex-map-component :coordinates='@json($data['coordinates'])'></yandex-map-component>
         </footer>
+        <event-handler-component></event-handler-component>
     </div>
 @endsection

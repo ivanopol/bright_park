@@ -2,26 +2,26 @@
     <section id="classified">
         <div class="option-text">Оцените свой автомобиль</div>
         <div class="dropdown-group">
-            <v-select class="select_wrap" :class="{ active : step_one }" :components="{OpenIndicator, Deselect}" :searchable=false placeholder="Марка"
+            <v-select :id="'select_make'" class="select_wrap event" :class="{ active : step_one }" :components="{OpenIndicator, Deselect}" :searchable=false placeholder="Марка"
                       taggable
                       :options="brands" v-on:input="stepOne" v-model="selected_brand">
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
-            <v-select :disabled="!step_one" class="select_wrap" :class="{ active : step_two }" :searchable=false
+            <v-select id="select_model" :disabled="!step_one" class="select_wrap event" :class="{ active : step_two }" :searchable=false
                       :components="{OpenIndicator, Deselect}" placeholder="Модель" v-on:input="stepTwo" taggable
                       :options="models" v-model="selected_model">
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
-            <v-select :disabled="!step_two" class="select_wrap" :class="{ active : step_three }" :components="{OpenIndicator, Deselect}"
+            <v-select id="select_gen" :disabled="!step_two" class="select_wrap event" :class="{ active : step_three }" :components="{OpenIndicator, Deselect}"
                       :searchable=false
                       placeholder="Комплектация"
                       taggable :options="modifications" v-on:input="stepThree" v-model="selected_tech_param_id">
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
-            <v-select :disabled="!step_three" class="select_wrap" :class="{ active : step_four }" :components="{OpenIndicator, Deselect}"
+            <v-select id="select_year" :disabled="!step_three" class="select_wrap event" :class="{ active : step_four }" :components="{OpenIndicator, Deselect}"
                       :searchable=false
                       placeholder="Год выпуска"
                       v-on:input="stepFour"
@@ -29,7 +29,7 @@
                 <div class="spinner" v-show="mutableLoading">Загрузка...</div>
                 <div slot="no-options">Нет совпадений</div>
             </v-select>
-            <v-select :disabled="!step_four" class="select_wrap" :class="{ active : step_five }" :components="{OpenIndicator, Deselect}"
+            <v-select id="select_kmage" :disabled="!step_four" class="select_wrap event" :class="{ active : step_five }" :components="{OpenIndicator, Deselect}"
                       :searchable=false
                       placeholder="Пробег" taggable
                       :options="mileage" v-on:input="stepFive" v-model="selected_mileage">
@@ -58,7 +58,7 @@
 
         <section id="count_button" class="buttons_other mt-20">
             <div class="item-buttons-other">
-                <button v-on:click="showPrices" class="btn btn-primary">Рассчитать стоимость</button>
+                <button id="show_estimate" v-on:click="showPrices" class="btn btn-primary event">Рассчитать стоимость</button>
             </div>
         </section>
 
@@ -184,7 +184,6 @@
                 }
                 this.step_one = true;
                 this.selected_brand = input;
-
             },
 
             stepTwo: function (input) {
