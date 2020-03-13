@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\CarModel;
 use App\CarType;
 use App\City;
+use App\News;
 
 class RouteServiceProvider extends ServiceProvider
 {

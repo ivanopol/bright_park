@@ -1734,6 +1734,9 @@ footer {
                 width: 59%;
                 .new-text {
                     padding-top: 0;
+                    p {
+                        margin-bottom: 15px;
+                    }
                 }
 
                 .new-button {
@@ -1744,5 +1747,44 @@ footer {
             }
         }
     }
+
+    .news-one {
+        margin-bottom: 80px;
+        &-img {
+            width: 100%;
+            img {
+                width: 100%;
+            }
+        }
+
+        &-body {
+            padding: 30px;
+            line-height: 1.4;
+
+            p {
+                margin-bottom: 15px;
+            }
+        }
+
+        @media only screen and (min-width: 700px) {
+            &-img {
+                img {
+                    max-width: 650px;
+                    margin: 0 auto;
+                    display: block;
+                }
+            }
+
+            &-body {
+                padding: 30px 0;
+                max-width: 650px;
+                margin: 0 auto;
+                p {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
 }
+
 
