@@ -4,25 +4,24 @@
 namespace App\Http\Controllers;
 
 
-use Illuminate\Support\Facades\Redis;
+use App\Services\EventHandlerService;
 use Illuminate\Http\Request;
+
+
+/**
+ * @property EventHandlerService event_handler_service
+ */
 
 class EventController extends Controller
 {
+    public function __construct(EventHandlerService $eventHandlerService)
+    {
+        $this->event_handler_service = $eventHandlerService;
+    }
+
     public function write_event(Request $request)
     {
-        $content = json_decode($request->getContent());
-
-        $event = [
-            'location' => $content->location,
-            'href' => $content->href,
-            'btn_id' => $content->btn_id,
-            'user_ip' => $_SERVER['REMOTE_ADDR'],
-            'timestamp' => date("Y-m-d H:i:s")
-        ];
-
-        Redis::set('btn_event_'.$_SERVER['REMOTE_ADDR'].'_'. $content->btn_id.'_'. date("Y-m-d H:i:s"), json_encode($event));
-
+        $this->event_handler_service->handle_event(json_decode($request->getContent()));
         return \Response::noContent();
     }
 }

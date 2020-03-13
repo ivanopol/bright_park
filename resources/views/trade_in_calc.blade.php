@@ -85,6 +85,7 @@
                     </div>
                 </div>
             </div>
+            <scroll-event-handler-component></scroll-event-handler-component>
             <event-handler-component></event-handler-component>
         </section>
     </div>

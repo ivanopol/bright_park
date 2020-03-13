@@ -36,7 +36,8 @@
                     'btn_id': this.getAttribute("id"),
                     'href': this.getAttribute("href"),
                     'location': window.location.pathname,
-                    'timestamp': new Date().toISOString()
+                    'timestamp': new Date().toISOString(),
+                    'event_type': 'button'
                 };
 
                 await self.sendData(data, this.getAttribute('href'));
