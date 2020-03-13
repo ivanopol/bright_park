@@ -168,7 +168,7 @@ class HomeController extends Controller
         $cities = $city->getCities($this->city);
         $models = CarModel::with('types_preview')->get();
 
-        $data = [];
+        $data['coordinates'] = explode(",", $city['coordinates']);
 
         $news = News::all();
 
@@ -199,8 +199,10 @@ class HomeController extends Controller
 
         $cities = $city->getCities($this->city);
         $models = CarModel::with('types_preview')->get();
+        $data['coordinates'] = explode(",", $city['coordinates']);
 
         return view('news_one', [
+            'data' => $data,
             'news'=> $news_title,
             'city'=>$this->city,
             'cities' => $cities,
