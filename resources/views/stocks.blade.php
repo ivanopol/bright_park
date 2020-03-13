@@ -7,21 +7,21 @@
     <body>
         {!! html_entity_decode($cities['active']['begin_script']) !!}
         <div class="container p-top-90">
-            <div class="news">
-                <h1>Новости Брайт Парка в {{ $city_info->city_dative  }} </h1>
-                @foreach($news as $new)
-                    <div class="news-row">
-                        <a href="{{ route('news.one', ['city' => $city_info->alias, 'news_title' => $new->slug]) }}" class="news-title">{{$new->title}}</a>
-                        <div class="news-content">
-                            <div class="news-img">
-                                <a href="{{ route('news.one', ['city' => $city_info->alias, 'news_title' => $new->slug]) }}">
-                                    <img  src="{{$new->preview}}" alt="{{$new->text_short}}">
+            <div class="stocks">
+                <h1>Акции Брайт Парка в {{ $city_info->city_dative  }} </h1>
+                @foreach($stocks as $stock)
+                    <div class="stocks-row">
+                        <a href="{{ route('stocks.one', ['city' => $city_info->alias, 'stocks_title' => $stock->slug]) }}" class="stocks-title">{{$stock->title}}</a>
+                        <div class="stocks-content">
+                            <div class="stocks-img">
+                                <a href="{{ route('stocks.one', ['city' => $city_info->alias, 'stocks_title' => $stock->slug]) }}">
+                                    <img  src="{{$stock->preview}}" alt="{{$stock->text_short}}">
                                 </a>
                             </div>
-                            <div class="news-text-wrap">
-                                <div class="news-text">{!! $new->text_short !!}</div>
-                                <div class="news-button">
-                                    <a href="{{ route('news.one', ['city' => $city_info->alias, 'news_title' => $new->slug]) }}" class="btn btn-primary">Читать</a>
+                            <div class="stocks-text-wrap">
+                                <div class="stocks-text">{!! $stock->text_short !!}</div>
+                                <div class="stocks-button">
+                                    <a href="{{ route('stocks.one', ['city' => $city_info->alias, 'stocks_title' => $stock->slug]) }}" class="btn btn-primary">Читать</a>
                                 </div>
                             </div>
                         </div>

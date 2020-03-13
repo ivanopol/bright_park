@@ -65,7 +65,7 @@
                             <a id="bar_menu_contacts" :href="'/' + cities.active.value + '/contacts'" class="event"><div class="title">Контакты</div></a>
                         </li>
                         <li>
-                            <a id="bar_menu_offers" :href="'/' + cities.active.value + '/actions'" class="event"><div class="title">Акции</div></a>
+                            <a id="bar_menu_offers" :href="'/' + cities.active.value + '/stocks'" class="event"><div class="title">Акции</div></a>
                         </li>
                         <li>
                             <a id="bar_menu_news" :href="'/' + cities.active.value + '/news'" class="event"><div class="title">Новости</div></a>

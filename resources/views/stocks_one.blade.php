@@ -7,14 +7,14 @@
     <body>
         {!! html_entity_decode($cities['active']['begin_script']) !!}
         <div class="container p-top-90">
-            <div class="news">
-                <h1>{{ $news->title }}</h1>
-                <div class="news-one">
-                    <div class="news-one-img">
-                        <img  src="{{$news->preview}}" alt="{{$news->text_short}}">
+            <div class="stocks-wrapper">
+                <h1>{{ $stocks->title }}</h1>
+                <div class="stocks-one">
+                    <div class="stocks-one-img">
+                        <img  src="{{$stocks->preview}}" alt="{{$stocks->text_short}}">
                     </div>
-                    <div class="news-one-body">
-                        {!! $news->text !!}
+                    <div class="stocks-one-body">
+                        {!! $stocks->text !!}
                     </div>
                 </div>
             </div>

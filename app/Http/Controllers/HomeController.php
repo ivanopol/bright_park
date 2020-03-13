@@ -13,6 +13,7 @@ use App\CarType;
 use App\City;
 use App\Retarget;
 use App\News;
+use App\Stocks;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Redis;
 
@@ -209,4 +210,64 @@ class HomeController extends Controller
             'models' => $models,
         ]);
     }
+
+    /**
+     * Страница вывода списка акций
+     *
+     * @param City|null $city
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     */
+    public function stocks(City $city = null) {
+
+        if ($city['alias']) {
+            $this->city = $city['alias'];
+        } else {
+            return redirect()->route('stocks', ['city' => $this->city]);
+        }
+
+        $cities = $city->getCities($this->city);
+        $models = CarModel::with('types_preview')->get();
+
+        $data['coordinates'] = explode(",", $city['coordinates']);
+
+        $stocks = Stocks::whereIn('city_id', [0, $city['id']])->orderBy('id', 'desc')->get();
+
+        return view('stocks', [
+            'data'=>$data,
+            'city'=>$this->city,
+            'city_info' => $city,
+            'cities' => $cities,
+            'models' => $models,
+            'stocks' => $stocks,
+        ]);
+    }
+
+    /**
+     * Страница акции
+     *
+     * @param City|null $city
+     * @param Stocks $stocks_title
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     */
+    public function stocks_details(City $city = null, Stocks $stocks_title) {
+
+        if ($city['alias']) {
+            $this->city = $city['alias'];
+        } else {
+            return redirect()->route('stocks_details', ['city' => 'perm']);
+        }
+
+        $cities = $city->getCities($this->city);
+        $models = CarModel::with('types_preview')->get();
+        $data['coordinates'] = explode(",", $city['coordinates']);
+
+        return view('stocks_one', [
+            'data' => $data,
+            'stocks'=> $stocks_title,
+            'city'=>$this->city,
+            'cities' => $cities,
+            'models' => $models,
+        ]);
+    }
+
 }
