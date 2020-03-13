@@ -59,16 +59,16 @@
                 <div class="other_links">
                     <ul>
                         <li>
-                            <a id="bar_menu_main" :href="'/' + cities.active.value"><div class="title event">Главная страница</div></a>
+                            <a id="bar_menu_main" :href="'/' + cities.active.value" class="event"><div class="title">Главная страница</div></a>
                         </li>
                         <li>
-                            <a id="bar_menu_contacts" :href="'/' + cities.active.value + '/contacts'"><div class="title event">Контакты</div></a>
+                            <a id="bar_menu_contacts" :href="'/' + cities.active.value + '/contacts'" class="event"><div class="title">Контакты</div></a>
                         </li>
                         <li>
-                            <a id="bar_menu_offers" :href="'/' + cities.active.value + '/actions'"><div class="title event">Акции</div></a>
+                            <a id="bar_menu_offers" :href="'/' + cities.active.value + '/stocks'" class="event"><div class="title">Акции</div></a>
                         </li>
                         <li>
-                            <a id="bar_menu_news" :href="'/' + cities.active.value + '/news'"><div class="title event">Новости</div></a>
+                            <a id="bar_menu_news" :href="'/' + cities.active.value + '/news'" class="event"><div class="title">Новости</div></a>
                         </li>
                     </ul>
                 </div>

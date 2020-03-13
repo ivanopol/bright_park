@@ -12,6 +12,8 @@ use App\CarModel;
 use App\CarType;
 use App\City;
 use App\Retarget;
+use App\News;
+use App\Stocks;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Redis;
 
@@ -29,7 +31,7 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Главная страница
      *
      * @param City|null $city
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
@@ -50,6 +52,13 @@ class HomeController extends Controller
         return view('home', ['data' =>  $data, 'models' => $models, 'city' => $this->city, 'cities' => $cities]);
     }
 
+    /**
+     * Ретаргетинговая страница
+     *
+     * @param City|null $city
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     */
     public function special_offers(City $city = null, Request $request)
     {
         if ($city['alias']) {
@@ -70,12 +79,12 @@ class HomeController extends Controller
     }
 
     /**
-     * Show first version of design.
+     * Страница модели
      *
      * @param City|null $city
      * @param CarModel $car_model
      * @param CarType $car_type
-     * @return mixed
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
     public function model(City $city = null, CarModel $car_model, CarType $car_type)
     {
@@ -98,6 +107,14 @@ class HomeController extends Controller
         return view('model', [ 'data' => $data, 'models' => $models, 'city' => $this->city, 'cities' => $cities]);
     }
 
+    /**
+     * Сбытовая страница
+     *
+     * @param City|null $city
+     * @param CarModel $car_model
+     * @param CarType $car_type
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     */
     public function model_details(City $city = null, CarModel $car_model, CarType $car_type)
     {
         if ($city['alias']) {
@@ -135,38 +152,122 @@ class HomeController extends Controller
         ]);
     }
 
-    public function trade_in_calc(City $city = null, CarModel $car_model, CarType $car_type)
-    {
-        if ($city['alias']) {
-            $this->city = $city['alias'];
-        } else {
-            return redirect()->route('trade_in_calc', ['city' => 'perm',
-                'car_model' => $car_model->slug,
-                'car_type' => $car_type->slug]);
-        }
-        return view('trade_in_calc', ['city' => 'perm', 'car_model' => $car_model->slug, 'car_type' => $car_type->slug]);
-    }
-
-    public function trade_in_credit(City $city = null, CarModel $car_model, CarType $car_type)
-    {
-        $data = ['city' => 'perm', 'car_model' => $car_model->slug, 'car_type' => $car_type->slug,
-            'car' =>
-                DB::select("select * from car_model_car_type where `car_model_id` = :car_model_id and `car_type_id` = :car_type_id",
-                    ['car_model_id'=>$car_model->getAttribute('id'), 'car_type_id'=>$car_type->getAttribute('id')])];
+    /**
+     * Страница вывода списка новостей
+     *
+     * @param City|null $city
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     */
+    public function news(City $city = null) {
 
         if ($city['alias']) {
             $this->city = $city['alias'];
         } else {
-            return redirect()->route('trade_in_calc', ['city' => 'perm',
-                'car_model' => $car_model->slug,
-                'car_type' => $car_type->slug]);
+            return redirect()->route('news', ['city' => $this->city]);
         }
 
-        return view('trade_in_credit', ['data'=>$data, 'city'=>$this->city]);
+        $cities = $city->getCities($this->city);
+        $models = CarModel::with('types_preview')->get();
+
+        $data['coordinates'] = explode(",", $city['coordinates']);
+
+        $news = News::whereIn('city_id', [0, $city['id']])->orderBy('id', 'desc')->get();
+
+        return view('news', [
+            'data'=>$data,
+            'city'=>$this->city,
+            'city_info' => $city,
+            'cities' => $cities,
+            'models' => $models,
+            'news' => $news,
+        ]);
     }
 
-    public function trade_in_cash()
-    {
-        return view('trade_in_cash');
+    /**
+     * Страница новости
+     *
+     * @param City|null $city
+     * @param News $news_title
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     */
+    public function news_details(City $city = null, News $news_title) {
+
+        if ($city['alias']) {
+            $this->city = $city['alias'];
+        } else {
+            return redirect()->route('news_details', ['city' => 'perm']);
+        }
+
+        $cities = $city->getCities($this->city);
+        $models = CarModel::with('types_preview')->get();
+        $data['coordinates'] = explode(",", $city['coordinates']);
+
+        return view('news_one', [
+            'data' => $data,
+            'news'=> $news_title,
+            'city'=>$this->city,
+            'cities' => $cities,
+            'models' => $models,
+        ]);
     }
+
+    /**
+     * Страница вывода списка акций
+     *
+     * @param City|null $city
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     */
+    public function stocks(City $city = null) {
+
+        if ($city['alias']) {
+            $this->city = $city['alias'];
+        } else {
+            return redirect()->route('stocks', ['city' => $this->city]);
+        }
+
+        $cities = $city->getCities($this->city);
+        $models = CarModel::with('types_preview')->get();
+
+        $data['coordinates'] = explode(",", $city['coordinates']);
+
+        $stocks = Stocks::whereIn('city_id', [0, $city['id']])->orderBy('id', 'desc')->get();
+
+        return view('stocks', [
+            'data'=>$data,
+            'city'=>$this->city,
+            'city_info' => $city,
+            'cities' => $cities,
+            'models' => $models,
+            'stocks' => $stocks,
+        ]);
+    }
+
+    /**
+     * Страница акции
+     *
+     * @param City|null $city
+     * @param Stocks $stocks_title
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     */
+    public function stocks_details(City $city = null, Stocks $stocks_title) {
+
+        if ($city['alias']) {
+            $this->city = $city['alias'];
+        } else {
+            return redirect()->route('stocks_details', ['city' => 'perm']);
+        }
+
+        $cities = $city->getCities($this->city);
+        $models = CarModel::with('types_preview')->get();
+        $data['coordinates'] = explode(",", $city['coordinates']);
+
+        return view('stocks_one', [
+            'data' => $data,
+            'stocks'=> $stocks_title,
+            'city'=>$this->city,
+            'cities' => $cities,
+            'models' => $models,
+        ]);
+    }
+
 }

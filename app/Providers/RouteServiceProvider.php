@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\CarModel;
 use App\CarType;
 use App\City;
+use App\News;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -38,6 +39,7 @@ class RouteServiceProvider extends ServiceProvider
         Route::model('city', City::class);
         Route::model('car_model', CarModel::class);
         Route::model('car_type', CarType::class);
+        Route::model('news_title', News::class);
     }
 
     /**
