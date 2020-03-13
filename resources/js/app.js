@@ -5,6 +5,8 @@
  */
 
 //require('./bootstrap');
+
+
 window.Vue = require('vue');
 //window.Vuex = require('vuex');
 //import Vuex from 'vuex';
@@ -47,6 +49,7 @@ Vue.component('modal-component', require('./components/elements/ModalComponent')
 Vue.component('modal-retarget-component', require('./components/elements/ModalRetargetComponent').default);
 Vue.component('next-action-component', require('./components/elements/NextActionComponent').default);
 Vue.component('event-handler-component', require('./components/EventHandlerComponent').default);
+Vue.component('scroll-event-handler-component', require('./components/ScrollEventHandlerComponent').default);
 
 /*const store = new Vuex.Store({
     state: {

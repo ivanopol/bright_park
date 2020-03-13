@@ -46,6 +46,7 @@
             </div>
             <yandex-map-component :coordinates='@json($data['coordinates'])'></yandex-map-component>
         </footer>
+        <scroll-event-handler-component></scroll-event-handler-component>
         <event-handler-component></event-handler-component>
     </div>
 @endsection

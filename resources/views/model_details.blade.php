@@ -34,6 +34,7 @@
                    :cities='@json($cities)'
             ></steps>
         </section>
+        <scroll-event-handler-component></scroll-event-handler-component>
         <event-handler-component></event-handler-component>
     </section>
 @endsection

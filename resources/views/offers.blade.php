@@ -64,6 +64,7 @@
         <form-retarget-component :cities='@json($cities)'></form-retarget-component>
         <modal-retarget-component :cities='@json($cities)'></modal-retarget-component>
     </div>
-
+    <scroll-event-handler-component></scroll-event-handler-component>
+    <event-handler-component></event-handler-component>
     </body>
 @endsection
