@@ -3,6 +3,8 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redis;
 
 class UpdateScrollEvents extends Command
 {
@@ -46,9 +48,9 @@ class UpdateScrollEvents extends Command
 
             $values = [
                 'timestamp' => $scroll_event->timestamp,
-                'position' => $scroll_event->btn_id,
+                'position' => $scroll_event->position,
                 'user_ip' => $scroll_event->user_ip,
-                'previous_position' => $scroll_event->href,
+                'previous_position' => $scroll_event->previous_position,
                 'location' => $scroll_event->location,
                 'page_height' => $scroll_event->page_height
             ];
