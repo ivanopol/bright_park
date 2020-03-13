@@ -170,7 +170,7 @@ class HomeController extends Controller
 
         $data['coordinates'] = explode(",", $city['coordinates']);
 
-        $news = News::all();
+        $news = News::whereIn('city_id', [0, $city['id']])->orderBy('id', 'desc')->get();
 
         return view('news', [
             'data'=>$data,
