@@ -12,6 +12,10 @@ class CountUniqueVisitors
     function handle($request, Closure $next)
     {
         $user_ip = $_SERVER['REMOTE_ADDR'];
+/*        $_ym_uid = $_COOKIE['bp_uuid'];
+        $yandex_i = $_COOKIE['i'];
+        $yandexuid = $_COOKIE['bp_uuid'];*/
+
         if (!isset($_COOKIE['visitor'])) {
             setcookie('visitor', $user_ip, time() + 60 * 60 * 24);
             if(Redis::exists(date('Y-m-d'))){
