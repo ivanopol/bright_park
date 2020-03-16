@@ -37,6 +37,8 @@
     <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
+    <meta name="format-detection" content="telephone=no">
+
     <link rel="canonical" href="">
 
     <!-- CSRF Token -->
