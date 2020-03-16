@@ -15,11 +15,11 @@ class CreateVisitorsTable extends Migration
     {
         Schema::create('visitors', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('ip');
+            $table->string('user_ip');
             $table->string('yandexuid');
             $table->string('yandex_i');
             $table->string('_ym_uid');
-            $table->string('bp_uuid');
+            $table->string('bp_uid');
             $table->timestamps();
         });
     }
