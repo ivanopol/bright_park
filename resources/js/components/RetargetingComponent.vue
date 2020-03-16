@@ -182,7 +182,7 @@
             color: white;
             text-align: center;
             height: 78%;
-            width: 100vw;
+            width: 100%;
             display: flex;
             justify-content: center;
 
@@ -342,7 +342,7 @@
                     padding-right: 50px;
 
                     .title-tagline {
-                        margin: 0 0 30px;
+                        margin: 30px 0;
                         width: 35%;
 
                         &.bold {
