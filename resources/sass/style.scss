@@ -347,6 +347,7 @@ form {
         margin-bottom: 20px;
         text-align: center;
         text-transform: uppercase;
+        padding: 0 30px;
     }
 }
 
@@ -573,6 +574,16 @@ footer {
         /*padding-top: 20px;*/
         font-family: PragmaticaLightCBold, Helvetica, sans-serif;
         font-size: 18px;
+    }
+
+    a {
+        width: 85%;
+    }
+
+    @media only screen and (min-width: 580px) {
+        a {
+            width: auto;
+        }
     }
 }
 

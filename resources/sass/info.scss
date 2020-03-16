@@ -200,10 +200,21 @@ $context: 375;
     }
 }
 
+.block-info-aside,
+.pointers_list {
+    display: none;
+}
+
 @media only screen and (max-width: 580px) {
+
     .pointers_wrap {
         position: relative;
         overflow: hidden;
+
+        .block-info-aside,
+        .pointers_list {
+            display: block;
+        }
 
         .pointers-1-2-1,
         .pointers-1-2-2,

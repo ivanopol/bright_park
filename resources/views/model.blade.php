@@ -26,7 +26,7 @@
         <section class="block block_5">
             <div class="block-text">
                 <h2><span class="c_orange">Гарантия</span> 3 года</h2>
-                <p>На&nbsp;вашу новенькую Лада {{ $data['model_full'] }} действует расширенная гарантия 3&nbsp;года.</p>
+                <p>На&nbsp;вашу новенькую LADA {{ $data['model_full'] }} действует расширенная гарантия 3&nbsp;года.</p>
             </div>
             <div class="photo_block container-max">
                 <div class="feedback">

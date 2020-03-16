@@ -9,7 +9,7 @@
             </span>
         </div>
         <div class="pointers_wrap" :id="point_id">
-            <div :v-if="data.pointers">
+            <div class="pointers_list" :v-if="data.pointers">
                 <ul :class="'pointers-' + model + '-' + type + '-' + data.pnum " >
                     <li v-for="n in data.pointers">
                         <span :class="'pointer p' + n" v-on:click="activate"></span>

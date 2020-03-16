@@ -50,7 +50,7 @@
 
             .btn {
                 font-family: PragmaticaLightC, Helvetica, sans-serif;
-                width: 85.51vw;
+                width: 85%;
                 border-radius: 50px;
                 padding: 14px 15px 10px;
             }
