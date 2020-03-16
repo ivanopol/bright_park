@@ -7,7 +7,8 @@
     <section class="main-screen">
         <main-hooper-component :city="'{{$city}}'"></main-hooper-component>
     </section>
-    <body>
+    <body class="event-scroll">
+    <scroll-event-handler-component></scroll-event-handler-component>
     {!! html_entity_decode($cities['active']['begin_script']) !!}
     <div class="container">
         <div id="advantages" class="advantages_wrap">
