@@ -142,7 +142,7 @@
             left: 0;
 
             p {
-                padding-top: 3.4%;
+                padding-top: 25px;
                 padding-right: 15px;
                 text-align: right;
                 font-weight: bold;

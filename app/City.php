@@ -114,7 +114,14 @@ class City extends Model
 
                 foreach($contacts_list as $contact) {
                     if ($city->id == $contact->city_id) {
-                        $cities['active']['phone'] = str_replace(' ', '', $contact->phone);
+                        $phone_tmp = str_replace(' ', '', $contact->phone);
+                        $phone_tmp = str_replace('+', '', $phone_tmp);
+                        $phone = preg_replace(
+                            '/^(\d)(\d{3})(\d{3})(\d{2})(\d{2})$/',
+                            '+\1 (\2) \3-\4-\5',
+                            (string) $phone_tmp
+                        );
+                        $cities['active']['phone'] = $phone;
                     }
                 }
             }

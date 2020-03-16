@@ -88,6 +88,13 @@ class BasePageService
             $slides = $slides[0];
         }
 
+        $model_full = '';
+        if (strtolower($car_model->title) === 'xray') {
+            $model_full = $car_model->title;
+        } else {
+            $model_full = $car_model->title . ' ' . $car_type->title_ru;
+        }
+
         $data = [
             'slider' => [
                 'slides_mini' => $slide_mini,
@@ -101,7 +108,7 @@ class BasePageService
             'type' => $car_type->title_ru,
             'model_id' => $car_model->id,
             'type_id' => $car_type->id,
-            'model_full' => $car_model->title . ' ' . $car_type->title_ru,
+            'model_full' => $model_full,
         ];
 
         return $data;

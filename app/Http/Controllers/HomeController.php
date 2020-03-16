@@ -270,4 +270,29 @@ class HomeController extends Controller
         ]);
     }
 
+    /**
+     * Страница контактов
+     *
+     * @param City $city
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function contacts(City $city) {
+        if ($city['alias']) {
+            $this->city = $city['alias'];
+        } else {
+            return redirect()->route('stocks_details', ['city' => 'perm']);
+        }
+
+        $cities = $city->getCities($this->city);
+        $models = CarModel::with('types_preview')->get();
+        $data['coordinates'] = explode(",", $city['coordinates']);
+
+        return view('contacts', [
+            'data' => $data,
+            'city'=>$this->city,
+            'cities' => $cities,
+            'models' => $models,
+        ]);
+    }
+
 }

@@ -14,7 +14,7 @@
                     <p class="title-tagline bold">Доплата<br> 40 000 рублей<br> при обмене на <span class="highlight">LADA Granta</span></p>
                     <div class="item-buttons">
                         <a :href="city + '/granta/sedan'" class="btn btn-primary">Подробнее о модели</a>
-                        <a :href="city + '/granta/sedan/model_details'" class="btn btn-secondary">Условия акции</a>
+                        <a :href="city + '/stocks/doplata_40_000_rublej_pri_obmene_na_lada_granta'" class="btn btn-secondary">Условия акции</a>
                     </div>
                 </div>
             </slide>
@@ -32,7 +32,7 @@
                     <p class="title-tagline bold">LADA Vesta<br> выгода 10%<br> по госпрограмме</p>
                     <div class="item-buttons">
                         <a :href="city + '/vesta/sedan'" class="btn btn-primary">Подробнее о модели</a>
-                        <a :href="city + '/vesta/sedan/model_details'" class="btn btn-secondary">Условия акции</a>
+                        <a :href="city + '/stocks/lada_vesta_vygoda_10_po_gosprogramme'" class="btn btn-secondary">Условия акции</a>
                     </div>
                 </div>
             </slide>
@@ -50,7 +50,7 @@
                     <p class="title-tagline bold">LADA Granta<br>0% первоначальный взнос</p>
                     <div class="item-buttons">
                         <a :href="city + '/granta/sedan'" class="btn btn-primary">Подробнее о модели</a>
-                        <a :href="city + '/granta/sedan/model_details'" class="btn btn-secondary">Условия акции</a>
+                        <a :href="city + '/stocks/lada_granta_0_pervonachalnyj_vznos'" class="btn btn-secondary">Условия акции</a>
                     </div>
                 </div>
             </slide>
@@ -68,7 +68,7 @@
                     <p class="title-tagline bold">Обмен на LADA Vesta выше рыночной<br> цены</p>
                     <div class="item-buttons">
                         <a id="model_details" :href="city + '/granta/sedan'" class="btn btn-primary event">Подробнее о модели</a>
-                        <a id="offer_conditions" :href="city + '/granta/sedan/model_details'" class="btn btn-secondary event">Условия акции</a>
+                        <a id="offer_conditions" :href="city + '/stocks/obmen_na_lada_vesta_vyshe_rynochnoj_ceny'" class="btn btn-secondary event">Условия акции</a>
                     </div>
                 </div>
             </slide>

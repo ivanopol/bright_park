@@ -7,7 +7,7 @@
                 </a>
             </div>
             <div class="model-button" v-if="button">
-                <span>{{car.reduction}}</span> <a :href="car.link">Купить</a>
+                <span>{{car.reduction}}</span> <a class="event btn-small" :href="car.link">Купить</a>
             </div>
 
             <div class="logo-lada" v-if="!button">

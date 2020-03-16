@@ -9,7 +9,7 @@
                 <input id="name" type="text" class="" name="name" placeholder="Имя" required>
                 <the-mask id="phone" pattern=".{18,}" mask="+# (###)-###-##-##" type="tel" required="true"
                           placeholder="Телефон"></the-mask>
-                <button id="form_default" class="event" :click="send">Записаться</button>
+                <button id="form_default" class="event btn-form" :click="send">Записаться</button>
                 <div id="warning" class="model-choose-text" style="color: darkred;" hidden>
                     <p>Введите 11-значный номер!</p>
                 </div>
