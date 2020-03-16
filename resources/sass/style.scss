@@ -1636,10 +1636,12 @@ footer {
         .more_details {
             width: 100%;
             position: absolute;
-            //text-transform: uppercase;
+            text-transform: uppercase;
             bottom: 30px;
             left: 0;
-            font-size: 12px;
+            font-size: 13px;
+            //font-weight: bold;
+            font-family: PragmaticaLightCBold, Helvetica, sans-serif;
 
             span {
                 position: relative;
