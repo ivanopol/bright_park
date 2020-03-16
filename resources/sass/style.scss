@@ -117,14 +117,54 @@ h3 {
     font-weight: bold;
     font-size: 14px;
     line-height: 14px;
+    cursor:pointer;
+}
 
-    &:hover,
-    &:active {
-        background-color: #edb321;
-        -webkit-transition: all 0.3s ease-out;
-        -moz-transition: all 0.3s ease-out;
-        -o-transition: all 0.3s ease-out;
-        transition: all 0.3s ease-out;
+.btn-form {
+    cursor: pointer;
+}
+
+.btn,
+.btn-form,
+.btn-small,
+.btn-banner,
+.btn-primary,
+.btn-secondary {
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.btn-form:hover,
+.btn-form:active,
+.btn-small:hover,
+.btn-small:active,
+.btn-banner:hover,
+.btn-banner:active,
+.btn:hover,
+.btn:active {
+    background-color: #edb321 !important;
+
+}
+
+.btn-primary:hover,
+.btn-primary:active {
+    background-color: #edb321 !important;
+    border-color: #edb321 !important;
+}
+
+.btn-secondary:hover,
+.btn-secondary:active {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+
+.main-screen {
+    .btn-secondary:hover,
+    .btn-secondary:active {
+        background-color: #fff !important;
+        color: #000 !important;
     }
 }
 

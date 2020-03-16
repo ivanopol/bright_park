@@ -13,7 +13,7 @@
                 <a href="#" v-on:click.prevent="show()" class="btn btn-primary retarget-warning-button">Получить лучшие условия</a>
             </div>
         </div>
-        <modal name="form-callback"  adaptive="true" height="auto">
+        <modal name="form-callback" :adaptive="true" height="auto">
             <div class="close" @click="hide"></div>
             <form-buy2-component :cities="cities" ></form-buy2-component>
         </modal>
