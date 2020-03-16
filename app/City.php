@@ -121,7 +121,11 @@ class City extends Model
                             '+\1 (\2) \3-\4-\5',
                             (string) $phone_tmp
                         );
-                        $cities['active']['phone'] = $phone;
+
+                        $contact_array = $contact->toArray();
+                        $contact_array['phone'] = $phone;
+                        $cities['active'] = array_merge($cities['active'],$contact_array);
+                        //$cities['active']['phone'] = $phone;
                     }
                 }
             }
