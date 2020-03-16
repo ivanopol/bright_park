@@ -6,14 +6,14 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redis;
 
-class UpdateScrollEvents extends Command
+class UpdatePageVisits extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'update:scrolls';
+    protected $signature = 'update:pages';
 
     /**
      * The console command description.
@@ -41,24 +41,20 @@ class UpdateScrollEvents extends Command
     {
         $redis = Redis::connection();
 
-        $scroll_keys = $redis->keys('*scroll*');
+        $visit_keys = $redis->keys('*visit*');
 
-        foreach ($scroll_keys as $scroll_key) {
-            $scroll_event = json_decode($redis->get($scroll_key));
+        foreach ($visit_keys as $visit_key) {
+            $visit_event = json_decode($redis->get($visit_key));
 
             $values = [
-                'timestamp' => $scroll_event->timestamp,
-                'position' => $scroll_event->position,
-                'user_ip' => $scroll_event->user_ip,
-                'previous_position' => $scroll_event->previous_position,
-                'location' => $scroll_event->location,
-                'page_height' => $scroll_event->page_height,
-                'bp_uid' => $scroll_event->bp_uid
+                'created_at' => $visit_event->timestamp,
+                'location' => $visit_event->location,
+                'bp_uid' => $visit_event->bp_uid
             ];
 
-            DB::table('scroll_events')->insert($values);
+            DB::table('page_visits')->insert($values);
 
-            $redis->del($scroll_key);
+            $redis->del($visit_key);
         }
     }
 }

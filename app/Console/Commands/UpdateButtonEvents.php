@@ -51,7 +51,8 @@ class UpdateButtonEvents extends Command
                 'button_id' => $button_event->btn_id,
                 'user_ip' => $button_event->user_ip,
                 'href' => $button_event->href,
-                'location' => $button_event->location
+                'location' => $button_event->location,
+                'bp_uid' => $button_event->bp_uid
             ];
 
             DB::table('button_events')->insert($values);
