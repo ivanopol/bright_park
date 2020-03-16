@@ -1,6 +1,6 @@
 <template>
     <section>
-        <div class="route-button-wrap">
+        <div class="route-button-wrap" v-if="button">
             <a id="create_route" class="btn event" v-on:click="createRoute">Проложить маршрут</a>
         </div>
         <div class="map-wrapper">
@@ -13,7 +13,15 @@
     export default {
         name: "YandexMapComponent",
         mixins: ['sendEvent'],
-        props: ['coordinates'],
+        props: {
+            coordinates: {
+
+            },
+            button: {
+                default: true,
+                type: Boolean
+            }
+        },
         data: () => ({
             geolocation: null,
             userLocation: null,
