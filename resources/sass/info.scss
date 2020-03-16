@@ -200,228 +200,230 @@ $context: 375;
     }
 }
 
-.pointers_wrap {
-    position: relative;
-    overflow: hidden;
+@media only screen and (max-width: 580px) {
+    .pointers_wrap {
+        position: relative;
+        overflow: hidden;
 
-    .pointers-1-2-1,
-    .pointers-1-2-2,
-    .pointers-1-2-3,
-    .pointers-2-1-1,
-    .pointers-2-1-2,
-    .pointers-4-11-1,
-    .pointers-3-20-1 {
-        width: 100%;
-        height: 100%;
+        .pointers-1-2-1,
+        .pointers-1-2-2,
+        .pointers-1-2-3,
+        .pointers-2-1-1,
+        .pointers-2-1-2,
+        .pointers-4-11-1,
+        .pointers-3-20-1 {
+            width: 100%;
+            height: 100%;
 
-        & > li span {
-            -webkit-transition: box-shadow ease-out .4s, opacity .1s ease-out .2s;
-            -moz-transition: box-shadow ease-out .4s, opacity .1s ease-out .2s;
-            -o-transition: box-shadow ease-out .4s, opacity .1s ease-out .2s;
-            transition: box-shadow ease-out .4s, opacity .1s ease-out .2s;
+            & > li span {
+                -webkit-transition: box-shadow ease-out .4s, opacity .1s ease-out .2s;
+                -moz-transition: box-shadow ease-out .4s, opacity .1s ease-out .2s;
+                -o-transition: box-shadow ease-out .4s, opacity .1s ease-out .2s;
+                transition: box-shadow ease-out .4s, opacity .1s ease-out .2s;
 
-            &.is_opacity {
-                opacity: 0;
-                box-shadow: 0 0 0 0 rgba(237, 155, 33, 0.4);
+                &.is_opacity {
+                    opacity: 0;
+                    box-shadow: 0 0 0 0 rgba(237, 155, 33, 0.4);
+                }
             }
-        }
 
-        & > li .pointer {
-            cursor: pointer;
-            position: absolute;
-            color: #fff;
-            font-size: 32px;
-            z-index: 3;
-            width: 30px;
-            height: 30px;
-            background-color: rgba(237, 155, 33, 0.8);
-            display: flex;
-            justify-content: center;
-            -webkit-box-pack: center;
-            align-items: center;
-            -webkit-box-align: center;
-            border-radius: 50px;
-            box-shadow: 0 0 0 7px rgba(237, 155, 33, 0.4);
-
-            &:after,
-            &:before {
-                content: '';
-                width: 14px;
-                height: 2px;
-                background-color: #fff;
-                display: block;
+            & > li .pointer {
+                cursor: pointer;
                 position: absolute;
+                color: #fff;
+                font-size: 32px;
+                z-index: 3;
+                width: 30px;
+                height: 30px;
+                background-color: rgba(237, 155, 33, 0.8);
+                display: flex;
+                justify-content: center;
+                -webkit-box-pack: center;
+                align-items: center;
+                -webkit-box-align: center;
+                border-radius: 50px;
+                box-shadow: 0 0 0 7px rgba(237, 155, 33, 0.4);
+
+                &:after,
+                &:before {
+                    content: '';
+                    width: 14px;
+                    height: 2px;
+                    background-color: #fff;
+                    display: block;
+                    position: absolute;
+                }
+
+                &:after {
+                    transform: rotate(0deg);
+                    left: 8px;
+                }
+
+                &:before {
+                    transform: rotate(-90deg);
+                    top: 14px;
+                }
+            }
+        }
+
+
+        .pointers-1-2-1 {
+            .p1 {
+                left: get-vw(50px, $context);
+                top: get-vw(60px, $context);
             }
 
-            &:after {
-                transform: rotate(0deg);
-                left: 8px;
+            .p2 {
+                left: get-vw(102px, $context);
+                top: get-vw(82px, $context);
             }
 
-            &:before {
-                transform: rotate(-90deg);
-                top: 14px;
+            .p3 {
+                left: get-vw(206px, $context);
+                top: get-vw(40px, $context);
+            }
+
+            .p4 {
+                left: get-vw(308px, $context);
+                top: get-vw(59px, $context);
+            }
+
+            .p5 {
+                left: get-vw(198px, $context);
+                top: get-vw(128px, $context);
             }
         }
-    }
 
+        .pointers-1-2-2 {
+            .p1 {
+                left: get-vw(103px, $context);
+                top: get-vw(75px, $context);
+            }
 
-    .pointers-1-2-1 {
-        .p1 {
-            left: get-vw(50px, $context);
-            top: get-vw(60px, $context);
+            .p2 {
+                left: get-vw(175px, $context);
+                top: get-vw(29px, $context);
+            }
+
+            .p3 {
+                left: get-vw(60px, $context);
+                top: get-vw(174px, $context);
+            }
+
+            .p4 {
+                left: get-vw(284px, $context);
+                top: get-vw(156px, $context);
+            }
+
+            .p5 {
+                left: get-vw(152px, $context);
+                top: get-vw(156px, $context);
+            }
         }
 
-        .p2 {
-            left: get-vw(102px, $context);
-            top: get-vw(82px, $context);
+        .pointers-1-2-3 {
+            .p1 {
+                left: get-vw(156px, $context);
+                top: get-vw(25px, $context);
+            }
+
+            .p2 {
+                left: get-vw(211px, $context);
+                top: get-vw(50px, $context);
+            }
+
+            .p3 {
+                left: get-vw(22px, $context);
+                top: get-vw(160px, $context);
+            }
+
+            .p4 {
+                left: get-vw(332px, $context);
+                top: get-vw(60px, $context);
+            }
+
+            .p5 {
+                left: get-vw(251px, $context);
+                top: get-vw(105px, $context);
+            }
+
+            .p6 {
+                left: get-vw(319px, $context);
+                top: get-vw(129px, $context);
+            }
         }
 
-        .p3 {
-            left: get-vw(206px, $context);
-            top: get-vw(40px, $context);
+        .pointers-2-1-1 {
+            .p1 {
+                left: get-vw(195px, $context);
+                top: get-vw(50px, $context);
+            }
+
+            .p2 {
+                left: get-vw(113px, $context);
+                top: get-vw(7px, $context);
+            }
         }
 
-        .p4 {
-            left: get-vw(308px, $context);
-            top: get-vw(59px, $context);
+        .pointers-2-1-2 {
+            .p1 {
+                left: get-vw(178px, $context);
+                top: get-vw(95px, $context);
+            }
+
+            .p2 {
+                left: get-vw(178px, $context);
+                top: get-vw(160px, $context);
+            }
+
+            .p3 {
+                left: get-vw(115px, $context);
+                top: get-vw(90px, $context);
+            }
+
+            .p4 {
+                left: get-vw(100px, $context);
+                top: get-vw(175px, $context);
+            }
         }
 
-        .p5 {
-            left: get-vw(198px, $context);
-            top: get-vw(128px, $context);
-        }
-    }
+        .pointers-3-20-1 {
+            .p1 {
+                left: get-vw(234px, $context);
+                top: get-vw(95px, $context);
+            }
 
-    .pointers-1-2-2 {
-        .p1 {
-            left: get-vw(103px, $context);
-            top: get-vw(75px, $context);
-        }
+            .p2 {
+                left: get-vw(58px, $context);
+                top: get-vw(142px, $context);
+            }
 
-        .p2 {
-            left: get-vw(175px, $context);
-            top: get-vw(29px, $context);
-        }
+            .p3 {
+                left: get-vw(173px, $context);
+                top: get-vw(108px, $context);
+            }
 
-        .p3 {
-            left: get-vw(60px, $context);
-            top: get-vw(174px, $context);
-        }
-
-        .p4 {
-            left: get-vw(284px, $context);
-            top: get-vw(156px, $context);
+            .p4 {
+                left: get-vw(173px, $context);
+                top: get-vw(68px, $context);
+            }
         }
 
-        .p5 {
-            left: get-vw(152px, $context);
-            top: get-vw(156px, $context);
-        }
-    }
+        .pointers-4-11-1 {
+            .p1 {
+                right: get-vw(100px, $context);
+                bottom: get-vw(10px, $context);
+            }
 
-    .pointers-1-2-3 {
-        .p1 {
-            left: get-vw(156px, $context);
-            top: get-vw(25px, $context);
-        }
+            .p2 {
+                left: get-vw(175px, $context);
+                top: get-vw(8px, $context);
+            }
 
-        .p2 {
-            left: get-vw(211px, $context);
-            top: get-vw(50px, $context);
-        }
-
-        .p3 {
-            left: get-vw(22px, $context);
-            top: get-vw(160px, $context);
-        }
-
-        .p4 {
-            left: get-vw(332px, $context);
-            top: get-vw(60px, $context);
-        }
-
-        .p5 {
-            left: get-vw(251px, $context);
-            top: get-vw(105px, $context);
-        }
-
-        .p6 {
-            left: get-vw(319px, $context);
-            top: get-vw(129px, $context);
-        }
-    }
-
-    .pointers-2-1-1 {
-        .p1 {
-            left: get-vw(195px, $context);
-            top: get-vw(50px, $context);
-        }
-
-        .p2 {
-            left: get-vw(113px, $context);
-            top: get-vw(7px, $context);
-        }
-    }
-
-    .pointers-2-1-2 {
-        .p1 {
-            left: get-vw(178px, $context);
-            top: get-vw(95px, $context);
-        }
-
-        .p2 {
-            left: get-vw(178px, $context);
-            top: get-vw(160px, $context);
-        }
-
-        .p3 {
-            left: get-vw(115px, $context);
-            top: get-vw(90px, $context);
-        }
-
-        .p4 {
-            left: get-vw(100px, $context);
-            top: get-vw(175px, $context);
-        }
-    }
-
-    .pointers-3-20-1 {
-        .p1 {
-            left: get-vw(234px, $context);
-            top: get-vw(95px, $context);
-        }
-
-        .p2 {
-            left: get-vw(58px, $context);
-            top: get-vw(142px, $context);
-        }
-
-        .p3 {
-            left: get-vw(173px, $context);
-            top: get-vw(108px, $context);
-        }
-
-        .p4 {
-            left: get-vw(173px, $context);
-            top: get-vw(68px, $context);
-        }
-    }
-
-    .pointers-4-11-1 {
-        .p1 {
-            right: get-vw(100px, $context);
-            bottom: get-vw(10px, $context);
-        }
-
-        .p2 {
-            left: get-vw(175px, $context);
-            top: get-vw(8px, $context);
-        }
-
-        .p3 {
-            left: get-vw(231px, $context);
-            top: get-vw(93px, $context);
+            .p3 {
+                left: get-vw(231px, $context);
+                top: get-vw(93px, $context);
+            }
         }
     }
 }
