@@ -9,7 +9,6 @@
     </section>
     <body class="event-scroll">
     <scroll-event-handler-component></scroll-event-handler-component>
-    {!! html_entity_decode($cities['active']['begin_script']) !!}
     <div class="container">
         <div id="advantages" class="advantages_wrap">
             <h1>Брайт Парк</h1>
@@ -69,5 +68,6 @@
        <yandex-map-component :coordinates='@json($data['coordinates'])'></yandex-map-component>
    </footer>
     <event-handler-component></event-handler-component>
+    {!! html_entity_decode($cities['active']['begin_script']) !!}
     </body>
 @endsection

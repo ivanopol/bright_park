@@ -6,7 +6,6 @@
     <script>{{$cities['active']['begin_script']}}</script>
     <div class="container p-top-90">
         <section>
-            {!! html_entity_decode($cities['active']['begin_script']) !!}
             <div class="buy-steps-wrapper">
                 <div class="buy-step-circle-colored divided">
                     <p class="buy-step-number">1</p>
@@ -88,5 +87,6 @@
             <scroll-event-handler-component></scroll-event-handler-component>
             <event-handler-component></event-handler-component>
         </section>
+        {!! html_entity_decode($cities['active']['begin_script']) !!}
     </div>
 @endsection

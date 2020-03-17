@@ -2,11 +2,11 @@
 
 @section('content')
     <tab-bar :cities='@json($cities)' :models='@json($models)' :phone="'{{$cities['active']['phone']}}'"></tab-bar>
-    <header-sticky-component :theme="'light'" :city="'{{$city}}'" :button=true :car='@json($data['slider']['slides'])'></header-sticky-component>
-    <header-component :line="true" :theme="'light'" :city="'{{$city}}'" :car='@json($data['slider']['slides'])'></header-component>
+    <header-sticky-component :theme="'light'" :city="'{{$city}}'" :button=true
+                             :car='@json($data['slider']['slides'])'></header-sticky-component>
+    <header-component :line="true" :theme="'light'" :city="'{{$city}}'"
+                      :car='@json($data['slider']['slides'])'></header-component>
     <body>
-    {!! html_entity_decode($cities['active']['begin_script']) !!}
-    </body>
     <div class="">
         <hooper-component :data='@json($data['slider'])'></hooper-component>
 
@@ -20,9 +20,11 @@
         @endif
         <form-component :cities='@json($cities)'></form-component>
         @if(count($data['reviews']))
-            <review-component :reviews='@json($data['reviews'])' :model_name="'{{$data['model_full']}}'"></review-component>
+            <review-component :reviews='@json($data['reviews'])'
+                              :model_name="'{{$data['model_full']}}'"></review-component>
         @endif
-        <next-action-component :link="'{{request()->segment(count(request()->segments()))}}'" :cities='@json($cities)'></next-action-component>
+        <next-action-component :link="'{{request()->segment(count(request()->segments()))}}'"
+                               :cities='@json($cities)'></next-action-component>
         <section class="block block_5">
             <div class="block-text">
                 <h2><span class="c_orange">Гарантия</span> 3 года</h2>
@@ -31,7 +33,8 @@
             <div class="photo_block container-max">
                 <div class="feedback">
                     <picture>
-                        <source srcset="{{asset('/build/images/photos/feedback/feedback-desktop.jpg')}}" media="(min-width: 660px)">
+                        <source srcset="{{asset('/build/images/photos/feedback/feedback-desktop.jpg')}}"
+                                media="(min-width: 660px)">
                         <img src="{{asset('/build/images/photos/feedback/feedback_04.jpg')}}" alt="">
                     </picture>
                 </div>
@@ -40,7 +43,8 @@
         <footer class="block footer">
             <div class="block-text center mb">
                 <h2><span class="c_orange">Помощь</span> при покупке</h2>
-                <p>У&nbsp;вас есть вопросы? Пообщайтесь со&nbsp;специалистом по&nbsp;телефону&nbsp;<br>{{ $cities['active']['phone'] }}</p>
+                <p>У&nbsp;вас есть вопросы? Пообщайтесь со&nbsp;специалистом
+                    по&nbsp;телефону&nbsp;<br>{{ $cities['active']['phone'] }}</p>
                 <p>Брайт парк ближе, чем кажется<br> Проложите маршрут до&nbsp;ближайшего салона</p>
             </div>
             <yandex-map-component :coordinates='@json($data['coordinates'])'></yandex-map-component>
@@ -48,4 +52,6 @@
         <scroll-event-handler-component></scroll-event-handler-component>
         <event-handler-component></event-handler-component>
     </div>
+    {!! html_entity_decode($cities['active']['begin_script']) !!}
+    </body>
 @endsection

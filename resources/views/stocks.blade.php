@@ -5,13 +5,12 @@
     <header-sticky-component :theme="'light'" :city="'{{$city}}'"></header-sticky-component>
     <header-component :absolute="true"  :theme="'light'" :city="'{{$city}}'" ></header-component>
     <body>
-        {!! html_entity_decode($cities['active']['begin_script']) !!}
         <div class="container p-top-90">
             <div class="stocks">
                 <h1>Акции Брайт Парка в {{ $city_info->city_dative  }} </h1>
                 @foreach($stocks as $stock)
                     <div class="stocks-row">
-                        <a href="{{ route('stocks.one', ['city' => $city_info->alias, 'stocks_title' => $stock->slug]) }}" class="stocks-title">{{$stock->title}}</a>
+                        <a id="open_stocks_picture" href="{{ route('stocks.one', ['city' => $city_info->alias, 'stocks_title' => $stock->slug]) }}" class="stocks-title event">{{$stock->title}}</a>
                         <div class="stocks-content">
                             <div class="stocks-img">
                                 <a href="{{ route('stocks.one', ['city' => $city_info->alias, 'stocks_title' => $stock->slug]) }}">
@@ -21,7 +20,7 @@
                             <div class="stocks-text-wrap">
                                 <div class="stocks-text">{!! $stock->text_short !!}</div>
                                 <div class="stocks-button">
-                                    <a href="{{ route('stocks.one', ['city' => $city_info->alias, 'stocks_title' => $stock->slug]) }}" class="btn btn-primary">Читать</a>
+                                    <a id="open_stocks" href="{{ route('stocks.one', ['city' => $city_info->alias, 'stocks_title' => $stock->slug]) }}" class="btn btn-primary event">Читать</a>
                                 </div>
                             </div>
                         </div>
@@ -38,5 +37,6 @@
             </div>
             <yandex-map-component :coordinates='@json($data['coordinates'])'></yandex-map-component>
         </footer>
+        {!! html_entity_decode($cities['active']['begin_script']) !!}
     </body>
 @endsection
