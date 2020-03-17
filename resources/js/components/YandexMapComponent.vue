@@ -15,7 +15,11 @@
         mixins: ['sendEvent'],
         props: {
             coordinates: {
-
+                default: {
+                    0: 57.997388,
+                    1: 56.306636
+                },
+                type: Object
             },
             button: {
                 default: true,
@@ -141,20 +145,20 @@
     }
 
     .map-wrapper {
-        width: 100vw;
+        width: 100%;
         height: 300px;
     }
 
     @media only screen and (min-width: 580px) {
         .map-wrapper {
-            width: 100vw;
+            width: 100%;
             height: 450px;
         }
     }
 
     @media only screen and (min-width: 1367px) {
         .map-wrapper {
-            width: 100vw;
+            width: 100%;
             margin: 0 auto;
             height: 550px;
         }
