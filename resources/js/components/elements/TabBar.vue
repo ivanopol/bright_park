@@ -176,6 +176,11 @@ export default {
             },
             handleScroll: function() {
              //   this.scrolled = window.scrollY > 60;
+            },
+            loadScript: async function() {
+                let jivoScript = document.createElement('script');
+                jivoScript.setAttribute('src', '//code-ya.jivosite.com/widget/' + this.cities.active.jivosite_token);
+                document.body.appendChild(jivoScript);
             }
         },
         components: {
@@ -186,9 +191,7 @@ export default {
             vSelect
         },
     mounted() {
-        let jivoScript = document.createElement('script');
-        jivoScript.setAttribute('src', '//code-ya.jivosite.com/widget/' + this.cities.active.jivosite_token);
-        document.body.appendChild(jivoScript);
+        this.loadScript();
     },
     created () {
     //    window.addEventListener('scroll', this.handleScroll);

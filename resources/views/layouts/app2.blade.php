@@ -45,9 +45,6 @@
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js', 'build') }}" defer></script>
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=e65fea9d-e8a0-479d-b21a-35637fdc6c6c&lang=ru_RU"
-            type="text/javascript">
-    </script>
 
     <!-- Styles -->
     <link href="{{ mix('css/app2.css', 'build') }}" rel="stylesheet">
@@ -58,5 +55,8 @@
         @yield('content')
     </div>
 </div>
+<script src="https://api-maps.yandex.ru/2.1/?apikey=e65fea9d-e8a0-479d-b21a-35637fdc6c6c&lang=ru_RU&init=onload"
+        type="text/javascript">
+</script>
 </body>
 </html>
