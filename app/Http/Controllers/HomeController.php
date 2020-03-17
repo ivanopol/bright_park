@@ -41,7 +41,7 @@ class HomeController extends Controller
      */
     public function index(City $city = null)
     {
-        $this->seo->setMetaTags();
+        $this->seo->setMetaTags($city);
 
         if ($city['alias']) {
             $this->city = $city['alias'];
@@ -66,7 +66,7 @@ class HomeController extends Controller
      */
     public function special_offers(City $city = null, Request $request)
     {
-        $this->seo->setMetaTags();
+        $this->seo->setMetaTags($city);
 
         if ($city['alias']) {
             $this->city = $city['alias'];
@@ -95,7 +95,7 @@ class HomeController extends Controller
      */
     public function model(City $city = null, CarModel $car_model, CarType $car_type)
     {
-        $this->seo->setMetaTags();
+        $this->seo->setMetaTags($city, $car_model->id, $car_type->id);
 
         if ($city['alias']) {
             $this->city = $city['alias'];
@@ -125,7 +125,7 @@ class HomeController extends Controller
      */
     public function model_details(City $city = null, CarModel $car_model, CarType $car_type)
     {
-        $this->seo->setMetaTags();
+        $this->seo->setMetaTags($city, $car_model->id, $car_type->id);
 
         if ($city['alias']) {
             $this->city = $city['alias'];
@@ -170,7 +170,7 @@ class HomeController extends Controller
      */
     public function news(City $city = null)
     {
-        $this->seo->setMetaTags();
+        $this->seo->setMetaTags($city);
 
         if ($city['alias']) {
             $this->city = $city['alias'];
@@ -204,7 +204,7 @@ class HomeController extends Controller
      */
     public function news_details(City $city = null, News $news_title)
     {
-        $this->seo->setMetaTags();
+        $this->seo->setMetaTags($city);
 
         if ($city['alias']) {
             $this->city = $city['alias'];
@@ -233,7 +233,7 @@ class HomeController extends Controller
      */
     public function stocks(City $city = null)
     {
-        $this->seo->setMetaTags();
+        $this->seo->setMetaTags($city);
 
         if ($city['alias']) {
             $this->city = $city['alias'];
@@ -267,7 +267,7 @@ class HomeController extends Controller
      */
     public function stocks_details(City $city = null, Stocks $stocks_title)
     {
-        $this->seo->setMetaTags();
+        $this->seo->setMetaTags($city);
 
         if ($city['alias']) {
             $this->city = $city['alias'];
@@ -296,7 +296,7 @@ class HomeController extends Controller
      */
     public function contacts(City $city)
     {
-        $this->seo->setMetaTags();
+        $this->seo->setMetaTags($city);
 
         if ($city['alias']) {
             $this->city = $city['alias'];
