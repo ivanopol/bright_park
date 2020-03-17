@@ -24,7 +24,6 @@ class ContactFormController extends \Illuminate\Routing\Controller
             $this->bitrix_service->sendContactForm($request->getContent());
             return Response::HTTP_OK;
         } catch (Exception $e){
-            var_dump($e->getMessage());
             return Response::HTTP_BAD_REQUEST;
         }
     }
@@ -35,7 +34,6 @@ class ContactFormController extends \Illuminate\Routing\Controller
             $this->bitrix_service->checkVisitorCookie();
             return Response::HTTP_OK;
         } catch (Exception $e){
-            var_dump($e->getMessage());
             return Response::HTTP_BAD_REQUEST;
         }
     }

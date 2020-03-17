@@ -48,8 +48,6 @@ class CountUniqueVisitors
             }
 
         } else {
-            //var_dump(json_decode(base64_decode($_COOKIE['bp_uuid'])));
-
             $cookie_date = json_decode(base64_decode($_COOKIE['bp_uuid']))->date;
 
             if ($redis->exists($today) && $cookie_date != $today) {

@@ -8,7 +8,6 @@
         <retargeting-component :city="'{{$city}}'" :offer='@json($offer)'></retargeting-component>
     </section>
     <body>
-    {!! html_entity_decode($cities['active']['begin_script']) !!}
     <div class="container">
         <div id="advantages" class="advantages_wrap retargeting_wrap">
             <h1><span class="c_orange">Преимущества</span> покупки сейчас</h1>
@@ -66,5 +65,6 @@
     </div>
     <scroll-event-handler-component></scroll-event-handler-component>
     <event-handler-component></event-handler-component>
+    {!! html_entity_decode($cities['active']['begin_script']) !!}
     </body>
 @endsection
