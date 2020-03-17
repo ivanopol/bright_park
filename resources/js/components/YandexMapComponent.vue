@@ -94,7 +94,7 @@
             },
         },
 
-        mounted() {
+        created() {
             ymaps.ready(() => {
                 let geolocation = ymaps.geolocation,
                     myMap = new ymaps.Map('map', {
