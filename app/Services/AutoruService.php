@@ -268,7 +268,6 @@ class AutoruService
 
         if ($json['status'] != 'SUCCESS') {
             $this->error = $code . ' ' . $json['detailed_error'];
-            print_r($json);
             $this->isError = true;
         }
 

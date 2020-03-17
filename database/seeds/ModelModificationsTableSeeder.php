@@ -8,9 +8,11 @@ class ModelModificationsTableSeeder extends Seeder
 {
     public function run()
     {
+        $path = str_replace('/database/seeds', '/resources/data', __DIR__);
+
         $brands = DB::select('select code from brands');
         foreach ($brands as $brand) {
-            $files = glob('/var/www/resources/data/packages_' . $brand->code . '#*');
+            $files = glob($path . '/packages_' . $brand->code . '#*');
             foreach ($files as $file) {
                 $handle = fopen($file, 'r');
 

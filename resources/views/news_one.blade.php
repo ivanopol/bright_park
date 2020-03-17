@@ -5,7 +5,6 @@
     <header-sticky-component :theme="'light'" :city="'{{$city}}'"></header-sticky-component>
     <header-component :absolute="true"  :theme="'light'" :city="'{{$city}}'" ></header-component>
     <body>
-        {!! html_entity_decode($cities['active']['begin_script']) !!}
         <div class="container p-top-90">
             <div class="news">
                 <h1>{{ $news->title }}</h1>
@@ -27,5 +26,6 @@
             </div>
             <yandex-map-component :coordinates='@json($data['coordinates'])'></yandex-map-component>
         </footer>
+        {!! html_entity_decode($cities['active']['begin_script']) !!}
     </body>
 @endsection

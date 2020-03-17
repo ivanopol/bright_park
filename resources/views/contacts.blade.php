@@ -5,7 +5,6 @@
     <header-sticky-component :theme="'light'" :city="'{{$city}}'"></header-sticky-component>
     <header-component :absolute="true"  :theme="'light'" :city="'{{$city}}'" ></header-component>
     <body>
-    {!! html_entity_decode($cities['active']['begin_script']) !!}
     <div class="container p-top-90">
 
         <h1>Контакты</h1>
@@ -52,6 +51,6 @@
             </div>
         </div>
     </div>
-
+    {!! html_entity_decode($cities['active']['begin_script']) !!}
     </body>
 @endsection
