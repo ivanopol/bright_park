@@ -16,10 +16,12 @@ use App\News;
 use App\Stocks;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Redis;
+use App\Services\SeoService;
 
 class HomeController extends Controller
 {
     public $city;
+    public $seo;
 
     /**
      * Create a new controller instance.
@@ -28,6 +30,7 @@ class HomeController extends Controller
      */
     public function __construct(Request $request)
     {
+        $this->seo = new SeoService($request);
     }
 
     /**
@@ -38,6 +41,8 @@ class HomeController extends Controller
      */
     public function index(City $city = null)
     {
+        $this->seo->setMetaTags();
+
         if ($city['alias']) {
             $this->city = $city['alias'];
         } else {
@@ -61,6 +66,8 @@ class HomeController extends Controller
      */
     public function special_offers(City $city = null, Request $request)
     {
+        $this->seo->setMetaTags();
+
         if ($city['alias']) {
             $this->city = $city['alias'];
         } else {
@@ -88,6 +95,7 @@ class HomeController extends Controller
      */
     public function model(City $city = null, CarModel $car_model, CarType $car_type)
     {
+        $this->seo->setMetaTags();
 
         if ($city['alias']) {
             $this->city = $city['alias'];
@@ -117,6 +125,8 @@ class HomeController extends Controller
      */
     public function model_details(City $city = null, CarModel $car_model, CarType $car_type)
     {
+        $this->seo->setMetaTags();
+
         if ($city['alias']) {
             $this->city = $city['alias'];
         } else {
@@ -158,7 +168,9 @@ class HomeController extends Controller
      * @param City|null $city
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
-    public function news(City $city = null) {
+    public function news(City $city = null)
+    {
+        $this->seo->setMetaTags();
 
         if ($city['alias']) {
             $this->city = $city['alias'];
@@ -190,7 +202,9 @@ class HomeController extends Controller
      * @param News $news_title
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
-    public function news_details(City $city = null, News $news_title) {
+    public function news_details(City $city = null, News $news_title)
+    {
+        $this->seo->setMetaTags();
 
         if ($city['alias']) {
             $this->city = $city['alias'];
@@ -217,7 +231,9 @@ class HomeController extends Controller
      * @param City|null $city
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
-    public function stocks(City $city = null) {
+    public function stocks(City $city = null)
+    {
+        $this->seo->setMetaTags();
 
         if ($city['alias']) {
             $this->city = $city['alias'];
@@ -249,7 +265,9 @@ class HomeController extends Controller
      * @param Stocks $stocks_title
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
-    public function stocks_details(City $city = null, Stocks $stocks_title) {
+    public function stocks_details(City $city = null, Stocks $stocks_title)
+    {
+        $this->seo->setMetaTags();
 
         if ($city['alias']) {
             $this->city = $city['alias'];
@@ -276,7 +294,10 @@ class HomeController extends Controller
      * @param City $city
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function contacts(City $city) {
+    public function contacts(City $city)
+    {
+        $this->seo->setMetaTags();
+
         if ($city['alias']) {
             $this->city = $city['alias'];
         } else {

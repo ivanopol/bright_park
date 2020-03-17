@@ -11,6 +11,13 @@ class SeoTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $seo = [
+            'url' => 'perm',
+            'title' => 'Тест Тест Тест',
+            'header' => 'Test Test Test',
+            'description' => 'Описание'
+        ];
+
+        DB::table('seo')->insert($seo);
     }
 }
