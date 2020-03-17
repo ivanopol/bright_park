@@ -15,16 +15,16 @@ class Seo extends Migration
     {
         Schema::create('seo', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('url');
+            $table->string('url')->unique();
             $table->string('title');
-            $table->string('header');
-            $table->string('description');
-            $table->string('og_locale');
-            $table->string('og_type');
-            $table->string('og_title');
-            $table->string('og_description');
-            $table->string('og_url');
-            $table->string('og_image');
+            $table->string('header')->nullable();
+            $table->string('description')->nullable();
+            $table->string('og_locale')->nullable();
+            $table->string('og_type')->nullable();
+            $table->string('og_title')->nullable();
+            $table->string('og_description')->nullable();
+            $table->string('og_url')->nullable();
+            $table->string('og_image')->nullable();
         });
 
         Artisan::call('db:seed', [
