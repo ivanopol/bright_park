@@ -41,10 +41,10 @@ class SeoService
 
         if ($seo === NULL) {
             $seo = $this->generateMetaTags($path, $city, $model, $type);
-        } else {
-            $seo->og_title = empty($seo->og_title) ? $seo->title : $seo->og_title;
-            $seo->og_description = empty($seo->og_description) ? $seo->description : $seo->og_description;
         }
+
+        $seo->og_title = empty($seo->og_title) ? $seo->title : $seo->og_title;
+        $seo->og_description = empty($seo->og_description) ? $seo->description : $seo->og_description;
 
         SEOMeta::setTitle($seo->title);
         SEOMeta::setDescription($seo->description);
@@ -67,6 +67,8 @@ class SeoService
     {
         $tags = new \stdClass;
 
+        $tags->title = '';
+        $tags->description = '';
 
 
         return $tags;
