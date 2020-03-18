@@ -42,18 +42,9 @@
                         data: event_data
                     });
 
-                }, 10);
+                }, 1000);
 
-            },
-            scrollTest: function () {
-                window.clearTimeout(isScrolling);
-
-                this.isScrolling = setTimeout(function () {
-
-                    console.log('Scrolling has stopped.');
-
-                }, 66);
-            },
+            }
         },
         mounted() {
             window.addEventListener("scroll", this.onScroll, false);
