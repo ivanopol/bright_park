@@ -42,7 +42,7 @@
                         data: event_data
                     });
 
-                }, 10);
+                }, 1000);
 
             },
             scrollTest: function () {
