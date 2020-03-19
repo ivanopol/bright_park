@@ -12,10 +12,10 @@ class SeoTableSeeder extends Seeder
     public function run()
     {
         $seo = [
-            'url' => 'perm',
+/*            'url' => 'perm',
             'title' => 'Тест Тест Тест',
             'header' => 'Test Test Test',
-            'description' => 'Описание'
+            'description' => 'Описание'*/
         ];
 
         DB::table('seo')->insert($seo);

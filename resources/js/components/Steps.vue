@@ -121,11 +121,60 @@
         methods: {
             gradeShow: function (grade) {
                 this.grade = grade;
+                this.changeHash(this.grade);
 
                 if (this.getCookie('trade_in_price') != null && this.getCookie('trade_in_price') > 0) {
                     this.surcharge = this.car_attrs[0].special_price - this.getCookie('trade_in_price');
                     this.surchargeText = true;
                 }
+            },
+            changeHash: function (grade) {
+                switch (grade) {
+                    case 0:
+                        window.location.hash = '#start';
+                        break;
+                    case 1:
+                        window.location.hash = '#estimation';
+                        break;
+                    case 2:
+                        window.location.hash = '#credit';
+                        break;
+                    case 3:
+                        window.location.hash = '#cash';
+                        break;
+                    case 4:
+                        window.location.hash = '#end';
+                        break;
+                    case 5:
+                        window.location.hash = '#no-car';
+                        break;
+                }
+            },
+            changeGrade: function (hash) {
+                switch (hash) {
+                    case '#start':
+                        this.grade = 0;
+                        break;
+                    case '#estimation':
+                        this.grade = 1;
+                        break;
+                    case '#credit':
+                        this.grade = 2;
+                        break;
+                    case '#cash':
+                        this.grade = 3;
+                        break;
+                    case '#end':
+                        this.grade = 4;
+                        break;
+                    case '#no-car':
+                        this.grade = 5;
+                        break;
+                    default:
+                        this.grade = 0;
+                        break;
+                }
+                console.log(this.grade);
             },
             getCookie(name) {
                 let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
@@ -147,6 +196,14 @@
         },
         mounted() {
             this.deleteCookie();
+            this.changeGrade(window.location.hash);
+            let self = this;
+            let handle = function (event) {
+                self.changeGrade(window.location.hash);
+
+            };
+
+            window.addEventListener ("popstate", handle, false);
         }
     };
 </script>

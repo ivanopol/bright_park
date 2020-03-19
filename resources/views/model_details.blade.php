@@ -20,8 +20,6 @@
             </div>
         </div>
         <section class="model-details">
-
-
             <div class="trigger-wrap">
                 <p class="trigger-wrap-text">Осталось <span class="model-count-text">{{$car_attrs[0]['count']}}</span> {{$car_model->title}} {{$car_type->title_ru}} по спеццене</p>
             </div>

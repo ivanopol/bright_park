@@ -8,10 +8,10 @@
                 <a id="form_test_drive_model" class="btn event" href="#" v-on:click.prevent="show()">Записаться на тест-драйв</a>
             </li>
             <li>
-                <a id="count_payment" class="btn event" :href="this.link + '/model_details'">Рассчитать кредит</a>
+                <a id="count_payment" class="btn event" :href="this.link + '/model_details#credit'">Рассчитать кредит</a>
             </li>
             <li>
-                <a id="estimate_car" class="btn event" :href="this.link + '/model_details'">Оценить свой автомобиль</a>
+                <a id="estimate_car" class="btn event" :href="this.link + '/model_details#estimation'">Оценить свой автомобиль</a>
             </li>
             <li>
                 <a id="get_offer" class="btn event" href="#" v-on:click.prevent="show()">Получить спецпредложение</a>
