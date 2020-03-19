@@ -711,6 +711,7 @@ export default {
         z-index: 30 !important;
     }
 
+
     @media only screen and (max-width: 1024px) {
         #panel {
             display: block;
@@ -750,6 +751,12 @@ export default {
             }
         }
 
+        ._orinationRight_25.wrap_mW {
+            display: block;
+        }
 
+        .label_39._bottom_3v._pad100_GR, .label_39._left_2d._pad100_GR, .label_39._right_1y._pad100_GR {
+            display: block;
+        }
     }
 </style>
