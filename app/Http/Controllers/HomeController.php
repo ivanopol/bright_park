@@ -150,6 +150,13 @@ class HomeController extends Controller
         $raw = new AutoruService();
         $brands = $raw->getBrands();
 
+        if (!isset($_COOKIE["c_count"])) {
+            $count = rand(7, 15);
+            setcookie("c_count", $count);
+        } else {
+            $count = $_COOKIE["c_count"];
+        }
+
         return view('model_details', [
             'data' => $data,
             'brands' => $brands,
@@ -159,6 +166,7 @@ class HomeController extends Controller
             'car_model' => $car_model,
             'car_type' => $car_type,
             'car_attrs' => $car_attrs,
+            'count' => $count,
         ]);
     }
 

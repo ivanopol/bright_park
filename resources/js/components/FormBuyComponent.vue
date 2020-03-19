@@ -34,7 +34,9 @@
         props: ['cities'],
         data: function () {
             return {
-                phone: ''
+                phone: '',
+                success: false,
+                error: false,
             };
         },
         methods: {

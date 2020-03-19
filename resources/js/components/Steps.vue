@@ -57,7 +57,7 @@
                 <ul>
                     <li><check-icon class="check"></check-icon> <span>Личный менеджер</span></li>
                     <li><check-icon class="check"></check-icon> <span>Выгода 40 000 руб. при обмене</span></li>
-                    <li><check-icon class="check"></check-icon> <span>Зимняя резина в подарок <span class="block-highlight">только до 16/01</span></span></li>
+                    <li><check-icon class="check"></check-icon> <span>Зимняя резина в подарок <span class="block-highlight">только до {{date}}</span></span></li>
                 </ul>
             </div>
 
@@ -98,7 +98,8 @@
             return {
                 grade: 0,
                 surcharge: this.car_attrs[0].special_price,
-                surchargeText: false
+                surchargeText: false,
+                date: 'test'
             };
         },
         filters: {
@@ -174,7 +175,15 @@
                         this.grade = 0;
                         break;
                 }
-                console.log(this.grade);
+            },
+            getDate: function() {
+                var now = new Date();
+                now.setDate(now.getDate() + 3);
+                var month = now.getMonth() + 1;
+                if (month < 10) {
+                    month = '0' + month;
+                }
+                this.date = now.getDate() + "/" + month;
             },
             getCookie(name) {
                 let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
@@ -195,6 +204,7 @@
             CheckIcon
         },
         mounted() {
+            this.getDate();
             this.deleteCookie();
             this.changeGrade(window.location.hash);
             let self = this;
