@@ -703,14 +703,14 @@ export default {
             display: block;
         }
 
-        .label_39._bottom_3v._pad100_GR, .label_39._left_2d._pad100_GR, .label_39._right_1y._pad100_GR {
-            right: 30px;
-            left: auto;
+        ._orinationRight_25.wrap_mW {
+            right: 0;
             display: none;
         }
 
-        ._orinationRight_25.wrap_mW {
-            right: 0;
+        .label_39._bottom_3v._pad100_GR, .label_39._left_2d._pad100_GR, .label_39._right_1y._pad100_GR {
+            right: 30px;
+            left: auto;
             display: none;
         }
 
