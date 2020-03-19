@@ -698,29 +698,29 @@ export default {
         }
     }
 
-    ._orinationRight_25.wrap_mW {
-        right: 0;
-        display: none;
-    }
-
-    .label_39._bottom_3v._pad100_GR, .label_39._left_2d._pad100_GR, .label_39._right_1y._pad100_GR {
-        right: 30px;
-        left: auto;
-        display: none;
-    }
-
-    #jcont {
-        bottom: 50px !important;
-        z-index: 10 !important;
-    }
-
-    .globalClass_ET .mobileContainer_2k {
-        z-index: 30 !important;
-    }
-
     @media only screen and (max-width: 1024px) {
         #panel {
             display: block;
+        }
+
+        .label_39._bottom_3v._pad100_GR, .label_39._left_2d._pad100_GR, .label_39._right_1y._pad100_GR {
+            right: 30px;
+            left: auto;
+            display: none;
+        }
+
+        ._orinationRight_25.wrap_mW {
+            right: 0;
+            display: none;
+        }
+
+        #jcont {
+            bottom: 50px !important;
+            z-index: 30 !important;
+        }
+
+        .globalClass_ET .mobileContainer_2k {
+            z-index: 30 !important;
         }
 
         #panel-desktop {
