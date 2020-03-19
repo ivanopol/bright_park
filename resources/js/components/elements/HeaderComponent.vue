@@ -142,6 +142,7 @@
             left: 0;
 
             p {
+                padding: 20px 20px;
                 text-align: right;
                 font-weight: bold;
             }
@@ -156,7 +157,7 @@
             .lada-line {
 
                 p {
-                    padding: 13px 10px 0 0;
+                    padding: 20px 10px 0 0;
                     font-size: 0.9rem;
                 }
             }
@@ -168,6 +169,7 @@
                 background: url(/build/images/lada-line.png) no-repeat;
                 background-position: 100% -85px;
                 p {
+                    padding-top: 30px;
                     width: 100%;
                     max-width: 960px;
                     margin: 0 auto;

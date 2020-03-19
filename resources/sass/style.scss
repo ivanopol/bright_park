@@ -279,7 +279,7 @@ form {
         margin: 0 auto;
         display: block;
         outline: none;
-        width: 82vw;
+        width: 80%;
         -webkit-transition: all ease-out 0.1s;
         -moz-transition: all ease-out 0.1s;
         -o-transition: all ease-out 0.1s;
@@ -539,7 +539,7 @@ form {
             margin-bottom: 25px;
 
             a {
-                width: 80vw;
+                width: 80%;
                 max-width: 340px;
             }
 
@@ -579,7 +579,7 @@ footer {
     }
 
     a {
-        width: 85%;
+        width: 80%;
     }
 
     @media only screen and (min-width: 580px) {
@@ -1444,7 +1444,7 @@ footer {
         position: relative;
         color: #fff;
         text-align: center;
-        padding: 20px 30px;
+        padding: 20px 0;
         width: 100%;
 
         //background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/granta/lada_granta_cross.png) no-repeat center center;
@@ -1571,6 +1571,16 @@ footer {
                 background-size: cover;
             }
 
+            &.largus_1 {
+                background: linear-gradient(117deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 13%, rgba(0,0,0,0) 44%), url(/build/images/slider/full/largus/desktop/largus_universal.jpg) no-repeat 50% -2px;
+                background-size: cover;
+            }
+
+            &.l4x4_1 {
+                background: linear-gradient(117deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 13%, rgba(0,0,0,0) 44%), url(/build/images/slider/full/4x4/desktop/lada_4x4.jpg) no-repeat 50% -2px;
+                background-size: cover;
+            }
+
             &.vesta_sw_cross {
                 background: linear-gradient(117deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 13%, rgba(0,0,0,0) 44%), url(/build/images/slider/full/vesta/desktop/lada_vesta_sw_cross.jpg) no-repeat 50% -2px;
                 background-size: cover;
@@ -1629,6 +1639,8 @@ footer {
             font-weight: bold;
             font-size: 14px;
             line-height: 1;
+            width: 80%;
+            max-width: 340px;
 
             &:hover {
 
@@ -1681,6 +1693,10 @@ footer {
             .items-data {
                 width: 52%;
                 text-align: left;
+            }
+
+            a {
+                width: auto;
             }
         }
     }

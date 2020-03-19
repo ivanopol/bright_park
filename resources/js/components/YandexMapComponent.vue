@@ -19,7 +19,7 @@
                     0: 57.997388,
                     1: 56.306636
                 },
-                type: Object
+                type: Array
             },
             button: {
                 default: true,
