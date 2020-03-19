@@ -13,7 +13,7 @@ class CreateReviewTable extends Migration
             $table->bigInteger('model_id')->nullable();
             $table->bigInteger('type_id')->nullable();
             $table->string('url');
-            $table->string('quote');
+            $table->text('quote');
             $table->string('author');
         });
         Artisan::call('db:seed', [
