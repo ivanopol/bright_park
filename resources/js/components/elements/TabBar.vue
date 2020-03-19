@@ -91,6 +91,12 @@
     import IconRoute from '../icons/tab_bar/IconRoute.vue';
     import IconChat from '../icons/tab_bar/IconChat.vue';
 
+    document.onreadystatechange = function () {
+        if (document.readyState == "complete") {
+
+        }
+    }
+
 export default {
         props: {
             theme: {
@@ -180,6 +186,7 @@ export default {
             loadScript: async function() {
                 let jivoScript = document.createElement('script');
                 jivoScript.setAttribute('src', '//code-ya.jivosite.com/widget/' + this.cities.active.jivosite_token);
+                jivoScript.setAttribute('async', '');
                 document.body.appendChild(jivoScript);
             }
         },

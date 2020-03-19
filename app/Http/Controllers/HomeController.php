@@ -41,8 +41,6 @@ class HomeController extends Controller
      */
     public function index(City $city = null)
     {
-        $this->seo->setMetaTags($city);
-
         if ($city['alias']) {
             $this->city = $city['alias'];
         } else {
@@ -53,6 +51,8 @@ class HomeController extends Controller
         $cities = $city->getCities($this->city);
         $data['coordinates'] = explode(",", $city['coordinates']);
         $models = CarModel::with('types_preview')->get();
+
+        $this->seo->setMetaTags($city, ['place' => $data['coordinates']]);
 
         return view('home', ['data' =>  $data, 'models' => $models, 'city' => $this->city, 'cities' => $cities]);
     }
@@ -66,7 +66,6 @@ class HomeController extends Controller
      */
     public function special_offers(City $city = null, Request $request)
     {
-        $this->seo->setMetaTags($city);
 
         if ($city['alias']) {
             $this->city = $city['alias'];
@@ -76,7 +75,7 @@ class HomeController extends Controller
 
         $cities = $city->getCities($this->city);
         $data['coordinates'] = explode(",", $city['coordinates']);
-        //$offers = DB::select('select * from special_offers');
+        $this->seo->setMetaTags($city, ['place' => $data['coordinates']]);
 
         $service = new BasePageService();
         $offer = $service->getRetargetOffers(new Retarget(), $request);
@@ -95,7 +94,7 @@ class HomeController extends Controller
      */
     public function model(City $city = null, CarModel $car_model, CarType $car_type)
     {
-        $this->seo->setMetaTags($city, $car_model->id, $car_type->id);
+
 
         if ($city['alias']) {
             $this->city = $city['alias'];
@@ -104,13 +103,17 @@ class HomeController extends Controller
         }
 
         $cities = $city->getCities($this->city);
-
         $service = new BasePageService();
-
         $models = CarModel::with('types_preview')->get();
-
         $data = $service->get_base_page_data($car_model, $car_type, $this->city);
         $data['coordinates'] = explode(",", $city['coordinates']);
+
+        $this->seo->setMetaTags($city, [
+            'model' => $car_model,
+            'type' => $car_type,
+            'image' => str_replace('mobile/', '', $data['blocks'][0]->url),
+            'place' => $data['coordinates']
+        ]);
 
         return view('model', [ 'data' => $data, 'models' => $models, 'city' => $this->city, 'cities' => $cities]);
     }
@@ -125,7 +128,10 @@ class HomeController extends Controller
      */
     public function model_details(City $city = null, CarModel $car_model, CarType $car_type)
     {
-        $this->seo->setMetaTags($city, $car_model->id, $car_type->id);
+        $data = [];
+        $service = new BasePageService();
+        $data['car_preview'] = $service->getCarPreviewPath($car_model->id, $car_type->id);
+        $this->seo->setMetaTags($city, ['model' => $car_model, 'type' => $car_type, 'image' => $data['car_preview']->image ]);
 
         if ($city['alias']) {
             $this->city = $city['alias'];
@@ -135,17 +141,11 @@ class HomeController extends Controller
 
         $cities = $city->getCities($this->city);
         $models = CarModel::with('types_preview')->get();
-        $data = [];
-
-        $service = new BasePageService();
-        $data['car_preview'] = $service->getCarPreviewPath($car_model->id, $car_type->id);
 
         $car_attrs = CarModelCarType::where([
             ['car_model_id', '=', $car_model->id],
             ['car_type_id', '=', $car_type->id],
         ])->limit(1)->get();
-
-        $credit_programs = DB::select('select name, percent_rate from credit_programs');
 
         $raw = new AutoruService();
         $brands = $raw->getBrands();
@@ -204,7 +204,7 @@ class HomeController extends Controller
      */
     public function news_details(City $city = null, News $news_title)
     {
-        $this->seo->setMetaTags($city);
+        $this->seo->setMetaTags($city, [ 'news' => $news_title ]);
 
         if ($city['alias']) {
             $this->city = $city['alias'];
@@ -267,7 +267,7 @@ class HomeController extends Controller
      */
     public function stocks_details(City $city = null, Stocks $stocks_title)
     {
-        $this->seo->setMetaTags($city);
+        $this->seo->setMetaTags($city, [ 'stocks' => $stocks_title ]);
 
         if ($city['alias']) {
             $this->city = $city['alias'];
