@@ -67,6 +67,7 @@
        </div>
        <yandex-map-component :coordinates='@json($data['coordinates'])'></yandex-map-component>
    </footer>
+    <a href="{{ route('special_offers', ['city' => $city]) }}" class="retarget_time">Ретаргетинговая страница</a>
     <event-handler-component></event-handler-component>
     {!! html_entity_decode($cities['active']['begin_script']) !!}
     </body>
