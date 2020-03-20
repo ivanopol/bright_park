@@ -116,6 +116,9 @@ class City extends Model
                     if ($city->id == $contact->city_id) {
                         $phone_tmp = str_replace(' ', '', $contact->phone);
                         $phone_tmp = str_replace('+', '', $phone_tmp);
+
+                        $phone_tmp2 = str_replace(' ', '', $contact->phone);
+
                         $phone = preg_replace(
                             '/^(\d)(\d{3})(\d{3})(\d{2})(\d{2})$/',
                             '+\1 (\2) \3-\4-\5',
@@ -123,7 +126,8 @@ class City extends Model
                         );
 
                         $contact_array = $contact->toArray();
-                        $contact_array['phone'] = $phone;
+                        $contact_array['phone'] = $phone_tmp2;
+                        $contact_array['phone_format'] = $phone;
                         $cities['active'] = array_merge($cities['active'],$contact_array);
                         //$cities['active']['phone'] = $phone;
                     }

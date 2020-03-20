@@ -17,7 +17,7 @@
                 <a id="get_offer" class="btn event" href="#" v-on:click.prevent="show()">Получить спецпредложение</a>
             </li>
         </ul>
-        <modal name="form-callback"   height="auto">
+        <modal name="form-callback" height="auto" :adaptive="true">
             <div class="close" @click="hide"></div>
             <form-buy2-component :cities="cities" ></form-buy2-component>
         </modal>

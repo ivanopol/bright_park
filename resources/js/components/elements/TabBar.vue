@@ -7,10 +7,10 @@
                     <icon-menu ></icon-menu>
                     <span>Меню</span>
                 </li>
-                <li id="bar_call" class="call-wrap event" @click="toggleCall">
-                    <a :href="'tel:' + this.phone">
-                    <icon-call></icon-call>
-                    <span>Звонок</span>
+                <li id="bar_call" class="call-wrap" @click="toggleCall">
+                    <a :href="'tel:' + this.phone" class="event">
+                        <icon-call></icon-call>
+                        <span>Звонок</span>
                     </a>
                 </li>
                 <li id="bar_route" class="route-map event" @click="toggleMapWindow">

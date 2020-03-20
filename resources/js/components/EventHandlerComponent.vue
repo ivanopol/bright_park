@@ -18,6 +18,7 @@
                     url: '/api/write_event',
                     data: data
                 }).then((response) => {
+
                     if (href !== '#' && href !== null) {
                         window.location = href;
                     }
