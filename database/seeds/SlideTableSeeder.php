@@ -13,7 +13,7 @@ class SlideTableSeeder extends Seeder
                 'type_id' => 1,
                 'class' => 'granta_1',
                 'title' => 'LADA Granta седан',
-                'reduction' => 'Granta седан',
+                'reduction' => 'Granta Седан',
                 'subtitle' => 'динамический дизайн<br> и вместительность',
                 'link' => '/model_details'
             ],
@@ -22,7 +22,7 @@ class SlideTableSeeder extends Seeder
                 'type_id' => 2,
                 'class' => 'granta_2',
                 'title' => 'LADA Granta лифтбек',
-                'reduction' => 'Granta лифтбек',
+                'reduction' => 'Granta Лифтбек',
                 'subtitle' => 'динамический дизайн<br> и вместительность',
                 'link' => '/model_details'
             ],
@@ -31,7 +31,7 @@ class SlideTableSeeder extends Seeder
                 'type_id' => 3,
                 'class' => 'granta_3',
                 'title' => 'LADA Granta универсал',
-                'reduction' => 'Granta универсал',
+                'reduction' => 'Granta Универсал',
                 'subtitle' => 'динамический дизайн<br> и вместительность',
                 'link' => '/model_details'
             ],
@@ -49,7 +49,7 @@ class SlideTableSeeder extends Seeder
                 'type_id' => 5,
                 'class' => 'granta_drive_active',
                 'title' => 'LADA Granta Drive Active',
-                'reduction' => 'Granta drive active',
+                'reduction' => 'Granta Drive Active',
                 'subtitle' => 'динамический дизайн<br> и вместительность',
                 'link' => '/model_details'
             ],
@@ -58,7 +58,7 @@ class SlideTableSeeder extends Seeder
                 'type_id' => 6,
                 'class' => 'granta_6',
                 'title' => 'LADA Granta хэтчбек',
-                'reduction' => 'Granta хэтчбек',
+                'reduction' => 'Granta Хэтчбек',
                 'subtitle' => 'динамический дизайн<br> и вместительность',
                 'link' => '/model_details',
             ],
@@ -67,7 +67,7 @@ class SlideTableSeeder extends Seeder
                 'type_id' => 1,
                 'class' => 'vesta_1',
                 'title' => 'LADA Vesta седан',
-                'reduction' => 'Vesta седан',
+                'reduction' => 'Vesta Седан',
                 'subtitle' => 'Классический стиль,</br> оптимальный выбор',
                 'link' => '/model_details'
             ],
@@ -85,7 +85,7 @@ class SlideTableSeeder extends Seeder
                 'type_id' => 11,
                 'class' => 'l4x4_1',
                 'title' => 'LADA 4x4',
-                'reduction' => '4x4',
+                'reduction' => '4x4 3 дв.',
                 'subtitle' => 'Классический стиль,</br> оптимальный выбор',
                 'link' => '/model_details'
             ],
@@ -94,7 +94,7 @@ class SlideTableSeeder extends Seeder
                 'type_id' => 3,
                 'class' => 'largus_1',
                 'title' => 'LADA Largus универсал',
-                'reduction' => 'Largus универсал',
+                'reduction' => 'Largus Универсал',
                 'subtitle' => 'Классический стиль,</br> оптимальный выбор',
                 'link' => '/model_details'
             ],
@@ -103,7 +103,7 @@ class SlideTableSeeder extends Seeder
                 'type_id' => 4,
                 'class' => 'xray_cross',
                 'title' => 'LADA XRAY Cross',
-                'reduction' => 'XRAY Coss',
+                'reduction' => 'XRAY CROSS',
                 'subtitle' => 'Классический стиль,</br> оптимальный выбор',
                 'link' => '/model_details'
             ],

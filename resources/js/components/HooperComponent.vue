@@ -8,7 +8,7 @@
                             <source :srcset="get_source(slide.image)" media="(min-width: 580px)">
                             <img :src="slide.image" :alt="slide.alt">
                         </picture>
-                        <span v-text="slide.title">Седан</span>
+                        <span v-text="slide.title"></span>
                     </a>
                 </slide>
                 <!--              <hooper-navigation slot="hooper-addons"></hooper-navigation>
