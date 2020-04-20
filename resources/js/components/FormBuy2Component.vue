@@ -1,13 +1,13 @@
 <template>
     <section class="block form form-modal">
         <div class="block-text">
-            <h2><span class="c_orange">Заполните</span> форму</h2>
+            <p class="form-title">{{form_title}}</p>
         </div>
         <form action="#" id="form_test-drive2" method="POST" name="feedback" @submit="send">
             <input id="name_modal" type="text" class="" name="name" placeholder="Имя" required>
             <the-mask id="phone_modal" pattern=".{18,}" mask="+# (###)-###-##-##" type="tel" required="true"
                       placeholder="Телефон"></the-mask>
-            <button id="form_test_drive_2" class="event" :click="send">Закрепить условия</button>
+            <button id="form_test_drive_2" class="event" :click="send">{{button_text}}</button>
             <div class="validation-message-wrap">
                 <div id="warning" class="model-choose-text validation-message" style="color: darkred;" v-show="error">
                     <p>Введите 11-значный номер!</p>
@@ -31,12 +31,24 @@
         beforeMount() {
             this.attachHandler();
         },
-        props: ['cities'],
+        props: {
+            cities : {
+                type: Array
+            },
+            button_text: {
+                default: "Отправить",
+                type: String
+            },
+            form_title: {
+                default: "Заполните форму",
+                type: String
+            }
+        },
         data: function () {
             return {
                 phone: '',
                 success: false,
-                error: false,
+                error: false
             };
         },
         methods: {
@@ -48,8 +60,6 @@
                     "name": document.getElementById('name_modal').value,
                     "responsible_id": this.cities.active.bitrix_responsible_id
                 };
-
-                console.log(formData);
 
                 axios(
                     {
@@ -105,11 +115,34 @@
     }
 
     .form-modal {
+        p.form-title {
+            color: #000;
+            margin-bottom: 30px;
+            font-family: PragmaticaLightCBold, Helvetica, sans-serif;
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 24px;
+            line-height: 1.3;
+        }
+
+        @media only screen and (min-width: 580px) {
+            p.form-title {
+                color: #000;
+                margin-bottom: 30px;
+                font-size: 34px;
+            }
+        }
+
+        @media only screen and (min-width: 1367px) {
+
+        }
+
         form {
             margin-bottom: 40px;
         }
         .block-text {
             padding-top: 30px;
+            padding-right: 50px;
         }
 
         .validation-message-wrap {

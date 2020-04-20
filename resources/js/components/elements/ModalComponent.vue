@@ -2,12 +2,12 @@
     <section id="buttons_other" class="buttons_other mt-40">
         <div class="container">
             <div class="item-buttons-other">
-                <a id="from_test_drive" href="#" class="btn btn-primary event" v-on:click.prevent="show()">Записаться на тест-драйв</a>
-                <a id="form_service" href="#" class="btn btn-secondary event" v-on:click.prevent="show()">Записаться на сервис</a>
+                <a id="from_test_drive" href="#" class="btn btn-primary event" v-on:click.prevent="show('Записаться на тест-драйв')">Записаться на тест-драйв</a>
+                <a id="form_service" href="#" class="btn btn-secondary event" v-on:click.prevent="show('Записаться на сервис')">Записаться на сервис</a>
             </div>
             <modal name="form-callback" height="auto" :adaptive="true">
                 <div class="close" @click="hide"></div>
-                <form-buy2-component :cities=cities></form-buy2-component>
+                <form-buy2-component :cities="cities" :form_title="title"></form-buy2-component>
             </modal>
         </div>
     </section>
@@ -20,7 +20,8 @@
         name: "App",
         props: ['cities'],
         methods: {
-            show () {
+            show (title) {
+                this.title = title;
                 this.$modal.show('form-callback');
             },
             hide () {
@@ -29,7 +30,8 @@
         },
         data () {
             return {
-                modalWidth: window.innerWidth -20
+                modalWidth: window.innerWidth -20,
+                title: ''
             }
         },
         created () {

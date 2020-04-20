@@ -15,7 +15,7 @@
         </div>
         <modal name="form-callback" :adaptive="true" height="auto">
             <div class="close" @click="hide"></div>
-            <form-buy2-component :cities="cities" ></form-buy2-component>
+            <form-buy2-component :cities="cities" form_title='Получить лучшие условия'></form-buy2-component>
         </modal>
     </div>
 </template>
