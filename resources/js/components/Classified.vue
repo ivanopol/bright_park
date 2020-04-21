@@ -67,7 +67,7 @@
         </div>
 
         <div id="special_offer_text" class="model-choose-text" hidden>
-            <p>Предложение действует до 16 января</p>
+            <p>Предложение действует до {{date}}</p>
         </div>
 
     </section>
@@ -117,8 +117,24 @@
                 {label: '150 000 - 200 000', value: 1250000},
                 {label: 'более 200 000', value: 1250000}
             ],
-            years: []
+            years: [],
+
         }),
+        computed: {
+            date: function() {
+                var now =  new Date();
+                var day =  now.getDate() + 2;
+                var month = now.getMonth() + 1;
+                var year = now.getYear();
+
+                var date = new Date(year + '-' + month + '-' + day).toLocaleString('ru', {
+                    month: 'long',
+                    day: 'numeric'
+                });
+
+                return date;
+            }
+        },
         components: {
             vSelect,
             axios
