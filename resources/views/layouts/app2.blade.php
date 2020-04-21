@@ -33,6 +33,22 @@
 
     <title>{{ config('app.name', 'Bright Park') }}</title>
 
+{{--    <link
+        rel="preload"
+        as="font"
+        href="/build/fonts/PragmaticaLightC/PragmaticaLightC.woff2"
+        type="font/woff2"
+        crossorigin
+    />
+
+    <link
+        rel="preload"
+        as="font"
+        href="/build/fonts/PragmaticaLightCBold/PragmaticaLightCBold.woff2"
+        type="font/woff2"
+        crossorigin
+    />--}}
+
     <!-- Scripts -->
     <script src="{{ mix('js/app.js', 'build') }}" defer></script>
 
