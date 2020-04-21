@@ -115,8 +115,13 @@ class SeoService
                     $tags->description = mb_strimwidth($params['news']->text_short, 0, 157, "...") . " - Брайт Парк в " . $city->city_dative;
                 } elseif ( $segments[1] === $params['model']->slug && $segments[2] === $params['type']->slug )
                 {
-                    $tags->title = "Новая LADA " . $params['model']->title . " " . $params['type']->title_ru . " по лучшей цене в " . $city->city_dative;
-                    $tags->description = "Выбираете где купить новую LADA " . $params['model']->title . " " . $params['type']->title_ru . " по лучшей цене в " . $city->city_dative . "? У официального дилера LADA - Брайт Парк " . $params['model']->title . " " . $params['type']->title_ru . " в наличии по лучшей стоимости. Также у нас выгодный обмен и кредит.";
+                    if (strtolower($params['type']->title_ru) === 'xray') {
+                        $model = $params['model']->title;
+                    } else {
+                        $model = $params['model']->title . " " . $params['type']->title_ru;
+                    }
+                    $tags->title = "Новая LADA " . $model . " по лучшей цене в " . $city->city_dative;
+                    $tags->description = "Выбираете где купить новую LADA " . $model . " по лучшей цене в " . $city->city_dative . "? У официального дилера LADA - Брайт Парк " . $model . " в наличии по лучшей стоимости. Также у нас выгодный обмен и кредит.";
                     $tags->image = $params['image'];
                 }
                 break;
