@@ -64,5 +64,18 @@
 <script src="https://api-maps.yandex.ru/2.1/?apikey=e65fea9d-e8a0-479d-b21a-35637fdc6c6c&lang=ru_RU&init=onload"
         type="text/javascript">
 </script>
+<!-- StreamWood code -->
+<link href="https://clients.streamwood.ru/StreamWood/sw.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="https://clients.streamwood.ru/StreamWood/sw.js" charset="utf-8"></script>
+<script type="text/javascript">
+    swQ(document).ready(function(){
+        swQ().SW({
+            swKey: 'fd1774a812a65b0300a528bcf36d2eca',
+            swDomainKey: '5d8a6d41b7bcacbe5ff954bd60afe263'
+        });
+        swQ('body').SW('load');
+    });
+</script>
+<!-- /StreamWood code -->
 </body>
 </html>
