@@ -9,9 +9,61 @@
     </section>
     <body class="event-scroll">
     <scroll-event-handler-component></scroll-event-handler-component>
+
+    <div class="container">
+        <div id="advantages" class="advantages_wrap bp-online">
+            <h1>Брайт Парк работает онлайн</h1>
+            <p>Мы оказываем полный цикл услуг по приобретению автомобиля. Вы можете получить консультацию об автомобиле и совершению покупки онлайн. Мы обеспечим вас полной информацией с детальными фотографиями и видеообзором, выбранного вами автомобиля.</p>
+            <ul>
+                <li>
+                    <div class="advantage">
+                        <span class="value">Онлайн-заявка</span>
+                        <span class="text">на кредит</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="advantage">
+                        <span class="value">Дистанционная</span>
+                        <span class="text">оценка авто на обмен</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="advantage">
+                        <span class="value">Фото- и видео-</span>
+                        <span class="text">презентация нового<br>авто</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="advantage">
+                        <span class="value">Бесконтактная</span>
+                        <span class="text">выдача авто<br> за 1 день</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <section id="models" class="models_wrap">
+        <div class="container">
+            <h2>Модели</h2>
+            <ul>
+                @foreach ($models as $model)
+                    <li>
+                        <a id="model_link" class="event" href="{{ route('model', ['city' => $city, 'car_model' => $model->slug, 'car_type' => $model->types_preview[0]->slug])}}">
+                            <div class="img_wrap">
+                                <img src="{{ $model->preview }}" alt="{{ $model->title }}">
+                            </div>
+                            <div class="title">{{ $model->title }}</div>
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+    </section>
+
     <div class="container">
         <div id="advantages" class="advantages_wrap">
-            <h1>Брайт Парк</h1>
+            <h2>Брайт Парк</h2>
             <p>Мы - федеральный дилер LADA, работающий в Москве и ещё 5 регионах с 2008 года.</p>
             <ul>
                 <li>
@@ -41,23 +93,6 @@
             </ul>
         </div>
     </div>
-    <section id="models" class="models_wrap">
-        <div class="container">
-            <h2>Модели</h2>
-            <ul>
-                @foreach ($models as $model)
-                    <li>
-                        <a id="model_link" class="event" href="{{ route('model', ['city' => $city, 'car_model' => $model->slug, 'car_type' => $model->types_preview[0]->slug])}}">
-                            <div class="img_wrap">
-                                <img src="{{ $model->preview }}" alt="{{ $model->title }}">
-                            </div>
-                            <div class="title">{{ $model->title }}</div>
-                        </a>
-                    </li>
-                @endforeach
-            </ul>
-        </div>
-    </section>
     <modal-component :cities='@json($cities)'></modal-component>
    <footer class="block footer">
        <div class="block-text center mb">
