@@ -1846,6 +1846,36 @@ footer {
         p {
             margin-bottom: 15px;
         }
+
+        ul {
+            list-style-type: circle;
+            margin-bottom: 20px;
+            padding-left: 20px;
+
+            li {
+                margin-bottom: 5px;
+            }
+        }
+
+        table {
+            th {
+                font-weight: bold;
+                border-bottom: 2px solid #999;
+            }
+            td {
+                line-height: 1.4;
+                border-bottom: 1px solid #999;
+
+                &.tbl_title {
+
+                }
+
+                &.tbl_value {
+                    font-weight: bold;
+                    text-align: center;
+                }
+            }
+        }
     }
 
     @media only screen and (min-width: 700px) {
