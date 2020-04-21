@@ -574,7 +574,7 @@ LADA Largus Cross - топ-предложение в модельной лине
             [
                 'model_id' => 3,
                 'type_id' => 4,
-                'title' => '<span class="c_orange">КРОССОВЕР, </span> ЗАБЫВШИЙ О ГОРОДЕ',
+                'title' => '<span class="c_orange">КРОССОВЕР, </span> ЗАБЫВШИЙ О&nbsp;ГОРОДЕ',
                 'text' => 'Легкая грубоватость, тщательно продуманная небрежность и несколько контрастных деталей… Это не просто стиль. Это прямое отражение характера, функций и предназначения.',
                 'url' => '/build/images/photos/models/xray/blocks/cross/block_02/mobile/block_02.jpg',
                 'pointers' => 4,
