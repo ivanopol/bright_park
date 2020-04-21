@@ -144,7 +144,7 @@ h3 {
 .btn-banner:active,
 .btn:hover,
 .btn:active {
-    background-color: #edb321 !important;
+    background-color: #e67143 !important;
 
 }
 
@@ -152,8 +152,8 @@ h3 {
 .btn-half-primary:active,
 .btn-primary:hover,
 .btn-primary:active {
-    background-color: #edb321 !important;
-    border-color: #edb321 !important;
+    background-color: #e67143 !important;
+    border-color: #e67143 !important;
 }
 
 .btn-half-secondary:hover,
@@ -329,14 +329,16 @@ form {
         margin-top: 30px;
         font-size: 14px;
         line-height: 14px;
+        cursor: pointer;
 
-        &:active {
-            background-color: #edb321;
+        &:active,
+        &:hover {
+            background-color: #e67143;
         }
 
         &:active,
         &:focus {
-            box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, .5);
+          //  box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, .5);
         }
     }
 }
