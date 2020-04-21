@@ -123,7 +123,7 @@
         computed: {
             date: function() {
                 var now =  new Date();
-                var day =  now.getDate() + 2;
+                var day =  now.getDate() + 3;
                 var month = now.getMonth() + 1;
                 var year = now.getYear();
 
