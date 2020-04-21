@@ -17,7 +17,7 @@ class ContactsTableSeeder extends Seeder
                 'ok_url' => 'https://ok.ru/brightpark.rus'],
 
             ['city_id' => '1', 'address' => 'Пермь, ул.Пушкарская, 138',
-                'phone' => '+7 342 233 82 54', 'email' => 'perm@brightpark.ru',
+                'phone' => '+7 342 233 82 54', 'email' => 'info@brightpark.ru',
                 'fb_url' => 'https://www.facebook.com/brightpark.rus',
                 'instagram_url' => 'https://www.instagram.com/lada_brightpark/',
                 'vk_url' => 'https://vk.com/brightpark_rus',
