@@ -2,7 +2,7 @@
     <section>
         <div class="main-screen-wrap" >
             <ul>
-                <li>
+                <li class="odd">
                     <div class="asset-container">
                         <picture>
                             <source :srcset="offer.img_mobile + ', ' + offer.img_mobile + ' 2x'" media="(max-width: 580px)">
@@ -236,7 +236,7 @@
                 bottom: 5%;
             }
 
-            ul li:nth-child(even) {
+            ul li.even {
                 .product-content {
                     position: absolute;
                     top: 0;
@@ -285,7 +285,7 @@
                 }
             }
 
-            ul li:nth-child(odd) {
+            ul li.odd {
                 .product-content {
                     position: absolute;
                     top: 0;
@@ -336,8 +336,8 @@
         }
 
         @media only screen and (min-width: 1366px) and (max-width: 1979px) {
-            ul li:nth-child(even),
-            ul li:nth-child(odd) {
+            ul li.even,
+            ul li.odd {
                 .product-content {
                     padding-right: 50px;
 

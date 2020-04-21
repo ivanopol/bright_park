@@ -1,7 +1,23 @@
 <template>
     <section>
         <hooper class="main-screen-wrap" autoPlay="true" playSpeed="6000" :wheelControl="false" >
-            <slide>
+            <slide class="odd">
+                <div class="asset-container">
+                    <picture>
+                        <source srcset="/build/images/main/mobile/main_brightpark_online.jpg, /build/images/main/mobile/main_brightpark_online.jpg 2x" media="(max-width: 580px)">
+                        <source srcset="/build/images/main/tablet/main_brightpark_online.jpg, /build/images/main/tablet/main_brightpark_online.jpg 2x" media="(max-width: 1365px)">
+                        <source srcset="/build/images/main/desktop/main_brightpark_online.jpg, /build/images/main/desktop/main_brightpark_online.jpg 2x" media="(min-width: 1366px)">
+                        <img class="asset-image" src="/build/images/main/mobile/main_brightpark_online.jpg" srcset="/build/images/main/mobile/main_brightpark_online.jpg, /build/images/main/mobile/main_brightpark_online.jpg 2x" alt="Брайт Парк работает онлайн!" />
+                    </picture>
+                </div>
+                <div class="product-content">
+                    <p class="title-tagline bold">Брайт Парк<br> работает онлайн!<br> <span class="text-low">Полный комплекс услуг от заявки до выдачи</span></p>
+                    <div class="item-buttons">
+                        <a :href="city + '/stocks/brajt_park_rabotaet_onlajn'" class="btn btn-primary">Условия акции</a>
+                    </div>
+                </div>
+            </slide>
+            <slide class="odd">
                 <div class="asset-container">
                     <picture>
                         <source srcset="/build/images/main/mobile/main_granta_red.jpg, /build/images/main/mobile/main_granta_red.jpg 2x" media="(max-width: 580px)">
@@ -18,7 +34,7 @@
                     </div>
                 </div>
             </slide>
-            <slide>
+            <slide class="even">
                 <div class="asset-container">
                     <picture>
                         <source srcset="/build/images/main/mobile/main_vesta_gray.jpg, /build/images/main/mobile/main_vesta_gray.jpg 2x" media="(max-width: 580px)">
@@ -36,7 +52,7 @@
                     </div>
                 </div>
             </slide>
-            <slide>
+            <slide class="odd">
                 <div class="asset-container">
                     <picture>
                         <source srcset="/build/images/main/mobile/main_granta_gray.jpg, /build/images/main/mobile/main_granta_gray.jpg 2x" media="(max-width: 580px)">
@@ -54,7 +70,7 @@
                     </div>
                 </div>
             </slide>
-            <slide>
+            <slide class="even">
                 <div class="asset-container">
                     <picture>
                         <source srcset="/build/images/main/mobile/main_vesta_red.jpg, /build/images/main/mobile/main_vesta_red.jpg 2x" media="(max-width: 580px)">
@@ -183,6 +199,10 @@
                 -o-transition: all ease-out 0.5s;
                 transition: all ease-out 0.5s;*/
 
+                .text-low {
+                    font-size: 70%;
+                }
+
 
                 &.bold {
                     font-family: PragmaticaLightCBold, Helvetica, sans-serif;
@@ -214,7 +234,7 @@
                 bottom: 5%;
             }
 
-            ul li:nth-child(even) {
+            ul li.even {
                 .product-content {
                     position: absolute;
                     top: 0;
@@ -263,7 +283,7 @@
                 }
             }
 
-            ul li:nth-child(odd) {
+            ul li.odd {
                 .product-content {
                     position: absolute;
                     top: 0;
@@ -314,8 +334,8 @@
         }
 
         @media only screen and (min-width: 1366px) and (max-width: 1979px) {
-            ul li:nth-child(even),
-            ul li:nth-child(odd) {
+            ul li.even,
+            ul li.odd {
                 .product-content {
                     padding-right: 50px;
 
