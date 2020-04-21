@@ -248,25 +248,25 @@ class BlockSliderTableSeeder extends Seeder
                 'text' => 'Охлаждаемый перчаточный ящик',
                 'image' => '/build/images/photos/models/xray/blocks/block_02/plus/xray_2_1.jpg',
                 'number' => '1',
-                'block_id' => '30'
+                'block_id' => '42'
             ],
             [
                 'text' => 'Просторный салон с нишами для хранения',
                 'image' => '/build/images/photos/models/xray/blocks/block_02/plus/xray_2_2.jpg',
                 'number' => '2',
-                'block_id' => '30'
+                'block_id' => '42'
             ],
             [
-                'text' => 'климат-контроль',
+                'text' => 'Климат-контроль',
                 'image' => '/build/images/photos/models/xray/blocks/block_02/plus/xray_2_3.jpg',
                 'number' => '3',
-                'block_id' => '30'
+                'block_id' => '42'
             ],
             [
-                'text' => 'мультимедийная система с 7" цветным дисплеем',
+                'text' => 'Мультимедийная система с 7" цветным дисплеем',
                 'image' => '/build/images/photos/models/xray/blocks/block_02/plus/xray_2_4.jpg',
                 'number' => '4',
-                'block_id' => '30'
+                'block_id' => '42'
             ],
             [
                 'text' => 'Более комфортные передние кресла получили развитую боковую поддержку и новый механизм складывания.',
@@ -427,43 +427,6 @@ class BlockSliderTableSeeder extends Seeder
                 'image' => '/build/images/photos/models/granta/blocks/cross/block_03/plus/granta_3_5.jpg',
                 'number' => '5',
                 'block_id' => '45'
-            ],
-
-            [
-                'text' => 'ЭРА-ГЛОНАСС Система экстренного оповещения работает даже в случае отключения аккумулятора',
-                'image' => '/build/images/photos/models/xray/blocks/block_04/plus/granta_4_5.jpg',
-                'number' => '1',
-                'block_id' => '46'
-            ],
-            [
-                'text' => 'Подушки безопасности Две фронтальные подушки безопасности – необходимая защита водителя и пассажира',
-                'image' => '/build/images/photos/models/xray/blocks/block_04/plus/granta_4_4.jpg',
-                'number' => '2',
-                'block_id' => '46'
-            ],
-            [
-                'text' => 'Задние датчики парковки. Более надежная страховка при маневрировании задним ходом',
-                'image' => '/build/images/photos/models/xray/blocks/block_04/plus/granta_4_6.jpg',
-                'number' => '3',
-                'block_id' => '46'
-            ],
-            [
-                'text' => 'Курсовая устойчивость (ESC) Предотвращает занос автомобиля',
-                'image' => '/build/images/photos/models/xray/blocks/block_04/plus/granta_4_2.jpg',
-                'number' => '4',
-                'block_id' => '46'
-            ],
-            [
-                'text' => 'Система торможения (ABS+BAS) Антиблокировочная система с усилителем экстренного торможения: сохранение устойчивости и управляемости автомобиля',
-                'image' => '/build/images/photos/models/xray/blocks/block_04/plus/granta_4_1.jpg',
-                'number' => '5',
-                'block_id' => '46'
-            ],
-            [
-                'text' => 'Помощник на подъеме. Система HSA помогает при старте на подъёме. Ощущение уверенности при подъеме (доступно для комплектаций с АМТ)',
-                'image' => '/build/images/photos/models/xray/blocks/block_04/plus/granta_4_3.jpg',
-                'number' => '6',
-                'block_id' => '46'
             ],
         ];
 
