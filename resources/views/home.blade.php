@@ -13,7 +13,7 @@
     <div class="container">
         <div id="advantages" class="advantages_wrap bp-online">
             <h1>Брайт Парк работает онлайн</h1>
-            <p>Мы оказываем полный цикл услуг по приобретению автомобиля. Вы можете получить консультацию об автомобиле и совершению покупки онлайн. Мы обеспечим вас полной информацией с детальными фотографиями и видеообзором, выбранного вами автомобиля.</p>
+            <p>Мы оказываем полный цикл услуг по приобретению автомобиля.</p>
             <ul>
                 <li>
                     <div class="advantage">
@@ -30,13 +30,13 @@
                 <li>
                     <div class="advantage">
                         <span class="value">Фото- и видео-</span>
-                        <span class="text">презентация нового<br>авто</span>
+                        <span class="text">презентация нового авто</span>
                     </div>
                 </li>
                 <li>
                     <div class="advantage">
                         <span class="value">Бесконтактная</span>
-                        <span class="text">выдача авто<br> за 1 день</span>
+                        <span class="text">выдача авто за 1 день</span>
                     </div>
                 </li>
             </ul>
