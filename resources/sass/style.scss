@@ -1175,17 +1175,21 @@ footer {
 
             .advantage {
 
-                @media only screen and (min-width: 580px) {
-                    & {
-                        padding: 0 15px;
-                    }
-                }
                 .value {
                     font-family: PragmaticaLightC, Helvetica, sans-serif;
                     display: block;
-                    font-size: 22px;
+                    font-size: 18px;
                     font-weight: bold;
-                    margin-bottom: 0px;
+                    margin-bottom: 5px;
+                }
+
+                @media only screen and (min-width: 580px) {
+                    & {
+                        padding: 0 15px;
+                        .value {
+                            font-size: 22px;
+                        }
+                    }
                 }
             }
         }
