@@ -1,6 +1,22 @@
 <template>
     <section>
         <hooper class="main-screen-wrap" :autoPlay="true" :playSpeed="6000" :wheelControl="false" >
+            <slide class="even">
+                <div class="asset-container">
+                    <picture>
+                        <source srcset="/build/images/main/mobile/brajt_rabotaet.jpg, /build/images/main/mobile/brajt_rabotaet.jpg 2x" media="(max-width: 580px)">
+                        <source srcset="/build/images/main/tablet/brajt_rabotaet.jpg, /build/images/main/tablet/brajt_rabotaet.jpg 2x" media="(max-width: 1365px)">
+                        <source srcset="/build/images/main/desktop/brajt_rabotaet.jpg, /build/images/main/desktop/brajt_rabotaet.jpg 2x" media="(min-width: 1366px)">
+                        <img class="asset-image" src="/build/images/main/mobile/brajt_rabotaet.jpg" srcset="/build/images/main/mobile/brajt_rabotaet.jpg, /build/images/main/mobile/brajt_rabotaet.jpg 2x" alt="Брайт Парк работает онлайн!" />
+                    </picture>
+                </div>
+                <div class="product-content">
+                    <p class="title-tagline bold"><span class="title-uppercase">Снова вместе!</span><br> <span class="text-low">Брайт Парк работает. Приезжайте к нам в салон</span></p>
+                    <div class="item-buttons">
+
+                    </div>
+                </div>
+            </slide>
             <slide class="odd">
                 <div class="asset-container">
                     <picture>
@@ -11,7 +27,7 @@
                     </picture>
                 </div>
                 <div class="product-content">
-                    <p class="title-tagline bold">Брайт Парк<br> работает онлайн!<br> <span class="text-low">Полный комплекс услуг от заявки до выдачи</span></p>
+                    <p class="title-tagline bold"><span class="title-uppercase">Брайт Парк<br> работает онлайн!</span><br> <span class="text-low">Полный комплекс услуг от заявки до выдачи</span></p>
                     <div class="item-buttons">
                         <a :href="city + '/stocks/brajt_park_rabotaet_onlajn'" class="btn btn-primary">Условия акции</a>
                     </div>
@@ -110,6 +126,11 @@
 
 
 <style lang="scss" >
+    .title-uppercase {
+        font-family: PragmaticaLightCBold, Helvetica, sans-serif;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
 
     .item-buttons {
         position: absolute;

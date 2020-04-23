@@ -197,7 +197,7 @@
             .title-tagline {
                 font-size: 26px;
                 //font-weight: bold;
-                width: 78vw;
+                width: 80%;
                 margin: 30px auto 0;
                 line-height: 1.2;
 /*                -webkit-transition: all ease-out 0.5s;
