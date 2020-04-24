@@ -6,6 +6,7 @@ namespace App\Services;
 
 use Composer\DependencyResolver\Request;
 use Exception;
+use Mail;
 
 class BitrixService
 {
@@ -33,6 +34,15 @@ class BitrixService
             'type' => "PHONE",
             'values' => [$phone],
         ];
+
+
+        $to_name = 'Dima';
+        $to_email = 'ivanopol777@mail.ru';
+        $data = array('name'=>"Sam Jose", "body" => "Test mail");
+        Mail::send('emails', $data, function($message) use ($to_name, $to_email) {
+            $message->to($to_email, $to_name)->subject('Artisans Web Testing Mail');
+            $message->from('admin@brightpark.ru', 'Artisans Web');
+        });
 
         $curl = curl_init();
         curl_setopt_array($curl, [
