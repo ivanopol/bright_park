@@ -17,7 +17,7 @@
                     </li>
                     <li>
                         <span class="contacts-field-name">Телефон:</span>
-                        <span class="contacts-field-value">{{ $cities['active']['phone'] }}</span>
+                        <span class="contacts-field-value"><span class="callibri_phone">{{ $cities['active']['phone'] }}</span></span>
                     </li>
                     <li>
                         <span class="contacts-field-name">E-Mail:</span>
