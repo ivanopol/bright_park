@@ -8,9 +8,9 @@
                 <div class="retarget-warning-title">Автомобили сильно подорожают в 2020 году</div>
             </div>
             <div class="retarget-warning-body">
-                <div class="retarget-warning-row">В 2020 году эсперты ожидают рост цен на автомобили на 7-8%</div>
+                <div class="retarget-warning-row">В 2020 году эксперты ожидают рост цен на автомобили на 7-8%</div>
                 <div class="retarget-warning-row retarget-warning-text-source">Источник: autonews.ru</div>
-                <a href="#" v-on:click.prevent="show()" class="btn btn-primary retarget-warning-button">Получить лучшие условия</a>
+                <a href="#" v-on:click.prevent="show()" class="btn btn-primary">Получить лучшие условия</a>
             </div>
         </div>
         <modal name="form-callback" :adaptive="true" height="auto">

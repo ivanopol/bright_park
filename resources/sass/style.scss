@@ -136,6 +136,10 @@ h3 {
     transition: all 0.3s ease-out;
 }
 
+.green {
+    background-color: #5bc086;
+}
+
 .btn-form:hover,
 .btn-form:active,
 .btn-small:hover,
@@ -143,18 +147,19 @@ h3 {
 .btn-banner:hover,
 .btn-banner:active,
 .btn:hover,
-.btn:active {
-    background-color: #e67143 !important;
-
-}
-
+.btn:active,
 .btn-half-primary:hover,
 .btn-half-primary:active,
 .btn-primary:hover,
 .btn-primary:active {
     background-color: #e67143 !important;
-    border-color: #e67143 !important;
+    /*border-color: #e67143 !important;*/
+    &.green {
+        background-color: #4dab75!important;
+    }
 }
+
+
 
 .btn-half-secondary:hover,
 .btn-half-secondary:active,
@@ -1007,6 +1012,39 @@ footer {
         }
     }
 }
+
+.btn-position {
+    text-align: center;
+    margin: 15px auto 0;
+    max-width: 340px;
+    display: block;
+}
+/*
+
+.btn-wrap-outer {
+    text-align: center;
+    & a,
+    & button {
+        max-width: 340px;
+        width: 100%;
+    }
+
+    @media only screen and (min-width: 800px) {
+        &>div {
+            display: flex;
+            flex-direction: row;
+            margin-top: 20px;
+            justify-content: space-between;
+            width: 170px;
+        }
+
+        & a,
+        & button {
+            max-width: 170px;
+        }
+    }
+}
+*/
 
 .retarget-warning {
     padding: 0 0 30px;
