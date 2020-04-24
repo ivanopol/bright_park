@@ -36,14 +36,23 @@ class BitrixService
         ];
 
 
-        $to_name = 'Dima';
-        $to_email = 'ivanopol777@mail.ru';
-        $data = array('name'=>"Sam Jose", "body" => "Test mail");
-        Mail::send('emails', $data, function($message) use ($to_name, $to_email) {
-            $message->to($to_email, $to_name)->subject('Artisans Web Testing Mail');
-            $message->from('admin@brightpark.ru', 'Artisans Web');
-        });
 
+        $emailFrom = 'site@brightpark.ru';
+        $emailsTo = 'ivanopol777@mail.ru';
+        $subject = 'Брайт Парк. Заявка с сайта ';
+
+        Mail::send('emails.feedback', ['phone' => $data['phone'], 'name' => $data['name']], function($message) use ($emailsTo, $emailFrom, $subject) {
+            $emails = explode(',', $emailsTo);
+
+            foreach ($emails as $key => $email) {
+                if (!$key) {
+                    $message->to($email)->subject($subject)->from($emailFrom, 'Брайт Парк');
+                } else {
+                    $message->cc($email)->subject($subject)->from($emailFrom, 'Брайт Парк');
+                }
+            }
+        });
+/*
         $curl = curl_init();
         curl_setopt_array($curl, [
             CURLOPT_SSL_VERIFYPEER => 0,
@@ -187,7 +196,7 @@ class BitrixService
             ]));
 
             setcookie($key, $value, time() + 60 * 60 * 24 * 365, '/');
-        }
+        } */
     }
 
     function getUrl()
