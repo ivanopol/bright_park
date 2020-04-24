@@ -10,8 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+https://brightpark.ru/volgograd/
 //Auth::routes();
+Route::get('/perm/lada-v-brajt-parke-na-osobyh-usloviyah/', function () { return redirect('/perm/special_offers/'); });
+Route::get('/moscow/lada-v-brajt-parke-na-osobyh-usloviyah/', function () { return redirect('/moscow/special_offers/'); });
+Route::get('/yekaterinburg/lada-v-brajt-parke-na-osobyh-usloviyah/', function () { return redirect('/yekaterinburg/special_offers/'); });
+Route::get('/volgograd/lada-v-brajt-parke-na-osobyh-usloviyah/', function () { return redirect('/volgograd/special_offers/'); });
+Route::get('/magnitogorsk/lada-v-brajt-parke-na-osobyh-usloviyah/', function () { return redirect('/magnitogorsk/special_offers/'); });
+Route::get('/rostov-na-donu/lada-v-brajt-parke-na-osobyh-usloviyah/', function () { return redirect('/rostov-na-donu/special_offers/'); });
+
 Route::get('/perm/catalog/lada-granta/', function () { return redirect('/perm/granta/sedan/'); });
 Route::get('/perm/catalog/lada-granta/granta-sedan/', function () { return redirect('/perm/granta/sedan/'); });
 Route::get('/perm/catalog/lada-granta/granta-liftbek/', function () { return redirect('/perm/granta/liftback/'); });
