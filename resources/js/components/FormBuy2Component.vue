@@ -8,11 +8,12 @@
             <the-mask id="phone_modal" pattern=".{18,}" mask="+# (###)-###-##-##" type="tel" required="true"
                       placeholder="Телефон"></the-mask>
             <button id="form_test_drive_2" class="event" :click="send">{{button_text}}</button>
+
             <div class="validation-message-wrap">
-                <div id="warning" class="model-choose-text validation-message" style="color: darkred;" v-show="error">
-                    <p>Введите 11-значный номер!</p>
+                <div id="warning" class="model-choose-text validation-message" v-show="error">
+                    <p>Введите 11-значный номер</p>
                 </div>
-                <div id="success" class="model-choose-text validation-message" style="color: darkgreen;" v-show="success">
+                <div id="success" class="model-choose-text validation-message" v-show="success">
                     <p>Заявка отправлена!</p>
                 </div>
             </div>
@@ -115,6 +116,33 @@
     }
 
     .form-modal {
+        #warning,
+        #success {
+            text-align: center;
+            line-height: 1.2;
+            margin: 18px auto;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 16px;
+            max-width: 340px;
+
+        }
+
+        #warning {
+            p {
+                color: darkred;
+            }
+        }
+
+        #success {
+            background-color: #dafbcc;
+
+            p {
+                margin: 0 !important;
+                color: darkgreen;
+            }
+        }
+
         p.form-title {
             color: #000;
             margin-bottom: 30px;
