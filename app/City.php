@@ -106,6 +106,7 @@ class City extends Model
                 $cities['active'] = [
                     'value' => $city->alias,
                     'label' => $city->title_ru,
+                    'dative' => $city->city_dative,
                     'coords' => $city->coordinates,
                     'jivosite_token' => $city->jivosite_token,
                     'begin_script' => $city->begin_script,
