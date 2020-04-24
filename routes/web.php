@@ -13,7 +13,7 @@
 
 Auth::routes();
 
-Route::middleware(['auth', 'cookie.check', 'counter'])->group(function () {
+Route::middleware(['cookie.check', 'counter'])->group(function () {
     Route::get('/{city}/stocks', 'HomeController@stocks')->name('stocks');
     Route::get('/{city}/stocks/{stocks_title}', 'HomeController@stocks_details')->name('stocks.one');
     Route::get('/{city}/news', 'HomeController@news')->name('news');
