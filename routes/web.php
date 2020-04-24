@@ -11,7 +11,15 @@
 |
 */
 
-Auth::routes();
+//Auth::routes();
+Route::get('/perm/catalog/lada-granta/', function () { return redirect('/perm/granta/sedan/'); });
+Route::get('/perm/catalog/lada-granta/granta-sedan/', function () { return redirect('/perm/granta/sedan/'); });
+Route::get('/perm/catalog/lada-granta/granta-liftbek/', function () { return redirect('/perm/granta/liftback/'); });
+Route::get('/perm/catalog/lada-granta/granta-hetchbek/', function () { return redirect('/perm/granta/sedan/'); });
+Route::get('/perm/catalog/lada-granta/granta-universal/', function () { return redirect('/perm/granta/sedan/'); });
+Route::get('/perm/catalog/lada-granta/granta-cross/', function () { return redirect('/perm/granta/cross/'); });
+Route::get('/perm/catalog/lada-granta/granta-drive-active/', function () { return redirect('/perm/granta/drive-active/'); });
+
 
 Route::middleware(['cookie.check', 'counter'])->group(function () {
     Route::get('/{city}/stocks', 'HomeController@stocks')->name('stocks');
