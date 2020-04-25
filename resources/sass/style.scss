@@ -183,6 +183,10 @@ h3 {
 
 .c_orange {
     color: #FF8351;
+
+    &.с_inline {
+        display: inline;
+    }
 }
 
 .c_red {
@@ -211,8 +215,58 @@ h3 {
     margin: 0 auto;
 }
 
+.retarget-block {
+    &-list-center {
+        text-align: center;
+        margin: 40px 0;
+        ol {
+            text-align: left;
+            display: inline-block;
+
+            li {
+                margin: 0 0 10px 17px;
+                font-size: 16px;
+                line-height: 1.4;
+            }
+        }
+    }
+}
+
+/* Tablet */
+@media only screen and (min-width: 580px) and (max-width: 1365px) {
+    .retarget-block {
+        &-list-center {
+            margin: 60px 0;
+            ol {
+                li {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+}
+
+/* Desktop */
+@media only screen and (min-width: 1366px) {
+    .retarget-block {
+        &-list-center {
+            ol {
+                margin: 80px 0;
+                li {
+                    font-size: 28px;
+                }
+            }
+        }
+    }
+}
+
+
 
 .block {
+    ol {
+        list-style: decimal;
+    }
+
     h2 {
         font-family: PragmaticaLightCBold, Helvetica, sans-serif;
         text-align: center;
