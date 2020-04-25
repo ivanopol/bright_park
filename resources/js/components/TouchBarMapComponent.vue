@@ -39,14 +39,14 @@
 
                         addUserLocation(point);
 
-                        console.log('Unable to retrieve your location');
-                        console.log(e)
+                   //     console.log('Unable to retrieve your location');
+                   //     console.log(e)
                     }
 
                     if (!navigator.geolocation) {
-                        console.log('Geolocation is not supported by your browser');
+                    //    console.log('Geolocation is not supported by your browser');
                     } else {
-                        navigator.geolocation.getCurrentPosition(success, error);
+                      //  navigator.geolocation.getCurrentPosition(success, error);
                     }
 
                     function addUserLocation(coords) {
