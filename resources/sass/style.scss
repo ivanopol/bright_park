@@ -1199,6 +1199,10 @@ footer {
                     font-size: 16px;
                     margin-bottom: 20px;
                     line-height: 1.2;
+
+                    &-small {
+                      font-size: 14px;
+                    }
                 }
             }
 
@@ -1287,6 +1291,9 @@ footer {
                 .advantage {
                     .text {
                         font-size: 18px;
+                        &-small {
+                            font-size: 16px;
+                        }
                     }
                 }
             }
@@ -1317,6 +1324,10 @@ footer {
 
                     .text {
                         font-size: 22px;
+
+                        &-small {
+                            font-size: 20px;
+                        }
                     }
                 }
             }
