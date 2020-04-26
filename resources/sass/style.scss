@@ -247,7 +247,7 @@ $color-coral: #ff8250;
 }
 
 .block {
-    ol {
+    &.retarget-block ol {
         list-style: decimal;
     }
 
