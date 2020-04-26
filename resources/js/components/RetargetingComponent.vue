@@ -2,7 +2,7 @@
     <section>
         <div class="main-screen-wrap" >
             <ul>
-                <li class="odd">
+                <li class="retargeting-banner">
                     <div class="asset-container">
                         <picture>
                             <source :srcset="offer.img_mobile + ', ' + offer.img_mobile + ' 2x'" media="(max-width: 580px)">
@@ -64,7 +64,7 @@
 </script>
 
 
-<style lang="scss" >
+<style lang="scss" scoped>
 
     .countdown {
         font-family: PragmaticaLightCBold, Helvetica, sans-serif;
@@ -200,10 +200,10 @@
                 width: 80%;
                 margin: 30px auto 0;
                 line-height: 1.2;
-/*                -webkit-transition: all ease-out 0.5s;
-                -moz-transition: all ease-out 0.5s;
-                -o-transition: all ease-out 0.5s;
-                transition: all ease-out 0.5s;*/
+                /*                -webkit-transition: all ease-out 0.5s;
+                                -moz-transition: all ease-out 0.5s;
+                                -o-transition: all ease-out 0.5s;
+                                transition: all ease-out 0.5s;*/
 
 
                 &.bold {
@@ -217,6 +217,24 @@
                 }
             }
         }
+
+        .retargeting-banner {
+            .product-content {
+                .title-tagline {
+                    font-size: 7vw;
+                    margin-top: 23%;
+                }
+            }
+        }
+
+        @media only screen and (min-width: 580px) and  (max-width: 1024px) {
+            .retargeting-banner {
+                .product-content {
+                    padding-right: 10%;
+                }
+            }
+        }
+
         @media only screen and (max-width: 321px) {
             .product-content {
                 .title-tagline {
@@ -335,6 +353,65 @@
             }
         }
 
+
+        @media only screen and (min-width: 1366px) and (max-width: 1919px) {
+            // Баннер ретаргетинга
+            .retargeting-banner {
+                .product-content {
+                    height: 100%;
+                    padding: 0;
+                    top: 0;
+
+                    .title-tagline {
+                        font-size: 2.8vw;
+                        width: 35%;
+                        margin: 6.2% auto 0;
+                    }
+
+                    .countdown {
+                        margin: 0 auto 1.2%;
+
+                        .countdown-title {
+                            font-size: 18px;
+                            margin-bottom: 5px;
+                        }
+
+                        .countdown-block {
+                            font-size: 28px;
+                            padding: 6px 16px 3px;
+                        }
+                    }
+                }
+            }
+        }
+
+        @media only screen and (min-width: 1920px) {
+            .retargeting-banner {
+                .product-content {
+                    height: 100%;
+                    padding: 0;
+                    top: 0;
+
+                    .title-tagline {
+                        font-size: 55px;
+                        width: 660px;
+                        margin: 130px auto 0;
+                    }
+
+                    .countdown {
+                        margin: 0 auto 1.2%;
+                        .countdown-title {
+                            font-size: 24px;
+                        }
+
+                        .countdown-block {
+                            font-size: 28px;
+                        }
+                    }
+                }
+            }
+        }
+
         @media only screen and (min-width: 1366px) and (max-width: 1979px) {
             ul li.even,
             ul li.odd {
@@ -360,6 +437,40 @@
         @media only screen and (min-width: 580px) and  (max-width: 1365px) {
             .main-screen-wrap .hooper-pagination {
                 bottom: 5%;
+            }
+
+            .retargeting-banner {
+                height: 100%;
+                padding: 0;
+                top: 0;
+                .product-content {
+                    justify-content: center;
+                    padding-top: 30px;
+
+                    .title-tagline {
+                        margin: 15px 0;
+                        text-align: right;
+                    }
+
+                    .item-buttons {
+                        display: flex;
+                        justify-content: flex-end;
+                    }
+
+                    .countdown {
+                        margin: 0px auto 175px;
+
+                        &-title {
+                            font-size: 15px;
+                        }
+
+                        &-block {
+                            font-size: 24px;
+                            border: 3px solid #fff;
+                            padding: 8px 20px 4px;
+                        }
+                    }
+                }
             }
 
             ul li {

@@ -108,6 +108,18 @@
 </script>
 <style lang="scss" scoped>
 
+
+    @media only screen and (max-width: 580px) {
+        .baraban-block.swap {
+            flex-direction: column;
+
+            .result {
+                margin-top: 60px;
+            }
+        }
+    }
+
+
     .baraban-form {
         .result {
             text-align: center;

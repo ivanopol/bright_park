@@ -48,7 +48,7 @@
             </ul>
         </div>
 
-        <div class="baraban-block">
+        <div class="baraban-block" :class="{ swap : is_swap }">
             <div class="baraban-block-element">
                 <baraban-image :activate="activateBaraban" @deactivate="twistBaraban" @gift="setGift"></baraban-image>
             </div>
@@ -68,6 +68,7 @@
         data: function () {
             return {
                 activateBaraban: false,
+                is_swap: false,
                 el0 : true,
                 el1 : true,
                 el2 : true,
@@ -77,6 +78,7 @@
         },
         methods: {
             twistBaraban(state) {
+                this.is_swap = true;
                 this.activateBaraban = state;
             },
             setGift(gift) {
@@ -185,6 +187,16 @@
             &-form {
                 width: 100%;
                 margin-left: unset;
+            }
+        }
+
+        @media only screen and (max-width: 580px) {
+            .baraban-block.swap {
+                flex-direction: column;
+
+                .result {
+                    margin-top: 60px;
+                }
             }
         }
 
