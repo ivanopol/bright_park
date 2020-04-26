@@ -11,69 +11,88 @@
 |
 */
 
-//Auth::routes();
-
 // Редиректы
 // Ретаргетинг и прочее
-Route::get('/perm/lada-v-brajt-parke-na-osobyh-usloviyah/', function () { return redirect('/perm/special_offers/'); });
-Route::get('/moscow/lada-v-brajt-parke-na-osobyh-usloviyah/', function () { return redirect('/moscow/special_offers/'); });
-Route::get('/moscow/specialnoe-predlozhenie-moskva/', function () { return redirect('/moscow/special_offers/'); });
-Route::get('/yekaterinburg/lada-v-brajt-parke-na-osobyh-usloviyah/', function () { return redirect('/yekaterinburg/special_offers/'); });
-Route::get('/volgograd/lada-v-brajt-parke-na-osobyh-usloviyah/', function () { return redirect('/volgograd/special_offers/'); });
-Route::get('/magnitogorsk/lada-v-brajt-parke-na-osobyh-usloviyah/', function () { return redirect('/magnitogorsk/special_offers/'); });
-Route::get('/rostov-na-donu/lada-v-brajt-parke-na-osobyh-usloviyah/', function () { return redirect('/rostov-na-donu/special_offers/'); });
-Route::get('/perm/services/', function () { return redirect('/perm/stocks/'); });
-Route::get('/perm/services/maksimalnaya-vygoda-po-gosprogrammam-pervyjsemejnyj-avtomobil/', function () { return redirect('/perm/stocks/lada_vesta_vygoda_10_po_gosprogramme'); });
-Route::get('/perm/ocenka-avtomobilya/', function () { return redirect('/perm/stocks/doplata_40_000_rublej_pri_obmene_na_lada_granta/'); });
-Route::get('/perm/raschyot-kredita/', function () { return redirect('/perm/stocks/lada_granta_0_pervonachalnyj_vznos/'); });
+Route::get("/{city}/lada-v-brajt-parke-na-osobyh-usloviyah/", function ($city) { return redirect("/{$city->alias}/special_offers/"); });
+Route::get("/{city}/specialnoe-predlozhenie-moskva/", function ($city) { return redirect("/{$city->alias}/special_offers/"); });
+Route::get("/{city}/services/", function ($city) { return redirect("/{$city->alias}/stocks/"); });
+Route::get("/{city}/services/maksimalnaya-vygoda-po-gosprogrammam-pervyjsemejnyj-avtomobil/", function ($city) { return redirect("/{$city->alias}/stocks/lada_vesta_vygoda_10_po_gosprogramme"); });
+Route::get("/{city}/ocenka-avtomobilya/", function ($city) { return redirect("/{$city->alias}/stocks/doplata_40_000_rublej_pri_obmene_na_lada_granta/"); });
+Route::get("/{city}/raschyot-kredita/", function ($city) { return redirect("/{$city->alias}/stocks/lada_granta_0_pervonachalnyj_vznos/"); });
 
 // Granta
-Route::get('/perm/catalog/lada-granta/', function () { return redirect('/perm/granta/sedan/'); });
-Route::get('/perm/catalog/lada-granta/granta-sedan/', function () { return redirect('/perm/granta/sedan/'); });
-Route::get('/perm/catalog/lada-granta/granta-liftbek/', function () { return redirect('/perm/granta/liftback/'); });
-Route::get('/perm/catalog/lada-granta/granta-hetchbek/', function () { return redirect('/perm/granta/sedan/'); });
-Route::get('/perm/catalog/lada-granta/granta-universal/', function () { return redirect('/perm/granta/sedan/'); });
-Route::get('/perm/catalog/lada-granta/granta-cross/', function () { return redirect('/perm/granta/cross/'); });
-Route::get('/perm/catalog/lada-granta/granta-drive-active/', function () { return redirect('/perm/granta/drive-active/'); });
+Route::get("/{city}/catalog/lada-granta/", function ($city) { return redirect("/{$city->alias}/granta/sedan/"); });
+Route::get("/{city}/catalog/lada-granta/granta-sedan/", function ($city) { return redirect("/{$city->alias}/granta/sedan/"); });
+Route::get("/{city}/catalog/lada-granta/granta-liftbek/", function ($city) { return redirect("/{$city->alias}/granta/liftback/"); });
+Route::get("/{city}/catalog/lada-granta/granta-hetchbek/", function ($city) { return redirect("/{$city->alias}/granta/sedan/"); });
+Route::get("/{city}/catalog/lada-granta/granta-universal/", function ($city) { return redirect("/{$city->alias}/granta/sedan/"); });
+Route::get("/{city}/catalog/lada-granta/granta-cross/", function ($city) { return redirect("/{$city->alias}/granta/cross/"); });
+Route::get("/{city}/catalog/lada-granta/granta-drive-active/", function ($city) { return redirect("/{$city->alias}/granta/drive-active/"); });
 
 // Vesta
-Route::get('/perm/catalog/lada-vesta/', function () { return redirect('/perm/vesta/sedan/'); });
-Route::get('/perm/catalog/catalog/lada-vesta/vesta-sedan/', function () { return redirect('/perm/vesta/sedan/'); });
-Route::get('/perm/catalog/lada-vesta/vesta-cross/', function () { return redirect('/perm/vesta/sedan/'); });
-Route::get('/perm/catalog/catalog/lada-vesta/vesta-sw/', function () { return redirect('/perm/vesta/sw/'); });
-Route::get('/perm/catalog/lada-vesta/vesta-sw-cross/', function () { return redirect('/perm/vesta/sw-cross/'); });
-Route::get('/perm/catalog/lada-vesta/vesta-cng/', function () { return redirect('/perm/vesta/sedan/'); });
-Route::get('/perm/catalog/lada-vesta/vesta-sport/', function () { return redirect('/perm/vesta/sedan/'); });
+Route::get("/{city}/catalog/lada-vesta/", function ($city) { return redirect("/{$city->alias}/vesta/sedan/"); });
+Route::get("/{city}/catalog/catalog/lada-vesta/vesta-sedan/", function ($city) { return redirect("/{$city->alias}/vesta/sedan/"); });
+Route::get("/{city}/catalog/lada-vesta/vesta-cross/", function ($city) { return redirect("/{$city->alias}/vesta/sedan/"); });
+Route::get("/{city}/catalog/catalog/lada-vesta/vesta-sw/", function ($city) { return redirect("/{$city->alias}/vesta/sw/"); });
+Route::get("/{city}/catalog/lada-vesta/vesta-sw-cross/", function ($city) { return redirect("/{$city->alias}/vesta/sw-cross/"); });
+Route::get("/{city}/catalog/lada-vesta/vesta-cng/", function ($city) { return redirect("/{$city->alias}/vesta/sedan/"); });
+Route::get("/{city}/catalog/lada-vesta/vesta-sport/", function ($city) { return redirect("/{$city->alias}/vesta/sedan/"); });
 
 // XRAY
-Route::get('/perm/catalog/lada-xray/xray/', function () { return redirect('/perm/xray/xray/'); });
-Route::get('/perm/catalog/lada-xray/xray-cross/', function () { return redirect('/perm/xray/cross/'); });
+Route::get("/{city}/catalog/lada-xray/xray/", function ($city) { return redirect("/{$city->alias}/xray/xray/"); });
+Route::get("/{city}/catalog/lada-xray/xray-cross/", function ($city) { return redirect("/{$city->alias}/xray/cross/"); });
 
 // Largus
-Route::get('/perm/catalog/lada-largus/', function () { return redirect('/perm/largus/universal/'); });
-Route::get('/perm/catalog/lada-largus/largus-universal/', function () { return redirect('/perm/largus/universal/'); });
-Route::get('/perm/catalog/lada-largus/largus-universal-cng/', function () { return redirect('/perm/largus/universal/'); });
-Route::get('/perm/catalog/lada-largus/largus-cross/', function () { return redirect('/perm/largus/universal/'); });
-Route::get('/perm/catalog/lada-largus/largus-cross-cng/', function () { return redirect('/perm/largus/universal/'); });
-Route::get('/perm/catalog/lada-largus/largus-furgon/', function () { return redirect('/perm/largus/universal/'); });
-Route::get('/perm/catalog/lada-largus/largus-furgon-cng/', function () { return redirect('/perm/largus/universal/'); });
+Route::get("/{city}/catalog/lada-largus/", function ($city) { return redirect("/{$city->alias}/largus/universal/"); });
+Route::get("/{city}/catalog/lada-largus/largus-universal/", function ($city) { return redirect("/{$city->alias}/largus/universal/"); });
+Route::get("/{city}/catalog/lada-largus/largus-universal-cng/", function ($city) { return redirect("/{$city->alias}/largus/universal/"); });
+Route::get("/{city}/catalog/lada-largus/largus-cross/", function ($city) { return redirect("/{$city->alias}/largus/universal/"); });
+Route::get("/{city}/catalog/lada-largus/largus-cross-cng/", function ($city) { return redirect("/{$city->alias}/largus/universal/"); });
+Route::get("/{city}/catalog/lada-largus/largus-furgon/", function ($city) { return redirect("/{$city->alias}/largus/universal/"); });
+Route::get("/{city}/catalog/lada-largus/largus-furgon-cng/", function ($city) { return redirect("/{$city->alias}/largus/universal/"); });
 
 // Largus
-Route::get('/perm/catalog/lada-largus/', function () { return redirect('/perm/largus/universal/'); });
-Route::get('/perm/catalog/lada-largus/largus-universal/', function () { return redirect('/perm/largus/universal/'); });
-Route::get('/perm/catalog/lada-largus/largus-universal-cng/', function () { return redirect('/perm/largus/universal/'); });
-Route::get('/perm/catalog/lada-largus/largus-cross/', function () { return redirect('/perm/largus/universal/'); });
-Route::get('/perm/catalog/lada-largus/largus-cross-cng/', function () { return redirect('/perm/largus/universal/'); });
-Route::get('/perm/catalog/lada-largus/largus-furgon/', function () { return redirect('/perm/largus/universal/'); });
-Route::get('/perm/catalog/lada-largus/largus-furgon-cng/', function () { return redirect('/perm/largus/universal/'); });
+Route::get("/{city}/catalog/lada-largus/", function ($city) { return redirect("/{$city->alias}/largus/universal/"); });
+Route::get("/{city}/catalog/lada-largus/largus-universal/", function ($city) { return redirect("/{$city->alias}/largus/universal/"); });
+Route::get("/{city}/catalog/lada-largus/largus-universal-cng/", function ($city) { return redirect("/{$city->alias}/largus/universal/"); });
+Route::get("/{city}/catalog/lada-largus/largus-cross/", function ($city) { return redirect("/{$city->alias}/largus/universal/"); });
+Route::get("/{city}/catalog/lada-largus/largus-cross-cng/", function ($city) { return redirect("/{$city->alias}/largus/universal/"); });
+Route::get("/{city}/catalog/lada-largus/largus-furgon/", function ($city) { return redirect("/{$city->alias}/largus/universal/"); });
+Route::get("/{city}/catalog/lada-largus/largus-furgon-cng/", function ($city) { return redirect("/{$city->alias}/largus/universal/"); });
 
 // 4x4
-Route::get('/perm/catalog/lada-4x4/', function () { return redirect('/perm/4x4/three-doors/'); });
-Route::get('/perm/catalog/lada-4x4/4x4-3-dv/', function () { return redirect('/perm/4x4/three-doors/'); });
-Route::get('/perm/catalog/lada-4x4/4x4-urban-3-dv/', function () { return redirect('/perm/4x4/three-doors/'); });
-Route::get('/perm/catalog/lada-4x4/4x4-5-dv/', function () { return redirect('/perm/4x4/three-doors/'); });
-Route::get('/perm/catalog/lada-4x4/4x4-urban-5-dv/', function () { return redirect('/perm/4x4/three-doors/'); });
-Route::get('/perm/catalog/lada-4x4/4x4-bronto/', function () { return redirect('/perm/4x4/three-doors/'); });
+Route::get("/{city}/catalog/lada-4x4/", function ($city) { return redirect("/{$city->alias}/4x4/three-doors/"); });
+Route::get("/{city}/catalog/lada-4x4/4x4-3-dv/", function ($city) { return redirect("/{$city->alias}/4x4/three-doors/"); });
+Route::get("/{city}/catalog/lada-4x4/4x4-urban-3-dv/", function ($city) { return redirect("/{$city->alias}/4x4/three-doors/"); });
+Route::get("/{city}/catalog/lada-4x4/4x4-5-dv/", function ($city) { return redirect("/{$city->alias}/4x4/three-doors/"); });
+Route::get("/{city}/catalog/lada-4x4/4x4-urban-5-dv/", function ($city) { return redirect("/{$city->alias}/4x4/three-doors/"); });
+Route::get("/{city}/catalog/lada-4x4/4x4-bronto/", function ($city) { return redirect("/{$city->alias}/4x4/three-doors/"); });
+
+
+
+
+Route::get('send', 'FeedbackController@send');
+Route::middleware(['cookie.check', 'counter'])->group(function () {
+
+    Route::get('/{city}/stocks', 'HomeController@stocks')->name('stocks');
+    Route::get('/{city}/stocks/{stocks_title}', 'HomeController@stocks_details')->name('stocks.one');
+    Route::get('/{city}/news', 'HomeController@news')->name('news');
+    Route::get('/{city}/news/{news_title}', 'HomeController@news_details')->name('news.one');
+    Route::get('/{city?}', 'HomeController@index')->name('index');
+    Route::get('/{city?}/special_offers', 'HomeController@special_offers')->name('special_offers');
+    Route::get('/{city?}/{car_model}/{car_type}', 'HomeController@model')->name('model');
+    Route::get('/{city?}/{car_model}/{car_type}/model_details', 'HomeController@model_details')->name('model_details');
+    Route::get('/alt_menu', 'HomeController@alt_menu')->name('alt_menu');
+    Route::get('/model_details', 'HomeController@model_details')->name('model_details');
+    Route::get('/{city?}/{car_model}/{car_type}/trade_in_calc', 'HomeController@trade_in_calc')->name('trade_in_calc');
+    Route::get('/main', 'HomeController@main')->name('main');
+    Route::get('/get_brands', 'HomeController@get_brands')->name('get_brands');
+    Route::any('/send_contact_form', 'ContactFormController@sendContactForm')->name('sendContactForm');
+    Route::any('/check_visitor_cookie', 'ContactFormController@checkVisitorCookie')->name('checkVisitorCookie');
+    Route::get('/{city}/contacts', 'HomeController@contacts')->name('contacts');
+});
+
+
 
 
 Route::middleware(['cookie.check', 'counter'])->group(function () {
