@@ -28,10 +28,11 @@ Vue.use(VModal);
 Vue.component('hooper-component', require('./components/HooperComponent.vue').default);
 Vue.component('info-component', require('./components/InfoComponent.vue').default);
 Vue.component('color-choose-component', require('./components/ColorChooseComponent.vue').default);
-Vue.component('form-component', require('./components/FormComponent.vue').default);
-Vue.component('form-retarget-component', require('./components/FormRetargetComponent.vue').default);
-Vue.component('form-buy-component', require('./components/FormBuyComponent.vue').default);
-Vue.component('form-buy2-component', require('./components/FormBuy2Component.vue').default);
+Vue.component('form-component', require('./components/forms/FormComponent.vue').default);
+Vue.component('form-retarget-component', require('./components/forms/FormRetargetComponent.vue').default);
+Vue.component('form-buy-component', require('./components/forms/FormBuyComponent.vue').default);
+Vue.component('form-buy2-component', require('./components/forms/FormBuy2Component.vue').default);
+Vue.component('form-baraban', require('./components/forms/FormBaraban.vue').default);
 Vue.component('review-component', require('./components/ReviewComponent.vue').default);
 Vue.component('model-details-component', require('./components/ModelDetailsComponent').default);
 Vue.component('header-component', require('./components/elements/HeaderComponent').default);
@@ -50,6 +51,7 @@ Vue.component('modal-retarget-component', require('./components/elements/ModalRe
 Vue.component('next-action-component', require('./components/elements/NextActionComponent').default);
 Vue.component('event-handler-component', require('./components/EventHandlerComponent').default);
 Vue.component('scroll-event-handler-component', require('./components/ScrollEventHandlerComponent').default);
+Vue.component('baraban', require('./components/retargeting/Baraban').default);
 
 /*const store = new Vuex.Store({
     state: {
