@@ -1,23 +1,15 @@
 <template>
-    <section class="block form retargeting-form">
-        <div class="form-wrapper">
-            <h3><span class="c_orange">Оставьте</span> заявку сейчас</h3>
-            <form action="#" id="form_test-drive" method="POST" name="feedback" @submit="send">
-                <input id="name_retarget" type="text" class="" name="name" v-model="name"  placeholder="Имя" required>
-                <the-mask id="phone_retarget" pattern=".{18,}" mask="+# (###)-###-##-##" v-model="phone" type="tel" required="true" placeholder="Телефон"></the-mask>
+    <section class="block form baraban-form" >
+        <form action="#" id="form_test-drive" method="POST" name="feedback" @submit="send" v-show="!btn_disabled">
+            <input id="name" type="text" class="" :disabled='btn_disabled' name="name" v-model="name" placeholder="Имя" required>
+            <the-mask id="phone" pattern=".{18,}" :disabled='btn_disabled' mask="+# (###)-###-##-##" v-model="phone" type="tel" required="true" placeholder="Телефон"></the-mask>
+            <button id="form_default" class=" btn-form" :disabled='btn_disabled' :click="send">Крутить барабан</button>
+        </form>
 
-                <button id="retarget_inline" class="" :click="send">Получить лучшие условия</button>
-                <a :href="'tel:' + cities.active.phone" class="btn btn-primary callibri_phone btn-position green">Позвонить</a>
-
-                <div class="validation-message-wrap">
-                    <div id="warning" class="model-choose-text validation-message" style="color: darkred;" v-show="error">
-                        <p>Введите 11-значный номер!</p>
-                    </div>
-                    <div id="success" class="model-choose-text validation-message" style="color: darkgreen;" v-show="success">
-                        <p>Заявка отправлена!</p>
-                    </div>
-                </div>
-            </form>
+        <div class="result" v-show="btn_disabled">
+            <p>Мы скоро позвоним <br>
+                и расскажем, <br>
+                как получить подарок</p>
         </div>
     </section>
 </template>
@@ -40,6 +32,7 @@
                 error: false,
                 name: '',
                 phone: '',
+                btn_disabled: false,
             };
         },
         computed: {
@@ -50,6 +43,7 @@
         methods: {
             send: function (event) {
                 event.preventDefault();
+                this.btn_disabled = true;
 
                 let formData = {
                     "phone": this.clearMask(this.phone),
@@ -60,9 +54,7 @@
                     "caption": this.form_title,
                 };
 
-                console.log(formData);
-
-                axios(
+               axios(
                     {
                         method: 'post',
                         url: '/send_contact_form',
@@ -71,12 +63,13 @@
                     .then((response) => {
                         this.clearInput();
                         this.success = true;
-                        //document.getElementById('success').hidden = false;
                     }).catch((error) => {
                         this.error = true;
-                        //document.getElementById('warning').hidden = false;
-                    this.clearInput();
+                        this.clearInput();
                 })
+
+                // генерируем событие 'twist' (крутить)
+                this.$emit('twist', true);
             },
 
             clearInput: function () {
@@ -101,35 +94,23 @@
                 }
 
                 attachHandler(window, "load", function () {
-                    var ele = document.querySelector("input[id=phone_retarget]");
+                    var ele = document.querySelector("input[id=phone]");
                     attachHandler(ele, "invalid", function () {
                         this.setCustomValidity("Please enter at least 5 characters.");
                         this.setCustomValidity("");
                     });
                 });
             }
+        },
+        mounted() {
         }
     }
 </script>
+<style lang="scss" scoped>
 
-<style lang="scss">
-    .validation-message-wrap {
-        height: 52px;
-    }
-    .retargeting-form {
-        margin-bottom: 80px;
-
-        .form-wrapper {
-            padding: 0 0 8px;
-        }
-
-        @media only screen and (min-width: 580px) {
-            .form-wrapper {
-                padding: 80px 0 28px;
-                width: 450px;
-                border-radius: 30px;
-                box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.16), 0 0 30px 10px rgba(0, 0, 0, 0.08);
-            }
+    .baraban-form {
+        .result {
+            text-align: center;
         }
 
         #warning,
@@ -156,6 +137,16 @@
             p {
                 margin: 0 !important;
                 color: darkgreen;
+            }
+        }
+
+        &.form {
+            button {
+                margin-top: unset;
+
+                &:disabled {
+                    background-color: #d8b3a4!important;
+                }
             }
         }
 
