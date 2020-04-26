@@ -36,7 +36,7 @@ class CityTableSeeder extends Seeder
             ['title_ru' => 'Ростов-на-Дону', 'title_en' => 'rostov-on-don', 'alias' => 'rostov-na-donu', 'city_dative' => 'Ростове-на-Дону', 'coordinates' => '47.220273, 39.686051', 'jivosite_token'=>'IFmL6hf3c9', 'open_script'=>$open_script, 'bitrix_responsible_id' => 1447,
                 'begin_script' => $end_script
             ],
-            ['title_ru' => 'Екатеринбург', 'title_en' => 'ekaterinburg', 'alias' => 'yekaterinburg', 'city_dative' => 'Екатеринбурге', 'coordinates' => '53.342167, 58.996030', 'jivosite_token'=>'IFmL6hf3c9', 'open_script'=>$open_script, 'bitrix_responsible_id' => 1447,
+            ['title_ru' => 'Екатеринбург', 'title_en' => 'ekaterinburg', 'alias' => 'yekaterinburg', 'city_dative' => 'Екатеринбурге', 'coordinates' => '56.885092, 60.534520', 'jivosite_token'=>'IFmL6hf3c9', 'open_script'=>$open_script, 'bitrix_responsible_id' => 1447,
                 'begin_script' => $end_script
             ],
             ['title_ru' => 'Волгоград', 'title_en' => 'volgograd', 'alias' => 'volgograd', 'city_dative' => 'Волгограде', 'coordinates' => '48.644535, 44.429039', 'jivosite_token'=>'IFmL6hf3c9', 'open_script'=>$open_script, 'bitrix_responsible_id' => 1447,
