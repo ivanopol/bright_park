@@ -17,6 +17,7 @@
 // Ретаргетинг и прочее
 Route::get('/perm/lada-v-brajt-parke-na-osobyh-usloviyah/', function () { return redirect('/perm/special_offers/'); });
 Route::get('/moscow/lada-v-brajt-parke-na-osobyh-usloviyah/', function () { return redirect('/moscow/special_offers/'); });
+Route::get('/moscow/specialnoe-predlozhenie-moskva/', function () { return redirect('/moscow/special_offers/'); });
 Route::get('/yekaterinburg/lada-v-brajt-parke-na-osobyh-usloviyah/', function () { return redirect('/yekaterinburg/special_offers/'); });
 Route::get('/volgograd/lada-v-brajt-parke-na-osobyh-usloviyah/', function () { return redirect('/volgograd/special_offers/'); });
 Route::get('/magnitogorsk/lada-v-brajt-parke-na-osobyh-usloviyah/', function () { return redirect('/magnitogorsk/special_offers/'); });
