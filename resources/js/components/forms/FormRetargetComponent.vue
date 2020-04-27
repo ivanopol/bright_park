@@ -1,12 +1,12 @@
 <template>
     <section class="block form retargeting-form">
         <div class="form-wrapper">
-            <h3><span class="c_orange">Оставьте</span> заявку сейчас</h3>
+            <h3 v-html="form_title"></h3>
             <form action="#" id="form_test-drive" method="POST" name="feedback" @submit="send">
                 <input id="name_retarget" type="text" class="" name="name" v-model="name"  placeholder="Имя" required>
                 <the-mask id="phone_retarget" pattern=".{18,}" mask="+# (###)-###-##-##" v-model="phone" type="tel" required="true" placeholder="Телефон"></the-mask>
 
-                <button id="retarget_inline" class="" :click="send">Получить лучшие условия</button>
+                <button id="retarget_inline" class="" :click="send">{{button_text}}</button>
                 <a :href="'tel:' + cities.active.phone" class="btn btn-primary callibri_phone btn-position green">Позвонить</a>
 
                 <div class="validation-message-wrap">
@@ -33,7 +33,19 @@
         beforeMount() {
             this.attachHandler();
         },
-        props: ['cities'],
+        props: {
+            cities : {
+                type: Object
+            },
+            button_text: {
+                default: "Получить лучшие условия",
+                type: String
+            },
+            form_title: {
+                default: "<span class=\"c_orange\">Оставьте</span> заявку сейчас",
+                type: String
+            }
+        },
         data: function () {
             return {
                 success: false,
@@ -55,7 +67,7 @@
                     "phone": this.clearMask(this.phone),
                     "name": this.name,
                     "responsible_id": this.cities.active.bitrix_responsible_id,
-                    "city": this.cities.active.label,
+                    "city": this.cities.active.value,
                     "url": this.url,
                     "caption": this.form_title,
                 };

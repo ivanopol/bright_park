@@ -9,7 +9,18 @@ use App\Contacts;
 
 class City extends Model
 {
-    protected $fillable = ['title_en', 'title_ru', 'alias', 'coordinates', 'jivosite_token', 'begin_script', 'bitrix_responsible_id'];
+    protected $fillable = [
+        'title_en',
+        'title_ru',
+        'alias',
+        'city_dative',
+        'callback_emails',
+        'coordinates',
+        'jivosite_token',
+        'begin_script',
+        'bitrix_responsible_id'
+    ];
+
     /**
      * Таблица, связанная с моделью.
      *

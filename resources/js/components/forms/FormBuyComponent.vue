@@ -1,13 +1,13 @@
 <template>
     <section class="block form">
         <div class="block-text">
-            <h2><span class="c_orange">Заполните</span> форму</h2>
+            <h2 v-html="form_title"></h2>
         </div>
         <form action="#" id="form_test-drive" method="POST" name="feedback" @submit="send">
             <input id="name" type="text" class="" name="name" v-model="name" placeholder="Имя" required>
             <the-mask id="phone" pattern=".{18,}" mask="+# (###)-###-##-##" v-model="phone" type="tel" required="true" placeholder="Телефон"></the-mask>
 
-            <button id="form_test-drive_1" class="event" :click="send">Закрепить условия</button>
+            <button id="form_test-drive_1" class="event" :click="send">{{button_text}}</button>
             <a :href="'tel:' + cities.active.phone" class="btn btn-primary callibri_phone btn-position green">Позвонить</a>
 
             <div class="validation-message-wrap">
@@ -33,7 +33,19 @@
         beforeMount() {
             this.attachHandler();
         },
-        props: ['cities'],
+        props: {
+            cities : {
+                type: Object
+            },
+            button_text: {
+                default: "Закрепить условия",
+                type: String
+            },
+            form_title: {
+                default: "<span class=\"c_orange\">Заполните</span> форму",
+                type: String
+            }
+        },
         data: function () {
             return {
                 success: false,
@@ -55,7 +67,7 @@
                     "phone": this.clearMask(this.phone),
                     "name": this.name,
                     "responsible_id": this.cities.active.bitrix_responsible_id,
-                    "city": this.cities.active.label,
+                    "city": this.cities.active.value,
                     "url": this.url,
                     "caption": this.form_title,
                 };

@@ -49,9 +49,9 @@
                     "phone": this.clearMask(this.phone),
                     "name": this.name,
                     "responsible_id": this.cities.active.bitrix_responsible_id,
-                    "city": this.cities.active.label,
+                    "city": this.cities.active.value,
                     "url": this.url,
-                    "caption": this.form_title,
+                    "caption": "Барабан",
                 };
 
                axios(

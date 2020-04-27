@@ -3,10 +3,10 @@
 
 namespace App\Services;
 
-
 use Composer\DependencyResolver\Request;
 use Exception;
 use Mail;
+use App\City;
 
 class BitrixService
 {
@@ -26,8 +26,11 @@ class BitrixService
             throw new Exception();
         }
 
-        $phone = $data['phone'];
+/*        foreach ($data as $key => &$value) {
+            $value = htmlspecialchars($value);
+        }*/
 
+        $phone = $data['phone'];
         $responsible_id = $data['responsible_id'];
 
         $request = [
@@ -35,13 +38,24 @@ class BitrixService
             'values' => [$phone],
         ];
 
+        $city = City::where('alias', $data['city'])->get();
 
+        if (!$city) {
+            throw new Exception();
+        }
 
         $emailFrom = 'site@brightpark.ru';
-        $emailsTo = 'ivanopol777@mail.ru';
+        $emailsTo = 'ivanopol777@mail.ru,' .  $city[0]->callback_emails;
         $subject = 'Брайт Парк. Заявка с сайта ';
 
-        Mail::send('emails.feedback', ['phone' => $data['phone'], 'name' => $data['name']], function($message) use ($emailsTo, $emailFrom, $subject) {
+        $params['name'] = isset($data['name']) ? $data['name'] : '';
+        $params['phone'] = isset($data['phone']) ? $data['phone'] : '';
+        $params['city'] = isset($city[0]->title_ru) ? $city[0]->title_ru : '';
+        $params['url'] = isset($data['url']['href']) ? $data['url']['href'] : '';
+        $params['caption'] = isset($data['caption']) ? $data['caption'] : '';
+
+
+        Mail::send('emails.feedback', $params, function($message) use ($emailsTo, $emailFrom, $subject) {
             $emails = explode(',', $emailsTo);
 
             foreach ($emails as $key => $email) {
@@ -52,6 +66,7 @@ class BitrixService
                 }
             }
         });
+
 /*
         $curl = curl_init();
         curl_setopt_array($curl, [
