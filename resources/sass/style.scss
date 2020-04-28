@@ -402,7 +402,7 @@ form {
 
 @media only screen and (max-width: 579px) {
     .form-wrapper {
-        padding: 0 0 60px;
+        padding: 0;
     }
 }
 
@@ -423,7 +423,7 @@ form {
         background-color: #fff;
         width: 530px;
         margin: 0 auto;
-        padding: 80px 50px 22vh;
+        padding: 80px 50px 8vh;
         border-radius: 20px 20px 0 0;
 
         p.note_1 {
