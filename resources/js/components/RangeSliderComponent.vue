@@ -53,7 +53,7 @@
         </div>
 
         <div class="trigger-wrap" v-if="trigger">
-            <p class="trigger-wrap-text">Триггер ...</p>
+            <p class="trigger-wrap-text">Одобрение кредита с первоначальным взносом менее 15% ниже. Но у нас много банков-партнеров и мы сможем подобрать для вас варианты кредитных программ.</p>
         </div>
 
         <div class="radio-buttons-group">

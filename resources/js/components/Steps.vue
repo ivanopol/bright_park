@@ -229,6 +229,10 @@
     }
 
     .steps-wrap {
+        .trigger-wrap {
+            max-width: 600px;
+        }
+
         .btn-half-primary,
         .btn-half-secondary {
             font-family: PragmaticaLightC, Helvetica, sans-serif;
