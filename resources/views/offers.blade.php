@@ -31,7 +31,7 @@
                 </li>
                 <li>
                     <div class="advantage">
-                        <span class="icon"><img src="/build/images/icons/retargeting/pervonchalnyj_vznos.svg" alt="Брайт Парк: Ставка по кредиту от 3,5%"></span>
+                        <span class="icon"><img src="/build/images/icons/retargeting/stavka.svg" alt="Брайт Парк: Ставка по кредиту от 3,5%"></span>
                         <span class="text">Ставка по кредиту от&nbsp;3,5%</span>
                     </div>
                 </li>
