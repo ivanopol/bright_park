@@ -12,12 +12,12 @@ class SpecialOffersTableSeeder extends Seeder
             [
                 'date' => null,
                 'title'=>'LADA VESTA',
-                'description'=>'Доплата<br> 40 000 рублей<br> при обмене на <span class="highlight">LADA Granta</span>',
+                'description'=>'<span class="title-uppercase">LADA</span><br>в Брайт Парке ещё выгоднее',
                 'count'=>17,
                 'is_active'=>true,
-                'img_mobile' => '/build/images/main/mobile/main_granta_red.jpg',
-                'img_tablet' => '/build/images/main/tablet/main_granta_red.jpg',
-                'img_desktop' => '/build/images/main/desktop/main_granta_red.jpg',
+                'img_mobile' => '/build/images/main/mobile/brajt_retargeting.jpg',
+                'img_tablet' => '/build/images/main/tablet/brajt_retargeting.jpg',
+                'img_desktop' => '/build/images/main/desktop/brajt_retargeting.jpg',
             ],
 
             [
