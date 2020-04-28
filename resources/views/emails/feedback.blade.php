@@ -4,6 +4,6 @@
     <li>Имя: <?php echo $name; ?></li>
     <li>Телефон: <?php echo $phone; ?></li>
     <li>Город: <?php echo $city; ?></li>
-    <li><a href="<?php echo $url; ?>">ссылка</a></li>
+    <li><a href="<?php echo $url; ?>"><?php echo $url; ?></a></li>
 </ul>
 </body>
