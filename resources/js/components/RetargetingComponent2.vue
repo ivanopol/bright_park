@@ -200,10 +200,10 @@
                 width: 80%;
                 margin: 30px auto 0;
                 line-height: 1.2;
-                /*                -webkit-transition: all ease-out 0.5s;
-                                -moz-transition: all ease-out 0.5s;
-                                -o-transition: all ease-out 0.5s;
-                                transition: all ease-out 0.5s;*/
+/*                -webkit-transition: all ease-out 0.5s;
+                -moz-transition: all ease-out 0.5s;
+                -o-transition: all ease-out 0.5s;
+                transition: all ease-out 0.5s;*/
 
 
                 &.bold {
@@ -218,7 +218,7 @@
             }
         }
 
-        .retargeting-banner {
+       .retargeting-banner {
             .product-content {
                 .title-tagline {
                     font-size: 7vw;

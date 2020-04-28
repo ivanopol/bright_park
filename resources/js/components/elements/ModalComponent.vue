@@ -23,6 +23,9 @@
             show (title) {
                 this.title = title;
                 this.$modal.show('form-callback');
+                () => {
+                    callibriInit();
+                }
             },
             hide () {
                 this.$modal.hide('form-callback');

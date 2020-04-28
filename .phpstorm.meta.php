@@ -5,13 +5,14 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2020-03-17 06:55:21.
+    * Generated on 2020-04-24 07:07:06.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
     */
     override(new \Illuminate\Contracts\Container\Container, map([
         '' => '@',
+        'Artesaos\SEOTools\Contracts\JsonLd' => \Artesaos\SEOTools\JsonLd::class,
         'Artesaos\SEOTools\Contracts\MetaTags' => \Artesaos\SEOTools\SEOMeta::class,
         'Artesaos\SEOTools\Contracts\OpenGraph' => \Artesaos\SEOTools\OpenGraph::class,
         'Artesaos\SEOTools\Contracts\SEOTools' => \Artesaos\SEOTools\SEOTools::class,
@@ -161,6 +162,7 @@ namespace PHPSTORM_META {
         'redis.connection' => \Illuminate\Redis\Connections\PredisConnection::class,
         'router' => \Illuminate\Routing\Router::class,
         'seotools' => \Artesaos\SEOTools\SEOTools::class,
+        'seotools.json-ld' => \Artesaos\SEOTools\JsonLd::class,
         'seotools.metatags' => \Artesaos\SEOTools\SEOMeta::class,
         'seotools.opengraph' => \Artesaos\SEOTools\OpenGraph::class,
         'seotools.twitter' => \Artesaos\SEOTools\TwitterCards::class,
@@ -178,6 +180,7 @@ namespace PHPSTORM_META {
     ]));
     override(\Illuminate\Container\Container::makeWith(0), map([
         '' => '@',
+        'Artesaos\SEOTools\Contracts\JsonLd' => \Artesaos\SEOTools\JsonLd::class,
         'Artesaos\SEOTools\Contracts\MetaTags' => \Artesaos\SEOTools\SEOMeta::class,
         'Artesaos\SEOTools\Contracts\OpenGraph' => \Artesaos\SEOTools\OpenGraph::class,
         'Artesaos\SEOTools\Contracts\SEOTools' => \Artesaos\SEOTools\SEOTools::class,
@@ -327,6 +330,7 @@ namespace PHPSTORM_META {
         'redis.connection' => \Illuminate\Redis\Connections\PredisConnection::class,
         'router' => \Illuminate\Routing\Router::class,
         'seotools' => \Artesaos\SEOTools\SEOTools::class,
+        'seotools.json-ld' => \Artesaos\SEOTools\JsonLd::class,
         'seotools.metatags' => \Artesaos\SEOTools\SEOMeta::class,
         'seotools.opengraph' => \Artesaos\SEOTools\OpenGraph::class,
         'seotools.twitter' => \Artesaos\SEOTools\TwitterCards::class,
@@ -344,6 +348,7 @@ namespace PHPSTORM_META {
     ]));
     override(\Illuminate\Contracts\Container\Container::make(0), map([
         '' => '@',
+        'Artesaos\SEOTools\Contracts\JsonLd' => \Artesaos\SEOTools\JsonLd::class,
         'Artesaos\SEOTools\Contracts\MetaTags' => \Artesaos\SEOTools\SEOMeta::class,
         'Artesaos\SEOTools\Contracts\OpenGraph' => \Artesaos\SEOTools\OpenGraph::class,
         'Artesaos\SEOTools\Contracts\SEOTools' => \Artesaos\SEOTools\SEOTools::class,
@@ -493,6 +498,7 @@ namespace PHPSTORM_META {
         'redis.connection' => \Illuminate\Redis\Connections\PredisConnection::class,
         'router' => \Illuminate\Routing\Router::class,
         'seotools' => \Artesaos\SEOTools\SEOTools::class,
+        'seotools.json-ld' => \Artesaos\SEOTools\JsonLd::class,
         'seotools.metatags' => \Artesaos\SEOTools\SEOMeta::class,
         'seotools.opengraph' => \Artesaos\SEOTools\OpenGraph::class,
         'seotools.twitter' => \Artesaos\SEOTools\TwitterCards::class,
@@ -510,6 +516,7 @@ namespace PHPSTORM_META {
     ]));
     override(\Illuminate\Contracts\Container\Container::makeWith(0), map([
         '' => '@',
+        'Artesaos\SEOTools\Contracts\JsonLd' => \Artesaos\SEOTools\JsonLd::class,
         'Artesaos\SEOTools\Contracts\MetaTags' => \Artesaos\SEOTools\SEOMeta::class,
         'Artesaos\SEOTools\Contracts\OpenGraph' => \Artesaos\SEOTools\OpenGraph::class,
         'Artesaos\SEOTools\Contracts\SEOTools' => \Artesaos\SEOTools\SEOTools::class,
@@ -659,6 +666,7 @@ namespace PHPSTORM_META {
         'redis.connection' => \Illuminate\Redis\Connections\PredisConnection::class,
         'router' => \Illuminate\Routing\Router::class,
         'seotools' => \Artesaos\SEOTools\SEOTools::class,
+        'seotools.json-ld' => \Artesaos\SEOTools\JsonLd::class,
         'seotools.metatags' => \Artesaos\SEOTools\SEOMeta::class,
         'seotools.opengraph' => \Artesaos\SEOTools\OpenGraph::class,
         'seotools.twitter' => \Artesaos\SEOTools\TwitterCards::class,
@@ -676,6 +684,7 @@ namespace PHPSTORM_META {
     ]));
     override(\App::make(0), map([
         '' => '@',
+        'Artesaos\SEOTools\Contracts\JsonLd' => \Artesaos\SEOTools\JsonLd::class,
         'Artesaos\SEOTools\Contracts\MetaTags' => \Artesaos\SEOTools\SEOMeta::class,
         'Artesaos\SEOTools\Contracts\OpenGraph' => \Artesaos\SEOTools\OpenGraph::class,
         'Artesaos\SEOTools\Contracts\SEOTools' => \Artesaos\SEOTools\SEOTools::class,
@@ -825,6 +834,7 @@ namespace PHPSTORM_META {
         'redis.connection' => \Illuminate\Redis\Connections\PredisConnection::class,
         'router' => \Illuminate\Routing\Router::class,
         'seotools' => \Artesaos\SEOTools\SEOTools::class,
+        'seotools.json-ld' => \Artesaos\SEOTools\JsonLd::class,
         'seotools.metatags' => \Artesaos\SEOTools\SEOMeta::class,
         'seotools.opengraph' => \Artesaos\SEOTools\OpenGraph::class,
         'seotools.twitter' => \Artesaos\SEOTools\TwitterCards::class,
@@ -842,6 +852,7 @@ namespace PHPSTORM_META {
     ]));
     override(\App::makeWith(0), map([
         '' => '@',
+        'Artesaos\SEOTools\Contracts\JsonLd' => \Artesaos\SEOTools\JsonLd::class,
         'Artesaos\SEOTools\Contracts\MetaTags' => \Artesaos\SEOTools\SEOMeta::class,
         'Artesaos\SEOTools\Contracts\OpenGraph' => \Artesaos\SEOTools\OpenGraph::class,
         'Artesaos\SEOTools\Contracts\SEOTools' => \Artesaos\SEOTools\SEOTools::class,
@@ -991,6 +1002,7 @@ namespace PHPSTORM_META {
         'redis.connection' => \Illuminate\Redis\Connections\PredisConnection::class,
         'router' => \Illuminate\Routing\Router::class,
         'seotools' => \Artesaos\SEOTools\SEOTools::class,
+        'seotools.json-ld' => \Artesaos\SEOTools\JsonLd::class,
         'seotools.metatags' => \Artesaos\SEOTools\SEOMeta::class,
         'seotools.opengraph' => \Artesaos\SEOTools\OpenGraph::class,
         'seotools.twitter' => \Artesaos\SEOTools\TwitterCards::class,
@@ -1008,6 +1020,7 @@ namespace PHPSTORM_META {
     ]));
     override(\app(0), map([
         '' => '@',
+        'Artesaos\SEOTools\Contracts\JsonLd' => \Artesaos\SEOTools\JsonLd::class,
         'Artesaos\SEOTools\Contracts\MetaTags' => \Artesaos\SEOTools\SEOMeta::class,
         'Artesaos\SEOTools\Contracts\OpenGraph' => \Artesaos\SEOTools\OpenGraph::class,
         'Artesaos\SEOTools\Contracts\SEOTools' => \Artesaos\SEOTools\SEOTools::class,
@@ -1157,6 +1170,7 @@ namespace PHPSTORM_META {
         'redis.connection' => \Illuminate\Redis\Connections\PredisConnection::class,
         'router' => \Illuminate\Routing\Router::class,
         'seotools' => \Artesaos\SEOTools\SEOTools::class,
+        'seotools.json-ld' => \Artesaos\SEOTools\JsonLd::class,
         'seotools.metatags' => \Artesaos\SEOTools\SEOMeta::class,
         'seotools.opengraph' => \Artesaos\SEOTools\OpenGraph::class,
         'seotools.twitter' => \Artesaos\SEOTools\TwitterCards::class,
@@ -1174,6 +1188,7 @@ namespace PHPSTORM_META {
     ]));
     override(\resolve(0), map([
         '' => '@',
+        'Artesaos\SEOTools\Contracts\JsonLd' => \Artesaos\SEOTools\JsonLd::class,
         'Artesaos\SEOTools\Contracts\MetaTags' => \Artesaos\SEOTools\SEOMeta::class,
         'Artesaos\SEOTools\Contracts\OpenGraph' => \Artesaos\SEOTools\OpenGraph::class,
         'Artesaos\SEOTools\Contracts\SEOTools' => \Artesaos\SEOTools\SEOTools::class,
@@ -1323,6 +1338,7 @@ namespace PHPSTORM_META {
         'redis.connection' => \Illuminate\Redis\Connections\PredisConnection::class,
         'router' => \Illuminate\Routing\Router::class,
         'seotools' => \Artesaos\SEOTools\SEOTools::class,
+        'seotools.json-ld' => \Artesaos\SEOTools\JsonLd::class,
         'seotools.metatags' => \Artesaos\SEOTools\SEOMeta::class,
         'seotools.opengraph' => \Artesaos\SEOTools\OpenGraph::class,
         'seotools.twitter' => \Artesaos\SEOTools\TwitterCards::class,

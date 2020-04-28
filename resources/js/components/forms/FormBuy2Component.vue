@@ -4,15 +4,17 @@
             <p class="form-title">{{form_title}}</p>
         </div>
         <form action="#" id="form_test-drive2" method="POST" name="feedback" @submit="send">
-            <input id="name_modal" type="text" class="" name="name" placeholder="Имя" required>
-            <the-mask id="phone_modal" pattern=".{18,}" mask="+# (###)-###-##-##" type="tel" required="true"
-                      placeholder="Телефон"></the-mask>
-            <button id="form_test_drive_2" class="event" :click="send">{{button_text}}</button>
+            <input id="name_modal" type="text" class="" name="name" placeholder="Имя" v-model="name" required>
+            <the-mask id="phone_modal" pattern=".{18,}" mask="+# (###)-###-##-##"  v-model="phone" type="tel" required="true" placeholder="Телефон"></the-mask>
+
+            <button id="form_test_drive_2" class="event btn-form" :click="send">{{button_text}}</button>
+            <a :href="'tel:' + cities.active.phone" class="btn btn-primary callibri_phone btn-position green">Позвонить</a>
+
             <div class="validation-message-wrap">
-                <div id="warning" class="model-choose-text validation-message" style="color: darkred;" v-show="error">
+                <div id="warning" class="model-choose-text validation-message" v-show="error">
                     <p>Введите 11-значный номер!</p>
                 </div>
-                <div id="success" class="model-choose-text validation-message" style="color: darkgreen;" v-show="success">
+                <div id="success" class="model-choose-text validation-message" v-show="success">
                     <p>Заявка отправлена!</p>
                 </div>
             </div>
@@ -33,7 +35,7 @@
         },
         props: {
             cities : {
-                type: Array
+                type: Object
             },
             button_text: {
                 default: "Отправить",
@@ -46,19 +48,28 @@
         },
         data: function () {
             return {
-                phone: '',
                 success: false,
-                error: false
+                error: false,
+                name: '',
+                phone: '',
             };
+        },
+        computed: {
+            url: function () {
+                return window.location;
+            }
         },
         methods: {
             send: function (event) {
                 event.preventDefault();
 
                 let formData = {
-                    "phone": this.clearMask(document.getElementById('phone_modal').value),
-                    "name": document.getElementById('name_modal').value,
-                    "responsible_id": this.cities.active.bitrix_responsible_id
+                    "phone": this.clearMask(this.phone),
+                    "name": this.name,
+                    "responsible_id": this.cities.active.bitrix_responsible_id,
+                    "city": this.cities.active.value,
+                    "url": this.url,
+                    "caption": this.form_title,
                 };
 
                 axios(
@@ -77,8 +88,8 @@
             },
 
             clearInput: function () {
-                document.getElementById('phone_modal').value = null;
-                document.getElementById('name_modal').value = null;
+                this.phone = null;
+                this.name = null;
             },
 
             clearMask: function(value) {
@@ -105,6 +116,9 @@
                     });
                 });
             }
+        },
+        mounted() {
+
         }
     }
 </script>
@@ -115,6 +129,33 @@
     }
 
     .form-modal {
+        #warning,
+        #success {
+            text-align: center;
+            line-height: 1.2;
+            margin: 18px auto;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 16px;
+            max-width: 340px;
+
+        }
+
+        #warning {
+            p {
+                color: darkred;
+            }
+        }
+
+        #success {
+            background-color: #dafbcc;
+
+            p {
+                margin: 0 !important;
+                color: darkgreen;
+            }
+        }
+
         p.form-title {
             color: #000;
             margin-bottom: 30px;
