@@ -227,8 +227,8 @@
         font-weight: bold;
     }
 
-    .conditions {
-        width: 70vw;
+/*    .conditions {
+        width: 70%;
         display: block;
         margin: 40px auto;
     }
@@ -252,7 +252,7 @@
             width: 16px;
             height: auto;
         }
-    }
+    }*/
 
 
     .disabled-input {

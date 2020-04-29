@@ -1,6 +1,6 @@
 <template>
     <section id="classified">
-        <div class="option-text">Оцените свой автомобиль</div>
+        <div class="option-text"><p>Какой у вас автомобиль?</p></div>
         <div class="dropdown-group">
             <v-select :id="'select_make'" class="select_wrap event" :class="{ active : step_one }" :components="{OpenIndicator, Deselect}" :searchable=false placeholder="Марка"
                       taggable
@@ -70,6 +70,13 @@
             <p>Предложение действует до {{date}}</p>
         </div>
 
+        <div class="option-text">
+            <ul>
+                <li><img src="/build/images/icons/checkbox-green.svg" class="check check-green" alt="Скидка при обмене 40&nbsp;000 руб."><span>При покупке в&nbsp;кредит КАСКО в&nbsp;подарок</span></li>
+                <li><img src="/build/images/icons/checkbox-green.svg" class="check check-green" alt="Оценка на 7% выше рынка"><span>Ставки по&nbsp;кредиту от&nbsp;3,5% годовых</span></li>
+                <li><img src="/build/images/icons/checkbox-green.svg" class="check check-green" alt="Пакет доп. оборудования со скидкой до 80%"><span>Выгода при покупке в&nbsp;кредит&nbsp;10%</span></li>
+            </ul>
+        </div>
     </section>
 </template>
 
