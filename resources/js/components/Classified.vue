@@ -129,16 +129,12 @@
         }),
         computed: {
             date: function() {
-                var now =  new Date();
-                var day =  now.getDate() + 3;
-                var month = now.getMonth() + 1;
-                var year = now.getYear();
-
-                var date = new Date(year + '-' + month + '-' + day).toLocaleString('ru', {
+                let date = new Date();
+                date.setDate(date.getDate() + 3);
+                date = date.toLocaleString('ru', {
                     month: 'long',
                     day: 'numeric'
                 });
-
                 return date;
             }
         },
