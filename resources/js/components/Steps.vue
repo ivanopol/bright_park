@@ -27,8 +27,13 @@
             </div>
         </div>
 
-        <div class="option-text" v-if="!grade">
+        <div class="option-text step-null" v-if="!grade">
             <p>Имеете ли вы автомобиль на обмен?</p>
+            <ul>
+                <li><img src="/build/images/icons/checkbox-green.svg" class="check check-green" alt="Скидка при обмене 40&nbsp;000 руб."><span>Скидка при обмене 40&nbsp;000&nbsp;руб.</span></li>
+                <li><img src="/build/images/icons/checkbox-green.svg" class="check check-green" alt="Оценка на 7% выше рынка"><span>Оценка на&nbsp;7% выше рынка</span></li>
+                <li><img src="/build/images/icons/checkbox-green.svg" class="check check-green" alt="Пакет доп. оборудования со скидкой до 80%"><span>Пакет доп. оборудования со&nbsp;скидкой до&nbsp;80%</span></li>
+            </ul>
         </div>
 
         <section class="buttons_other mt-20" v-if="!grade">
@@ -55,9 +60,9 @@
             <div class="model-choose-text2"><p>В Брайт Парке выгодные условия при покупке за наличные!</p></div>
             <div class="conditions">
                 <ul>
-                    <li><check-icon class="check"></check-icon> <span>Личный менеджер</span></li>
-                    <li><check-icon class="check"></check-icon> <span>Выгода 40 000 руб. при обмене</span></li>
-                    <li><check-icon class="check"></check-icon> <span>Зимняя резина в подарок <span class="block-highlight">только до {{date}}</span></span></li>
+                    <li><check-icon></check-icon> <span>Личный менеджер</span></li>
+                    <li><check-icon></check-icon> <span>Выгода 40 000 руб. при обмене</span></li>
+                    <li><check-icon></check-icon> <span>Зимняя резина в подарок <span class="block-highlight">только до {{date}}</span></span></li>
                 </ul>
             </div>
 
@@ -219,15 +224,6 @@
 </script>
 
 <style lang="scss">
-    .option-text {
-        font-family: PragmaticaLightCBold, Helvetica, sans-serif;
-        margin: 50px 30px 25px;
-        text-align: left;
-        font-size: 18px;
-        font-weight: bold;
-        line-height: 1.4;
-    }
-
     .steps-wrap {
         .trigger-wrap {
             max-width: 600px;
@@ -316,13 +312,6 @@
             }
         }
 
-        .option-text {
-            text-align: center;
-            font-weight: normal;
-            font-size: 22px;
-            margin-bottom: 50px;
-        }
-
         .steps-wrap {
             .buttons_other {
                 .item-buttons-other {
@@ -335,21 +324,44 @@
         }
     }
 
+    .option-text {
+        p {
+            font-family: PragmaticaLightCBold, Helvetica, sans-serif;
+            margin: 50px 30px 25px;
+            text-align: left;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1.4;
+        }
+    }
+
+    @media only screen and (min-width: 580px) {
+        .option-text {
+            p {
+                text-align: center;
+                font-weight: normal;
+                font-size: 22px;
+                margin-bottom: 50px;
+            }
+        }
+    }
+
+    .option-text ul,
     .conditions {
-        width: 70vw;
+        width: 75%;
         display: block;
         margin: 20px auto 40px;
     }
 
+    .option-text ul li,
     .conditions ul li {
-        margin-bottom: 5px;
         display: flex;
-
+        align-items: flex-start;
+        line-height: 1.2;
+        margin-bottom: 7px;
         &>span {
-            float: left;
             display: block;
             margin-left: 10px;
-            clear: both;
         }
 
         i {
@@ -359,21 +371,27 @@
         .check {
             width: 16px;
             height: 16px;
+            min-width: 16px;
+            min-height: 16px;
         }
     }
 
     @media only screen and (min-width: 580px) {
+        .option-text,
         .conditions {
             width: 430px;
             margin: 40px auto 60px;
 
             ul {
                 li {
-                    margin-bottom: 12px;
                     font-size: 20px;
 
                     .check {
                         width: 26px;
+
+                        &.check-green {
+                            width: 16px;
+                        }
                     }
                 }
             }
