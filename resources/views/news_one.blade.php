@@ -27,5 +27,7 @@
             <yandex-map-component :coordinates='@json($data['coordinates'])'></yandex-map-component>
         </footer>
         {!! html_entity_decode($cities['active']['begin_script']) !!}
+        <scroll-event-handler-component></scroll-event-handler-component>
+        <event-handler-component></event-handler-component>
     </body>
 @endsection

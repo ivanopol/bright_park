@@ -72,8 +72,6 @@
                     "caption": this.form_title,
                 };
 
-                console.log(formData);
-
                 axios(
                     {
                         method: 'post',
@@ -87,6 +85,18 @@
                         this.error = true;
                     this.clearInput();
                 })
+
+                let element = document.getElementById('form_test-drive_1');
+
+                let data = {
+                    'btn_id': element.getAttribute("id"),
+                    'href': element.getAttribute("href"),
+                    'location': window.location.pathname,
+                    'timestamp': new Date().toISOString(),
+                    'event_type': 'button'
+                };
+
+                this.sendData(data);
             },
 
             clearInput: function () {
@@ -117,7 +127,17 @@
                         this.setCustomValidity("");
                     });
                 });
-            }
+            },
+
+            async sendData(data) {
+                axios({
+                    method: 'post',
+                    url: '/api/write_event',
+                    data: data
+                }).then((response) => {
+                    console.log("ok")
+                });
+            },
         },
         mounted() {
             //console.log(this.cities.active);

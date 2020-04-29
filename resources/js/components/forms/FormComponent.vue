@@ -9,7 +9,7 @@
                 <input id="name" type="text" class="" name="name" v-model="name" placeholder="Имя" required>
                 <the-mask id="phone" pattern=".{18,}" mask="+# (###)-###-##-##" v-model="phone" type="tel" required="true" placeholder="Телефон"></the-mask>
 
-                <button id="form_default" class=" btn-form" :click="send">{{button_text}}</button>
+                <button id="form_default" class="btn-form event" :click="send">{{button_text}}</button>
                 <a :href="'tel:' + cities.active.phone" class="btn btn-primary callibri_phone btn-position green">Позвонить</a>
 
                 <div id="warning" class="model-choose-text" v-show="error">

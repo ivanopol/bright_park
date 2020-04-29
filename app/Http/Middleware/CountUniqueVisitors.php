@@ -88,6 +88,7 @@ class CountUniqueVisitors
             'yandexuid' => $visitor_data->yandexuid,
             'user_ip' => $visitor_data->user_ip,
             'bp_uid' => $visitor_data->bp_uid,
+            'created_at' => date("Y-m-d H:i:s")
         ];
 
         $visitor = $this->db->table('visitors')->where('bp_uid', '=', $user_data['bp_uid'])->first();

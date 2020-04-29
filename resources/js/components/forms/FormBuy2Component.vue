@@ -7,8 +7,8 @@
             <input id="name_modal" type="text" class="" name="name" placeholder="Имя" v-model="name" required>
             <the-mask id="phone_modal" pattern=".{18,}" mask="+# (###)-###-##-##"  v-model="phone" type="tel" required="true" placeholder="Телефон"></the-mask>
 
-            <button id="form_test_drive_2" class="event btn-form" :click="send">{{button_text}}</button>
-            <a :href="'tel:' + cities.active.phone" class="btn btn-primary callibri_phone btn-position green">Позвонить</a>
+            <button id="form_test_drive_2" class="btn-form" :click="send">{{button_text}}</button>
+            <a id="phone" :href="'tel:' + cities.active.phone" class="btn btn-primary callibri_phone btn-position green">Позвонить</a>
 
             <div class="validation-message-wrap">
                 <div id="warning" class="model-choose-text validation-message" v-show="error">
@@ -52,6 +52,7 @@
                 error: false,
                 name: '',
                 phone: '',
+                elements: []
             };
         },
         computed: {
@@ -85,6 +86,18 @@
                         this.error = true;
                     this.clearInput();
                 })
+
+                let element = document.getElementById('form_test_drive_2');
+                let data = {
+
+                    'btn_id': element.getAttribute("id"),
+                    'href': element.getAttribute("href"),
+                    'location': window.location.pathname,
+                    'timestamp': new Date().toISOString(),
+                    'event_type': 'button'
+                };
+
+                this.sendData(data);
             },
 
             clearInput: function () {
@@ -115,7 +128,15 @@
                         this.setCustomValidity("");
                     });
                 });
-            }
+            },
+            async sendData(data) {
+                axios({
+                    method: 'post',
+                    url: '/api/write_event',
+                    data: data
+                }).then((response) => {
+                });
+            },
         },
         mounted() {
 

@@ -3,7 +3,7 @@
         <form action="#" id="form_test-drive" method="POST" name="feedback" @submit="send" v-show="!btn_disabled">
             <input id="name" type="text" class="" :disabled='btn_disabled' name="name" v-model="name" placeholder="Имя" required>
             <the-mask id="phone" pattern=".{18,}" :disabled='btn_disabled' mask="+# (###)-###-##-##" v-model="phone" type="tel" required="true" placeholder="Телефон"></the-mask>
-            <button id="form_default" class=" btn-form" :disabled='btn_disabled' :click="send">Крутить барабан</button>
+            <button id="form_default" class="btn-form event" :disabled='btn_disabled' :click="send">Крутить барабан</button>
         </form>
 
         <div class="result" v-show="btn_disabled">

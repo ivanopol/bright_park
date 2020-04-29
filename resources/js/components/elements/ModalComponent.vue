@@ -16,7 +16,9 @@
 <script>
    // import {  } from 'hooper';
    // const MODAL_WIDTH = 300;
-    export default {
+    import axios from "axios";
+
+   export default {
         name: "App",
         props: ['cities'],
         methods: {
@@ -29,17 +31,19 @@
             },
             hide () {
                 this.$modal.hide('form-callback');
-            }
+            },
         },
         data () {
             return {
                 modalWidth: window.innerWidth -20,
-                title: ''
+                title: '',
+
             }
         },
         created () {
             this.modalWidth = window.innerWidth -20
-        }
+        },
+
     }
 </script>
 

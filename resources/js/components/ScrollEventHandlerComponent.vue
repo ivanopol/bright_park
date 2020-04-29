@@ -34,8 +34,6 @@
                         'page_height': document.body.scrollHeight
                     };
 
-                    console.log(event_data);
-
                     axios({
                         method: 'post',
                         url: '/api/write_event',
@@ -43,7 +41,6 @@
                     });
 
                 }, 1000);
-
             }
         },
         mounted() {

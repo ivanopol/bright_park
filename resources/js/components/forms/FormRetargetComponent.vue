@@ -6,7 +6,7 @@
                 <input id="name_retarget" type="text" class="" name="name" v-model="name"  placeholder="Имя" required>
                 <the-mask id="phone_retarget" pattern=".{18,}" mask="+# (###)-###-##-##" v-model="phone" type="tel" required="true" placeholder="Телефон"></the-mask>
 
-                <button id="retarget_inline" class="" :click="send">{{button_text}}</button>
+                <button id="retarget_inline" class="event" :click="send">{{button_text}}</button>
                 <a :href="'tel:' + cities.active.phone" class="btn btn-primary callibri_phone btn-position green">Позвонить</a>
 
                 <div class="validation-message-wrap">
@@ -71,8 +71,6 @@
                     "url": this.url,
                     "caption": this.form_title,
                 };
-
-                console.log(formData);
 
                 axios(
                     {

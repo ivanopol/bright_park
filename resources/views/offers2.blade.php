@@ -63,8 +63,8 @@
         <form-retarget-component :cities='@json($cities)'></form-retarget-component>
         <modal-retarget-component :cities='@json($cities)'></modal-retarget-component>
     </div>
+    {!! html_entity_decode($cities['active']['begin_script']) !!}
     <scroll-event-handler-component></scroll-event-handler-component>
     <event-handler-component></event-handler-component>
-    {!! html_entity_decode($cities['active']['begin_script']) !!}
     </body>
 @endsection
