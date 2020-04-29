@@ -88,5 +88,7 @@
             <event-handler-component></event-handler-component>
         </section>
         {!! html_entity_decode($cities['active']['begin_script']) !!}
+        <scroll-event-handler-component></scroll-event-handler-component>
+        <event-handler-component></event-handler-component>
     </div>
 @endsection

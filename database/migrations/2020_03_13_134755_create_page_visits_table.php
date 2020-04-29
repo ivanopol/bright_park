@@ -15,7 +15,7 @@ class CreatePageVisitsTable extends Migration
     {
         Schema::create('page_visits', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('location');
+            $table->string('location', 2000);
             $table->string('bp_uid');
             $table->timestamps();
         });
