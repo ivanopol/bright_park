@@ -2,30 +2,36 @@
     <section class="block-info container" >
         <div class="block-info-text">
             <span class="block-info-text-title">
-                <h2 v-html="data.title"></h2>
+                <h2 v-html="block.title"></h2>
             </span>
             <span class="block-info-text-text">
-                <p v-html="data.text"></p>
+                <p v-html="block.text"></p>
             </span>
         </div>
+        <div class="trigger" v-if="block.trigger">
+            <div class="trigger-wrap2">
+                <img src="/build/images/icons/checkbox-green.svg" />
+                <p>{{block.trigger}}</p>
+            </div>
+        </div>
         <div class="pointers_wrap" :id="point_id">
-            <div class="pointers_list" :v-if="data.pointers">
-                <ul :class="'pointers-' + model + '-' + type + '-' + data.pnum " >
-                    <li v-for="n in data.pointers">
+            <div class="pointers_list" :v-if="block.pointers">
+                <ul :class="'pointers-' + model + '-' + type + '-' + block.pnum " >
+                    <li v-for="n in block.pointers">
                         <span :class="'pointer p' + n" v-on:click="activate"></span>
                     </li>
                 </ul>
             </div>
             <div class="block-info-img">
                 <picture>
-                    <source :srcset="get_source(data.url)" media="(min-width: 580px)">
-                    <img :src="data.url" alt="">
+                    <source :srcset="get_source(block.url)" media="(min-width: 580px)">
+                    <img :src="block.url" alt="">
                 </picture>
             </div>
             <div class="block-info-aside">
                 <div class="aside_wrap" >
                     <hooper class="info-aside">
-                        <slide v-for="slide in data.slider" :key="slide.id">
+                        <slide v-for="slide in block.slider" :key="slide.id">
                             <picture>
                                 <source :srcset="get_source(slide.image)" media="(min-width: 580px)">
                                 <img :src="slide.image" alt="">
@@ -49,10 +55,9 @@
 
     export default {
         name: 'App',
-        props : ['data', 'n', 'model', 'type'],
+        props : ['block', 'data', 'n', 'model', 'type'],
         data: function () {
-            return {
-            }
+            return {}
         },
         components: {
             Hooper,
@@ -96,10 +101,48 @@
                 let image = document.querySelectorAll('#pointer_' + this.n + ' .block-info-img');
                 image[0].classList.remove("show");
             }
+        },
+        mounted: function() {
+
+/*            if ((this.data.model_id === 1 && this.data.type_id === 1) || (this.data.model_id === 1 && this.data.type_id === 2))
+            {
+                this.triggers.banner_1 = "90% клиентов рады, что выбрали отечественный авто и не переплачивают за обслуживание";
+                this.triggers.banner_2 = "Большинство клиентов считает :model лучшим автомобилем по соотношению цена/качество";
+                this.triggers.banner_3 = "95% клиентов оставили положительные отзывы о :model";
+            }
+            console.log(this.data);*/
         }
     };
 </script>
 
 <style lang="scss">
     @import "./resources/sass/info.scss";
+    .trigger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &-wrap2 {
+            background-color: #d2f0d6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            padding: 10px 20px;
+            width: 90%;
+            margin-bottom: 40px;
+            img {
+                width: 32px;
+                height: 32px;
+                min-width: 32px;
+                margin-right: 15px;
+            }
+            p {
+                font-size: 14px;
+                font-weight: bold;
+                margin: 0;
+                line-height: 1.2;
+            }
+        }
+    }
 </style>

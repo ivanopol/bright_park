@@ -18,7 +18,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/granta/blocks/sedan/block_01/mobile/block_01.jpg',
                 'pointers' => 0,
                 'pnum' => 0,
-                'show' => false
+                'show' => false,
+                'trigger' => '90% клиентов рады, что выбрали отечественный авто и не переплачивают за обслуживание',
             ],
             [
                 'model_id' => 1,
@@ -28,7 +29,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/granta/blocks/sedan/block_02/mobile/block_02.jpg',
                 'pointers' => 5,
                 'pnum' => 1,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 1,
@@ -39,6 +41,7 @@ class BlockTableSeeder extends Seeder
                 'pointers' => 5,
                 'pnum' => 2,
                 'show' => false,
+                'trigger' => 'Большинство клиентов считает :model лучшим автомобилем по соотношению цена/качество',
             ],
             [
                 'model_id' => 1,
@@ -49,6 +52,7 @@ class BlockTableSeeder extends Seeder
                 'pointers' => 6,
                 'pnum' => 3,
                 'show' => false,
+                'trigger' => ''
             ],
             // liftback
             [
@@ -59,7 +63,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/granta/blocks/liftback/block_01/mobile/block_01.jpg',
                 'pointers' => 0,
                 'pnum' => 0,
-                'show' => false
+                'show' => false,
+                'trigger' => '90% клиентов рады, что выбрали отечественный авто и не переплачивают за обслуживание',
             ],
             [
                 'model_id' => 1,
@@ -69,7 +74,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/granta/blocks/liftback/block_02/mobile/block_02.jpg',
                 'pointers' => 5,
                 'pnum' => 1,
-                'show' => false
+                'show' => false,
+                'trigger' => '',
             ],
             [
                 'model_id' => 1,
@@ -80,6 +86,7 @@ class BlockTableSeeder extends Seeder
                 'pointers' => 6,
                 'pnum' => 2,
                 'show' => false,
+                'trigger' => 'Большинство клиентов считает :model лучшим автомобилем по соотношению цена/качество',
             ],
             [
                 'model_id' => 1,
@@ -90,6 +97,7 @@ class BlockTableSeeder extends Seeder
                 'pointers' => 6,
                 'pnum' => 3,
                 'show' => false,
+                'trigger' => "",
             ],
             // universal
             [
@@ -100,7 +108,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/granta/blocks/universal/block_01/mobile/block_01.jpg',
                 'pointers' => 0,
                 'pnum' => 0,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 1,
@@ -110,7 +119,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/granta/blocks/universal/block_02/mobile/block_02.jpg',
                 'pointers' => 0,
                 'pnum' => 0,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 1,
@@ -120,7 +130,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/granta/blocks/universal/block_03/mobile/block_03.jpg',
                 'pointers' => 0,
                 'pnum' => 0,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 1,
@@ -132,7 +143,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/granta/blocks/universal/block_04/mobile/block_04.jpg',
                 'pointers' => 0,
                 'pnum' => 0,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             // cross
             [
@@ -143,7 +155,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/granta/blocks/cross/block_01/mobile/block_01.jpg',
                 'pointers' => 0,
                 'pnum' => 0,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 1,
@@ -153,7 +166,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/granta/blocks/cross/block_02/mobile/block_02.jpg',
                 'pointers' => 0,
                 'pnum' => 1,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 1,
@@ -164,6 +178,7 @@ class BlockTableSeeder extends Seeder
                 'pointers' => 0,
                 'pnum' => 2,
                 'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 1,
@@ -174,6 +189,7 @@ class BlockTableSeeder extends Seeder
                 'pointers' => 0,
                 'pnum' => 3,
                 'show' => false,
+                'trigger' => "",
             ],
             // drive active
             [
@@ -184,7 +200,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/granta/blocks/drive_active/block_01/mobile/block_01.jpg',
                 'pointers' => 0,
                 'pnum' => 0,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 1,
@@ -194,7 +211,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/granta/blocks/drive_active/block_02/mobile/block_02.jpg',
                 'pointers' => 0,
                 'pnum' => 1,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 1,
@@ -205,6 +223,7 @@ class BlockTableSeeder extends Seeder
                 'pointers' => 0,
                 'pnum' => 2,
                 'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 1,
@@ -215,6 +234,7 @@ class BlockTableSeeder extends Seeder
                 'pointers' => 6,
                 'pnum' => 3,
                 'show' => false,
+                'trigger' => "",
             ],
             // hatchback
             [
@@ -225,7 +245,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/granta/blocks/hatchback/block_01/mobile/block_01.jpg',
                 'pointers' => 0,
                 'pnum' => 0,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 1,
@@ -235,7 +256,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/granta/blocks/hatchback/block_02/mobile/block_02.jpg',
                 'pointers' => 0,
                 'pnum' => 1,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 1,
@@ -246,6 +268,7 @@ class BlockTableSeeder extends Seeder
                 'pointers' => 0,
                 'pnum' => 2,
                 'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 1,
@@ -256,6 +279,7 @@ class BlockTableSeeder extends Seeder
                 'pointers' => 0,
                 'pnum' => 3,
                 'show' => false,
+                'trigger' => "",
             ],
             // Vesta
             [
@@ -266,7 +290,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/vesta/blocks/sedan/block_01/mobile/block_01.jpg',
                 'pointers' => 0,
                 'pnum' => 0,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 2,
@@ -277,7 +302,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/vesta/blocks/sedan/block_02/mobile/block_02.jpg',
                 'pointers' => 2,
                 'pnum' => 1,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 2,
@@ -287,7 +313,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/vesta/blocks/sedan/block_03/mobile/block_03.jpg',
                 'pointers' => 4,
                 'pnum' => 2,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 2,
@@ -297,7 +324,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/vesta/blocks/sedan/block_04/mobile/block_04.jpg',
                 'pointers' => 0,
                 'pnum' => 0,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
 
             //vesta SW
@@ -309,7 +337,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/vesta/blocks/sw/block_01/mobile/block_01.jpg',
                 'pointers' => 0,
                 'pnum' => 0,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 2,
@@ -319,7 +348,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/vesta/blocks/sw/block_02/mobile/block_02.jpg',
                 'pointers' => 2,
                 'pnum' => 1,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 2,
@@ -329,7 +359,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/vesta/blocks/sw/block_03/mobile/block_03.jpg',
                 'pointers' => 4,
                 'pnum' => 2,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 2,
@@ -339,7 +370,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/vesta/blocks/sw/block_04/mobile/block_04.jpg',
                 'pointers' => 0,
                 'pnum' => 0,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 2,
@@ -349,7 +381,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/vesta/blocks/sw/block_05/mobile/block_05.jpg',
                 'pointers' => 0,
                 'pnum' => 0,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 2,
@@ -359,7 +392,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/vesta/blocks/sw/block_06/mobile/block_06.jpg',
                 'pointers' => 0,
                 'pnum' => 0,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
 
             //SW CROSS
@@ -371,7 +405,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/vesta/blocks/sw_cross/block_01/mobile/block_01.jpg',
                 'pointers' => 0,
                 'pnum' => 0,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 2,
@@ -381,7 +416,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/vesta/blocks/sw_cross/block_02/mobile/block_02.jpg',
                 'pointers' => 2,
                 'pnum' => 1,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 2,
@@ -391,7 +427,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/vesta/blocks/sw_cross/block_03/mobile/block_03.jpg',
                 'pointers' => 4,
                 'pnum' => 2,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 2,
@@ -401,7 +438,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/vesta/blocks/sw_cross/block_04/mobile/block_04.jpg',
                 'pointers' => 0,
                 'pnum' => 0,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 2,
@@ -411,7 +449,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/vesta/blocks/sw_cross/block_05/mobile/block_05.jpg',
                 'pointers' => 0,
                 'pnum' => 0,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 2,
@@ -421,7 +460,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/vesta/blocks/sw_cross/block_06/mobile/block_06.jpg',
                 'pointers' => 0,
                 'pnum' => 0,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
 
             // XRay
@@ -433,7 +473,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/xray/blocks/block_01/mobile/block_01.jpg',
                 'pointers' => 0,
                 'pnum' => 0,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 3,
@@ -443,7 +484,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/xray/blocks/block_02/mobile/block_02.jpg',
                 'pointers' => 4,
                 'pnum' => 1,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 3,
@@ -453,7 +495,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/xray/blocks/block_03/mobile/xray_03.jpg',
                 'pointers' => 0,
                 'pnum' => 2,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 3,
@@ -463,7 +506,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/xray/blocks/block_04/mobile/xray_04.jpg',
                 'pointers' => 0,
                 'pnum' => 3,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 3,
@@ -483,7 +527,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '',
                 'pointers' => 0,
                 'pnum' => 4,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 3,
@@ -497,7 +542,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '',
                 'pointers' => 0,
                 'pnum' => 5,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             // 4x4
             [
@@ -510,7 +556,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/4x4/blocks/block_01/mobile/4x4_1.jpg',
                 'pointers' => 3,
                 'pnum' => 1,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 4,
@@ -520,7 +567,8 @@ class BlockTableSeeder extends Seeder
                 'url' => '/build/images/photos/models/4x4/blocks/block_02/mobile/4x4_2.jpg',
                 'pointers' => 0,
                 'pnum' => 2,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             // LARGUS Cross
             [
@@ -535,7 +583,8 @@ LADA Largus Cross - топ-предложение в модельной лине
                 'url' => '/build/images/photos/models/largus/blocks/cross/block_01/mobile/block_01.jpg',
                 'pointers' => 0,
                 'pnum' => 0,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 5,
@@ -545,7 +594,8 @@ LADA Largus Cross - топ-предложение в модельной лине
                 'url' => '/build/images/photos/models/largus/blocks/cross/block_02/mobile/block_02.jpg',
                 'pointers' => 0,
                 'pnum' => 0,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 5,
@@ -555,7 +605,8 @@ LADA Largus Cross - топ-предложение в модельной лине
                 'url' => '/build/images/photos/models/largus/blocks/cross/block_03/mobile/block_03.jpg',
                 'pointers' => 0,
                 'pnum' => 0,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             // XRAY CROSS
             [
@@ -566,7 +617,8 @@ LADA Largus Cross - топ-предложение в модельной лине
                 'url' => '/build/images/photos/models/xray/blocks/cross/block_01/mobile/block_01.jpg',
                 'pointers' => 0,
                 'pnum' => 0,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 3,
@@ -576,7 +628,8 @@ LADA Largus Cross - топ-предложение в модельной лине
                 'url' => '/build/images/photos/models/xray/blocks/cross/block_02/mobile/block_02.jpg',
                 'pointers' => 4,
                 'pnum' => 1,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 3,
@@ -586,7 +639,8 @@ LADA Largus Cross - топ-предложение в модельной лине
                 'url' => '/build/images/photos/models/xray/blocks/cross/block_03/mobile/xray_03.jpg',
                 'pointers' => 0,
                 'pnum' => 2,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 3,
@@ -596,7 +650,8 @@ LADA Largus Cross - топ-предложение в модельной лине
                 'url' => '/build/images/photos/models/xray/blocks/cross/block_04/mobile/xray_04.jpg',
                 'pointers' => 0,
                 'pnum' => 3,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 3,
@@ -608,7 +663,8 @@ LADA Largus Cross - топ-предложение в модельной лине
                 'url' => '/build/images/photos/models/xray/blocks/cross/block_05/mobile/xray_05.jpg',
                 'pointers' => 0,
                 'pnum' => 4,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 3,
@@ -620,7 +676,8 @@ LADA Largus Cross - топ-предложение в модельной лине
                 'url' => '/build/images/photos/models/xray/blocks/cross/block_06/mobile/xray_06.jpg',
                 'pointers' => 0,
                 'pnum' => 5,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 3,
@@ -632,7 +689,8 @@ LADA Largus Cross - топ-предложение в модельной лине
                 'url' => '/build/images/photos/models/xray/blocks/cross/block_07/mobile/xray_07.jpg',
                 'pointers' => 0,
                 'pnum' => 5,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 3,
@@ -644,7 +702,8 @@ LADA Largus Cross - топ-предложение в модельной лине
                 'url' => '/build/images/photos/models/xray/blocks/cross/block_08/mobile/xray_08.jpg',
                 'pointers' => 0,
                 'pnum' => 5,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             // Largus
             // универсал
@@ -660,7 +719,8 @@ LADA Largus идеально сочетает в себе комфорт, пра
                 'url' => '/build/images/photos/models/largus/blocks/universal/block_01/mobile/block_01.jpg',
                 'pointers' => 0,
                 'pnum' => 0,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 5,
@@ -676,7 +736,8 @@ LADA Largus адаптирован к российским условиям эк
                 'url' => '/build/images/photos/models/largus/blocks/universal/block_02/mobile/block_02.jpg',
                 'pointers' => 0,
                 'pnum' => 1,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 5,
@@ -698,7 +759,8 @@ LADA Largus адаптирован к российским условиям эк
                 'url' => '',
                 'pointers' => 0,
                 'pnum' => 2,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 5,
@@ -714,7 +776,8 @@ LADA Largus по-европейски добротен. Все системы �
                 'url' => '/build/images/photos/models/largus/blocks/universal/block_03/mobile/block_03.jpg',
                 'pointers' => 0,
                 'pnum' => 3,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 5,
@@ -733,7 +796,8 @@ LADA Largus по-европейски добротен. Все системы �
                 'url' => '/build/images/photos/models/largus/blocks/universal/block_04/mobile/block_04.jpg',
                 'pointers' => 0,
                 'pnum' => 4,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
             [
                 'model_id' => 5,
@@ -749,7 +813,8 @@ LADA Largus по-европейски добротен. Все системы �
                 'url' => '/build/images/photos/models/largus/blocks/universal/block_05/mobile/block_05.jpg',
                 'pointers' => 0,
                 'pnum' => 5,
-                'show' => false
+                'show' => false,
+                'trigger' => "",
             ],
         ];
 

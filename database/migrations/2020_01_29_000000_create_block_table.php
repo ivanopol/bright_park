@@ -18,6 +18,7 @@ class CreateBlockTable extends Migration
             $table->integer('pnum');
             $table->mediumText('text');
             $table->string('url');
+            $table->string('trigger')->nullable();
         });
         Artisan::call('db:seed', [
             '--class' => BlockTableSeeder::class

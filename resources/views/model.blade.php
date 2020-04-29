@@ -11,8 +11,8 @@
         <hooper-component :data='@json($data['slider'])'></hooper-component>
 
         @foreach ($data['blocks'] as $key => $block)
-            <info-component :data='@json($block)' :n='@json($key)' :model='@json($data['model_id'])'
-                            :type='@json($data['type_id'])'></info-component>
+            <info-component :block='@json($block)' :n='@json($key)' :model='@json($data['model_id'])'
+                            :type='@json($data['type_id'])' :data='@json($data)'></info-component>
         @endforeach
 
         @if(count($data['colors']))
