@@ -43,8 +43,8 @@
         <footer class="block footer">
             <div class="block-text center mb">
                 <h2><span class="c_orange">Брайт Парк </span> всегда на связи</h2>
-                <p>У&nbsp;вас есть вопросы? Пообщайтесь со&nbsp;специалистом по&nbsp;телефону&nbsp;<br> <a href="tel:{{$cities['active']['phone']}}" class="callibri_phone">{{ $cities['active']['phone_format'] }}</a></p>
-                <p>Брайт парк ближе, чем кажется<br> Проложите маршрут до&nbsp;ближайшего салона</p>
+                <p>У&nbsp;вас есть вопросы? Пообщайтесь со&nbsp;специалистом по&nbsp;телефону&nbsp;<br> <a href="tel:{{$cities['active']['phone']}}" class="btn btn btn-primary btn-position green callibri_phone">Позвонить</a></p>
+                <p>Брайт парк ближе, чем кажется<br> </p>
             </div>
             <yandex-map-component :coordinates='@json($data['coordinates'])'></yandex-map-component>
         </footer>
