@@ -133,15 +133,14 @@ export default {
                 if (this.jivoOpen) {
                     this.open = false;
                     this.openMap = false;
-                    this.jivoOpen =false;
-                    this.layout = false;
-                    jivo_api.close();
+//                    this.layout = false;
+                  //  jivo_api.close();
                 } else {
                     this.open = false;
                     this.openMap = false;
-                    this.jivoOpen = true;
-                    this.layout = true;
-                    jivo_api.open();
+               //     this.jivoOpen = true;
+                  //  this.layout = true;
+               //     jivo_api.open();
                 }
 
             },
@@ -586,7 +585,7 @@ export default {
             flex-direction: row;
             flex-wrap: nowrap;
             justify-content: space-between;
-            padding: 8px 25px 5px;
+            padding: 8px 25px 14px;
             -webkit-backdrop-filter: blur(5px);
             backdrop-filter: blur(5px);
 
@@ -703,6 +702,7 @@ export default {
             display: block;
         }
 
+/*
         ._orinationRight_25.wrap_mW {
             right: 0;
             display: none;
@@ -722,6 +722,7 @@ export default {
         .globalClass_ET .mobileContainer_2k {
             z-index: 30 !important;
         }
+*/
 
         #panel-desktop {
             display: none;
