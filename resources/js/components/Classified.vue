@@ -70,7 +70,7 @@
             <p>Предложение действует до {{date}}</p>
         </div>
 
-        <div class="option-text">
+        <div class="option-text classified-fullwidth">
             <ul>
                 <li><img src="/build/images/icons/checkbox-green.svg" class="check check-green" alt="Скидка при обмене 40&nbsp;000 руб."><span>При покупке в&nbsp;кредит КАСКО в&nbsp;подарок</span></li>
                 <li><img src="/build/images/icons/checkbox-green.svg" class="check check-green" alt="Оценка на 7% выше рынка"><span>Ставки по&nbsp;кредиту от&nbsp;3,5% годовых</span></li>
@@ -549,5 +549,9 @@
         text-align: center;
         font-weight: bold;
         padding-top: 5%;
+    }
+
+    .option-text.classified-fullwidth {
+        width: 100%;
     }
 </style>
