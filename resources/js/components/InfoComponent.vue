@@ -117,32 +117,4 @@
 
 <style lang="scss">
     @import "./resources/sass/info.scss";
-    .trigger {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        &-wrap2 {
-            background-color: #d2f0d6;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 20px;
-            padding: 10px 20px;
-            width: 90%;
-            margin-bottom: 40px;
-            img {
-                width: 32px;
-                height: 32px;
-                min-width: 32px;
-                margin-right: 15px;
-            }
-            p {
-                font-size: 14px;
-                font-weight: bold;
-                margin: 0;
-                line-height: 1.2;
-            }
-        }
-    }
 </style>

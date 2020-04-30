@@ -14,8 +14,13 @@
                 <hooper-pagination slot="hooper-addons"></hooper-pagination>
             </hooper>
         </div>
-        <div class="trigger-wrap">
-            <p>98% клиентов оставили положительные отзывы о&nbsp;{{model_name}}</p>
+        <div class="block-info">
+            <div class="trigger">
+                <div class="trigger-wrap2">
+                    <img src="/build/images/icons/checkbox-green.svg" />
+                    <p>98% клиентов оставили положительные отзывы о&nbsp;{{model_name}}</p>
+                </div>
+            </div>
         </div>
     </section>
 </template>
