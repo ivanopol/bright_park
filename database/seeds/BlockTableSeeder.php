@@ -41,7 +41,7 @@ class BlockTableSeeder extends Seeder
                 'pointers' => 5,
                 'pnum' => 2,
                 'show' => false,
-                'trigger' => 'Большинство клиентов считает :model лучшим автомобилем по соотношению цена/качество',
+                'trigger' => 'Большинство клиентов считает LADA Granta лучшим автомобилем по соотношению цена/качество',
             ],
             [
                 'model_id' => 1,
@@ -86,7 +86,7 @@ class BlockTableSeeder extends Seeder
                 'pointers' => 6,
                 'pnum' => 2,
                 'show' => false,
-                'trigger' => 'Большинство клиентов считает :model лучшим автомобилем по соотношению цена/качество',
+                'trigger' => 'Большинство клиентов считает LADA Granta лучшим автомобилем по соотношению цена/качество',
             ],
             [
                 'model_id' => 1,

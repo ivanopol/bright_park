@@ -9,7 +9,7 @@ class CreditProgramsTableSeeder extends Seeder
         $credit_programs = [
             ['name'=>'Обычная программа', 'percent_rate'=>15],
             ['name'=>'LADA Finance', 'percent_rate'=>12],
-            ['name'=>'Специальный рассчет', 'percent_rate'=>5],
+            ['name'=>'Расчёт от Брайт Парка', 'percent_rate'=>5],
         ];
 
         DB::table('credit_programs')->insert($credit_programs);
