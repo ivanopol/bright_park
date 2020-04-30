@@ -157,6 +157,10 @@ class HomeController extends Controller
             $count = $_COOKIE["c_count"];
         }
 
+        if (strtolower($car_type->title_ru) === 'xray') {
+            $car_type->title_ru = '';
+        }
+
         return view('model_details', [
             'data' => $data,
             'brands' => $brands,
