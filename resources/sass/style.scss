@@ -459,7 +459,7 @@ form {
 }
 
 .main-screen-wrap .hooper-pagination {
-    bottom: 37.5%;
+    bottom: 4%;
 
     .hooper-indicator:hover, .hooper-indicator.is-active {
         background-color: #fff;
@@ -2023,6 +2023,13 @@ footer {
             }
         }
     }
+}
+
+.block-note {
+    margin-bottom: 122px;
+    text-align: left;
+    padding: 0 30px;
+
 }
 
 .retarget_time {
