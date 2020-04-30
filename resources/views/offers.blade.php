@@ -41,7 +41,7 @@
         <baraban :cities='@json($cities)'></baraban>
         <modal-retarget-component></modal-retarget-component>
         <form-retarget-component :cities='@json($cities)'></form-retarget-component>
-
+        <div class="block-note"><p>Предложение ограниченно, подробности в автосалоне</p></div>
     </div>
     {!! html_entity_decode($cities['active']['begin_script']) !!}
     <scroll-event-handler-component></scroll-event-handler-component>

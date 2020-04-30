@@ -127,7 +127,7 @@
         height: 52px;
     }
     .retargeting-form {
-        margin-bottom: 80px;
+        margin-bottom: 20px;
 
         .form-wrapper {
             padding: 0 0 8px;
