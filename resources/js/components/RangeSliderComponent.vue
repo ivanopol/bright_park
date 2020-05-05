@@ -49,17 +49,29 @@
                             :min="sliderTwo.min" :max="sliderTwo.max" v-on:change="changePeriod"
                             :change="changePeriod"/>
             </div>
-
         </div>
 
-        <div class="trigger-wrap" v-if="trigger">
-            <p class="trigger-wrap-text">Одобрение кредита с первоначальным взносом менее 15% ниже. Но у нас много банков-партнеров и мы сможем подобрать для вас варианты кредитных программ.</p>
+        <div class="option-text" v-if="triggers[0]">
+             <ul>
+                <li><img src="/build/images/icons/checkbox-green.svg" class="check check-green" alt="5 банков партнеров LADA Finance прямо в салоне"><span>5&nbsp;банков партнеров LADA Finance прямо в&nbsp;салоне</span></li>
+                <li><img src="/build/images/icons/checkbox-green.svg" class="check check-green" alt="1 год КАСКО в подарок"><span>1&nbsp;год КАСКО в&nbsp;подарок</span></li>
+                <li><img src="/build/images/icons/checkbox-green.svg" class="check check-green" alt="Скидка до 40000 рублей на новую LADA"><span>Скидка до&nbsp;40&nbsp;000 рублей на&nbsp;новую LADA</span></li>
+            </ul>
+        </div>
+
+        <div class="option-text" v-if="triggers[1]">
+            <p>До {{date}} в Брайт парке уникальное предложение от банков-партнеров</p>
+            <ul>
+                <li><img src="/build/images/icons/checkbox-green.svg" class="check check-green" alt="Кредитные каникулы от Брайт парка до конца 2020 года"><span>Кредитные каникулы от Брайт парка до конца 2020 года</span></li>
+                <li><img src="/build/images/icons/checkbox-green.svg" class="check check-green" alt="Кредит без КАСКО на весь срок!"><span>Кредит без КАСКО на весь срок!</span></li>
+                <li><img src="/build/images/icons/checkbox-green.svg" class="check check-green" alt="Возможность совмещения с LADA Finance"><span>Возможность совмещения с LADA Finance</span></li>
+            </ul>
         </div>
 
         <div class="radio-buttons-group">
             <ul class="control-group">
                 <li v-for="(credit_program, index) in credit_programs">
-                    <label class="control control-radio" :for="'program_' + index">{{credit_program['name']}} <span
+                    <label class="control control-radio" :for="'program_' + index" @click="handleCreditProgram(index)">{{credit_program['name']}} <span
                         class="program-cost">{{credit_program['monthly_payment'] | formatPrice}}</span> руб./мес
                         <input :id="'program_' + index" :value="'p_' + index" type="radio" name="program"
                                v-model="picked">
@@ -86,15 +98,15 @@
         data() {
             return {
                 picked: 'p_0',
-                trigger: false,
+                triggers: [
+                    false,
+                    false,
+                ],
                 sliderOne:
                     {
                         marks: {
                             0: {
                                 label: '0%'
-                            },
-                            15: {
-                                label: '15%'
                             },
                             50: {
                                 label: '50%'
@@ -116,7 +128,7 @@
                 firstPaymentPercent: 50,
                 annualPercent: 12,
                 firstPayment: Math.round(this.car[0].price / 100 * 15),
-                period: 60
+                period: 60,
             }
         },
         filters: {
@@ -138,8 +150,36 @@
                 }
             }
         },
+        computed: {
+            date: function() {
+                let date = new Date();
+                date.setDate(date.getDate() + 3);
+                date = date.toLocaleString('ru', {
+                    month: 'long',
+                    day: 'numeric'
+                });
+                return date;
+            }
+        },
         methods: {
 
+            handleCreditProgram(program) {
+                let arr = this.triggers.map(function(item) {
+                    item = false;
+                    return item;
+                });
+
+                this.triggers = arr;
+
+                switch(program) {
+                    case 1:
+                        this.triggers[0] = true;
+                        break;
+                    case 2:
+                        this.triggers[1] = true;
+                        break;
+                }
+            },
             inputChangePayment() {
                 this.firstPaymentPercent = Math.round(this.firstPayment / this.car[0].price * 100);
             },
@@ -150,9 +190,9 @@
             changeFirstPayment() {
                 this.firstPayment = Math.round(this.car[0].price / 100 * this.firstPaymentPercent);
 
-                let percent_from_value = Math.round(this.firstPayment / this.car[0].price * 100);
+                //let percent_from_value = Math.round(this.firstPayment / this.car[0].price * 100);
 
-                this.trigger = percent_from_value < 15;
+                //this.trigger = percent_from_value < 15;
                 this.calculateMonthlyPayment();
             },
             getCookie(name) {

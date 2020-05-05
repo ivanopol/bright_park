@@ -61,8 +61,8 @@
             <div class="conditions">
                 <ul>
                     <li><check-icon></check-icon> <span>Личный менеджер</span></li>
-                    <li><check-icon></check-icon> <span>Выгода 40 000 руб. при обмене</span></li>
-                    <li><check-icon></check-icon> <span>Зимняя резина в подарок <span class="block-highlight">только до {{date}}</span></span></li>
+                    <li><check-icon></check-icon> <span>ОСАГО в подарок</span></li>
+                    <li><check-icon></check-icon> <span>Дополнительное оборудование и аксессуары со скидкой 50%</span></li>
                 </ul>
             </div>
 
@@ -104,7 +104,7 @@
                 grade: 0,
                 surcharge: this.car_attrs[0].special_price,
                 surchargeText: false,
-                date: 'test'
+                date: ''
             };
         },
         filters: {
