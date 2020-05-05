@@ -1,7 +1,7 @@
 <template>
     <section>
         <div class="route-button-wrap" v-if="button">
-           <!-- <a id="create_route" class="btn event" v-on:click="createRoute">Проложить маршрут</a>-->
+            <a id="create_route" class="btn event" v-on:click="createRoute">Проложить маршрут</a>
         </div>
         <div class="map-wrapper">
             <div id="map" class="map"></div>
@@ -41,7 +41,8 @@
                     function success(position) {
                         const latitude = position.coords.latitude;
                         const longitude = position.coords.longitude;
-
+                        localStorage.setItem("latitude", latitude);
+                        localStorage.setItem("longitude", longitude)
                         addUserLocation([latitude, longitude])
                     }
 
@@ -51,19 +52,21 @@
                         const point = [res.location.lat, res.location.lng];
 
                         addUserLocation(point);
-
-                      //  console.log(e)
                     }
 
-                    if (!navigator.geolocation) {
-                      //  console.log('Geolocation is not supported by your browser');
-                    } else {
-                       // navigator.geolocation.getCurrentPosition(success, error);
+                    if (navigator.geolocation) {
+                        let lat = localStorage.getItem("latitude");
+                        let lon = localStorage.getItem("longitude");
+
+                        if (lat !== null && lat !== "" && lon !== "" && lon !== null) {
+                            success({coords: {latitude: lat, longitude: lon}})
+                        } else {
+                            navigator.geolocation.getCurrentPosition(success, error);
+                        }
                     }
 
                     function addUserLocation(coords) {
                         let userLocation = new ymaps.GeoObject({
-                            // Описание геометрии.
                             geometry: {
                                 type: "Point",
                                 coordinates: coords
@@ -104,22 +107,13 @@
                     }, {
                         searchControlProvider: 'yandex#search'
                     }),
-
-                    // Создаем геообъект с типом геометрии "Точка".
                     brightParkLocation = new ymaps.GeoObject({
-                        // Описание геометрии.
                         geometry: {
                             type: "Point",
                             coordinates: this.coordinates
                         },
-                        // Свойства.
-                        properties: {
-                            // Контент метки.
-                        }
+                        properties: {}
                     }, {
-                        // Опции.
-                        // Иконка метки будет растягиваться под размер ее содержимого.
-                        // Метку можно перемещать.
                         draggable: false
                     });
 

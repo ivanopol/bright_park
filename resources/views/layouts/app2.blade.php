@@ -61,6 +61,9 @@
             @yield('content')
         </div>
     </div>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=e65fea9d-e8a0-479d-b21a-35637fdc6c6c&lang=ru_RU&init=onload"
+            type="text/javascript">
+    </script>
 
     @if (app()->environment('production'))
         <!-- Yandex.Metrika counter -->
@@ -86,9 +89,6 @@
             }
         </script>
 
-        <script src="https://api-maps.yandex.ru/2.1/?apikey=e65fea9d-e8a0-479d-b21a-35637fdc6c6c&lang=ru_RU&init=onload"
-                type="text/javascript">
-        </script>
         <!-- StreamWood code -->
         <link href="https://clients.streamwood.ru/StreamWood/sw.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="https://clients.streamwood.ru/StreamWood/sw.js" charset="utf-8"></script>
