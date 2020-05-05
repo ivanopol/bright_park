@@ -242,6 +242,9 @@
             font-size: 14px;
             max-width: 250px;
             cursor:pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .btn-half-secondary {

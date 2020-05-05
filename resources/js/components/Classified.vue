@@ -38,7 +38,10 @@
             </v-select>
         </div>
 
-        <div id="prices_block" class="trigger-wrap" hidden>
+        <form  @submit="checkForm" id="client_price_form">
+            <input type="number" name="client_price" id="client_price" placeholder="Ваша цена" min="0" max="100000000" v-model.number.trim="client_price">
+        </form>
+<!--        <div id="prices_block" class="trigger-wrap" hidden>
             <div class="trigger-block">
                 <div class="trigger-row">
                     <div class="trigger-half trigger-left trigger-text">Рыночная оценка</div>
@@ -54,13 +57,13 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
 
-        <section id="count_button" class="buttons_other mt-20">
+<!--        <section id="count_button" class="buttons_other mt-20">
             <div class="item-buttons-other">
                 <button id="show_estimate" v-on:click="showPrices" class="btn btn-primary event">Рассчитать стоимость</button>
             </div>
-        </section>
+        </section>-->
 
         <div id="warning" class="model-choose-text" style="color: darkred;" hidden>
             <p>Заполните все поля!</p>
@@ -135,6 +138,7 @@
             showTrigger: false,
             brand: '',
             mark: '',
+            client_price: null,
         }),
         computed: {
             date: function() {
@@ -145,7 +149,7 @@
                     day: 'numeric'
                 });
                 return date;
-            }
+            },
         },
         components: {
             vSelect,
@@ -168,20 +172,24 @@
                 } else {
                     return (price / 1).toFixed(0);
                 }
-            }
+            },
+
         },
         methods: {
+            checkForm: function (e) {
+                alert();
+            },
             mutableLoading() {
                 return {};
             },
-            hidePrices: function() {
+/*            hidePrices: function() {
                 let prices_block = document.getElementById('prices_block');
                 let count_button = document.getElementById('count_button');
                 prices_block.hidden = true;
                 count_button.hidden = false;
-            },
+            },*/
             stepOne: function (input) {
-                this.hidePrices();
+              //  this.hidePrices();
                 axios.get(this.host_url + '/api/get_brand_models', {
                     params: {
                         model_id: input.id
@@ -223,7 +231,7 @@
                     this.showTrigger = false;
                 }
 
-                this.hidePrices();
+               // this.hidePrices();
                 axios.get(this.host_url + '/api/get_complectations/' + this.selected_brand.code.toString() + '/' + input.code.toString(),
                     {})
                     .then((response) => {
@@ -247,7 +255,7 @@
             },
 
             stepThree: function (input) {
-                this.hidePrices();
+               // this.hidePrices();
                 this.step_three = true;
                 this.selected_tech_param_id = input;
 
@@ -264,7 +272,7 @@
             },
 
             stepFour: function (input) {
-                this.hidePrices();
+               // this.hidePrices();
                 this.step_four = true;
                 this.selected_year = input;
                 //console.log(input);
@@ -276,7 +284,7 @@
             },
 
             stepFive: function (input) {
-                this.hidePrices();
+               // this.hidePrices();
                 this.selected_mileage = input;
                 this.step_five = true;
                 this.getEstimation();
@@ -305,7 +313,7 @@
             },
 
             showPrices: function () {
-                if (this.estimation) {
+/*                if (this.estimation) {
                     let warning = document.getElementById('warning');
                     let prices_block = document.getElementById('prices_block');
                     let count_button = document.getElementById('count_button');
@@ -317,7 +325,7 @@
                 } else {
                     let warning = document.getElementById('warning');
                     warning.hidden = false;
-                }
+                }*/
             },
 
             setHrefCreditButton() {
