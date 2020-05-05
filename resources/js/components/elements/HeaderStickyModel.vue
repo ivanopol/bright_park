@@ -6,13 +6,8 @@
                     <logo-bright-park-sun></logo-bright-park-sun>
                 </a>
             </div>
-            <div class="model-button" v-if="button">
-                <span>{{car.reduction}}</span> <a class="event btn-small green" :href="car.link">Купить</a>
-            </div>
-
-            <div class="logo-lada" v-if="!button">
-                <logo-lada :theme="theme"></logo-lada>
-            </div>
+            <span>{{car.reduction}}</span>
+            <a class="event btn-small green" :href="car.link">Купить</a>
         </div>
     </header>
 </template>
@@ -102,6 +97,7 @@
             padding: 10px 15px 6px;
             display: flex;
             justify-content: space-between;
+            align-items: center;
             opacity: 0;
             -webkit-transition: opacity ease-in 0.1s;
             -moz-transition: opacity ease-in 0.1s;
@@ -112,7 +108,6 @@
             margin: 0 auto;
 
             .logo-bright-park {
-                width: 35%;
                 height: 25px;
                 display: flex;
                 justify-content: flex-start;
@@ -122,7 +117,6 @@
                 a {
                     display: block;
                     float:left;
-                    height: 100%;
                 }
             }
 
@@ -143,32 +137,22 @@
                 }
             }
 
-            .model-button {
-                height: 25px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                position: absolute;
-                left: 0;
-                right: 0;
-
-                span {
-                    display: inline-block;
-                    font-weight: bold;
-                    font-size: 14px;
-                    margin-right: 10px;
-                }
-
-                a {
-
-                    color: #fff;
-                    font-size: 14px;
-                    padding: 6px 15px;
-                    border-radius: 20px;
-                    display: inline-block;
-                    text-transform: uppercase;
-                }
+            span {
+                display: inline-block;
+                font-weight: bold;
+                font-size: 16px;
+                margin-right: 10px;
             }
+
+            a {
+                color: #fff;
+                font-size: 14px;
+                padding: 6px 15px;
+                border-radius: 20px;
+                display: inline-block;
+                text-transform: uppercase;
+            }
+
 
             &.dark {
                 padding-bottom: 10px;
