@@ -135,7 +135,14 @@ class AutoruService
                 throw new Exception('Models collecting failed!');
             }
         }
-        $res = DB::select('select id, title as `label`, code from brand_models where brand_id = :brand_id order by `order` desc', ['brand_id' => $brand_id]);
+        $res = DB::select('select id, title as `label`, code from brand_models where brand_id = :brand_id order by `order` desc LIMIT 30', ['brand_id' => $brand_id]);
+
+        $i = 1;
+        foreach($res as &$row) {
+            $row->number = $i;
+            $i++;
+        }
+
         return $res;
     }
 

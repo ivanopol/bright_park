@@ -66,8 +66,14 @@
             <p>Заполните все поля!</p>
         </div>
 
-        <div id="special_offer_text" class="model-choose-text" hidden>
+<!--        <div id="special_offer_text" class="model-choose-text" hidden>
             <p>Предложение действует до {{date}}</p>
+        </div>-->
+
+        <div class="trigger" v-if="showTrigger">
+            <div class="trigger-block-wrap">
+                <p>При обмене {{brand}} {{mark}} на LADA до {{date}} у нас действует специальное предложение</p>
+            </div>
         </div>
 
         <div class="option-text classified-fullwidth">
@@ -126,7 +132,9 @@
                 {label: 'более 200 000', value: 1250000}
             ],
             years: [],
-
+            showTrigger: false,
+            brand: '',
+            mark: '',
         }),
         computed: {
             date: function() {
@@ -204,9 +212,17 @@
                 }
                 this.step_one = true;
                 this.selected_brand = input;
+                this.brand = input.label === 'LADA (ВАЗ)' ? 'LADA' : input.label;
             },
 
             stepTwo: function (input) {
+                if (input.number <= 10) {
+                    this.mark = input.label;
+                    this.showTrigger = true;
+                } else {
+                    this.showTrigger = false;
+                }
+
                 this.hidePrices();
                 axios.get(this.host_url + '/api/get_complectations/' + this.selected_brand.code.toString() + '/' + input.code.toString(),
                     {})
