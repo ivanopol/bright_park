@@ -2,8 +2,8 @@
 
 @section('content')
     <tab-bar :cities='@json($cities)' :models='@json($models)' :phone="'{{$cities['active']['phone']}}'"></tab-bar>
-    <header-sticky-component :theme="'light'" :city="'{{$city}}'" :button=true
-                             :car='@json($data['slider']['slides'])'></header-sticky-component>
+    <header-sticky-model :theme="'light'" :city="'{{$city}}'" :button=true
+                             :car='@json($data['slider']['slides'])'></header-sticky-model>
     <header-component :line="true" :theme="'light'" :city="'{{$city}}'"
                       :car='@json($data['slider']['slides'])'></header-component>
     <body>
