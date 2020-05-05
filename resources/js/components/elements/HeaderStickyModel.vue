@@ -7,7 +7,7 @@
                 </a>
             </div>
             <span>{{car.reduction}}</span>
-            <a class="event btn-small green" :href="car.link">Купить</a>
+            <a class="event btn-small green" :href="car.link">Узнать цену</a>
         </div>
     </header>
 </template>
@@ -94,7 +94,7 @@
         }
 
         .logo-wrap {
-            padding: 10px 15px 6px;
+            padding: 10px 10px 6px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -141,10 +141,9 @@
                 display: inline-block;
                 font-weight: bold;
                 font-size: 16px;
-                margin-right: 10px;
             }
 
-            a {
+            a.btn-small {
                 color: #fff;
                 font-size: 14px;
                 padding: 6px 15px;
@@ -153,6 +152,20 @@
                 text-transform: uppercase;
             }
 
+            @media only screen and (max-width: 340px) {
+                span {
+                    font-size: 14px;
+                    white-space: nowrap;
+                    max-width: 50%;
+                    overflow: hidden;
+
+                }
+
+                a.btn-small {
+                    font-size: 12px;
+                    white-space: nowrap;
+                }
+            }
 
             &.dark {
                 padding-bottom: 10px;

@@ -24,6 +24,13 @@
     #bp_sun {
         width: 35px;
     }
+
+    @media only screen and (max-width: 340px) {
+        #bp_sun {
+            width: 30px;
+        }
+    }
+
     @media only screen and (min-width: 580px) {
         #bp_sun {
             width: 40px;
