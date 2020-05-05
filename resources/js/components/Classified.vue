@@ -72,9 +72,10 @@
 
         <div class="option-text classified-fullwidth">
             <ul>
-                <li><img src="/build/images/icons/checkbox-green.svg" class="check check-green" alt="Скидка при обмене 40&nbsp;000 руб."><span>При покупке в&nbsp;кредит КАСКО в&nbsp;подарок</span></li>
-                <li><img src="/build/images/icons/checkbox-green.svg" class="check check-green" alt="Оценка на 7% выше рынка"><span>Ставки по&nbsp;кредиту от&nbsp;3,5% годовых</span></li>
-                <li><img src="/build/images/icons/checkbox-green.svg" class="check check-green" alt="Пакет доп. оборудования со скидкой до 80%"><span>Выгода при покупке в&nbsp;кредит&nbsp;10%</span></li>
+                <li><img src="/build/images/icons/checkbox-green.svg" class="check check-green" alt="Кредит для всех. Первоначальный взнос 0%"><span>Кредит для всех. Первоначальный взнос&nbsp;0%</span></li>
+                <li><img src="/build/images/icons/checkbox-green.svg" class="check check-green" alt="Программа LADA Finance. Скидка до 40000 рублей и ставка от 3,5%"><span>Программа LADA Finance. Скидка до&nbsp;40&nbsp;000 рублей и&nbsp;ставка от&nbsp;3,5%</span></li>
+                <li><img src="/build/images/icons/checkbox-green.svg" class="check check-green" alt="Специальные программы без КАСКО дешевле потребительских кредитов"><span>Специальные программы без КАСКО дешевле потребительских кредитов</span></li>
+                <li><img src="/build/images/icons/checkbox-green.svg" class="check check-green" alt="Скидка на автомобиль 10% по госпрограмме первый и семейный автомобиль"><span>Скидка на&nbsp;автомобиль&nbsp;10% по&nbsp;госпрограмме первый и&nbsp;семейный автомобиль</span></li>
             </ul>
         </div>
     </section>

@@ -30,9 +30,9 @@
         <div class="option-text step-null" v-if="!grade">
             <p>Имеете ли вы автомобиль на обмен?</p>
             <ul>
-                <li><img src="/build/images/icons/checkbox-green.svg" class="check check-green" alt="Скидка при обмене 40&nbsp;000 руб."><span>Скидка при обмене 40&nbsp;000&nbsp;руб.</span></li>
-                <li><img src="/build/images/icons/checkbox-green.svg" class="check check-green" alt="Оценка на 7% выше рынка"><span>Оценка на&nbsp;7% выше рынка</span></li>
-                <li><img src="/build/images/icons/checkbox-green.svg" class="check check-green" alt="Пакет доп. оборудования со скидкой до 80%"><span>Пакет доп. оборудования со&nbsp;скидкой до&nbsp;80%</span></li>
+                <li><img src="/build/images/icons/checkbox-green.svg" class="check check-green" alt="Обмен для всех. Принимаем автомобили любых марок и в любом состоянии."><span>Обмен для всех. Принимаем автомобили любых марок и&nbsp;в&nbsp;любом состоянии.</span></li>
+                <li><img src="/build/images/icons/checkbox-green.svg" class="check check-green" alt="У нас все честно. Справедливая цена и никаких скрытых комиссий."><span>У&nbsp;нас все честно. Справедливая цена и&nbsp;никаких скрытых комиссий.</span></li>
+                <li><img src="/build/images/icons/checkbox-green.svg" class="check check-green" alt="При обмене скидка на новую LADA до 40000 рублей"><span>При обмене скидка на&nbsp;новую LADA до&nbsp;40&nbsp;000 рублей</span></li>
             </ul>
         </div>
 
@@ -324,7 +324,12 @@
         }
     }
 
+    .conditions,
     .option-text {
+        display: flex;
+        flex-direction: column;
+        padding: 0 30px;
+
         p {
             font-family: PragmaticaLightCBold, Helvetica, sans-serif;
             margin: 50px 30px 25px;
@@ -347,8 +352,8 @@
     }
 
     .option-text ul,
-    .conditions {
-        width: 75%;
+    .conditions ul {
+       /* width: 75%;*/
         display: block;
         margin: 20px auto 40px;
     }
@@ -377,9 +382,13 @@
     }
 
     @media only screen and (min-width: 580px) {
+/*        .option-text ul {
+            width: 100%;
+        }*/
+
         .option-text,
         .conditions {
-            width: 430px;
+           /* width: 430px;*/
             margin: 40px auto 60px;
 
             ul {
