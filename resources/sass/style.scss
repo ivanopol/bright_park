@@ -12,6 +12,10 @@ body {
     //overflow: hidden;
 }
 
+.fix-body {
+    overflow: hidden;
+}
+
 .wrapper {
     min-width: 320px;
     overflow: hidden;
@@ -759,133 +763,6 @@ footer {
         justify-content: center;
         align-items: center;
         margin: 0;
-    }
-}
-
-.model-details {
-
-    .model-count-text {
-        font-size: 20px;
-        color: #ee6723
-    }
-    .trigger-wrap {
-        p {
-            line-height: 1.4;
-            margin: 35px auto;
-        }
-    }
-
-    .model-choose-text2 {
-        font-family: PragmaticaLightCBold, Helvetica, sans-serif;
-        text-align: left;
-        font-size: 16px;
-        font-weight: bold;
-        line-height: 1.4;
-        margin: 0 50px;
-    }
-
-    .model-choose-text {
-        font-family: PragmaticaLightCBold, Helvetica, sans-serif;
-        font-weight: bold;
-        text-align: left;
-        font-size: 18px;
-        line-height: 1.4;
-        margin: 0 30px;
-    }
-
-    .buy-step-block {
-        width: 25%;
-    }
-
-    .buy-step-circle {
-        border-radius: 50%;
-        border: 2px solid #000;
-        width: 50px;
-        height: 50px;
-        background-color: #fff;
-        z-index: 10;
-    }
-
-    .buy-step-circle-colored {
-        border-radius: 50%;
-        border: 2px;
-        width: 50px;
-        height: 50px;
-        background-color: #ff8351;
-        color: #fff;
-    }
-
-    .buy-step-number {
-        font-size: 35px;
-        height: 35px;
-    }
-
-    .buy-step-text {
-        font-size: 16px;
-        line-height: 1.2;
-        display: block;
-        color: #000000;
-        text-align: center;
-        height: 40px;
-    }
-
-    .buy-steps-wrapper {
-        margin: 30px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
-        max-width: 580px;
-
-        &:before {
-            content: '';
-            position: absolute;
-            height: 2px;
-            display: block;
-            top: 25%;
-            left: 10%;
-            right: 10%;
-            margin: 0 auto;
-            background-color: #000;
-            z-index: -1;
-        }
-    }
-
-    @media only screen and (min-width: 580px) {
-        .model-choose-text2,
-        .model-choose-text {
-            font-weight: normal;
-            font-size: 22px;
-            text-align: center;
-        }
-
-        .buy-steps-wrapper {
-            margin: 60px auto 80px;
-            z-index: 1;
-        }
-    }
-
-    @media only screen and (min-width: 800px) {
-        .trigger-wrap {
-            margin: 80px auto;
-        }
-    }
-
-    @media only screen and (min-width: 1366px) {
-        .buy-step-circle {
-            width: 60px;
-            height: 60px;
-        }
-
-        .buy-step-circle-colored {
-            width: 60px;
-            height: 60px;
-        }
-
-        .buy-step-number {
-            font-size: 42px;
-            height: 34px;
-        }
     }
 }
 
