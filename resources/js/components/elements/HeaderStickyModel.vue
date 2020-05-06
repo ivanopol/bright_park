@@ -7,7 +7,7 @@
                 </a>
             </div>
             <span>{{car.reduction}}</span>
-            <a class="event btn-small green" :href="car.link">Узнать цену</a>
+            <a id="models_sticky_header_button" class="event btn-small green" :href="car.link">Узнать цену</a>
         </div>
     </header>
 </template>
