@@ -73,7 +73,7 @@ Route::get("/{city}/catalog/lada-4x4/4x4-bronto/", function ($city) { return red
 
 Route::get('send', 'FeedbackController@send');
 Route::middleware(['cookie.check', 'counter'])->group(function () {
-
+    Route::get('/{city}/privacy', 'HomeController@privacy')->name('privacy');
     Route::get('/{city}/stocks', 'HomeController@stocks')->name('stocks');
     Route::get('/{city}/stocks/{stocks_title}', 'HomeController@stocks_details')->name('stocks.one');
     Route::get('/{city}/news', 'HomeController@news')->name('news');

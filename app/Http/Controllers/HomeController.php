@@ -81,7 +81,28 @@ class HomeController extends Controller
         $offer = $service->getRetargetOffers(new Retarget(), $request);
         $models = CarModel::with('types_preview')->get();
 
-        return view('offers', ['offer' => $offer, 'city' => $this->city, 'cities' => $cities, 'models'=>$models]);
+        $raw = new AutoruService();
+        $brands = $raw->getBrands();
+
+        $car_model = CarModel::find(1);
+        $car_type = CarType::find(1);
+
+        $car_attrs = CarModelCarType::where([
+            ['car_model_id', '=', $car_model->id],
+            ['car_type_id', '=', $car_type->id],
+        ])->limit(1)->get();
+
+
+        return view('offers', [
+            'offer' => $offer,
+            'city' => $this->city,
+            'cities' => $cities,
+            'models'=>$models,
+            'brands' => $brands,
+            'car_model' => $car_model,
+            'car_type' => $car_type,
+            'car_attrs' => $car_attrs,
+        ]);
     }
 
     /**
@@ -322,6 +343,29 @@ class HomeController extends Controller
 
       //  print_r($data['coordinates']);
         return view('contacts', [
+            'data' => $data,
+            'city'=>$this->city,
+            'cities' => $cities,
+            'models' => $models,
+        ]);
+    }
+
+    public function privacy(City $city)
+    {
+        $this->seo->setMetaTags($city);
+
+        if ($city['alias']) {
+            $this->city = $city['alias'];
+        } else {
+            return redirect()->route('stocks_details', ['city' => 'perm']);
+        }
+
+        $cities = $city->getCities($this->city);
+        $models = CarModel::with('types_preview')->get();
+        $data['coordinates'] = explode(",", $city['coordinates']);
+
+        //  print_r($data['coordinates']);
+        return view('privacy', [
             'data' => $data,
             'city'=>$this->city,
             'cities' => $cities,

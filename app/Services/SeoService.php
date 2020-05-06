@@ -102,6 +102,10 @@ class SeoService
                     $tags->title = "Брайт Парк - Официальный дилер LADA (ЛАДА) в " . $city->city_dative;
                     $tags->description = "Выбираете где купить новую LADA (ЛАДА) по лучшей цене в " . $city->city_dative . "? У официального дилера LADA - Брайт Парк автомобили в наличии по лучшей стоимости. Также в нашем автосалоне выгодный обмен и кредит.";
                     $tags->place = $params['place'];
+                } elseif ( $segments[1] === 'privacy' )
+                {
+                    $tags->title = "Политика конфиденциальности Брайт Парк в " . $city->city_dative;
+                    $tags->description = "Политика конфиденциальности Брайт Парк";
                 }
                 break;
             case 3:
