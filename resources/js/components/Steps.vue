@@ -70,7 +70,7 @@
 
         <range-slider-component :car='car_attrs'
                                 v-if="grade === 2"></range-slider-component>
-        <form-buy-component v-if="grade === 4" :cities=cities></form-buy-component>
+        <form-buy-component v-if="grade === 4" :cities="cities" :form_id="'form_sale_page'" :call_id="'call_sale_page'"></form-buy-component>
 
         <div class="buttons_other" v-if="grade === 2 || grade === 3">
             <div class="item-buttons-other">

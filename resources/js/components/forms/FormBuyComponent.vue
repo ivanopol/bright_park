@@ -7,8 +7,8 @@
             <input id="name" type="text" class="" name="name" v-model="name" placeholder="Имя" required>
             <the-mask id="phone" pattern=".{18,}" mask="+# (###)-###-##-##" v-model="phone" type="tel" required="true" placeholder="Телефон"></the-mask>
 
-            <button id="form_test-drive_1" class="event" :click="send">{{button_text}}</button>
-            <a :href="'tel:' + cities.active.phone" class="btn btn-primary callibri_phone btn-position green">Позвонить</a>
+            <button :id="form_id" class="" :click="send">{{button_text}}</button>
+            <a :id="call_id" :href="'tel:' + cities.active.phone" class="btn btn-primary callibri_phone btn-position green">Позвонить</a>
 
             <div class="validation-message-wrap">
                 <div id="warning" class="model-choose-text validation-message" v-show="error">
@@ -43,6 +43,14 @@
             },
             form_title: {
                 default: "<span class=\"c_orange\">Заполните</span> форму",
+                type: String
+            },
+            form_id: {
+                default: 'form',
+                type: String
+            },
+            call_id: {
+                default: 'call',
                 type: String
             }
         },
