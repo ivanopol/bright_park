@@ -14,7 +14,7 @@
             <info-component :block='@json($block)' :n='@json($key)' :model='@json($data['model_id'])' :type='@json($data['type_id'])' :data='@json($data)'></info-component>
             @if ($key === 1)
                 <form-buy-component :cities='@json($cities)' :form_id="'form_model_1'" :call_id="'call_model_1'"
-                     :button_text="'Записаться'" :form_title="'<span class=\'c_orange\'>Узнайте</span> о модели подробнее'"></form-buy-component>
+                     :button_text="'Отправить'" :form_title="'<span class=\'c_orange\'>Узнайте</span> о модели подробнее'"></form-buy-component>
             @endif
         @endforeach
 
