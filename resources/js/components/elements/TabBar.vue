@@ -70,6 +70,9 @@
                         <li>
                             <a id="bar_menu_news" :href="'/' + cities.active.value + '/news'" class="event"><div class="title">Новости</div></a>
                         </li>
+                        <li>
+                            <a href="/build/files/politika-konfidencialnosti-brajtpark.doc" class="event">Политика конфиденциальности</a>
+                        </li>
                     </ul>
                 </div>
             </div>
