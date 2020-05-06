@@ -46,34 +46,36 @@
                     <div slot="no-options">Нет совпадений</div>
                 </v-select>
 
-                <div class="models_wrap">
-                    <ul class="">
-                        <li v-for="model in models" v-bind:key="model.id">
-                            <a id="bar_menu_city_link" class="event" :href="'/' + cities.active.value + '/' + model.slug + '/' + model.types_preview[0].slug">
-                                <div class="title" v-text="model.title"></div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                <div class="menu_content_block">
+                    <div class="models_wrap">
+                        <ul class="">
+                            <li v-for="model in models" v-bind:key="model.id">
+                                <a id="bar_menu_city_link" class="event" :href="'/' + cities.active.value + '/' + model.slug + '/' + model.types_preview[0].slug">
+                                    <div class="title" v-text="model.title"></div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
 
-                <div class="other_links">
-                    <ul>
-                        <li>
-                            <a id="bar_menu_main" :href="'/' + cities.active.value" class="event"><div class="title">Главная страница</div></a>
-                        </li>
-                        <li>
-                            <a id="bar_menu_contacts" :href="'/' + cities.active.value + '/contacts'" class="event"><div class="title">Контакты</div></a>
-                        </li>
-                        <li>
-                            <a id="bar_menu_offers" :href="'/' + cities.active.value + '/stocks'" class="event"><div class="title">Акции</div></a>
-                        </li>
-                        <li>
-                            <a id="bar_menu_news" :href="'/' + cities.active.value + '/news'" class="event"><div class="title">Новости</div></a>
-                        </li>
-                        <li>
-                            <a href="/build/files/politika-konfidencialnosti-brajtpark.doc" class="event">Политика конфиденциальности</a>
-                        </li>
-                    </ul>
+                    <div class="other_links">
+                        <ul>
+                            <li>
+                                <a id="bar_menu_main" :href="'/' + cities.active.value" class="event"><div class="title">Главная страница</div></a>
+                            </li>
+                            <li>
+                                <a id="bar_menu_contacts" :href="'/' + cities.active.value + '/contacts'" class="event"><div class="title">Контакты</div></a>
+                            </li>
+                            <li>
+                                <a id="bar_menu_offers" :href="'/' + cities.active.value + '/stocks'" class="event"><div class="title">Акции</div></a>
+                            </li>
+                            <li>
+                                <a id="bar_menu_news" :href="'/' + cities.active.value + '/news'" class="event"><div class="title">Новости</div></a>
+                            </li>
+                            <li>
+                                <a :href="'/' + cities.active.value + '/privacy'" class="event"><div class="title">Политика конфиденциальности</div></a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
@@ -128,17 +130,20 @@ export default {
                 OpenIndicator: {
                     render: createElement => createElement('span', {class: {'toggle': true}}),
                 },
+                fixed: false,
                // scrolled: false
             };
         },
         methods: {
             toggleJivo: function() {
                 if (this.jivoOpen) {
+                    this.fixBody(true);
                     this.open = false;
                     this.openMap = false;
 //                    this.layout = false;
                   //  jivo_api.close();
                 } else {
+                    this.fixBody(false);
                     this.open = false;
                     this.openMap = false;
                //     this.jivoOpen = true;
@@ -154,6 +159,7 @@ export default {
                 }
                 this.open = !this.open;
                 this.layout = this.open;
+                this.fixBody(this.open);
                 return this.open;
             },
             close: function() {
@@ -162,6 +168,7 @@ export default {
                    jivo_api.close();
                 }
                 this.layout = false;
+                this.fixBody(false);
                 return this.open = false;
             },
             selected: function(event) {
@@ -174,6 +181,7 @@ export default {
                 }
                 this.openMap = !this.openMap;
                 this.layout = this.openMap;
+                this.fixBody(this.openMap);
                 return this.openMap;
             },
             toggleCall: function() {
@@ -181,6 +189,7 @@ export default {
                 this.openMap = false;
                 this.open = false;
                 this.jivoOpen = false;
+                this.fixBody(false);
             },
             handleScroll: function() {
              //   this.scrolled = window.scrollY > 60;
@@ -190,6 +199,14 @@ export default {
                 jivoScript.setAttribute('src', '//code-ya.jivosite.com/widget/' + this.cities.active.jivosite_token);
                 jivoScript.setAttribute('async', '');
                 document.body.appendChild(jivoScript);
+            },
+            fixBody: function (state) {
+                var body = document.body;
+                if (state) {
+                    body.classList.add("fix-body");
+                } else {
+                    body.classList.remove("fix-body");
+                }
             }
         },
         components: {
@@ -370,6 +387,7 @@ export default {
             /*margin-bottom: 30px;*/
             margin-bottom: 3vh;
             border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+            width: 90%;
 
             &.vs--disabled .vs__clear,
             &.vs--disabled .vs__dropdown-toggle,
@@ -517,6 +535,41 @@ export default {
                 -webkit-transform: rotate(225deg);
                 transform: rotate(225deg);
                 margin-top: 0px;
+            }
+        }
+
+        .menu_content_block {
+            height: 76vh;
+            overflow: auto;
+            width: 100%;
+            padding-right: 3vh;
+            padding-bottom: 7vh;
+        }
+
+        @media only screen and (max-width: 580px) {
+            & {
+                padding: 3.2vh 1vh 3.2vh 5.75vw;
+
+                .select_wrap {
+                    width: 80%;
+                    .vs__selected {
+                        padding: 0 25px 0 5px;
+                        height: 34px;
+                        color:#fff;
+                        font-weight: bold;
+                    }
+                }
+
+                .other_links,
+                .models_wrap {
+                    ul li a {
+                        padding: 6% 10px;
+                        .title {
+                            font-size: 14px;
+                            padding-left: 0;
+                        }
+                    }
+                }
             }
         }
     }
@@ -754,7 +807,7 @@ export default {
             max-width: 500px;
         }
         #menu {
-            padding: 35px 56px;
+            padding: 35px 10px 35px 56px;
             .other_links ul li a,
             .models_wrap ul li a {
                 padding-top: 22px;
