@@ -6,7 +6,7 @@
                     <logo-bright-park-sun></logo-bright-park-sun>
                 </a>
             </div>
-            <span>{{car.reduction}}</span>
+            <span>{{ car.reduction | formating }}</span>
             <a id="models_sticky_header_button" class="event btn-small green" :href="car.link">Узнать цену</a>
         </div>
     </header>
@@ -45,6 +45,17 @@
             return {
                 scrolled: false
             };
+        },
+        filters: {
+            formating: function (value) {
+                switch (value) {
+                    case 'Granta Drive Active':
+                        value = 'Granta Drive';
+                    break;
+                }
+
+                return value;
+            }
         },
         methods: {
             handleScroll () {
