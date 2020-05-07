@@ -350,6 +350,12 @@ class HomeController extends Controller
         ]);
     }
 
+    /**
+     * Страница политики конфиденциальности
+     *
+     * @param City $city
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     */
     public function privacy(City $city)
     {
         $this->seo->setMetaTags($city);
