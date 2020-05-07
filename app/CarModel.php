@@ -6,7 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class CarModel extends Model
 {
-    protected $fillable = ['title', 'slug', 'preview'];
+    protected $fillable = [
+        'title',
+        'slug',
+        'preview',
+        'price',
+        'special_price',
+        'count',
+        'active',
+    ];
     /**
      * Таблица, связанная с моделью.
      *
@@ -15,11 +23,19 @@ class CarModel extends Model
     protected $table = 'car_models';
 
     /**
-     * Кузовы относящиеся к модели авто.
+     * Кузовы относящиеся к модели авто c превью.
      */
     public function types_preview()
     {
         return $this->belongsToMany('App\CarType')->using('App\CarModelCarType')->withPivot('preview')->wherePivot('preview', 1);
+    }
+
+    /**
+     * Кузовы относящиеся к модели авто без превью.
+     */
+    public function types()
+    {
+        return $this->belongsToMany('App\CarType')->using('App\CarModelCarType')->withPivot('preview', 'price')->wherePivot('active', 1);
     }
 
     /**
@@ -38,5 +54,49 @@ class CarModel extends Model
     public function getRouteKeyName()
     {
         return 'slug';
+    }
+
+    /**
+     * Получаем список автомобилей с ценой
+     *
+     * @return array
+     */
+    public function getAllCars() : array
+    {
+        $car_list_tmp = $this::with('types')->get();
+        return $this->formatCarList($car_list_tmp);
+    }
+
+
+    /**
+     * Приводим массив автомобилей в удобный формат
+     *
+     * @param $car_list_tmp
+     * @return array
+     */
+    private function formatCarList($car_list_tmp) : array
+    {
+        if (!$car_list_tmp) {
+            return [];
+        }
+
+        $car_list_formatted = [];
+
+        $i=0;
+        foreach ($car_list_tmp as $car) {
+            foreach ($car->types as $info) {
+                $car_list_formatted[] = [
+                    'id' => $i,
+                    'label' => $car->title . ' ' . $info->title_ru,
+                    'code' => $info->pivot->price,
+                    'number' => $i,
+                ];
+                $i++;
+            }
+
+
+        }
+
+        return $car_list_formatted;
     }
 }

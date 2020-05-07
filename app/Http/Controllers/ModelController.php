@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Response;
+use App\CarModel;
 
 
 /**
@@ -61,5 +62,18 @@ class ModelController extends Controller
     {
         $raw = new AutoruService();
         return $raw->getCreditPrograms();
+    }
+
+    /**
+     * Получаем список автомобилей
+     * для компонента Steps.vue
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getCarsList(CarModel $car_model): \Illuminate\Http\JsonResponse
+    {
+        $car_list = $car_model->getAllCars();
+        $status = $car_list ? 'OK' : 'ERROR';
+        return Response::json(['status' => $status, 'car_list' => $car_list]);
     }
 }
