@@ -316,7 +316,7 @@ export default {
 
         ul {
             li {
-                font-family: PragmaticaLightCBold, Helvetica, sans-serif;
+                font-family: PragmaticaLightC, Helvetica, sans-serif;
                 padding: 10px;
             }
         }
@@ -378,7 +378,7 @@ export default {
             ul li a .title {
                 text-transform: none;
                 font-family: PragmaticaLightC, Helvetica, sans-serif;
-                font-weight: bold;
+                font-weight: normal;
             }
         }
 
@@ -412,14 +412,14 @@ export default {
                 color: #fff;
                 font-family: PragmaticaLightC, Helvetica, sans-serif;
                 font-size: 1em;
-                font-weight: bold;
+                font-weight: normal;
             }
 
             .vs__selected {
                 padding: 0 25px 0 14px;
                 height: 34px;
                 color:#fff;
-                font-weight: bold;
+                font-weight: normal;
             }
 
             &.vs--single.vs--open .vs__selected {
@@ -543,7 +543,7 @@ export default {
             overflow: auto;
             width: 100%;
             padding-right: 3vh;
-            padding-bottom: 7vh;
+            padding-bottom: 10vh;
         }
 
         @media only screen and (max-width: 580px) {
@@ -556,7 +556,7 @@ export default {
                         padding: 0 25px 0 5px;
                         height: 34px;
                         color:#fff;
-                        font-weight: bold;
+                        font-weight: normal;
                     }
                 }
 
