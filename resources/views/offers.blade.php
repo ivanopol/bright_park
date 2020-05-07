@@ -37,7 +37,9 @@
                 </li>
             </ul>
         </div>
-
+        <steps :brands='@json($brands)'
+               :cities='@json($cities)'
+        ></steps>
         <baraban :cities='@json($cities)'></baraban>
         <modal-retarget-component></modal-retarget-component>
         <form-retarget-component :cities='@json($cities)'></form-retarget-component>

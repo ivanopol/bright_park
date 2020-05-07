@@ -85,9 +85,11 @@ class CarModel extends Model
         $i=0;
         foreach ($car_list_tmp as $car) {
             foreach ($car->types as $info) {
+                $label = strtolower($car->title) === strtolower($info->title_ru) ? $car->title : $car->title . ' ' . $info->title_ru;
+
                 $car_list_formatted[] = [
                     'id' => $i,
-                    'label' => $car->title . ' ' . $info->title_ru,
+                    'label' => $label,
                     'code' => $info->pivot->price,
                     'number' => $i,
                 ];

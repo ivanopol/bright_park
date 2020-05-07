@@ -39,7 +39,8 @@
         </div>
 
         <form  @submit="checkForm" id="client_price_form">
-            <input type="number" name="client_price" id="client_price" placeholder="Ваша цена" min="0" max="100000000" v-model.number.trim="client_price">
+            <input type="number" name="client_price2" id="client_price2" placeholder="Ваша цена" min="0" max="100000000"
+                   v-model.number.trim="clientPriceInput" mask="\d+" >
         </form>
 <!--        <div id="prices_block" class="trigger-wrap" hidden>
             <div class="trigger-block">
@@ -65,8 +66,10 @@
             </div>
         </section>-->
 
-        <div id="warning" class="model-choose-text" style="color: darkred;" hidden>
-            <p>Заполните все поля!</p>
+        <div class="validation-message-wrap" v-if="error">
+            <div id="warning" class="model-choose-text validation-message" >
+                <p>{{errorMessage}}</p>
+            </div>
         </div>
 
 <!--        <div id="special_offer_text" class="model-choose-text" hidden>
@@ -139,6 +142,8 @@
             brand: '',
             mark: '',
             client_price: null,
+            error: false,
+            errorMessage: '',
         }),
         computed: {
             date: function() {
@@ -150,6 +155,27 @@
                 });
                 return date;
             },
+            clientPriceInput: {
+                get() {
+                    return this.client_price;
+                },
+                set(value) {
+                    let tmpVal = value;
+
+                    if (!parseInt(tmpVal) && tmpVal !== '') {
+                        this.errorMessage = 'Введите число';
+                        this.error = true;
+                    } else if (parseInt(tmpVal) || tmpVal === '') {
+                        this.error = false;
+                    }
+
+                    if (Number (value) < 0 ) {
+                        tmpVal = Number (value) * -1;
+                    }
+                    this.setCookie(tmpVal);
+                    this.client_price = String (tmpVal);
+                }
+            }
         },
         components: {
             vSelect,
@@ -173,11 +199,10 @@
                     return (price / 1).toFixed(0);
                 }
             },
-
         },
         methods: {
             checkForm: function (e) {
-                alert();
+                e.preventDefault();
             },
             mutableLoading() {
                 return {};
@@ -199,7 +224,7 @@
                         this.models = response.data.models;
                     })
                     .catch((error) => {
-                        console.log(error);
+                       // console.log(error);
                     })
                     .finally(() => {
                     });
@@ -291,7 +316,7 @@
             },
 
             getEstimation: function () {
-                let data = {
+/*                let data = {
                     'km_age': this.selected_mileage.value,
                     'year': this.selected_year.value,
                     'tech_param_id': this.selected_tech_param_id.tech_param_id
@@ -309,7 +334,7 @@
                         this.brightParkEstimation = this.estimation['prices']['tradein']['from'] + this.estimation['prices']['tradein']['from'] * 0.1;
                         this.tradeInEstimation = this.estimation['prices']['tradein']['from'];
                         this.setCookie(this.estimation['prices']['tradein']['from'] + this.estimation['prices']['tradein']['from'] * 0.1)
-                    });
+                    });*/
             },
 
             showPrices: function () {
@@ -340,6 +365,7 @@
             },
         },
         mounted() {
+            this.setCookie(0);
             this.setHrefCreditButton();
         }
     };
@@ -356,6 +382,35 @@
         #special_offer_text {
             font-size: 22px;
             line-height: 1.2;
+        }
+    }
+
+    #classified {
+        #warning,
+        #success {
+            text-align: center;
+            line-height: 1.2;
+            margin: 18px auto;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 16px;
+            max-width: 340px;
+
+        }
+
+        #warning {
+            p {
+                color: darkred;
+            }
+        }
+
+        #success {
+            background-color: #dafbcc;
+
+            p {
+                margin: 0 !important;
+                color: darkgreen;
+            }
         }
     }
 

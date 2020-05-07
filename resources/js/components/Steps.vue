@@ -1,7 +1,22 @@
 <template>
     <section class="steps-wrap">
         <div class="model-choose-text">
-            <p>Подберите выгодные условия на LADA {{car_model.title}} {{car_type.title_ru}}</p>
+            <p v-if="car_model">Подберите выгодные условия на LADA {{car_model.title}} {{car_type.title_ru}}</p>
+            <p v-else-if="!car_model">Подберите выгодные условия на LADA</p>
+        </div>
+
+        <div class="car-choose_wrap" v-if="!car_model">
+            <div class="dropdown-group">
+                <v-select id="select_auto" class="select_wrap event"  :components="{OpenIndicator, Deselect}"
+                          :searchable=false
+                          :options="car_list"
+                          placeholder="Выберите автомобиль"
+                          taggable v-model="selected_auto"
+                          v-on:input="selectAuto()">
+                    <div class="spinner" v-show="mutableLoading">Загрузка...</div>
+                    <div slot="no-options">Нет совпадений</div>
+                </v-select>
+            </div>
         </div>
 
         <div class="buy-steps-wrapper">
@@ -68,7 +83,7 @@
 
         </div>
 
-        <range-slider-component :car='car_attrs'
+        <range-slider-component :car_price='car_price'
                                 v-if="grade === 2"></range-slider-component>
         <form-buy-component v-if="grade === 4" :cities="cities" :form_id="'form_sale_page'" :call_id="'call_sale_page'"></form-buy-component>
 
@@ -89,6 +104,9 @@
 
 <script>
     import CheckIcon from './icons/CheckIcon.vue';
+    import vSelect from 'vue-select';
+    import 'vue-select/dist/vue-select.css';
+    import axios from 'axios';
 
     export default {
         name: 'App',
@@ -101,10 +119,20 @@
         ],
         data: function() {
             return {
+                Deselect: {
+                    render: createElement => createElement('span'),
+                },
+                OpenIndicator: {
+                    render: createElement => createElement('span', {class: {'toggle': true}}),
+                },
                 grade: 0,
-                surcharge: this.car_attrs[0].special_price,
+                surcharge: 0,
                 surchargeText: false,
-                date: ''
+                date: '',
+                selected_auto: null,
+                car_price: 0,
+                host_url: window.location.protocol + '//' + window.location.host,
+                car_list: [],
             };
         },
         filters: {
@@ -125,6 +153,13 @@
             }
         },
         methods: {
+            selectAuto() {
+                this.surcharge = this.selected_auto.code;
+                this.car_price = this.selected_auto.code;
+            },
+            mutableLoading() {
+                return {};
+            },
             gradeShow: function (grade) {
                 this.grade = grade;
                 this.changeHash(this.grade);
@@ -203,10 +238,12 @@
             },
             deleteCookie(name) {
                 this.setCookie(0)
-            }
+            },
         },
         components: {
-            CheckIcon
+            CheckIcon,
+            vSelect,
+            axios
         },
         mounted() {
             this.getDate();
@@ -219,12 +256,44 @@
             };
 
             window.addEventListener ("popstate", handle, false);
+        },
+        created() {
+
+            if (!this.car_model && !this.car_type && !this.car_attrs)
+            {
+                axios.post(this.host_url + '/api/get_cars_list')
+                    .then((response) => {
+                        if (response.status === 200 || response.data.status === 'ERROR') {
+                            // console.log();
+                        }
+
+                        if (response.data.status === 'OK') {
+                            this.car_list = response.data.car_list;
+                            this.selected_auto = response.data.car_list[0];
+                            this.surcharge = response.data.car_list[0].code;
+                            this.car_price = response.data.car_list[0].code;
+                        }
+                    }).catch(error => {
+                    // console.log(error)
+                });
+                this.surcharge = 0;
+                this.car_price = 0;
+            } else {
+                this.surcharge = this.car_attrs[0].special_price;
+                this.car_price = this.car_attrs[0].price;
+            }
         }
     };
 </script>
 
 <style lang="scss">
     .steps-wrap {
+        .car-choose_wrap {
+            max-width: 580px;
+            margin: 30px auto 0;
+            display: block;
+        }
+
         .trigger-wrap {
             max-width: 600px;
         }
@@ -259,8 +328,13 @@
         }
 
 
-        form {
-            margin-bottom: 40px;
+        #client_price_form {
+            margin: 0 30px;
+
+            input {
+               max-width: unset;
+               width: 100%;
+            }
         }
 
         .button-wrapper-row {
@@ -483,4 +557,130 @@
             }
         }
     }
+
+
+    .model-count-text {
+        font-size: 20px;
+        color: #ee6723
+    }
+    .trigger-wrap {
+        p {
+            line-height: 1.4;
+            margin: 35px auto;
+        }
+    }
+
+    .model-choose-text2 {
+        font-family: PragmaticaLightCBold, Helvetica, sans-serif;
+        text-align: left;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 1.4;
+        margin: 0 50px;
+    }
+
+    .model-choose-text {
+        font-family: PragmaticaLightCBold, Helvetica, sans-serif;
+        font-weight: bold;
+        text-align: left;
+        font-size: 18px;
+        line-height: 1.4;
+        margin: 0 30px;
+    }
+
+    .buy-step-block {
+        width: 25%;
+    }
+
+    .buy-step-circle {
+        border-radius: 50%;
+        border: 2px solid #000;
+        width: 50px;
+        height: 50px;
+        background-color: #fff;
+        z-index: 10;
+    }
+
+    .buy-step-circle-colored {
+        border-radius: 50%;
+        border: 2px;
+        width: 50px;
+        height: 50px;
+        background-color: #ff8351;
+        color: #fff;
+    }
+
+    .buy-step-number {
+        font-size: 35px;
+        height: 35px;
+    }
+
+    .buy-step-text {
+        font-size: 16px;
+        line-height: 1.2;
+        display: block;
+        color: #000000;
+        text-align: center;
+        height: 40px;
+    }
+
+    .buy-steps-wrapper {
+        margin: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        max-width: 580px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            height: 2px;
+            display: block;
+            top: 25%;
+            left: 10%;
+            right: 10%;
+            margin: 0 auto;
+            background-color: #000;
+            z-index: -1;
+        }
+    }
+
+    @media only screen and (min-width: 580px) {
+        .model-choose-text2,
+        .model-choose-text {
+            font-weight: normal;
+            font-size: 22px;
+            text-align: center;
+        }
+
+        .buy-steps-wrapper {
+            margin: 60px auto 80px;
+            z-index: 1;
+        }
+    }
+
+    @media only screen and (min-width: 800px) {
+        .trigger-wrap {
+            margin: 80px auto;
+        }
+    }
+
+    @media only screen and (min-width: 1366px) {
+        .buy-step-circle {
+            width: 60px;
+            height: 60px;
+        }
+
+        .buy-step-circle-colored {
+            width: 60px;
+            height: 60px;
+        }
+
+        .buy-step-number {
+            font-size: 42px;
+            height: 34px;
+        }
+    }
+
 </style>

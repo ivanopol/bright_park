@@ -23,7 +23,7 @@
                 <input v-on:input="inputChangePayment"
                        type="number"
                        min="0"
-                       :max="Math.round(car[0].price /2)"
+                       :max="Math.round(car_price /2)"
                        name="first-payment"
                        v-model="firstPayment"/> руб.</span>
             </div>
@@ -90,7 +90,7 @@
     import axios from "axios";
 
     export default {
-        props: ['car'],
+        props: ['car_price'],
         components: {
             VueSlider,
             CheckIcon
@@ -124,10 +124,10 @@
                 host_url: window.location.protocol + '//' + window.location.host,
                 credit_programs: null,
                 tradeInPrice: 0,
-                carPrice: this.car[0].price,
+                carPrice: this.car_price,
                 firstPaymentPercent: 50,
                 annualPercent: 12,
-                firstPayment: Math.round(this.car[0].price / 100 * 15),
+                firstPayment: Math.round(this.car_price/ 100 * 15),
                 period: 60,
             }
         },
@@ -161,6 +161,32 @@
                 return date;
             }
         },
+        watch: {
+            car_price: function(val) {
+                if (val === null) {
+                    return {};
+                }
+                this.car_price = val;
+                this.carPrice= this.car_price;
+
+                if (this.getCookie('trade_in_price') != null && this.getCookie('trade_in_price') > 0) {
+
+                    this.firstPayment = this.getCookie('trade_in_price');
+                    console.log(this.firstPayment);
+                    this.firstPaymentPercent = Math.round(this.firstPayment / this.car_price * 100);
+
+                    if (this.firstPaymentPercent > this.sliderOne.max) {
+                        this.firstPayment = Math.round(this.car_price / 2);
+                    }
+                } else {
+                    this.firstPayment = Math.round(this.car_price / 2);
+                    this.firstPaymentPercent = Math.round(this.firstPayment / this.car_price * 100);
+                }
+
+                this.changeFirstPayment();
+                this.calculateMonthlyPayment();
+            }
+        },
         methods: {
 
             handleCreditProgram(program) {
@@ -181,16 +207,16 @@
                 }
             },
             inputChangePayment() {
-                this.firstPaymentPercent = Math.round(this.firstPayment / this.car[0].price * 100);
+                this.firstPaymentPercent = Math.round(this.firstPayment / this.car_price * 100);
             },
             changePeriod() {
                 this.$emit('changePeriod', this.period);
                 this.calculateMonthlyPayment();
             },
             changeFirstPayment() {
-                this.firstPayment = Math.round(this.car[0].price / 100 * this.firstPaymentPercent);
+                this.firstPayment = Math.round(this.car_price / 100 * this.firstPaymentPercent);
 
-                //let percent_from_value = Math.round(this.firstPayment / this.car[0].price * 100);
+                //let percent_from_value = Math.round(this.firstPayment / this.car_price * 100);
 
                 //this.trigger = percent_from_value < 15;
                 this.calculateMonthlyPayment();
@@ -205,7 +231,7 @@
             calculateMonthlyPayment() {
                 let debt = this.carPrice - this.firstPayment;
 
-                if (this.credit_programs !== undefined) {
+                if (this.credit_programs !== undefined && this.credit_programs !== null) {
 
                     for (let i = 0; i <= this.credit_programs.length; i++) {
                         if (this.credit_programs[i] !== undefined) {
@@ -230,10 +256,10 @@
 
                     if (this.getCookie('trade_in_price') != null && this.getCookie('trade_in_price') > 0) {
                         this.firstPayment = this.getCookie('trade_in_price');
-                        this.firstPaymentPercent = Math.round(this.firstPayment / this.car[0].price * 100);
+                        this.firstPaymentPercent = Math.round(this.firstPayment / this.car_price * 100);
 
                         if (this.firstPaymentPercent > this.sliderOne.max) {
-                            this.firstPayment = Math.round(this.car[0].price / 2);
+                            this.firstPayment = Math.round(this.car_price / 2);
                         }
                         this.calculatePercentFromTradeInPrice();
                         this.calculateMonthlyPayment();
@@ -241,9 +267,8 @@
                         this.changeFirstPayment();
                         this.calculateMonthlyPayment();
                     }
-
                 }).catch(error => {
-                console.log(error)
+               // console.log(error)
             });
         },
     }
