@@ -50,7 +50,7 @@
             formating: function (value) {
                 switch (value) {
                     case 'Granta Drive Active':
-                        value = 'Granta Drive';
+                        value = 'Drive Active';
                     break;
                 }
 
@@ -151,7 +151,7 @@
             span {
                 display: inline-block;
                 font-weight: bold;
-                font-size: 16px;
+                font-size: 19px;
             }
 
             a.btn-small {
