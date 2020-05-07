@@ -18,6 +18,7 @@ class CreateCarModelCarTypeTable extends Migration
             $table->integer('price');
             $table->integer('special_price');
             $table->integer('count');
+            $table->tinyInteger('active');
         });
         Artisan::call('db:seed', [
             '--class' => CarModelCarTypeTableSeeder::class
