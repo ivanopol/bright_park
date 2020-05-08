@@ -26,9 +26,13 @@ class BitrixService
             throw new Exception();
         }
 
-/*        foreach ($data as $key => &$value) {
-            $value = htmlspecialchars($value);
-        }*/
+        $data['name'] = isset($data['name']) ? strip_tags($data['name']) : '';
+        $data['phone'] =  isset($data['phone']) ? strip_tags($data['phone']) : '';
+        $data['responsible_id'] = isset($data['responsible_id']) ? intval($data['responsible_id']) : '';
+        $data['comment'] = isset($data['comment']) ? strip_tags($data['comment']) : '';
+        $data['form_id'] = isset($data['form_id']) ? strip_tags($data['form_id']) : '';
+        $data['city'] = isset($data['city']) ? strip_tags($data['city']) : '';
+        $data['caption'] = isset($data['caption']) ? strip_tags($data['caption']) : '';
 
         $phone = $data['phone'];
         $responsible_id = $data['responsible_id'];
@@ -53,6 +57,7 @@ class BitrixService
         $params['city'] = isset($city[0]->title_ru) ? $city[0]->title_ru : '';
         $params['url'] = isset($data['url']['href']) ? $data['url']['href'] : '';
         $params['caption'] = isset($data['caption']) ? $data['caption'] : '';
+        $params['comment'] = isset($data['comment']) ? $data['comment'] : '';
 
 
         Mail::send('emails.feedback', $params, function($message) use ($emailsTo, $emailFrom, $subject) {

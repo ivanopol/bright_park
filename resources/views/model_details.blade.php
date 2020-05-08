@@ -29,6 +29,7 @@
                    :car_type='@json($car_type)'
                    :car_attrs='@json($car_attrs)'
                    :cities='@json($cities)'
+                  :form_id="'sale__steps_form'"
             ></steps>
         </section>
         {!! html_entity_decode($cities['active']['begin_script']) !!}
