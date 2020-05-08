@@ -2,37 +2,16 @@
     <section class="block form retargeting-form">
         <div class="form-wrapper">
             <h3 v-html="form_title"></h3>
-            <form action="#" id="form_test-drive" method="POST" name="feedback" @submit="send">
-                <input id="name_retarget" type="text" class="" name="name" v-model="name"  placeholder="Имя" required>
-                <the-mask id="phone_retarget" pattern=".{18,}" mask="+# (###)-###-##-##" v-model="phone" type="tel" required="true" placeholder="Телефон"></the-mask>
-
-                <button id="retarget_inline" class="event" :click="send">{{button_text}}</button>
-                <a :href="'tel:' + cities.active.phone" class="btn btn-primary callibri_phone btn-position green">Позвонить</a>
-
-                <div class="validation-message-wrap">
-                    <div id="warning" class="model-choose-text validation-message" style="color: darkred;" v-show="error">
-                        <p>Введите 11-значный номер!</p>
-                    </div>
-                    <div id="success" class="model-choose-text validation-message" style="color: darkgreen;" v-show="success">
-                        <p>Заявка отправлена!</p>
-                    </div>
-                </div>
-            </form>
+            <form-common :cities="cities" :button_text="button_text" :form_title="form_title" :form_id="form_id"></form-common>
         </div>
     </section>
 </template>
 
 <script>
-    import axios from 'axios';
-    import VueTheMask from 'vue-the-mask'
-
-    Vue.use(VueTheMask);
+    import FormCommon from './FormCommon.vue';
 
     export default {
-        name: 'App',
-        beforeMount() {
-            this.attachHandler();
-        },
+        name: 'FormRetarget',
         props: {
             cities : {
                 type: Object
@@ -44,85 +23,20 @@
             form_title: {
                 default: "<span class=\"c_orange\">Оставьте</span> заявку сейчас",
                 type: String
+            },
+            form_id: {
+                default: 'form',
+                type: String
             }
         },
-        data: function () {
-            return {
-                success: false,
-                error: false,
-                name: '',
-                phone: '',
-            };
+        components: {
+            FormCommon,
         },
-        computed: {
-            url: function () {
-                return window.location;
-            }
-        },
-        methods: {
-            send: function (event) {
-                event.preventDefault();
-
-                let formData = {
-                    "phone": this.clearMask(this.phone),
-                    "name": this.name,
-                    "responsible_id": this.cities.active.bitrix_responsible_id,
-                    "city": this.cities.active.value,
-                    "url": this.url,
-                    "caption": this.form_title,
-                };
-
-                axios(
-                    {
-                        method: 'post',
-                        url: '/send_contact_form',
-                        data: formData
-                    })
-                    .then((response) => {
-                        this.clearInput();
-                        this.success = true;
-                        //document.getElementById('success').hidden = false;
-                    }).catch((error) => {
-                        this.error = true;
-                        //document.getElementById('warning').hidden = false;
-                    this.clearInput();
-                })
-            },
-
-            clearInput: function () {
-                this.phone = null;
-                this.name = null;
-            },
-
-            clearMask: function(value) {
-              return value.replace(/\D/g,'');
-            },
-
-            showModal: function() {
-            },
-
-            attachHandler: function () {
-                function attachHandler(el, evtname, fn) {
-                    if (el.addEventListener) {
-                        el.addEventListener(evtname, fn.bind(el), false);
-                    } else if (el.attachEvent) {
-                        el.attachEvent('on' + evtname, fn.bind(el));
-                    }
-                }
-
-                attachHandler(window, "load", function () {
-                    var ele = document.querySelector("input[id=phone_retarget]");
-                    attachHandler(ele, "invalid", function () {
-                        this.setCustomValidity("Please enter at least 5 characters.");
-                        this.setCustomValidity("");
-                    });
-                });
-            }
-        }
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+
     .validation-message-wrap {
         height: 52px;
     }
@@ -139,33 +53,6 @@
                 width: 450px;
                 border-radius: 30px;
                 box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.16), 0 0 30px 10px rgba(0, 0, 0, 0.08);
-            }
-        }
-
-        #warning,
-        #success {
-            text-align: center;
-            line-height: 1.2;
-            margin: 18px auto;
-            border-radius: 8px;
-            padding: 15px;
-            font-size: 16px;
-            max-width: 340px;
-
-        }
-
-        #warning {
-            p {
-                color: darkred;
-            }
-        }
-
-        #success {
-            background-color: #dafbcc;
-
-            p {
-                margin: 0 !important;
-                color: darkgreen;
             }
         }
 
@@ -201,11 +88,6 @@
 
         .validation-message-wrap {
             height: auto;
-
-            #success,
-            #error {
-                margin-bottom: 0;
-            }
         }
     }
 </style>

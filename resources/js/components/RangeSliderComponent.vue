@@ -274,7 +274,7 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .credit-wrap {
         width: 90vw;
         margin: 40px auto;

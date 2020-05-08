@@ -2,12 +2,12 @@
     <section id="buttons_other" class="buttons_other mt-40">
         <div class="container">
             <div class="item-buttons-other">
-                <a id="from_test_drive" href="#" class="btn btn-primary event" v-on:click.prevent="show('Записаться на тест-драйв')">Записаться на тест-драйв</a>
-                <a id="form_service" href="#" class="btn btn-secondary event" v-on:click.prevent="show('Записаться на сервис')">Записаться на сервис</a>
+                <a id="from_test_drive" href="#" class="btn btn-primary event" v-on:click.prevent="show('Записаться на тест-драйв', 'main__modal_test-drive')">Записаться на тест-драйв</a>
+                <a id="form_service" href="#" class="btn btn-secondary event" v-on:click.prevent="show('Записаться на сервис', 'main__modal_service')">Записаться на сервис</a>
             </div>
             <modal name="form-callback" height="auto" :adaptive="true">
                 <div class="close" @click="hide"></div>
-                <form-buy2-component :cities="cities" :form_title="title"></form-buy2-component>
+                <form-buy2-component :cities="cities" :form_title="form_title" :form_id="form_id"></form-buy2-component>
             </modal>
         </div>
     </section>
@@ -21,9 +21,17 @@
    export default {
         name: "App",
         props: ['cities'],
+        data () {
+           return {
+               modalWidth: window.innerWidth -20,
+               form_id: '',
+               form_title: '',
+           }
+        },
         methods: {
-            show (title) {
-                this.title = title;
+            show (title, form_id) {
+                this.form_title = title;
+                this.form_id = form_id;
                 this.$modal.show('form-callback');
                 () => {
                     callibriInit();
@@ -33,17 +41,9 @@
                 this.$modal.hide('form-callback');
             },
         },
-        data () {
-            return {
-                modalWidth: window.innerWidth -20,
-                title: '',
-
-            }
-        },
-        created () {
-            this.modalWidth = window.innerWidth -20
-        },
-
+       created () {
+           this.modalWidth = window.innerWidth -20
+       },
     }
 </script>
 

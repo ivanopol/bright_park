@@ -1,9 +1,24 @@
 <template>
     <section class="block form baraban-form" >
-        <form action="#" id="form_test-drive" method="POST" name="feedback" @submit="send" v-show="!btn_disabled">
-            <input id="name" type="text" class="" :disabled='btn_disabled' name="name" v-model="name" placeholder="Имя" required>
+<!--        <form action="#" id="form_test-drive" method="POST" name="feedback" @submit="send" v-show="!btn_disabled">
+            <input id="name" type="text" class="" v-show="!btn_disabled" name="name" v-model="name" placeholder="Имя" required>
             <the-mask id="phone" pattern=".{18,}" :disabled='btn_disabled' mask="+# (###)-###-##-##" v-model="phone" type="tel" required="true" placeholder="Телефон"></the-mask>
             <button id="form_default" class="btn-form event" :disabled='btn_disabled' :click="send">Крутить барабан</button>
+        </form>
+        -->
+        <form action="#" :id="form_id" method="POST" name="feedback" @submit="send" v-show="!btn_disabled">
+            <input :id="form_id + '_input_name'" type="text" class="" v-show="!btn_disabled" name="name" v-model="name" placeholder="Имя" required>
+            <the-mask :id="form_id + '_input_phone'" pattern=".{18,}" :disabled='btn_disabled' mask="+# (###)-###-##-##" v-model="phone" type="tel" required="true" placeholder="Телефон"></the-mask>
+            <button :id="form_id + '_button'" :click="send" >{{button_text}}</button>
+
+            <div class="validation-message-wrap">
+                <div class="model-choose-text warning validation-message" v-show="error">
+                    <p>Введите 11-значный номер!</p>
+                </div>
+                <div class="model-choose-text success validation-message" v-show="success">
+                    <p>Заявка отправлена!</p>
+                </div>
+            </div>
         </form>
 
         <div class="result" v-show="btn_disabled">
@@ -33,12 +48,15 @@
                 name: '',
                 phone: '',
                 btn_disabled: false,
+                button_text: "Крутить барабан",
+                form_title: "Барабан",
+                form_id: 'retarget__baraban',
             };
         },
         computed: {
             url: function () {
                 return window.location;
-            }
+            },
         },
         methods: {
             send: function (event) {
@@ -51,7 +69,7 @@
                     "responsible_id": this.cities.active.bitrix_responsible_id,
                     "city": this.cities.active.value,
                     "url": this.url,
-                    "caption": "Барабан",
+                    "caption": this.form_title,
                 };
 
                axios(
@@ -94,7 +112,7 @@
                 }
 
                 attachHandler(window, "load", function () {
-                    var ele = document.querySelector("input[id=phone]");
+                    var ele = document.querySelector("input[id=" + this.form_id + "_input_phone]");
                     attachHandler(ele, "invalid", function () {
                         this.setCustomValidity("Please enter at least 5 characters.");
                         this.setCustomValidity("");
