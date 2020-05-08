@@ -58,12 +58,12 @@
     </div>
     <div class="container_bg_dark">
         <div class="container">
-            <form-retarget-component :cities='@json($cities)'
+            <form-component :cities='@json($cities)'
                                      :form_id="'service__form_1'"
                                      :button_text="'Записаться на сервис'"
                                      :form_title="''"
                                      :is_comment='false'
-            ></form-retarget-component>
+            ></form-component>
         </div>
     </div>
     <div class="container_bg_dark">
