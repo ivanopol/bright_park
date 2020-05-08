@@ -2,7 +2,7 @@
         <form action="#" :id="form_id" method="POST" name="feedback" @submit="send">
             <input :id="form_id + '_input_name'" type="text" class="" name="name" v-model="name" placeholder="Имя" required>
             <the-mask :id="form_id + '_input_phone'" pattern=".{18,}" mask="+# (###)-###-##-##" v-model="phone" type="tel" required="true" placeholder="Телефон"></the-mask>
-            <textarea name="comment" :id="form_id + '_input_comment'" placeholder="Комментарий" v-model="comment"></textarea>
+            <textarea name="comment" :id="form_id + '_input_comment'" placeholder="Комментарий" v-model="comment" v-if="is_comment"></textarea>
             <div class="control-group">
                 <label :for="form_id + '_checkbox_personal_data'" class="control control-checkbox">Я согласен на <a :href="'/' + cities.active.value + '/privacy'" target="_blank">обработку персональных данных</a>
                     <input type="checkbox" :id="form_id + '_checkbox_personal_data'" v-model='status' >
@@ -51,6 +51,10 @@
                 default: "",
                 type: String
             },
+            is_comment: {
+                default: true,
+                type: Boolean
+            }
         },
         data: function () {
             return {

@@ -3,7 +3,12 @@
         <div class="block-text">
             <p class="form-title">{{form_title}}</p>
         </div>
-        <form-common :cities="cities" :button_text="button_text" :form_title="form_title" :form_id="form_id"></form-common>
+        <form-common :cities="cities"
+                     :button_text="button_text"
+                     :form_title="form_title"
+                     :is_comment="is_comment"
+                     :form_id="form_id">
+        </form-common>
     </section>
 </template>
 
@@ -27,6 +32,10 @@
             form_id: {
                 default: 'form',
                 type: String
+            },
+            is_comment: {
+                default: true,
+                type: Boolean
             }
         },
         components: {
