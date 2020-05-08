@@ -72,7 +72,7 @@
                                 <a id="bar_menu_news" :href="'/' + cities.active.value + '/news'" class="event"><div class="title">Новости</div></a>
                             </li>
                             <li>
-                                <a :href="'/' + cities.active.value + '/privacy'" class="event"><div class="title">Политика конфиденциальности</div></a>
+                                <a :href="'/' + cities.active.value + '/privacy'" class="event"><div class="title font-tiny">Политика конфиденциальности</div></a>
                             </li>
                         </ul>
                     </div>
@@ -353,7 +353,7 @@ export default {
                             color: #fff;
                             text-transform: uppercase;
                             position: relative;
-                            font-weight: normal;
+                            font-weight: bold;
                             &:after {
                                 width: 10px;
                                 height: 10px;
@@ -378,7 +378,11 @@ export default {
             ul li a .title {
                 text-transform: none;
                 font-family: PragmaticaLightC, Helvetica, sans-serif;
-                font-weight: normal;
+                font-weight: bold;
+
+                &.font-tiny {
+                    font-weight: normal;
+                }
             }
         }
 
