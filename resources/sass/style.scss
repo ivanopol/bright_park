@@ -196,6 +196,7 @@ $color-coral: #ff8250;
 
 
 
+
 .btn-half-secondary:hover,
 .btn-half-secondary:active,
 .btn-secondary:hover,
@@ -337,11 +338,14 @@ form {
         transition: all ease-out 0.1s;
     }
 
+    .control-group,
+    textarea,
     input,
     button {
         max-width: 340px;
     }
 
+    textarea,
     input {
         border: 2px solid #bdc3c7;
         color: #000;
@@ -359,6 +363,11 @@ form {
             border-color: #5fbd89;
             box-shadow: none;
         }
+    }
+
+    textarea {
+        font-family: PragmaticaLightC, Helvetica, sans-serif;
+        border-radius: 12px;
     }
 
     button {
@@ -386,6 +395,10 @@ form {
         &:active,
         &:focus {
             //  box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, .5);
+        }
+
+        &:disabled {
+            background-color: #ccc !important;
         }
     }
 }
@@ -443,7 +456,7 @@ form {
         }
 
         button {
-            margin-top: 50px;
+            //margin-top: 50px;
         }
     }
 }
@@ -457,7 +470,7 @@ form {
 
     form {
         button {
-            margin-top: 50px;
+          //  margin-top: 50px;
         }
     }
 }
