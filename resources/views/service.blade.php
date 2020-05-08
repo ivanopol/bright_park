@@ -37,10 +37,17 @@
                 </li>
             </ul>
         </div>
-
         <form-retarget-component :cities='@json($cities)' :form_id="'service__form'" :button_text="'Записаться на сервис'" :form_title="'<span class=\'c_orange\'>Заполните</span> форму'"></form-retarget-component>
-
     </div>
+    <footer class="block footer">
+        <div class="block-text center mb">
+            <h2><span class="c_orange">Брайт Парк </span> всегда на связи</h2>
+            <p>У&nbsp;вас есть вопросы? Пообщайтесь со&nbsp;специалистом по&nbsp;телефону&nbsp;<br>
+                <a href="tel:{{$cities['active']['phone']}}" id="main__footer_call" class="btn btn btn-primary btn-position green callibri_phone">Позвонить</a></p>
+            <p>Брайт парк ближе, чем кажется<br> Проложите маршрут до ближайшего салона</p>
+        </div>
+        <yandex-map-component :coordinates='@json($data['coordinates'])'></yandex-map-component>
+    </footer>
     {!! html_entity_decode($cities['active']['begin_script']) !!}
     <scroll-event-handler-component></scroll-event-handler-component>
     <event-handler-component></event-handler-component>
