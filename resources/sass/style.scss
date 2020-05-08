@@ -345,6 +345,10 @@ form {
         max-width: 340px;
     }
 
+    textarea {
+        resize: vertical;
+    }
+
     textarea,
     input {
         border: 2px solid #bdc3c7;
