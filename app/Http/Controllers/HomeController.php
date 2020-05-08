@@ -400,11 +400,7 @@ class HomeController extends Controller
 
         $models = CarModel::with('types_preview')->get();
 
-        $service = new BasePageService();
-        $offer = $service->getRetargetOffers(new Retarget(), $request);
-
         return view('service', [
-            'offer' => $offer,
             'city' => $this->city,
             'cities' => $cities,
             'models'=>$models,

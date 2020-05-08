@@ -5,43 +5,41 @@
     <header-sticky-component :theme="'light'" :city="'{{$city}}'"></header-sticky-component>
     <header-component :absolute="true"  :theme="'light'" :city="'{{$city}}'" ></header-component>
     <section class="main-screen">
-        <retargeting-component :city="'{{$city}}'" :offer='@json($offer)'></retargeting-component>
+
     </section>
     <div class="container">
         <div id="advantages" class="advantages_wrap retargeting_wrap">
-            <h1><span class="c_orange">Преимущества</span> покупки сейчас</h1>
+            <h1><span class="c_orange">Наши</span> преимущества</h1>
             <ul>
                 <li>
                     <div class="advantage">
-                        <span class="icon"><img src="/build/images/icons/retargeting/pervonchalnyj_vznos.svg" alt="Брайт Парк: 0% первоначальный взнос"></span>
-                        <span class="text">0% первоначальный взнос</span>
+                        <span class="icon"><img src="/build/images/icons/service/best_prices.svg" alt="Брайт Парк сервис: Лучшие цены в городе"></span>
+                        <span class="text">Лучшие цены в городе</span>
                     </div>
                 </li>
                 <li>
                     <div class="advantage">
-                        <span class="icon"><img src="/build/images/icons/retargeting/vygoda_v_kredit.svg" alt="Брайт Парк: 10% выгода в кредит"></span>
-                        <span class="text">10% выгода<br>в кредит</span>
+                        <span class="icon"><img src="/build/images/icons/service/experience.svg" alt="Брайт Парк сервис: Стаж мастеров от 10 лет"></span>
+                        <span class="text">Стаж мастеров от 10 лет</span>
                     </div>
                 </li>
                 <li>
                     <div class="advantage">
-                        <span class="icon"><img src="/build/images/icons/retargeting/doplata.svg" alt="Брайт Парк: Доплатим 40000 р. при обмене вашего авто"></span>
-                        <span class="text">Доплатим 40&nbsp;000 р.<br><span class="text-small">при обмене вашего авто</span></span>
+                        <span class="icon"><img src="/build/images/icons/service/garanty.svg" alt="Брайт Парк сервис: Гарантия на услуги 1 год"></span>
+                        <span class="text">Гарантия на услуги 1 год</span>
                     </div>
                 </li>
                 <li>
                     <div class="advantage">
-                        <span class="icon"><img src="/build/images/icons/retargeting/stavka.svg" alt="Брайт Парк: Ставка по кредиту от 3,5%"></span>
-                        <span class="text">Ставка по кредиту от&nbsp;3,5%</span>
+                        <span class="icon"><img src="/build/images/icons/service/car_state.svg" alt="Брайт Парк: Отчёт о состоянии А/М при выдаче"></span>
+                        <span class="text">Отчёт о&nbsp;состоянии А/М при выдаче</span>
                     </div>
                 </li>
             </ul>
         </div>
 
-        <modal-retarget-component></modal-retarget-component>
-        <form-retarget-component :cities='@json($cities)' :form_id="'service__form'" :button_text="'Получить лучшие условия'"
-                                    :form_title="'<span class=\'c_orange\'>Оставьте</span> заявку сейчас'"></form-retarget-component>
-        <div class="block-note"><p>Предложение ограниченно, подробности в автосалоне</p></div>
+        <form-retarget-component :cities='@json($cities)' :form_id="'service__form'" :button_text="'Записаться на сервис'" :form_title="'<span class=\'c_orange\'>Заполните</span> форму'"></form-retarget-component>
+
     </div>
     {!! html_entity_decode($cities['active']['begin_script']) !!}
     <scroll-event-handler-component></scroll-event-handler-component>
