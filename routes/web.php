@@ -90,6 +90,7 @@ Route::middleware(['cookie.check', 'counter'])->group(function () {
     Route::any('/send_contact_form', 'ContactFormController@sendContactForm')->name('sendContactForm');
     Route::any('/check_visitor_cookie', 'ContactFormController@checkVisitorCookie')->name('checkVisitorCookie');
     Route::get('/{city}/contacts', 'HomeController@contacts')->name('contacts');
+    Route::get('/{city}/service', 'HomeController@service')->name('service');
 });
 
 

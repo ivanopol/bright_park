@@ -379,4 +379,36 @@ class HomeController extends Controller
         ]);
     }
 
+    /**
+     * Страница Сервиса
+     *
+     * @param City|null $city
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     */
+    public function service(City $city = null, Request $request)
+    {
+        if ($city['alias']) {
+            $this->city = $city['alias'];
+        } else {
+            return redirect()->route('index', ['city' => 'perm']);
+        }
+
+        $cities = $city->getCities($this->city);
+        $data['coordinates'] = explode(",", $city['coordinates']);
+        $this->seo->setMetaTags($city, ['place' => $data['coordinates']]);
+
+        $models = CarModel::with('types_preview')->get();
+
+        $service = new BasePageService();
+        $offer = $service->getRetargetOffers(new Retarget(), $request);
+
+        return view('service', [
+            'offer' => $offer,
+            'city' => $this->city,
+            'cities' => $cities,
+            'models'=>$models,
+        ]);
+    }
+
 }
