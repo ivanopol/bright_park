@@ -21,7 +21,7 @@
         </div>
         <section class="model-details">
             <div class="trigger-wrap">
-                <p class="trigger-wrap-text">Осталось <span class="model-count-text">{{$count}}</span> {{$car_model->title}} {{$car_type->title_ru}} по спеццене</p>
+                <p class="trigger-wrap-text">Осталось <span class="model-count-text">{{$count}}</span> {{$car_model->title}} {{$car_type->title_ru}} по цене лучше, чем на сайте</p>
             </div>
 
            <steps :brands='@json($brands)'
@@ -32,6 +32,7 @@
                   :form_id="'sale__steps_form'"
             ></steps>
         </section>
+        <div class="block-note"><p>Предложение ограниченно, подробности в автосалоне</p></div>
         {!! html_entity_decode($cities['active']['begin_script']) !!}
         <scroll-event-handler-component></scroll-event-handler-component>
         <event-handler-component></event-handler-component>
