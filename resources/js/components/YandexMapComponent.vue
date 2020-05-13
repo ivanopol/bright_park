@@ -1,7 +1,7 @@
 <template>
     <section>
         <div class="route-button-wrap" v-if="button">
-            <a id="create_route" class="btn event" v-on:click="createRoute">Проложить маршрут</a>
+            <a id="create_route" :class="'btn event ' + btn_class" v-on:click="createRoute">Проложить маршрут</a>
         </div>
         <div class="map-wrapper">
             <div id="map" class="map"></div>
@@ -22,9 +22,13 @@
                 type: Array
             },
             button: {
-                default: true,
+                default: false,
                 type: Boolean
-            }
+            },
+            btn_class: {
+                default: '',
+                type: String
+            },
         },
         data: () => ({
             geolocation: null,
