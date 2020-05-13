@@ -28,7 +28,9 @@
                     function success(position){
                         const latitude = position.coords.latitude;
                         const longitude = position.coords.longitude;
-
+                        localStorage.setItem("latitude", latitude);
+                        localStorage.setItem("longitude", longitude)
+                        localStorage.setItem("coords_expire", Date.now() + (60 * 60 * 1000).toString())
                         addUserLocation([latitude, longitude])
                     }
 
@@ -38,15 +40,20 @@
                         const point = [res.location.lat, res.location.lng];
 
                         addUserLocation(point);
-
-                   //     console.log('Unable to retrieve your location');
-                   //     console.log(e)
                     }
 
-                    if (!navigator.geolocation) {
-                    //    console.log('Geolocation is not supported by your browser');
-                    } else {
-                      //  navigator.geolocation.getCurrentPosition(success, error);
+                    if (navigator.geolocation) {
+                        let lat = localStorage.getItem("latitude");
+                        let lon = localStorage.getItem("longitude");
+                        let coords_expire = localStorage.getItem("coords_expire")
+
+                        if (lat !== null && lat !== ""
+                            && lon !== "" && lon !== null
+                            && parseInt(coords_expire) > (Date.now() + (60 * 60 * 1000))) {
+                            success({coords: {latitude: lat, longitude: lon}})
+                        } else {
+                            navigator.geolocation.getCurrentPosition(success, error);
+                        }
                     }
 
                     function addUserLocation(coords) {
@@ -87,7 +94,9 @@
                 function success(position){
                     const latitude = position.coords.latitude;
                     const longitude = position.coords.longitude;
-
+                    localStorage.setItem("latitude", latitude);
+                    localStorage.setItem("longitude", longitude)
+                    localStorage.setItem("coords_expire", Date.now() + (60 * 60 * 1000).toString())
                     addUserLocation([latitude, longitude])
                 }
 
@@ -102,10 +111,18 @@
                     console.log(e)
                 }
 
-                if (!navigator.geolocation) {
-                    console.log('Geolocation is not supported by your browser');
-                } else {
-                    navigator.geolocation.getCurrentPosition(success, error);
+                if (navigator.geolocation) {
+                    let lat = localStorage.getItem("latitude");
+                    let lon = localStorage.getItem("longitude");
+                    let coords_expire = localStorage.getItem("coords_expire")
+
+                    if (lat !== null && lat !== ""
+                        && lon !== "" && lon !== null
+                        && parseInt(coords_expire) > (Date.now() + (60 * 60 * 1000))) {
+                        success({coords: {latitude: lat, longitude: lon}})
+                    } else {
+                        navigator.geolocation.getCurrentPosition(success, error);
+                    }
                 }
 
                 function addUserLocation(coords) {

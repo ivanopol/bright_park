@@ -88,8 +88,8 @@ class Kernel extends HttpKernel
         'throttle' => ThrottleRequests::class,
         'verified' => EnsureEmailIsVerified::class,
         'cookie.check' => CheckVisitorCookie::class,
-        'counter' => CountUniqueVisitors::class
-        //'city' => \App\Http\Middleware\CheckCity::class,
+        'counter' => CountUniqueVisitors::class,
+        'utm.check' => \App\Http\Middleware\CheckUTM::class,
     ];
 
     /**

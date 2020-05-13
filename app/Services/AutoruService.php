@@ -195,7 +195,7 @@ class AutoruService
      */
     public function getComplectations($brand_code, $model_code)
     {
-        return DB::select('select id, modification as label, tech_param_id from model_modifications where brand_code = :brand_code and model_code = :model_code',
+        return DB::select('select id, modification as label, tech_param_id from model_modifications where brand_code = :brand_code and model_code = :model_code limit 5',
             ['brand_code' => $brand_code, 'model_code' => $model_code]);
     }
 

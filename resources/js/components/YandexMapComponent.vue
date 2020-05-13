@@ -1,7 +1,7 @@
 <template>
     <section>
         <div class="route-button-wrap" v-if="button">
-            <a id="create_route" class="btn event" v-on:click="createRoute">Проложить маршрут</a>
+            <a id="create_route" :class="'btn event ' + btn_class" v-on:click="createRoute">Проложить маршрут</a>
         </div>
         <div class="map-wrapper">
             <div id="map" class="map"></div>
@@ -22,9 +22,13 @@
                 type: Array
             },
             button: {
-                default: true,
+                default: false,
                 type: Boolean
-            }
+            },
+            btn_class: {
+                default: '',
+                type: String
+            },
         },
         data: () => ({
             geolocation: null,
@@ -43,10 +47,10 @@
                         const longitude = position.coords.longitude;
                         localStorage.setItem("latitude", latitude);
                         localStorage.setItem("longitude", longitude)
+                        localStorage.setItem("coords_expire", (Date.now() + (60 * 60 * 1000)).toString())
                         addUserLocation([latitude, longitude])
                     }
-
-                    async function error(e) {
+                        async function error(e) {
 
                         const res = await fetch('https://location.services.mozilla.com/v1/geolocate?key=test').then(el => el.json());
                         const point = [res.location.lat, res.location.lng];
@@ -57,8 +61,11 @@
                     if (navigator.geolocation) {
                         let lat = localStorage.getItem("latitude");
                         let lon = localStorage.getItem("longitude");
+                        let coords_expire = localStorage.getItem("coords_expire")
 
-                        if (lat !== null && lat !== "" && lon !== "" && lon !== null) {
+                        if (lat !== null && lat !== ""
+                            && lon !== "" && lon !== null
+                            && parseInt(coords_expire) > (Date.now() + (60 * 60 * 1000))) {
                             success({coords: {latitude: lat, longitude: lon}})
                         } else {
                             navigator.geolocation.getCurrentPosition(success, error);

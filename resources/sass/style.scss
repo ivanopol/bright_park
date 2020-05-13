@@ -962,7 +962,6 @@ footer {
 }
 */
 
-
 .advantages_wrap {
     padding: 60px 30px 0;
 
@@ -1091,6 +1090,7 @@ footer {
         }
     }
 
+    &.service_wrap,
     &.retargeting_wrap {
         ul {
             li {
@@ -1104,6 +1104,19 @@ footer {
                         margin-bottom: 10px;
                     }
                 }
+            }
+        }
+    }
+
+    &.service_wrap {
+
+        h2 {
+
+        }
+
+        ul li {
+            .text {
+
             }
         }
     }
@@ -1210,6 +1223,19 @@ footer {
         }
     }
 }
+
+
+.container_bg_dark {
+    background-color: #000;
+
+    p,
+    .text,
+    h2 {
+        color: #fff;
+
+    }
+}
+
 
 
 .models_wrap {

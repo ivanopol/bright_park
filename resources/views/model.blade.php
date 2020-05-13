@@ -13,15 +13,21 @@
         @foreach ($data['blocks'] as $key => $block)
             <info-component :block='@json($block)' :n='@json($key)' :model='@json($data['model_id'])' :type='@json($data['type_id'])' :data='@json($data)'></info-component>
             @if ($key === 1)
-                <form-buy-component :cities='@json($cities)' :form_id="'model__form_1'"
-                     :button_text="'Отправить'" :form_title="'<span class=\'c_orange\'>Узнайте</span> о модели подробнее'"></form-buy-component>
+                <form-buy-component :cities='@json($cities)'
+                                    :form_id="'model__form_1'"
+                                    :button_text="'Отправить'"
+                                    :form_title="'<span class=\'c_orange\'>Узнайте</span> о модели подробнее'">
+                </form-buy-component>
             @endif
         @endforeach
 
         @if(count($data['colors']))
             <color-choose-component :colors='@json($data['colors'])'></color-choose-component>
         @endif
-        <form-component :cities='@json($cities)' :form_id="'model__form_2'" :form_title="'Расширенный тест-драйв в Брайт парке'"></form-component>
+        <form-component :cities='@json($cities)'
+                        :form_id="'model__form_2'"
+                        :form_title="'Расширенный тест-драйв в Брайт парке'">
+        </form-component>
         @if(count($data['reviews']))
             <review-component :reviews='@json($data['reviews'])'
                               :model_name="'{{$data['model_full']}}'"></review-component>
