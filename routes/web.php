@@ -69,7 +69,7 @@ Route::get("/{city}/catalog/lada-4x4/4x4-urban-5-dv/", function ($city) { return
 Route::get("/{city}/catalog/lada-4x4/4x4-bronto/", function ($city) { return redirect("/{$city->alias}/4x4/three-doors/"); });
 
 Route::get('send', 'FeedbackController@send');
-Route::middleware(['cookie.check', 'counter'])->group(function () {
+Route::middleware(['utm.check', 'cookie.check', 'counter'])->group(function () {
     Route::get('/{city}/privacy', 'HomeController@privacy')->name('privacy');
     Route::get('/{city}/stocks', 'HomeController@stocks')->name('stocks');
     Route::get('/{city}/stocks/{stocks_title}', 'HomeController@stocks_details')->name('stocks.one');
