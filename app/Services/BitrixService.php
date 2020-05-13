@@ -3,10 +3,10 @@
 
 namespace App\Services;
 
-use Composer\DependencyResolver\Request;
 use Exception;
 use Mail;
 use App\City;
+use Illuminate\Support\Facades\Session;
 
 class BitrixService
 {
@@ -35,7 +35,7 @@ class BitrixService
         $data['caption'] = isset($data['caption']) ? strip_tags($data['caption']) : '';
 
         $phone = $data['phone'];
-        $responsible_id = $data['responsible_id'];
+        $responsible_id =  $data['responsible_id'];
 
         $request = [
             'type' => "PHONE",
@@ -55,10 +55,21 @@ class BitrixService
         $params['name'] = isset($data['name']) ? $data['name'] : '';
         $params['phone'] = isset($data['phone']) ? $data['phone'] : '';
         $params['city'] = isset($city[0]->title_ru) ? $city[0]->title_ru : '';
-        $params['url'] = isset($data['url']['href']) ? $data['url']['href'] : '';
         $params['caption'] = isset($data['caption']) ? $data['caption'] : '';
         $params['comment'] = isset($data['comment']) ? $data['comment'] : '';
+        $params['url'] = isset($data['url']['href']) ? $data['url']['href'] : '';
 
+        if (isset($data['url']) && empty($data['url']['search'])) {
+            if (Session::has('utmcuidF2y0seW')) {
+                foreach (['utm_campaign', 'utm_content', 'utm_medium', 'utm_source', 'utm_term'] as $label) {
+                    if (Session::has('utmcuidF2y0seW.' . $label ))
+                    {
+                        $params['url'] .= '?';
+                        $params['url'] .= '&' . $label . '=' . session('utmcuidF2y0seW.' .$label);
+                    }
+                }
+            }
+        }
 
         Mail::send('emails.feedback', $params, function($message) use ($emailsTo, $emailFrom, $subject) {
             $emails = explode(',', $emailsTo);
@@ -72,7 +83,6 @@ class BitrixService
             }
         });
 
-/*
         $curl = curl_init();
         curl_setopt_array($curl, [
             CURLOPT_SSL_VERIFYPEER => 0,
@@ -130,7 +140,6 @@ class BitrixService
             $info = 'Создан новый лид #ID_SUSH# и к нему прикреплено дело #ID_JOB#';
 
             // Добавление лида
-
             $request = [
                 'fields' => [
                     "TITLE" => 'Test lid', //название формы на сайте
@@ -145,12 +154,11 @@ class BitrixService
                 'params' => ["REGISTER_SONET_EVENT" => "Y"],
             ];
 
-            if (!empty($_SESSION['utmcuidF2y0seW'])) {
-                $session = $_SESSION['utmcuidF2y0seW'];
-
+           if (Session::has('utmcuidF2y0seW')) {
                 foreach (['utm_campaign', 'utm_content', 'utm_medium', 'utm_source', 'utm_term'] as $label) {
-                    if (isset($session[$label])) {
-                        $request['fields'][strtoupper($label)] = $session[$label];
+                    if (Session::has('utmcuidF2y0seW.' . $label ))
+                    {
+                         $request['fields'][strtoupper($label)] = session('utmcuidF2y0seW.' .$label);
                     }
                 }
             }
@@ -172,7 +180,7 @@ class BitrixService
             $type = 1;
         }
 
-// Прикрепление дела
+        // Прикрепление дела
         $request = [
             'fields' => [
                 'OWNER_ID' => $id, //ID Сущности: лид/контакт/компания
@@ -203,8 +211,7 @@ class BitrixService
         curl_close($curl);
         $result = json_decode($result, 1);
 
-
-// ставим куку, если еще не ставили
+        // ставим куку, если еще не ставили
         $key = 'cuidF2y0seW';
 
         if (!isset($_COOKIE[$key])) {
@@ -216,7 +223,7 @@ class BitrixService
             ]));
 
             setcookie($key, $value, time() + 60 * 60 * 24 * 365, '/');
-        } */
+        }
     }
 
     function getUrl()

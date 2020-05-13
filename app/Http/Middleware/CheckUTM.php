@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Session;
 
 class CheckUTM
 {
@@ -16,20 +17,17 @@ class CheckUTM
     public function handle($request, Closure $next)
     {
         $key = 'cuidF2y0seW';
-        $utm = [];
+
+        if (!Session::has('utm' . $key))
+        {
+            Session::put('utm' . $key, []);
+        }
 
         foreach (['utm_campaign', 'utm_content', 'utm_medium', 'utm_source', 'utm_term'] as $label) {
             if (isset($_GET[$label]) && is_scalar($_GET[$label])) {
-                $utm[$label] = mb_substr($_GET[$label], 0, 255);
+                Session::put('utm' . $key . '.' . $label, mb_substr($_GET[$label], 0, 255) );
             }
         }
-
-        if (!isset($_SESSION['utm' . $key])) {
-            $_SESSION['utm' . $key] = [];
-        }
-
-        $_SESSION['utm' . $key] = array_merge($_SESSION['utm' . $key], $utm);
-
 
         if (isset($_COOKIE[$key])) {
             $now = time();

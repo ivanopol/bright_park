@@ -115,8 +115,6 @@ class HomeController extends Controller
      */
     public function model(City $city = null, CarModel $car_model, CarType $car_type)
     {
-
-
         if ($city['alias']) {
             $this->city = $city['alias'];
         } else {

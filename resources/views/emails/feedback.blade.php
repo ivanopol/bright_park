@@ -1,5 +1,5 @@
 <body>
-<p>Заявка с сайта. <?php echo ($caption) ? "Форма &laquo;" . $caption . "&raquo;" : ''; ?></p>
+<p><?php echo ($caption) ? "Форма &laquo;" . $caption . "&raquo;" : ''; ?></p>
 <ul>
     <li>Имя: <?php echo $name; ?></li>
     <li>Телефон: <?php echo $phone; ?></li>
