@@ -61,10 +61,10 @@ class BitrixService
 
         if (isset($data['url']) && empty($data['url']['search'])) {
             if (Session::has('utmcuidF2y0seW')) {
+                $params['url'] .= '?';
                 foreach (['utm_campaign', 'utm_content', 'utm_medium', 'utm_source', 'utm_term'] as $label) {
                     if (Session::has('utmcuidF2y0seW.' . $label ))
                     {
-                        $params['url'] .= '?';
                         $params['url'] .= '&' . $label . '=' . session('utmcuidF2y0seW.' .$label);
                     }
                 }
