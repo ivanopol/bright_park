@@ -43,6 +43,8 @@
         </div>
     </div>
 
+    <buttons-component :cities='@json($cities)'></buttons-component>
+
     <section id="models" class="models_wrap">
         <div class="container">
             <h2>Модели</h2>
@@ -61,7 +63,6 @@
         </div>
     </section>
 
-    <modal-component :cities='@json($cities)'></modal-component>
     <footer class="block footer">
         <div class="block-text center mb">
             <h2><span class="c_orange">Брайт Парк </span> всегда на связи</h2>
