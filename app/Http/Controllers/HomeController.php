@@ -381,10 +381,9 @@ class HomeController extends Controller
      * Страница Сервиса
      *
      * @param City|null $city
-     * @param Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
-    public function service(City $city = null, Request $request)
+    public function service(City $city = null)
     {
         if ($city['alias']) {
             $this->city = $city['alias'];

@@ -54,6 +54,7 @@ Vue.component('event-handler-component', require('./components/EventHandlerCompo
 Vue.component('scroll-event-handler-component', require('./components/ScrollEventHandlerComponent').default);
 Vue.component('baraban', require('./components/retargeting/Baraban').default);
 Vue.component('buttons-component', require('./components/elements/ButtonsComponent').default);
+Vue.component('banner-component', require('./components/elements/BannerComponent').default);
 
 /*const store = new Vuex.Store({
     state: {
