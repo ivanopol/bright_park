@@ -8,8 +8,8 @@
                 <img class="asset-image" src="/build/images/main/mobile/service.jpg" srcset="/build/images/main/mobile/service.jpg, /build/images/main/mobile/service.jpg 2x" alt="Сервис Брайт Парка" />
             </picture>
         </div>
-        <div class="banner-content">
-            <div class="bottom-left">
+        <div class="banner-content bottom-left">
+            <div class="banner-title-white">
                 <span>Сервис<br> Брайт Парка</span>
             </div>
         </div>
@@ -56,10 +56,19 @@
                 left: 0;
                 right: 0;
                 bottom: 0;
+                padding: 90px 40px;
 
-                .bottom-left {
+                &.bottom-left {
+                    flex-direction: column;
+                    display: flex;
+                    justify-content: flex-end;
+                }
+
+                .banner-title-white {
                     font-family: PragmaticaLightCBold, Helvetica, sans-serif;
-                    font-size: 28px;
+                    font-size: 38px;
+                    font-weight: bold;
+                    line-height: 1.4;
                     color: #fff;
                     text-transform: uppercase;
                 }
