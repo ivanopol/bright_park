@@ -1,5 +1,5 @@
 <template>
-    <section class="block form retargeting-form">
+    <section :class="'block form retargeting-form' + form_class">
         <div class="form-wrapper">
             <h3 v-html="form_title"></h3>
             <form-common :cities="cities"
@@ -36,7 +36,11 @@
             is_comment: {
                 default: true,
                 type: Boolean
-            }
+            },
+            form_class: {
+                default: '',
+                type: String
+            },
         },
         components: {
             FormCommon,

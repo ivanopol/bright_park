@@ -4,25 +4,6 @@
     <tab-bar :theme="'dark'" :cities='@json($cities)' :models='@json($models)' :phone="'{{$cities['active']['phone']}}'"></tab-bar>
     <header-sticky-component :theme="'light'" :city="'{{$city}}'"></header-sticky-component>
     <header-component :absolute="true"  :theme="'light'" :city="'{{$city}}'" ></header-component>
-
-{{--    <section class="main-screen">
-        <section>
-            <div class="main-screen-wrap" >
-                <ul>
-                    <li class="retargeting-banner">
-                        <div class="asset-container">
-                            <picture>
-                                <source srcset="/build/images/main/mobile/service.jpg, /build/images/main/mobile/service.jpg 2x" media="(max-width: 580px)">
-                                <source srcset="/build/images/main/tablet/service.jpg, /build/images/main/tablet/service.jpg 2x" media="(max-width: 1365px)">
-                                <source srcset="/build/images/main/desktop/service.jpg, /build/images/main/desktop/service.jpg 2x" media="(min-width: 1366px)">
-                                <img class="asset-image" src="/build/images/main/mobile/service.jpg" srcset="/build/images/main/mobile/service.jpg, /build/images/main/mobile/service.jpg 2x" alt="Сервис Брайт Парка" />
-                            </picture>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-    </section>--}}
     <banner-component :cities='@json($cities)'></banner-component>
 
     <div class="container_bg_dark">
@@ -65,6 +46,7 @@
                                      :button_text="'Записаться на сервис'"
                                      :form_title="''"
                                      :is_comment='false'
+                                     :form_h1="'<span class=\'c_orange\'>Заполните</span> форму'"
             ></form-component>
         </div>
     </div>

@@ -1,7 +1,7 @@
 <template>
-    <section class="block form inline-form">
-        <div class="block-text">
-            <h2><span class="c_orange">Попробуйте</span> сами</h2>
+    <section :class="'block form inline-form' + form_class">
+        <div class="block-text" v-if="form_h1">
+            <h2 v-html="form_h1"></h2>
         </div>
         <div class="form-wrapper">
             <p class="note_1">{{form_title}}</p>
@@ -28,6 +28,10 @@
                 default: "Записаться",
                 type: String
             },
+            form_h1: {
+                default: "<span class=\"c_orange\">Попробуйте</span> сами",
+                type: String
+            },
             form_title: {
                 default: "Расширенный тест-драйв в Брайт парке",
                 type: String
@@ -39,7 +43,11 @@
             is_comment: {
                 default: true,
                 type: Boolean
-            }
+            },
+            form_class: {
+                default: '',
+                type: String
+            },
         },
         components: {
             FormCommon,
