@@ -11,8 +11,11 @@ window.Vue = require('vue');
 //window.Vuex = require('vuex');
 //import Vuex from 'vuex';
 import VModal from 'vue-js-modal';
+/*import VueAwesomeSwiper from 'vue-awesome-swiper';
+import 'swiper/css/swiper.css'*/
 
 Vue.use(VModal);
+//Vue.use(VueAwesomeSwiper, /* { default options with global component } */)
 //Vue.use(Vuex);
 /**
  * The following block of code may be used to automatically register your
@@ -55,6 +58,7 @@ Vue.component('scroll-event-handler-component', require('./components/ScrollEven
 Vue.component('baraban', require('./components/retargeting/Baraban').default);
 Vue.component('buttons-component', require('./components/elements/ButtonsComponent').default);
 Vue.component('banner-component', require('./components/elements/BannerComponent').default);
+Vue.component('review-service', require('./components/service/ReviewService').default);
 
 /*const store = new Vuex.Store({
     state: {

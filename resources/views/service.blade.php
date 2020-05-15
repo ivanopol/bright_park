@@ -52,6 +52,9 @@
             ></form-component>
         </div>
     </div>
+
+    <review-service></review-service>
+
     <div class="container_bg_dark">
         <div class="container">
             <!-- :form_title="'<span class=\'c_orange\'>Запишись</span> к&nbsp;нам на&nbsp;сервис'" -->
