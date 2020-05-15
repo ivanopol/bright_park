@@ -1,5 +1,5 @@
 <template>
-    <section :class="'block form retargeting-form' + form_class">
+    <section :class="'block form retargeting-formb ' + form_class">
         <div class="form-wrapper">
             <h3 v-html="form_title"></h3>
             <form-common :cities="cities"

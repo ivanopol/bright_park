@@ -1,5 +1,5 @@
 <template>
-    <section :class="'block form inline-form' + form_class">
+    <section :class="'block form inline-form ' + form_class">
         <div class="block-text" v-if="form_h1">
             <h2 v-html="form_h1"></h2>
         </div>
