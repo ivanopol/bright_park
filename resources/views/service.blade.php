@@ -41,22 +41,26 @@
     </div>
     <div class="container_bg_dark">
         <div class="container">
+            <!-- :form_h1="'<span class=\'c_orange\'>Заполните</span> форму'" -->
             <form-component :cities='@json($cities)'
                                      :form_id="'service__form_1'"
                                      :button_text="'Записаться на сервис'"
                                      :form_title="''"
                                      :is_comment='false'
-                                     :form_h1="'<span class=\'c_orange\'>Заполните</span> форму'"
+                                     :form_h1="''"
+                                     :form_class="'mobile_white_bg'"
             ></form-component>
         </div>
     </div>
     <div class="container_bg_dark">
         <div class="container">
+            <!-- :form_title="'<span class=\'c_orange\'>Запишись</span> к&nbsp;нам на&nbsp;сервис'" -->
             <form-retarget-component :cities='@json($cities)'
                                      :form_id="'service__form_2'"
                                      :button_text="'Записаться на сервис'"
                                      :form_title="''"
                                      :is_comment='false'
+                                     :form_class="'mobile_white_bg'"
             ></form-retarget-component>
         </div>
     </div>

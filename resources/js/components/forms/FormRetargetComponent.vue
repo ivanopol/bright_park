@@ -1,7 +1,7 @@
 <template>
-    <section :class="'block form retargeting-formb ' + form_class">
+    <section :class="'block form retargeting-form ' + form_class">
         <div class="form-wrapper">
-            <h3 v-html="form_title"></h3>
+            <h3 v-html="form_title" v-if="form_title"></h3>
             <form-common :cities="cities"
                          :button_text="button_text"
                          :form_title="form_title"
@@ -101,6 +101,33 @@
 
         .validation-message-wrap {
             height: auto;
+        }
+    }
+
+    @media only screen and (max-width: 580px) {
+        .mobile_white_bg {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 340px;
+            margin: 40px auto;
+
+            h2 {
+                color: #000;
+            }
+
+            .form-wrapper {
+                padding: 0;
+            }
+
+            form {
+                margin-bottom: 0;
+            }
+
+            form > * {
+                width: 100%;
+            }
         }
     }
 </style>

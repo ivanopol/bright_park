@@ -4,7 +4,7 @@
             <h2 v-html="form_h1"></h2>
         </div>
         <div class="form-wrapper">
-            <p class="note_1">{{form_title}}</p>
+            <p class="note_1" v-if="form_title">{{form_title}}</p>
             <form-common :cities="cities"
                          :button_text="button_text"
                          :form_title="form_title"
@@ -86,6 +86,33 @@
         .block-text {
             padding-top: 30px;
             padding-right: 50px;
+        }
+    }
+
+    @media only screen and (max-width: 580px) {
+        .mobile_white_bg {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 340px;
+            margin: 40px auto;
+
+            h2 {
+                color: #000;
+            }
+
+            .form-wrapper {
+                padding: 0;
+            }
+
+            form {
+                margin-bottom: 0;
+            }
+
+            form > * {
+                width: 100%;
+            }
         }
     }
 </style>
