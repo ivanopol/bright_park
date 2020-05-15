@@ -1,16 +1,16 @@
 <template>
     <section class="block form baraban-form" >
-<!--        <form action="#" id="form_test-drive" method="POST" name="feedback" @submit="send" v-show="!btn_disabled">
-            <input id="name" type="text" class="" v-show="!btn_disabled" name="name" v-model="name" placeholder="Имя" required>
-            <the-mask id="phone" pattern=".{18,}" :disabled='btn_disabled' mask="+# (###)-###-##-##" v-model="phone" type="tel" required="true" placeholder="Телефон"></the-mask>
-            <button id="form_default" class="btn-form event" :disabled='btn_disabled' :click="send">Крутить барабан</button>
-        </form>
-        -->
         <form action="#" :id="form_id" method="POST" name="feedback" @submit="send" v-show="!btn_disabled">
             <input :id="form_id + '_input_name'" type="text" class="" v-show="!btn_disabled" name="name" v-model="name" placeholder="Имя" required>
             <the-mask :id="form_id + '_input_phone'" pattern=".{18,}" :disabled='btn_disabled' mask="+# (###)-###-##-##" v-model="phone" type="tel" required="true" placeholder="Телефон"></the-mask>
-            <button :id="form_id + '_button'" :click="send" >{{button_text}}</button>
+            <div class="control-group">
+                <label :for="form_id + '_checkbox_personal_data'" class="control control-checkbox">Я согласен на <a :href="'/' + cities.active.value + '/privacy'" target="_blank">обработку персональных данных</a>
+                    <input type="checkbox" :id="form_id + '_checkbox_personal_data'" v-model='status' >
+                    <div class="control_indicator"></div>
+                </label>
+            </div>
 
+            <button :id="form_id + '_button'" :click="send" v-bind:disabled="isButtonDisabled">{{button_text}}</button>
             <div class="validation-message-wrap">
                 <div class="model-choose-text warning validation-message" v-show="error">
                     <p>Введите 11-значный номер!</p>
@@ -51,14 +51,22 @@
                 button_text: "Крутить барабан",
                 form_title: "Барабан",
                 form_id: 'retarget__baraban',
+                status: true,
             };
         },
         computed: {
             url: function () {
                 return window.location;
             },
+            isButtonDisabled: function () {
+                return !this.status;
+            },
         },
         methods: {
+            isDisabled: function () {
+                console.log(this.status);
+                return !this.status;
+            },
             send: function (event) {
                 event.preventDefault();
                 this.btn_disabled = true;
@@ -125,7 +133,7 @@
     }
 </script>
 <style lang="scss" scoped>
-
+    @import "./resources/sass/_controls.scss";
 
     @media only screen and (max-width: 580px) {
         .baraban-block.swap {
@@ -172,7 +180,7 @@
 
         &.form {
             button {
-                margin-top: unset;
+                margin-top: 30px;
 
                 &:disabled {
                     background-color: #d8b3a4!important;
