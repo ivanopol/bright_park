@@ -37,6 +37,13 @@ h1 {
     margin-bottom: 30px;
 }
 
+@media only screen and (max-width: 580px) {
+    .ad_h1 {
+        font-size: 6.3vw;
+        line-height: 1.3;
+    }
+}
+
 h2 {
     text-transform: uppercase;
     font-size: 30px;

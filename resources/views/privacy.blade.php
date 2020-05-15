@@ -6,7 +6,7 @@
     <header-component :absolute="true"  :theme="'light'" :city="'{{$city}}'" ></header-component>
     <div class="container p-top-90">
         <div class="stocks-wrapper">
-        <h1>Политика конфиденциальности</h1>
+        <h1 class="ad_h1">Политика конфиденциальности</h1>
         <div class="stocks-one">
             <div class="stocks-one-body">
                 <p>г.Пермь</p>
