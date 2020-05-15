@@ -45,7 +45,7 @@
         <modal-retarget-component></modal-retarget-component>
         <form-retarget-component :cities='@json($cities)' :form_id="'retarget__form'" :button_text="'Получить лучшие условия'"
                                     :form_title="'<span class=\'c_orange\'>Оставьте</span> заявку сейчас'"></form-retarget-component>
-        <div class="block-note"><p>Предложение ограниченно, подробности в автосалоне</p></div>
+        <div class="block-note"><p>*Предложение ограниченно, подробности в автосалоне</p></div>
     </div>
     {!! html_entity_decode($cities['active']['begin_script']) !!}
     <scroll-event-handler-component></scroll-event-handler-component>
