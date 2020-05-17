@@ -59,6 +59,7 @@ Vue.component('baraban', require('./components/retargeting/Baraban').default);
 Vue.component('buttons-component', require('./components/elements/ButtonsComponent').default);
 Vue.component('banner-component', require('./components/elements/BannerComponent').default);
 Vue.component('review-service', require('./components/service/ReviewService').default);
+Vue.component('trust-us', require('./components/service/TrustUs').default);
 
 /*const store = new Vuex.Store({
     state: {

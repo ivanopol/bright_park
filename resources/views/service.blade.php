@@ -52,7 +52,7 @@
             ></form-component>
         </div>
     </div>
-
+    <trust-us></trust-us>
     <review-service></review-service>
 
     <div class="container_bg_dark">
