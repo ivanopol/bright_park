@@ -4,108 +4,20 @@
             <div class="swiper-button-prev" slot="button-prev"></div>
             <div class="swiper-button-next" slot="button-next"></div>
             <swiper class="swiper container-2" ref="mySwiper" :options="swiperOptions">
-                <swiper-slide>
+                <swiper-slide v-for="review in reviews" v-bind:key="review.id">
                     <div class="swiper__wrap">
                         <div class="swiper__head">
-                            <div class="swiper__head-block">
-                                <div class="swiper__head-block-name">Ars Vinogradov</div>
+                            <div class="swiper__head-block with-big-qoute">
+                                <div class="swiper__head-block-name">{{review.name}}</div>
                                 <div class="swiper__head-block-stars">
                                     <ul>
-                                        <li></li>
-                                        <li></li>
-                                        <li></li>
-                                        <li></li>
-                                        <li></li>
+                                        <li v-for="n in 5" v-bind:class="{'rating-active': checkRating(n, review)}"></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper__text">
-                            <span>Уже несколько раз проходил ТО и делают хорошо. Удовольствие жать на газ после Брайт Парка!</span>
-                        </div>
-                    </div>
-                </swiper-slide>
-                <swiper-slide>
-                    <div class="swiper__wrap">
-                        <div class="swiper__head">
-                            <div class="swiper__head-block">
-                                <div class="swiper__head-block-name">Ars Vinogradov</div>
-                                <div class="swiper__head-block-stars">
-                                    <ul>
-                                        <li></li>
-                                        <li></li>
-                                        <li></li>
-                                        <li></li>
-                                        <li></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper__text">
-                            <span>Уже несколько раз проходил ТО и делают хорошо. Удовольствие жать на газ после Брайт Парка!</span>
-                        </div>
-                    </div>
-                </swiper-slide>
-                <swiper-slide>
-                    <div class="swiper__wrap">
-                        <div class="swiper__head">
-                            <div class="swiper__head-block">
-                                <div class="swiper__head-block-name">Ars Vinogradov</div>
-                                <div class="swiper__head-block-stars">
-                                    <ul>
-                                        <li></li>
-                                        <li></li>
-                                        <li></li>
-                                        <li></li>
-                                        <li></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper__text">
-                            <span>Уже несколько раз проходил ТО и делают хорошо. Удовольствие жать на газ после Брайт Парка!</span>
-                        </div>
-                    </div>
-                </swiper-slide>
-                <swiper-slide>
-                    <div class="swiper__wrap">
-                        <div class="swiper__head">
-                            <div class="swiper__head-block">
-                                <div class="swiper__head-block-name">Ars Vinogradov</div>
-                                <div class="swiper__head-block-stars">
-                                    <ul>
-                                        <li></li>
-                                        <li></li>
-                                        <li></li>
-                                        <li></li>
-                                        <li></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper__text">
-                            <span>Уже несколько раз проходил ТО и делают хорошо. Удовольствие жать на газ после Брайт Парка!</span>
-                        </div>
-                    </div>
-                </swiper-slide>
-                <swiper-slide>
-                    <div class="swiper__wrap">
-                        <div class="swiper__head">
-                            <div class="swiper__head-block">
-                                <div class="swiper__head-block-name">Ars Vinogradov</div>
-                                <div class="swiper__head-block-stars">
-                                    <ul>
-                                        <li></li>
-                                        <li></li>
-                                        <li></li>
-                                        <li></li>
-                                        <li></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper__text">
-                            <span>Уже несколько раз проходил ТО и делают хорошо. Удовольствие жать на газ после Брайт Парка!</span>
+                            <span>{{review.text}}</span>
                         </div>
                     </div>
                 </swiper-slide>
@@ -124,6 +36,7 @@
         data: function () {
             return {
                 swiperOptions: {
+                    autoHeight: true,
                     slidesPerView: 3,
                     spaceBetween: 30,
                     slidesPerGroup: 1,
@@ -151,8 +64,33 @@
                             spaceBetween: 0
                         }
                     }
+                },
+                reviews: {
+                    0: {
+                        id: 1,
+                        name: 'Ars Vinogradov',
+                        stars: 5,
+                        text: 'Уже несколько раз проходил ТО и делают хорошо. Удовольствие жать на газ после Брайт Парка!'
+                    },
+                    1: {
+                        id: 2,
+                        name: 'v.nikolashcka',
+                        stars: 5,
+                        text: 'Менеджер Ксения очень помогла с выбором авто и подобрала хорошие условия по кредиту, мы всем довольны, машинкой нарадоваться не можем,рекомендуем'
+                    },
+                    2: {
+                        id: 3,
+                        name: 'Владимир',
+                        stars: 5,
+                        text: 'Для клиентов созданы Комфортные условия ожидания. Здорово, что есть камеры видеонаблюдения, на которых можно наблюдать. как устанавливают доп.работы мастера. Персонал вежливый и учтивый'
+                    },
                 }
             };
+        },
+        methods: {
+            checkRating(n, review) {
+              return review.stars - n >= 0;
+            },
         },
         computed: {
             swiper() {
@@ -182,17 +120,60 @@
         position: relative;
     }
 
-    .swiper-slide {
-        .swiper__wrap {
+    .swiper {
+        &__wrap {
             background-color: #fff;
             margin: 30px 10px;
-            padding: 20px;
+            padding: 40px 25px;
             border-radius: 20px;
+        }
+
+        &__head {
+            &-block {
+                height: 60px;
+                margin-bottom: 15px;
+                &-name {
+                    font-size: 18px;
+                }
+
+                &-stars {
+                    margin-top: 10px;
+                    ul {
+                        display: flex;
+                        justify-content: left;
+                        flex-direction: row;
+                        li {
+                            margin-right: 4px;
+                             background: url(/build/images/icons/service/star-off.svg) no-repeat;
+                             width: 20px;
+                             height: 20px;
+                             display: block;
+
+                            &.rating-active {
+                                background: url(/build/images/icons/service/star-on.svg) no-repeat;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &__text {
+            font-size: 16px;
+            line-height: 1.2;
+        }
+
+        &-container {
+            width: 90%;
         }
     }
 
-    .swiper-container {
-        width: 90%;
+    @media only screen and (min-width: 580px) {
+        .swiper {
+            &__wrap {
+                height: 326px;
+            }
+        }
     }
 
     @media only screen and (max-width: 580px) {
@@ -204,15 +185,18 @@
             max-width: 380px;
         }
 
-        .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+        .swiper-button-next,
+        .swiper-container-rtl .swiper-button-prev {
             right: 0;
         }
 
-        .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+        .swiper-button-prev,
+        .swiper-container-rtl .swiper-button-next {
             left: 0;
         }
 
-        .swiper-button-prev:after, .swiper-button-next:after {
+        .swiper-button-prev:after,
+        .swiper-button-next:after {
             font-size: 26px;
         }
     }
