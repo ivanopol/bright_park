@@ -84,9 +84,9 @@
         }
 
         &-rating-stars {
-
             ul {
-                margin-top: 10px;
+                max-width: 125px;
+                margin: 10px auto 0;
                 display: flex;
                 justify-content: left;
                 flex-direction: row;
@@ -108,6 +108,7 @@
     .resp-double-columns  {
         display: flex;
         flex-direction: column;
+        justify-content: center;
         margin: 0 30px;
     }
 
@@ -116,7 +117,23 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 30px;
+        max-width: 320px;
+        margin: 0 auto 30px;
+    }
+
+    @media only screen and (min-width: 900px) {
+        .resp-double-columns  {
+            flex-direction: row;
+            margin: 0;
+        }
+
+        .resp-row {
+            margin: 0 30px 30px 0;
+        }
+
+        .resp-row:last-child {
+            margin-right: 0;
+        }
     }
 
     .resp-left-column,
