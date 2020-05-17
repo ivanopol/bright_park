@@ -123,7 +123,7 @@
     .swiper {
         &__wrap {
             background-color: #fff;
-            margin: 30px 10px;
+            margin: 0 10px;
             padding: 40px 25px;
             border-radius: 20px;
         }
@@ -165,6 +165,7 @@
 
         &-container {
             width: 90%;
+            margin: 60px auto;
         }
     }
 
@@ -172,6 +173,10 @@
         .swiper {
             &__wrap {
                 height: 326px;
+            }
+
+            &-container {
+                margin: 150px auto;
             }
         }
     }
