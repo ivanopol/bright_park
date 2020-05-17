@@ -60,6 +60,7 @@ Vue.component('buttons-component', require('./components/elements/ButtonsCompone
 Vue.component('banner-component', require('./components/elements/BannerComponent').default);
 Vue.component('review-service', require('./components/service/ReviewService').default);
 Vue.component('trust-us', require('./components/service/TrustUs').default);
+Vue.component('car-logos', require('./components/service/CarLogos').default);
 
 /*const store = new Vuex.Store({
     state: {

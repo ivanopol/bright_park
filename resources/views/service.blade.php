@@ -52,6 +52,7 @@
             ></form-component>
         </div>
     </div>
+    <car-logos></car-logos>
     <trust-us></trust-us>
     <review-service></review-service>
 
