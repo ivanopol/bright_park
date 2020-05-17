@@ -61,6 +61,7 @@ Vue.component('banner-component', require('./components/elements/BannerComponent
 Vue.component('review-service', require('./components/service/ReviewService').default);
 Vue.component('trust-us', require('./components/service/TrustUs').default);
 Vue.component('car-logos', require('./components/service/CarLogos').default);
+Vue.component('our-services', require('./components/service/OurServices').default);
 
 /*const store = new Vuex.Store({
     state: {
