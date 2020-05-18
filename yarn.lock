@@ -1086,6 +1086,10 @@ backo2@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/backo2/-/backo2-1.0.2.tgz#31ab1ac8b129363463e35b3ebb69f4dfcfba7947"
 
+badger-accordion@^1.2.2:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/badger-accordion/-/badger-accordion-1.2.4.tgz#0d3dca51c040684acd7c52818efa0aefaf89262e"
+
 balanced-match@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
@@ -6330,6 +6334,13 @@ vue-awesome-swiper@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/vue-awesome-swiper/-/vue-awesome-swiper-4.1.1.tgz#8f7ab221ad003021d756b86aa618f429924900fe"
 
+vue-badger-accordion@^1.1.6:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/vue-badger-accordion/-/vue-badger-accordion-1.1.6.tgz#a525954666dc7f3f5c20aacd60558ec42f20da2b"
+  dependencies:
+    badger-accordion "^1.2.2"
+    vue "^2.5.17"
+
 vue-class-component@^7.1.0:
   version "7.2.2"
   resolved "https://registry.yarnpkg.com/vue-class-component/-/vue-class-component-7.2.2.tgz#aecc6d28801f64c61eb04407cf3a5476da26b0c0"
@@ -6405,7 +6416,7 @@ vue-yandex-maps@^0.10.4:
   version "0.10.6"
   resolved "https://registry.yarnpkg.com/vue-yandex-maps/-/vue-yandex-maps-0.10.6.tgz#69b40cba0e33b00c6fa2d01813c1dad4e3d1623f"
 
-vue@^2.2.6, vue@^2.6.11:
+vue@^2.2.6, vue@^2.5.17, vue@^2.6.11:
   version "2.6.11"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.11.tgz#76594d877d4b12234406e84e35275c6d514125c5"
 
