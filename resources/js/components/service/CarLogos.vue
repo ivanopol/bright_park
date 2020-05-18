@@ -6,31 +6,37 @@
                 <img src="/build/images/car_logos/lada.png" alt="Lada">
             </li>
             <li>
-                <img src="/build/images/car_logos/kia.png" alt="Kia">
-            </li>
-            <li>
-                <img src="/build/images/car_logos/hyundai.png" alt="Hyundai">
+                <img src="/build/images/car_logos/skoda.png" alt="Skoda">
             </li>
             <li>
                 <img src="/build/images/car_logos/renault.png" alt="Renault">
             </li>
             <li>
-                <img src="/build/images/car_logos/toyota.png" alt="Toyota">
-            </li>
-            <li>
                 <img src="/build/images/car_logos/volcwagen.png" alt="Volcwagen">
             </li>
             <li>
-                <img src="/build/images/car_logos/skoda.png" alt="Skoda">
+                <img src="/build/images/car_logos/kia.png" alt="Kia">
             </li>
             <li>
                 <img src="/build/images/car_logos/nissan.png" alt="Nissan">
             </li>
             <li>
-                <img src="/build/images/car_logos/mitsubishi.png" alt="Mitsubishi">
+                <img src="/build/images/car_logos/toyota.png" alt="Toyota">
             </li>
             <li>
                 <img src="/build/images/car_logos/mazda.png" alt="Mazda">
+            </li>
+            <li>
+                <img src="/build/images/car_logos/hyundai.png" alt="Hyundai">
+            </li>
+            <li>
+                <img src="/build/images/car_logos/mitsubishi.png" alt="Mitsubishi">
+            </li>
+            <li>
+                <img src="/build/images/car_logos/ford.png" alt="Ford">
+            </li>
+            <li>
+                <img src="/build/images/car_logos/uaz.png" alt="УАЗ">
             </li>
         </ul>
     </section>
@@ -71,7 +77,7 @@
             justify-content: space-between;
             padding: 0 30px;
             li {
-                width: 45%;
+                width: 31%;
                 height: 120px;
                 display: flex;
                 align-items: center;
@@ -90,7 +96,7 @@
 
             ul {
                 li {
-                    width: 17%;
+                    width: 15%;
                 }
             }
         }
