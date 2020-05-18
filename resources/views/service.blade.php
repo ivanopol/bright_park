@@ -53,7 +53,7 @@
         </div>
     </div>
     <car-logos></car-logos>
-    <our-services></our-services>
+    <our-services :cities='@json($cities)'></our-services>
     <trust-us></trust-us>
     <review-service></review-service>
 

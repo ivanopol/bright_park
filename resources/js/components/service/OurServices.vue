@@ -3,16 +3,29 @@
         <h2><span class="c_orange">Наши</span> услуги</h2>
         <div class="container">
             <badger-accordion ref="myAccordion">
-                <badger-accordion-item v-for="service in services" v-bind:key="service.id">
+                <badger-accordion-item v-for="(service, index) in services" v-bind:key="service.id">
                     <template slot="header">{{service.title}}</template>
                     <template slot="content">
                         <ul>
                             <li v-for="list in service.list"><check-icon></check-icon> {{list.title}} - от&nbsp;{{list.price}}&nbsp;руб.</li>
                         </ul>
+                        <div class="service__contacts-wrap">
+                            <a :id="form_id + '_get_modal_' + index" class="btn btn-primary callibri_phone btn-position" v-on:click.prevent="show(service.title, form_id + '_' + index)">Записаться</a>
+                            <a :id="form_id + '_call_' + index " :href="'tel:' + cities.active.phone" class="btn btn-primary callibri_phone btn-position green">Позвонить</a>
+                        </div>
                     </template>
                 </badger-accordion-item>
             </badger-accordion>
         </div>
+        <modal name="form-callback3" height="auto" :adaptive="true">
+            <div class="close" @click="hide"></div>
+            <form-buy2-component :cities="cities"
+                                 :form_title="form_title"
+                                 :form_id="form_id"
+                                 :button_text="button_text"
+                                 :is_comment="is_comment"
+            ></form-buy2-component>
+        </modal>
     </section>
 </template>
 
@@ -22,9 +35,13 @@
 
     export default {
         name: "CarServices",
-        props: {},
+        props: ['cities'],
         data: function () {
             return {
+                form_title: '',
+                form_id: 'services__service_modal',
+                button_text: 'Записаться',
+                is_comment: false,
                 services: {
                     maintenance: {
                         id: 1,
@@ -267,6 +284,20 @@
             }
         },
         methods: {
+            show (title, form_id) {
+                this.form_title = title;
+                this.form_id = form_id;
+                this.$modal.show('form-callback3');
+                () => {
+                    callibriInit();
+                }
+            },
+            hide () {
+                this.$modal.hide('form-callback3');
+            },
+        },
+        created () {
+            this.modalWidth = window.innerWidth -20
         },
         computed: {
         },
@@ -282,6 +313,10 @@
 </script>
 
 <style lang="scss">
+    .service__contacts-wrap {
+        margin-top: 20px;
+    }
+
     .car-services {
         h2 {
             text-align: center;
