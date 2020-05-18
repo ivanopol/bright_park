@@ -10,7 +10,7 @@
                             <li v-for="list in service.list"><check-icon></check-icon> {{list.title}} - от&nbsp;{{list.price}}&nbsp;руб.</li>
                         </ul>
                         <div class="service__contacts-wrap">
-                            <a :id="form_id + '_get_modal_' + index" class="btn btn-primary callibri_phone btn-position" v-on:click.prevent="show(service.title, form_id + '_' + index)">Записаться</a>
+                            <a :id="form_id + '_get_modal_' + index" class="btn btn-primary btn-position" v-on:click.prevent="show(service.title, form_id + '_' + index)">Записаться</a>
                             <a :id="form_id + '_call_' + index " :href="'tel:' + cities.active.phone" class="btn btn-primary callibri_phone btn-position green">Позвонить</a>
                         </div>
                     </template>

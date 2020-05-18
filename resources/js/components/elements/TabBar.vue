@@ -79,6 +79,7 @@
                             </li>
                         </ul>
                     </div>
+                    <div class="copyright">Разработано в Брайт Парке</div>
                 </div>
             </div>
         </section>
@@ -232,6 +233,12 @@ export default {
 </script>
 
 <style lang="scss">
+
+    .copyright {
+        font-size: 12px;
+        margin: 65px 10px 40px;
+        color: #fff;
+    }
 
     .menu-desktop {
         background: url('/build/images/icons/menu-desktop.png') no-repeat;
