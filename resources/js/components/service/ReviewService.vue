@@ -55,8 +55,12 @@
                             slidesPerView: 3,
                             spaceBetween: 0
                         },
-                        580: {
+                        900: {
                             slidesPerView: 3,
+                            spaceBetween: 0
+                        },
+                        580: {
+                            slidesPerView: 2,
                             spaceBetween: 0
                         },
                         320: {
