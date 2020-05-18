@@ -54,6 +54,9 @@
                                     <div class="title" v-text="model.title"></div>
                                 </a>
                             </li>
+                            <li>
+                                <a id="bar_menu_service" :href="'/' + cities.active.value + '/service'" class="event"><div class="title">СЕРВИС</div></a>
+                            </li>
                         </ul>
                     </div>
 
