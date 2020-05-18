@@ -14,25 +14,25 @@
                     <li>
                         <div class="advantage">
                             <span class="icon"><img src="/build/images/icons/service/best_prices.svg" alt="Брайт Парк сервис: Лучшие цены в городе"></span>
-                            <span class="text">Лучшие цены в городе</span>
+                            <span class="text">Лучшие цены в&nbsp;городе</span>
                         </div>
                     </li>
                     <li>
                         <div class="advantage">
                             <span class="icon"><img src="/build/images/icons/service/experience.svg" alt="Брайт Парк сервис: Стаж мастеров от 10 лет"></span>
-                            <span class="text">Стаж мастеров от 10 лет</span>
+                            <span class="text">Стаж мастеров от&nbsp;10&nbsp;лет</span>
                         </div>
                     </li>
                     <li>
                         <div class="advantage">
                             <span class="icon"><img src="/build/images/icons/service/garanty.svg" alt="Брайт Парк сервис: Гарантия на услуги 1 год"></span>
-                            <span class="text">Гарантия на услуги 1 год</span>
+                            <span class="text">Гарантия на&nbsp;услуги 1&nbsp;год</span>
                         </div>
                     </li>
                     <li>
                         <div class="advantage">
                             <span class="icon"><img src="/build/images/icons/service/car_state.svg" alt="Брайт Парк: Отчёт о состоянии А/М при выдаче"></span>
-                            <span class="text">Отчёт о&nbsp;состоянии А/М при выдаче</span>
+                            <span class="text">Отчёт&nbsp;о&nbsp;состоянии авто при выдаче</span>
                         </div>
                     </li>
                 </ul>
@@ -46,7 +46,7 @@
                                      :form_id="'service__form_1'"
                                      :button_text="'Записаться на сервис'"
                                      :form_title="''"
-                                     :is_comment='false'
+                                     :is_comment='true'
                                      :form_h1="''"
                                      :form_class="'mobile_white_bg'"
             ></form-component>
@@ -64,7 +64,7 @@
                                      :form_id="'service__form_2'"
                                      :button_text="'Записаться на сервис'"
                                      :form_title="''"
-                                     :is_comment='false'
+                                     :is_comment='true'
                                      :form_class="'mobile_white_bg'"
             ></form-retarget-component>
         </div>

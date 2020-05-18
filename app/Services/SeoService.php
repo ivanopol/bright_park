@@ -108,7 +108,7 @@ class SeoService
                     $tags->description = "Политика конфиденциальности Брайт Парк";
                 } elseif ( $segments[1] === 'service' )
                 {
-                    $tags->title = "Сервисный центр автосалона Лада Центр " . $city->title_ru;
+                    $tags->title = "Сервисный центр автосалона Брайт Парк в " . $city->city_dative;
                     $tags->description = "Брайт Парк " . $city->title_ru . " предлагает Сервисное обслуживание автомобилей Лада в " . $city->city_dative;
                 }
 

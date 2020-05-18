@@ -41,7 +41,7 @@
                 form_title: '',
                 form_id: 'services__service_modal',
                 button_text: 'Записаться',
-                is_comment: false,
+                is_comment: true,
                 services: {
                     maintenance: {
                         id: 1,
