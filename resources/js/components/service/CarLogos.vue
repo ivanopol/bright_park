@@ -98,6 +98,7 @@
             ul {
                 li {
                     width: 15%;
+                    margin-bottom: 30px;
                 }
             }
         }
