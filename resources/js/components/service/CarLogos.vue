@@ -85,6 +85,7 @@
                 img {
                     width: 60%;
                     max-width: 100px;
+                    max-height: 120px;
                 }
             }
         }
