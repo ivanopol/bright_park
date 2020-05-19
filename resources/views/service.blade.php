@@ -14,7 +14,7 @@
                     <li>
                         <div class="advantage">
                             <span class="icon"><img src="/build/images/icons/service/best_prices.svg" alt="Брайт Парк сервис: Лучшие цены в городе"></span>
-                            <span class="text">Лучшие цены в&nbsp;городе</span>
+                            <span class="text">Низкие цены</span>
                         </div>
                     </li>
                     <li>
