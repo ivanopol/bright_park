@@ -2,6 +2,7 @@
     <section :class="'block form retargeting-form ' + form_class">
         <div class="form-wrapper">
             <h3 v-html="form_title" v-if="form_title"></h3>
+            <p class="pre-title" v-html="form_pre_title" v-if="form_pre_title"></p>
             <form-common :cities="cities"
                          :button_text="button_text"
                          :form_title="form_title"
@@ -27,6 +28,10 @@
             },
             form_title: {
                 default: "<span class=\"c_orange\">Оставьте</span> заявку сейчас",
+                type: String
+            },
+            form_pre_title: {
+                default: "",
                 type: String
             },
             form_id: {
@@ -58,6 +63,19 @@
 
         .form-wrapper {
             padding: 0 0 8px;
+
+            h3 {
+                margin-bottom: 0;
+            }
+
+            .pre-title {
+                color: #000;
+                padding: 0 10px;
+                text-align: center;
+                font-weight: bold;
+                font-size: 18px;
+                margin-bottom: 0;
+            }
         }
 
         @media only screen and (min-width: 580px) {
@@ -92,6 +110,7 @@
         }
 
         form {
+            margin-top: 20px;
             margin-bottom: 40px;
         }
         .block-text {

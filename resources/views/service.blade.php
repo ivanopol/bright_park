@@ -47,7 +47,7 @@
                                      :button_text="'Записаться на сервис'"
                                      :form_title="''"
                                      :is_comment='true'
-                                     :form_h1="''"
+                                     :form_h1="'<span class=\'c_orange\'>Запишись</span> на сервис'"
                                      :form_class="'mobile_white_bg'"
             ></form-component>
         </div>
@@ -63,7 +63,8 @@
             <form-retarget-component :cities='@json($cities)'
                                      :form_id="'service__form_2'"
                                      :button_text="'Записаться на сервис'"
-                                     :form_title="''"
+                                     :form_title="'<span class=\'c_orange\'>Запишись</span> к нам на сервис'"
+                                     :form_pre_title="'и получи скидку 10%'"
                                      :is_comment='true'
                                      :form_class="'mobile_white_bg'"
             ></form-retarget-component>
