@@ -63,6 +63,22 @@
             type="text/javascript">
     </script>
 
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(54496129, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/54496129" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
     @if (app()->environment('production'))
         <!-- Yandex.Metrika counter -->
         <script type="text/javascript" >
@@ -101,5 +117,39 @@
         </script>
         <!-- /StreamWood code -->
     @endif
+    <script>
+        console.log(window);
+
+        var yandexReachGoal = function() {
+            var ymIdList = [];
+            window.ym.a.forEach(function(item){
+                ymIdList.push(item[0]);
+            });
+
+
+        };
+
+        yandexReachGoal();
+/*
+        var yandexReachGoal = function(a) {
+            if (window.Ya) {
+                for (var e = (window.Ya.Metrika || window.Ya.Metrika2).counters(), n = 0; n < e.length; n++)
+                {
+                    var t = "yaCounter" + e[n].id;
+                    window[t] && window[t].reachGoal(a)
+                }
+            }
+        };
+        var reachGoal = function(a) {
+            var e = "";
+            (matches = a.match(/^(.+?):(.+?)$/)) &&
+            (e = matches[1], a = matches[2]),
+            yandexReachGoal(a),
+            e &&
+            (yandexReachGoal(e),
+                "undefined" != typeof gtag ? gtag("event", a, { event_category: e }) : "undefined" != typeof GoogleAnalyticsObject && window[GoogleAnalyticsObject]("send", "event", e, a)) };
+*/
+
+    </script>
 </body>
 </html>
