@@ -7,7 +7,7 @@
                     <template slot="header">{{service.title}}</template>
                     <template slot="content">
                         <ul>
-                            <li v-for="list in service.list"><check-icon></check-icon> {{list.title}} - от&nbsp;{{list.price}}&nbsp;руб.</li>
+                            <li v-for="list in service.list"><check-icon></check-icon> <span v-html="getPrice(list.title, list.price)"></span></li>
                         </ul>
                         <div class="service__contacts-wrap">
                             <a :id="form_id + '_get_modal_' + index" class="btn btn-primary btn-position" v-on:click.prevent="show(service.title, form_id + '_' + index)">Записаться</a>
@@ -48,7 +48,7 @@
                         title: 'Техническое обслуживание',
                         list: {
                             0: {
-                                title: 'Замена масла',
+                                title: 'Замена масла, фильтра + работа',
                                 price: 1590,
                             },
                             1: {
@@ -283,7 +283,20 @@
                 },
             }
         },
+        computed: {
+        },
         methods: {
+            getPrice: function(title, price) {
+                let str = '';
+
+                if (price === 0) {
+                    str = title + ' &mdash; бесплатно';
+                } else {
+                    str = title + ' &mdash; от&nbsp;' + price + '&nbsp;руб.';
+                }
+
+                return str;
+            },
             show (title, form_id) {
                 this.form_title = title;
                 this.form_id = form_id;
@@ -298,8 +311,6 @@
         },
         created () {
             this.modalWidth = window.innerWidth -20
-        },
-        computed: {
         },
         components: {
             BadgerAccordion,
