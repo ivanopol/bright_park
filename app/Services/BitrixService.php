@@ -33,7 +33,7 @@ class BitrixService
         $data['form_id'] = isset($data['form_id']) ? htmlspecialchars(strip_tags($data['form_id']), ENT_QUOTES) : '';
         $data['city'] = isset($data['city']) ? htmlspecialchars(strip_tags($data['city']), ENT_QUOTES) : '';
         $data['caption'] = isset($data['caption']) ? htmlspecialchars(strip_tags($data['caption']), ENT_QUOTES) : '';
-        $data['form_type'] = isset($data['form_type']) ? intval($data['caption']) : '';
+        $data['form_type'] = isset($data['form_type']) ? intval($data['form_type']) : '';
 
         $phone = $data['phone'];
         $responsible_id = $data['responsible_id'];
@@ -50,8 +50,14 @@ class BitrixService
         }
 
         $emailFrom = 'site@brightpark.ru';
-        $emailsTo = 'ivanopol777@mail.ru,' ;
-        //$emailsTo = 'ivanopol777@mail.ru,' .  $city[0]->callback_emails;
+
+        $emailsTo = 'ivanopol777@mail.ru,';
+        if ($data['form_type'] === 1) {
+            $emailsTo .= $city[0]->callback_emails;
+        } elseif ($data['form_type'] === 2) {
+            $emailsTo .= $city[0]->callback_service_emails;
+        }
+
         $subject = 'Брайт Парк. Заявка с сайта ';
 
         $params['name'] = isset($data['name']) ? $data['name'] : '';
@@ -84,7 +90,6 @@ class BitrixService
                 }
             }
         });
-        die();
 
         $curl = curl_init();
         curl_setopt_array($curl, [

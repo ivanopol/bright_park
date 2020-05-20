@@ -15,6 +15,7 @@ class City extends Model
         'alias',
         'city_dative',
         'callback_emails',
+        'callback_service_emails',
         'coordinates',
         'jivosite_token',
         'begin_script',
