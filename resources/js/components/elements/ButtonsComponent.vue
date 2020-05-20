@@ -10,8 +10,9 @@
                 v-on:click.prevent="show('Узнать про обмен', 'main__modal_btn-exchange', 'Отправить', 1)"/>
             </li>
             <li>
-                <img class="buttons-block-list-maintenance event" src="/build/images/main/buttons_block/maintenance.png" alt="Брайт Парк: техническое обслуживание"
-                v-on:click.prevent="show('Записаться на техническое обслуживание', 'main__modal_btn-maintenance', 'Записаться', 2)"/>
+                <a id="main_buttons_block_service" :href="'/' + cities.active.value + '/service'" class="event">
+                    <img class="buttons-block-list-maintenance event" src="/build/images/main/buttons_block/maintenance.png" alt="Брайт Парк: техническое обслуживание"/>
+                </a>
             </li>
             <li>
                 <img class="buttons-block-list-test-drive event" src="/build/images/main/buttons_block/test_drive.png" alt="Брайт Парк: тест-драйв"
