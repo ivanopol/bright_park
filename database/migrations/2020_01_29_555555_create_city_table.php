@@ -16,6 +16,7 @@ class CreateCityTable extends Migration
             $table->string('alias');
             $table->string('city_dative');
             $table->string('callback_emails');
+            $table->string('callback_service_emails');
             $table->string('coordinates');
             $table->string('jivosite_token');
             $table->text('open_script')->nullable();
