@@ -28,7 +28,7 @@ class CheckUTM
                 Session::put('utm' . $key . '.' . $label, mb_substr($_GET[$label], 0, 255) );
             }
         }
-/*
+
         if (isset($_COOKIE[$key])) {
             $now = time();
             $gap = 60 * 60 * 24;
@@ -114,7 +114,7 @@ class CheckUTM
             $secure  = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https' : 'http';
             $cookie = base64_encode(json_encode($cookie));
             setcookie($key, $cookie, time() + 60*60*24*365, "/", $cookieDomain, $secure, true);
-        }*/
+        }
 
         return $next($request);
     }
