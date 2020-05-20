@@ -26,16 +26,16 @@ class BitrixService
             throw new Exception();
         }
 
-        $data['name'] = isset($data['name']) ? strip_tags($data['name']) : '';
+        $data['name'] = isset($data['name']) ? htmlspecialchars(strip_tags($data['name']), ENT_QUOTES) : '';
         $data['phone'] =  isset($data['phone']) ? strip_tags($data['phone']) : '';
         $data['responsible_id'] = isset($data['responsible_id']) ? intval($data['responsible_id']) : '';
-        $data['comment'] = isset($data['comment']) ? strip_tags($data['comment']) : '';
-        $data['form_id'] = isset($data['form_id']) ? strip_tags($data['form_id']) : '';
-        $data['city'] = isset($data['city']) ? strip_tags($data['city']) : '';
-        $data['caption'] = isset($data['caption']) ? strip_tags($data['caption']) : '';
+        $data['comment'] = isset($data['comment']) ? htmlspecialchars(strip_tags($data['comment']), ENT_QUOTES) : '';
+        $data['form_id'] = isset($data['form_id']) ? htmlspecialchars(strip_tags($data['form_id']), ENT_QUOTES) : '';
+        $data['city'] = isset($data['city']) ? htmlspecialchars(strip_tags($data['city']), ENT_QUOTES) : '';
+        $data['caption'] = isset($data['caption']) ? htmlspecialchars(strip_tags($data['caption']), ENT_QUOTES) : '';
 
         $phone = $data['phone'];
-        $responsible_id =  $data['responsible_id'];
+        $responsible_id = $data['responsible_id'];
 
         $request = [
             'type' => "PHONE",
