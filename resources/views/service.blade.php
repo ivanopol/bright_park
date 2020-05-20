@@ -49,6 +49,7 @@
                                      :is_comment='true'
                                      :form_h1="'<span class=\'c_orange\'>Запишись</span> на сервис'"
                                      :form_class="'mobile_white_bg'"
+                                     :form_type="'2'"
             ></form-component>
         </div>
     </div>
@@ -67,6 +68,7 @@
                                      :form_pre_title="'и получи скидку 10%'"
                                      :is_comment='true'
                                      :form_class="'mobile_white_bg'"
+                                     :form_type="'2'"
             ></form-retarget-component>
         </div>
     </div>

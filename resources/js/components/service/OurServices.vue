@@ -24,6 +24,7 @@
                                  :form_id="form_id"
                                  :button_text="button_text"
                                  :is_comment="is_comment"
+                                 :form_type="'2'"
             ></form-buy2-component>
         </modal>
     </section>

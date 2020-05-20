@@ -3,25 +3,25 @@
         <ul class="buttons-block-list">
             <li>
                 <img class="buttons-block-list-credit event" src="/build/images/main/buttons_block/profitable_credit.png" alt="Брайт Парк: выгодный кредит"
-                v-on:click.prevent="show('Узнать про кредит', 'main__modal_btn-credit', 'Отправить')"/>
+                v-on:click.prevent="show('Узнать про кредит', 'main__modal_btn-credit', 'Отправить', 1)"/>
             </li>
             <li>
                 <img class="buttons-block-list-exchange event" src="/build/images/main/buttons_block/exchange.png" alt="Брайт Парк: обмен"
-                v-on:click.prevent="show('Узнать про обмен', 'main__modal_btn-exchange', 'Отправить')"/>
+                v-on:click.prevent="show('Узнать про обмен', 'main__modal_btn-exchange', 'Отправить', 1)"/>
             </li>
             <li>
                 <img class="buttons-block-list-maintenance event" src="/build/images/main/buttons_block/maintenance.png" alt="Брайт Парк: техническое обслуживание"
-                v-on:click.prevent="show('Записаться на техническое обслуживание', 'main__modal_btn-maintenance', 'Записаться')"/>
+                v-on:click.prevent="show('Записаться на техническое обслуживание', 'main__modal_btn-maintenance', 'Записаться', 2)"/>
             </li>
             <li>
                 <img class="buttons-block-list-test-drive event" src="/build/images/main/buttons_block/test_drive.png" alt="Брайт Парк: тест-драйв"
-                v-on:click.prevent="show('Записаться на тест-драйв', 'main__modal_btn-test-drive', 'Записаться')"/>
+                v-on:click.prevent="show('Записаться на тест-драйв', 'main__modal_btn-test-drive', 'Записаться', 1)"/>
             </li>
         </ul>
 
         <modal name="form-callback2" height="auto" :adaptive="true">
             <div class="close" @click="hide"></div>
-            <form-buy2-component :cities="cities" :form_title="form_title" :form_id="form_id" :button_text="button_text"></form-buy2-component>
+            <form-buy2-component :cities="cities" :form_title="form_title" :form_id="form_id" :button_text="button_text" :form_type="form_type"></form-buy2-component>
         </modal>
     </section>
 </template>
@@ -36,14 +36,16 @@
                 form_id: '',
                 form_title: '',
                 button_text: '',
+                form_type: 1,
             }
         },
         components: {},
         methods: {
-            show (title, form_id, button_text) {
+            show (title, form_id, button_text, form_type) {
                 this.form_title = title;
                 this.form_id = form_id;
                 this.button_text = button_text;
+                this.form_type = form_type; // 1 - обычная форма, 2 - форма сервиса
                 this.$modal.show('form-callback2');
                 () => {
                     callibriInit();

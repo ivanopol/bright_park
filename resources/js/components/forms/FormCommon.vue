@@ -54,6 +54,10 @@
             is_comment: {
                 default: true,
                 type: Boolean
+            },
+            form_type: {
+                default: 1,
+                type: Number
             }
         },
         data: function () {
@@ -91,6 +95,7 @@
                     "caption": this.form_title,
                     "form_id": this.form_id,
                     "comment": this.comment,
+                    "form_type": this.form_type,
                 };
 
                 axios(

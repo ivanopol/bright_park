@@ -52,6 +52,7 @@
                 form_title: "Барабан",
                 form_id: 'retarget__baraban',
                 status: true,
+                form_type: 1,
             };
         },
         computed: {
@@ -78,6 +79,7 @@
                     "city": this.cities.active.value,
                     "url": this.url,
                     "caption": this.form_title,
+                    "form_type": this.form_type,
                 };
 
                axios(

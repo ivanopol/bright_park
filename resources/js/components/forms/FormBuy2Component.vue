@@ -7,7 +7,9 @@
                      :button_text="button_text"
                      :form_title="form_title"
                      :is_comment="is_comment"
-                     :form_id="form_id">
+                     :form_id="form_id"
+                     :form_type="form_type"
+                      >
         </form-common>
     </section>
 </template>
@@ -36,7 +38,11 @@
             is_comment: {
                 default: true,
                 type: Boolean
-            }
+            },
+            form_type: {
+                default: 1,
+                type: Number
+            },
         },
         components: {
             FormCommon,
