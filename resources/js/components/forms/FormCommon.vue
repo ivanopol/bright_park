@@ -90,6 +90,9 @@
             send: function (event) {
                 event.preventDefault();
 
+                this.sendGoals();
+                return {};
+
                 let formData = {
                     "phone": this.clearMask(this.phone),
                     "name": this.name,
@@ -111,12 +114,24 @@
                     .then((response) => {
                         this.clearInput();
                         this.success = true;
+                        this.sendGoals();
                     }).catch((error) => {
                     this.error = true;
                     this.clearInput();
                 })
             },
+            sendGoals: function () {
+                let ym_ids = this.getCountersIds();
+                console.log(ym_ids);
 
+            },
+            getCountersIds: function () {
+                var id_list = [];
+                window.ym.a.forEach(function(item){
+                    id_list.push(item[0]);
+                });
+                return id_list;
+            },
             clearInput: function () {
                 this.phone = null;
                 this.name = null;

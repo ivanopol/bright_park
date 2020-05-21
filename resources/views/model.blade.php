@@ -16,7 +16,8 @@
                 <form-buy-component :cities='@json($cities)'
                                     :form_id="'model__form_1'"
                                     :button_text="'Отправить'"
-                                    :form_title="'<span class=\'c_orange\'>Узнайте</span> о модели подробнее'">
+                                    :form_title="'<span class=\'c_orange\'>Узнайте</span> о модели подробнее'"
+                                    :goal="'form:zvonok'">
                 </form-buy-component>
             @endif
         @endforeach
