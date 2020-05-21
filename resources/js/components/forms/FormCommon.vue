@@ -1,5 +1,5 @@
 <template>
-        <form action="#" :id="form_id" method="POST" name="feedback" @submit="send">
+        <form action="#" :id="form_id" method="POST" name="feedback" @submit="send" :data-goal="goal">
             <input :id="form_id + '_input_name'" type="text" class="" name="name" v-model="name" placeholder="Имя" required>
             <the-mask :id="form_id + '_input_phone'" pattern=".{18,}" mask="+# (###)-###-##-##" v-model="phone" type="tel" required="true" placeholder="Телефон"></the-mask>
             <textarea name="comment" :id="form_id + '_input_comment'" placeholder="Комментарий" v-model="comment" v-if="is_comment"></textarea>
@@ -58,7 +58,11 @@
             form_type: {
                 default: 1,
                 type: Number
-            }
+            },
+            goal: {
+                default: '',
+                type: String
+            },
         },
         data: function () {
             return {
