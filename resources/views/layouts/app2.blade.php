@@ -28,6 +28,8 @@
 
     <meta name="format-detection" content="telephone=no">
 
+    <meta name="yandex-verification" content="b3d9ee8d4fb4066b" />
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -118,7 +120,7 @@
         <!-- /StreamWood code -->
     @endif
     <script>
-        console.log(window);
+/*        console.log(window);
 
         var yandexReachGoal = function() {
             var ymIdList = [];
@@ -129,7 +131,7 @@
 
         };
 
-        yandexReachGoal();
+        yandexReachGoal();*/
 /*
         var yandexReachGoal = function(a) {
             if (window.Ya) {
