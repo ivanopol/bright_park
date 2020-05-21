@@ -9,6 +9,7 @@
                      :is_comment="is_comment"
                      :form_id="form_id"
                      :form_type="form_type"
+                     :goal="goal"
                       >
         </form-common>
     </section>
@@ -43,6 +44,10 @@
                 default: 1,
                 type: Number
             },
+            goal: {
+                default: '',
+                type: String
+            }
         },
         components: {
             FormCommon,

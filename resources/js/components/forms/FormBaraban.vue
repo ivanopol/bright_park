@@ -1,6 +1,6 @@
 <template>
     <section class="block form baraban-form" >
-        <form action="#" :id="form_id" method="POST" name="feedback" @submit="send" v-show="!btn_disabled">
+        <form action="#" :id="form_id" method="POST" name="feedback" @submit="send" v-show="!btn_disabled" :data-goal="goal">
             <input :id="form_id + '_input_name'" type="text" class="" v-show="!btn_disabled" name="name" v-model="name" placeholder="Имя" required>
             <the-mask :id="form_id + '_input_phone'" pattern=".{18,}" :disabled='btn_disabled' mask="+# (###)-###-##-##" v-model="phone" type="tel" required="true" placeholder="Телефон"></the-mask>
             <div class="control-group">
@@ -53,6 +53,7 @@
                 form_id: 'retarget__baraban',
                 status: true,
                 form_type: 1,
+                goal: '',
             };
         },
         computed: {
