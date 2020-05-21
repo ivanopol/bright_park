@@ -54,13 +54,18 @@
                                     <div class="title" v-text="model.title"></div>
                                 </a>
                             </li>
-                            <li>
-                                <a id="bar_menu_service" :href="'/' + cities.active.value + '/service'" class="event"><div class="title">СЕРВИС</div></a>
-                            </li>
                         </ul>
                     </div>
 
                     <div class="other_links">
+                        <ul>
+                            <li>
+                                <a id="bar_menu_service" :href="'/' + cities.active.value + '/service'" class="event"><div class="title"><icon-spanner></icon-spanner> СЕРВИС</div></a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="other_links_2">
                         <ul>
                             <li>
                                 <a id="bar_menu_main" :href="'/' + cities.active.value" class="event"><div class="title">Главная страница</div></a>
@@ -79,7 +84,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="copyright">Разработано в Брайт Парке</div>
+                    <div class="copyright">Разработано в Брайт Парке<br>Разработано с любовью</div>
                 </div>
             </div>
         </section>
@@ -99,6 +104,7 @@
     import IconCall from '../icons/tab_bar/IconCall.vue';
     import IconRoute from '../icons/tab_bar/IconRoute.vue';
     import IconChat from '../icons/tab_bar/IconChat.vue';
+    import IconSpanner from '../icons/tab_bar/IconSpanner.vue';
 
     document.onreadystatechange = function () {
         if (document.readyState == "complete") {
@@ -218,6 +224,7 @@ export default {
             IconCall,
             IconRoute,
             IconChat,
+            IconSpanner,
             vSelect
         },
     mounted() {
@@ -234,9 +241,14 @@ export default {
 
 <style lang="scss">
 
+    .spanner {
+        width: 22px;
+    }
+
     .copyright {
         font-size: 12px;
-        margin: 65px 10px 40px;
+        margin: 50px 10px 40px 10px;
+        line-height: 1.6;
         color: #fff;
     }
 
@@ -385,13 +397,50 @@ export default {
         }
 
         .other_links {
-            ul li a .title {
-                text-transform: none;
-                font-family: PragmaticaLightC, Helvetica, sans-serif;
-                font-weight: bold;
+            ul li {
+                border-bottom: none;
+                a .title {
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                    text-transform: none;
+                    font-family: PragmaticaLightC, Helvetica, sans-serif;
+                    font-weight: bold;
 
-                &.font-tiny {
-                    font-weight: normal;
+                    &:after {
+                        top: unset;
+                    }
+
+                    .spanner {
+                        margin-right: 10px;
+                    }
+
+                    &.font-tiny {
+                        font-weight: normal;
+                    }
+                }
+            }
+        }
+
+        .other_links_2 {
+            ul {
+                li {
+                    padding: 5px 0 5px 0px;
+                    a {
+                        color: #fff;
+
+                        .title {
+                            font-size: 85%;
+                            padding-left: 10px;
+                            text-transform: none;
+                            font-family: PragmaticaLightC, Helvetica, sans-serif;
+                            font-weight: bold;
+
+                            &.font-tiny {
+                               // font-weight: normal;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -548,7 +597,7 @@ export default {
             &.vs--open .toggle {
                 -webkit-transform: rotate(225deg);
                 transform: rotate(225deg);
-                margin-top: 0px;
+                margin-top: 0;
             }
         }
 
