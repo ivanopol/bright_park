@@ -2,10 +2,10 @@
 User-agent: Yandex
 Disallow: /404
 
-Sitemap: http://brightpark.ru/sitemap.xml
+Sitemap: https://brightpark.ru/sitemap.xml
 
 # All
 User-agent: *
 Disallow: /404
 
-Sitemap: http://brightpark.ru/sitemap.xml
+Sitemap: https://brightpark.ru/sitemap.xml
