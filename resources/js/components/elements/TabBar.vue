@@ -401,7 +401,7 @@ export default {
                 border-bottom: none;
                 a .title {
                     display: flex;
-                    justify-content: start;
+                    justify-content: flex-start;
                     align-items: center;
                     text-transform: none;
                     font-family: PragmaticaLightC, Helvetica, sans-serif;
