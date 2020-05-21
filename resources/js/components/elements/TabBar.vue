@@ -60,7 +60,11 @@
                     <div class="other_links">
                         <ul>
                             <li>
-                                <a id="bar_menu_service" :href="'/' + cities.active.value + '/service'" class="event"><div class="title"><icon-spanner></icon-spanner> СЕРВИС</div></a>
+                                <a id="bar_menu_service" :href="'/' + cities.active.value + '/service'" class="event">
+                                    <div class="title">
+                                        <span><icon-spanner></icon-spanner> СЕРВИС</span>
+                                    </div>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -401,13 +405,20 @@ export default {
                 border-bottom: none;
                 a .title {
                     display: flex;
-                    justify-content: flex-start;
+                    justify-content: space-between;
                     align-items: center;
                     text-transform: none;
                     font-family: PragmaticaLightC, Helvetica, sans-serif;
                     font-weight: bold;
 
+                    span {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                    }
+
                     &:after {
+                        position: relative;
                         top: unset;
                     }
 
