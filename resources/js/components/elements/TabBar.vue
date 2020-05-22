@@ -145,10 +145,29 @@ export default {
                     render: createElement => createElement('span', {class: {'toggle': true}}),
                 },
                 fixed: false,
-               // scrolled: false
+                goal_call: '',
+                goal_route: '',
             };
         },
         methods: {
+            sendGoals: function (goal) {
+                if (goal) {
+                    let ym_ids = this.getCountersIds();
+                    let goalArr = goal.match(/^(.+?):(.+?)$/);
+                    let target_goal = goalArr === null ? goal : goalArr[2];
+
+                    ym_ids.forEach(function (item, i, arr) {
+                        window["yaCounter" + item].reachGoal(target_goal);
+                    });
+                }
+            },
+            getCountersIds: function () {
+                var id_list = [];
+                window.ym.a.forEach(function(item){
+                    id_list.push(item[0]);
+                });
+                return id_list;
+            },
             toggleJivo: function() {
                 if (this.jivoOpen) {
                     this.fixBody(true);
@@ -196,6 +215,10 @@ export default {
                 this.openMap = !this.openMap;
                 this.layout = this.openMap;
                 this.fixBody(this.openMap);
+
+                if (this.openMap) {
+                    this.sendGoals(this.goal_route);
+                }
                 return this.openMap;
             },
             toggleCall: function() {
@@ -204,6 +227,7 @@ export default {
                 this.open = false;
                 this.jivoOpen = false;
                 this.fixBody(false);
+                this.sendGoals(this.goal_call);
             },
             handleScroll: function() {
              //   this.scrolled = window.scrollY > 60;
