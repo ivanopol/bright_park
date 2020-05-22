@@ -82,11 +82,16 @@
                 width: 49%;
                 padding: 10px;
                 cursor: pointer;
+
+                &:hover img {
+                    filter: brightness(110%);
+                }
             }
 
             img {
                 width: 100%;
                 height: 100%;
+                transition: all .3s ease;
             }
         }
     }
