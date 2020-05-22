@@ -63,7 +63,7 @@
                 type: String
             },
             goal_call: {
-                default: '',
+                default: 'zvonok',
                 type: String
             }
         },
