@@ -145,8 +145,8 @@ export default {
                     render: createElement => createElement('span', {class: {'toggle': true}}),
                 },
                 fixed: false,
-                goal_call: '',
-                goal_route: '',
+                goal_call: 'zvonok',
+                goal_route: 'marshrut',
             };
         },
         methods: {
