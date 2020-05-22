@@ -53,7 +53,7 @@
                 form_id: 'retarget__baraban',
                 status: true,
                 form_type: 1,
-                goal: '',
+                goal: 'baraban',
             };
         },
         computed: {
@@ -92,6 +92,7 @@
                     .then((response) => {
                         this.clearInput();
                         this.success = true;
+                        this.sendGoals(this.goal);
                     }).catch((error) => {
                         this.error = true;
                         this.clearInput();
@@ -100,7 +101,24 @@
                 // генерируем событие 'twist' (крутить)
                 this.$emit('twist', true);
             },
+            sendGoals: function (goal) {
+                if (goal) {
+                    let ym_ids = this.getCountersIds();
+                    let goalArr = goal.match(/^(.+?):(.+?)$/);
+                    let target_goal = goalArr === null ? goal : goalArr[2];
 
+                    ym_ids.forEach(function (item, i, arr) {
+                        window["yaCounter" + item].reachGoal(target_goal);
+                    });
+                }
+            },
+            getCountersIds: function () {
+                var id_list = [];
+                window.ym.a.forEach(function(item){
+                    id_list.push(item[0]);
+                });
+                return id_list;
+            },
             clearInput: function () {
                 this.phone = null;
                 this.name = null;
