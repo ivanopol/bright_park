@@ -47,7 +47,7 @@
             goal: {
                 default: '',
                 type: String
-            }
+            },
         },
         components: {
             FormCommon,
