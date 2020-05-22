@@ -10,8 +10,7 @@
                 </label>
             </div>
             <button :id="form_id + '_button'" :click="send" v-bind:disabled="isButtonDisabled">{{button_text}}</button>
-            <a :id="form_id + '_call'" :href="'tel:' + cities.active.phone" class="btn btn-primary callibri_phone btn-position green">Позвонить</a>
-
+            <a :id="form_id + '_call'" :href="'tel:' + cities.active.phone" :data-goal="goal_call" @click="sendGoals(goal_call)" class="btn btn-primary callibri_phone btn-position green">Позвонить</a>
 
             <div class="validation-message-wrap">
                 <div class="model-choose-text warning validation-message" v-show="error">
@@ -63,6 +62,10 @@
                 default: '',
                 type: String
             },
+            goal_call: {
+                default: '',
+                type: String
+            }
         },
         data: function () {
             return {
@@ -110,19 +113,20 @@
                     .then((response) => {
                         this.clearInput();
                         this.success = true;
-                        this.sendGoals();
+                        this.sendGoals(this.goal);
                     }).catch((error) => {
                     this.error = true;
                     this.clearInput();
                 })
             },
-            sendGoals: function () {
-                if (this.goal) {
+            sendGoals: function (goal) {
+                if (goal) {
                     let ym_ids = this.getCountersIds();
-                    let goal = this.goal.match(/^(.+?):(.+?)$/);
+                    let goalArr = goal.match(/^(.+?):(.+?)$/);
+                    let target_goal = goalArr === null ? goal : goalArr[2];
 
                     ym_ids.forEach(function (item, i, arr) {
-                        window["yaCounter" + item].reachGoal(goal[2]);
+                        window["yaCounter" + item].reachGoal(target_goal);
                     });
                 }
             },
