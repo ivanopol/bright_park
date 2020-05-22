@@ -17,7 +17,7 @@
                                     :form_id="'model__form_1'"
                                     :button_text="'Отправить'"
                                     :form_title="'<span class=\'c_orange\'>Узнайте</span> о модели подробнее'"
-                                    :goal="'form:zvonok'">
+                                    :goal="'about_model'">
                 </form-buy-component>
             @endif
         @endforeach
@@ -27,7 +27,8 @@
         @endif
         <form-component :cities='@json($cities)'
                         :form_id="'model__form_2'"
-                        :form_title="'Расширенный тест-драйв в Брайт парке'">
+                        :form_title="'Расширенный тест-драйв в Брайт парке'"
+                        :goal="'test_drive'">
         </form-component>
         @if(count($data['reviews']))
             <review-component :reviews='@json($data['reviews'])'
