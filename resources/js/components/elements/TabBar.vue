@@ -280,6 +280,12 @@ export default {
         color: #fff;
     }
 
+    @media only screen and (min-width: 580px) {
+        .copyright {
+            font-size: 14px;
+        }
+    }
+
     .menu-desktop {
         background: url('/build/images/icons/menu-desktop.png') no-repeat;
     }
@@ -473,6 +479,31 @@ export default {
 
                             &.font-tiny {
                                // font-weight: normal;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @media only screen and (min-width: 580px) {
+            .other_links_2 {
+                ul {
+                    li {
+                        padding: 8px 0;
+                        a {
+                            color: #fff;
+
+                            .title {
+                                font-size: 95%;
+                                padding-left: 10px;
+                                text-transform: none;
+                                font-family: PragmaticaLightC, Helvetica, sans-serif;
+                                font-weight: bold;
+
+                                &.font-tiny {
+                                    // font-weight: normal;
+                                }
                             }
                         }
                     }
