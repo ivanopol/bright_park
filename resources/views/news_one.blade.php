@@ -18,14 +18,7 @@
                 </div>
             </div>
         </div>
-        <footer class="block footer">
-            <div class="block-text center mb">
-                <h2><span class="c_orange">Брайт Парк </span> всегда на связи</h2>
-                <p>У&nbsp;вас есть вопросы? Пообщайтесь со&nbsp;специалистом по&nbsp;телефону&nbsp;<br> <a href="tel:{{$cities['active']['phone']}}" class="btn btn btn-primary btn-position green callibri_phone">Позвонить</a></p>
-                <p>Брайт парк ближе, чем кажется<br></p>
-            </div>
-            <yandex-map-component :coordinates='@json($data['coordinates'])'></yandex-map-component>
-        </footer>
+        <footer-component :coordinates='@json($data['coordinates'])' :phone='@json($cities['active']['phone'])' ></footer-component>
         {!! html_entity_decode($cities['active']['begin_script']) !!}
         <scroll-event-handler-component></scroll-event-handler-component>
         <event-handler-component></event-handler-component>
