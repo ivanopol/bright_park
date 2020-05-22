@@ -3,7 +3,7 @@
         <div class="block-text center mb">
             <h2><span class="c_orange">Брайт Парк </span> всегда на связи</h2>
             <p>У&nbsp;вас есть вопросы? Пообщайтесь со&nbsp;специалистом по&nbsp;телефону&nbsp;<br>
-                <a :href="'tel:' + phone" id="main__footer_call" class="btn btn btn-primary btn-position green callibri_button">Позвонить</a></p>
+                <a :href="'tel:' + phone" id="main__footer_call" :data-goal="goal_call" @click="sendGoals(goal_call)" class="btn btn btn-primary btn-position green callibri_button">Позвонить</a></p>
             <p>Брайт парк ближе, чем кажется<br></p>
         </div>
         <yandex-map-component :coordinates='coordinates'></yandex-map-component>
@@ -19,12 +19,36 @@
             },
             phone: {
                 type: String
-            }
+            },
+            goal_call: {
+                default: '',
+                type: String
+            },
         },
         data: function () {
             return {
 
             };
+        },
+        methods: {
+            sendGoals: function (goal) {
+                if (goal) {
+                    let ym_ids = this.getCountersIds();
+                    let goalArr = goal.match(/^(.+?):(.+?)$/);
+                    let target_goal = goalArr === null ? goal : goalArr[2];
+
+                    ym_ids.forEach(function (item, i, arr) {
+                        window["yaCounter" + item].reachGoal(target_goal);
+                    });
+                }
+            },
+            getCountersIds: function () {
+                var id_list = [];
+                window.ym.a.forEach(function(item){
+                    id_list.push(item[0]);
+                });
+                return id_list;
+            },
         },
         components: {}
     }
