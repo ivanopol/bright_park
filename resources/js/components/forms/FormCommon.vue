@@ -84,14 +84,10 @@
         },
         methods: {
             isDisabled: function () {
-                console.log(this.status);
                 return !this.status;
             },
             send: function (event) {
                 event.preventDefault();
-
-                this.sendGoals();
-                return {};
 
                 let formData = {
                     "phone": this.clearMask(this.phone),
@@ -121,9 +117,14 @@
                 })
             },
             sendGoals: function () {
-                let ym_ids = this.getCountersIds();
-                console.log(ym_ids);
+                if (this.goal) {
+                    let ym_ids = this.getCountersIds();
+                    let goal = this.goal.match(/^(.+?):(.+?)$/);
 
+                    ym_ids.forEach(function (item, i, arr) {
+                        window["yaCounter" + item].reachGoal(goal[2]);
+                    });
+                }
             },
             getCountersIds: function () {
                 var id_list = [];
