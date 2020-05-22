@@ -13,7 +13,7 @@
     <div class="container">
         <div id="advantages" class="advantages_wrap">
             <h2>Брайт Парк</h2>
-            <p>Мы - федеральный дилер LADA, работающий в Москве и ещё 5 регионах с 2008 года.</p>
+            <p>Мы - федеральный дилер LADA, работающий в {{$cities['active']['dative']}} и ещё 5 регионах с 2008 года.</p>
             <ul>
                 <li>
                     <div class="advantage">
