@@ -85,7 +85,11 @@
 
         <range-slider-component :car_price='car_price'
                                 v-if="grade === 2"></range-slider-component>
-        <form-buy-component v-if="grade === 4" :cities="cities" :form_id="form_id" :form_title="'<span class=\'c_orange\'>Заполните</span> форму'"></form-buy-component>
+        <form-buy-component v-if="grade === 4" :cities="cities"
+                            :form_id="form_id"
+                            :form_title="'<span class=\'c_orange\'>Заполните</span> форму'"
+                            :goal="goal">
+        </form-buy-component>
 
         <div class="buttons_other" v-if="grade === 2 || grade === 3">
             <div class="item-buttons-other">
@@ -116,7 +120,8 @@
             'car_type',
             'car_attrs',
             'cities',
-            'form_id'
+            'form_id',
+            'goal',
         ],
         data: function() {
             return {

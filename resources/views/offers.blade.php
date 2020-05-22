@@ -40,6 +40,7 @@
         <steps :brands='@json($brands)'
                :cities='@json($cities)'
                :form_id="'retarget__steps_form'"
+               :goal="'fixconditions'"
         ></steps>
         <baraban :cities='@json($cities)'></baraban>
         <modal-retarget-component></modal-retarget-component>

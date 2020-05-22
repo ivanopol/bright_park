@@ -29,7 +29,8 @@
                    :car_type='@json($car_type)'
                    :car_attrs='@json($car_attrs)'
                    :cities='@json($cities)'
-                  :form_id="'sale__steps_form'"
+                   :form_id="'sale__steps_form'"
+                   :goal="'fixconditions'"
             ></steps>
         </section>
         <div class="block-note"><p>Предложение ограниченно, подробности в автосалоне</p></div>
