@@ -62,6 +62,7 @@ Vue.component('review-service', require('./components/service/ReviewService').de
 Vue.component('trust-us', require('./components/service/TrustUs').default);
 Vue.component('car-logos', require('./components/service/CarLogos').default);
 Vue.component('our-services', require('./components/service/OurServices').default);
+Vue.component('footer-component', require('./components/elements/FooterComponent').default);
 
 /*const store = new Vuex.Store({
     state: {
