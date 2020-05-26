@@ -10,7 +10,7 @@
                 </label>
             </div>
 
-            <button :id="form_id + '_button'" :click="send" v-bind:disabled="isButtonDisabled">{{button_text}}</button>
+            <button :id="form_id + '_button'" :click="send" :class="{preloader : blocked}" v-bind:disabled="isButtonDisabled">{{button_text}}</button>
             <div class="validation-message-wrap">
                 <div class="model-choose-text warning validation-message" v-show="error">
                     <p>Введите 11-значный номер!</p>
@@ -52,6 +52,7 @@
                 form_title: "Барабан",
                 form_id: 'retarget__baraban',
                 status: true,
+                blocked: false,
                 form_type: 1,
                 goal: 'baraban',
             };
@@ -65,13 +66,10 @@
             },
         },
         methods: {
-            isDisabled: function () {
-                console.log(this.status);
-                return !this.status;
-            },
             send: function (event) {
                 event.preventDefault();
-                this.btn_disabled = true;
+                this.blocked = true;
+                this.status = false;
 
                 let formData = {
                     "phone": this.clearMask(this.phone),
@@ -92,6 +90,9 @@
                     .then((response) => {
                         this.clearInput();
                         this.success = true;
+                        this.blocked = false;
+                        this.status = true;
+                        this.btn_disabled = true;
                         this.sendGoals(this.goal);
                     }).catch((error) => {
                         this.error = true;
@@ -166,6 +167,27 @@
         }
     }
 
+    form button.preloader:disabled {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        color: rgba(255,255,255,0);
+        background-color: #FF8351!important;
+        &:after {
+            content: "";
+            background: url(/build/images/icons/animations/dots.svg) no-repeat center center;
+            z-index: 10;
+            height: 18px;
+            display: block;
+            position: absolute;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            top: 14px;
+        }
+    }
+
 
     .baraban-form {
         .result {
@@ -186,7 +208,7 @@
 
         #warning {
             p {
-                color: darkred;
+                color: #ff7777;
             }
         }
 
@@ -195,17 +217,13 @@
 
             p {
                 margin: 0 !important;
-                color: darkgreen;
+                color: #30c130;
             }
         }
 
         &.form {
             button {
                 margin-top: 30px;
-
-                &:disabled {
-                    background-color: #d8b3a4!important;
-                }
             }
         }
 

@@ -87,9 +87,6 @@
             },
         },
         methods: {
-            isDisabled: function () {
-                return !this.status;
-            },
             send: function (event) {
                 event.preventDefault();
                 this.blocked = true;
@@ -218,7 +215,7 @@
 
     .warning {
         p {
-            color: darkred;
+            color: #ff7777;
         }
     }
 
@@ -227,7 +224,7 @@
 
         p {
             margin: 0 !important;
-            color: darkgreen;
+            color: #30c130;
         }
     }
 
