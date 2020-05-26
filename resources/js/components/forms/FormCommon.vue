@@ -9,7 +9,7 @@
                     <div class="control_indicator"></div>
                 </label>
             </div>
-            <button :id="form_id + '_button'" :click="send" v-bind:disabled="isButtonDisabled">{{button_text}}</button>
+            <button :id="form_id + '_button'" :click="send" :class="{preloader : blocked}" v-bind:disabled="isButtonDisabled">{{button_text}}</button>
             <a :id="form_id + '_call'" :href="'tel:' + cities.active.phone" :data-goal="goal_call" @click="sendGoals(goal_call)" class="btn btn-primary callibri_phone btn-position green">Позвонить</a>
 
             <div class="validation-message-wrap">
@@ -74,6 +74,7 @@
                 name: '',
                 phone: '',
                 status: true,
+                blocked: false,
                 comment: '',
             };
         },
@@ -91,6 +92,8 @@
             },
             send: function (event) {
                 event.preventDefault();
+                this.blocked = true;
+                this.status = false;
 
                 let formData = {
                     "phone": this.clearMask(this.phone),
@@ -113,6 +116,8 @@
                     .then((response) => {
                         this.clearInput();
                         this.success = true;
+                        this.blocked = false;
+                        this.status = true;
                         this.sendGoals(this.goal);
                     }).catch((error) => {
                     this.error = true;
@@ -177,6 +182,27 @@
 
 <style lang="scss" scoped>
     @import "./resources/sass/_controls.scss";
+
+    form button.preloader:disabled {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        color: rgba(255,255,255,0);
+        background-color: #FF8351!important;
+        &:after {
+            content: "";
+            background: url(/build/images/icons/animations/dots.svg) no-repeat center center;
+            z-index: 10;
+            height: 18px;
+            display: block;
+            position: absolute;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            top: 14px;
+        }
+    }
 
     .warning,
     .success {
