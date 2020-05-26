@@ -48,6 +48,7 @@ class SeoService
 
         SEOMeta::setTitle($seo->title);
         SEOMeta::setDescription($seo->description);
+        SEOMeta::setCanonical($this->request->url());
         OpenGraph::setTitle($seo->og_title);
         OpenGraph::setDescription($seo->og_description);
         if (isset($seo->image) && $seo->image) {
