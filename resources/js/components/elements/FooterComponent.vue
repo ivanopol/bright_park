@@ -2,8 +2,8 @@
     <footer class="block footer">
         <div class="block-text center mb">
             <h2><span class="c_orange">Брайт Парк </span> всегда на связи</h2>
-            <p>У&nbsp;вас есть вопросы? Пообщайтесь со&nbsp;специалистом по&nbsp;телефону&nbsp;<br>
-                <a :href="'tel:' + phone" id="main__footer_call" :data-goal="goal_call" @click="sendGoals(goal_call)" class="btn btn btn-primary btn-position green callibri_button">Позвонить</a></p>
+            <p>У&nbsp;вас есть вопросы? Пообщайтесь со&nbsp;специалистом по&nbsp;телефону&nbsp;<span v-if="!mobile" class="callibri_tel">{{phone_formatted}}</span><br>
+            <a :href="'tel:' + phone" id="main__footer_call" :data-goal="goal_call" @click="sendGoals(goal_call)" class="btn btn btn-primary btn-position green callibri_button" v-if="mobile">Позвонить</a></p>
             <p>Брайт парк ближе, чем кажется<br></p>
         </div>
         <yandex-map-component :coordinates='coordinates'></yandex-map-component>
@@ -20,6 +20,10 @@
             phone: {
                 type: String
             },
+            phone_formatted: {
+                default: '',
+                type: String
+            },
             goal_call: {
                 default: '',
                 type: String
@@ -27,7 +31,7 @@
         },
         data: function () {
             return {
-
+                mobile: false,
             };
         },
         methods: {
@@ -50,7 +54,10 @@
                 return id_list;
             },
         },
-        components: {}
+        components: {},
+        mounted() {
+            this.mobile = document.documentElement.clientWidth <= 580;
+        }
     }
 </script>
 
