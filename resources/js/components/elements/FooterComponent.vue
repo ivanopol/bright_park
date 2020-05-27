@@ -68,10 +68,14 @@
                 });
                 return id_list;
             },
+            handleResize: function () {
+                this.mobile = document.documentElement.clientWidth <= 580;
+            },
         },
         components: {},
         mounted() {
             this.mobile = document.documentElement.clientWidth <= 580;
+            window.addEventListener("resize", this.handleResize);
         }
     }
 </script>
