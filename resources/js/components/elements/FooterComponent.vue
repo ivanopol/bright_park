@@ -3,8 +3,12 @@
         <div class="block-text center mb">
             <h2><span class="c_orange">Брайт Парк </span> всегда на связи</h2>
             <p>У&nbsp;вас есть вопросы? Пообщайтесь со&nbsp;специалистом по&nbsp;телефону&nbsp;<span v-if="!mobile" class="callibri_tel">{{phone_formatted}}</span><br>
-            <a href="#" class="btn btn btn-primary btn-position green" v-on:click.prevent="show('Обратный звонок', 'footer__modal_callback', 'Отправить', 1, 'callback')" v-if="!mobile">Обратный звонок</a>
-            <a :href="'tel:' + phone" id="main__footer_call" :data-goal="goal_call" @click="sendGoals(goal_call)" class="btn btn btn-primary btn-position green callibri_button" v-if="mobile">Позвонить</a></p>
+            <div class="footer-callback-wrap" v-show="!mobile">
+                <a href="#" class="btn btn btn-primary btn-position green" v-on:click.prevent="show('Обратный звонок', 'footer__modal_callback', 'Отправить', 1, 'callback')" >Обратный звонок</a>
+            </div>
+            <div class="footer-call-wrap" v-show="mobile">
+                <a :href="'tel:' + phone" id="main__footer_call" :data-goal="goal_call" @click="sendGoals(goal_call)" class="btn btn btn-primary btn-position green callibri_button" v-if="mobile">Позвонить</a>
+            </div>
             <p>Брайт парк ближе, чем кажется<br></p>
         </div>
         <yandex-map-component :coordinates='coordinates'
@@ -119,6 +123,11 @@
 
 <style scoped lang="scss">
     footer {
+        .footer-callback-wrap,
+        .footer-call-wrap,
+        .btn-place-wrap {
+            margin-bottom: 40px;
+        }
 
         h2 {
             span {
