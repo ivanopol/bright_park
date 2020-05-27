@@ -1,12 +1,15 @@
 <template>
-    <footer class="block footer">
+    <footer class="block footer" v-bind:class="[ footer_class ]">
         <div class="block-text center mb">
             <h2><span class="c_orange">Брайт Парк </span> всегда на связи</h2>
             <p>У&nbsp;вас есть вопросы? Пообщайтесь со&nbsp;специалистом по&nbsp;телефону&nbsp;<span v-if="!mobile" class="callibri_tel">{{phone_formatted}}</span><br>
             <a :href="'tel:' + phone" id="main__footer_call" :data-goal="goal_call" @click="sendGoals(goal_call)" class="btn btn btn-primary btn-position green callibri_button" v-if="mobile">Позвонить</a></p>
             <p>Брайт парк ближе, чем кажется<br></p>
         </div>
-        <yandex-map-component :coordinates='coordinates'></yandex-map-component>
+        <yandex-map-component :coordinates='coordinates'
+                              :button="ym_button"
+                              :btn_class="ym_btn_class"
+        ></yandex-map-component>
     </footer>
 </template>
 
@@ -25,6 +28,18 @@
                 type: String
             },
             goal_call: {
+                default: '',
+                type: String
+            },
+            ym_button: {
+               default: false,
+               type: Boolean
+            },
+            ym_btn_class: {
+                default: '',
+                type: String
+            },
+            footer_class: {
                 default: '',
                 type: String
             },

@@ -49,7 +49,7 @@
                                      :is_comment='true'
                                      :form_h1="'<span class=\'c_orange\'>Запишись</span> на сервис'"
                                      :form_class="'mobile_white_bg'"
-                                     :form_type="'2'"
+                                     :form_type='2'
             ></form-component>
         </div>
     </div>
@@ -68,19 +68,18 @@
                                      :form_pre_title="'и получи скидку 5% при визите в день обращения'"
                                      :is_comment='true'
                                      :form_class="'mobile_white_bg'"
-                                     :form_type="'2'"
+                                     :form_type='2'
             ></form-retarget-component>
         </div>
     </div>
-    <footer class="block footer container_bg_dark">
-        <div class="block-text center mb">
-            <h2><span class="c_orange">Брайт Парк </span> всегда на связи</h2>
-            <p>У&nbsp;вас есть вопросы? Пообщайтесь со&nbsp;специалистом по&nbsp;телефону&nbsp;<br>
-                <a href="tel:{{$cities['active']['phone']}}" id="main__footer_call" class="btn btn btn-primary btn-position green callibri_phone">Позвонить</a></p>
-            <p>Брайт парк ближе, чем кажется<br> Проложите маршрут до ближайшего салона</p>
-        </div>
-        <yandex-map-component :coordinates='@json($data['coordinates'])' :button="true" :btn_class="'green btn-position'"></yandex-map-component>
-    </footer>
+
+    <footer-component :coordinates='@json($data['coordinates'])'
+                      :phone='@json($cities['active']['phone'])'
+                      :phone_formatted='@json($cities['active']['phone_format'])'
+                      :footer_class="'container_bg_dark'"
+                      :ym_button='true'
+                      :ym_btn_class="'green btn-position'">
+    </footer-component>
     {!! html_entity_decode($cities['active']['begin_script']) !!}
     <scroll-event-handler-component></scroll-event-handler-component>
     <event-handler-component></event-handler-component>
