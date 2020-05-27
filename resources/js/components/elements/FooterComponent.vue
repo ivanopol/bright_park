@@ -3,6 +3,7 @@
         <div class="block-text center mb">
             <h2><span class="c_orange">Брайт Парк </span> всегда на связи</h2>
             <p>У&nbsp;вас есть вопросы? Пообщайтесь со&nbsp;специалистом по&nbsp;телефону&nbsp;<span v-if="!mobile" class="callibri_tel">{{phone_formatted}}</span><br>
+            <a href="#" class="btn btn btn-primary btn-position green" v-on:click.prevent="show('Обратный звонок', 'footer__modal_callback', 'Отправить', 1, 'callback')" v-if="!mobile">Обратный звонок</a>
             <a :href="'tel:' + phone" id="main__footer_call" :data-goal="goal_call" @click="sendGoals(goal_call)" class="btn btn btn-primary btn-position green callibri_button" v-if="mobile">Позвонить</a></p>
             <p>Брайт парк ближе, чем кажется<br></p>
         </div>
@@ -10,6 +11,16 @@
                               :button="ym_button"
                               :btn_class="ym_btn_class"
         ></yandex-map-component>
+        <modal name="form-callback2" height="auto" :adaptive="true">
+            <div class="close" @click="hide"></div>
+            <form-buy2-component :cities="cities"
+                                 :form_title="form_title"
+                                 :form_id="form_id"
+                                 :button_text="button_text"
+                                 :form_type="form_type"
+                                 :goal="goal">
+            </form-buy2-component>
+        </modal>
     </footer>
 </template>
 
@@ -17,6 +28,9 @@
     export default {
         name: "Footer",
         props: {
+            cities: {
+                type: Object
+            },
             coordinates: {
                 type: Array
             },
@@ -47,9 +61,29 @@
         data: function () {
             return {
                 mobile: false,
+                modalWidth: window.innerWidth -20,
+                form_id: '',
+                form_title: '',
+                button_text: '',
+                form_type: 1,
+                goal: '',
             };
         },
         methods: {
+            show (title, form_id, button_text, form_type, goal) {
+                this.form_title = title;
+                this.form_id = form_id;
+                this.button_text = button_text;
+                this.form_type = form_type; // 1 - обычная форма, 2 - форма сервиса
+                this.goal = goal;
+                this.$modal.show('form-callback2');
+                () => {
+                    callibriInit();
+                }
+            },
+            hide () {
+                this.$modal.hide('form-callback2');
+            },
             sendGoals: function (goal) {
                 if (goal) {
                     let ym_ids = this.getCountersIds();
@@ -76,7 +110,10 @@
         mounted() {
             this.mobile = document.documentElement.clientWidth <= 580;
             window.addEventListener("resize", this.handleResize);
-        }
+        },
+        created () {
+            this.modalWidth = window.innerWidth -20
+        },
     }
 </script>
 
