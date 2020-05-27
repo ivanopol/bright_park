@@ -107,8 +107,8 @@
 
                     addUserLocation(point);
 
-                    console.log('Unable to retrieve your location');
-                    console.log(e)
+                   // console.log('Unable to retrieve your location');
+                   // console.log(e)
                 }
 
                 if (navigator.geolocation) {

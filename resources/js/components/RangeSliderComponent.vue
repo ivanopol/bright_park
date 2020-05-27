@@ -172,7 +172,7 @@
                 if (this.getCookie('trade_in_price') != null && this.getCookie('trade_in_price') > 0) {
 
                     this.firstPayment = this.getCookie('trade_in_price');
-                    console.log(this.firstPayment);
+
                     this.firstPaymentPercent = Math.round(this.firstPayment / this.car_price * 100);
 
                     if (this.firstPaymentPercent > this.sliderOne.max) {
