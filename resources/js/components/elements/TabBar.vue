@@ -7,8 +7,8 @@
                     <icon-menu ></icon-menu>
                     <span>Меню</span>
                 </li>
-                <li id="bar_call" class="call-wrap" @click="toggleCall">
-                    <a :href="'tel:' + this.phone" class="event">
+                <li class="call-wrap" @click="toggleCall">
+                    <a id="bar_call" :href="'tel:' + this.phone" class="event">
                         <icon-call></icon-call>
                         <span>Звонок</span>
                     </a>
@@ -28,19 +28,19 @@
             <div class="panel-wrap">
                 <ul :class="theme">
                     <li class="menu-wrap" @click="toggleMenu">
-                        <div class="menu-desktop"></div>
+                        <div id="menu_desktop_btn" class="menu-desktop event"></div>
                     </li>
                     <li class="route-map" @click="toggleMapWindow">
-                        <div class="route-desktop"></div>
+                        <div id="menu_route_btn" class="route-desktop event"></div>
                     </li>
                 </ul>
             </div>
         </section>
 
         <section id="menu" :class="{ active: open }">
-            <div class="close" @click="close"></div>
+            <div id="menu_window_close" class="close event" @click="close"></div>
             <div class="menu_wrap">
-                <v-select id="bar_menu_select_city" class="select_wrap event" :components="{OpenIndicator, Deselect}" placeholder="Выбрать город" taggable
+                <v-select id="menu_select_city" class="select_wrap event" :components="{OpenIndicator, Deselect}" placeholder="Выбрать город" taggable
                           :options="cities.list" :searchable="false" v-model="cities.active" @input="selected">
                     <div class="spinner">Загрузка...</div>
                     <div slot="no-options">Нет совпадений</div>
@@ -50,7 +50,7 @@
                     <div class="models_wrap">
                         <ul class="">
                             <li v-for="model in models" v-bind:key="model.id">
-                                <a id="bar_menu_city_link" class="event" :href="'/' + cities.active.value + '/' + model.slug + '/' + model.types_preview[0].slug">
+                                <a :id="'menu_' + model.slug" class="event" :href="'/' + cities.active.value + '/' + model.slug + '/' + model.types_preview[0].slug">
                                     <div class="title" v-text="model.title"></div>
                                 </a>
                             </li>
@@ -60,7 +60,7 @@
                     <div class="other_links">
                         <ul>
                             <li>
-                                <a id="bar_menu_service" :href="'/' + cities.active.value + '/service'" class="event">
+                                <a id="menu_service" :href="'/' + cities.active.value + '/service'" class="event">
                                     <div class="title">
                                         <span><icon-spanner></icon-spanner> СЕРВИС</span>
                                     </div>
@@ -72,19 +72,19 @@
                     <div class="other_links_2">
                         <ul>
                             <li>
-                                <a id="bar_menu_main" :href="'/' + cities.active.value" class="event"><div class="title">Главная страница</div></a>
+                                <a id="menu_main" :href="'/' + cities.active.value" class="event"><div class="title">Главная страница</div></a>
                             </li>
                             <li>
-                                <a id="bar_menu_contacts" :href="'/' + cities.active.value + '/contacts'" class="event"><div class="title">Контакты</div></a>
+                                <a id="menu_contacts" :href="'/' + cities.active.value + '/contacts'" class="event"><div class="title">Контакты</div></a>
                             </li>
                             <li>
-                                <a id="bar_menu_offers" :href="'/' + cities.active.value + '/stocks'" class="event"><div class="title">Акции</div></a>
+                                <a id="menu_stocks" :href="'/' + cities.active.value + '/stocks'" class="event"><div class="title">Акции</div></a>
                             </li>
                             <li>
-                                <a id="bar_menu_news" :href="'/' + cities.active.value + '/news'" class="event"><div class="title">Новости</div></a>
+                                <a id="menu_news" :href="'/' + cities.active.value + '/news'" class="event"><div class="title">Новости</div></a>
                             </li>
                             <li>
-                                <a :href="'/' + cities.active.value + '/privacy'" class="event"><div class="title font-tiny">Политика конфиденциальности</div></a>
+                                <a id="menu_privacy" :href="'/' + cities.active.value + '/privacy'" class="event"><div class="title font-tiny">Политика конфиденциальности</div></a>
                             </li>
                         </ul>
                     </div>
@@ -94,7 +94,7 @@
         </section>
         <section id="map_window" :class="{ active: openMap }">
             <div class="map_wrap">
-                <div class="close" @click="close"></div>
+                <div id="map_window_close" class="close event" @click="close"></div>
                 <touch-bar-map-component :coordinates="cities.active.coords.split(', ')"></touch-bar-map-component>
             </div>
         </section>
