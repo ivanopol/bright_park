@@ -8,8 +8,6 @@
         <main-hooper-component :city="'{{$city}}'"></main-hooper-component>
     </section>
     <div class="event-scroll">
-        <scroll-event-handler-component></scroll-event-handler-component>
-
         <div class="container">
             <div id="advantages" class="advantages_wrap">
                 <h2>Брайт Парк</h2>
