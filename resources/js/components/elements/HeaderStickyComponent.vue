@@ -2,12 +2,12 @@
     <header  @scroll="handleScroll" :class="{show : scrolled}">
         <div class="logo-wrap" :class="theme">
             <div class="logo-bright-park">
-                <a id="header_sticky_city" class="event" :href="'/' + city">
+                <a id="header_sticky_logo" class="event" :href="'/' + city">
                     <logo-bright-park :theme="theme"></logo-bright-park>
                 </a>
             </div>
             <div class="model-button" v-if="button">
-                <span>{{car.reduction}}</span> <a class="event btn-small" :href="car.link">Купить</a>
+                <span>{{car.reduction}}</span> <a id="header_sticky_btn_buy" class="event btn-small" :href="car.link">Купить</a>
             </div>
 
             <div class="logo-lada" v-if="!button">
