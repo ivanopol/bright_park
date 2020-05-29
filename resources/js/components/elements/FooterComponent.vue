@@ -2,9 +2,9 @@
     <footer class="block footer" v-bind:class="[ footer_class ]">
         <div class="block-text center mb">
             <h2><span class="c_orange">Брайт Парк </span> всегда на связи</h2>
-            <p>У&nbsp;вас есть вопросы? Пообщайтесь со&nbsp;специалистом по&nbsp;телефону&nbsp;<span v-if="!mobile" class="callibri_tel">{{phone_formatted}}</span><br>
+            <p>У&nbsp;вас есть вопросы? Пообщайтесь со&nbsp;специалистом по&nbsp;телефону&nbsp;<span v-if="!mobile" class="block callibri_tel">{{phone_formatted}}</span><br>
             <div class="footer-callback-wrap" v-show="!mobile">
-                <a href="#" class="btn btn btn-primary btn-position green" v-on:click.prevent="show('Обратный звонок', 'footer__modal_callback', 'Отправить', 1, 'callback')" >Обратный звонок</a>
+                <a href="#" id="footer_request_callback" class="btn btn btn-primary btn-position green event" v-on:click.prevent="show('Заказать звонок', 'footer__modal_callback', 'Отправить', 1, 'callback')" >Заказать звонок</a>
             </div>
             <div class="footer-call-wrap" v-show="mobile">
                 <a :href="'tel:' + phone" id="main__footer_call" :data-goal="goal_call" @click="sendGoals(goal_call)" class="btn btn btn-primary btn-position green callibri_button" v-if="mobile">Позвонить</a>
@@ -122,6 +122,18 @@
 </script>
 
 <style scoped lang="scss">
+    @media only screen and (min-width: 700px) and (max-width: 1365px) {
+        .block {
+            display: block;
+        }
+    }
+
+    @media only screen and (min-width: 1366px) {
+        .block {
+            display: unset;
+        }
+    }
+
     footer {
         .footer-callback-wrap,
         .footer-call-wrap,
