@@ -711,10 +711,10 @@ footer {
     align-items: center;
     justify-content: center;
     margin: 0 auto 10px;
-    -webkit-transition: all ease-out 0.5s;
-    -moz-transition: all ease-out 0.5s;
-    -o-transition: all ease-out 0.5s;
-    transition: all ease-out 0.5s;
+    -webkit-transition: background-color ease-out 0.3s;
+    -moz-transition: background-color ease-out 0.3s;
+    -o-transition: background-color ease-out 0.3s;
+    transition: background-color ease-out 0.3s;
 }
 
 .divider {

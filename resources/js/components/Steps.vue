@@ -21,21 +21,21 @@
 
         <div class="buy-steps-wrapper">
             <div class="buy-step-block">
-                <div class="divided" :class="[ grade == 0 || grade == 1 ? 'buy-step-circle-colored' : 'buy-step-circle' ]">
+                <div class="divided" v-on:click.prevent="gradeShow(0)" :class="[ grade == 0 || grade == 1 ? 'buy-step-circle-colored' : 'buy-step-circle' ]">
                     <p class="buy-step-number">1</p>
                 </div>
                 <p class="buy-step-text">Оцените автомобиль</p>
             </div>
 
             <div class="buy-step-block">
-                <div class="divided" :class="[ grade == 2 || grade == 3? 'buy-step-circle-colored' : 'buy-step-circle' ]">
+                <div class="divided" v-on:click.prevent="gradeShow(2)" :class="[ grade == 2 || grade == 3? 'buy-step-circle-colored' : 'buy-step-circle' ]">
                     <p class="buy-step-number">2</p>
                 </div>
                 <p class="buy-step-text">Рассчитайте платеж</p>
             </div>
 
             <div class="buy-step-block" >
-                <div class="buy-step-circle divided" :class="[ grade == 4 ? 'buy-step-circle-colored' : 'buy-step-circle' ]">
+                <div class="buy-step-circle divided" v-on:click.prevent="gradeShow(4)" :class="[ grade == 4 ? 'buy-step-circle-colored' : 'buy-step-circle' ]">
                     <p class="buy-step-number">3</p>
                 </div>
                 <p class="buy-step-text">Заполните форму</p>
@@ -605,6 +605,7 @@
         height: 50px;
         background-color: #fff;
         z-index: 10;
+        cursor: pointer;
     }
 
     .buy-step-circle-colored {
@@ -618,7 +619,6 @@
 
     .buy-step-number {
         font-size: 35px;
-        height: 35px;
     }
 
     .buy-step-text {
@@ -685,7 +685,6 @@
 
         .buy-step-number {
             font-size: 42px;
-            height: 34px;
         }
     }
 
