@@ -1,47 +1,87 @@
 <template>
     <div class="container_bg_gray">
         <section class="banks-logos container">
-            <h2>Банки Партнеры</h2>
+            <h2>Банки-Партнеры</h2>
             <ul>
                 <li>
-                    <img src="/build/images/main/banks/ph-bank.png" alt="PH Банк">
+                    <img src="/build/images/main/banks/ph-bank.png" alt="PH Банк"
+                    v-on:click.prevent="show('Узнать про кредит', 'main__modal-banks__callback', 'Отправить', 1, 'credit')">
                 </li>
                 <li>
-                    <img src="/build/images/main/banks/vtb.png" alt="ВТБ">
+                    <img src="/build/images/main/banks/vtb.png" alt="ВТБ"
+                    v-on:click.prevent="show('Узнать про кредит', 'main__modal-banks__callback', 'Отправить', 1, 'credit')">
                 </li>
                 <li>
-                    <img src="/build/images/main/banks/setelem.png" alt="Сетелем">
+                    <img src="/build/images/main/banks/setelem.png" alt="Сетелем"
+                    v-on:click.prevent="show('Узнать про кредит', 'main__modal-banks__callback', 'Отправить', 1, 'credit')">
                 </li>
                 <li>
-                    <img src="/build/images/main/banks/sovkom-bank.png" alt="СовкомБанк">
+                    <img src="/build/images/main/banks/sovkom-bank.png" alt="СовкомБанк"
+                    v-on:click.prevent="show('Узнать про кредит', 'main__modal-banks__callback', 'Отправить', 1, 'credit')">
                 </li>
                 <li>
-                    <img src="/build/images/main/banks/uralsib.png" alt="УРАЛСИБ">
+                    <img src="/build/images/main/banks/uralsib.png" alt="УРАЛСИБ"
+                    v-on:click.prevent="show('Узнать про кредит', 'main__modal-banks__callback', 'Отправить', 1, 'credit')">
                 </li>
                 <li>
-                    <img src="/build/images/main/banks/rusfinance.png" alt="РУСФИНАНС БАНК">
+                    <img src="/build/images/main/banks/rusfinance.png" alt="РУСФИНАНС БАНК"
+                    v-on:click.prevent="show('Узнать про кредит', 'main__modal-banks__callback', 'Отправить', 1, 'credit')">
                 </li>
                 <li>
-                    <img src="/build/images/main/banks/rosgosstrakh.png" alt="Росгосстрах Банк">
+                    <img src="/build/images/main/banks/rosgosstrakh.png" alt="Росгосстрах Банк"
+                    v-on:click.prevent="show('Узнать про кредит', 'main__modal-banks__callback', 'Отправить', 1, 'credit')">
                 </li>
                 <li>
-                    <img src="/build/images/main/banks/tinkoff.png" alt="Тинькофф">
+                    <img src="/build/images/main/banks/tinkoff.png" alt="Тинькофф"
+                    v-on:click.prevent="show('Узнать про кредит', 'main__modal-banks__callback', 'Отправить', 1, 'credit')">
                 </li>
             </ul>
         </section>
+        <modal name="form-callback4" height="auto" :adaptive="true">
+            <div class="close" @click="hide"></div>
+            <form-buy2-component :cities="cities"
+                                 :form_title="form_title"
+                                 :form_id="form_id"
+                                 :button_text="button_text"
+                                 :form_type="form_type"
+                                 :goal="goal">
+            </form-buy2-component>
+        </modal>
     </div>
 </template>
 
 <script>
     export default {
         name: "Banks",
-        props: {},
+        props: ['cities'],
         data: function () {
             return {
-
+                modalWidth: window.innerWidth -20,
+                form_id: '',
+                form_title: '',
+                button_text: '',
+                form_type: 1,
+                goal: '',
             }
         },
         methods: {
+            show (title, form_id, button_text, form_type, goal) {
+                this.form_title = title;
+                this.form_id = form_id;
+                this.button_text = button_text;
+                this.form_type = form_type; // 1 - обычная форма, 2 - форма сервиса
+                this.goal = goal;
+                this.$modal.show('form-callback4');
+                () => {
+                    callibriInit();
+                }
+            },
+            hide () {
+                this.$modal.hide('form-callback4');
+            },
+        },
+        created () {
+            this.modalWidth = window.innerWidth -20
         },
         computed: {
         },
@@ -72,6 +112,7 @@
             justify-content: center;
             padding: 0 15px;
             li {
+                cursor: pointer;
                 width: 50%;
                 display: flex;
                 align-items: center;

@@ -61,7 +61,7 @@
             </div>
         </section>
 
-        <banks-component></banks-component>
+        <banks-component :cities='@json($cities)'></banks-component>
 
         <footer-component :coordinates='@json($data['coordinates'])'
                           :phone='@json($cities['active']['phone'])'
