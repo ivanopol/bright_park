@@ -52,6 +52,10 @@
 
 <style scoped lang="scss">
     .banks-logos {
+        & {
+            padding-bottom: 30px;
+        }
+
         h2 {
             font-family: PragmaticaLightCBold, Helvetica, sans-serif;
             text-align: center;
@@ -84,7 +88,7 @@
 
         @media only screen and (min-width: 580px) {
             & {
-                padding-bottom: 30px;
+                padding-bottom: 20px;
             }
 
             h2 {
@@ -105,7 +109,7 @@
 
                 li {
                     width: 23%;
-                    margin-bottom: 30px;
+                    margin-bottom: 60px;
                     max-width: unset;
                     img {
                         width: 75%;
