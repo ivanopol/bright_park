@@ -2,7 +2,7 @@
     <footer class="block footer" v-bind:class="[ footer_class ]">
         <div class="block-text center mb">
             <h2><span class="c_orange">Брайт Парк </span> всегда на связи</h2>
-            <p>У&nbsp;вас есть вопросы? Пообщайтесь со&nbsp;специалистом по&nbsp;телефону&nbsp;<span v-if="!mobile" class="block callibri_tel">{{phone_formatted}}</span><br>
+            <p>Наш менеджер с&nbsp;удовольствием ответит на&nbsp;ваши вопросы по&nbsp;телефону&nbsp;<span v-if="!mobile" class="block callibri_tel">{{phone_formatted}}</span><br>
             <div class="footer-callback-wrap" v-show="!mobile">
                 <a href="#" id="footer_request_callback" class="btn btn btn-primary btn-position green event" v-on:click.prevent="show('Заказать звонок', 'footer__modal_callback', 'Отправить', 1, 'callback')" >Заказать звонок</a>
             </div>
