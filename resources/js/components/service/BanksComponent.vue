@@ -100,5 +100,19 @@
             }
         }
 
+        @media only screen and (min-width: 1366px) {
+            ul {
+
+                li {
+                    width: 23%;
+                    margin-bottom: 30px;
+                    max-width: unset;
+                    img {
+                        width: 75%;
+                        max-width: unset;
+                    }
+                }
+            }
+        }
     }
 </style>
