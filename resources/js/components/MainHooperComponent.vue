@@ -11,7 +11,7 @@
                     </picture>
                 </div>
                 <div class="product-content">
-                    <p class="title-tagline bold"><span class="title-uppercase">Снова вместе!</span><br> <span class="text-low">Брайт Парк работает. Приезжайте к нам в салон</span></p>
+                    <p class="title-tagline bold"><span class="title-uppercase">Снова вместе!</span><br> <span class="text-low">Брайт Парк работает. Приезжайте к&nbsp;нам в&nbsp;салон</span></p>
                     <div class="item-buttons">
 
                     </div>
@@ -27,7 +27,7 @@
                     </picture>
                 </div>
                 <div class="product-content">
-                    <p class="title-tagline bold"><span class="title-uppercase">Брайт Парк<br> работает онлайн!</span><br> <span class="text-low">Полный комплекс услуг от заявки до выдачи</span></p>
+                    <p class="title-tagline bold"><span class="title-uppercase">Брайт Парк<br> работает онлайн!</span><br> <span class="text-low">Полный комплекс услуг от&nbsp;заявки до&nbsp;выдачи</span></p>
                     <div class="item-buttons">
                         <a :href="city + '/stocks/brajt_park_rabotaet_onlajn'" id="main_slider_terms_of_action" class="btn btn-primary event">Условия акции</a>
                     </div>
@@ -212,7 +212,8 @@
             .title-tagline {
                 font-size: 26px;
                 //font-weight: bold;
-                width: 78vw;
+                width: 80vw;
+                max-width: 100%;
                 margin: 30px auto 0;
                 line-height: 1.2;
 /*                -webkit-transition: all ease-out 0.5s;
@@ -426,7 +427,7 @@
                     padding-right: 0;
                 }
                 .title-tagline {
-                    width: 50%!important;
+                    width: 48%!important;
                     &.bold {
                         font-size: 24px !important;
                     }
