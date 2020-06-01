@@ -1,6 +1,6 @@
 <template>
     <section>
-        <hooper class="main-screen-wrap" :autoPlay="true" :playSpeed="6000" :wheelControl="false" >
+        <hooper class="main-screen-wrap" :autoPlay="false" :playSpeed="6000" :wheelControl="false" >
             <slide class="even">
                 <div class="asset-container">
                     <picture>
@@ -10,7 +10,7 @@
                         <img class="asset-image" src="/build/images/main/mobile/brajt_rabotaet.jpg" srcset="/build/images/main/mobile/brajt_rabotaet.jpg, /build/images/main/mobile/brajt_rabotaet.jpg 2x" alt="Брайт Парк работает онлайн!" />
                     </picture>
                 </div>
-                <div class="product-content">
+                <div class="product-content product-content-left">
                     <p class="title-tagline bold"><span class="title-uppercase">Снова вместе!</span><br> <span class="text-low">Брайт Парк работает. Приезжайте к&nbsp;нам в&nbsp;салон</span></p>
                     <div class="item-buttons">
 
@@ -200,6 +200,10 @@
             width: 100%;
             display: flex;
             justify-content: center;
+
+            &.product-content-left {
+
+            }
 
             .title-model {
                 font-family: PragmaticaLightCBold, Helvetica, sans-serif;
@@ -396,6 +400,13 @@
                     width: 100%;
                     align-items: flex-end;
                     padding-right: 10%;
+
+                    &.product-content-left {
+                        align-items: flex-start;
+                        .title-tagline {
+                            width: 30%;
+                        }
+                    }
 
                     .title-tagline {
                         margin: 30px 0 30px;
