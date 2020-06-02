@@ -83,8 +83,7 @@ Route::get("/lada/granta/sedan/", function () { return redirect("/perm/granta/se
 Route::get("/lada/kalina/", function () { return redirect("/perm"); });
 Route::get("/lada/priora/", function () { return redirect("/perm"); });
 Route::get("/lada/vesta/vesta-sedan/", function () { return redirect("/perm/vesta/sedan"); });
-Route::get("/lada/vesta/vesta-sedan/", function () { return redirect("/perm/vesta/sedan"); });
-
+Route::get("/uvelskiy/contacts", function () { return redirect("/perm/contacts"); });
 
 
 Route::get('send', 'FeedbackController@send');
