@@ -10,8 +10,8 @@
     <div class="event-scroll">
         <div class="container">
             <div id="advantages" class="advantages_wrap">
-                <h2>Брайт Парк</h2>
-                <p>Мы - федеральный дилер LADA, работающий в {{$cities['active']['dative']}} и ещё 5 регионах с 2008 года.</p>
+                <p class="h2-text">Брайт Парк</p>
+                <h1>Мы - федеральный дилер LADA, работающий в {{$cities['active']['dative']}} и ещё 5 регионах с 2008 года.</h1>
                 <ul>
                     <li>
                         <div class="advantage">
