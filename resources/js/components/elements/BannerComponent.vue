@@ -10,7 +10,7 @@
         </div>
         <div class="banner-content bottom-left">
             <div class="banner-title-white">
-                <span>Сервис<br> Брайт Парка</span>
+                <h1>Сервис<br> Брайт Парка</h1>
             </div>
         </div>
     </section>
@@ -64,11 +64,15 @@
             }
 
             .banner-title-white {
-                font-family: PragmaticaLightCBold, Helvetica, sans-serif;
-                font-weight: bold;
-                line-height: 1.4;
-                color: #fff;
-                text-transform: uppercase;
+                h1 {
+                    text-align: left;
+                    font-family: PragmaticaLightCBold, Helvetica, sans-serif;
+                    font-weight: bold;
+                    line-height: 1.4;
+                    color: #fff;
+                    text-transform: uppercase;
+                    margin: 0;
+                }
             }
         }
 
@@ -91,7 +95,9 @@
                 padding: 90px 40px;
 
                 .banner-title-white {
-                    font-size: 10.2vw;
+                    h1 {
+                        font-size: 10.2vw;
+                    }
                 }
             }
         }
@@ -107,7 +113,9 @@
                 padding: 90px 50px;
 
                 .banner-title-white {
-                    font-size: 5.2vw;
+                    h1 {
+                        font-size: 5.2vw;
+                    }
                 }
             }
         }
@@ -124,7 +132,9 @@
                 max-width: 1200px;
                 margin: 0 auto;
                 .banner-title-white {
-                    font-size: 4.2vw;
+                    h1 {
+                        font-size: 4.2vw;
+                    }
                 }
             }
         }
@@ -136,7 +146,9 @@
             margin: -75px auto 0 ;
             &-content {
                 .banner-title-white {
-                    font-size: 80px;
+                    h1 {
+                        font-size: 80px;
+                    }
                 }
             }
         }
