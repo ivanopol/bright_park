@@ -57,11 +57,11 @@
                         <source srcset="/build/images/main/tablet/main_vesta_gray.jpg, /build/images/main/tablet/main_vesta_gray.jpg 2x" media="(max-width: 1365px)">
                         <source srcset="/build/images/main/desktop/main_vesta_gray.jpg, /build/images/main/desktop/main_vesta_gray.jpg 2x" media="(min-width: 1366px)">
                         <img class="asset-image" src="/build/images/main/mobile/main_vesta_gray.jpg"
-                         srcset="/build/images/main/mobile/main_vesta_gray.jpg, /build/images/main/mobile/main_vesta_gray.jpg 2x" alt="Брайт Парк: LADA Vesta выгода 10% по госпрограмме" />
+                         srcset="/build/images/main/mobile/main_vesta_gray.jpg, /build/images/main/mobile/main_vesta_gray.jpg 2x" alt="Брайт Парк: LADA Vesta по обновленной госпрограмме" />
                     </picture>
                 </div>
                 <div class="product-content">
-                    <p class="title-tagline bold">LADA Vesta<br> выгода 10%<br> по госпрограмме</p>
+                    <p class="title-tagline bold">LADA Vesta<br> по обновлённой<br> госпрограмме</p>
                     <div class="item-buttons">
                         <a :href="city + '/vesta/sedan'" id="main_slider_lada_vesta_benefit_10_details" class="btn btn-primary event">Подробнее о модели</a>
                         <a :href="city + '/stocks/lada_vesta_vygoda_10_po_gosprogramme'" id="main_slider_lada_vesta_benefit_10_action" class="btn btn-secondary event">Условия акции</a>
