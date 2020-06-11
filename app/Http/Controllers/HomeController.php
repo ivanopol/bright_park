@@ -53,7 +53,7 @@ class HomeController extends Controller
         $models = CarModel::with('types_preview')->get();
 
         $this->seo->setMetaTags($city, ['place' => $data['coordinates']]);
-
+        
         return view('home', ['data' =>  $data, 'models' => $models, 'city' => $this->city, 'cities' => $cities]);
     }
 
@@ -118,7 +118,10 @@ class HomeController extends Controller
         if ($city['alias']) {
             $this->city = $city['alias'];
         } else {
-            return redirect()->route('model', ['city' => 'perm', 'car_model' => $car_model->slug, 'car_type' => $car_type->slug]);
+            return redirect()->route('model', [ 'city' => 'perm',
+                                                'car_model' => $car_model->slug,
+                                                'car_type' => $car_type->slug,
+                                                ]);
         }
 
         $cities = $city->getCities($this->city);
@@ -134,7 +137,11 @@ class HomeController extends Controller
             'place' => $data['coordinates']
         ]);
 
-        return view('model', [ 'data' => $data, 'models' => $models, 'city' => $this->city, 'cities' => $cities]);
+        return view('model', [  'data' => $data,
+                                'models' => $models,
+                                'city' => $this->city,
+                                'cities' => $cities,
+                             ]);
     }
 
     /**

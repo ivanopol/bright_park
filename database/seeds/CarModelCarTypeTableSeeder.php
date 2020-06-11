@@ -26,12 +26,12 @@ class CarModelCarTypeTableSeeder extends Seeder
             ['car_model_id' => '4', 'car_type_id' => '13', 'preview' => false, 'price' => 510210, 'special_price' => 510210, 'count'=>333, 'active' => 0],
             ['car_model_id' => '4', 'car_type_id' => '14', 'preview' => false, 'price' => 578610, 'special_price' => 578610, 'count'=>333, 'active' => 0],
             ['car_model_id' => '4', 'car_type_id' => '15', 'preview' => false, 'price' => 727900, 'special_price' => 722900, 'count'=>333, 'active' => 0],
-            ['car_model_id' => '5', 'car_type_id' => '3', 'preview' => false, 'price' => 597900, 'special_price' => 495810, 'count'=>333, 'active' => 1],
+            ['car_model_id' => '5', 'car_type_id' => '3', 'preview' => true, 'price' => 597900, 'special_price' => 495810, 'count'=>333, 'active' => 1],
             ['car_model_id' => '5', 'car_type_id' => '4', 'preview' => false, 'price' => 757900, 'special_price' => 639810, 'count'=>333, 'active' => 0],
             ['car_model_id' => '5', 'car_type_id' => '16', 'preview' => false, 'price' => 897900, 'special_price' => 897900, 'count'=>333, 'active' => 0],
             ['car_model_id' => '5', 'car_type_id' => '17', 'preview' => false, 'price' => 962900, 'special_price' => 944900, 'count'=>333, 'active' => 0],
             ['car_model_id' => '5', 'car_type_id' => '18', 'preview' => false, 'price' => 571900, 'special_price' => 476910, 'count'=>333, 'active' => 0],
-            ['car_model_id' => '5', 'car_type_id' => '19', 'preview' => true, 'price' => 495810, 'special_price' => 597900, 'count'=>333, 'active' => 0],
+            ['car_model_id' => '5', 'car_type_id' => '19', 'preview' => false, 'price' => 495810, 'special_price' => 597900, 'count'=>333, 'active' => 0],
         ];
 
         DB::table('car_model_car_type')->insert($model_types);

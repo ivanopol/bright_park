@@ -21,8 +21,8 @@
         <div id="items" class="items">
             <div :class="data.slides.class">
                 <div class="items-data">
-                    <p class="title" v-text="data.slides.title"></p>
-                    <p class="sub_title" v-html="data.slides.subtitle"></p>
+                    <h1 class="title" v-html="'Новая ' + data.slides.title + '<br> по&nbsp;лучшей цене в&nbsp;' + city.dative"></h1>
+                   <!-- <p class="sub_title" v-html="data.slides.subtitle"></p>-->
                     <a id="purchase_conditions" class="event btn-banner" :href="data.slides.link">Условия покупки</a>
                 </div>
                 <span class="more_details">
@@ -53,7 +53,7 @@
             HooperPagination,
             HooperNavigation*/
         },
-        props : ['data'],
+        props : ['data', 'city'],
         data () {
             return {
                 hooperSettings: {
