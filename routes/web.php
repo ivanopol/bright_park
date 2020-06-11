@@ -21,6 +21,14 @@ Route::get("/{city}/ocenka-avtomobilya", function ($city) { return redirect("/{$
 Route::get("/{city}/raschyot-kredita", function ($city) { return redirect("/{$city->alias}/stocks/lada_granta_0_pervonachalnyj_vznos"); });
 
 // Granta
+Route::get("/catalog/lada-granta", function () { return redirect("/perm/granta/sedan"); });
+Route::get("/catalog/lada-granta/granta-sedan", function () { return redirect("/perm/granta/sedan"); });
+Route::get("/catalog/lada-granta/granta-liftbek", function () { return redirect("/perm/granta/liftback"); });
+Route::get("/catalog/lada-granta/granta-hetchbek", function () { return redirect("/perm/granta/sedan"); });
+Route::get("/catalog/lada-granta/granta-universal", function () { return redirect("/perm/granta/sedan"); });
+Route::get("/catalog/lada-granta/granta-cross", function () { return redirect("/perm/granta/cross"); });
+Route::get("/catalog/lada-granta/granta-drive-active", function () { return redirect("/perm/granta/drive-active"); });
+
 Route::get("/{city}/catalog/lada-granta", function ($city) { return redirect("/{$city->alias}/granta/sedan"); });
 Route::get("/{city}/catalog/lada-granta/granta-sedan", function ($city) { return redirect("/{$city->alias}/granta/sedan"); });
 Route::get("/{city}/catalog/lada-granta/granta-liftbek", function ($city) { return redirect("/{$city->alias}/granta/liftback"); });
@@ -30,6 +38,14 @@ Route::get("/{city}/catalog/lada-granta/granta-cross", function ($city) { return
 Route::get("/{city}/catalog/lada-granta/granta-drive-active", function ($city) { return redirect("/{$city->alias}/granta/drive-active"); });
 
 // Vesta
+Route::get("/catalog/lada-vesta", function () { return redirect("/perm/vesta/sedan"); });
+Route::get("/catalog/lada-vesta/vesta-sedan", function () { return redirect("/perm/vesta/sedan"); });
+Route::get("/catalog/lada-vesta/vesta-cross", function () { return redirect("/perm/vesta/sedan"); });
+Route::get("/catalog/lada-vesta/vesta-sw", function () { return redirect("/perm/vesta/sw"); });
+Route::get("/catalog/lada-vesta/vesta-sw-cross", function () { return redirect("/perm/vesta/sw-cross"); });
+Route::get("/catalog/lada-vesta/vesta-cng", function () { return redirect("/perm/vesta/sedan"); });
+Route::get("/catalog/lada-vesta/vesta-sport", function () { return redirect("/perm/vesta/sedan"); });
+
 Route::get("/{city}/catalog/lada-vesta", function ($city) { return redirect("/{$city->alias}/vesta/sedan"); });
 Route::get("/{city}/catalog/catalog/lada-vesta/vesta-sedan", function ($city) { return redirect("/{$city->alias}/vesta/sedan"); });
 Route::get("/{city}/catalog/lada-vesta/vesta-cross", function ($city) { return redirect("/{$city->alias}/vesta/sedan"); });
@@ -39,10 +55,21 @@ Route::get("/{city}/catalog/lada-vesta/vesta-cng", function ($city) { return red
 Route::get("/{city}/catalog/lada-vesta/vesta-sport", function ($city) { return redirect("/{$city->alias}/vesta/sedan"); });
 
 // XRAY
+Route::get("/catalog/lada-xray/xray", function () { return redirect("/perm/xray/xray"); });
+Route::get("/catalog/lada-xray/xray-cross", function () { return redirect("/perm/xray/cross"); });
+
 Route::get("/{city}/catalog/lada-xray/xray", function ($city) { return redirect("/{$city->alias}/xray/xray"); });
 Route::get("/{city}/catalog/lada-xray/xray-cross", function ($city) { return redirect("/{$city->alias}/xray/cross"); });
 
 // Largus
+Route::get("/catalog/lada-largus", function () { return redirect("/perm/largus/universal"); });
+Route::get("/catalog/lada-largus/largus-universal", function () { return redirect("/perm/largus/universal"); });
+Route::get("/catalog/lada-largus/largus-universal-cng", function () { return redirect("/perm/largus/universal"); });
+Route::get("/catalog/lada-largus/largus-cross", function () { return redirect("/perm/largus/universal"); });
+Route::get("/catalog/lada-largus/largus-cross-cng", function () { return redirect("/perm/largus/universal"); });
+Route::get("/catalog/lada-largus/largus-furgon", function () { return redirect("/perm/largus/universal"); });
+Route::get("/catalog/lada-largus/largus-furgon-cng", function () { return redirect("/perm/largus/universal"); });
+
 Route::get("/{city}/catalog/lada-largus", function ($city) { return redirect("/{$city->alias}/largus/universal"); });
 Route::get("/{city}/catalog/lada-largus/largus-universal", function ($city) { return redirect("/{$city->alias}/largus/universal"); });
 Route::get("/{city}/catalog/lada-largus/largus-universal-cng", function ($city) { return redirect("/{$city->alias}/largus/universal"); });
@@ -84,7 +111,6 @@ Route::get("/lada/kalina/", function () { return redirect("/perm"); });
 Route::get("/lada/priora/", function () { return redirect("/perm"); });
 Route::get("/lada/vesta/vesta-sedan/", function () { return redirect("/perm/vesta/sedan"); });
 Route::get("/uvelskiy/contacts", function () { return redirect("/perm/contacts"); });
-
 
 Route::get('send', 'FeedbackController@send');
 Route::middleware(['utm.check', 'cookie.check', 'counter'])->group(function () {
