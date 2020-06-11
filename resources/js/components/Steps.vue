@@ -1,8 +1,8 @@
 <template>
     <section class="steps-wrap">
         <div class="model-choose-text">
-            <p v-if="car_model">Подберите выгодные условия на LADA {{car_model.title}} {{car_type.title_ru}}</p>
-            <p v-else-if="!car_model">Подберите выгодные условия на LADA</p>
+            <h1 v-if="car_model">Подберите выгодные условия на LADA {{car_model.title}} {{car_type.title_ru}} в {{cities.active.dative}}</h1>
+            <p v-else-if="!car_model">Подберите выгодные условия на LADA в {{cities.active.dative}}</p>
         </div>
 
         <div class="car-choose_wrap" v-if="!car_model">
@@ -294,6 +294,16 @@
 
 <style lang="scss">
     .steps-wrap {
+        h1 {
+            font-family: PragmaticaLightCBold, Helvetica, sans-serif;
+            font-weight: bold;
+            text-align: left;
+            font-size: 18px;
+            line-height: 1.4;
+            margin: 0 30px;
+            text-transform: none;
+        }
+
         .car-choose_wrap {
             max-width: 580px;
             margin: 30px auto 0;
@@ -386,6 +396,13 @@
             margin: 0 auto;
         }
         .steps-wrap {
+
+            h1 {
+                text-align: center;
+                font-weight: normal;
+                font-size: 22px;
+            }
+
             .button-wrapper-row {
                 justify-content: center;
 
