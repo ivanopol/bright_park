@@ -33,16 +33,22 @@ class StocksTableSeeder extends Seeder
                 'city_id' => 0,
             ],
             [
-                'title' => 'LADA Vesta выгода 10% по госпрограмме',
+                'title' => 'LADA Vesta по обновленной госпрограмме',
                 'text' => '
-                <p>Воспользуйтесь возможностью приобрести автомобиль LADA с выгодой 10% от стоимости по государственным программам «Первый автомобиль» и «Семейный автомобиль».</p>
-                <p>Льготный автокредит может быть выдан без первоначального взноса.</br>
-                  Программами «Первый автомобиль» и «Семейный автомобиль» можно воспользоваться при условиях:</p>
+                <p>Расширенные условия программы государственной поддержки в Брайт парке!
+Максимально выгодные предложения на покупку LADA. Вы можете приобрести автомобиль по доступной цене, суммируя акции по специальным программам.
+Выгода 10% от стоимости при покупке на условиях льготного кредитования.</p>
+                <p>Льготный автокредит может быть выдан без первоначального взноса.</p>
+                <ul>
+                    <li>Программа кредитования «Семейный автомобиль» теперь и для семей с 1м ребенком.</li>
+                    <li>Программа кредитования «Первый автомобиль» для тех, кто ранее не имел автомобиль в собственности.</li>
+                    <li>Программа льготного кредитования для тех, кто продает свое автотранспортное средство возрастом свыше 6 лет в счет уплаты части первоначального взноса.</li>
+                    <li>Мы говорим СПАСИБО всем медикам за их самоотверженную борьбу с пандемией. С начала июня медицинские работники могут приобрести автомобиль с выгодой 10% по программе «Автомобиль государственному медицинскому персоналу».</li>
+                </ul>
+                <p>Расширенными условиями программы государственной поддержки можно воспользоваться при условиях:</p>
                 <ul>
                     <li>наличие действующих водительских прав;</li>
-                    <li>отсутствие других автокредитов в течение 2018, 2019 года;</li>
-                    <li>покупатель никогда ранее не имел автомобиль в собственности (условие для программы "Первый автомобиль"); </li>
-                    <li>у Вас двое и больше несовершеннолетних детей. В банк необходимо предоставить паспорт, куда вписаны дети или их свидетельства о рождении (условие для программы "Семейный автомобиль").</li>
+                    <li>отсутствие других автокредитов в течение 2019 и 2020 года, а также обязуются не заключать в 2020 году иных кредитных договоров на приобретение автомобиля;</li>
                 </ul>
                 <table>
                     <thead></thead>
@@ -54,87 +60,87 @@ class StocksTableSeeder extends Seeder
                     <tbody>
                         <tr>
                             <td class="tbl_title">Granta Седан</td>
-                            <td class="tbl_value">До 96 080 руб.</td>
+                            <td class="tbl_value">До 97 980 руб.</td>
                         </tr>
                         <tr>
                             <td class="tbl_title">Granta Лифтбек</td>
-                            <td class="tbl_value">До 97 580 руб.</td>
+                            <td class="tbl_value">До 99 580 руб.</td>
                         </tr>
                         <tr>
                             <td class="tbl_title">Granta Хэтчбек</td>
-                            <td class="tbl_value">До 97 580 руб.</td>
+                            <td class="tbl_value">До 99 480 руб.</td>
                         </tr>
                         <tr>
                             <td class="tbl_title">Granta Универсал</td>
-                            <td class="tbl_value">До 98 580 руб.</td>
+                            <td class="tbl_value">До 96 550 руб.</td>
                         </tr>
                         <tr>
                             <td class="tbl_title">Granta Cross</td>
-                            <td class="tbl_value">До 84 390 руб.</td>
+                            <td class="tbl_value">До 85 790 руб.</td>
                         </tr>
                         <tr>
                             <td class="tbl_title">Granta Drive Active</td>
-                            <td class="tbl_value">До 60 000 руб.</td>
+                            <td class="tbl_value">До 85 890 руб.</td>
                         </tr>
                         <tr>
                             <td class="tbl_title">Vesta Cедан</td>
-                            <td class="tbl_value">До 148 140 руб.</td>
+                            <td class="tbl_value">До 158 640 руб.</td>
                         </tr>
                         <tr>
                             <td class="tbl_title">Vesta Cross</td>
-                            <td class="tbl_value">До 155 090 руб.</td>
+                            <td class="tbl_value">До 165 590 руб.</td>
                         </tr>
                         <tr>
                             <td class="tbl_title">Vesta SW</td>
-                            <td class="tbl_value">До 153 390 руб.</td>
+                            <td class="tbl_value">До 164 090 руб.</td>
                         </tr>
                         <tr>
                             <td class="tbl_title">Vesta SW Cross</td>
-                            <td class="tbl_value">До 159 090 руб.</td>
+                            <td class="tbl_value">До 169 790 руб.</td>
                         </tr>
                         <tr>
                             <td class="tbl_title">Vesta CNG</td>
-                            <td class="tbl_value">До 131 590 руб.</td>
+                            <td class="tbl_value">До 115 000 руб.</td>
                         </tr>
                         <tr>
                             <td class="tbl_title">Vesta Sport </td>
-                            <td class="tbl_value">До 179 890 руб.</td>
+                            <td class="tbl_value">До 154 390 руб.</td>
                         </tr>
                         <tr>
                             <td class="tbl_title">XRAY</td>
-                            <td class="tbl_value">До 162 090 руб.</td>
+                            <td class="tbl_value">До 122 790 руб.</td>
                         </tr>
                         <tr>
                             <td class="tbl_title">XRAY Cross </td>
-                            <td class="tbl_value">До 146 990 руб.</td>
+                            <td class="tbl_value">До 131 890 руб.</td>
                         </tr>
                         <tr>
                             <td class="tbl_title">Largus Универсал</td>
-                            <td class="tbl_value">До 135 490 руб.</td>
+                            <td class="tbl_value">До 118 690 руб.</td>
                         </tr>
                         <tr>
                             <td class="tbl_title">Largus Cross</td>
-                            <td class="tbl_value">До 138 390 руб.</td>
+                            <td class="tbl_value">До 121 590 руб.</td>
                         </tr>
                         <tr>
                             <td class="tbl_title">Largus Фургон</td>
-                            <td class="tbl_value">До 124 090 руб.</td>
+                            <td class="tbl_value">До 106 790 руб.</td>
                         </tr>
                         <tr>
                             <td class="tbl_title">4x4 3 дв.</td>
-                            <td class="tbl_value">До 79 590 руб.</td>
+                            <td class="tbl_value">До 65 190 руб.</td>
                         </tr>
                         <tr>
                             <td class="tbl_title">4x4 Urban 3 дв.</td>
-                            <td class="tbl_value">До 78 190 руб.</td>
+                            <td class="tbl_value">До 64 290 руб.</td>
                         </tr>
                         <tr>
                             <td class="tbl_title">4x4 5дв.</td>
-                            <td class="tbl_value">До 81 390 руб.</td>
+                            <td class="tbl_value">До 66 590 руб.</td>
                         </tr>
                         <tr>
                             <td class="tbl_title">4x4 Urban 5 дв.</td>
-                            <td class="tbl_value">До 82 090 руб.</td>
+                            <td class="tbl_value">До 68 590 руб.</td>
                         </tr>
                         <tr>
                             <td class="tbl_title">4x4 Bronto</td>
@@ -143,7 +149,7 @@ class StocksTableSeeder extends Seeder
                     </tbody>
                 </table>
                 ',
-                'text_short' => 'Воспользуйтесь возможностью приобрести автомобиль LADA с выгодой 10% от стоимости по государственным программам «Первый автомобиль» и «Семейный автомобиль».',
+                'text_short' => 'Расширенные условия программы государственной поддержки в Брайт парке! Максимально выгодные предложения на покупку LADA. Вы можете приобрести автомобиль по доступной цене, суммируя акции по специальным программам.',
                 'preview' => '/build/images/stocks/stock_02.jpg',
                 'slug' => 'lada_vesta_vygoda_10_po_gosprogramme',
                 'city_id' => 0,
