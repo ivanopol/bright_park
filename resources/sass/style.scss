@@ -1474,7 +1474,7 @@ footer {
         position: relative;
         color: #fff;
         text-align: center;
-        padding: 20px 0;
+        padding: 10px 0 20px;
         width: 100%;
 
         //background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/granta/lada_granta_cross.png) no-repeat center center;
@@ -1667,7 +1667,7 @@ footer {
             }
         }
 
-        a {
+        .btn-banner {
             cursor: pointer;
             display: inline-block;
             color: #fff;
@@ -1733,14 +1733,14 @@ footer {
         }
 
         &>div {
-            padding: 5% 5%;
+            padding: 3% 5%;
 
             .items-data {
                 width: 52%;
                 text-align: left;
             }
 
-            a {
+            .btn-banner {
                 width: auto;
             }
         }
@@ -1758,10 +1758,10 @@ footer {
         margin-right: auto;
 
         &>div {
-            padding: 5% 7%;
+            padding: 3% 7%;
 
             .items-data {
-                a {
+                .btn-banner {
                     margin-top: 5%;
                 }
             }
@@ -2105,6 +2105,84 @@ footer {
             &-wrap2 {
                 width: auto;
             }
+        }
+    }
+}
+
+.model-details-breadcrumbs {
+    display: flex;
+    justify-content: center;
+    .breadcrumbs {
+        z-index: 2;
+        li {
+            &:before {
+                color: rgba(90, 98, 104, 0.7);
+            }
+
+
+            a {
+                color: rgba(90, 98, 104, 0.7);
+            }
+        }
+    }
+
+    @media only screen and (min-width: 580px) {
+        .breadcrumbs {
+            li {
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+.breadcrumbs {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+    margin-bottom: 10px;
+    li {
+        margin-right: 15px;
+        position: relative;
+
+        &:before {
+            content: '/';
+            display: block;
+            position: absolute;
+            right: -10px;
+            top: 2px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        &:last-child {
+            margin-right: 0;
+            &:before {
+                content: '';
+            }
+        }
+
+        a {
+            font-size: 12px;
+            font-family: PragmaticaLightC, Helvetica, sans-serif;
+            font-weight: normal;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.7);
+        }
+    }
+
+    @media only screen and (min-width: 330px) {
+        & {
+            li {
+                a {
+                  //  font-size: 10px;
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 580px) {
+        & {
+            justify-content: flex-start;
         }
     }
 }

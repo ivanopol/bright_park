@@ -20,9 +20,15 @@
 
         <div id="items" class="items">
             <div :class="data.slides.class">
+                <ul class="breadcrumbs" v-if="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+                    <li v-for="(crumb, index) in breadcrumbs" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                        <a :href="crumb.url" v-if="crumb.url" itemprop="item"><span itemprop="name">{{crumb.title}}</span></a>
+                        <span v-else>{{crumb.title}}</span>
+                        <meta itemprop="position" :content="index + 1" />
+                    </li>
+                </ul>
                 <div class="items-data">
                     <h1 class="title" v-html="'Новая ' + data.slides.title + '<br> по&nbsp;лучшей цене в&nbsp;' + city.dative"></h1>
-                   <!-- <p class="sub_title" v-html="data.slides.subtitle"></p>-->
                     <a id="purchase_conditions" class="event btn-banner" :href="data.slides.link">Условия покупки</a>
                 </div>
                 <span class="more_details">
@@ -53,7 +59,7 @@
             HooperPagination,
             HooperNavigation*/
         },
-        props : ['data', 'city'],
+        props : ['data', 'city', 'breadcrumbs'],
         data () {
             return {
                 hooperSettings: {
