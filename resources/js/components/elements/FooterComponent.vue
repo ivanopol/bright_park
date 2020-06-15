@@ -1,15 +1,16 @@
 <template>
-    <footer class="block footer" v-bind:class="[ footer_class ]">
+    <footer class="block footer" v-bind:class="[ footer_class ]" itemscope itemtype="http://schema.org/Organization">
+        <span class="hidden" itemprop="name">Брайт Парк</span>
         <div class="block-text center mb">
             <h2><span class="c_orange">Брайт Парк </span> всегда на связи</h2>
-            <p>Наш менеджер с&nbsp;удовольствием ответит на&nbsp;ваши вопросы по&nbsp;телефону&nbsp;<span v-if="!mobile" class="block callibri_tel">{{phone_formatted}}</span><br>
+            <p>Наш менеджер с&nbsp;удовольствием ответит на&nbsp;ваши вопросы по&nbsp;телефону&nbsp;<span itemprop="telephone" class="block callibri_tel">{{phone_formatted}}</span><br>
             <div class="footer-callback-wrap" v-show="!mobile">
                 <a href="#" id="footer_request_callback" class="btn btn btn-primary btn-position green event" v-on:click.prevent="show('Заказать звонок', 'footer__modal_callback', 'Отправить', 1, 'callback')" >Заказать звонок</a>
             </div>
             <div class="footer-call-wrap" v-show="mobile">
                 <a :href="'tel:' + phone" id="main__footer_call" :data-goal="goal_call" @click="sendGoals(goal_call)" class="btn btn btn-primary btn-position green callibri_button" v-if="mobile">Позвонить</a>
             </div>
-            <p>Брайт парк ближе, чем кажется<br></p>
+            <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">Брайт парк ближе, чем кажется<br> <span itemprop="streetAddress">{{cities.active.address}}</span></p>
         </div>
         <yandex-map-component :coordinates='coordinates'
                               :button="ym_button"
