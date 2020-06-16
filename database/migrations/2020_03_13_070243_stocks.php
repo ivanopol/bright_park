@@ -21,6 +21,7 @@ class Stocks extends Migration
             $table->string('preview');
             $table->string('slug');
             $table->string('city_id');
+            $table->integer('sort')->nullable();
         });
 
         Artisan::call('db:seed', [

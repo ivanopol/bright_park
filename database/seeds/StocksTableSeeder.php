@@ -31,6 +31,7 @@ class StocksTableSeeder extends Seeder
                 'preview' => '/build/images/stocks/stock_01.jpg',
                 'slug' => 'doplata_40_000_rublej_pri_obmene_na_lada_granta',
                 'city_id' => 0,
+                'sort' => 1,
             ],
             [
                 'title' => 'LADA Vesta по обновленной госпрограмме',
@@ -153,6 +154,7 @@ class StocksTableSeeder extends Seeder
                 'preview' => '/build/images/stocks/stock_02.jpg',
                 'slug' => 'lada_vesta_vygoda_10_po_gosprogramme',
                 'city_id' => 0,
+                'sort' => 5,
             ],
             [
                 'title' => 'LADA Granta 0% первоначальный взнос',
@@ -170,6 +172,7 @@ class StocksTableSeeder extends Seeder
                 'preview' => '/build/images/stocks/stock_03.jpg',
                 'slug' => 'lada_granta_0_pervonachalnyj_vznos',
                 'city_id' => 0,
+                'sort' => 2,
             ],
             [
                 'title' => 'Обмен на LADA Vesta выше рыночной цены',
@@ -189,6 +192,7 @@ class StocksTableSeeder extends Seeder
                 'preview' => '/build/images/stocks/stock_04.jpg',
                 'slug' => 'obmen_na_lada_vesta_vyshe_rynochnoj_ceny',
                 'city_id' => 0,
+                'sort' => 3,
             ],
             [
                 'title' => 'Брайт Парк работает онлайн! Мы оказываем полный цикл услуг по приобретению автомобиля',
@@ -205,6 +209,7 @@ class StocksTableSeeder extends Seeder
                 'preview' => '/build/images/stocks/brajt_park_rabotaet_onlajn.jpg',
                 'slug' => 'brajt_park_rabotaet_onlajn',
                 'city_id' => 0,
+                'sort' => 4,
             ],
         ];
 
