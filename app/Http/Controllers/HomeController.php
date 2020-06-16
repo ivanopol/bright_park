@@ -53,7 +53,7 @@ class HomeController extends Controller
         $models = CarModel::with('types_preview')->get();
 
         $this->seo->setMetaTags($city, ['place' => $data['coordinates']]);
-        
+
         return view('home', ['data' =>  $data, 'models' => $models, 'city' => $this->city, 'cities' => $cities]);
     }
 
@@ -284,7 +284,7 @@ class HomeController extends Controller
 
         $data['coordinates'] = explode(",", $city['coordinates']);
 
-        $stocks = Stocks::whereIn('city_id', [0, $city['id']])->orderBy('id', 'desc')->get();
+        $stocks = Stocks::whereIn('city_id', [0, $city['id']])->orderBy('sort', 'desc')->get();
 
         return view('stocks', [
             'data'=>$data,

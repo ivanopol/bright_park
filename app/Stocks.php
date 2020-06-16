@@ -6,7 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Stocks extends Model
 {
-    protected $fillable = ['title', 'text', 'text_short', 'preview', 'slug', 'city_id'];
+    protected $fillable = [
+        'title',
+        'text',
+        'text_short',
+        'preview',
+        'slug',
+        'city_id',
+        'sort',
+    ];
 
     /**
      * Таблица, связанная с моделью.
