@@ -172,7 +172,7 @@ class StocksTableSeeder extends Seeder
                 'preview' => '/build/images/stocks/stock_03.jpg',
                 'slug' => 'lada_granta_0_pervonachalnyj_vznos',
                 'city_id' => 0,
-                'sort' => 2,
+                'sort' => 3,
             ],
             [
                 'title' => 'Обмен на LADA Vesta выше рыночной цены',
@@ -192,7 +192,7 @@ class StocksTableSeeder extends Seeder
                 'preview' => '/build/images/stocks/stock_04.jpg',
                 'slug' => 'obmen_na_lada_vesta_vyshe_rynochnoj_ceny',
                 'city_id' => 0,
-                'sort' => 3,
+                'sort' => 4,
             ],
             [
                 'title' => 'Брайт Парк работает онлайн! Мы оказываем полный цикл услуг по приобретению автомобиля',
@@ -209,7 +209,7 @@ class StocksTableSeeder extends Seeder
                 'preview' => '/build/images/stocks/brajt_park_rabotaet_onlajn.jpg',
                 'slug' => 'brajt_park_rabotaet_onlajn',
                 'city_id' => 0,
-                'sort' => 4,
+                'sort' => 2,
             ],
         ];
 
