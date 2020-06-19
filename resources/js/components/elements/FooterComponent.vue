@@ -131,7 +131,7 @@
 
     @media only screen and (min-width: 1366px) {
         .block {
-            display: unset;
+           // display: unset;
         }
     }
 
