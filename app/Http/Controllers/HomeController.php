@@ -138,14 +138,12 @@ class HomeController extends Controller
             'place' => $data['coordinates']
         ]);
 
-        $breadcrumbs = '';
-        $breadcrumbs = Breadcrumbs::generate("model", $city, $car_model, $car_type);
-
         return view('model', [  'data' => $data,
                                 'models' => $models,
                                 'city' => $this->city,
                                 'cities' => $cities,
-                                'breadcrumbs' => $breadcrumbs,
+                                'car_model' => $car_model,
+                                'car_type' => $car_type,
         ]);
     }
 
