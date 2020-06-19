@@ -66,6 +66,7 @@ Route::get("/{city}/catalog/lada-vesta/vesta-cng", function ($city) { return red
 Route::get("/{city}/catalog/lada-vesta/vesta-sport", function ($city) { return redirect("/{$city->alias}/vesta/sedan"); });
 
 // XRAY
+Route::get("/credit-xray", function () { return redirect("/perm/xray/xray"); });
 Route::get("/catalog/lada-xray/xray", function () { return redirect("/perm/xray/xray"); });
 Route::get("/catalog/lada-xray/xray-cross", function () { return redirect("/perm/xray/cross"); });
 
@@ -135,7 +136,7 @@ Route::middleware(['utm.check', 'cookie.check', 'counter'])->group(function () {
     Route::get('/{city?}/{car_model}/{car_type}', 'HomeController@model')->name('model');
     Route::get('/{city?}/{car_model}/{car_type}/model_details', 'HomeController@model_details')->name('model_details');
     Route::get('/alt_menu', 'HomeController@alt_menu')->name('alt_menu');
-    Route::get('/model_details', 'HomeController@model_details')->name('model_details');
+  //  Route::get('/model_details', 'HomeController@model_details')->name('model_details');
     Route::get('/{city?}/{car_model}/{car_type}/trade_in_calc', 'HomeController@trade_in_calc')->name('trade_in_calc');
     Route::get('/main', 'HomeController@main')->name('main');
     Route::get('/get_brands', 'HomeController@get_brands')->name('get_brands');

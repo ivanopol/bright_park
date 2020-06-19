@@ -5,6 +5,9 @@
     <header-sticky-component :theme="'light'" :city="'{{$city}}'" ></header-sticky-component>
     <header-component :line="true" :theme="'light'" :city="'{{$city}}'"></header-component>
     <section class="container container-special">
+        <div class="model-details-breadcrumbs">
+            {{Breadcrumbs::render("model_details", $city, $car_model, $car_type)}}
+        </div>
         <div class="car-info-wrap">
             <div class="car-preview-wrap">
                <img src="{{$data['car_preview']->image}}" alt="{{$data['car_preview']->alt}}">

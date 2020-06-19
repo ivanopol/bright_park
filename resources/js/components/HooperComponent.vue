@@ -22,7 +22,7 @@
             <div :class="data.slides.class">
                 <div class="items-data">
                     <h1 class="title" v-html="'Новая ' + data.slides.title + '<br> по&nbsp;лучшей цене в&nbsp;' + city.dative"></h1>
-                   <!-- <p class="sub_title" v-html="data.slides.subtitle"></p>-->
+                    <!-- <p class="sub_title" v-html="data.slides.subtitle"></p>-->
                     <a id="purchase_conditions" class="event btn-banner" :href="data.slides.link">Условия покупки</a>
                 </div>
                 <span class="more_details">
@@ -37,9 +37,9 @@
     import {
         Hooper,
         Slide
-/*        Progress as HooperProgress,
-        Pagination as HooperPagination,
-        Navigation as HooperNavigation*/
+        /*        Progress as HooperProgress,
+                Pagination as HooperPagination,
+                Navigation as HooperNavigation*/
 
     } from 'hooper';
     import 'hooper/dist/hooper.css';
@@ -49,9 +49,9 @@
         components: {
             Hooper,
             Slide
-/*            HooperProgress,
-            HooperPagination,
-            HooperNavigation*/
+            /*            HooperProgress,
+                        HooperPagination,
+                        HooperNavigation*/
         },
         props : ['data', 'city'],
         data () {

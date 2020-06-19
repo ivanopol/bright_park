@@ -6,9 +6,8 @@
                              :car='@json($data['slider']['slides'])'></header-sticky-model>
     <header-component :line="true" :theme="'light'" :city="'{{$city}}'"
                       :car='@json($data['slider']['slides'])'></header-component>
-    <body>
     <div class="">
-        <hooper-component :data='@json($data['slider'])' :city='@json($cities['active'])'></hooper-component>
+        <hooper-component :data='@json($data['slider'])' :city='@json($cities['active'])' ></hooper-component>
 
         @foreach ($data['blocks'] as $key => $block)
             <info-component :block='@json($block)' :n='@json($key)' :model='@json($data['model_id'])' :type='@json($data['type_id'])' :data='@json($data)'></info-component>
@@ -60,5 +59,4 @@
     {!! html_entity_decode($cities['active']['begin_script']) !!}
     <scroll-event-handler-component></scroll-event-handler-component>
     <event-handler-component></event-handler-component>
-    </body>
 @endsection
