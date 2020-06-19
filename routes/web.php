@@ -13,6 +13,17 @@
 
 // Редиректы
 // Ретаргетинг и прочее
+Route::get("/single-car-credit", function () { return redirect("/perm/stocks/lada_vesta_vygoda_10_po_gosprogramme"); });
+Route::get("/special/kalina-that-number", function () { return redirect("/perm/stocks/lada_vesta_vygoda_10_po_gosprogramme"); });
+Route::get("/perm/credit-granta-hatchback", function () { return redirect("/perm/granta/sedan"); });
+Route::get("/magnitogorsk/services/vesta-sw-cross-3-9-na-3-goda", function () { return redirect("/magnitogorsk/stocks/lada_vesta_vygoda_10_po_gosprogramme"); });
+Route::get("/moscow/credit-granta-hatchback", function () { return redirect("/moscow/stocks/lada_granta_0_pervonachalnyj_vznos"); });
+Route::get("/moscow/credit-granta-hatchback", function () { return redirect("/moscow/stocks/lada_granta_0_pervonachalnyj_vznos"); });
+Route::get("/credit-granta-hatchback", function () { return redirect("/perm/granta/sedan"); });
+Route::get("/moscow/special/kalina-that-number", function () { return redirect("/moscow/granta/sedan"); });
+Route::get("/volgograd/lada/vesta/vesta-sw-cross", function () { return redirect("/volgograd/vesta/sw-cross"); });
+Route::get("/volgograd/services/programma-trejd-in-dlya-avtomobilej-s-pts-2019-goda", function () { return redirect("/volgograd/stocks/lada_granta_0_pervonachalnyj_vznos"); });
+Route::get("/moscow/single-car-credit", function () { return redirect("/moscow/stocks/lada_vesta_vygoda_10_po_gosprogramme"); });
 Route::get("/{city}/lada-v-brajt-parke-na-osobyh-usloviyah", function ($city) { return redirect("/{$city->alias}/special_offers"); });
 Route::get("/{city}/specialnoe-predlozhenie-moskva", function ($city) { return redirect("/{$city->alias}/special_offers"); });
 Route::get("/{city}/services", function ($city) { return redirect("/{$city->alias}/stocks"); });
