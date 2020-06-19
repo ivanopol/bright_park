@@ -4,6 +4,11 @@
     <tab-bar :theme="'dark'" :cities='@json($cities)' :models='@json($models)' :phone="'{{$cities['active']['phone']}}'"></tab-bar>
     <header-sticky-component :theme="'light'" :city="'{{$city}}'"></header-sticky-component>
     <header-component :absolute="true"  :theme="'light'" :city="'{{$city}}'" ></header-component>
+
+    <div class="container">
+        {{Breadcrumbs::render("privacy", $city)}}
+    </div>
+
     <div class="container p-top-90">
         <div class="stocks-wrapper">
         <h1 class="ad_h1">Политика конфиденциальности</h1>

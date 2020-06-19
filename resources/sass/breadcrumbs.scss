@@ -1,50 +1,30 @@
-.model-details-breadcrumbs {
-    display: flex;
-    justify-content: center;
-    .breadcrumbs {
-        z-index: 2;
-        li {
-            &:before {
-                color: rgba(90, 98, 104, 0.7);
-            }
-
-
-            a {
-                color: rgba(90, 98, 104, 0.7);
-            }
-        }
-    }
-
-    @media only screen and (min-width: 580px) {
-        .breadcrumbs {
-            li {
-                margin-top: 10px;
-            }
-        }
-    }
-}
-
 .breadcrumbs {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-content: center;
     flex-direction: row;
-    margin-bottom: 10px;
+    padding: 15px 20px;
     li {
-        margin-right: 15px;
+        margin-right: 23px;
         position: relative;
+        z-index: 3;
 
         &:before {
-            content: '/';
+            content: "–";
             display: block;
             position: absolute;
-            right: -10px;
-            top: 2px;
+            right: -16px;
+            top: 0;
             color: rgba(0, 0, 0, 0.6);
         }
 
         &:last-child {
             margin-right: 0;
+
+            a {
+                color: rgba(0, 0, 0, 0.6);
+            }
+
             &:before {
                 content: '';
             }
@@ -54,7 +34,7 @@
             font-size: 12px;
             font-family: PragmaticaLightC, Helvetica, sans-serif;
             font-weight: normal;
-            color: rgba(0, 0, 0, 0.7);
+            color: rgba(0, 0, 0, 0.9);
         }
     }
 
@@ -71,6 +51,43 @@
     @media only screen and (min-width: 580px) {
         & {
             justify-content: flex-start;
+           // padding: 15px 60px;
+
+            li {
+                a {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 900px) {
+        & {
+           // padding: 15px 60px;
         }
     }
 }
+
+.model-breadcrumbs {
+    .breadcrumbs {
+        justify-content: flex-end;
+
+        @media only screen and (min-width: 580px) {
+            & {
+                padding: 15px 20px;
+            }
+        }
+
+        @media only screen and (min-width: 1367px) {
+            & {
+                padding: 15px 0 15px 60px;
+            }
+        }
+    }
+}
+
+/*.model-details-breadcrumbs {
+    .breadcrumbs {
+        padding: 15px 30px;
+    }
+}*/

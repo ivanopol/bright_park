@@ -1,5 +1,5 @@
 <template>
-    <header :class="[ absolute ? 'absolute' : '' ]">
+    <header :class="head_class">
         <div class="logo-wrap" :class="theme">
             <div class="container logo-wrap-row">
                 <div class="logo-bright-park">
@@ -33,17 +33,17 @@
                 default: true,
                 type: Boolean
             },
-            absolute: {
-                default: false,
-                type: Boolean
-            },
             city: {
                 type: String
             },
             car: {
                 default: null,
                 type: Object
-            }
+            },
+            head_class: {
+                default: '',
+                type: String
+            },
         },
         data: function () {
             return {
@@ -67,11 +67,6 @@
         width: 100%;
         position: relative;
         margin-bottom: 26px;
-
-
-        &.absolute {
-         //   position: absolute;
-        }
 
         .logo-wrap {
             .logo-wrap-row {
@@ -116,14 +111,6 @@
                 }
             }
 
-            @media only screen and (min-width: 580px) and  (max-width: 890px) {
-
-            }
-
-            @media only screen and (min-width: 891px) and  (max-width: 1366px) {
-
-            }
-
             &.dark {
                 padding-bottom: 10px;
                 background-color: #000;
@@ -134,7 +121,7 @@
         }
         .lada-line {
             background: url(/build/images/lada-line.svg) no-repeat;
-            width: 100vw;
+            width: 100%;
             height: 40px;
             margin-top: -2px;
           //  background-position: 100% -85px;
@@ -142,7 +129,7 @@
             left: 0;
 
             p {
-                padding: 20px 20px;
+                padding: 20px 20px 0;
                 text-align: right;
                 font-weight: bold;
             }
@@ -164,6 +151,10 @@
         }
 
         @media only screen and (min-width: 580px) {
+            &.header-model {
+                margin-bottom: 40px;
+            }
+
             .lada-line {
                 height: 100px;
                 background: url(/build/images/lada-line.png) no-repeat;
@@ -190,6 +181,7 @@
                     padding-top: 35px;
                     max-width: 1200px;
                     margin: 0 auto;
+                    padding: 35px 0 0 20px;
                 }
             }
         }
@@ -197,7 +189,7 @@
 
     @media only screen and (min-width: 580px) {
         header {
-            margin-bottom: 40px;
+            margin-bottom: 55px;
         }
     }
 

@@ -3,10 +3,13 @@
 @section('content')
     <tab-bar :cities='@json($cities)' :models='@json($models)' :phone="'{{$cities['active']['phone']}}'"></tab-bar>
     <header-sticky-model :theme="'light'" :city="'{{$city}}'" :button=true
-                             :car='@json($data['slider']['slides'])'></header-sticky-model>
-    <header-component :line="true" :theme="'light'" :city="'{{$city}}'"
+                             :car='@json($data['slider']['slides'])' ></header-sticky-model>
+    <header-component :line="true" :theme="'light'" :city="'{{$city}}'" :head_class="'header-model'"
                       :car='@json($data['slider']['slides'])'></header-component>
     <div class="">
+        <div class="container model-breadcrumbs">
+            {{Breadcrumbs::render("model", $city, $car_model, $car_type)}}
+        </div>
         <hooper-component :data='@json($data['slider'])' :city='@json($cities['active'])' ></hooper-component>
 
         @foreach ($data['blocks'] as $key => $block)

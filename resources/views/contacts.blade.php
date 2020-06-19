@@ -4,9 +4,10 @@
     <tab-bar :theme="'dark'" :cities='@json($cities)' :models='@json($models)' :phone="'{{$cities['active']['phone']}}'"></tab-bar>
     <header-sticky-component :theme="'light'" :city="'{{$city}}'"></header-sticky-component>
     <header-component :absolute="true"  :theme="'light'" :city="'{{$city}}'" ></header-component>
-    <body>
+    <div class="container">
+        {{Breadcrumbs::render("contacts", $city)}}
+    </div>
     <div class="container p-top-90">
-
         <h1>Контакты</h1>
         <div class="contacts-wrap">
             <div class="contacts">
@@ -54,5 +55,4 @@
     {!! html_entity_decode($cities['active']['begin_script']) !!}
     <scroll-event-handler-component></scroll-event-handler-component>
     <event-handler-component></event-handler-component>
-    </body>
 @endsection
