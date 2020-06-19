@@ -1474,7 +1474,7 @@ footer {
         position: relative;
         color: #fff;
         text-align: center;
-        padding: 10px 0 20px;
+        padding: 20px 0;
         width: 100%;
 
         //background: url(/build/images/pixel_dark.png), url(/build/images/slider/full/granta/lada_granta_cross.png) no-repeat center center;
@@ -1667,7 +1667,7 @@ footer {
             }
         }
 
-        .btn-banner {
+        a {
             cursor: pointer;
             display: inline-block;
             color: #fff;
@@ -1733,14 +1733,14 @@ footer {
         }
 
         &>div {
-            padding: 3% 5%;
+            padding: 5% 5%;
 
             .items-data {
                 width: 52%;
                 text-align: left;
             }
 
-            .btn-banner {
+            a {
                 width: auto;
             }
         }
@@ -1758,10 +1758,10 @@ footer {
         margin-right: auto;
 
         &>div {
-            padding: 3% 7%;
+            padding: 5% 7%;
 
             .items-data {
-                .btn-banner {
+                a {
                     margin-top: 5%;
                 }
             }
