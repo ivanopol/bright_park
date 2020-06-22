@@ -123,7 +123,7 @@ class BasePageService
      * @param City|null $city Город
      * @return object
      */
-    public function getAllCarcasses(CarModel $car_model, City $city = null) : array
+    public function getAllCarcasses(CarModel $car_model, City $city = null) : object
     {
         return CarModel::where('id', $car_model->id)->with('carcasses')->get();
     }
