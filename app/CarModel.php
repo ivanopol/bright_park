@@ -38,6 +38,11 @@ class CarModel extends Model
         return $this->belongsToMany('App\CarType')->using('App\CarModelCarType')->withPivot('preview', 'price')->wherePivot('active', 1);
     }
 
+    public function carcasses()
+    {
+        return $this->belongsToMany('App\CarType')->using('App\CarModelCarType')->withPivot('image')->wherePivot('active', 1);
+    }
+
     /**
      * Получить модели с ценам по кузовам.
      */
@@ -65,6 +70,17 @@ class CarModel extends Model
     {
         $car_list_tmp = $this::with('types')->get();
         return $this->formatCarList($car_list_tmp);
+    }
+
+    /**
+     * Получаем список кузовов заданной модели
+     * @param CarModel $model Объект модели
+     * @return array
+     */
+    public function getCarcasses(CarModel $model) : array
+    {
+        //$carcasses = $this::
+        return [];
     }
 
 
