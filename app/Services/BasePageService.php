@@ -8,6 +8,8 @@ use App\Retarget;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use App\CarModel;
+use App\City;
 
 class BasePageService
 {
@@ -112,6 +114,18 @@ class BasePageService
         ];
 
         return $data;
+    }
+
+    /**
+     * Получаем все кузовы для заданной модели
+     *
+     * @param CarModel $car_model Модель
+     * @param City|null $city Город
+     * @return object
+     */
+    public function getAllCarcasses(CarModel $car_model, City $city = null) : array
+    {
+        return CarModel::where('id', $car_model->id)->with('carcasses')->get();
     }
 
     /**
