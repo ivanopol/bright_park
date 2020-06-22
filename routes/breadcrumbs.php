@@ -6,6 +6,16 @@ Breadcrumbs::for('main', function ($trail) {
 });
 
 // Models
+Breadcrumbs::for('models', function ($trail, $city, $car_model) {
+
+    $title = $car_model->title;
+
+    $trail->parent('main');
+    $trail->push('Модельный ряд ' . $title,
+        route('models', [$city, $car_model->slug]));
+});
+
+// Model
 Breadcrumbs::for('model', function ($trail, $city, $car_model, $car_type) {
 
     $title = $car_model->title === $car_type->title_ru ? $car_model->title : $car_model->title . ' ' . $car_type->title_ru;
