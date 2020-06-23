@@ -133,6 +133,8 @@ Route::middleware(['utm.check', 'cookie.check', 'counter'])->group(function () {
     Route::get('/{city}/news/{news_title}', 'HomeController@news_details')->name('news.one');
     Route::get('/{city?}', 'HomeController@index')->name('index');
     Route::get('/{city?}/special_offers', 'HomeController@special_offers')->name('special_offers');
+    Route::get('/{city}/contacts', 'HomeController@contacts')->name('contacts');
+    Route::get('/{city}/service', 'HomeController@service')->name('service');
     Route::get('/{city?}/{car_model}', 'HomeController@models')->name('models');
     Route::get('/{city?}/{car_model}/{car_type}', 'HomeController@model')->name('model');
     Route::get('/{city?}/{car_model}/{car_type}/model_details', 'HomeController@model_details')->name('model_details');
@@ -143,6 +145,4 @@ Route::middleware(['utm.check', 'cookie.check', 'counter'])->group(function () {
     Route::get('/get_brands', 'HomeController@get_brands')->name('get_brands');
     Route::any('/send_contact_form', 'ContactFormController@sendContactForm')->name('sendContactForm');
     Route::any('/check_visitor_cookie', 'ContactFormController@checkVisitorCookie')->name('checkVisitorCookie');
-    Route::get('/{city}/contacts', 'HomeController@contacts')->name('contacts');
-    Route::get('/{city}/service', 'HomeController@service')->name('service');
 });

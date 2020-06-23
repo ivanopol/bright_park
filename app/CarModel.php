@@ -12,6 +12,7 @@ class CarModel extends Model
         'preview',
         'price',
         'special_price',
+        'image',
         'count',
         'active',
     ];
@@ -71,18 +72,6 @@ class CarModel extends Model
         $car_list_tmp = $this::with('types')->get();
         return $this->formatCarList($car_list_tmp);
     }
-
-    /**
-     * Получаем список кузовов заданной модели
-     * @param CarModel $model Объект модели
-     * @return array
-     */
-    public function getCarcasses(CarModel $model) : array
-    {
-        //$carcasses = $this::
-        return [];
-    }
-
 
     /**
      * Приводим массив автомобилей в удобный формат
