@@ -10,11 +10,26 @@
     <div class="">
         <section id="carcasses" class="carcasses_wrap">
             <div class="container">
-                <h1>LADA Granta от официального дилера в Перми</h1>
+                <h1>LADA {{$data['carcasses'][0]->title}} от официального дилера в {{$cities['active']['dative']}}</h1>
                 <ul>
                     @foreach ($data['carcasses'][0]->carcasses as $carcass)
                         <li>
-                          <img src="{{$carcass->pivot->image}}" alt="{{$data['carcasses'][0]->title . ' ' . $carcass->title_ru}}">
+                            <div class="carcasses-list">
+                                <div class="carcasses-list-img">
+                                    <img src="{{$carcass->pivot->image}}" alt="{{$data['carcasses'][0]->title . ' ' . $carcass->title_ru}}">
+                                </div>
+                                <div class="carcasses-list-title">
+                                    <span class="arcasses-list-title-el">{{$data['carcasses'][0]->title . ' ' . $carcass->title_ru}}</span>
+                                    <span class="carcasses-list-title-slogan"></span>
+                                </div>
+                                <div class="carcasses-list-prices">
+                                     <span class="carcasses-list-prices-new">от <span>{{$carcass->pivot->special_price}}</span> р.</span>
+                                     <span class="carcasses-list-prices-old">от <span>{{$carcass->pivot->price}}</span> р.</span>
+                                </div>
+                                <div class="carcasses-list-button">
+                                    <a href="#" class="btn btn-primary green">Подробнее</a>
+                                </div>
+                            </div>
                         </li>
 {{--                        <li>
                             <a id="models__list__{{$carcass->slug}}" class="event" href="{{ route('model', ['city' => $city, 'car_model' => $model->slug, 'car_type' => $model->types_preview[0]->slug])}}">

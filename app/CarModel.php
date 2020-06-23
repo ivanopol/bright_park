@@ -41,7 +41,7 @@ class CarModel extends Model
 
     public function carcasses()
     {
-        return $this->belongsToMany('App\CarType')->using('App\CarModelCarType')->withPivot('image')->wherePivot('active', 1);
+        return $this->belongsToMany('App\CarType')->using('App\CarModelCarType')->withPivot('image', 'price', 'special_price')->wherePivot('active', 1);
     }
 
     /**
