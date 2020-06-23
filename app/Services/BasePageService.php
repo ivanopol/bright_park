@@ -125,7 +125,13 @@ class BasePageService
      */
     public function getAllCarcasses(CarModel $car_model, City $city = null) : object
     {
-        return CarModel::where('id', $car_model->id)->with('carcasses')->get();
+        $carcasses = CarModel::where('id', $car_model->id)->with('carcasses')->get();
+
+        foreach ($carcasses[0]->carcasses as &$carcass) {
+            $carcass->pivot->image = str_replace('mobile/', '', $carcass->pivot->image);
+        }
+
+        return $carcasses;
     }
 
     /**

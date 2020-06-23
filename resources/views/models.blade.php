@@ -14,7 +14,7 @@
                 <ul>
                     @foreach ($data['carcasses'][0]->carcasses as $carcass)
                         <li>
-                          {{$carcass->pivot->image}}
+                          <img src="{{$carcass->pivot->image}}" alt="{{$data['carcasses'][0]->title . ' ' . $carcass->title_ru}}">
                         </li>
 {{--                        <li>
                             <a id="models__list__{{$carcass->slug}}" class="event" href="{{ route('model', ['city' => $city, 'car_model' => $model->slug, 'car_type' => $model->types_preview[0]->slug])}}">
