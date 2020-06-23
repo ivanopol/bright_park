@@ -112,6 +112,14 @@ h3 {
     padding-top: 90px;
 }
 
+.p-top-40 {
+    padding-top: 40px;
+}
+
+.p-top-20 {
+    padding-top: 20px;
+}
+
 .m-bottom-120 {
     margin-bottom: 120px;
 }
@@ -2108,6 +2116,86 @@ footer {
         .trigger {
             &-wrap2 {
                 width: auto;
+            }
+        }
+    }
+}
+
+.carcasses_wrap {
+    @media only screen and (max-width: 580px) {
+        h1 {
+            font-family: PragmaticaLightCBold, Helvetica, sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 1.2;
+            text-align: left;
+            text-transform: unset;
+            margin-bottom: 20px;
+            padding: 0 20px;
+        }
+    }
+
+    ul.carcasses-ul {
+        width: 90%;
+        margin: 0 auto;
+
+        li {
+            border: 2px solid #c7c7c7;
+            margin: 15px 0;
+            border-radius: 10px;
+
+            .carcasses-list {
+
+                &-description {
+                    padding: 0 20px 20px 20px;
+                }
+
+                &-img {
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                &-title {
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 25px;
+                    font-family: PragmaticaLightCBold, Helvetica, sans-serif;
+                    line-height: 1.2;
+                    &-el {
+                        font-size: 22px;
+                        font-weight: bold;
+                        margin-bottom: 5px;
+                    }
+
+                    &-slogan {
+                        font-size: 16px;
+                        color: #737371;
+                    }
+                }
+
+                &-prices {
+                    display: flex;
+                    justify-content: space-between;
+                    font-family: PragmaticaLightCBold, Helvetica, sans-serif;
+                    align-items: baseline;
+                    &-new {
+                        font-size: 22px;
+                        font-weight: bold;
+                        line-height: 1.2;
+                    }
+
+                    &-old {
+                        font-size: 15px;
+                        line-height: 1.2;
+                        color: #737371;
+                        text-decoration: line-through;
+                    }
+                }
+
+                &-button {
+
+                }
             }
         }
     }

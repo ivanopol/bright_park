@@ -11,34 +11,28 @@
         <section id="carcasses" class="carcasses_wrap">
             <div class="container">
                 <h1>LADA {{$data['carcasses'][0]->title}} от официального дилера в {{$cities['active']['dative']}}</h1>
-                <ul>
+                <ul class="carcasses-ul">
                     @foreach ($data['carcasses'][0]->carcasses as $carcass)
                         <li>
                             <div class="carcasses-list">
                                 <div class="carcasses-list-img">
                                     <img src="{{$carcass->pivot->image}}" alt="{{$data['carcasses'][0]->title . ' ' . $carcass->title_ru}}">
                                 </div>
-                                <div class="carcasses-list-title">
-                                    <span class="arcasses-list-title-el">{{$data['carcasses'][0]->title . ' ' . $carcass->title_ru}}</span>
-                                    <span class="carcasses-list-title-slogan">{{$carcass->pivot->slogan}}</span>
-                                </div>
-                                <div class="carcasses-list-prices">
-                                     <span class="carcasses-list-prices-new">от <span>{{$carcass->pivot->special_price}}</span> р.</span>
-                                     <span class="carcasses-list-prices-old">от <span>{{$carcass->pivot->price}}</span> р.</span>
-                                </div>
-                                <div class="carcasses-list-button">
-                                    <a href="#" class="btn btn-primary green">Подробнее</a>
+                                <div class="carcasses-list-description">
+                                    <div class="carcasses-list-title">
+                                        <span class="carcasses-list-title-el">{{$data['carcasses'][0]->title . ' ' . $carcass->title_ru}}</span>
+                                        <span class="carcasses-list-title-slogan">{{$carcass->pivot->slogan}}</span>
+                                    </div>
+                                    <div class="carcasses-list-prices">
+                                         <span class="carcasses-list-prices-new">от <span>{{ number_format($carcass->pivot->special_price, 0, ',', ' ') }}</span> р.</span>
+                                         <span class="carcasses-list-prices-old">от <span>{{ number_format($carcass->pivot->price, 0, ',', ' ') }}</span> р.</span>
+                                    </div>
+                                    <div class="carcasses-list-button">
+                                        <a href="#" class="btn btn-primary btn-position green">Подробнее</a>
+                                    </div>
                                 </div>
                             </div>
                         </li>
-{{--                        <li>
-                            <a id="models__list__{{$carcass->slug}}" class="event" href="{{ route('model', ['city' => $city, 'car_model' => $model->slug, 'car_type' => $model->types_preview[0]->slug])}}">
-                                <div class="img_wrap">
-                                    <img src="{{ $model->preview }}" alt="{{ $model->title }}">
-                                </div>
-                                <div class="title">{{ $model->title }}</div>
-                            </a>
-                        </li>--}}
                     @endforeach
                 </ul>
             </div>
