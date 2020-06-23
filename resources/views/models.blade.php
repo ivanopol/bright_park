@@ -20,7 +20,7 @@
                                 </div>
                                 <div class="carcasses-list-title">
                                     <span class="arcasses-list-title-el">{{$data['carcasses'][0]->title . ' ' . $carcass->title_ru}}</span>
-                                    <span class="carcasses-list-title-slogan"></span>
+                                    <span class="carcasses-list-title-slogan">{{$carcass->pivot->slogan}}</span>
                                 </div>
                                 <div class="carcasses-list-prices">
                                      <span class="carcasses-list-prices-new">от <span>{{$carcass->pivot->special_price}}</span> р.</span>
