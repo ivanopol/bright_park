@@ -1,6 +1,12 @@
 <template>
     <footer class="block footer" v-bind:class="[ footer_class ]" itemscope itemtype="http://schema.org/Organization">
         <span class="hidden" itemprop="name">Брайт Парк</span>
+        <span class="hidden" itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+            <img itemprop="contentUrl" src="/build/images/logo_bright_park_02.svg" alt="Logo">
+              <meta itemprop="width" content="1007">
+              <meta itemprop="height" content="125">
+        </span>
+        <span class="hidden"><link itemprop="url" :href="'https://brightpark.ru/' + cities.active.value"></span>
         <div class="block-text center mb">
             <h2><span class="c_orange">Брайт Парк </span> всегда на связи</h2>
             <p>Наш менеджер с&nbsp;удовольствием ответит на&nbsp;ваши вопросы по&nbsp;телефону&nbsp;<span itemprop="telephone" class="block callibri_tel">{{phone_formatted}}</span>
@@ -11,6 +17,7 @@
                 <a :href="'tel:' + phone" id="main__footer_call" :data-goal="goal_call" @click="sendGoals(goal_call)" class="btn btn btn-primary btn-position green callibri_button" v-if="mobile">Позвонить</a>
             </div>
             <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">Брайт парк ближе, чем кажется<br> <span itemprop="streetAddress">{{cities.active.address}}</span></p>
+
         </div>
         <yandex-map-component :coordinates='coordinates'
                               :button="ym_button"
