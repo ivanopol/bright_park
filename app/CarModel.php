@@ -10,11 +10,7 @@ class CarModel extends Model
         'title',
         'slug',
         'preview',
-        'price',
-        'special_price',
-        'image',
-        'count',
-        'active',
+        'description',
     ];
     /**
      * Таблица, связанная с моделью.

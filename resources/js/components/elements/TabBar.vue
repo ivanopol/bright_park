@@ -48,9 +48,9 @@
 
                 <div class="menu_content_block">
                     <div class="models_wrap">
-                        <ul class="">
+                        <ul class="" itemscope itemtype="http://schema.org/SiteNavigationElement">
                             <li v-for="model in models" v-bind:key="model.id">
-                                <a :id="'menu_' + model.slug" class="event" :href="'/' + cities.active.value + '/' + model.slug + '/' + model.types_preview[0].slug">
+                                <a :id="'menu_' + model.slug" class="event" :href="'/' + cities.active.value + '/' + model.slug + '/' + model.types_preview[0].slug" itemprop="url">
                                     <div class="title" v-text="model.title"></div>
                                 </a>
                             </li>
@@ -58,9 +58,9 @@
                     </div>
 
                     <div class="other_links">
-                        <ul>
+                        <ul itemscope itemtype="http://schema.org/SiteNavigationElement">
                             <li>
-                                <a id="menu_service" :href="'/' + cities.active.value + '/service'" class="event">
+                                <a id="menu_service" :href="'/' + cities.active.value + '/service'" class="event" itemprop="url">
                                     <div class="title">
                                         <span><icon-spanner></icon-spanner> СЕРВИС</span>
                                     </div>
@@ -70,21 +70,21 @@
                     </div>
 
                     <div class="other_links_2">
-                        <ul>
+                        <ul itemscope itemtype="http://schema.org/SiteNavigationElement">
                             <li>
-                                <a id="menu_main" :href="'/' + cities.active.value" class="event"><div class="title">Главная страница</div></a>
+                                <a id="menu_main" :href="'/' + cities.active.value" class="event" itemprop="url"><div class="title">Главная страница</div></a>
                             </li>
                             <li>
-                                <a id="menu_contacts" :href="'/' + cities.active.value + '/contacts'" class="event"><div class="title">Контакты</div></a>
+                                <a id="menu_contacts" :href="'/' + cities.active.value + '/contacts'" class="event" itemprop="url"><div class="title">Контакты</div></a>
                             </li>
                             <li>
-                                <a id="menu_stocks" :href="'/' + cities.active.value + '/stocks'" class="event"><div class="title">Акции</div></a>
+                                <a id="menu_stocks" :href="'/' + cities.active.value + '/stocks'" class="event" itemprop="url"><div class="title">Акции</div></a>
                             </li>
                             <li>
-                                <a id="menu_news" :href="'/' + cities.active.value + '/news'" class="event"><div class="title">Новости</div></a>
+                                <a id="menu_news" :href="'/' + cities.active.value + '/news'" class="event" itemprop="url"><div class="title">Новости</div></a>
                             </li>
                             <li>
-                                <a id="menu_privacy" :href="'/' + cities.active.value + '/privacy'" class="event"><div class="title font-tiny">Политика конфиденциальности</div></a>
+                                <a id="menu_privacy" :href="'/' + cities.active.value + '/privacy'" class="event" itemprop="url"><div class="title font-tiny">Политика конфиденциальности</div></a>
                             </li>
                         </ul>
                     </div>

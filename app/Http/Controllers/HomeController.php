@@ -136,8 +136,6 @@ class HomeController extends Controller
             'place' => $data['coordinates']
         ]);
 
-     //   dd($data['carcasses']);
-
         return view('models', [
             'data' => $data,
             'models' => $models,

@@ -37,7 +37,7 @@
                         </li>
                     @endforeach
                 </ul>
-                <div class="text-after"></div>
+                <div class="text-after">{!! $data['carcasses'][0]->description !!}</div>
             </div>
         </section>
         <footer-component :coordinates='@json($data['coordinates'])'
