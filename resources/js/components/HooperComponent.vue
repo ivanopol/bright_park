@@ -3,7 +3,7 @@
         <div class="items-mini_wrap container">
             <hooper class="items-mini" id="items-mini" :settings="hooperSettings" v-on:slide="change_line">
                 <slide v-for="slide in data.slides_mini" v-bind:key="slide.id">
-                    <a :id="'slide_'+ slide.title" class="event" :href="slide.url" :class="{ current_model : slide.active}">
+                    <a :id="'models__carcase-choice__'+ slide.slug" class="event" :href="slide.url" :class="{ current_model : slide.active}">
                         <picture>
                             <source :srcset="get_source(slide.image)" media="(min-width: 580px)">
                             <img :src="slide.image" :alt="slide.alt">
@@ -23,7 +23,7 @@
                 <div class="items-data">
                     <h1 class="title" v-html="'Новая ' + data.slides.title + '<br> по&nbsp;лучшей цене в&nbsp;' + city.dative"></h1>
                     <!-- <p class="sub_title" v-html="data.slides.subtitle"></p>-->
-                    <a id="purchase_conditions" class="event btn-banner" :href="data.slides.link">Условия покупки</a>
+                    <a id="models__banner__purchase-conditions" class="event btn-banner" :href="data.slides.link">Условия покупки</a>
                 </div>
                 <span class="more_details">
                     <span>Подробнее</span>

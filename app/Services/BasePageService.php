@@ -71,6 +71,7 @@ class BasePageService
             foreach ($car_types as $type) {
                 if ($slide->type_id == $type->id) {
                     $slide->url = '/' . $city . '/' . $car_model->slug . '/' . $type->slug;
+                    $slide->slug = $type->slug;
                 }
 
                 if ($slide->type_id == $car_type->id && $slide->model_id == $car_model->id) {
