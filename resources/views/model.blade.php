@@ -16,7 +16,7 @@
             <info-component :block='@json($block)' :n='@json($key)' :model='@json($data['model_id'])' :type='@json($data['type_id'])' :data='@json($data)'></info-component>
             @if ($key === 1)
                 <form-buy-component :cities='@json($cities)'
-                                    :form_id="'model__form_1'"
+                                    :form_id="'models__learn-about-details_'"
                                     :button_text="'Отправить'"
                                     :form_title="'<span class=\'c_orange\'>Узнайте</span> о модели подробнее'"
                                     :goal="'about_model'">
@@ -28,7 +28,7 @@
             <color-choose-component :colors='@json($data['colors'])'></color-choose-component>
         @endif
         <form-component :cities='@json($cities)'
-                        :form_id="'model__form_2'"
+                        :form_id="'models__try-it-yourself_'"
                         :form_title="'Расширенный тест-драйв в Брайт парке'"
                         :goal="'test_drive'">
         </form-component>

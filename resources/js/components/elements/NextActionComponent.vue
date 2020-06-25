@@ -5,16 +5,16 @@
         </div>
         <ul>
             <li>
-                <a id="form_test_drive_model" class="btn event" href="#" v-on:click.prevent="show('Записаться на тест-драйв', 'model__modal_test-drive', 'test_drive')">Записаться на тест-драйв</a>
+                <a id="models__next-action__test-drive" class="btn event" href="#" v-on:click.prevent="show('Записаться на тест-драйв', 'models__modal-form-test-drive_', 'test_drive')">Записаться на тест-драйв</a>
             </li>
             <li>
-                <a id="count_payment" class="btn event" :href="this.link + '/model_details#credit'">Рассчитать кредит</a>
+                <a id="models__next-action__count-payment" class="btn event" :href="this.link + '/model_details#credit'">Рассчитать кредит</a>
             </li>
             <li>
-                <a id="estimate_car" class="btn event" :href="this.link + '/model_details#estimation'">Оценить свой автомобиль</a>
+                <a id="models__next-action__estimate-car" class="btn event" :href="this.link + '/model_details#estimation'">Оценить свой автомобиль</a>
             </li>
             <li>
-                <a id="get_offer" class="btn event" href="#" v-on:click.prevent="show('Получить спецпредложение', 'model__modal_special-offer', 'specialoffer')">Получить спецпредложение</a>
+                <a id="models__next-action__get-offer" class="btn event" href="#" v-on:click.prevent="show('Получить спецпредложение', 'models__modal-form-get-offer_', 'specialoffer')">Получить спецпредложение</a>
             </li>
         </ul>
         <modal name="form-callback" height="auto" :adaptive="true">

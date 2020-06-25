@@ -31,7 +31,9 @@
             this.elements = document.getElementsByClassName("event");
 
             let handle = async function (event) {
-                event.preventDefault();
+                if ( this.getAttribute("href") ) {
+                    event.preventDefault();
+                }
 
                 let data = {
                     'btn_id': this.getAttribute("id"),
