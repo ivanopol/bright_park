@@ -3,7 +3,7 @@
         <span class="hidden" itemprop="name">Брайт Парк</span>
         <div class="block-text center mb">
             <h2><span class="c_orange">Брайт Парк </span> всегда на связи</h2>
-            <p>Наш менеджер с&nbsp;удовольствием ответит на&nbsp;ваши вопросы по&nbsp;телефону&nbsp;<span itemprop="telephone" class="block callibri_tel">{{phone_formatted}}</span><br>
+            <p>Наш менеджер с&nbsp;удовольствием ответит на&nbsp;ваши вопросы по&nbsp;телефону&nbsp;<span itemprop="telephone" class="block callibri_tel">{{phone_formatted}}</span>
             <div class="footer-callback-wrap" v-show="!mobile">
                 <a href="#" id="footer_request_callback" class="btn btn btn-primary btn-position green event" v-on:click.prevent="show('Заказать звонок', 'footer__modal_callback', 'Отправить', 1, 'callback')" >Заказать звонок</a>
             </div>
@@ -136,6 +136,10 @@
     }
 
     footer {
+        &.block p {
+            margin-bottom: 25px;
+        }
+
         .footer-callback-wrap,
         .footer-call-wrap,
         .btn-place-wrap {
@@ -158,7 +162,7 @@
         p {
             /*padding-top: 20px;*/
             font-family: PragmaticaLightCBold, Helvetica, sans-serif;
-            font-size: 18px;
+            font-size: 16px;
         }
 
         a {
@@ -168,6 +172,11 @@
         @media only screen and (min-width: 580px) {
             a {
                 width: auto;
+            }
+
+            &.block p {
+                margin-bottom: 40px;
+                font-size: 18px;
             }
         }
     }
