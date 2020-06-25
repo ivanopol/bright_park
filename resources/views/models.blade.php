@@ -15,6 +15,8 @@
                     @foreach ($data['carcasses'][0]->carcasses as $carcass)
                         <li>
                             <div class="carcasses-list">
+                                <span class="hidden" itemprop="name">{{$data['carcasses'][0]->title . ' ' . $carcass->title_ru}}</span>
+                                <span class="hidden" itemprop="description">{{$carcass->pivot->slogan}}</span>
                                 <a href="{{ route('model', ['city' => $city, 'car_model' => $data['carcasses'][0]->slug, 'car_type' => $carcass->slug ]) }}">
                                     <div class="carcasses-list-img">
                                         <img itemprop="image" src="{{$carcass->pivot->image}}" alt="{{$data['carcasses'][0]->title . ' ' . $carcass->title_ru}}">

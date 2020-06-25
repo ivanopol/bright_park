@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\TwitterCard;
+use Artesaos\SEOTools\Facades\JsonLd;
 use App\Seo;
 use App\City;
 use App\Contacts;
@@ -50,7 +51,15 @@ class SeoService
         SEOMeta::setDescription($seo->description);
         SEOMeta::setCanonical($this->request->url());
         OpenGraph::setTitle($seo->og_title);
+        OpenGraph::setType('website');
+        OpenGraph::setUrl($this->request->fullUrl());
         OpenGraph::setDescription($seo->og_description);
+
+        JsonLd::setTitle($seo->og_title);
+        JsonLd::setType('website');
+        JsonLd::setUrl($this->request->fullUrl());
+        JsonLd::setDescription($seo->og_description);
+
         if (isset($seo->image) && $seo->image) {
             OpenGraph::addImage($seo->image);
         }
