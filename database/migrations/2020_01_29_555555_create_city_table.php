@@ -15,6 +15,7 @@ class CreateCityTable extends Migration
             $table->string('title_en');
             $table->string('alias');
             $table->string('city_dative');
+            $table->string('opening_hours');
             $table->string('callback_emails');
             $table->string('callback_service_emails');
             $table->string('coordinates');
