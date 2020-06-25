@@ -2,20 +2,20 @@
     <section class="buttons-block container">
         <ul class="buttons-block-list">
             <li>
-                <img id="main_btn_profitable_credit" class="buttons-block-list-credit event" src="/build/images/main/buttons_block/profitable_credit.png" alt="Брайт Парк: выгодный кредит"
+                <img id="main__image-buttons__profitable-credit" class="buttons-block-list-credit event" src="/build/images/main/buttons_block/profitable_credit.png" alt="Брайт Парк: выгодный кредит"
                 v-on:click.prevent="show('Узнать про кредит', 'main__modal__btn-credit', 'Отправить', 1, 'credit')"/>
             </li>
             <li>
-                <img id="main_btn_exchange" class="buttons-block-list-exchange event" src="/build/images/main/buttons_block/exchange.png" alt="Брайт Парк: обмен"
+                <img id="main__image-buttons__exchange" class="buttons-block-list-exchange event" src="/build/images/main/buttons_block/exchange.png" alt="Брайт Парк: обмен"
                 v-on:click.prevent="show('Узнать про обмен', 'main__modal__btn-exchange', 'Отправить', 1, 'obmen')"/>
             </li>
             <li>
-                <a id="main_btn_service" :href="'/' + cities.active.value + '/service'" class="event">
+                <a id="main__image-buttons__service" :href="'/' + cities.active.value + '/service'" class="event">
                     <img class="buttons-block-list-maintenance event" src="/build/images/main/buttons_block/maintenance.png" alt="Брайт Парк: техническое обслуживание"/>
                 </a>
             </li>
             <li>
-                <img id="main_btn_test_drive" class="buttons-block-list-test-drive event" src="/build/images/main/buttons_block/test_drive.png" alt="Брайт Парк: тест-драйв"
+                <img id="main__image-buttons__test-drive" class="buttons-block-list-test-drive event" src="/build/images/main/buttons_block/test_drive.png" alt="Брайт Парк: тест-драйв"
                 v-on:click.prevent="show('Записаться на тест-драйв', 'main__modal__btn-test-drive', 'Записаться', 1, 'test_drive')"/>
             </li>
         </ul>
