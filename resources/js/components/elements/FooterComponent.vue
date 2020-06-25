@@ -7,16 +7,24 @@
               <meta itemprop="height" content="125">
         </span>
         <span class="hidden"><link itemprop="url" :href="'https://brightpark.ru/' + cities.active.value"></span>
+        <span class="hidden">
+            <div itemscope itemtype="http://schema.org/AutoDealer">
+                <span itemprop="email">{{cities.active.email}}</span>
+                <time itemprop="openingHours" :datetime="cities.active.opening_hours.days.en + ', ' + cities.active.opening_hours.hours">{{cities.active.opening_hours.days.ru}}, {{cities.active.opening_hours.hours}}</time>
+            </div>
+        </span>
         <div class="block-text center mb">
             <h2><span class="c_orange">Брайт Парк </span> всегда на связи</h2>
-            <p>Наш менеджер с&nbsp;удовольствием ответит на&nbsp;ваши вопросы по&nbsp;телефону&nbsp;<span itemprop="telephone" class="block callibri_tel">{{phone_formatted}}</span>
+            <p >Наш менеджер с&nbsp;удовольствием ответит на&nbsp;ваши вопросы по&nbsp;телефону&nbsp;<span itemprop="telephone" class="block callibri_tel">{{phone_formatted}}</span></p>
             <div class="footer-callback-wrap" v-show="!mobile">
                 <a href="#" id="footer_request_callback" class="btn btn btn-primary btn-position green event" v-on:click.prevent="show('Заказать звонок', 'footer__modal_callback', 'Отправить', 1, 'callback')" >Заказать звонок</a>
             </div>
             <div class="footer-call-wrap" v-show="mobile">
                 <a :href="'tel:' + phone" id="main__footer_call" :data-goal="goal_call" @click="sendGoals(goal_call)" class="btn btn btn-primary btn-position green callibri_button" v-if="mobile">Позвонить</a>
             </div>
-            <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">Брайт парк ближе, чем кажется<br> <span itemprop="streetAddress">{{cities.active.address}}</span></p>
+            <p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">Брайт парк ближе, чем кажется<br> <span itemprop="streetAddress">{{cities.active.address}}</span><br>
+                <span itemscope itemtype="http://schema.org/LocalBusiness"><time itemprop="openingHours" :datetime="cities.active.opening_hours.days.en + ', ' + cities.active.opening_hours.hours">Ждем вас ежедневно с {{cities.active.opening_hours.hours_split.from}} до {{cities.active.opening_hours.hours_split.to}}</time></span>
+            </p>
 
         </div>
         <yandex-map-component :coordinates='coordinates'

@@ -14,6 +14,7 @@ class City extends Model
         'title_ru',
         'alias',
         'city_dative',
+        'opening_hours',
         'callback_emails',
         'callback_service_emails',
         'coordinates',
@@ -115,10 +116,28 @@ class City extends Model
 
             if ($city->alias === $city_active) {
 
+                $opening_hours_tmp = explode(';',  $city->opening_hours);
+                $days = explode(',', $opening_hours_tmp[0]);
+                $hours = explode('-', $opening_hours_tmp[1]);
+
+                $opening_hours = [
+                    'days' => [
+                        'en' => $days[0],
+                        'ru' => $days[1],
+                        'ru-full' => $days[2],
+                    ],
+                    'hours' => $opening_hours_tmp[1],
+                    'hours_split' => [
+                        'from' => $hours[0],
+                        'to' => $hours[1],
+                    ]
+                ];
+
                 $cities['active'] = [
                     'value' => $city->alias,
                     'label' => $city->title_ru,
                     'dative' => $city->city_dative,
+                    'opening_hours' => $opening_hours,
                     'coords' => $city->coordinates,
                     'jivosite_token' => $city->jivosite_token,
                     'begin_script' => $city->begin_script,
