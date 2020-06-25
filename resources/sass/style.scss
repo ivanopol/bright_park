@@ -2122,6 +2122,14 @@ footer {
 }
 
 .carcasses_wrap {
+    .text-after {
+        padding: 30px;
+        line-height: 1.4;
+
+        max-width: 750px;
+        margin: 0 auto;
+    }
+
     ul.carcasses-ul {
         width: 90%;
         margin: 0 auto;
@@ -2212,11 +2220,13 @@ footer {
 
         ul.carcasses-ul {
             display: flex;
-            justify-content: space-evenly;
+            justify-content: flex-start;
             flex-flow: wrap;
 
             li {
                 max-width: 330px;
+                margin: 15px 10px;
+
                 .carcasses-list {
                     &-title {
                         &-slogan {
