@@ -2122,27 +2122,17 @@ footer {
 }
 
 .carcasses_wrap {
-    @media only screen and (max-width: 580px) {
-        h1 {
-            font-family: PragmaticaLightCBold, Helvetica, sans-serif;
-            font-size: 20px;
-            font-weight: bold;
-            line-height: 1.2;
-            text-align: left;
-            text-transform: unset;
-            margin-bottom: 20px;
-            padding: 0 20px;
-        }
-    }
-
     ul.carcasses-ul {
         width: 90%;
         margin: 0 auto;
-
+        display: flex;
+        justify-content: space-around;
+        flex-flow: wrap;
         li {
             border: 2px solid #c7c7c7;
             margin: 15px 0;
             border-radius: 10px;
+            max-width: 373px;
 
             .carcasses-list {
 
@@ -2196,9 +2186,68 @@ footer {
                         text-decoration: line-through;
                     }
                 }
+            }
+        }
+    }
 
-                &-button {
+    @media only screen and (max-width: 580px) {
+        h1 {
+            font-family: PragmaticaLightCBold, Helvetica, sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 1.2;
+            text-align: left;
+            text-transform: unset;
+            margin-bottom: 20px;
+            padding: 0 20px;
+        }
+    }
 
+    @media only screen and (min-width: 581px) {
+        h1 {
+            font-size: 30px;
+            text-transform: unset;
+            padding: 40px 30px 0;
+        }
+
+        ul.carcasses-ul {
+            display: flex;
+            justify-content: space-evenly;
+            flex-flow: wrap;
+
+            li {
+                max-width: 330px;
+                .carcasses-list {
+                    &-title {
+                        &-slogan {
+                            height: 37px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 1367px) {
+        h1 {
+            font-size: 30px;
+            text-transform: unset;
+            padding: 40px 30px 0;
+        }
+
+        ul.carcasses-ul {
+            display: flex;
+            justify-content: flex-start;
+            flex-flow: wrap;
+            flex-direction: row;
+            li {
+                margin: 15px 10px;
+                .carcasses-list {
+                    &-title {
+                        &-slogan {
+                            height: 37px;
+                        }
+                    }
                 }
             }
         }
