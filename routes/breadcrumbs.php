@@ -7,11 +7,8 @@ Breadcrumbs::for('main', function ($trail) {
 
 // Models
 Breadcrumbs::for('models', function ($trail, $city, $car_model) {
-
-    $title = $car_model->title;
-
     $trail->parent('main');
-    $trail->push('Модельный ряд ' . $title,
+    $trail->push('Модельный ряд ' . $car_model->title,
         route('models', [$city, $car_model->slug]));
 });
 
@@ -21,6 +18,8 @@ Breadcrumbs::for('model', function ($trail, $city, $car_model, $car_type) {
     $title = $car_model->title === $car_type->title_ru ? $car_model->title : $car_model->title . ' ' . $car_type->title_ru;
 
     $trail->parent('main');
+    $trail->push('Модельный ряд ' . $car_model->title,
+        route('models', [$city, $car_model->slug]));
     $trail->push($title,
         route('model', [$city, $car_model->slug, $car_type->slug]));
 });
@@ -31,6 +30,8 @@ Breadcrumbs::for('model_details', function ($trail, $city, $car_model, $car_type
     $title = $car_model->title === $car_type->title_ru ? $car_model->title : $car_model->title . ' ' . $car_type->title_ru;
 
     $trail->parent('main');
+    $trail->push('Модельный ряд ' . $car_model->title,
+        route('models', [$city, $car_model->slug]));
     $trail->push($title,
         route('model', [$city, $car_model->slug, $car_type->slug]));
     $trail->push('Условия покупки',
