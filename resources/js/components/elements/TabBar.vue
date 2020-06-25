@@ -3,21 +3,21 @@
         <div id="layout" :class="{ active: layout }" @click="close"></div>
         <section id="panel" >
             <ul :class="theme">
-                <li id="bar_menu" class="menu-wrap event" @click="toggleMenu">
+                <li id="common__tab-bar__menu" class="menu-wrap event" @click="toggleMenu">
                     <icon-menu ></icon-menu>
                     <span>Меню</span>
                 </li>
                 <li class="call-wrap" @click="toggleCall">
-                    <a id="bar_call" :href="'tel:' + this.phone" class="event">
+                    <a id="common__tab-bar__call" :href="'tel:' + this.phone" class="event">
                         <icon-call></icon-call>
                         <span>Звонок</span>
                     </a>
                 </li>
-                <li id="bar_route" class="route-map event" @click="toggleMapWindow">
+                <li id="common__tab-bar__route" class="route-map event" @click="toggleMapWindow">
                     <icon-route></icon-route>
                     <span>Маршрут</span>
                 </li>
-                <li id="bar_chat" class="chat-wrap event" @click="toggleJivo">
+                <li id="common__tab-bar__chat" class="chat-wrap event" @click="toggleJivo">
                     <icon-chat ></icon-chat>
                     <span>Чат</span>
                 </li>
@@ -28,19 +28,19 @@
             <div class="panel-wrap">
                 <ul :class="theme">
                     <li class="menu-wrap" @click="toggleMenu">
-                        <div id="menu_desktop_btn" class="menu-desktop event"></div>
+                        <div id="common__menu__desktop-btn" class="menu-desktop event"></div>
                     </li>
                     <li class="route-map" @click="toggleMapWindow">
-                        <div id="menu_route_btn" class="route-desktop event"></div>
+                        <div id="common__menu__route-btn" class="route-desktop event"></div>
                     </li>
                 </ul>
             </div>
         </section>
 
         <section id="menu" :class="{ active: open }">
-            <div id="menu_window_close" class="close event" @click="close"></div>
+            <div id="common__menu__window-close" class="close event" @click="close"></div>
             <div class="menu_wrap">
-                <v-select id="menu_select_city" class="select_wrap event" :components="{OpenIndicator, Deselect}" placeholder="Выбрать город" taggable
+                <v-select id="common__menu__select-city" class="select_wrap event" :components="{OpenIndicator, Deselect}" placeholder="Выбрать город" taggable
                           :options="cities.list" :searchable="false" v-model="cities.active" @input="selected">
                     <div class="spinner">Загрузка...</div>
                     <div slot="no-options">Нет совпадений</div>
@@ -50,7 +50,7 @@
                     <div class="models_wrap">
                         <ul class="" itemscope itemtype="http://schema.org/SiteNavigationElement">
                             <li v-for="model in models" v-bind:key="model.id">
-                                <a :id="'menu_' + model.slug" class="event" :href="'/' + cities.active.value + '/' + model.slug + '/' + model.types_preview[0].slug" itemprop="url">
+                                <a :id="'common__menu__' + model.slug" class="event" :href="'/' + cities.active.value + '/' + model.slug + '/' + model.types_preview[0].slug" itemprop="url">
                                     <div class="title" v-text="model.title"></div>
                                 </a>
                             </li>
@@ -60,7 +60,7 @@
                     <div class="other_links">
                         <ul itemscope itemtype="http://schema.org/SiteNavigationElement">
                             <li>
-                                <a id="menu_service" :href="'/' + cities.active.value + '/service'" class="event" itemprop="url">
+                                <a id="common__menu__service" :href="'/' + cities.active.value + '/service'" class="event" itemprop="url">
                                     <div class="title">
                                         <span><icon-spanner></icon-spanner> СЕРВИС</span>
                                     </div>
@@ -72,19 +72,19 @@
                     <div class="other_links_2">
                         <ul itemscope itemtype="http://schema.org/SiteNavigationElement">
                             <li>
-                                <a id="menu_main" :href="'/' + cities.active.value" class="event" itemprop="url"><div class="title">Главная страница</div></a>
+                                <a id="common__menu__main" :href="'/' + cities.active.value" class="event" itemprop="url"><div class="title">Главная страница</div></a>
                             </li>
                             <li>
-                                <a id="menu_contacts" :href="'/' + cities.active.value + '/contacts'" class="event" itemprop="url"><div class="title">Контакты</div></a>
+                                <a id="common__menu__contacts" :href="'/' + cities.active.value + '/contacts'" class="event" itemprop="url"><div class="title">Контакты</div></a>
                             </li>
                             <li>
-                                <a id="menu_stocks" :href="'/' + cities.active.value + '/stocks'" class="event" itemprop="url"><div class="title">Акции</div></a>
+                                <a id="common__menu__stocks" :href="'/' + cities.active.value + '/stocks'" class="event" itemprop="url"><div class="title">Акции</div></a>
                             </li>
                             <li>
-                                <a id="menu_news" :href="'/' + cities.active.value + '/news'" class="event" itemprop="url"><div class="title">Новости</div></a>
+                                <a id="common__menu__news" :href="'/' + cities.active.value + '/news'" class="event" itemprop="url"><div class="title">Новости</div></a>
                             </li>
                             <li>
-                                <a id="menu_privacy" :href="'/' + cities.active.value + '/privacy'" class="event" itemprop="url"><div class="title font-tiny">Политика конфиденциальности</div></a>
+                                <a id="common__menu__privacy" :href="'/' + cities.active.value + '/privacy'" class="event" itemprop="url"><div class="title font-tiny">Политика конфиденциальности</div></a>
                             </li>
                         </ul>
                     </div>
@@ -94,7 +94,7 @@
         </section>
         <section id="map_window" :class="{ active: openMap }">
             <div class="map_wrap">
-                <div id="map_window_close" class="close event" @click="close"></div>
+                <div id="common__route__window-close" class="close event" @click="close"></div>
                 <touch-bar-map-component :coordinates="cities.active.coords.split(', ')"></touch-bar-map-component>
             </div>
         </section>
