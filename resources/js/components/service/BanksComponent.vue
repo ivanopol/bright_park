@@ -4,35 +4,35 @@
             <h2>Банки-Партнеры</h2>
             <ul>
                 <li>
-                    <img src="/build/images/main/banks/ph-bank.png" alt="PH Банк"
+                    <img id="main__banks__ph-bank" class="event" src="/build/images/main/banks/ph-bank.png" alt="PH Банк"
                     v-on:click.prevent="show('Узнать про кредит', 'main__modal-banks__callback', 'Отправить', 1, 'credit')">
                 </li>
                 <li>
-                    <img src="/build/images/main/banks/vtb.png" alt="ВТБ"
+                    <img id="main__banks__vtb" class="event" src="/build/images/main/banks/vtb.png" alt="ВТБ"
                     v-on:click.prevent="show('Узнать про кредит', 'main__modal-banks__callback', 'Отправить', 1, 'credit')">
                 </li>
                 <li>
-                    <img src="/build/images/main/banks/setelem.png" alt="Сетелем"
+                    <img id="main__banks__setelem" class="event" src="/build/images/main/banks/setelem.png" alt="Сетелем"
                     v-on:click.prevent="show('Узнать про кредит', 'main__modal-banks__callback', 'Отправить', 1, 'credit')">
                 </li>
                 <li>
-                    <img src="/build/images/main/banks/sovkom-bank.png" alt="СовкомБанк"
+                    <img id="main__banks__sovkombank" class="event" src="/build/images/main/banks/sovkom-bank.png" alt="СовкомБанк"
                     v-on:click.prevent="show('Узнать про кредит', 'main__modal-banks__callback', 'Отправить', 1, 'credit')">
                 </li>
                 <li>
-                    <img src="/build/images/main/banks/uralsib.png" alt="УРАЛСИБ"
+                    <img id="main__banks__uralsib" class="event" src="/build/images/main/banks/uralsib.png" alt="УРАЛСИБ"
                     v-on:click.prevent="show('Узнать про кредит', 'main__modal-banks__callback', 'Отправить', 1, 'credit')">
                 </li>
                 <li>
-                    <img src="/build/images/main/banks/rusfinance.png" alt="РУСФИНАНС БАНК"
+                    <img id="main__banks__rusfinance" class="event" src="/build/images/main/banks/rusfinance.png" alt="РУСФИНАНС БАНК"
                     v-on:click.prevent="show('Узнать про кредит', 'main__modal-banks__callback', 'Отправить', 1, 'credit')">
                 </li>
                 <li>
-                    <img src="/build/images/main/banks/rosgosstrakh.png" alt="Росгосстрах Банк"
+                    <img id="main__banks__rosgosstrakh" class="event" src="/build/images/main/banks/rosgosstrakh.png" alt="Росгосстрах Банк"
                     v-on:click.prevent="show('Узнать про кредит', 'main__modal-banks__callback', 'Отправить', 1, 'credit')">
                 </li>
                 <li>
-                    <img src="/build/images/main/banks/tinkoff.png" alt="Тинькофф"
+                    <img id="main__banks__tinkoff" class="event" src="/build/images/main/banks/tinkoff.png" alt="Тинькофф"
                     v-on:click.prevent="show('Узнать про кредит', 'main__modal-banks__callback', 'Отправить', 1, 'credit')">
                 </li>
             </ul>
