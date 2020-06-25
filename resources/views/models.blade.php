@@ -15,22 +15,24 @@
                     @foreach ($data['carcasses'][0]->carcasses as $carcass)
                         <li>
                             <div class="carcasses-list">
-                                <div class="carcasses-list-img">
-                                    <img src="{{$carcass->pivot->image}}" alt="{{$data['carcasses'][0]->title . ' ' . $carcass->title_ru}}">
-                                </div>
-                                <div class="carcasses-list-description">
-                                    <div class="carcasses-list-title">
-                                        <span class="carcasses-list-title-el">{{$data['carcasses'][0]->title . ' ' . $carcass->title_ru}}</span>
-                                        <span class="carcasses-list-title-slogan">{{$carcass->pivot->slogan}}</span>
+                                <a href="{{ route('model', ['city' => $city, 'car_model' => $data['carcasses'][0]->slug, 'car_type' => $carcass->slug ]) }}">
+                                    <div class="carcasses-list-img">
+                                        <img src="{{$carcass->pivot->image}}" alt="{{$data['carcasses'][0]->title . ' ' . $carcass->title_ru}}">
                                     </div>
-                                    <div class="carcasses-list-prices">
-                                         <span class="carcasses-list-prices-new">от <span>{{ number_format($carcass->pivot->special_price, 0, ',', ' ') }}</span> р.</span>
-                                         <span class="carcasses-list-prices-old">от <span>{{ number_format($carcass->pivot->price, 0, ',', ' ') }}</span> р.</span>
+                                    <div class="carcasses-list-description">
+                                        <div class="carcasses-list-title">
+                                            <span class="carcasses-list-title-el">{{$data['carcasses'][0]->title . ' ' . $carcass->title_ru}}</span>
+                                            <span class="carcasses-list-title-slogan">{{$carcass->pivot->slogan}}</span>
+                                        </div>
+                                        <div class="carcasses-list-prices">
+                                             <span class="carcasses-list-prices-new">от <span>{{ number_format($carcass->pivot->special_price, 0, ',', ' ') }}</span> р.</span>
+                                             <span class="carcasses-list-prices-old">от <span>{{ number_format($carcass->pivot->price, 0, ',', ' ') }}</span> р.</span>
+                                        </div>
+                                        <div class="carcasses-list-button">
+                                            <a href="{{ route('model', ['city' => $city, 'car_model' => $data['carcasses'][0]->slug, 'car_type' => $carcass->slug ]) }}" class="btn btn-primary btn-position green">Подробнее</a>
+                                        </div>
                                     </div>
-                                    <div class="carcasses-list-button">
-                                        <a href="#" class="btn btn-primary btn-position green">Подробнее</a>
-                                    </div>
-                                </div>
+                                </a>
                             </div>
                         </li>
                     @endforeach
