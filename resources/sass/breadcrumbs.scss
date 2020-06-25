@@ -4,6 +4,8 @@
     align-content: center;
     flex-direction: row;
     padding: 15px 20px;
+    flex-wrap: wrap;
+    line-height: 1.2;
     li {
         margin-right: 23px;
         position: relative;
