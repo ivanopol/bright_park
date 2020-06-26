@@ -12,17 +12,17 @@
             <h1>Новости Брайт Парка в {{ $city_info->city_dative  }} </h1>
             @foreach($news as $new)
                 <div class="news-row">
-                    <a href="{{ route('news.one', ['city' => $city_info->alias, 'news_title' => $new->slug]) }}" class="news-title">{{$new->title}}</a>
+                    <a id="news__news-one__title-{{$new->id}}" class="news-title event" href="{{ route('news.one', ['city' => $city_info->alias, 'news_title' => $new->slug]) }}">{{$new->title}}</a>
                     <div class="news-content">
                         <div class="news-img">
-                            <a id="open_news_picture" href="{{ route('news.one', ['city' => $city_info->alias, 'news_title' => $new->slug]) }}">
-                                <img  src="{{$new->preview}}" alt="{{$new->text_short}}">
+                            <a id="news__news-one__image-{{$new->id}}" class="event" href="{{ route('news.one', ['city' => $city_info->alias, 'news_title' => $new->slug]) }}">
+                                <img src="{{$new->preview}}" alt="{{$new->text_short}}">
                             </a>
                         </div>
                         <div class="news-text-wrap">
                             <div class="news-text">{!! $new->text_short !!}</div>
                             <div class="news-button">
-                                <a id="open_news" href="{{ route('news.one', ['city' => $city_info->alias, 'news_title' => $new->slug]) }}" class="btn btn-primary event">Читать</a>
+                                <a id="news__news-one__button-{{$new->id}}" class="btn btn-primary event" href="{{ route('news.one', ['city' => $city_info->alias, 'news_title' => $new->slug]) }}" >Читать</a>
                             </div>
                         </div>
                     </div>

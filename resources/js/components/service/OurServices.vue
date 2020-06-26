@@ -10,8 +10,8 @@
                             <li v-for="list in service.list"><check-icon></check-icon> <span v-html="getPrice(list.title, list.price)"></span></li>
                         </ul>
                         <div class="service__contacts-wrap">
-                            <a :id="form_id + '_get_modal_' + index" class="btn btn-primary btn-position" v-on:click.prevent="show(service.title, form_id + '_' + index)">Записаться</a>
-                            <a :id="form_id + '_call_' + index " :href="'tel:' + cities.active.phone" class="btn btn-primary callibri_phone btn-position green">Позвонить</a>
+                            <a :id="'service__' + service.alias + '__button'" class="btn btn-primary btn-position" v-on:click.prevent="show(service.title, form_id + '-' + service.alias + '_')">Записаться</a>
+                            <a :id="'service__' + service.alias + '__call'" :href="'tel:' + cities.active.phone" class="btn btn-primary callibri_phone btn-position green">Позвонить</a>
                         </div>
                     </template>
                 </badger-accordion-item>
@@ -40,13 +40,14 @@
         data: function () {
             return {
                 form_title: '',
-                form_id: 'services__service_modal',
+                form_id: 'service__modal',
                 button_text: 'Записаться',
                 is_comment: true,
                 services: {
                     maintenance: {
                         id: 1,
                         title: 'Техническое обслуживание',
+                        alias: 'maintenance',
                         list: {
                             0: {
                                 title: 'Замена масла (масло, фильтр, работа)',
@@ -77,6 +78,7 @@
                     locksmith_repair: {
                         id: 2,
                         title: 'Слесарный ремонт',
+                        alias: 'locksmith-repair',
                         list: {
                             0: {
                                 title: 'Диагностика',
@@ -155,6 +157,7 @@
                     body_repair: {
                         id: 3,
                         title: 'Кузовной ремонт',
+                        alias: 'carcass-repair',
                         list: {
                             0: {
                                 title: 'Окраска бампера',
@@ -249,6 +252,7 @@
                     car_care: {
                         id: 4,
                         title: 'Уход за автомобилем',
+                        alias: 'car-care',
                         list: {
                             0: {
                                 title: 'Предпродажная подготовка авто с пробегом',

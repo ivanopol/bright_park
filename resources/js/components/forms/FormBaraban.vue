@@ -10,7 +10,7 @@
                 </label>
             </div>
 
-            <button :id="form_id + '_button'" :click="send" :class="{preloader : blocked}" v-bind:disabled="isButtonDisabled">{{button_text}}</button>
+            <button :id="form_id + '_button'" :click="send" :class="{preloader : blocked}" class="event" v-bind:disabled="isButtonDisabled">{{button_text}}</button>
             <div class="validation-message-wrap">
                 <div class="model-choose-text warning validation-message" v-show="error">
                     <p>Введите 11-значный номер!</p>
@@ -50,7 +50,7 @@
                 btn_disabled: false,
                 button_text: "Крутить барабан",
                 form_title: "Барабан",
-                form_id: 'retarget__baraban',
+                form_id: 'retargeting__baraban_',
                 status: true,
                 blocked: false,
                 form_type: 1,
@@ -134,10 +134,12 @@
 
             attachHandler: function () {
                 function attachHandler(el, evtname, fn) {
-                    if (el.addEventListener) {
-                        el.addEventListener(evtname, fn.bind(el), false);
-                    } else if (el.attachEvent) {
-                        el.attachEvent('on' + evtname, fn.bind(el));
+                    if (el) {
+                        if (el.addEventListener) {
+                            el.addEventListener(evtname, fn.bind(el), false);
+                        } else if (el.attachEvent) {
+                            el.attachEvent('on' + evtname, fn.bind(el));
+                        }
                     }
                 }
 

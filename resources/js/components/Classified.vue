@@ -354,7 +354,7 @@
             },
 
             setHrefCreditButton() {
-                document.getElementById("creditButton").setAttribute("href", this.creditPath.replace("model_details", "trade_in_credit"));
+               // document.getElementById("creditButton").setAttribute("href", this.creditPath.replace("model_details", "trade_in_credit"));
             },
             setCookie(price) {
                 let current_date = new Date();

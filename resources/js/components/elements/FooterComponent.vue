@@ -30,6 +30,7 @@
         <yandex-map-component :coordinates='coordinates'
                               :button="ym_button"
                               :btn_class="ym_btn_class"
+                              :prefix="'service__'"
         ></yandex-map-component>
         <modal name="form-callback-footer" height="auto" :adaptive="true">
             <div class="close" @click="hide"></div>

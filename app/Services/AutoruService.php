@@ -303,7 +303,7 @@ class AutoruService
 
     public function getCreditPrograms()
     {
-        return DB::select('select name, percent_rate from credit_programs');
+        return DB::select('select * from credit_programs');
     }
 
 

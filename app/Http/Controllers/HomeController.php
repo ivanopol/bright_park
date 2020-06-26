@@ -200,6 +200,7 @@ class HomeController extends Controller
         $service = new BasePageService();
         $data['car_preview'] = $service->getCarPreviewPath($car_model->id, $car_type->id);
         $this->seo->setMetaTags($city, ['model' => $car_model, 'type' => $car_type, 'image' => $data['car_preview']->image ]);
+        $data['coordinates'] = explode(",", $city['coordinates']);
 
         if ($city['alias']) {
             $this->city = $city['alias'];

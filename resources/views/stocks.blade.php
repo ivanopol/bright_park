@@ -14,17 +14,17 @@
             <h1>Акции Брайт Парка в {{ $city_info->city_dative  }} </h1>
             @foreach($stocks as $stock)
                 <div class="stocks-row">
-                    <a id="open_stocks_picture" href="{{ route('stocks.one', ['city' => $city_info->alias, 'stocks_title' => $stock->slug]) }}" class="stocks-title event">{{$stock->title}}</a>
+                    <a id="stocks__stocks-one__title-{{$stock->id}}" class="stocks-title event" href="{{ route('stocks.one', ['city' => $city_info->alias, 'stocks_title' => $stock->slug]) }}" >{{$stock->title}}</a>
                     <div class="stocks-content">
                         <div class="stocks-img">
-                            <a href="{{ route('stocks.one', ['city' => $city_info->alias, 'stocks_title' => $stock->slug]) }}">
+                            <a id="stocks__stocks-one__image-{{$stock->id}}" class="event" href="{{ route('stocks.one', ['city' => $city_info->alias, 'stocks_title' => $stock->slug]) }}">
                                 <img  src="{{$stock->preview}}" alt="{{$stock->text_short}}">
                             </a>
                         </div>
                         <div class="stocks-text-wrap">
                             <div class="stocks-text">{!! $stock->text_short !!}</div>
                             <div class="stocks-button">
-                                <a id="open_stocks" href="{{ route('stocks.one', ['city' => $city_info->alias, 'stocks_title' => $stock->slug]) }}" class="btn btn-primary event">Читать</a>
+                                <a id="stocks__stocks-one__button-{{$stock->id}}" class="btn btn-primary event" href="{{ route('stocks.one', ['city' => $city_info->alias, 'stocks_title' => $stock->slug]) }}" >Читать</a>
                             </div>
                         </div>
                     </div>

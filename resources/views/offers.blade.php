@@ -39,13 +39,14 @@
         </div>
         <steps :brands='@json($brands)'
                :cities='@json($cities)'
-               :form_id="'retarget__steps_form'"
+               :form_id="'retargeting__fill-form_'"
                :goal="'fixconditions'"
+               :prefix="'retargeting__'"
         ></steps>
         <baraban :cities='@json($cities)'></baraban>
         <modal-retarget-component></modal-retarget-component>
         <form-retarget-component :cities='@json($cities)'
-                                 :form_id="'retarget__form'"
+                                 :form_id="'models__leave-request-now_'"
                                  :button_text="'Получить лучшие условия'"
                                  :form_title="'<span class=\'c_orange\'>Оставьте</span> заявку сейчас'"
                                  :goal="'specialoffer'">

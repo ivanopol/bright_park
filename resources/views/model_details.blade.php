@@ -32,11 +32,19 @@
                    :car_type='@json($car_type)'
                    :car_attrs='@json($car_attrs)'
                    :cities='@json($cities)'
-                   :form_id="'sale__steps_form'"
+                   :form_id="'details__fill-form_'"
                    :goal="'fixconditions'"
+                   :prefix="'details__'"
             ></steps>
         </section>
         <div class="block-note"><p>Предложение ограниченно, подробности в автосалоне</p></div>
+
+
+        <footer-component :coordinates='@json($data['coordinates'])'
+                          :phone='@json($cities['active']['phone'])'
+                          :phone_formatted='@json($cities['active']['phone_format'])'
+                          :cities='@json($cities)'>
+        </footer-component>
         {!! html_entity_decode($cities['active']['begin_script']) !!}
         <scroll-event-handler-component></scroll-event-handler-component>
         <event-handler-component></event-handler-component>

@@ -21,21 +21,21 @@
 
         <div class="buy-steps-wrapper">
             <div class="buy-step-block">
-                <div class="divided" v-on:click.prevent="gradeShow(0)" :class="[ grade == 0 || grade == 1 ? 'buy-step-circle-colored' : 'buy-step-circle' ]">
+                <div :id="prefix + 'steps__rate-a-car'" class="divided event" v-on:click.prevent="gradeShow(0)" :class="[ grade == 0 || grade == 1 ? 'buy-step-circle-colored' : 'buy-step-circle' ]">
                     <p class="buy-step-number">1</p>
                 </div>
                 <p class="buy-step-text">Оцените автомобиль</p>
             </div>
 
             <div class="buy-step-block">
-                <div class="divided" v-on:click.prevent="gradeShow(2)" :class="[ grade == 2 || grade == 3? 'buy-step-circle-colored' : 'buy-step-circle' ]">
+                <div :id="prefix + 'steps__сalculate-payment'" class="divided event" v-on:click.prevent="gradeShow(2)" :class="[ grade == 2 || grade == 3? 'buy-step-circle-colored' : 'buy-step-circle' ]">
                     <p class="buy-step-number">2</p>
                 </div>
                 <p class="buy-step-text">Рассчитайте платеж</p>
             </div>
 
             <div class="buy-step-block" >
-                <div class="buy-step-circle divided" v-on:click.prevent="gradeShow(4)" :class="[ grade == 4 ? 'buy-step-circle-colored' : 'buy-step-circle' ]">
+                <div :id="prefix + 'steps__fill-form'" class="buy-step-circle divided event" v-on:click.prevent="gradeShow(4)" :class="[ grade == 4 ? 'buy-step-circle-colored' : 'buy-step-circle' ]">
                     <p class="buy-step-number">3</p>
                 </div>
                 <p class="buy-step-text">Заполните форму</p>
@@ -53,8 +53,8 @@
 
         <section class="buttons_other mt-20" v-if="!grade">
             <div class="item-buttons-other">
-                <a href="#" class="btn btn-primary" v-on:click.prevent="gradeShow(1)">Да, оценить мой автомобиль</a>
-                <a href="#" class="btn btn-secondary" v-on:click.prevent="gradeShow(5)">У меня нет автомобиля</a>
+                <a href="#" :id="prefix + 'do-you-have-an-exchange-car__rate-a-car'" class="btn btn-primary event" v-on:click.prevent="gradeShow(1)">Да, оценить мой автомобиль</a>
+                <a href="#" :id="prefix + 'do-you-have-an-exchange-car__no-car'" class="btn btn-secondary event" v-on:click.prevent="gradeShow(5)">У меня нет автомобиля</a>
             </div>
         </section>
 
@@ -62,10 +62,17 @@
             <classified :brands='brands' ></classified>
         </div>
 
-        <div v-if="grade === 1 || grade === 5">
+        <div v-if="grade === 1">
             <div class="button-wrapper-row">
-                <a class="btn-half-secondary" v-on:click.prevent="gradeShow(3)">Наличный расчет</a>
-                <a class="btn-half-primary" id="creditButton" v-on:click.prevent="gradeShow(2)">В кредит</a>
+                <a :id="prefix + 'what-is-your-car__cash'" class="btn-half-secondary event" v-on:click.prevent="gradeShow(3)">Наличный расчет</a>
+                <a :id="prefix + 'what-is-your-car__credit'" class="btn-half-primary event" v-on:click.prevent="gradeShow(2)">В кредит</a>
+            </div>
+        </div>
+
+        <div v-if="grade === 5">
+            <div class="button-wrapper-row">
+                <a :id="prefix + 'сhoose-favorable-conditions__cash'" class="btn-half-secondary event" v-on:click.prevent="gradeShow(3)">Наличный расчет</a>
+                <a :id="prefix + 'сhoose-favorable-conditions__credit'" class="btn-half-primary event" v-on:click.prevent="gradeShow(2)">В кредит</a>
             </div>
         </div>
 
@@ -83,17 +90,22 @@
 
         </div>
 
-        <range-slider-component :car_price='car_price'
-                                v-if="grade === 2"></range-slider-component>
+        <range-slider-component :car_price='car_price' v-if="grade === 2" :prefix="prefix"></range-slider-component>
         <form-buy-component v-if="grade === 4" :cities="cities"
                             :form_id="form_id"
                             :form_title="'<span class=\'c_orange\'>Заполните</span> форму'"
                             :goal="goal">
         </form-buy-component>
 
-        <div class="buttons_other" v-if="grade === 2 || grade === 3">
+        <div class="buttons_other" v-if="grade === 2">
             <div class="item-buttons-other">
-                <a href="#" class="btn btn-primary" v-on:click.prevent="gradeShow(4)">Закрепить условия</a>
+                <a href="#" :id="prefix + 'credit__fix-conditions'" class="btn btn-primary event" v-on:click.prevent="gradeShow(4)">Закрепить условия</a>
+            </div>
+        </div>
+
+        <div class="buttons_other" v-if="grade === 3">
+            <div class="item-buttons-other">
+                <a href="#" :id="prefix + 'cash__fix-conditions'" class="btn btn-primary event" v-on:click.prevent="gradeShow(4)">Закрепить условия</a>
             </div>
         </div>
 
@@ -122,6 +134,7 @@
             'cities',
             'form_id',
             'goal',
+            'prefix',
         ],
         data: function() {
             return {

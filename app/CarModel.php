@@ -10,6 +10,7 @@ class CarModel extends Model
         'title',
         'slug',
         'preview',
+        'title_en',
         'description',
     ];
     /**
