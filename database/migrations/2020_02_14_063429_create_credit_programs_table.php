@@ -17,6 +17,7 @@ class CreateCreditProgramsTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('name');
+            $table->string('title_en');
             $table->integer('percent_rate');
         });
 
