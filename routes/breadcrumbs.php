@@ -40,7 +40,7 @@ Breadcrumbs::for('model_details', function ($trail, $city, $car_model, $car_type
 
 // Contacts
 Breadcrumbs::for('contacts', function ($trail, $city) {
-    $trail->parent('main');
+    $trail->parent('main', $city);
     $trail->push('Контакты',
         route('contacts', [$city]));
 });
