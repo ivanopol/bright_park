@@ -36,7 +36,8 @@
     <footer-component :coordinates='@json($data['coordinates'])'
                       :phone='@json($cities['active']['phone'])'
                       :phone_formatted='@json($cities['active']['phone_format'])'
-                      :cities='@json($cities)'>
+                      :cities='@json($cities)'
+                      :page="'stocks'">
     </footer-component>
     {!! html_entity_decode($cities['active']['begin_script']) !!}
     <scroll-event-handler-component></scroll-event-handler-component>

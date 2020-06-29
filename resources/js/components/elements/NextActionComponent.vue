@@ -5,19 +5,19 @@
         </div>
         <ul>
             <li>
-                <a id="models__next-action__test-drive" class="btn event" href="#" v-on:click.prevent="show('Записаться на тест-драйв', 'models__modal-form-test-drive_', 'test_drive')">Записаться на тест-драйв</a>
+                <a id="model__next-action__test-drive" class="btn event" href="#" v-on:click.prevent="show('Записаться на тест-драйв', 'model__modal-next-action-test-drive_', 'test_drive')">Записаться на тест-драйв</a>
             </li>
             <li>
-                <a id="models__next-action__count-payment" class="btn event" :href="this.link + '/model_details#credit'">Рассчитать кредит</a>
+                <a id="model__next-action__count-payment" class="btn event" :href="this.link + '/model_details#credit'">Рассчитать кредит</a>
             </li>
             <li>
-                <a id="models__next-action__estimate-car" class="btn event" :href="this.link + '/model_details#estimation'">Оценить свой автомобиль</a>
+                <a id="model__next-action__estimate-car" class="btn event" :href="this.link + '/model_details#estimation'">Оценить свой автомобиль</a>
             </li>
             <li>
-                <a id="models__next-action__get-offer" class="btn event" href="#" v-on:click.prevent="show('Получить спецпредложение', 'models__modal-form-get-offer_', 'specialoffer')">Получить спецпредложение</a>
+                <a id="model__next-action__get-offer" class="btn event" href="#" v-on:click.prevent="show('Получить спецпредложение', 'model__modal-next-action-get-offer_', 'specialoffer')">Получить спецпредложение</a>
             </li>
         </ul>
-        <modal name="form-callback" height="auto" :adaptive="true">
+        <modal name="form-callback" height="auto" :adaptive="true" @before-open="beforeOpen">
             <div class="close" @click="hide"></div>
             <form-buy2-component :cities="cities"
                                  :form_title="form_title"
@@ -58,6 +58,9 @@
             },
             hide () {
                 this.$modal.hide('form-callback');
+            },
+            beforeOpen (event) {
+                console.log('Component Modal is ready...');
             }
         }
     }

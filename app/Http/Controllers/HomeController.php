@@ -177,12 +177,13 @@ class HomeController extends Controller
             'place' => $data['coordinates']
         ]);
 
-        return view('model', [  'data' => $data,
-                                'models' => $models,
-                                'city' => $this->city,
-                                'cities' => $cities,
-                                'car_model' => $car_model,
-                                'car_type' => $car_type,
+        return view('model', [
+            'data' => $data,
+            'models' => $models,
+            'city' => $this->city,
+            'cities' => $cities,
+            'car_model' => $car_model,
+            'car_type' => $car_type,
         ]);
     }
 

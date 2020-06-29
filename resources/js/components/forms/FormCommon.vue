@@ -31,9 +31,6 @@
 
     export default {
         name: 'App',
-        beforeMount() {
-            this.attachHandler();
-        },
         props: {
             cities : {
                 type: Object
@@ -171,8 +168,12 @@
             }
         },
         mounted() {
+            console.log('Component FormCommon.vue is ready...');
             //console.log(this.cities.active);
-        }
+        },
+        beforeMount() {
+            this.attachHandler();
+        },
     }
 </script>
 

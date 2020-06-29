@@ -17,7 +17,7 @@
                             <div class="carcasses-list">
                                 <span class="hidden" itemprop="name">{{$data['carcasses'][0]->title . ' ' . $carcass->title_ru}}</span>
                                 <span class="hidden" itemprop="description">{{$carcass->pivot->slogan}}</span>
-                                <a href="{{ route('model', ['city' => $city, 'car_model' => $data['carcasses'][0]->slug, 'car_type' => $carcass->slug ]) }}">
+                                <a id="models__carcass-list__{{$data['carcasses'][0]->slug}}-{{$carcass->slug}}" class="event" href="{{ route('model', ['city' => $city, 'car_model' => $data['carcasses'][0]->slug, 'car_type' => $carcass->slug ]) }}">
                                     <div class="carcasses-list-img">
                                         <img itemprop="image" src="{{$carcass->pivot->image}}" alt="{{$data['carcasses'][0]->title . ' ' . $carcass->title_ru}}">
                                     </div>
@@ -45,7 +45,8 @@
         <footer-component :coordinates='@json($data['coordinates'])'
                           :phone='@json($cities['active']['phone'])'
                           :phone_formatted='@json($cities['active']['phone_format'])'
-                          :cities='@json($cities)'>
+                          :cities='@json($cities)'
+                          :page="'models'">
         </footer-component>
     </div>
     {!! html_entity_decode($cities['active']['begin_script']) !!}

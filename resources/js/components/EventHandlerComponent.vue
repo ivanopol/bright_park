@@ -9,7 +9,6 @@
         name: "EventHandlerComponent",
         data: () => ({
             elements: [],
-            events: []
         }),
         methods: {
             async sendData(data, href) {
@@ -52,8 +51,8 @@
         },
 
         destroyed() {
-            for (let i = 0; i < this.events.length; i++) {
-                this.sendData(this.events[i]);
+            for (let i = 0; i < this.elements.length; i++) {
+                this.sendData(this.elements[i]);
             }
         }
     }

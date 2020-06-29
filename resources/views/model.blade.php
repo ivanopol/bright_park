@@ -16,7 +16,7 @@
             <info-component :block='@json($block)' :n='@json($key)' :model='@json($data['model_id'])' :type='@json($data['type_id'])' :data='@json($data)'></info-component>
             @if ($key === 1)
                 <form-buy-component :cities='@json($cities)'
-                                    :form_id="'models__learn-about-details_'"
+                                    :form_id="'model__learn-about-details_'"
                                     :button_text="'Отправить'"
                                     :form_title="'<span class=\'c_orange\'>Узнайте</span> о модели подробнее'"
                                     :goal="'about_model'">
@@ -25,10 +25,10 @@
         @endforeach
 
         @if(count($data['colors']))
-            <color-choose-component :colors='@json($data['colors'])'></color-choose-component>
+            <color-choose-component :colors='@json($data['colors'])' :model="'{{$car_model->slug}}'" :type="'{{$car_type->slug}}'"></color-choose-component>
         @endif
         <form-component :cities='@json($cities)'
-                        :form_id="'models__try-it-yourself_'"
+                        :form_id="'model__try-it-yourself_'"
                         :form_title="'Расширенный тест-драйв в Брайт парке'"
                         :goal="'test_drive'">
         </form-component>
@@ -48,7 +48,7 @@
                     <picture>
                         <source srcset="{{asset('/build/images/photos/feedback/feedback-desktop.jpg')}}"
                                 media="(min-width: 660px)">
-                        <img src="{{asset('/build/images/photos/feedback/feedback_04.jpg')}}" alt="">
+                        <img src="{{asset('/build/images/photos/feedback/feedback_04.jpg')}}" alt="На вашу новенькую {{ $data['model_full'] }} действует расширенная гарантия 3 года.">
                     </picture>
                 </div>
             </div>
@@ -56,7 +56,8 @@
         <footer-component :coordinates='@json($data['coordinates'])'
                           :phone='@json($cities['active']['phone'])'
                           :phone_formatted='@json($cities['active']['phone_format'])'
-                          :cities='@json($cities)'>
+                          :cities='@json($cities)'
+                          :page="'model'">
         </footer-component>
     </div>
     {!! html_entity_decode($cities['active']['begin_script']) !!}

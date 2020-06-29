@@ -10,7 +10,7 @@
                             <li v-for="list in service.list"><check-icon></check-icon> <span v-html="getPrice(list.title, list.price)"></span></li>
                         </ul>
                         <div class="service__contacts-wrap">
-                            <a :id="'service__' + service.alias + '__button'" class="btn btn-primary btn-position" v-on:click.prevent="show(service.title, form_id + '-' + service.alias + '_')">Записаться</a>
+                            <a :id="'service__' + service.alias + '__button'" class="btn btn-primary btn-position" v-on:click.prevent="show(service.title, service.alias)">Записаться</a>
                             <a :id="'service__' + service.alias + '__call'" :href="'tel:' + cities.active.phone" class="btn btn-primary callibri_phone btn-position green">Позвонить</a>
                         </div>
                     </template>
@@ -24,7 +24,7 @@
                                  :form_id="form_id"
                                  :button_text="button_text"
                                  :is_comment="is_comment"
-                                 :form_type="'2'"
+                                 :form_type='2'
             ></form-buy2-component>
         </modal>
     </section>
@@ -43,11 +43,12 @@
                 form_id: 'service__modal',
                 button_text: 'Записаться',
                 is_comment: true,
+                alias: '',
                 services: {
                     maintenance: {
                         id: 1,
                         title: 'Техническое обслуживание',
-                        alias: 'maintenance',
+                        alias: 'service__modal-maintenance_',
                         list: {
                             0: {
                                 title: 'Замена масла (масло, фильтр, работа)',
@@ -78,7 +79,7 @@
                     locksmith_repair: {
                         id: 2,
                         title: 'Слесарный ремонт',
-                        alias: 'locksmith-repair',
+                        alias: 'service__modal-locksmith-repair_',
                         list: {
                             0: {
                                 title: 'Диагностика',
@@ -157,7 +158,7 @@
                     body_repair: {
                         id: 3,
                         title: 'Кузовной ремонт',
-                        alias: 'carcass-repair',
+                        alias: 'service__modal-carcass-repair_',
                         list: {
                             0: {
                                 title: 'Окраска бампера',
@@ -252,7 +253,7 @@
                     car_care: {
                         id: 4,
                         title: 'Уход за автомобилем',
-                        alias: 'car-care',
+                        alias: 'service__modal-car-care_',
                         list: {
                             0: {
                                 title: 'Предпродажная подготовка авто с пробегом',
