@@ -60,6 +60,37 @@
                 this.$modal.hide('form-callback');
             },
             beforeOpen (event) {
+/*                let componentCount = this.$root.$children.length - 1;
+                let componentName = '';
+                let elements;
+
+                for (let i = componentCount; i >= 0; i--) {
+                    componentName = this.$root.$children[i].$vnode.tag.toLowerCase();
+                    if (componentName.indexOf('eventhandlercomponent')) {
+                        elements = this.$root.$children[i].elements;
+                        console.log(elements);
+                        this.$root.$children[i].addHandler();
+                        console.log(this.$root.$children[i].elements);
+                        break;
+                    }
+                }*/
+
+/*                let handle = async function (event) {
+                    if ( this.getAttribute("href") ) {
+                        event.preventDefault();
+                    }
+
+                    let data = {
+                        'btn_id': this.getAttribute("id"),
+                        'href': this.getAttribute("href"),
+                        'location': window.location.pathname,
+                        'timestamp': new Date().toISOString(),
+                        'event_type': 'button'
+                    };
+
+                    await self.sendData(data, this.getAttribute('href'));
+                };
+                console.log(elements);*/
                 console.log('Component Modal is ready...');
             }
         }

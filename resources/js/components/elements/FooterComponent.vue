@@ -32,7 +32,7 @@
                               :btn_class="ym_btn_class"
                               :prefix="'service__'"
         ></yandex-map-component>
-        <modal name="form-callback-footer" height="auto" :adaptive="true">
+        <modal name="form-callback-footer" height="auto" :adaptive="true" @before-open="beforeOpen">
             <div class="close" @click="hide"></div>
             <form-buy2-component :cities="cities"
                                  :form_title="form_title"
@@ -95,6 +95,9 @@
             };
         },
         methods: {
+            beforeOpen (event) {
+                console.log('Component Modal is ready...');
+            },
             show (title, form_id, button_text, form_type, goal) {
                 this.form_title = title;
                 this.form_id = form_id;

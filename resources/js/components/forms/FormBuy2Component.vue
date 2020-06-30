@@ -17,6 +17,7 @@
 
 <script>
     import FormCommon from './FormCommon.vue';
+    import axios from "axios";
 
     export default {
         name: 'FormInline',
@@ -49,10 +50,13 @@
                 type: String
             },
         },
+        methods: {
+        },
         components: {
             FormCommon,
         },
         mounted() {
+
             console.log('Component FormBuy2Component.vue is ready...');
         }
     }

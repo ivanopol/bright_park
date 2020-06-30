@@ -53,8 +53,8 @@ Vue.component('touch-bar-map-component', require('./components/TouchBarMapCompon
 //Vue.component('modal-component', require('./components/elements/ModalComponent').default);
 Vue.component('modal-retarget-component', require('./components/elements/ModalRetargetComponent').default);
 Vue.component('next-action-component', require('./components/elements/NextActionComponent').default);
-Vue.component('event-handler-component', require('./components/EventHandlerComponent').default);
-Vue.component('scroll-event-handler-component', require('./components/ScrollEventHandlerComponent').default);
+Vue.component('event-handler-component', require('./components/events/EventHandlerComponent').default);
+Vue.component('scroll-event-handler-component', require('./components/events/ScrollEventHandlerComponent').default);
 Vue.component('baraban', require('./components/retargeting/Baraban').default);
 Vue.component('buttons-component', require('./components/elements/ButtonsComponent').default);
 Vue.component('banner-component', require('./components/elements/BannerComponent').default);
