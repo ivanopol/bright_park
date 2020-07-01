@@ -17,6 +17,7 @@
                     url: '/api/write_event',
                     data: data
                 }).then((response) => {
+
                     if (href !== '#' && href !== null) {
                         window.location = href;
                     }
@@ -33,56 +34,29 @@
                 return has_class
             },
             addHandler() {
-               // let self = this;
-
                 let handle = async (e) => {
                     let is_event = this.checkEvent(e);
+                    let href = null;
 
                     if (!is_event) {
                         return false;
                     }
 
-                    console.log(e);
-/*                    if (this.getAttribute("href")) {
+                    if (e.target.href) {
                         event.preventDefault();
+                        href = e.target.attributes.href.value;
                     }
 
                     let data = {
-                        'btn_id': this.getAttribute("id"),
-                        'href': this.getAttribute("href"),
+                        'btn_id': e.target.id,
+                        'href': href,
                         'location': window.location.pathname,
                         'timestamp': new Date().toISOString(),
                         'event_type': 'button'
                     };
-
-                    await self.sendData(data, this.getAttribute('href'));*/
+                    await this.sendData(data, href);
                 };
-
                 document.addEventListener('click', handle, false);
-
-/*                document.addEventListener('click', function (e) {
-                    //console.log(e);
-                    for (let i = 0; i < e.target.classList.length; i++) {
-                        if ('event' == e.target.classList[i]) {
-                            handle();
-                            //e.target.addEventListener('click', handle, false);
-                        }
-                    }
-                   // console.log(e);
-                }, false);*/
-                //    console.log(e.target.classList);
-                // console.log(e.target.classList.value.indexOf('event'));
-                /*                    if(e.target && e.target.id== 'brnPrepend'){
-                        //do something
-                    }*/
-                //});
-                /*                this.elements = document.getElementsByClassName("event");
-
-
-
-                for (let i = 0; i < this.elements.length; i++) {
-                    this.elements[i].addEventListener('click', handle, false);
-                }*/
             }
         },
 

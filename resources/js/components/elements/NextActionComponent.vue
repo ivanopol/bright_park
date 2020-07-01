@@ -17,7 +17,7 @@
                 <a id="model__next-action__get-offer" class="btn event" href="#" v-on:click.prevent="show('Получить спецпредложение', 'model__modal-next-action-get-offer_', 'specialoffer')">Получить спецпредложение</a>
             </li>
         </ul>
-        <modal name="form-callback" height="auto" :adaptive="true" @before-open="beforeOpen">
+        <modal name="form-callback" height="auto" :adaptive="true">
             <div class="close" @click="hide"></div>
             <form-buy2-component :cities="cities"
                                  :form_title="form_title"
@@ -59,40 +59,6 @@
             hide () {
                 this.$modal.hide('form-callback');
             },
-            beforeOpen (event) {
-/*                let componentCount = this.$root.$children.length - 1;
-                let componentName = '';
-                let elements;
-
-                for (let i = componentCount; i >= 0; i--) {
-                    componentName = this.$root.$children[i].$vnode.tag.toLowerCase();
-                    if (componentName.indexOf('eventhandlercomponent')) {
-                        elements = this.$root.$children[i].elements;
-                        console.log(elements);
-                        this.$root.$children[i].addHandler();
-                        console.log(this.$root.$children[i].elements);
-                        break;
-                    }
-                }*/
-
-/*                let handle = async function (event) {
-                    if ( this.getAttribute("href") ) {
-                        event.preventDefault();
-                    }
-
-                    let data = {
-                        'btn_id': this.getAttribute("id"),
-                        'href': this.getAttribute("href"),
-                        'location': window.location.pathname,
-                        'timestamp': new Date().toISOString(),
-                        'event_type': 'button'
-                    };
-
-                    await self.sendData(data, this.getAttribute('href'));
-                };
-                console.log(elements);*/
-                console.log('Component Modal is ready...');
-            }
         }
     }
 </script>

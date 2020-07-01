@@ -96,7 +96,6 @@
         },
         methods: {
             beforeOpen (event) {
-                console.log('Component Modal is ready...');
             },
             show (title, form_id, button_text, form_type, goal) {
                 this.form_title = title;

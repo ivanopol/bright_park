@@ -56,8 +56,6 @@
             FormCommon,
         },
         mounted() {
-
-            console.log('Component FormBuy2Component.vue is ready...');
         }
     }
 </script>
