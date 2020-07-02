@@ -55,7 +55,12 @@ class HomeController extends Controller
 
         $this->seo->setMetaTags($city, ['place' => $data['coordinates']]);
 
-        return view('home', ['data' =>  $data, 'models' => $models, 'city' => $this->city, 'cities' => $cities]);
+        return view('home', [
+            'data' =>  $data,
+            'models' => $models,
+            'city' => $this->city,
+            'cities' => $cities,
+        ]);
     }
 
     /**
