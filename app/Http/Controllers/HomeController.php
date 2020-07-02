@@ -390,7 +390,6 @@ class HomeController extends Controller
         $models = CarModel::with('types_preview')->get();
         $data['coordinates'] = explode(",", $city['coordinates']);
 
-      //  print_r($data['coordinates']);
         return view('contacts', [
             'data' => $data,
             'city'=>$this->city,
