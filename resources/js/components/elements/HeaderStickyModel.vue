@@ -141,7 +141,7 @@
 
             @media only screen and (min-width: 1366px) {
                 .logo-bright-park {
-                    width: 25%;
+                    width: auto;
                 }
                 .logo-lada {
                     width: 16%;
