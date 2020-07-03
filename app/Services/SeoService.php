@@ -56,7 +56,7 @@ class SeoService
         OpenGraph::setDescription($seo->og_description);
 
         JsonLd::setTitle($seo->og_title);
-        JsonLd::setType('website');
+        JsonLd::setType('WebSite');
         JsonLd::setUrl($this->request->fullUrl());
         JsonLd::setDescription($seo->og_description);
 
