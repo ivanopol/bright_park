@@ -2,7 +2,8 @@
     <section class="block-info container" >
         <div class="block-info-text">
             <span class="block-info-text-title">
-                <h2 v-html="block.title"></h2>
+                <h2 v-html="block.price" v-if="n === 0"></h2>
+                <h2 v-html="block.title" v-else></h2>
             </span>
             <span class="block-info-text-text">
                 <p v-html="block.text"></p>
@@ -103,18 +104,18 @@
             }
         },
         mounted: function() {
-
-/*            if ((this.data.model_id === 1 && this.data.type_id === 1) || (this.data.model_id === 1 && this.data.type_id === 2))
-            {
-                this.triggers.banner_1 = "90% клиентов рады, что выбрали отечественный авто и не переплачивают за обслуживание";
-                this.triggers.banner_2 = "Большинство клиентов считает :model лучшим автомобилем по соотношению цена/качество";
-                this.triggers.banner_3 = "95% клиентов оставили положительные отзывы о :model";
-            }
-            console.log(this.data);*/
         }
     };
 </script>
 
 <style lang="scss">
     @import "./resources/sass/info.scss";
+
+    .block-price {
+        text-transform: lowercase;
+    }
+
+    .no-block {
+        display: inline;
+    }
 </style>

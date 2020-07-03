@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use App\CarModel;
 use App\City;
+use App\CarModelCarType;
 
 class BasePageService
 {
@@ -31,9 +32,20 @@ class BasePageService
         }
 
         $blocks_slider = DB::table('block_sliders')->select('*')->whereIn('block_id', $blocks_ids)->orderBy('id', 'asc')->get();
+        $car_price = CarModelCarType::where('car_model_id', $car_model->id)->where('car_type_id', $car_type->id)->first();
 
         if ($blocks && $blocks_slider) {
-            foreach ($blocks as &$block) {
+            foreach ($blocks as $key => &$block) {
+                $block->price = $key === 0 ? '<span class="no-block" itemscope itemtype="http://schema.org/Product">
+                                                  <span class="c_orange">
+                                                      <span class="no-block" itemprop="brand">LADA</span> <span class="no-block" itemprop="name">' . $car_model->title .'</span>
+                                                  </span>
+                                                  <span class="block-price no-block" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                                                  <meta itemprop="priceCurrency" content="RUB" />
+                                                  <span class="no-block" itemprop="price"  content="' . $car_price->special_price . '">от ' . number_format($car_price->special_price, 0, ',', ' ') . '</span> руб.</span>
+                                                  <link itemprop="availability" href="http://schema.org/InStock"/>
+                                              </span>' : 0;
+
                 $block->slider = [];
 
                 foreach ($blocks_slider as $slider) {
