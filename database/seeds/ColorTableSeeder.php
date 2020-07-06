@@ -705,7 +705,7 @@ class ColorTableSeeder extends Seeder
                 'type_id' => 9,
                 'model_id' => 2,
                 'title' => 'Ледниковый',
-                'image' => '/build/images/colors/lada/vesta/sw_cross/vesta_sw_cross_lednikovyy.png',
+                'image' => '/build/images/colors/lada/vesta/cng/lada_vesta_cng_lednikovyy.png',
                 'class' => 'color-white-glacial',
                 'is_active' => true
             ],
@@ -713,7 +713,7 @@ class ColorTableSeeder extends Seeder
                 'type_id' => 9,
                 'model_id' => 2,
                 'title' => 'Черная жемчужина',
-                'image' => '/build/images/colors/lada/largus/universal/largus_black_pearl.png',
+                'image' => '/build/images/colors/lada/vesta/cng/lada_vesta_cng_chornaya_zhemchuzhina.png',
                 'class' => 'color-black-pearl',
                 'is_active' => false
             ],
@@ -721,7 +721,7 @@ class ColorTableSeeder extends Seeder
                 'type_id' => 9,
                 'model_id' => 2,
                 'title' => 'Платина',
-                'image' => '/build/images/colors/lada/vesta/sw_cross/vesta_sw_cross_platina.png',
+                'image' => '/build/images/colors/lada/vesta/cng/lada_vesta_cng_platina.png',
                 'class' => 'color-platina',
                 'is_active' => false
             ],
