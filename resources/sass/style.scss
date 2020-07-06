@@ -1541,7 +1541,7 @@ footer {
         }
 
         &.vesta_cng {
-            background: url(/build/images/slider/full/vesta/lada_vesta_sw_cross.png) no-repeat center center;
+            background: url(/build/images/slider/full/vesta/lada_vesta_cng.jpg) no-repeat center center;
             background-size: cover;
         }
 
@@ -1625,6 +1625,11 @@ footer {
 
             &.vesta_sw_cross {
                 background: linear-gradient(117deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 13%, rgba(0,0,0,0) 44%), url(/build/images/slider/full/vesta/desktop/lada_vesta_sw_cross.jpg) no-repeat 50% -2px;
+                background-size: cover;
+            }
+
+            &.vesta_cng {
+                background: linear-gradient(117deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 13%, rgba(0,0,0,0) 44%), url(/build/images/slider/full/vesta/desktop/lada_vesta_cng.jpg) no-repeat 50% -2px;
                 background-size: cover;
             }
 
