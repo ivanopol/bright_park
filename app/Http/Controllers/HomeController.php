@@ -163,10 +163,11 @@ class HomeController extends Controller
         if ($city['alias']) {
             $this->city = $city['alias'];
         } else {
-            return redirect()->route('model', [ 'city' => 'perm',
-                                                'car_model' => $car_model->slug,
-                                                'car_type' => $car_type->slug,
-                                                ]);
+            return redirect()->route('model', [
+                'city' => 'perm',
+                'car_model' => $car_model->slug,
+                'car_type' => $car_type->slug,
+            ]);
         }
 
         $cities = $city->getCities($this->city);

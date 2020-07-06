@@ -94,7 +94,7 @@ class SlideMiniTableSeeder extends Seeder
                 'image' => '/build/images/slider/mini/vesta/mobile/lada_vesta_cng.png',
                 'alt' => 'Лада Веста CNG',
                 'title' => 'CNG',
-                'active' => false,
+                'active' => true,
             ],
             [
                 'model_id' => 2,

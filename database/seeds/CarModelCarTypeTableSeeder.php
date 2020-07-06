@@ -126,7 +126,7 @@ class CarModelCarTypeTableSeeder extends Seeder
                 'count'=>333,
                 'image' => '/build/images/slider/mini/vesta/mobile/lada_vesta_cng.png',
                 'slogan' => 'Возможность использовать два вида топлива: сжатый природный газ (метан) и бензин',
-                'active' => 0,
+                'active' => 1,
             ],
             [
                 'car_model_id' => '2',

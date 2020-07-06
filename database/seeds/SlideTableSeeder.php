@@ -143,6 +143,15 @@ class SlideTableSeeder extends Seeder
                 'subtitle' => 'динамический дизайн<br> и вместительность',
                 'link' => '/model_details'
             ],
+            [
+                'model_id' => 2,
+                'type_id' => 9,
+                'class' => 'vesta_cng',
+                'title' => 'LADA Vesta CNG',
+                'reduction' => 'CNG',
+                'subtitle' => 'динамический дизайн<br> и вместительность',
+                'link' => '/model_details'
+            ],
         ];
 
         DB::table('slides')->insert($slides);
