@@ -290,28 +290,23 @@ class ReviewTableSeeder extends Seeder
             [
                 'model_id' => 2,
                 'type_id' => 9,
-                'url' => 'https://autodraiv2020.ru/2019/12/31/lada-vesta-s-yaponskim-motorom-i-variatorom/',
-                'quote' => 'От управления «Вестой» можно по-настоящему получить удовольствие. Без шуток.
-Автомобиль буквально проглатывает ямы, атакуя одну связку поворотов за другой.
-Просторно, удобные кресла и неплохой акустический комфорт.',
-                'author' => 'портал <cite>autodraiv2020.ru</cite>'
+                'url' => 'https://auto.rambler.ru/',
+                'quote' => 'LADA Vesta CNG&nbsp;&mdash; наше метановое будущее. Развитие темы использования сжатого природного газа в&nbsp;качестве топлива уже не&nbsp;остановить, и&nbsp;это прекрасно!',
+                'author' => 'портал <cite>rambler.ru</cite>'
             ],
             [
                 'model_id' => 2,
                 'type_id' => 9,
-                'url' => 'https://carexpert.ru/testdrive/vaz/vazve_wj/aa-trade21.htm',
-                'quote' => 'В богатых комплектациях LADA Vesta CNG по оснащению существенно превосходит своих конкурентов.
-Еще один плюс LADA Vesta – большое количество модификаций: в модельном ряду есть седаны и универсалы, как с обычным, так и с увеличенным дорожным просветом, а также уникальное предложение в сегменте – версия на газовом топливе.',
-                'author' => 'портал <cite>carexpert.ru</cite>'
+                'url' => 'https://xrayvesta.ru/',
+                'quote' => 'Vesta CNG&nbsp;&mdash; первая в&nbsp;своем роде российская машина с&nbsp;ГБО, выпускаемая серийно.',
+                'author' => 'портал <cite>xrayvesta.ru</cite>'
             ],
             [
                 'model_id' => 2,
                 'type_id' => 9,
-                'url' => 'https://carexpert.ru/testdrive/vaz/vazve_wj/vazvea950.htm',
-                'quote' => 'Дизайн без всяких сомнений заслуживает оценки «отлично».
-С такой внешностью автомобиль не затеряется и на парковке с автомобилями премиального класса.
-Столь грамотно спроектированного багажного отсека, как у LADA Vesta CNG мы не встречали даже у иномарок. Здесь все продумано до мелочей. ',
-                'author' => 'портал <cite>carexpert.ru</cite>'
+                'url' => 'https://car.ru',
+                'quote' => 'LADA Vesta CNG&nbsp;&mdash; экономичная модель автомобиля для езды в&nbsp;городских условиях.',
+                'author' => 'портал <cite>car.ru</cite>'
             ],
         ];
 
