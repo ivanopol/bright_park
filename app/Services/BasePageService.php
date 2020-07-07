@@ -36,9 +36,10 @@ class BasePageService
 
         if ($blocks && $blocks_slider) {
             foreach ($blocks as $key => &$block) {
+                $model_title = $car_model->title === $car_type->title_ru ? $car_model->title : $car_model->title . ' ' . $car_type->title_ru;
                 $block->price = $key === 0 ? '<span class="no-block" itemscope itemtype="http://schema.org/Product">
                                                   <span class="c_orange">
-                                                      <span class="no-block" itemprop="brand">LADA</span> <span class="no-block" itemprop="name">' . $car_model->title .'</span>
+                                                      <span class="no-block" itemprop="brand">LADA</span> <span class="no-block" itemprop="name">' . $model_title .'</span>
                                                   </span>
                                                   <span class="block-price no-block" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
                                                   <meta itemprop="priceCurrency" content="RUB" />
