@@ -1,6 +1,6 @@
 <template>
     <section>
-        <hooper class="main-screen-wrap" :autoPlay="false" :playSpeed="6000" :wheelControl="false" >
+        <hooper class="main-screen-wrap" :autoPlay="true" :playSpeed="6000" :wheelControl="false" :transition="600" :infiniteScroll="true">
              <slide class="odd">
                 <div class="asset-container">
                     <picture>
