@@ -3,23 +3,23 @@
         <div id="layout" :class="{ active: layout }" @click="close"></div>
         <section id="panel" >
             <ul :class="theme">
-                <li id="common__tab-bar__menu" class="menu-wrap event" @click="toggleMenu">
+                <li id="common__tab-bar__menu" class="menu-wrap event"  @click="toggleMenu">
                     <icon-menu ></icon-menu>
-                    <span>Меню</span>
+                    <span class="bubble">Меню</span>
                 </li>
                 <li class="call-wrap" @click="toggleCall">
                     <a id="common__tab-bar__call" :href="'tel:' + this.phone" class="event">
                         <icon-call></icon-call>
-                        <span>Звонок</span>
+                        <span class="bubble">Звонок</span>
                     </a>
                 </li>
                 <li id="common__tab-bar__route" class="route-map event" @click="toggleMapWindow">
                     <icon-route></icon-route>
-                    <span>Маршрут</span>
+                    <span class="bubble">Маршрут</span>
                 </li>
                 <li id="common__tab-bar__chat" class="chat-wrap event" @click="toggleJivo">
                     <icon-chat ></icon-chat>
-                    <span>Чат</span>
+                    <span class="bubble">Чат</span>
                 </li>
             </ul>
         </section>

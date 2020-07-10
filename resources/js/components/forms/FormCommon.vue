@@ -168,7 +168,6 @@
             }
         },
         mounted() {
-            console.log('Component FormCommon.vue is ready...');
             //console.log(this.cities.active);
         },
         beforeMount() {

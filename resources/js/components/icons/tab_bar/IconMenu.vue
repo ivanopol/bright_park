@@ -1,5 +1,5 @@
 <template>
-    <div class="menu">
+    <div class="menu bubble">
         <!-- Generator: Adobe Illustrator 23.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
         <svg version="1.1" id="Menu" v-bind:class="[ theme ]"  class="menu_wrap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
              viewBox="0 0 584 508"  xml:space="preserve">

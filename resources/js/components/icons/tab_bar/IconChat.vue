@@ -1,9 +1,9 @@
 <template>
-    <div class="chat">
+    <div class="chat bubble">
         <!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-        <svg version="1.1" id="Chat" v-bind:class="[ theme ]"  class="chat_wrap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        <svg version="1.1" id="Chat" v-bind:class="[ theme ]"  class="chat_wrap bubble" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
              viewBox="0 0 473 473" style="enable-background:new 0 0 473 473;" xml:space="preserve">
-            <title>chat_icon</title>
+            <title>Чат</title>
             <g>
                 <path class="cls-1" d="M403.581,69.3c-44.7-44.7-104-69.3-167.2-69.3s-122.5,24.6-167.2,69.3c-86.4,86.4-92.4,224.7-14.9,318
                     c-7.6,15.3-19.8,33.1-37.9,42c-8.7,4.3-13.6,13.6-12.1,23.2s8.9,17.1,18.5,18.6c4.5,0.7,10.9,1.4,18.7,1.4

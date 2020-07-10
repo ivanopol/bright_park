@@ -8,7 +8,7 @@
     export default {
         name: "EventHandlerComponent",
         data: () => ({
-            elements: [],
+
         }),
         methods: {
             async sendData(data, href) {
@@ -35,20 +35,37 @@
             },
             addHandler() {
                 let handle = async (e) => {
-                    let is_event = this.checkEvent(e);
+                    let classList = e.target.classList;
+                    let id = e.target.id;
                     let href = null;
+                    let bubble = false;
+                   // console.log(e);
+
+                    if (e.target.classList.contains('bubble')) {
+                        e.path.forEach((current, index, array) => {
+                            if (current.classList !== undefined && current.classList.contains('event')) {
+                                 id = current.id;
+                                 href = current.href ? current.href : null ;
+                                 bubble = true;
+                            }
+                        });
+                    }
+
+                    if (e.target.href) {
+                        e.preventDefault();
+                        href = e.target.attributes.href.value;
+                    } else if (bubble) {
+                        e.preventDefault();
+                    }
+
+                    let is_event = bubble ? true : this.checkEvent(e);
 
                     if (!is_event) {
                         return false;
                     }
 
-                    if (e.target.href) {
-                        event.preventDefault();
-                        href = e.target.attributes.href.value;
-                    }
-
                     let data = {
-                        'btn_id': e.target.id,
+                        'btn_id': id,
                         'href': href,
                         'location': window.location.pathname,
                         'timestamp': new Date().toISOString(),
@@ -56,18 +73,14 @@
                     };
                     await this.sendData(data, href);
                 };
+
                 document.addEventListener('click', handle, false);
             }
         },
-
         mounted() {
             this.addHandler()
         },
-
         destroyed() {
-            for (let i = 0; i < this.elements.length; i++) {
-                this.sendData(this.elements[i]);
-            }
         }
     }
 </script>
