@@ -1,6 +1,6 @@
 <template>
-    <svg id="logo_bright_park" class="logo-bright-park-svg" v-bind:class="[ theme ]" data-name="logo_bright_park" xmlns="http://www.w3.org/2000/svg" width="1006.89" height="125.41" viewBox="0 0 1006.89 125.41">
-        <title>logo_bright_park</title>
+    <svg id="logo_bright_park" class="logo-bright-park-svg bubble" v-bind:class="[ theme ]" data-name="logo_bright_park" xmlns="http://www.w3.org/2000/svg" width="1006.89" height="125.41" viewBox="0 0 1006.89 125.41">
+        <title>Брайт Парк - официальный дилер LADA</title>
         <g>
             <path class="cls-1" d="M435.68,130.14v10.45a29.19,29.19,0,0,1,24.21-12.18c19.06,0,32.56,15,32.56,35.08,0,20.37-13.63,35.46-32.95,35.46a28.76,28.76,0,0,1-23-10.85v37.19H419.93V130.14Zm.26,33.48c0,11.25,7.81,20.24,19.59,20.24s19.58-9.13,19.58-20.24c0-10.86-7.67-20.12-19.58-20.12S435.94,152.63,435.94,163.62Z" transform="translate(-124.48 -99.88)"/>
             <path class="cls-1" d="M502.57,163.88c0-20.38,13.64-35.47,32.82-35.47a28.85,28.85,0,0,1,24.09,12.05V130.14H575.1v67.09H559.48V186.51A28.8,28.8,0,0,1,535.13,199C516.07,199,502.57,184,502.57,163.88Zm56.51-.13c0-11.12-7.8-20.25-19.58-20.25s-19.72,9.13-19.72,20.25,7.81,20.11,19.72,20.11S559.08,174.73,559.08,163.75Z" transform="translate(-124.48 -99.88)"/>

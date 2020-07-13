@@ -1,6 +1,6 @@
 <template>
-    <svg id="logo_bright_park_mobile" class="logo-bright-park-mobile-svg" v-bind:class="[ theme ]" data-name="logo_bright_park_mobile" xmlns="http://www.w3.org/2000/svg" width="797.9" height="125.4" viewBox="0 0 797.9 125.4">
-        <title>logo_bright_park_mobile</title>
+    <svg id="logo_bright_park_mobile" class="logo-bright-park-mobile-svg bubble" v-bind:class="[ theme ]" data-name="logo_bright_park_mobile" xmlns="http://www.w3.org/2000/svg" width="797.9" height="125.4" viewBox="0 0 797.9 125.4">
+        <title>Брайт Парк - официальный дилер LADA</title>
         <g>
             <path class="cls-1" d="M102.2,30.3v10.4c5.6-7.8,14.6-12.3,24.2-12.2c19.1,0,32.6,15,32.6,35.1c0,20.4-13.6,35.5-33,35.5
             c-8.9,0.2-17.4-3.9-23-10.9v37.2H86.4V30.3H102.2z M102.5,63.7C102.5,75,110.3,84,122,84s19.6-9.1,19.6-20.2

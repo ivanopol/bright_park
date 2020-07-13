@@ -6,10 +6,6 @@
                     <logo-bright-park :theme="theme"></logo-bright-park>
                 </a>
             </div>
-            <div class="model-button" v-if="button">
-                <span>{{car.reduction}}</span> <a id="header_sticky_btn_buy" class="event btn-small" :href="car.link">Купить</a>
-            </div>
-
             <div class="logo-lada" v-if="!button">
                 <logo-lada :theme="theme"></logo-lada>
             </div>

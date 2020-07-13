@@ -1,7 +1,7 @@
 <template>
-    <svg version="1.1" id="bp_sun" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    <svg class="bubble" version="1.1" id="bp_sun" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
          viewBox="0 0 18.8 10.4" style="enable-background:new 0 0 18.8 10.4;" xml:space="preserve">
-        <title>logo_bright_park_sun</title>
+        <title>Брайт Парк - официальный дилер LADA</title>
         <g>
             <rect x="14.9" y="8.3" class="st0" width="3.9" height="2.1"/>
             <rect y="8.3" class="st0" width="3.9" height="2.1"/>
