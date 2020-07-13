@@ -21,7 +21,7 @@
         </ul>
 
         <modal name="form-callback2" height="auto" :adaptive="true">
-            <div class="close" @click="hide"></div>
+            <div :id="form_id + '_close'" class="close event" @click="hide"></div>
             <form-buy2-component :cities="cities"
                                  :form_title="form_title"
                                  :form_id="form_id"
