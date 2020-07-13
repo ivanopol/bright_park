@@ -11,7 +11,7 @@
             </li>
             <li>
                 <a id="main__image-buttons__service" :href="'/' + cities.active.value + '/service'" class="event">
-                    <img class="buttons-block-list-maintenance event" src="/build/images/main/buttons_block/maintenance.png" alt="Брайт Парк: техническое обслуживание"/>
+                    <img class="buttons-block-list-maintenance bubble" src="/build/images/main/buttons_block/maintenance.png" alt="Брайт Парк: техническое обслуживание"/>
                 </a>
             </li>
             <li>
