@@ -22,21 +22,21 @@
         <div class="buy-steps-wrapper">
             <div class="buy-step-block">
                 <div :id="prefix + 'steps__rate-a-car'" class="divided event" v-on:click.prevent="gradeShow(0)" :class="[ grade == 0 || grade == 1 ? 'buy-step-circle-colored' : 'buy-step-circle' ]">
-                    <p class="buy-step-number">1</p>
+                    <p class="buy-step-number bubble">1</p>
                 </div>
                 <p class="buy-step-text">Оцените автомобиль</p>
             </div>
 
             <div class="buy-step-block">
                 <div :id="prefix + 'steps__сalculate-payment'" class="divided event" v-on:click.prevent="gradeShow(2)" :class="[ grade == 2 || grade == 3? 'buy-step-circle-colored' : 'buy-step-circle' ]">
-                    <p class="buy-step-number">2</p>
+                    <p class="buy-step-number bubble">2</p>
                 </div>
                 <p class="buy-step-text">Рассчитайте платеж</p>
             </div>
 
             <div class="buy-step-block" >
                 <div :id="prefix + 'steps__fill-form'" class="buy-step-circle divided event" v-on:click.prevent="gradeShow(4)" :class="[ grade == 4 ? 'buy-step-circle-colored' : 'buy-step-circle' ]">
-                    <p class="buy-step-number">3</p>
+                    <p class="buy-step-number bubble">3</p>
                 </div>
                 <p class="buy-step-text">Заполните форму</p>
             </div>
