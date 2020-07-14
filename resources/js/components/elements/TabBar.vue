@@ -118,6 +118,7 @@
     import IconRoute from '../icons/tab_bar/IconRoute.vue';
     import IconChat from '../icons/tab_bar/IconChat.vue';
     import IconSpanner from '../icons/tab_bar/IconSpanner.vue';
+    import axios from "axios";
 
     document.onreadystatechange = function () {
         if (document.readyState == "complete") {
@@ -213,11 +214,27 @@ export default {
                 this.fixBody(false);
                 return this.open = false;
             },
+
             selected: function(event) {
                 let segments = window.location.pathname.slice(1).split('/');
                 segments[0] = event.value;
                 let segments_str = segments.join('/');
-                window.location.href = window.location.protocol + '//' + window.location.host + '/' + segments_str;
+
+                let data = {
+                    'btn_id': 'common__menu-select-city__' + event.value,
+                    'href': '/' + segments_str,
+                    'location': window.location.pathname,
+                    'timestamp': new Date().toISOString(),
+                    'event_type': 'button'
+                };
+
+                axios({
+                    method: 'post',
+                    url: '/api/write_event',
+                    data: data
+                }).then((response) => {
+                    window.location.href = window.location.protocol + '//' + window.location.host + '/' + segments_str;
+                });
             },
             toggleMapWindow: function() {
                 this.open = false;
