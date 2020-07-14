@@ -40,10 +40,19 @@
         <section id="menu" :class="{ active: open }">
             <div id="common__menu__window-close" class="close event" @click="close"></div>
             <div class="menu_wrap">
-                <v-select id="common__menu__select-city" class="select_wrap event" :components="{OpenIndicator, Deselect}" placeholder="Выбрать город" taggable
-                          :options="cities.list" :searchable="false" v-model="cities.active" @input="selected">
+                <v-select class="select_wrap" :components="{OpenIndicator, Deselect}" placeholder="Выбрать город" taggable
+                          :options="cities.list" :searchable="false" v-model="cities.active" @input="selected" >
                     <div class="spinner">Загрузка...</div>
                     <div slot="no-options">Нет совпадений</div>
+                   <template #search="{attributes, events}">
+                        <input
+                            id="common__menu__select-city"
+                            class="vs__search event"
+                            :required="!cities.active"
+                            v-bind="attributes"
+                            v-on="events"
+                        />
+                   </template>
                 </v-select>
 
                 <div class="menu_content_block">
@@ -205,7 +214,10 @@ export default {
                 return this.open = false;
             },
             selected: function(event) {
-                window.location.href = window.location.protocol + '//' + window.location.host + '/' + event.value;
+                let segments = window.location.pathname.slice(1).split('/');
+                segments[0] = event.value;
+                let segments_str = segments.join('/');
+                window.location.href = window.location.protocol + '//' + window.location.host + '/' + segments_str;
             },
             toggleMapWindow: function() {
                 this.open = false;
