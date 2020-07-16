@@ -142,6 +142,10 @@ class BasePageService
         $carcasses = CarModel::where('id', $car_model->id)->with('carcasses')->get();
 
         foreach ($carcasses[0]->carcasses as &$carcass) {
+            if (strtolower($carcasses[0]->title) === strtolower($carcass->title_en)) {
+                $carcass->title_en = '';
+                $carcass->title_ru = '';
+            }
             $carcass->pivot->image = str_replace('mobile/', '', $carcass->pivot->image);
         }
 
