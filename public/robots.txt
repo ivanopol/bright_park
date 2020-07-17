@@ -1,13 +1,32 @@
-#Yandex
-User-agent: Yandex
-Disallow: /404
-Disallow: /*?*
-
-Sitemap: https://brightpark.ru/sitemap.xml
-
-# All
 User-agent: *
-Disallow: /404
 Disallow: /*?*
+Allow: *.css
+Allow: *.js
+Allow: *.jpeg
+Allow: *.jpg
+Allow: *.png
+Allow: *.svg
+Allow: /build/images/
 
+User-agent: Yandex
+Disallow: /*?*
+Allow: *.css
+Allow: *.js
+Allow: *.jpeg
+Allow: *.jpg
+Allow: *.png
+Allow: *.svg
+Allow: /build/images/
+
+User-agent: Googlebot
+Disallow: /*?*
+Allow: *.css
+Allow: *.js
+Allow: *.jpeg
+Allow: *.jpg
+Allow: *.png
+Allow: *.svg
+Allow: /build/images/
+
+Host: https://brightpark.ru/
 Sitemap: https://brightpark.ru/sitemap.xml
