@@ -48,6 +48,7 @@
                 <h2>Модели</h2>
                 <ul>
                     @foreach ($models as $model)
+                        @if(!empty($model->types_preview[0]))
                         <li>
                             <a id="main__models__{{$model->slug}}" class="event" href="{{ route('model', ['city' => $city, 'car_model' => $model->slug, 'car_type' => $model->types_preview[0]->slug])}}">
                                 <div class="img_wrap">
@@ -56,6 +57,7 @@
                                 <div class="title">{{ $model->title }}</div>
                             </a>
                         </li>
+                        @endif
                     @endforeach
                 </ul>
             </div>

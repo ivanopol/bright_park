@@ -18,20 +18,20 @@
                                 <span class="hidden" itemprop="name">{{$data['carcasses'][0]->title . ' ' . $carcass->title_ru}}</span>
                                 <span class="hidden" itemprop="description">{{$carcass->pivot->slogan}}</span>
                                 <a id="models__carcass-list__{{$data['carcasses'][0]->slug}}-{{$carcass->slug}}" class="event" href="{{ route('model', ['city' => $city, 'car_model' => $data['carcasses'][0]->slug, 'car_type' => $carcass->slug ]) }}">
-                                    <div class="carcasses-list-img">
-                                        <img itemprop="image" src="{{$carcass->pivot->image}}" alt="{{$data['carcasses'][0]->title . ' ' . $carcass->title_ru}}">
+                                    <div class="carcasses-list-img bubble">
+                                        <img class="bubble" itemprop="image" src="{{$carcass->pivot->image}}" alt="{{$data['carcasses'][0]->title . ' ' . $carcass->title_ru}}">
                                     </div>
-                                    <div class="carcasses-list-description" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                        <div class="carcasses-list-title">
-                                            <span class="carcasses-list-title-el" itemprop="name">{{$data['carcasses'][0]->title . ' ' . $carcass->title_ru}}</span>
-                                            <span itemprop="description" class="carcasses-list-title-slogan">{{$carcass->pivot->slogan}}</span>
+                                    <div class="carcasses-list-description bubble" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                                        <div class="carcasses-list-title bubble">
+                                            <span class="carcasses-list-title-el bubble" itemprop="name">{{$data['carcasses'][0]->title . ' ' . $carcass->title_ru}}</span>
+                                            <span itemprop="description" class="carcasses-list-title-slogan bubble">{{$carcass->pivot->slogan}}</span>
                                         </div>
                                         <div class="carcasses-list-prices" >
-                                            <span itemprop="price" class="carcasses-list-prices-new">от <span>{{ number_format($carcass->pivot->special_price, 0, ',', ' ') }}</span> <span itemprop="priceCurrency" content="RUB">р.</span></span>
-                                             <span class="carcasses-list-prices-old">от <span>{{ number_format($carcass->pivot->price, 0, ',', ' ') }}</span> р.</span>
+                                            <span itemprop="price" class="carcasses-list-prices-new bubble">от <span>{{ number_format($carcass->pivot->special_price, 0, ',', ' ') }}</span> <span itemprop="priceCurrency" content="RUB">р.</span></span>
+                                            <span class="carcasses-list-prices-old bubble">от <span>{{ number_format($carcass->pivot->price, 0, ',', ' ') }}</span> р.</span>
                                         </div>
                                         <div class="carcasses-list-button">
-                                            <a itemprop="availability" href="{{ route('model', ['city' => $city, 'car_model' => $data['carcasses'][0]->slug, 'car_type' => $carcass->slug ]) }}" class="btn btn-primary btn-position green">Подробнее</a>
+                                            <span class="btn btn-primary btn-position green bubble">Подробнее</span>
                                         </div>
                                     </div>
                                 </a>
