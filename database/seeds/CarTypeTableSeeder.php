@@ -111,7 +111,13 @@ class CarTypeTableSeeder extends Seeder
                 'slug' => Str::slug('XRAY'),
             ],
             [
-                'title_ru' => null, 'title_en' => null, 'slug' => null],
+                'title_ru' => null, 'title_en' => null, 'slug' => null
+            ],
+            [
+                'title_ru' => 'Niva',
+                'title_en' => 'Niva',
+                'slug' => Str::slug('Niva'),
+            ],
         ];
 
         DB::table('car_types')->insert($model_types);

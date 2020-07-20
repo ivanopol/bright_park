@@ -308,6 +308,20 @@ class ReviewTableSeeder extends Seeder
                 'quote' => 'LADA Vesta CNG&nbsp;&mdash; экономичная модель автомобиля для езды в&nbsp;городских условиях.',
                 'author' => 'портал <cite>car.ru</cite>'
             ],
+            [
+                'model_id' => 6,
+                'type_id' => 22,
+                'url' => 'https://xn--80aal0a.xn--80asehdb/reviews-tests/lada-niva-chevrolet-reviews-tests/9734-obzor-obnovlennoj-lada-niva.html',
+                'quote' => 'Она уверенно мчится по грунтовке и форсирует броды. При этом отлично чувствует асфальт, сглаживая изъяны дорог. Компактные габариты влияют не только на отличную геометрическую проходимость, но и на удобство парковки.',
+                'author' => 'портал <cite>лада.онлайн</cite>'
+            ],
+            [
+                'model_id' => 6,
+                'type_id' => 22,
+                'url' => 'https://xn--80aal0a.xn--80asehdb/reviews-tests/lada-niva-chevrolet-reviews-tests/9734-obzor-obnovlennoj-lada-niva.html',
+                'quote' => 'Под ее капотом бьется сердце покорителя бездорожья, но в салоне продумано всё, чтобы каждая поездка была комфортной и исключительно приятной. Чтобы вы не скучали в пробках, не очищали перед работой обледеневшее стекло в –25 °С, не задыхались от жары в июле. И чтобы ничто не угрожало вашей безопасности на любых дорогах.',
+                'author' => 'портал <cite>лада.онлайн</cite>'
+            ],
         ];
 
         DB::table('reviews')->insert($reviews);

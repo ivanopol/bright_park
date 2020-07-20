@@ -152,6 +152,15 @@ class SlideTableSeeder extends Seeder
                 'subtitle' => 'динамический дизайн<br> и вместительность',
                 'link' => '/model_details'
             ],
+            [
+                'model_id' => 6,
+                'type_id' => 22,
+                'class' => 'niva_1',
+                'title' => 'LADA Niva',
+                'reduction' => 'Niva',
+                'subtitle' => 'На край света и обратно',
+                'link' => '/model_details'
+            ],
         ];
 
         DB::table('slides')->insert($slides);

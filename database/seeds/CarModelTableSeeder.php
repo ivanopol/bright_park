@@ -39,6 +39,12 @@ class CarModelTableSeeder extends Seeder
                 'description' => 'Этот автомобиль может легко приспособиться к любым вашим потребностям. LADA Largus идеально сочетает в себе комфорт, практичность и высокую полезную нагрузку. Крепкий, сбитый, уверенный Largus однозначно заявляет: «На меня можно положиться!». LADA Largus адаптирован к российским условиям эксплуатации, а отработанная конструкция и технологии обеспечивают высокое качество автомобиля.',
                 'preview' => '/build/images/photos/models/largus/largus.png',
             ],
+            [
+                'title' => 'Niva',
+                'slug' => Str::slug('Niva'),
+                'description' => 'Отправляйтесь в путешествие по горам и городам! Потрясающие внедорожные возможности LADA Niva открывают перед вами все пути.',
+                'preview' => '/build/images/photos/models/4x4/lada_niva.png',
+            ],
         ];
 
         DB::table('car_models')->insert($models);

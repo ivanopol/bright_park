@@ -282,6 +282,17 @@ class CarModelCarTypeTableSeeder extends Seeder
                 'slogan' => 'Высокая грузоподъемность, двойные задние распашные двери, низкий порог, высокая крыша',
                 'active' => 0,
             ],
+            [
+                'car_model_id' => '6',
+                'car_type_id' => '22',
+                'preview' => false,
+                'price' => 695000,
+                'special_price' => 675000,
+                'count'=>333,
+                'image' => '/build/images/slider/mini/4x4/mobile/lada_niva.png',
+                'slogan' => 'На край света и обратно',
+                'active' => 1,
+            ],
         ];
 
         DB::table('car_model_car_type')->insert($model_types);

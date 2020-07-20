@@ -208,6 +208,14 @@ class SlideMiniTableSeeder extends Seeder
                 'title' => 'фургон CNG',
                 'active' => false,
             ],
+            [
+                'model_id' => 6,
+                'type_id' => 22,
+                'image' => '/build/images/slider/mini/4x4/mobile/lada_niva.png',
+                'alt' => 'Лада Niva',
+                'title' => 'Niva',
+                'active' => true,
+            ],
         ];
 
         DB::table('slide_mini')->insert($slides_mini);
