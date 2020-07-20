@@ -137,7 +137,7 @@ class SeoService
                     $tags->description = mb_strimwidth($params['news']->text_short, 0, 157, "...") . " - Брайт Парк в " . $city->city_dative;
                 } elseif ( $segments[1] === $params['model']->slug && $segments[2] === $params['type']->slug )
                 {
-                    if (strtolower($params['type']->title_ru) === 'xray') {
+                    if (strtolower($params['type']->title_ru) === strtolower($params['model']->title)) {
                         $model = $params['model']->title;
                     } else {
                         $model = $params['model']->title . " " . $params['type']->title_ru;

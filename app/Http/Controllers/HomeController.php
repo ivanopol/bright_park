@@ -233,7 +233,7 @@ class HomeController extends Controller
             $count = $_COOKIE["c_count"];
         }
 
-        if (strtolower($car_type->title_ru) === 'xray') {
+        if (strtolower($car_type->title_ru) === strtolower($car_model->title)) {
             $car_type->title_ru = '';
         }
 
