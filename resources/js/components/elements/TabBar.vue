@@ -59,7 +59,7 @@
                     <div class="models_wrap">
                         <ul class="" itemscope itemtype="http://schema.org/SiteNavigationElement">
                             <li v-for="model in models" v-bind:key="model.id">
-                                <a :id="'common__menu__' + model.slug" class="event" :href="'/' + cities.active.value + '/' + model.slug + '/' + model.types_preview[0].slug" itemprop="url">
+                                <a :id="'common__menu__' + model.slug" class="event" :href="'/' + cities.active.value + '/' + model.slug + '/' + model.types_preview[0].slug" itemprop="url" v-if="model.types_preview.length > 0">
                                     <div class="title bubble" v-text="model.title"></div>
                                 </a>
                             </li>
