@@ -105,7 +105,8 @@ class BasePageService
         }
 
         $model_full = '';
-        if (strtolower($car_model->title) === 'xray') {
+        if (strtolower($car_model->title) === strtolower($car_type->title_ru))
+        {
             $model_full = $car_model->title;
         } else {
             $model_full = $car_model->title . ' ' . $car_type->title_ru;
