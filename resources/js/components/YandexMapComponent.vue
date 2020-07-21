@@ -129,6 +129,7 @@
                     });
 
                 myMap.geoObjects.add(brightParkLocation);
+                myMap.behaviors.disable('scrollZoom');
 
                 this.brightParkLocation = brightParkLocation;
                 this.geolocation = geolocation;
