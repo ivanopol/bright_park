@@ -9,9 +9,9 @@ class CarModel extends Model
     protected $fillable = [
         'title',
         'slug',
-        'preview',
-        'title_en',
         'description',
+        'sort',
+        'preview',
     ];
     /**
      * Таблица, связанная с моделью.

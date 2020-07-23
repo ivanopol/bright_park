@@ -51,7 +51,7 @@ class HomeController extends Controller
         $data = [];
         $cities = $city->getCities($this->city);
         $data['coordinates'] = explode(",", $city['coordinates']);
-        $models = CarModel::with('types_preview')->get();
+        $models = CarModel::with('types_preview')->orderBy('sort', 'asc')->get();
 
         $this->seo->setMetaTags($city, ['place' => $data['coordinates']]);
 
@@ -85,7 +85,7 @@ class HomeController extends Controller
 
         $service = new BasePageService();
         $offer = $service->getRetargetOffers(new Retarget(), $request);
-        $models = CarModel::with('types_preview')->get();
+        $models = CarModel::with('types_preview')->orderBy('sort', 'asc')->get();
 
         $raw = new AutoruService();
         $brands = $raw->getBrands();
@@ -130,7 +130,7 @@ class HomeController extends Controller
         }
 
         $cities = $city->getCities($this->city);
-        $models = CarModel::with('types_preview')->get();
+        $models = CarModel::with('types_preview')->orderBy('sort', 'asc')->get();
 
         $service = new BasePageService();
         $data['carcasses'] = $service->getAllCarcasses($car_model, $city);
@@ -172,7 +172,7 @@ class HomeController extends Controller
 
         $cities = $city->getCities($this->city);
         $service = new BasePageService();
-        $models = CarModel::with('types_preview')->get();
+        $models = CarModel::with('types_preview')->orderBy('sort', 'asc')->get();
         $data = $service->get_base_page_data($car_model, $car_type, $this->city);
         $data['coordinates'] = explode(",", $city['coordinates']);
 
@@ -216,7 +216,7 @@ class HomeController extends Controller
         }
 
         $cities = $city->getCities($this->city);
-        $models = CarModel::with('types_preview')->get();
+        $models = CarModel::with('types_preview')->orderBy('sort', 'asc')->get();
 
         $car_attrs = CarModelCarType::where([
             ['car_model_id', '=', $car_model->id],
@@ -267,7 +267,7 @@ class HomeController extends Controller
         }
 
         $cities = $city->getCities($this->city);
-        $models = CarModel::with('types_preview')->get();
+        $models = CarModel::with('types_preview')->orderBy('sort', 'asc')->get();
 
         $data['coordinates'] = explode(",", $city['coordinates']);
 
@@ -301,7 +301,7 @@ class HomeController extends Controller
         }
 
         $cities = $city->getCities($this->city);
-        $models = CarModel::with('types_preview')->get();
+        $models = CarModel::with('types_preview')->orderBy('sort', 'asc')->get();
         $data['coordinates'] = explode(",", $city['coordinates']);
 
         return view('news_one', [
@@ -330,7 +330,7 @@ class HomeController extends Controller
         }
 
         $cities = $city->getCities($this->city);
-        $models = CarModel::with('types_preview')->get();
+        $models = CarModel::with('types_preview')->orderBy('sort', 'asc')->get();
 
         $data['coordinates'] = explode(",", $city['coordinates']);
 
@@ -364,7 +364,7 @@ class HomeController extends Controller
         }
 
         $cities = $city->getCities($this->city);
-        $models = CarModel::with('types_preview')->get();
+        $models = CarModel::with('types_preview')->orderBy('sort', 'asc')->get();
         $data['coordinates'] = explode(",", $city['coordinates']);
 
         return view('stocks_one', [
@@ -393,7 +393,7 @@ class HomeController extends Controller
         }
 
         $cities = $city->getCities($this->city);
-        $models = CarModel::with('types_preview')->get();
+        $models = CarModel::with('types_preview')->orderBy('sort', 'asc')->get();
         $data['coordinates'] = explode(",", $city['coordinates']);
 
         return view('contacts', [
@@ -421,7 +421,7 @@ class HomeController extends Controller
         }
 
         $cities = $city->getCities($this->city);
-        $models = CarModel::with('types_preview')->get();
+        $models = CarModel::with('types_preview')->orderBy('sort', 'asc')->get();
         $data['coordinates'] = explode(",", $city['coordinates']);
 
         //  print_r($data['coordinates']);
@@ -451,7 +451,7 @@ class HomeController extends Controller
         $data['coordinates'] = explode(",", $city['coordinates']);
         $this->seo->setMetaTags($city, ['place' => $data['coordinates']]);
 
-        $models = CarModel::with('types_preview')->get();
+        $models = CarModel::with('types_preview')->orderBy('sort', 'asc')->get();
         $data['coordinates'] = explode(",", $city['coordinates']);
 
         return view('service', [
