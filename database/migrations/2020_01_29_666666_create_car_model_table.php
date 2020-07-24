@@ -12,6 +12,7 @@ class CreateCarModelTable extends Migration
             $table->engine = "InnoDB";
             $table->bigIncrements('id');
             $table->string('title');
+            $table->string('title_ru');
             $table->string('slug');
             $table->text('description');
             $table->tinyInteger('sort');
