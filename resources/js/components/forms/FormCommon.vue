@@ -4,7 +4,7 @@
             <the-mask :id="form_id + '_input_phone'" pattern=".{18,}" mask="+# (###)-###-##-##" v-model="phone" type="tel" required="true" placeholder="Телефон"></the-mask>
             <textarea name="comment" :id="form_id + '_input_comment'" placeholder="Комментарий" v-model="comment" v-if="is_comment"></textarea>
             <div class="control-group">
-                <label :for="form_id + '_checkbox_personal_data'" class="control control-checkbox">Я согласен на <a :href="'/' + cities.active.value + '/privacy'" target="_blank">обработку персональных данных</a>
+                <label :for="form_id + '_checkbox_personal_data'" class="control control-checkbox">Я согласен на <a :href="'/' + cities.active.value + '/privacy'" class="event" target="_blank">обработку персональных данных</a>
                     <input type="checkbox" :id="form_id + '_checkbox_personal_data'" v-model='status' >
                     <div class="control_indicator"></div>
                 </label>
