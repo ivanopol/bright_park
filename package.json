@@ -29,6 +29,7 @@
     "dependencies": {
         "@chenfengyuan/vue-countdown": "^1.1.5",
         "hooper": "^0.3.4",
+        "laravel-mix-copy-watched": "^2.2.4",
         "reset-css": "^5.0.1",
         "swiper": "^5.3.8",
         "vue-awesome-swiper": "^4.1.1",

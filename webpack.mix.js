@@ -1,36 +1,17 @@
 const mix = require('laravel-mix');
-
-/*
- |--------------------------------------------------------------------------
- | Mix Asset Management
- |--------------------------------------------------------------------------
- |
- | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel application. By default, we are compiling the Sass
- | file for the application as well as bundling up all the JS files.
- |
- */
-
-/*
-var LiveReloadPlugin = require('webpack-livereload-plugin');
-
-mix.webpackConfig({
-    plugins: [
-        new LiveReloadPlugin()
-    ]
-});
-*/
-
+require('laravel-mix-copy-watched');
 
 mix
     .setPublicPath('public/build')
     .setResourceRoot('build')
     .js('resources/js/app.js', 'js')
     .sass('resources/sass/app2.scss', 'css/app2.css')
-    .copyDirectory('resources/images', 'public/build/images')
     .version();
 
-    if (!mix.inProduction()) {
+    if (mix.inProduction()) {
+        mix.copyDirectory('resources/images', 'public/build/images')
+    } else {
+        mix.copyWatched('resources/images', 'public/build/images',  { base: 'resources/images' })
         mix.browserSync({
             open: false,
             watchTask: true,
@@ -39,4 +20,6 @@ mix
             browser: "chrome"
         });
     }
+
+
 
