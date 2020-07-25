@@ -26,13 +26,17 @@ mix
     .setPublicPath('public/build')
     .setResourceRoot('build')
     .js('resources/js/app.js', 'js')
-   // .sass('resources/sass/app.scss', 'css/app.css')
     .sass('resources/sass/app2.scss', 'css/app2.css')
-    .version().browserSync({
-        open: false,
-        watchTask: true,
-        proxy: 'http://0.0.0.0',
-        port: 8081,
-        browser: "chrome"
-    });
+    .copyDirectory('resources/images', 'public/build/images')
+    .version();
+
+    if (!mix.inProduction()) {
+        mix.browserSync({
+            open: false,
+            watchTask: true,
+            proxy: 'http://0.0.0.0',
+            port: 8081,
+            browser: "chrome"
+        });
+    }
 
