@@ -285,7 +285,7 @@ class CarModelCarTypeTableSeeder extends Seeder
             [
                 'car_model_id' => '6',
                 'car_type_id' => '22',
-                'preview' => false,
+                'preview' => true,
                 'price' => 695000,
                 'special_price' => 675000,
                 'count'=>333,
