@@ -1,5 +1,4 @@
 User-agent: *
-1
 Disallow: /*?*
 Allow: *.css
 Allow: *.js
