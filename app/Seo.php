@@ -9,14 +9,8 @@ class Seo extends Model
     protected $fillable = [
         'url',
         'title',
-        'header',
         'description',
-        'og_locale',
-        'og_type',
-        'og_title',
-        'og_description',
-        'og_url',
-        'og_image',
+        'cities',
     ];
 
     /**
@@ -25,4 +19,12 @@ class Seo extends Model
      * @var string
      */
     protected $table = 'seo';
+
+    /**
+     * Получить список городов для которых указаны мета-теги
+     */
+    public function cities()
+    {
+        return $this->hasMany('App\SeoCities');
+    }
 }

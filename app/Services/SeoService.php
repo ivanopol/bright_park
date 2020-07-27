@@ -38,27 +38,50 @@ class SeoService
         }
 
         $path = $this->request->path();
-        $seo = Seo::where('url', $path)->first();
+        $path_segments = explode('/', $path);
+        array_shift($path_segments);
 
-        if ($seo === NULL) {
-            $seo = $this->generateMetaTags($path, $city, $params);
+        $seo_db = DB::table('seo')
+            ->join('seo_cities', 'seo.id', '=', 'seo_cities.seo_id')
+            ->select('seo.*', 'seo_cities.*')
+            ->where('seo.url', implode('/', $path_segments))
+            ->where(function($query) use($city) {
+                $query->where('seo_cities.city_id', $city->id)
+                    ->orWhere('seo_cities.city_id', 0);
+            })
+            ->first();
+
+        if ($seo_db) {
+            $patterns = [
+                '/<:CITY_DATIVE:>/',
+                '/<:REGION_DATIVE:>/',
+            ];
+
+            $replacements = [
+                $city->city_dative,
+                $city->region_dative,
+            ];
+
+            list($seo_db->title, $seo_db->description) = preg_replace($patterns, $replacements, [$seo_db->title, $seo_db->description]);
         }
 
-        $seo->og_title = empty($seo->og_title) ? $seo->title : $seo->og_title;
-        $seo->og_description = empty($seo->og_description) ? $seo->description : $seo->og_description;
+        $seo = $this->generateMetaTags($path, $city, $params);
 
-        SEOMeta::setTitle($seo->title);
-        SEOMeta::setDescription($seo->description);
+        $title = !empty($seo_db->title) ? $seo_db->title : $seo->title;
+        $description = !empty($seo_db->description) ? $seo_db->description : $seo->description;
+
+        SEOMeta::setTitle($title);
+        SEOMeta::setDescription($description);
         SEOMeta::setCanonical($this->request->url());
-        OpenGraph::setTitle($seo->og_title);
+        OpenGraph::setTitle($title);
         OpenGraph::setType('website');
         OpenGraph::setUrl($this->request->fullUrl());
-        OpenGraph::setDescription($seo->og_description);
+        OpenGraph::setDescription($description);
 
-        JsonLd::setTitle($seo->og_title);
+        JsonLd::setTitle($title);
         JsonLd::setType('WebSite');
         JsonLd::setUrl($this->request->fullUrl());
-        JsonLd::setDescription($seo->og_description);
+        JsonLd::setDescription($description);
 
         if (isset($seo->image) && $seo->image) {
             OpenGraph::addImage($seo->image);
@@ -70,7 +93,7 @@ class SeoService
                     'location:longitude' => $seo->place[1],
                 ]);
         }
-        TwitterCard::setTitle($seo->title);
+        TwitterCard::setTitle($title);
 
     }
 
