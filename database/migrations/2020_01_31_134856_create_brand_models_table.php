@@ -15,6 +15,7 @@ class CreateBrandModelsTable extends Migration
     {
         Schema::create('brand_models', function (Blueprint $table) {
             $table->engine = "InnoDB";
+            $table->collation = 'utf8mb4_general_ci';
             $table->bigIncrements('id');
             $table->bigInteger('brand_id')->unsigned()->index();
             $table->string('code');

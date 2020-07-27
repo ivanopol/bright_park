@@ -14,6 +14,8 @@ class CreatePageVisitsTable extends Migration
     public function up()
     {
         Schema::create('page_visits', function (Blueprint $table) {
+            $table->engine = "InnoDB";
+            $table->collation = 'utf8mb4_general_ci';
             $table->bigIncrements('id');
             $table->string('location', 2000);
             $table->string('bp_uid');

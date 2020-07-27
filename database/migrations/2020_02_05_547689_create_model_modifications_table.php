@@ -15,6 +15,7 @@ class CreateModelModificationsTable extends Migration
     {
         Schema::create('model_modifications', function (Blueprint $table) {
             $table->engine = "InnoDB";
+            $table->collation = 'utf8mb4_general_ci';
             $table->bigIncrements('id');
             $table->string('model_code');
             $table->string('brand_code');

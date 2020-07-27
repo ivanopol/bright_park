@@ -14,6 +14,8 @@ class CreateSpecialOffersTable extends Migration
     public function up()
     {
         Schema::create('special_offers', function (Blueprint $table) {
+            $table->engine = "InnoDB";
+            $table->collation = 'utf8mb4_general_ci';
             $table->bigIncrements('id');
             $table->date('start_date')->nullable();
             $table->date('end_date')->nullable();

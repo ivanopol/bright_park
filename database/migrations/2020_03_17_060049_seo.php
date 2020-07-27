@@ -14,17 +14,12 @@ class Seo extends Migration
     public function up()
     {
         Schema::create('seo', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->engine = "InnoDB";
+            $table->collation = 'utf8mb4_general_ci';
+            $table->bigIncrements('id')->unsigned();
             $table->string('url')->unique();
             $table->string('title');
-            $table->string('header')->nullable();
             $table->string('description')->nullable();
-            $table->string('og_locale')->nullable();
-            $table->string('og_type')->nullable();
-            $table->string('og_title')->nullable();
-            $table->string('og_description')->nullable();
-            $table->string('og_url')->nullable();
-            $table->string('og_image')->nullable();
         });
 
         Artisan::call('db:seed', [

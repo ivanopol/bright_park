@@ -14,6 +14,8 @@ class Stocks extends Migration
     public function up()
     {
         Schema::create('stocks', function (Blueprint $table) {
+            $table->engine = "InnoDB";
+            $table->collation = 'utf8mb4_general_ci';
             $table->bigIncrements('id');
             $table->string('title');
             $table->text('text');

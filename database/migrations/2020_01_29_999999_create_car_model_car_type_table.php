@@ -10,6 +10,7 @@ class CreateCarModelCarTypeTable extends Migration
     {
         Schema::create('car_model_car_type', function (Blueprint $table) {
             $table->engine = "InnoDB";
+            $table->collation = 'utf8mb4_general_ci';
             $table->bigInteger('car_model_id')->unsigned();
             $table->foreign('car_model_id')->references('id')->on('car_models');
             $table->bigInteger('car_type_id')->unsigned();
