@@ -10,11 +10,15 @@
     <div class="container p-top-90">
         <h1>Контакты</h1>
         <div class="contacts-wrap">
-            <div class="contacts">
+            <div class="contacts" itemscope itemtype="http://schema.org/LocalBusiness">
                 <ul>
                     <li>
                         <span class="contacts-field-name">Адрес:</span>
                         <span class="contacts-field-value">{{ $cities['active']['address'] }}</span>
+                    </li>
+                    <li>
+                        <span class="contacts-field-name">Время работы:</span>
+                        <span class="contacts-field-value" ><time itemprop="openingHours" datetime="{{ $cities['active']['opening_hours']['days']['en'] }} , {{$cities['active']['opening_hours']['hours']}}">с {{ $cities['active']['opening_hours']['hours_split']['from'] }} до {{$cities['active']['opening_hours']['hours_split']['to']}}</time></span>
                     </li>
                     <li>
                         <span class="contacts-field-name">Телефон:</span>
