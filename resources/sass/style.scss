@@ -2279,3 +2279,17 @@ footer {
         }
     }
 }
+.social_logos {
+    max-width: 28px;
+    margin-right: 5px;
+    margin-bottom: -7px;
+}
+@media only screen and (max-width: 580px){
+    .social_logos{
+        max-width: 28px;
+        margin-right: 5px;
+        margin-bottom: -5px;
+    }
+
+
+}

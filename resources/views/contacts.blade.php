@@ -30,23 +30,23 @@
                     </li>
                     <li>
                         <span class="contacts-field-name">Соц. сети:</span>
-                        <span class="contacts-field-value"><a id="contacts__left-side__vk" class="event" href="{{ $cities['active']['vk_url'] }}">Вконтакте</a></span>
+                        <span class="contacts-field-value"><a id="contacts__left-side__vk" class="event" href="{{ $cities['active']['vk_url'] }}" target="_blank"><img class="social_logos" src="/build/images/icons/vk-logo.png" alt="Логотип ВК">Вконтакте</a></span>
                     </li>
                     <li>
                         <span class="contacts-field-name"></span>
-                        <span class="contacts-field-value"><a id="contacts__left-side__facebook" class="event" href="{{ $cities['active']['fb_url'] }}">Facebook</a></span>
+                        <span class="contacts-field-value"><a id="contacts__left-side__facebook" class="event" href="{{ $cities['active']['fb_url'] }}" target="_blank"><img class="social_logos" src="/build/images/icons/facebook-logo.png" alt="Логотип Facebook">Facebook</a></span>
                     </li>
                     <li>
                         <span class="contacts-field-name"></span>
-                        <span class="contacts-field-value"><a id="contacts__left-side__instagram" class="event" href="{{ $cities['active']['instagram_url'] }}">Instagram</a></span>
+                        <span class="contacts-field-value"><a id="contacts__left-side__instagram" class="event" href="{{ $cities['active']['instagram_url'] }}" target="_blank"><img class="social_logos" src="/build/images/icons/instagram-logo.png" alt="Логотип Instagram">Instagram</a></span>
                     </li>
                     <li>
                         <span class="contacts-field-name"></span>
-                        <span class="contacts-field-value"><a id="contacts__left-side__youtube" class="event" href="{{ $cities['active']['youtube_url'] }}">Youtube</a></span>
+                        <span class="contacts-field-value"><a id="contacts__left-side__youtube" class="event" href="{{ $cities['active']['youtube_url'] }}" target="_blank"><img class="social_logos" src="/build/images/icons/yt-logo.png" alt="Логотип YouTube">Youtube</a></span>
                     </li>
                     <li>
                         <span class="contacts-field-name"></span>
-                        <span class="contacts-field-value"><a id="contacts__left-side__ok" class="event" href="{{ $cities['active']['ok_url'] }}">Одноклассники</a></span>
+                        <span class="contacts-field-value"><a id="contacts__left-side__ok" class="event" href="{{ $cities['active']['ok_url'] }}" target="_blank"><img class="social_logos" src="/build/images/icons/ok-logo.png" alt="Логотип Одноклассники">Одноклассники</a></span>
                     </li>
                 </ul>
             </div>
