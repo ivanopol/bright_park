@@ -85,7 +85,12 @@ class EventHandlerService
 
     private function get_cookie_uid()
     {
-        $cookie = $_COOKIE['bp_uuid'];
-        return json_decode(base64_decode($cookie))->bp_uid;
+        $output = '';
+        $cookie = isset($_COOKIE['bp_uuid']) ? $_COOKIE['bp_uuid'] : '';
+        if ($cookie) {
+            $cookie_decode = json_decode(base64_decode($cookie));
+            $output = isset($cookie_decode->bp_uid) ? $cookie_decode->bp_uid : '';
+        }
+        return $output;
     }
 }
