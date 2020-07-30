@@ -4,9 +4,11 @@ namespace App\Exceptions;
 
 use App\CarModel;
 use Exception;
+use Facade\Ignition\Exceptions\ViewException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use App\City;
+use Illuminate\Support\Facades\DB;
 
 class Handler extends ExceptionHandler
 {
@@ -49,16 +51,24 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        if ($exception instanceof ModelNotFoundException) {
+        if ($exception instanceof ModelNotFoundException || $exception instanceof ViewException) {
             $city_arr = explode('/', $request->path());
+            $cities_list_arr = DB::table('cities')->select('alias')->get()->toArray();
+            $cities_list = [];
+
+            foreach ($cities_list_arr as $item) {
+                $cities_list[] = $item->alias;
+            }
+            $city_target = in_array($city_arr[0], $cities_list) ? $city_arr[0] : 'perm';
+
             $city = new City;
-            $cities = $city->getCities($city_arr[0]);
+            $cities = $city->getCities($city_target);
             $data['coordinates'] = explode(",", $cities['active']['coords']);
 
             $params = [
                 'data' => $data,
                 'cities' => $cities,
-                'city' => $city_arr[0],
+                'city' => $city_target,
                 'models' => CarModel::with('types_preview')->orderBy('sort', 'asc')->get(),
             ];
             return response(view('errors.404', $params), 404);
