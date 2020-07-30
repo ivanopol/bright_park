@@ -27,7 +27,7 @@
             </p>
 
         </div>
-        <yandex-map-component :coordinates='coordinates'
+        <yandex-map-component v-if="with_map" :coordinates='coordinates'
                               :button="ym_button"
                               :btn_class="ym_btn_class"
                               :prefix="'service__'"
@@ -81,6 +81,10 @@
             page: {
                 default: '',
                 type: String
+            },
+            with_map: {
+                default: true,
+                type: Boolean
             }
         },
         data: function () {

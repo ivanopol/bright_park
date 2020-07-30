@@ -1,32 +1,43 @@
-<!DOCTYPE html>
-<html lang="ru">
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>404</title>
-    <style>
-        *{
-        margin: 0;
-        padding: 0;
-        }
-        p{
-        margin-top: 10px;
-        }
-        button{
-        margin-top: 10px;
+@extends('layouts.error')
 
-        }
-        .img{
-        text-align: center;
-        margin-top: 300px;
-        }
-    </style>
-</head>
-<body>
-<div class="img">
-    <img src="/build/images/404.svg" alt="404">
-    <p>Извините, страница не найдена</p>
-    <div class="carcasses-list-button"><span class="btn btn-primary btn-position green bubble">Подробнее</span></div>
-</div>
-</body>
-</html>
+@section('content')
+    <tab-bar :theme="'dark'" :cities='@json($cities)' :models='@json($models)' :phone="'{{$cities['active']['phone']}}'"></tab-bar>
+    <header-sticky-component :theme="'light'" :city="'{{$city}}'"></header-sticky-component>
+    <header-component :absolute="true"  :theme="'light'" :city="'{{$city}}'" ></header-component>
+    <div class="not-found">
+        <div class="img-wrapper">
+            <span>Упс!</span>
+            <img src="/build/images/404.svg" alt="Ошибка 404, страница не найдена">
+        </div>
+        <div class="message-wrapper">
+            <div class="message-text">Извините,<br> страница не найдена.</div>
+            <a id="404__button__main" href="/{{$city}}" class="btn btn-primary btn-position white event">Перейти на главную страницу</a>
+        </div>
+    </div>
+    <footer-component :coordinates='@json($data['coordinates'])'
+                      :phone='@json($cities['active']['phone'])'
+                      :phone_formatted='@json($cities['active']['phone_format'])'
+                      :cities='@json($cities)'
+                      :page="'404'"
+                      :with_map='false'>
+    </footer-component>
+    <section id="models" class="models_wrap">
+        <div class="container">
+            <h2>Модели</h2>
+            <ul>
+                @foreach ($models as $model)
+                    @if(!empty($model->types_preview[0]))
+                        <li>
+                            <a id="main__models__{{$model->slug}}" class="event" href="{{ route('model', ['city' => $city, 'car_model' => $model->slug, 'car_type' => $model->types_preview[0]->slug])}}">
+                                <div class="img_wrap">
+                                    <img src="{{ $model->preview }}" alt="{{ $model->title }}">
+                                </div>
+                                <div class="title">{{ $model->title }}</div>
+                            </a>
+                        </li>
+                    @endif
+                @endforeach
+            </ul>
+        </div>
+    </section>
+@endsection
