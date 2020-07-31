@@ -2311,7 +2311,7 @@ footer {
     align-items: center;
     flex-direction: column;
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 60px);
     margin-top: -9vh;
 
     .img-wrapper {
@@ -2320,7 +2320,7 @@ footer {
         align-content: center;
         flex-direction: column;
         width: 70%;
-        margin-bottom: 9vh;
+        margin-bottom: 5vh;
         max-width: 350px;
         span {
             color: #fff;
@@ -2337,8 +2337,6 @@ footer {
     }
 
     .message-wrapper {
-        position: absolute;
-        bottom: 15vh;
         .message-text {
             font-family: PragmaticaLightC, Helvetica, sans-serif;
             font-size: 20px;
