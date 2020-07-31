@@ -285,7 +285,7 @@ export default {
             vSelect
         },
     mounted() {
-        this.loadScript();
+       // this.loadScript();
     },
     created () {
     //    window.addEventListener('scroll', this.handleScroll);

@@ -109,31 +109,53 @@
         },
 
         created() {
-            ymaps.ready(() => {
-                let geolocation = ymaps.geolocation,
-                    myMap = new ymaps.Map('map', {
-                        center: this.coordinates,
-                        zoom: 15,
-                        controls: ['geolocationControl', 'zoomControl']
-                    }, {
-                        searchControlProvider: 'yandex#search'
-                    }),
-                    brightParkLocation = new ymaps.GeoObject({
-                        geometry: {
-                            type: "Point",
-                            coordinates: this.coordinates
-                        },
-                        properties: {}
-                    }, {
-                        draggable: false
-                    });
+            var fired = false;
 
-                myMap.geoObjects.add(brightParkLocation);
-                myMap.behaviors.disable('scrollZoom');
+            window.addEventListener('scroll', () => {
+                if (fired === false) {
+                    fired = true;
 
-                this.brightParkLocation = brightParkLocation;
-                this.geolocation = geolocation;
-                this.map = myMap;
+                    setTimeout(() => {
+                        var tag_body = document.getElementsByTagName("body")[0];
+
+                        // Yandex Maps
+                        var ya_maps = document.createElement('script');
+                        ya_maps.src = "https://api-maps.yandex.ru/2.1/?apikey=e65fea9d-e8a0-479d-b21a-35637fdc6c6c&lang=ru_RU&init=onload";
+                        ya_maps.type = "text/javascript";
+                        // / Yandex Maps
+
+                        tag_body.appendChild(ya_maps);
+
+                        setTimeout(() => {
+                            ymaps.ready(() => {
+                                let geolocation = ymaps.geolocation,
+                                    myMap = new ymaps.Map('map', {
+                                        center: this.coordinates,
+                                        zoom: 15,
+                                        controls: ['geolocationControl', 'zoomControl']
+                                    }, {
+                                        searchControlProvider: 'yandex#search'
+                                    }),
+                                    brightParkLocation = new ymaps.GeoObject({
+                                        geometry: {
+                                            type: "Point",
+                                            coordinates: this.coordinates
+                                        },
+                                        properties: {}
+                                    }, {
+                                        draggable: false
+                                    });
+
+                                myMap.geoObjects.add(brightParkLocation);
+                                myMap.behaviors.disable('scrollZoom');
+
+                                this.brightParkLocation = brightParkLocation;
+                                this.geolocation = geolocation;
+                                this.map = myMap;
+                            });
+                        }, 1000);
+                    }, 1000);
+                }
             });
         },
     }

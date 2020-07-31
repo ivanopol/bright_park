@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# place: http://ogp.me/ns/place#">
+<head  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# place: http://ogp.me/ns/place#">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Bright Park">
 
-    {!! SEO::generate() !!}
+{!! SEO::generate() !!}
 
-    <!-- favicon -->
+<!-- favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
@@ -26,8 +26,7 @@
     <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-    <meta name="format-detection" content="telephone=no">
-
+    <!-- <meta name="format-detection" content="telephone=no"> -->
     <meta name="yandex-verification" content="b3d9ee8d4fb4066b" />
 
     <!-- CSRF Token -->
@@ -49,21 +48,138 @@
         crossorigin
     />--}}
 
-    <!-- Scripts -->
+<!-- Scripts -->
     <script src="{{ mix('js/app.js', 'build') }}" defer></script>
 
     <!-- Styles -->
     <link href="{{ mix('css/app2.css', 'build') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
-        <div class="wrapper @isset($class) {{ $class  }} @endisset">
-            @yield('content')
-        </div>
+<div id="app">
+    <div class="wrapper @isset($class) {{ $class  }} @endisset">
+        @yield('content')
     </div>
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=e65fea9d-e8a0-479d-b21a-35637fdc6c6c&lang=ru_RU&init=onload"
-            type="text/javascript">
+</div>
+
+@if (app()->environment('production'))
+<script>
+    var fired = false;
+
+    window.addEventListener('scroll', () => {
+        if (fired === false) {
+            fired = true;
+
+            setTimeout(() => {
+                var tag_head = document.getElementsByTagName("head")[0];
+                var tag_body = document.getElementsByTagName("body")[0];
+
+                // StreamWood code
+                var streamwood_style = document.createElement('link');
+                streamwood_style.rel = 'stylesheet';
+                streamwood_style.href = 'https://clients.streamwood.ru/StreamWood/sw.css';
+                streamwood_style.type = 'text/css';
+
+                var streamwood_sw = document.createElement("script");
+                streamwood_sw.type = 'text/javascript';
+                streamwood_sw.src = 'https://clients.streamwood.ru/StreamWood/sw.js';
+                streamwood_sw.charset = 'utf-8';
+
+                var streamwood_sw_client = document.createElement("script");
+                streamwood_sw_client.type = 'text/javascript';
+                streamwood_sw_client.innerHTML = 'swQ(document).ready(function(){\n' +
+                    '            swQ().SW({\n' +
+                    '                swKey: \'d780aa68ebad661ef6dc3a10ca71b1f5\',\n' +
+                    '                swDomainKey: \'aff90937246c0f13a056816f279cb551\'\n' +
+                    '            });\n' +
+                    '            swQ(\'body\').SW(\'load\');\n' +
+                    '        });';
+                // /StreamWood code
+                // Yandex.Metrika counter
+                var ya_metrika = document.createElement("script");
+                ya_metrika.type = 'text/javascript';
+                ya_metrika.innerHTML = '(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};\n' +
+                    '            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})\n' +
+                    '        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");\n' +
+                    '\n' +
+                    '        ym(54496129, "init", {\n' +
+                    '            clickmap:true,\n' +
+                    '            trackLinks:true,\n' +
+                    '            accurateTrackBounce:true,\n' +
+                    '            webvisor:true\n' +
+                    '        });';
+                var ya_no_script = document.createElement("noscript");
+                var ya_div = document.createElement("div");
+                var ya_img = document.createElement("img");
+                ya_img.src = "https://mc.yandex.ru/watch/54496129";
+                ya_img.style = "position:absolute; left:-9999px;";
+                ya_div.appendChild(ya_img);
+                ya_no_script.appendChild(ya_div);
+                // /Yandex.Metrika counter
+                // Jivosite
+                var jivosite = document.createElement("script");
+                jivosite.src = "//code.jivosite.com/widget/H95FUE1JmR";
+                jivosite.async = true;
+                var jivosite_custom = document.createElement("script");
+                jivosite_custom.innerHTML = 'function jivo_onLoadCallback(){\n' +
+                    '            jivo_api.setUserToken(yaCounter54496129.getClientID());\n' +
+                    '        }';
+                // /Jivosite
+                // Global site tag (gtag.js) - Google Analytics
+                var gtag = document.createElement("script");
+                gtag.src = "https://www.googletagmanager.com/gtag/js?id=UA-144189432-5";
+                gtag.async = true;
+                var gtag_script = document.createElement("script");
+                gtag_script.innerHTML = 'window.dataLayer = window.dataLayer || [];\n' +
+                    '        function gtag(){dataLayer.push(arguments);}\n' +
+                    '        gtag(\'js\', new Date());\n' +
+                    '\n' +
+                    '        gtag(\'config\', \'UA-144189432-5\');';
+                // /Global site tag (gtag.js) - Google Analytics
+                // Calibri
+                var calibri = document.createElement("script");
+                calibri.src = "//cdn.callibri.ru/callibri.js";
+                calibri.type = "text/javascript";
+                calibri.charset = "utf-8";
+                var calibri_script = document.createElement("script");
+                calibri_script.innerHTML = 'callibri_wait(window, null, function(){ document.body.dataset.jsLoaded == true}, 10, 50, callibriInit);';
+                // /Calibri
+
+                tag_head.appendChild(streamwood_style);
+                tag_body.appendChild(streamwood_sw);
+                setTimeout(() => {
+                    tag_body.appendChild(streamwood_sw_client);
+                }, 500);
+                tag_body.appendChild(ya_metrika);
+                tag_body.appendChild(ya_no_script);
+                tag_body.appendChild(jivosite);
+                tag_body.appendChild(jivosite_custom);
+                tag_body.appendChild(gtag);
+                tag_body.appendChild(gtag_script);
+                tag_body.appendChild(calibri);
+                setTimeout(() => {
+                    tag_body.appendChild(calibri_script);
+                }, 500);
+            }, 1000);
+        }
+    });
+
+</script>
+@endif
+
+
+    <!-- StreamWood code -->
+   {{-- <link href="https://clients.streamwood.ru/StreamWood/sw.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="https://clients.streamwood.ru/StreamWood/sw.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        swQ(document).ready(function(){
+            swQ().SW({
+                swKey: 'd780aa68ebad661ef6dc3a10ca71b1f5',
+                swDomainKey: 'aff90937246c0f13a056816f279cb551'
+            });
+            swQ('body').SW('load');
+        });
     </script>
+    <!-- /StreamWood code -->
 
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript" >
@@ -71,86 +187,43 @@
             m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
         (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-        ym(63459829, "init", {
+        ym(54496129, "init", {
             clickmap:true,
             trackLinks:true,
-            accurateTrackBounce:true
+            accurateTrackBounce:true,
+            webvisor:true
         });
+
     </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/63459829" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+    <noscript><div><img src="https://mc.yandex.ru/watch/54496129" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
-
-    @if (app()->environment('production'))
-        <!-- Yandex.Metrika counter -->
-        <script type="text/javascript" >
-            (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-                m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-            ym(54496129, "init", {
-                clickmap:true,
-                trackLinks:true,
-                accurateTrackBounce:true,
-                webvisor:true
-            });
-        </script>
-        <noscript><div><img src="https://mc.yandex.ru/watch/54496129" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-        <!-- /Yandex.Metrika counter -->
-
-        <script src="//code.jivosite.com/widget.js" jv-id="H95FUE1JmR" async></script>
-        <script>
-            function jivo_onLoadCallback(){
-                jivo_api.setUserToken(yaCounter54496129.getClientID());
-            }
-        </script>
-
-        <!-- StreamWood code -->
-        <link href="https://clients.streamwood.ru/StreamWood/sw.css" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" src="https://clients.streamwood.ru/StreamWood/sw.js" charset="utf-8"></script>
-        <script type="text/javascript">
-            swQ(document).ready(function(){
-                swQ().SW({
-                    swKey: 'fd1774a812a65b0300a528bcf36d2eca',
-                    swDomainKey: '5d8a6d41b7bcacbe5ff954bd60afe263'
-                });
-                swQ('body').SW('load');
-            });
-        </script>
-        <!-- /StreamWood code -->
-    @endif
+    <!-- Jivosite -->
+    <script src="//code.jivosite.com/widget/H95FUE1JmR" async></script>
+    <!-- /Jivosite -->
     <script>
-/*        console.log(window);
-
-        var yandexReachGoal = function() {
-            var ymIdList = [];
-            window.ym.a.forEach(function(item){
-                ymIdList.push(item[0]);
-            });
-
-
-        };
-
-        yandexReachGoal();*/
-/*
-        var yandexReachGoal = function(a) {
-            if (window.Ya) {
-                for (var e = (window.Ya.Metrika || window.Ya.Metrika2).counters(), n = 0; n < e.length; n++)
-                {
-                    var t = "yaCounter" + e[n].id;
-                    window[t] && window[t].reachGoal(a)
-                }
-            }
-        };
-        var reachGoal = function(a) {
-            var e = "";
-            (matches = a.match(/^(.+?):(.+?)$/)) &&
-            (e = matches[1], a = matches[2]),
-            yandexReachGoal(a),
-            e &&
-            (yandexReachGoal(e),
-                "undefined" != typeof gtag ? gtag("event", a, { event_category: e }) : "undefined" != typeof GoogleAnalyticsObject && window[GoogleAnalyticsObject]("send", "event", e, a)) };
-*/
-
+        function jivo_onLoadCallback(){
+            jivo_api.setUserToken(yaCounter54496129.getClientID());
+        }
     </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144189432-5"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-144189432-5');
+    </script>
+    <!-- /Global site tag (gtag.js) - Google Analytics -->
+
+    <!-- Calibri -->
+    <script src="//cdn.callibri.ru/callibri.js" type="text/javascript" charset="utf-8" ></script>
+    <script>callibri_wait(window, null, function(){ document.body.dataset.jsLoaded == true}, 10, 50, callibriInit);</script>
+    <!-- /Calibri -->
+    --}}
+
 </body>
 </html>

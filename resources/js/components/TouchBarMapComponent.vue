@@ -10,6 +10,7 @@
         props: ['coordinates'],
         methods: {
             createMap: function(coords) {
+                setTimeout(() => {
                 ymaps.ready(init);
 
                 let _self = this;
@@ -85,6 +86,7 @@
                     }
 
                 }
+                }, 3000);
             },
 
             createRoute () {
@@ -157,7 +159,7 @@
             }
         },
         mounted () {
-            this.createMap(this.coordinates);
+          //  this.createMap(this.coordinates);
         },
     }
 </script>
