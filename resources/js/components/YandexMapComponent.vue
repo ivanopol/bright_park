@@ -153,7 +153,7 @@
                                 this.geolocation = geolocation;
                                 this.map = myMap;
                             });
-                        }, 1000);
+                        }, 500);
                     }, 1000);
                 }
             });
