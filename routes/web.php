@@ -125,7 +125,7 @@ Route::get("/lada/vesta/vesta-sedan/", function () { return redirect("/perm/vest
 Route::get("/uvelskiy/contacts", function () { return redirect("/perm/contacts"); });
 
 Route::get('send', 'FeedbackController@send');
-Route::middleware(['utm.check', 'cookie.check', 'counter'])->group(function () {
+Route::middleware(['utm.check', 'cookie.check', 'counter', 'cache.headers:private;max_age=3600'])->group(function () {
     Route::get('/{city}/privacy', 'HomeController@privacy')->name('privacy');
     Route::get('/{city}/stocks', 'HomeController@stocks')->name('stocks');
     Route::get('/{city}/stocks/{stocks_title}', 'HomeController@stocks_details')->name('stocks.one');
