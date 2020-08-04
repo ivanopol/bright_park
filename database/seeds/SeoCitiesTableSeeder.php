@@ -69,6 +69,10 @@ class SeoCitiesTableSeeder extends Seeder
                 'seo_id' => 14,
                 'city_id' => 0,
             ],
+            [
+                'seo_id' => 15,
+                'city_id' => 0,
+            ],
         ];
         DB::table('seo_cities')->insert($seo_cities);
     }
