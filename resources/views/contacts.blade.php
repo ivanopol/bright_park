@@ -52,7 +52,7 @@
             </div>
 
             <div class="contacts-map">
-                <yandex-map-component :coordinates='@json($data['coordinates'])' :button="false"></yandex-map-component>
+                <yandex-map-component :coordinates='@json($data['coordinates'])' :button="false" :lazy_load="false"></yandex-map-component>
             </div>
         </div>
     </div>

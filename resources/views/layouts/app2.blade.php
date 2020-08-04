@@ -180,12 +180,12 @@
                 setTimeout(() => {
                     tag_body.appendChild(streamwood_sw_client);
                 }, 500);
-                tag_body.appendChild(ya_metrika);
-                tag_body.appendChild(ya_no_script);
+              //  tag_body.appendChild(ya_metrika);
+              //  tag_body.appendChild(ya_no_script);
                 tag_body.appendChild(jivosite);
                 tag_body.appendChild(jivosite_custom);
-                tag_body.appendChild(gtag);
-                tag_body.appendChild(gtag_script);
+              //  tag_body.appendChild(gtag);
+              //  tag_body.appendChild(gtag_script);
                 tag_body.appendChild(calibri);
                 setTimeout(() => {
                     tag_body.appendChild(calibri_script);
