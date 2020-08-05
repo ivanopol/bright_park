@@ -85,7 +85,7 @@ class SeoTableSeeder extends Seeder
             [
                 'url' => 'niva/niva',
                 'title' => 'Купить Ниву в <:CITY_DATIVE:>: цена новой Лада (LADA) Niva у официального дилера',
-                'description' => '✅Официальный дилер LADA Брайт Парк✅ предлагает лучшие цены 👍🏼 на покупку и сервисное обслуживание 🛠 Лада Нива в <:REGION_DATIVE:> ⭐Купить новую Lada Niva в <:CITY_DATIVE:>⭐,
+                'description' => '✅Официальный дилер LADA Брайт Парк✅ предлагает лучшие цены 👍🏼 на покупку и сервисное обслуживание 🛠 Лада Нива в <:REGION_DATIVE:> ⭐Купить новую Lada Niva в <:CITY_DATIVE:>⭐',
             ],
         ];
 
