@@ -62,7 +62,6 @@
 </div>
 
 @if (app()->environment('production'))
-
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -175,11 +174,28 @@
                 calibri_script.innerHTML = 'callibri_wait(window, null, function(){ document.body.dataset.jsLoaded == true}, 10, 50, callibriInit);';
                 // /Calibri
 
+                // YClients
+                var yclients = document.createElement("script");
+                yclients.type = "text/javascript";
+                yclients.src = "https://w385915.yclients.com/widgetJS";
+                yclients.charset = "UTF-8";
+                var yc_button = document.createElement("a");
+                yc_button.href = "";
+                yc_button.className = "ms_booking yc_button";
+                yc_button.innerHTML = "Онлайн запись";
+                // /YClients
+
                 tag_head.appendChild(streamwood_style);
                 tag_body.appendChild(streamwood_sw);
                 setTimeout(() => {
                     tag_body.appendChild(streamwood_sw_client);
                 }, 500);
+
+
+                if (window.location.pathname === '/perm/service') {
+                    tag_body.appendChild(yclients);
+                    tag_body.appendChild(yc_button);
+                }
               //  tag_body.appendChild(ya_metrika);
               //  tag_body.appendChild(ya_no_script);
                 tag_body.appendChild(jivosite);
