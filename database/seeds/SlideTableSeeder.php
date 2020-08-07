@@ -162,7 +162,7 @@ class SlideTableSeeder extends Seeder
                 'link' => '/model_details'
             ],
             [
-                'model_id' => 5,
+                'model_id' => 4,
                 'type_id' => 13,
                 'class' => 'l4x4_5dv',
                 'title' => 'LADA 4x4 5 дв.',
