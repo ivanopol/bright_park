@@ -28,7 +28,9 @@
                                         </div>
                                         <div class="carcasses-list-prices" >
                                             <span itemprop="price" class="carcasses-list-prices-new bubble">от <span>{{ number_format($carcass->pivot->special_price, 0, ',', ' ') }}</span> <span itemprop="priceCurrency" content="RUB">р.</span></span>
-                                            <span class="carcasses-list-prices-old bubble">от <span>{{ number_format($carcass->pivot->price, 0, ',', ' ') }}</span> р.</span>
+                                            @if(intval($carcass->pivot->special_price) !== intval($carcass->pivot->price))
+                                                <span class="carcasses-list-prices-old bubble">от <span>{{ number_format($carcass->pivot->price, 0, ',', ' ') }}</span> р.</span>
+                                            @endif
                                         </div>
                                         <div class="carcasses-list-button">
                                             <span class="btn btn-primary btn-position green bubble">Подробнее</span>
