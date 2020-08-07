@@ -1587,6 +1587,11 @@ footer {
             background-size: cover;
         }
 
+        &.l4x4_5dv {
+            background: url(/build/images/slider/full/4x4/lada_4x4_5dv.jpg) no-repeat center center;
+            background-size: cover;
+        }
+
         @media only screen and (min-width: 580px) {
 
 
@@ -1652,6 +1657,11 @@ footer {
 
             &.niva_1 {
                 background: linear-gradient(117deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 13%, rgba(0,0,0,0) 44%), url(/build/images/slider/full/4x4/desktop/lada_niva.jpg) no-repeat 50% -2px;
+                background-size: cover;
+            }
+
+            &.l4x4_5dv {
+                background: linear-gradient(117deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 13%, rgba(0,0,0,0) 44%), url(/build/images/slider/full/4x4/desktop/lada_4x4_5dv.jpg) no-repeat 50% -2px;
                 background-size: cover;
             }
 
