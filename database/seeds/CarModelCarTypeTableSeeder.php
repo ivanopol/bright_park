@@ -192,7 +192,7 @@ class CarModelCarTypeTableSeeder extends Seeder
                 'count'=>333,
                 'image' => '/build/images/slider/mini/4x4/mobile/lada_4x4_five.png',
                 'slogan' => 'Полный привод, кузов из оцинкованной стали, 5-ти дверный внедорожник',
-                'active' => 0,
+                'active' => 1,
             ],
             [
                 'car_model_id' => '4',
