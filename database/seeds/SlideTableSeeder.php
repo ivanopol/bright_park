@@ -161,6 +161,15 @@ class SlideTableSeeder extends Seeder
                 'subtitle' => 'На край света и обратно',
                 'link' => '/model_details'
             ],
+            [
+                'model_id' => 5,
+                'type_id' => 13,
+                'class' => 'l4x4_5dv',
+                'title' => 'LADA 4x4 5 дв.',
+                'reduction' => '4x4 5 дв.',
+                'subtitle' => 'Создана для приключений',
+                'link' => '/model_details'
+            ],
         ];
 
         DB::table('slides')->insert($slides);
