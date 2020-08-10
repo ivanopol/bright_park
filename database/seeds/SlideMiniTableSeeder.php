@@ -142,7 +142,7 @@ class SlideMiniTableSeeder extends Seeder
                 'image' => '/build/images/slider/mini/4x4/mobile/lada_4x4_five.png',
                 'alt' => 'Лада 4x4 5 дв.',
                 'title' => '4x4 5 дв.',
-                'active' => false,
+                'active' => true,
             ],
             [
                 'model_id' => 4,

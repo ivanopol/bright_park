@@ -69,6 +69,86 @@ class SeoCitiesTableSeeder extends Seeder
                 'seo_id' => 14,
                 'city_id' => 0,
             ],
+            [
+                'seo_id' => 15,
+                'city_id' => 0,
+            ],
+            [
+                'seo_id' => 16,
+                'city_id' => 0,
+            ],
+            [
+                'seo_id' => 17,
+                'city_id' => 0,
+            ],
+            [
+                'seo_id' => 18,
+                'city_id' => 0,
+            ],
+            [
+                'seo_id' => 19,
+                'city_id' => 0,
+            ],
+            [
+                'seo_id' => 20,
+                'city_id' => 0,
+            ],
+            [
+                'seo_id' => 21,
+                'city_id' => 0,
+            ],
+            [
+                'seo_id' => 22,
+                'city_id' => 0,
+            ],
+            [
+                'seo_id' => 23,
+                'city_id' => 0,
+            ],
+            [
+                'seo_id' => 24,
+                'city_id' => 0,
+            ],
+            [
+                'seo_id' => 25,
+                'city_id' => 0,
+            ],
+            [
+                'seo_id' => 26,
+                'city_id' => 0,
+            ],
+            [
+                'seo_id' => 27,
+                'city_id' => 0,
+            ],
+            [
+                'seo_id' => 28,
+                'city_id' => 0,
+            ],
+            [
+                'seo_id' => 29,
+                'city_id' => 0,
+            ],
+            [
+                'seo_id' => 30,
+                'city_id' => 0,
+            ],
+            [
+                'seo_id' => 31,
+                'city_id' => 0,
+            ],
+            [
+                'seo_id' => 32,
+                'city_id' => 0,
+            ],
+            [
+                'seo_id' => 33,
+                'city_id' => 0,
+            ],
+            [
+                'seo_id' => 34,
+                'city_id' => 0,
+            ],
         ];
         DB::table('seo_cities')->insert($seo_cities);
     }

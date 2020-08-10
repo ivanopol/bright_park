@@ -14,6 +14,8 @@
 // Редиректы
 // Ретаргетинг и прочее
 Route::get("/single-car-credit", function () { return redirect("/perm/stocks/lada_vesta_vygoda_10_po_gosprogramme"); });
+Route::get("/volgograd/services/lada-4x4-vygoda-30000-rub", function () { return redirect("/volgograd/stocks/lada_granta_0_pervonachalnyj_vznos"); });
+Route::get("/volgograd/services/programma-ecogas", function () { return redirect("/volgograd"); });
 Route::get("/special/kalina-that-number", function () { return redirect("/perm/stocks/lada_vesta_vygoda_10_po_gosprogramme"); });
 Route::get("/perm/credit-granta-hatchback", function () { return redirect("/perm/granta/sedan"); });
 Route::get("/magnitogorsk/services/vesta-sw-cross-3-9-na-3-goda", function () { return redirect("/magnitogorsk/stocks/lada_vesta_vygoda_10_po_gosprogramme"); });

@@ -62,6 +62,35 @@
 </div>
 
 @if (app()->environment('production'))
+<script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(54496129, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+    });
+
+</script>
+
+<noscript><div><img src="https://mc.yandex.ru/watch/54496129" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144189432-5"></script>
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-144189432-5');
+</script>
+<!-- /Global site tag (gtag.js) - Google Analytics -->
+
 <script>
     var fired = false;
 
@@ -95,7 +124,7 @@
                     '        });';
                 // /StreamWood code
                 // Yandex.Metrika counter
-                var ya_metrika = document.createElement("script");
+/*                var ya_metrika = document.createElement("script");
                 ya_metrika.type = 'text/javascript';
                 ya_metrika.innerHTML = '(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};\n' +
                     '            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})\n' +
@@ -113,7 +142,7 @@
                 ya_img.src = "https://mc.yandex.ru/watch/54496129";
                 ya_img.style = "position:absolute; left:-9999px;";
                 ya_div.appendChild(ya_img);
-                ya_no_script.appendChild(ya_div);
+                ya_no_script.appendChild(ya_div);*/
                 // /Yandex.Metrika counter
                 // Jivosite
                 var jivosite = document.createElement("script");
@@ -125,7 +154,7 @@
                     '        }';
                 // /Jivosite
                 // Global site tag (gtag.js) - Google Analytics
-                var gtag = document.createElement("script");
+/*                var gtag = document.createElement("script");
                 gtag.src = "https://www.googletagmanager.com/gtag/js?id=UA-144189432-5";
                 gtag.async = true;
                 var gtag_script = document.createElement("script");
@@ -133,7 +162,7 @@
                     '        function gtag(){dataLayer.push(arguments);}\n' +
                     '        gtag(\'js\', new Date());\n' +
                     '\n' +
-                    '        gtag(\'config\', \'UA-144189432-5\');';
+                    '        gtag(\'config\', \'UA-144189432-5\');';*/
                 // /Global site tag (gtag.js) - Google Analytics
                 // Calibri
                 var calibri = document.createElement("script");
@@ -144,17 +173,34 @@
                 calibri_script.innerHTML = 'callibri_wait(window, null, function(){ document.body.dataset.jsLoaded == true}, 10, 50, callibriInit);';
                 // /Calibri
 
+                // YClients
+                var yclients = document.createElement("script");
+                yclients.type = "text/javascript";
+                yclients.src = "https://w385915.yclients.com/widgetJS";
+                yclients.charset = "UTF-8";
+                var yc_button = document.createElement("a");
+                yc_button.href = "";
+                yc_button.className = "ms_booking yc_button";
+                yc_button.innerHTML = "Онлайн запись";
+                // /YClients
+
                 tag_head.appendChild(streamwood_style);
                 tag_body.appendChild(streamwood_sw);
                 setTimeout(() => {
                     tag_body.appendChild(streamwood_sw_client);
                 }, 500);
-                tag_body.appendChild(ya_metrika);
-                tag_body.appendChild(ya_no_script);
+
+
+                if (window.location.pathname === '/perm/service' || window.location.pathname === '/perm') {
+                    tag_body.appendChild(yclients);
+                    tag_body.appendChild(yc_button);
+                }
+              //  tag_body.appendChild(ya_metrika);
+              //  tag_body.appendChild(ya_no_script);
                 tag_body.appendChild(jivosite);
                 tag_body.appendChild(jivosite_custom);
-                tag_body.appendChild(gtag);
-                tag_body.appendChild(gtag_script);
+              //  tag_body.appendChild(gtag);
+              //  tag_body.appendChild(gtag_script);
                 tag_body.appendChild(calibri);
                 setTimeout(() => {
                     tag_body.appendChild(calibri_script);
