@@ -304,6 +304,18 @@ class HomeController extends Controller
         $models = CarModel::with('types_preview')->orderBy('sort', 'asc')->get();
         $data['coordinates'] = explode(",", $city['coordinates']);
 
+        $patterns = [
+            '/<:CITY_DATIVE:>/',
+            '/<:REGION_DATIVE:>/',
+        ];
+
+        $replacements = [
+            $city->city_dative,
+            $city->region_dative,
+        ];
+
+        list($news_title->text, $news_title->text_short) = preg_replace($patterns, $replacements, [$news_title->text, $news_title->text_short]);
+
         return view('news_one', [
             'data' => $data,
             'news'=> $news_title,
