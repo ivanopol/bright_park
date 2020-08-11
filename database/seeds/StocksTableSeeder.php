@@ -29,7 +29,7 @@ class StocksTableSeeder extends Seeder
                 ',
                 'text_short' => 'Воспользуйтесь возможностью обменять свой автомобиль с дополнительной выгодой - 40 000 рублей.',
                 'preview' => '/build/images/stocks/stock_01.jpg',
-                'slug' => 'doplata-40-000-rublej-pri-_obmene-na-lada-granta',
+                'slug' => 'doplata-40-000-rublej-pri-obmene-na-lada-granta',
                 'city_id' => 0,
                 'sort' => 1,
             ],
@@ -206,7 +206,7 @@ class StocksTableSeeder extends Seeder
                             <p>Обращайтесь в Брайт парк! И уже в апреле вы сможете стать обладателем новой LADA!</p>
                          ',
                 'text_short' => 'Брайт Парк работает онлайн!</br>Мы оказываем полный цикл услуг по приобретению автомобиля',
-                'preview' => '/build/images/stocks/brajt_park_rabotaet_onlajn.jpg',
+                'preview' => '/build/images/stocks/brajt_park-rabotaet_onlajn.jpg',
                 'slug' => 'brajt-park-rabotaet-onlajn',
                 'city_id' => 0,
                 'sort' => 2,
