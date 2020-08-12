@@ -32,6 +32,17 @@ Route::get("/{city}/services", function ($city) { return redirect("/{$city->alia
 Route::get("/{city}/services/maksimalnaya-vygoda-po-gosprogrammam-pervyjsemejnyj-avtomobil", function ($city) { return redirect("/{$city->alias}/stocks/lada_vesta_vygoda_10_po_gosprogramme"); });
 Route::get("/{city}/ocenka-avtomobilya", function ($city) { return redirect("/{$city->alias}/stocks/doplata_40_000_rublej_pri_obmene_na_lada_granta"); });
 Route::get("/{city}/raschyot-kredita", function ($city) { return redirect("/{$city->alias}/stocks/lada_granta_0_pervonachalnyj_vznos"); });
+Route::get("/{city}/stocks/doplata_40_000_rublej_pri_obmene_na_lada_granta", function ($city) { return redirect("/{$city->alias}/stocks/doplata-40000-rublej-pri-obmene-na-lada-granta"); });
+Route::get("/{city}/stocks/lada_vesta_vygoda_10_po_gosprogramme", function ($city) { return redirect("/{$city->alias}/stocks/lada-vesta-vygoda-10-po-gosprogramme"); });
+Route::get("/{city}/stocks/lada_granta_0_pervonachalnyj_vznos", function ($city) { return redirect("/{$city->alias}/stocks/lada-granta-0-pervonachalnyj-vznos"); });
+Route::get("/{city}/stocks/obmen_na_lada_vesta_vyshe_rynochnoj_ceny", function ($city) { return redirect("/{$city->alias}/stocks/obmen-na-lada-vesta-vyshe-rynochnoj-ceny"); });
+Route::get("/{city}/stocks/brajt_park_rabotaet_onlajn", function ($city) { return redirect("/{$city->alias}/stocks/brajt-park-rabotaet-onlajn"); });
+Route::get("/{city}/news/lada_popular_in_finland", function ($city) { return redirect("/{$city->alias}/news/lada-popular-in-finland"); });
+Route::get("/{city}/news/lada_50_years", function ($city) { return redirect("/{$city->alias}/news/lada-50-years"); });
+Route::get("/{city}/news/lada_continue_modernisation", function ($city) { return redirect("/{$city->alias}/news/lada-continue-modernisation"); });
+Route::get("/{city}/news/lada_kabriolet", function ($city) { return redirect("/{$city->alias}/news/lada-kabriolet"); });
+Route::get("/{city}/news/niva_modification_in_germany", function ($city) { return redirect("/{$city->alias}/news/niva-modification-in-germany"); });
+Route::get("/{city}/news/lada_sale_results", function ($city) { return redirect("/{$city->alias}/news/lada-sale-results"); });
 
 // Granta
 Route::get("/catalog/lada-granta", function () { return redirect("/perm/granta/sedan"); });

@@ -47,7 +47,7 @@ class NewsTableSeeder extends Seeder
                 ',
                 'text_short' => 'Эксперты выяснили, почему российский автомобиль ВАЗ-2101 был в почете у финнов.',
                 'preview' => '/build/images/news/lada_popular_in_finland.jpg',
-                'slug' => 'lada_popular_in_finland',
+                'slug' => 'lada-popular-in-finland',
                 'city_id' => 0,
             ],
             [
@@ -60,7 +60,7 @@ class NewsTableSeeder extends Seeder
                 ',
                 'text_short' => '19 апреля 2020 года исполняется 50 лет с выпуска первых автомобилей марки LADA.',
                 'preview' => '/build/images/news/lada_50_years.jpg',
-                'slug' => 'lada_50_years',
+                'slug' => 'lada-50-years',
                 'city_id' => 0,
             ],
             [
@@ -73,7 +73,7 @@ class NewsTableSeeder extends Seeder
                 ',
                 'text_short' => 'В 2019 году был проведен большой объем работ: усиление контроля качества, оптимизация процессов и экономия средств.',
                 'preview' => '/build/images/news/lada_continue_modernisation.jpg',
-                'slug' => 'lada_continue_modernisation',
+                'slug' => 'lada-continue-modernisation',
                 'city_id' => 0,
             ],
             [
@@ -84,7 +84,7 @@ class NewsTableSeeder extends Seeder
                 ',
                 'text_short' => 'В 2019 году был проведен большой объем работ: усиление контроля качества, оптимизация процессов и экономия средств.',
                 'preview' => '/build/images/news/lada_kabriolet.jpg',
-                'slug' => 'lada_kabriolet',
+                'slug' => 'lada-kabriolet',
                 'city_id' => 0,
             ],
             [
@@ -95,7 +95,7 @@ class NewsTableSeeder extends Seeder
                 ',
                 'text_short' => 'Сеть немецких автосалонов предлагает несколько необычных модификаций LADA 4х4, оснащённых подвижным скребком.',
                 'preview' => '/build/images/news/niva_modification_in_germany.jpg',
-                'slug' => 'niva_modification_in_germany',
+                'slug' => 'niva-modification-in-germany',
                 'city_id' => 0,
             ],
             [
@@ -106,7 +106,7 @@ class NewsTableSeeder extends Seeder
                 ',
                 'text_short' => 'LADA подвела итоги прошлого месяца. В апреле продажи составили 10 055 автомобилей',
                 'preview' => '/build/images/news/lada_sale_results.png',
-                'slug' => 'lada_sale_results',
+                'slug' => 'lada-sale-results',
                 'city_id' => 0,
             ],
             [
