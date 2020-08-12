@@ -2385,7 +2385,7 @@ footer {
     transition: opacity .15s ease;
     border-radius: 50%!important;
     box-shadow: 1px 2px 3px 0 rgba(15,65,33,.08), 5px 10px 20px 0 rgba(18,43,26,.12);
-    z-index: 2147483648;
+    z-index: 2147483645;
 
     &::before {
         animation: pulse 5s linear infinite;
