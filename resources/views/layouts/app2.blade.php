@@ -61,7 +61,7 @@
     </div>
 </div>
 
-{{-- @if (app()->environment('production')) --}}
+@if (app()->environment('production'))
 <script type="text/javascript" >
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
         m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
@@ -195,6 +195,7 @@
                     yc_button.className = "ms_booking yc_button event";
                     yc_button.id = page + "__online-appointment__button";
                     yc_button.innerHTML = "Онлайн запись";
+                    yc_button.setAttribute("onclick", "sendGoals('online-zapis');");
                     // /YClients
 
                     tag_body.appendChild(yclients);
@@ -220,7 +221,26 @@
         }
     });
 
+    function sendGoals(goal) {
+        if (goal) {
+            let ym_ids = getCountersIds();
+            let goalArr = goal.match(/^(.+?):(.+?)$/);
+            let target_goal = goalArr === null ? goal : goalArr[2];
+
+            ym_ids.forEach(function (item, i, arr) {
+                window["yaCounter" + item].reachGoal(target_goal);
+            });
+        }
+    }
+
+    function getCountersIds() {
+        var id_list = [];
+        window.ym.a.forEach(function(item){
+            id_list.push(item[0]);
+        });
+        return id_list;
+    }
 </script>
-{{--  @endif --}}
+@endif
 </body>
 </html>
