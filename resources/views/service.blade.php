@@ -42,15 +42,15 @@
     <div class="container_bg_dark">
         <div class="container">
             <!-- :form_h1="'<span class=\'c_orange\'>Заполните</span> форму'" -->
-            <form-component :cities='@json($cities)'
-                                     :form_id="'service__sign-up-for-a-service_'"
-                                     :button_text="'Записаться на сервис'"
-                                     :form_title="''"
-                                     :is_comment='true'
-                                     :form_h1="'<span class=\'c_orange\'>Запишись</span> на сервис'"
-                                     :form_class="'mobile_white_bg'"
-                                     :form_type='2'
-            ></form-component>
+            <yclients-form :cities='@json($cities)'
+                         :form_id="'service__sign-up-for-a-service_'"
+                         :button_text="'Записаться на сервис'"
+                         :form_title="''"
+                         :is_comment='true'
+                         :form_h1="'<span class=\'c_orange\'>Запишись</span> на сервис'"
+                         :form_class="'mobile_white_bg'"
+                         :form_type='2'
+            ></yclients-form>
         </div>
     </div>
     <car-logos></car-logos>
@@ -61,15 +61,15 @@
     <div class="container_bg_dark">
         <div class="container">
             <!-- :form_title="'<span class=\'c_orange\'>Запишись</span> к&nbsp;нам на&nbsp;сервис'" -->
-            <form-retarget-component :cities='@json($cities)'
-                                     :form_id="'service__sign-up-to-our-service_'"
-                                     :button_text="'Записаться на сервис'"
-                                     :form_title="'<span class=\'c_orange\'>Запишись</span> к нам на сервис'"
-                                     :form_pre_title="'и получи скидку 5% при визите в день обращения'"
-                                     :is_comment='true'
-                                     :form_class="'mobile_white_bg'"
-                                     :form_type='2'
-            ></form-retarget-component>
+            <yclients-form2 :cities='@json($cities)'
+                             :form_id="'service__sign-up-to-our-service_'"
+                             :button_text="'Записаться на сервис'"
+                             :form_title="'<span class=\'c_orange\'>Запишись</span> к нам на сервис'"
+                             :form_pre_title="'и получи скидку 5% при визите в день обращения'"
+                             :is_comment='true'
+                             :form_class="'mobile_white_bg'"
+                             :form_type='2'
+            ></yclients-form2>
         </div>
     </div>
 

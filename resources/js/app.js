@@ -64,6 +64,8 @@ Vue.component('car-logos', require('./components/service/CarLogos').default);
 Vue.component('our-services', require('./components/service/OurServices').default);
 Vue.component('footer-component', require('./components/elements/FooterComponent').default);
 Vue.component('banks-component', require('./components/service/BanksComponent').default);
+Vue.component('yclients-form', require('./components/forms/YclientsForm').default);
+Vue.component('yclients-form2', require('./components/forms/YclientsForm2').default);
 
 /*const store = new Vuex.Store({
     state: {
