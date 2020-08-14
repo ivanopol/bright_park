@@ -10,14 +10,15 @@
                             <li v-for="list in service.list"><check-icon></check-icon> <span v-html="getPrice(list.title, list.price)"></span></li>
                         </ul>
                         <div class="service__contacts-wrap">
-                            <a :id="'service__' + service.alias + '__button'" class="btn btn-primary btn-position event" v-on:click.prevent="show(service.title, service.alias)">Записаться</a>
+                            <!--<a :id="'service__' + service.alias + '__button'" class="btn btn-primary btn-position event" v-on:click.prevent="show(service.title, service.alias)">Записаться</a>-->
+                            <a :id="'service__' + service.alias + '__button'" class="btn btn-primary btn-position ms_booking event" >Записаться</a>
                             <a :id="'service__' + service.alias + '__call'" :href="'tel:' + cities.active.phone" class="btn btn-primary callibri_phone btn-position green event">Позвонить</a>
                         </div>
                     </template>
                 </badger-accordion-item>
             </badger-accordion>
         </div>
-        <modal name="form-callback3" height="auto" :adaptive="true">
+<!--        <modal name="form-callback3" height="auto" :adaptive="true">
             <div :id="form_id + '_close'" class="close event" @click="hide"></div>
             <form-buy2-component :cities="cities"
                                  :form_title="form_title"
@@ -26,7 +27,7 @@
                                  :is_comment="is_comment"
                                  :form_type='2'
             ></form-buy2-component>
-        </modal>
+        </modal>-->
     </section>
 </template>
 
