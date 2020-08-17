@@ -143,7 +143,12 @@ class SeoService
                 {
                     $tags->title = "Сервисный центр автосалона Брайт Парк в " . $city->city_dative;
                     $tags->description = "Брайт Парк " . $city->title_ru . " предлагает Сервисное обслуживание автомобилей Лада в " . $city->city_dative;
-                } elseif ( $segments[1] === $params['model']->slug) {
+                } elseif ( $segments[1] === 'about' )
+                {
+                    $tags->title = "Сервисный центр автосалона Брайт Парк в " . $city->city_dative;
+                    $tags->description = "Брайт Парк " . $city->title_ru . " предлагает Сервисное обслуживание автомобилей Лада в " . $city->city_dative;
+                }
+                elseif ( $segments[1] === $params['model']->slug) {
                     $tags->title = 'Новая LADA ' . $params['model']->title . ' по лучшей цене в ' . $city->city_dative . ' | Брайт Парк';
                     $tags->description =  "Выбираете где купить новую LADA " . $params['model']->title . " по лучшей цене в " . $city->city_dative . "? У официального дилера LADA - Брайт Парк " . $params['model']->title . " в наличии по лучшей стоимости. Также у нас выгодный обмен и кредит.";
                 }

@@ -79,4 +79,10 @@ Breadcrumbs::for('privacy', function ($trail, $city) {
     $trail->push('Политика конфиденциальности', route('privacy', [$city]));
 });
 
+// About
+Breadcrumbs::for('about', function ($trail, $city) {
+    $trail->parent('main', $city);
+    $trail->push('О компании', route('about', [$city]));
+});
+
 

@@ -474,4 +474,32 @@ class HomeController extends Controller
         ]);
     }
 
+    /**
+     * Страница о компании
+     *
+     * @param City $city
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     */
+    public function about(City $city)
+    {
+        $this->seo->setMetaTags($city);
+
+        if ($city['alias']) {
+            $this->city = $city['alias'];
+        } else {
+            return redirect()->route('stocks_details', ['city' => 'perm']);
+        }
+
+        $cities = $city->getCities($this->city);
+        $models = CarModel::with('types_preview')->orderBy('sort', 'asc')->get();
+        $data['coordinates'] = explode(",", $city['coordinates']);
+;
+        //  print_r($data['coordinates']);
+        return view('about', [
+            'data' => $data,
+            'city'=>$this->city,
+            'cities' => $cities,
+            'models' => $models,
+        ]);
+    }
 }
