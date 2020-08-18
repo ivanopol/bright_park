@@ -38,16 +38,16 @@
                     </ul>
                     <p>Будем рады видеть вас у нас в гостях!</p>
                 </div>
-
             </div>
         </div>
-        <footer-component :coordinates='@json($data['coordinates'])'
-                          :phone='@json($cities['active']['phone'])'
-                          :phone_formatted='@json($cities['active']['phone_format'])'
-                          :cities='@json($cities)'
-                          :page="'main'">
-        </footer-component>
-        {!! html_entity_decode($cities['active']['begin_script']) !!}
-        <scroll-event-handler-component></scroll-event-handler-component>
-        <event-handler-component></event-handler-component>
+    </div>
+    <footer-component :coordinates='@json($data['coordinates'])'
+                      :phone='@json($cities['active']['phone'])'
+                      :phone_formatted='@json($cities['active']['phone_format'])'
+                      :cities='@json($cities)'
+                      :page="'main'">
+    </footer-component>
+    {!! html_entity_decode($cities['active']['begin_script']) !!}
+    <scroll-event-handler-component></scroll-event-handler-component>
+    <event-handler-component></event-handler-component>
 @endsection
