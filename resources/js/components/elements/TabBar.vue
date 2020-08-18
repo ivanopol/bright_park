@@ -87,7 +87,7 @@
                                 <a id="common__menu__contacts" :href="'/' + cities.active.value + '/contacts'" class="event" itemprop="url"><div class="title bubble">Контакты</div></a>
                             </li>
                             <li>
-                                <a id="common__menu__about" :href="'/' + cities.active.value + '/about'" class="event" itemprop="url"><div class="title bubble">О Компании</div></a>
+                                <a id="common__menu__about" :href="'/' + cities.active.value + '/about'" class="event" itemprop="url"><div class="title bubble">О компании</div></a>
                             </li>
                             <li>
                                 <a id="common__menu__stocks" :href="'/' + cities.active.value + '/stocks'" class="event" itemprop="url"><div class="title bubble">Акции</div></a>
