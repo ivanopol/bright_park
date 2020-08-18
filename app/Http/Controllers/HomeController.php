@@ -493,8 +493,7 @@ class HomeController extends Controller
         $cities = $city->getCities($this->city);
         $models = CarModel::with('types_preview')->orderBy('sort', 'asc')->get();
         $data['coordinates'] = explode(",", $city['coordinates']);
-;
-        //  print_r($data['coordinates']);
+
         return view('about', [
             'data' => $data,
             'city'=>$this->city,

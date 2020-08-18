@@ -145,8 +145,8 @@ class SeoService
                     $tags->description = "Брайт Парк " . $city->title_ru . " предлагает Сервисное обслуживание автомобилей Лада в " . $city->city_dative;
                 } elseif ( $segments[1] === 'about' )
                 {
-                    $tags->title = "Сервисный центр автосалона Брайт Парк в " . $city->city_dative;
-                    $tags->description = "Брайт Парк " . $city->title_ru . " предлагает Сервисное обслуживание автомобилей Лада в " . $city->city_dative;
+                    $tags->title = "О Компании | Брайт Парк в <:CITY_DATIVE:>";
+                    $tags->description = "О Компании | Брайт Парк в <:CITY_DATIVE:>";
                 }
                 elseif ( $segments[1] === $params['model']->slug) {
                     $tags->title = 'Новая LADA ' . $params['model']->title . ' по лучшей цене в ' . $city->city_dative . ' | Брайт Парк';

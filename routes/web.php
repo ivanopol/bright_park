@@ -13,26 +13,25 @@
 
 // Редиректы
 // Ретаргетинг и прочее
-Route::get("/single-car-credit", function () { return redirect("/perm/stocks/lada_vesta_vygoda_10_po_gosprogramme"); });
-Route::get("/volgograd/services/lada-4x4-vygoda-30000-rub", function () { return redirect("/volgograd/stocks/lada_granta_0_pervonachalnyj_vznos"); });
+Route::get("/single-car-credit", function () { return redirect("/perm/stocks/lada-vesta-vygoda-10-po-gosprogramme"); });
+Route::get("/volgograd/services/lada-4x4-vygoda-30000-rub", function () { return redirect("/volgograd/stocks/lada-granta-0-pervonachalnyj-vznos"); });
 Route::get("/volgograd/services/programma-ecogas", function () { return redirect("/volgograd"); });
-Route::get("/special/kalina-that-number", function () { return redirect("/perm/stocks/lada_vesta_vygoda_10_po_gosprogramme"); });
+Route::get("/special/kalina-that-number", function () { return redirect("/perm/stocks/lada-vesta-vygoda-10-po-gosprogramme"); });
 Route::get("/perm/credit-granta-hatchback", function () { return redirect("/perm/granta/sedan"); });
-Route::get("/magnitogorsk/services/vesta-sw-cross-3-9-na-3-goda", function () { return redirect("/magnitogorsk/stocks/lada_vesta_vygoda_10_po_gosprogramme"); });
-Route::get("/moscow/credit-granta-hatchback", function () { return redirect("/moscow/stocks/lada_granta_0_pervonachalnyj_vznos"); });
-Route::get("/moscow/credit-granta-hatchback", function () { return redirect("/moscow/stocks/lada_granta_0_pervonachalnyj_vznos"); });
+Route::get("/magnitogorsk/services/vesta-sw-cross-3-9-na-3-goda", function () { return redirect("/magnitogorsk/stocks/lada-vesta-vygoda-10-po-gosprogramme"); });
+Route::get("/moscow/credit-granta-hatchback", function () { return redirect("/moscow/stocks/lada-granta-0-pervonachalnyj-vznos"); });
 Route::get("/credit-granta-hatchback", function () { return redirect("/perm/granta/sedan"); });
 Route::get("/moscow/special/kalina-that-number", function () { return redirect("/moscow/granta/sedan"); });
 Route::get("/volgograd/lada/vesta/vesta-sw-cross", function () { return redirect("/volgograd/vesta/sw-cross"); });
-Route::get("/volgograd/services/programma-trejd-in-dlya-avtomobilej-s-pts-2019-goda", function () { return redirect("/volgograd/stocks/lada_granta_0_pervonachalnyj_vznos"); });
-Route::get("/moscow/single-car-credit", function () { return redirect("/moscow/stocks/lada_vesta_vygoda_10_po_gosprogramme"); });
+Route::get("/volgograd/services/programma-trejd-in-dlya-avtomobilej-s-pts-2019-goda", function () { return redirect("/volgograd/stocks/lada-granta-0-pervonachalnyj-vznos"); });
+Route::get("/moscow/single-car-credit", function () { return redirect("/moscow/stocks/lada-vesta-vygoda-10-po-gosprogramme"); });
 Route::get("/{city}/lada-v-brajt-parke-na-osobyh-usloviyah", function ($city) { return redirect("/{$city->alias}/special_offers"); });
 Route::get("/{city}/specialnoe-predlozhenie-moskva", function ($city) { return redirect("/{$city->alias}/special_offers"); });
 Route::get("/{city}/services", function ($city) { return redirect("/{$city->alias}/stocks"); });
-Route::get("/{city}/services/maksimalnaya-vygoda-po-gosprogrammam-pervyjsemejnyj-avtomobil", function ($city) { return redirect("/{$city->alias}/stocks/lada_vesta_vygoda_10_po_gosprogramme"); });
-Route::get("/{city}/ocenka-avtomobilya", function ($city) { return redirect("/{$city->alias}/stocks/doplata_40_000_rublej_pri_obmene_na_lada_granta"); });
-Route::get("/{city}/raschyot-kredita", function ($city) { return redirect("/{$city->alias}/stocks/lada_granta_0_pervonachalnyj_vznos"); });
-Route::get("/{city}/stocks/doplata_40_000_rublej_pri_obmene_na_lada_granta", function ($city) { return redirect("/{$city->alias}/stocks/doplata-40000-rublej-pri-obmene-na-lada-granta"); });
+Route::get("/{city}/services/maksimalnaya-vygoda-po-gosprogrammam-pervyjsemejnyj-avtomobil", function ($city) { return redirect("/{$city->alias}/stocks/lada-vesta-vygoda-10-po-gosprogramme"); });
+Route::get("/{city}/ocenka-avtomobilya", function ($city) { return redirect("/{$city->alias}/stocks/doplata-40000-rublej-pri-obmene-na-lada-granta"); });
+Route::get("/{city}/raschyot-kredita", function ($city) { return redirect("/{$city->alias}/stocks/lada-granta-0-pervonachalnyj-vznos"); });
+Route::get("/{city}/stocks/doplata_40_000_rublej_pri_obmene_na_lada_granta", function ($city) { return redirect("/{$city->alias}/stocks/doplata-40-000-rublej-pri-obmene-na-lada-granta"); });
 Route::get("/{city}/stocks/lada_vesta_vygoda_10_po_gosprogramme", function ($city) { return redirect("/{$city->alias}/stocks/lada-vesta-vygoda-10-po-gosprogramme"); });
 Route::get("/{city}/stocks/lada_granta_0_pervonachalnyj_vznos", function ($city) { return redirect("/{$city->alias}/stocks/lada-granta-0-pervonachalnyj-vznos"); });
 Route::get("/{city}/stocks/obmen_na_lada_vesta_vyshe_rynochnoj_ceny", function ($city) { return redirect("/{$city->alias}/stocks/obmen-na-lada-vesta-vyshe-rynochnoj-ceny"); });
@@ -115,7 +114,7 @@ Route::get("/{city}/services/my-rabotaem", function ($city) { return redirect("/
 Route::get("/{city}/services/lada-granta-s-garantiej-obratnogo-vykupa", function ($city) { return redirect("/{$city->alias}/granta/sedan"); });
 Route::get("/{city}/services/lada-vesta-sedan-za-0-na-3-goda", function ($city) { return redirect("/{$city->alias}"); });
 Route::get("/{city}/services/lada-vesta-s-garantiej-obratnogo-vykupa", function ($city) { return redirect("/{$city->alias}/vesta/sedan"); });
-Route::get("/{city}/services/vygoda-do-80-000-r", function ($city) { return redirect("/{$city->alias}/stocks/doplata_40_000_rublej_pri_obmene_na_lada_granta"); });
+Route::get("/{city}/services/vygoda-do-80-000-r", function ($city) { return redirect("/{$city->alias}/stocks/doplata-40-000-rublej-pri-obmene-na-lada-granta"); });
 Route::get("/{city}/contacts/payment", function ($city) { return redirect("/{$city->alias}/contacts"); });
 Route::get("/{city}/contacts/sotrudniki", function ($city) { return redirect("/{$city->alias}/contacts"); });
 Route::get("/{city}/services/vesta-s-max-vygodoj", function ($city) { return redirect("/{$city->alias}/vesta/sedan"); });

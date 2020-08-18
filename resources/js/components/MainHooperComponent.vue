@@ -14,7 +14,7 @@
                     <p class="title-tagline bold">Выгода<br> 40 000 рублей<br> при обмене на <span class="highlight">LADA Granta</span></p>
                     <div class="item-buttons">
                         <a :href="city + '/granta/sedan'" id="main__slider__benefit-40000-details" class="btn btn-primary event">Подробнее о модели</a>
-                        <a :href="city + '/stocks/doplata_40_000_rublej_pri_obmene_na_lada_granta'" id="main__slider__benefit-40000-action" class="btn btn-secondary event">Условия акции</a>
+                        <a :href="city + '/stocks/doplata-40-000-rublej-pri-obmene-na-lada-granta'" id="main__slider__benefit-40000-action" class="btn btn-secondary event">Условия акции</a>
                     </div>
                 </div>
             </slide>
@@ -32,7 +32,7 @@
                     <p class="title-tagline bold">LADA Vesta<br> по обновлённой<br> госпрограмме</p>
                     <div class="item-buttons">
                         <a :href="city + '/vesta/sedan'" id="main__slider__lada-vesta-benefit-10-details" class="btn btn-primary event">Подробнее о модели</a>
-                        <a :href="city + '/stocks/lada_vesta_vygoda_10_po_gosprogramme'" id="main__slider__lada-vesta-benefit-10-action" class="btn btn-secondary event">Условия акции</a>
+                        <a :href="city + '/stocks/lada-vesta-vygoda-10-po-gosprogramme'" id="main__slider__lada-vesta-benefit-10-action" class="btn btn-secondary event">Условия акции</a>
                     </div>
                 </div>
             </slide>
@@ -50,7 +50,7 @@
                     <p class="title-tagline bold">LADA Granta<br>0% первоначальный взнос</p>
                     <div class="item-buttons">
                         <a :href="city + '/granta/sedan'" id="main__slider__lada-granta-0-firstpay-details" class="btn btn-primary event">Подробнее о модели</a>
-                        <a :href="city + '/stocks/lada_granta_0_pervonachalnyj_vznos'" id="main__slider__lada-granta-0-firstpay-action" class="btn btn-secondary event">Условия акции</a>
+                        <a :href="city + '/stocks/lada-granta-0-pervonachalnyj-vznos'" id="main__slider__lada-granta-0-firstpay-action" class="btn btn-secondary event">Условия акции</a>
                     </div>
                 </div>
             </slide>
@@ -68,7 +68,7 @@
                     <p class="title-tagline bold">Обмен на LADA Vesta с дополнительной выгодой</p>
                     <div class="item-buttons">
                         <a :href="city + '/granta/sedan'" id="main__slider__exchange-lada-vesta-details" class="btn btn-primary event">Подробнее о модели</a>
-                        <a :href="city + '/stocks/obmen_na_lada_vesta_vyshe_rynochnoj_ceny'" id="main__slider__exchange-lada-vesta-action" class="btn btn-secondary event">Условия акции</a>
+                        <a :href="city + '/stocks/obmen-na-lada-vesta-vyshe-rynochnoj-ceny'" id="main__slider__exchange-lada-vesta-action" class="btn btn-secondary event">Условия акции</a>
                     </div>
                 </div>
             </slide>
@@ -100,7 +100,7 @@
                 <div class="product-content">
                     <p class="title-tagline bold"><span class="title-uppercase">Брайт Парк<br> работает онлайн!</span><br> <span class="text-low">Полный комплекс услуг от&nbsp;заявки до&nbsp;выдачи</span></p>
                     <div class="item-buttons">
-                        <a :href="city + '/stocks/brajt_park_rabotaet_onlajn'" id="main__slider__terms-of-action" class="btn btn-primary event">Условия акции</a>
+                        <a :href="city + '/stocks/brajt-park-rabotaet-onlajn'" id="main__slider__terms-of-action" class="btn btn-primary event">Условия акции</a>
                     </div>
                 </div>
             </slide>

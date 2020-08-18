@@ -190,7 +190,7 @@ class StocksTableSeeder extends Seeder
                 ',
                 'text_short' => 'Воспользуйтесь возможностью обменять свой автомобиль выше рыночной стоимости и с дополнительной выгодой - 40 000 рублей.',
                 'preview' => '/build/images/stocks/stock_04.jpg',
-                'slug' => 'obmen-na-lada-vesta-vyshe-rynochnoj_ceny',
+                'slug' => 'obmen-na-lada-vesta-vyshe-rynochnoj-ceny',
                 'city_id' => 0,
                 'sort' => 4,
             ],
