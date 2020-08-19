@@ -401,7 +401,7 @@ class HomeController extends Controller
         if ($city['alias']) {
             $this->city = $city['alias'];
         } else {
-            return redirect()->route('stocks_details', ['city' => 'perm']);
+            return redirect()->route('contacts', ['city' => 'perm']);
         }
 
         $cities = $city->getCities($this->city);
@@ -429,7 +429,7 @@ class HomeController extends Controller
         if ($city['alias']) {
             $this->city = $city['alias'];
         } else {
-            return redirect()->route('stocks_details', ['city' => 'perm']);
+            return redirect()->route('privacy', ['city' => 'perm']);
         }
 
         $cities = $city->getCities($this->city);
@@ -456,7 +456,7 @@ class HomeController extends Controller
         if ($city['alias']) {
             $this->city = $city['alias'];
         } else {
-            return redirect()->route('index', ['city' => 'perm']);
+            return redirect()->route('service', ['city' => 'perm']);
         }
 
         $cities = $city->getCities($this->city);
@@ -487,7 +487,7 @@ class HomeController extends Controller
         if ($city['alias']) {
             $this->city = $city['alias'];
         } else {
-            return redirect()->route('stocks_details', ['city' => 'perm']);
+            return redirect()->route('about', ['city' => 'perm']);
         }
 
         $cities = $city->getCities($this->city);
