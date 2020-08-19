@@ -151,10 +151,7 @@ Route::middleware(['utm.check', 'cookie.check', 'counter', 'cache.headers:privat
     Route::get('/{city?}/{car_model}', 'HomeController@models')->name('models');
     Route::get('/{city?}/{car_model}/{car_type}', 'HomeController@model')->name('model');
     Route::get('/{city?}/{car_model}/{car_type}/model_details', 'HomeController@model_details')->name('model_details');
-    Route::get('/alt_menu', 'HomeController@alt_menu')->name('alt_menu');
-  //  Route::get('/model_details', 'HomeController@model_details')->name('model_details');
     Route::get('/{city?}/{car_model}/{car_type}/trade_in_calc', 'HomeController@trade_in_calc')->name('trade_in_calc');
-    Route::get('/main', 'HomeController@main')->name('main');
     Route::get('/get_brands', 'HomeController@get_brands')->name('get_brands');
     Route::any('/send_contact_form', 'ContactFormController@sendContactForm')->name('sendContactForm');
     Route::any('/check_visitor_cookie', 'ContactFormController@checkVisitorCookie')->name('checkVisitorCookie');
