@@ -51,7 +51,7 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        if ($exception instanceof ModelNotFoundException || $exception instanceof ViewException) {
+/*        if ($exception instanceof ModelNotFoundException || $exception instanceof ViewException) {
             $city_arr = explode('/', $request->path());
             $cities_list_arr = DB::table('cities')->select('alias')->get()->toArray();
             $cities_list = [];
@@ -72,7 +72,7 @@ class Handler extends ExceptionHandler
                 'models' => CarModel::with('types_preview')->orderBy('sort', 'asc')->get(),
             ];
             return response(view('errors.404', $params), 404);
-        }
+        }*/
 
         return parent::render($request, $exception);
     }

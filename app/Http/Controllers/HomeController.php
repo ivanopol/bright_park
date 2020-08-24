@@ -157,35 +157,30 @@ class HomeController extends Controller
      * @param CarModel $car_model
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
-    public function accessories(City $city = null, CarModel $car_model)
+    public function accessories(City $city = null)
     {
         if ($city['alias']) {
             $this->city = $city['alias'];
         } else {
-            return redirect()->route('models', [
+            return redirect()->route('accessories', [
                 'city' => 'perm',
-                'car_model' => $car_model->slug,
             ]);
         }
 
         $cities = $city->getCities($this->city);
         $models = CarModel::with('types_preview')->orderBy('sort', 'asc')->get();
 
-        $service = new BasePageService();
-        $data['carcasses'] = $service->getAllCarcasses($car_model, $city);
         $data['coordinates'] = explode(",", $city['coordinates']);
 
         $this->seo->setMetaTags($city, [
-            'model' => $car_model,
             'place' => $data['coordinates']
         ]);
 
-        return view('models', [
+        return view('accessories', [
             'data' => $data,
             'models' => $models,
             'city' => $this->city,
             'cities' => $cities,
-            'car_model' => $car_model,
         ]);
     }
     /**

@@ -85,4 +85,10 @@ Breadcrumbs::for('about', function ($trail, $city) {
     $trail->push('О компании', route('about', [$city]));
 });
 
+// Accessories
+Breadcrumbs::for('accessories', function ($trail, $city) {
+    $trail->parent('main', $city);
+    $trail->push('Аксессуары', route('accessories', [$city]));
+});
+
 
