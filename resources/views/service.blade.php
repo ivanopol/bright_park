@@ -43,7 +43,7 @@
         <div class="container">
             @if ($city === 'perm')
                 <yclients-form :cities='@json($cities)'
-                               :form_id="'service__online-appointment_'"
+                               :form_id="'service__online-appointment'"
                                :button_text="'Записаться на сервис'"
                                :form_title="''"
                                :is_comment='true'
@@ -73,7 +73,7 @@
         <div class="container">
             @if ($city === 'perm')
                 <yclients-form2 :cities='@json($cities)'
-                                :form_id="'service__online-appointment_'"
+                                :form_id="'service__online-appointment'"
                                 :button_text="'Записаться на сервис'"
                                 :form_title="'<span class=\'c_orange\'>Запишись</span> к нам на сервис'"
                                 :form_pre_title="'и получи скидку 5% при визите в день обращения'"
