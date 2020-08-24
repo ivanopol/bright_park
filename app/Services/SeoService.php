@@ -150,8 +150,8 @@ class SeoService
                 }
                 elseif ( $segments[1] === 'accessories' )
                 {
-                    $tags->title = "Аксесуары | Брайт Парк в <:CITY_DATIVE:>";
-                    $tags->description = "Аксесуары | Брайт Парк в <:CITY_DATIVE:>";
+                    $tags->title = "Аксессуары | Брайт Парк в <:CITY_DATIVE:>";
+                    $tags->description = "Аксессуары | Брайт Парк в <:CITY_DATIVE:>";
                 }
                 elseif ( $segments[1] === $params['model']->slug) {
                     $tags->title = 'Новая LADA ' . $params['model']->title . ' по лучшей цене в ' . $city->city_dative . ' | Брайт Парк';
