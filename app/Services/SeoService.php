@@ -148,6 +148,11 @@ class SeoService
                     $tags->title = "О Компании | Брайт Парк в <:CITY_DATIVE:>";
                     $tags->description = "О Компании | Брайт Парк в <:CITY_DATIVE:>";
                 }
+                elseif ( $segments[1] === 'accessories' )
+                {
+                    $tags->title = "Аксесуары | Брайт Парк в <:CITY_DATIVE:>";
+                    $tags->description = "Аксесуары | Брайт Парк в <:CITY_DATIVE:>";
+                }
                 elseif ( $segments[1] === $params['model']->slug) {
                     $tags->title = 'Новая LADA ' . $params['model']->title . ' по лучшей цене в ' . $city->city_dative . ' | Брайт Парк';
                     $tags->description =  "Выбираете где купить новую LADA " . $params['model']->title . " по лучшей цене в " . $city->city_dative . "? У официального дилера LADA - Брайт Парк " . $params['model']->title . " в наличии по лучшей стоимости. Также у нас выгодный обмен и кредит.";

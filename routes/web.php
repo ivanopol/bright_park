@@ -140,6 +140,7 @@ Route::get('send', 'FeedbackController@send');
 Route::middleware(['utm.check', 'cookie.check', 'counter', 'cache.headers:private;max_age=3600'])->group(function () {
     Route::get('/{city}/about', 'HomeController@about')->name('about');
     Route::get('/{city}/privacy', 'HomeController@privacy')->name('privacy');
+    Route::get('/{city}/accessories', 'HomeController@accessories')->name('accessories');
     Route::get('/{city}/stocks', 'HomeController@stocks')->name('stocks');
     Route::get('/{city}/stocks/{stocks_title}', 'HomeController@stocks_details')->name('stocks.one');
     Route::get('/{city}/news', 'HomeController@news')->name('news');
