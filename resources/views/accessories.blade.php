@@ -12,7 +12,13 @@
             <div class="container" itemscope itemtype="http://schema.org/Product">
                 <h1>H1</h1>
                 <ul class="accessories-ul">
-
+                    @foreach ($data['accessories'][0]->accessory as $accessories)
+                        <li>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Assumenda aut autem blanditiis dolores ex excepturi exercitationem ipsa magnam magni minus molestias quas qui, repellat totam voluptatem?
+                            Ad placeat recusandae ut?
+                        </li>
+                    @endforeach
                 </ul>
             </div>
         </section>
