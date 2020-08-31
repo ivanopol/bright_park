@@ -38,7 +38,7 @@ class CityTableSeeder extends Seeder
                 'bitrix_responsible_id' => $responsible_id,
                 'begin_script' => $end_script,
                 'callback_emails' => 'info@brightpark.ru,erc@brightpark.ru',
-                'callback_service_emails' => 'service@brightpark.ru',
+                'callback_service_emails' => 'service@brightpark.ru,servis@brightpark.ru',
             ],
             [
                 'title_ru' => 'Москва',
@@ -53,7 +53,7 @@ class CityTableSeeder extends Seeder
                 'bitrix_responsible_id' => $responsible_id,
                 'begin_script' => $end_script,
                 'callback_emails' => 'moscow@brightpark.ru, erc@brightpark.ru',
-                'callback_service_emails' => 'service.moscow@brightpark.ru',
+                'callback_service_emails' => 'service.moscow@brightpark.ru,servis@brightpark.ru',
             ],
             [
                 'title_ru' => 'Магнитогорск',
@@ -68,7 +68,7 @@ class CityTableSeeder extends Seeder
                 'bitrix_responsible_id' => $responsible_id,
                 'begin_script' => $end_script,
                 'callback_emails' => 'magnitka@brightpark.ru,erc@brightpark.ru',
-                'callback_service_emails' => 'service.magnitka@brightpark.ru',
+                'callback_service_emails' => 'service.magnitka@brightpark.ru,servis@brightpark.ru',
             ],
             [
                 'title_ru' => 'Ростов-на-Дону',
@@ -83,7 +83,7 @@ class CityTableSeeder extends Seeder
                 'bitrix_responsible_id' => $responsible_id,
                 'begin_script' => $end_script,
                 'callback_emails' => 'rostov@brightpark.ru,erc@brightpark.ru',
-                'callback_service_emails' => 'service.rnd@brightpark.ru',
+                'callback_service_emails' => 'service.rnd@brightpark.ru,servis@brightpark.ru',
             ],
             [
                 'title_ru' => 'Екатеринбург',
@@ -98,7 +98,7 @@ class CityTableSeeder extends Seeder
                 'bitrix_responsible_id' => $responsible_id,
                 'begin_script' => $end_script,
                 'callback_emails' => 'ekb@brightpark.ru,erc@brightpark.ru',
-                'callback_service_emails' => 'service.ekb@brightpark.ru',
+                'callback_service_emails' => 'service.ekb@brightpark.ru,servis@brightpark.ru',
             ],
             [
                 'title_ru' => 'Волгоград',
@@ -113,7 +113,7 @@ class CityTableSeeder extends Seeder
                 'bitrix_responsible_id' => $responsible_id,
                 'begin_script' => $end_script,
                 'callback_emails' => 'volga@brightpark.ru,erc@brightpark.ru',
-                'callback_service_emails' => 'service.volga.@brightpark.ru',
+                'callback_service_emails' => 'service.volga.@brightpark.ru,servis@brightpark.ru',
             ],
         ];
 
