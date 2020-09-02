@@ -155,7 +155,7 @@ class CarModelCarTypeTableSeeder extends Seeder
                 'car_type_id' => '4',
                 'preview' => true,
                 'price' => 791900,
-                'special_price' => 703710,
+                'special_price' => 712710,
                 'count'=>333,
                 'image' => '/build/images/slider/mini/xray/mobile/lada_xray_cross.png',
                 'slogan' => 'Увеличенный дорожный просвет, защитный обвес',
