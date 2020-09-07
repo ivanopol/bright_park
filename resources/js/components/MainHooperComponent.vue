@@ -11,7 +11,7 @@
                     </picture>
                 </div>
                 <div class="product-content">
-                    <p class="title-tagline bold">Выгода<br> 40 000 рублей<br> при обмене на <span class="highlight">LADA Granta</span></p>
+                    <p class="title-tagline bold">Выгода 10%<br> по госпрограмме на <br>LADA в сентябре</p>
                     <div class="item-buttons">
                         <a :href="city + '/granta/sedan'" id="main__slider__benefit-40000-details" class="btn btn-primary event">Подробнее о модели</a>
                         <a :href="city + '/stocks/doplata-40-000-rublej-pri-obmene-na-lada-granta'" id="main__slider__benefit-40000-action" class="btn btn-secondary event">Условия акции</a>
@@ -29,7 +29,7 @@
                     </picture>
                 </div>
                 <div class="product-content">
-                    <p class="title-tagline bold">LADA Vesta<br> по обновлённой<br> госпрограмме</p>
+                    <p class="title-tagline bold">Кредит от 3.5%<br> на LADA</p>
                     <div class="item-buttons">
                         <a :href="city + '/vesta/sedan'" id="main__slider__lada-vesta-benefit-10-details" class="btn btn-primary event">Подробнее о модели</a>
                         <a :href="city + '/stocks/lada-vesta-vygoda-10-po-gosprogramme'" id="main__slider__lada-vesta-benefit-10-action" class="btn btn-secondary event">Условия акции</a>
@@ -47,7 +47,7 @@
                     </picture>
                 </div>
                 <div class="product-content">
-                    <p class="title-tagline bold">LADA Granta<br>0% первоначальный взнос</p>
+                    <p class="title-tagline bold">0% первоначальный взнос при покупке LADA</p>
                     <div class="item-buttons">
                         <a :href="city + '/granta/sedan'" id="main__slider__lada-granta-0-firstpay-details" class="btn btn-primary event">Подробнее о модели</a>
                         <a :href="city + '/stocks/lada-granta-0-pervonachalnyj-vznos'" id="main__slider__lada-granta-0-firstpay-action" class="btn btn-secondary event">Условия акции</a>
@@ -65,7 +65,7 @@
                     </picture>
                 </div>
                 <div class="product-content">
-                    <p class="title-tagline bold">Обмен на LADA Vesta с дополнительной выгодой</p>
+                    <p class="title-tagline bold">40 000 рублей<br> выгода при обмене авто на LADA</p>
                     <div class="item-buttons">
                         <a :href="city + '/granta/sedan'" id="main__slider__exchange-lada-vesta-details" class="btn btn-primary event">Подробнее о модели</a>
                         <a :href="city + '/stocks/obmen-na-lada-vesta-vyshe-rynochnoj-ceny'" id="main__slider__exchange-lada-vesta-action" class="btn btn-secondary event">Условия акции</a>
