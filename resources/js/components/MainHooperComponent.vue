@@ -72,38 +72,6 @@
                     </div>
                 </div>
             </slide>
-            <slide class="even">
-                <div class="asset-container">
-                    <picture>
-                        <source srcset="/build/images/main/mobile/brajt_rabotaet.jpg, /build/images/main/mobile/brajt_rabotaet.jpg 2x" media="(max-width: 580px)">
-                        <source srcset="/build/images/main/tablet/brajt_rabotaet.jpg, /build/images/main/tablet/brajt_rabotaet.jpg 2x" media="(max-width: 1365px)">
-                        <source srcset="/build/images/main/desktop/brajt_rabotaet.jpg, /build/images/main/desktop/brajt_rabotaet.jpg 2x" media="(min-width: 1366px)">
-                        <img class="asset-image" src="/build/images/main/mobile/brajt_rabotaet.jpg" srcset="/build/images/main/mobile/brajt_rabotaet.jpg, /build/images/main/mobile/brajt_rabotaet.jpg 2x" alt="Брайт Парк работает онлайн!" />
-                    </picture>
-                </div>
-                <div class="product-content product-content-left">
-                    <p class="title-tagline bold"><span class="title-uppercase">Снова вместе!</span><br> <span class="text-low">Брайт Парк работает. Приезжайте к&nbsp;нам в&nbsp;салон</span></p>
-                    <div class="item-buttons">
-
-                    </div>
-                </div>
-            </slide>
-            <slide class="odd">
-                <div class="asset-container">
-                    <picture>
-                        <source srcset="/build/images/main/mobile/main_brightpark_online.jpg, /build/images/main/mobile/main_brightpark_online.jpg 2x" media="(max-width: 580px)">
-                        <source srcset="/build/images/main/tablet/main_brightpark_online.jpg, /build/images/main/tablet/main_brightpark_online.jpg 2x" media="(max-width: 1365px)">
-                        <source srcset="/build/images/main/desktop/main_brightpark_online.jpg, /build/images/main/desktop/main_brightpark_online.jpg 2x" media="(min-width: 1366px)">
-                        <img class="asset-image" src="/build/images/main/mobile/main_brightpark_online.jpg" srcset="/build/images/main/mobile/main_brightpark_online.jpg, /build/images/main/mobile/main_brightpark_online.jpg 2x" alt="Брайт Парк работает онлайн!" />
-                    </picture>
-                </div>
-                <div class="product-content">
-                    <p class="title-tagline bold"><span class="title-uppercase">Брайт Парк<br> работает онлайн!</span><br> <span class="text-low">Полный комплекс услуг от&nbsp;заявки до&nbsp;выдачи</span></p>
-                    <div class="item-buttons">
-                        <a :href="city + '/stocks/brajt-park-rabotaet-onlajn'" id="main__slider__terms-of-action" class="btn btn-primary event">Условия акции</a>
-                    </div>
-                </div>
-            </slide>
             <hooper-pagination slot="hooper-addons"></hooper-pagination>
         </hooper>
     </section>
