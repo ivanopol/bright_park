@@ -338,11 +338,13 @@ class HomeController extends Controller
         $data['coordinates'] = explode(",", $city['coordinates']);
 
         $patterns = [
+            '/<:CITY:>/',
             '/<:CITY_DATIVE:>/',
             '/<:REGION_DATIVE:>/',
         ];
 
         $replacements = [
+            $city->alias,
             $city->city_dative,
             $city->region_dative,
         ];
