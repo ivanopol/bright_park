@@ -4,6 +4,23 @@
             <slide class="even">
                 <div class="asset-container">
                     <picture>
+                        <source srcset="/build/images/main/mobile/zolotaya-osenv-brajt-parke.jpg, /build/images/main/mobile/zolotaya-osenv-brajt-parke.jpg 2x" media="(max-width: 580px)">
+                        <source srcset="/build/images/main/tablet/zolotaya-osenv-brajt-parke.jpg, /build/images/main/tablet/zolotaya-osenv-brajt-parke.jpg 2x" media="(max-width: 1365px)">
+                        <source srcset="/build/images/main/desktop/zolotaya-osenv-brajt-parke.jpg, /build/images/main/desktop/zolotaya-osenv-brajt-parke.jpg 2x" media="(min-width: 1366px)">
+                        <img class="asset-image" src="/build/images/main/mobile/zolotaya-osenv-brajt-parke.jpg"
+                             srcset="/build/images/main/mobile/zolotaya-osenv-brajt-parke.jpg, /build/images/main/mobile/zolotaya-osenv-brajt-parke.jpg 2x" alt="Брайт Парк: Обмен на LADA Vesta выше рыночной цены" />
+                    </picture>
+                </div>
+                <div class="product-content">
+                    <p class="title-tagline bold">Золотая осень в Брайт Парке! LADA GRANTA на спец.условиях!</p>
+                    <div class="item-buttons">
+                        <a :href="city + '/granta/sedan'" id="main__slider__zolotaya-osenv-brajt-parke" class="btn btn-primary event">Подробнее о модели</a>
+                    </div>
+                </div>
+            </slide>
+            <slide class="even">
+                <div class="asset-container">
+                    <picture>
                         <source srcset="/build/images/main/mobile/main_vesta_red.jpg, /build/images/main/mobile/main_vesta_red.jpg 2x" media="(max-width: 580px)">
                         <source srcset="/build/images/main/tablet/main_vesta_red.jpg, /build/images/main/tablet/main_vesta_red.jpg 2x" media="(max-width: 1365px)">
                         <source srcset="/build/images/main/desktop/main_vesta_red.jpg, /build/images/main/desktop/main_vesta_red.jpg 2x" media="(min-width: 1366px)">
