@@ -7,6 +7,7 @@
     <section class="main-screen">
         <main-hooper-component :city="'{{$city}}'"></main-hooper-component>
     </section>
+    <plate :city="'{{$city}}'" :text="'Внимание! Склад пополнился! Отдаем с&nbsp;максимальной выгодой!'"></plate>
     <div class="event-scroll">
         <div class="container">
             <div id="advantages" class="advantages_wrap">

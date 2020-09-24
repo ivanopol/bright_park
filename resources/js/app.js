@@ -11,10 +11,12 @@ window.Vue = require('vue');
 //window.Vuex = require('vuex');
 //import Vuex from 'vuex';
 import VModal from 'vue-js-modal';
+import VueObserveVisibility from 'vue-observe-visibility';
 /*import VueAwesomeSwiper from 'vue-awesome-swiper';
 import 'swiper/css/swiper.css'*/
 
 Vue.use(VModal);
+Vue.use(VueObserveVisibility);
 //Vue.use(VueAwesomeSwiper, /* { default options with global component } */)
 //Vue.use(Vuex);
 /**
@@ -66,6 +68,7 @@ Vue.component('footer-component', require('./components/elements/FooterComponent
 Vue.component('banks-component', require('./components/service/BanksComponent').default);
 Vue.component('yclients-form', require('./components/forms/YclientsForm').default);
 Vue.component('yclients-form2', require('./components/forms/YclientsForm2').default);
+Vue.component('plate', require('./components/elements/Plate').default);
 
 /*const store = new Vuex.Store({
     state: {
