@@ -28,6 +28,9 @@
                     <source :srcset="get_source(block.url)" media="(min-width: 580px)">
                     <img :src="block.url" alt="">
                 </picture>
+                <plate v-if="n===1" :city="'{{$city}}'"
+                       :text="'В&nbsp;наличии все комплектации LADA&nbsp;' + data.model_full + '! Успевайте забронировать с&nbsp;золотыми условиями'"
+                ></plate>
             </div>
             <div class="block-info-aside">
                 <div class="aside_wrap" >

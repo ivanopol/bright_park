@@ -2,10 +2,12 @@
     <div class="plate" v-observe-visibility="{ callback: visibilityChanged,   intersection: {
     threshold: 0,
     }, }">
-        <transition name="slide-fade" v-on:enter="enter">
-            <p v-if="show" v-html="text"></p>
-            <span class="disclaimer" v-html="disclaimer"></span>
-        </transition>
+        <transition-group name="slide-fade" tag="div" v-on:enter="enter">
+            <div v-if="show" v-bind:key="1">
+                <p v-html="text" ></p>
+                <p class="disclaimer" v-html="disclaimer" v-bind:key="2"></p>
+            </div>
+        </transition-group>
     </div>
 </template>
 
@@ -55,6 +57,14 @@ export default {
         color: #000;
         line-height: 28px;
         text-align: center;
+        margin-bottom: 0;
+    }
+
+    .disclaimer {
+        font-size: 14px;
+        line-height: 1.6;
+        text-align: center;
+        color: #000000a6;
     }
 
     /* Анимации появления и исчезновения могут иметь */

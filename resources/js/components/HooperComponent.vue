@@ -26,6 +26,10 @@
                 </span>
             </div>
         </div>
+        <plate :city="'{{$city}}'"
+               :text="'До&nbsp;30&nbsp;сентября&nbsp;&mdash; золотые условия! Согласуем для вас специальные выгоды'"
+               :disclaimer="'*Подробности у&nbsp;продавцов-консультантов'"
+        ></plate>
     </div>
 </template>
 
