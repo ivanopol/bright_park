@@ -12,7 +12,7 @@
                     </picture>
                 </div>
                 <div class="product-content">
-                    <p class="title-tagline bold">Золотая осень в Брайт Парке! LADA GRANTA на спец.условиях!</p>
+                    <p class="title-tagline bold">Золотая осень!<br>LADA GRANTA на спец.условиях!</p>
                     <div class="item-buttons">
                         <a :href="city + '/granta/sedan'" id="main__slider__zolotaya-osenv-brajt-parke" class="btn btn-primary event">Подробнее о модели</a>
                     </div>
