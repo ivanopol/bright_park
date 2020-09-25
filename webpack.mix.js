@@ -11,7 +11,7 @@ mix
     if (mix.inProduction()) {
         mix.copyDirectory('resources/images', 'public/build/images')
     } else {
-        mix.copyWatched('resources/images', 'public/build/images',  { base: 'resources/images' })
+       // mix.copyWatched('resources/images', 'public/build/images',  { base: 'resources/images' })
         mix.browserSync({
             open: false,
             watchTask: true,

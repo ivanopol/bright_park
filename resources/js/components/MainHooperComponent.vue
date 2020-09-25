@@ -1,6 +1,6 @@
 <template>
     <section>
-        <hooper class="main-screen-wrap" :autoPlay="true" :playSpeed="6000" :wheelControl="false" :transition="600" :infiniteScroll="true">
+        <hooper class="main-screen-wrap" :autoPlay="false" :playSpeed="6000" :wheelControl="false" :transition="600" :infiniteScroll="true">
             <slide class="even">
                 <div class="asset-container">
                     <picture>
@@ -12,7 +12,7 @@
                     </picture>
                 </div>
                 <div class="product-content">
-                    <p class="title-tagline bold">Золотая осень!<br>LADA GRANTA на спец.условиях!</p>
+                    <p class="title-tagline bold">Золотая осень!<br>LADA GRANTA на&nbsp;спец.условиях!</p>
                     <div class="item-buttons">
                         <a :href="city + '/granta/sedan'" id="main__slider__zolotaya-osenv-brajt-parke" class="btn btn-primary event">Подробнее о модели</a>
                     </div>
@@ -29,7 +29,7 @@
                     </picture>
                 </div>
                 <div class="product-content">
-                    <p class="title-tagline bold">Выгода 10% по госпрограмме на LADA в сентябре</p>
+                    <p class="title-tagline bold">Выгода&nbsp;10% по&nbsp;госпрограмме на&nbsp;LADA в&nbsp;сентябре</p>
                     <div class="item-buttons">
                         <a :href="city + '/granta/sedan'" id="main__slider__exchange-lada-vesta-details" class="btn btn-primary event">Подробнее о модели</a>
                         <a :href="city + '/stocks/obmen-na-lada-vesta-vyshe-rynochnoj-ceny'" id="main__slider__exchange-lada-vesta-action" class="btn btn-secondary event">Условия акции</a>
@@ -47,7 +47,7 @@
                     </picture>
                 </div>
                 <div class="product-content">
-                    <p class="title-tagline bold">LADA Vesta<br> по обновлённой<br> госпрограмме</p>
+                    <p class="title-tagline bold">LADA Vesta<br> по&nbsp;обновлённой<br> госпрограмме</p>
                     <div class="item-buttons">
                         <a :href="city + '/vesta/sedan'" id="main__slider__lada-vesta-benefit-10-details" class="btn btn-primary event">Подробнее о модели</a>
                         <a :href="city + '/stocks/lada-vesta-vygoda-10-po-gosprogramme'" id="main__slider__lada-vesta-benefit-10-action" class="btn btn-secondary event">Условия акции</a>
@@ -65,7 +65,7 @@
                     </picture>
                 </div>
                 <div class="product-content">
-                    <p class="title-tagline bold">0% первоначальный взнос при покупке LADA</p>
+                    <p class="title-tagline bold">0%&nbsp;первоначальный взнос при покупке LADA</p>
                     <div class="item-buttons">
                         <a :href="city + '/granta/sedan'" id="main__slider__lada-granta-0-firstpay-details" class="btn btn-primary event">Подробнее о модели</a>
                         <a :href="city + '/stocks/lada-granta-0-pervonachalnyj-vznos'" id="main__slider__lada-granta-0-firstpay-action" class="btn btn-secondary event">Условия акции</a>
@@ -82,7 +82,7 @@
                     </picture>
                 </div>
                 <div class="product-content">
-                    <p class="title-tagline bold">40 000 рублей выгода<br> при обмене на <span class="highlight">LADA</span></p>
+                    <p class="title-tagline bold">40&nbsp;000 рублей<br>выгода при обмене на&nbsp;LADA</p>
                     <div class="item-buttons">
                         <a :href="city + '/granta/sedan'" id="main__slider__benefit-40000-details" class="btn btn-primary event">Подробнее о модели</a>
                         <a :href="city + '/stocks/doplata-40-000-rublej-pri-obmene-na-lada-granta'" id="main__slider__benefit-40000-action" class="btn btn-secondary event">Условия акции</a>
@@ -203,7 +203,7 @@ export default {
             //font-weight: bold;
             width: 80vw;
             max-width: 100%;
-            margin: 30px auto 0;
+            margin: 45px auto 0;
             line-height: 1.2;
             /*                -webkit-transition: all ease-out 0.5s;
                             -moz-transition: all ease-out 0.5s;
