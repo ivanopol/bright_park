@@ -1,7 +1,7 @@
 <template>
     <div class="plate" v-observe-visibility="{ callback: visibilityChanged, intersection: { threshold: 0 }, }">
         <transition-group name="slide-fade" tag="div" v-on:enter="enter">
-            <div v-if="show" v-bind:key="1">
+            <div v-show="show" v-bind:key="1">
                 <p v-bind:class="{ bold: bold }" v-html="text" ></p>
                 <p class="disclaimer" v-html="disclaimer"></p>
             </div>
@@ -36,7 +36,7 @@ export default {
     },
     methods: {
         visibilityChanged (isVisible, entry) {
-            this.show = isVisible
+            this.show = isVisible;
         },
         enter: function(el, done) {
             var that = this;
