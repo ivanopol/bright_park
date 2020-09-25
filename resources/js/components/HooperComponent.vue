@@ -26,9 +26,9 @@
                 </span>
             </div>
         </div>
-        <plate :city="'{{$city}}'"
+        <plate :city="city.value"
                :text="'До&nbsp;30&nbsp;сентября&nbsp;&mdash; золотые условия! Согласуем для вас специальные выгоды'"
-               :disclaimer="'*Подробности у&nbsp;продавцов-консультантов'"
+               :disclaimer="'Подробности<span class=\'show_desktop\'> по телефону</span>: <a href=\'tel:' + phone + '\' class=\'callibri_tel event\'>' + phone_formatted + '</a>'"
         ></plate>
     </div>
 </template>
@@ -49,11 +49,23 @@
         components: {
             Hooper,
             Slide
-            /*            HooperProgress,
-                        HooperPagination,
-                        HooperNavigation*/
         },
-        props : ['data', 'city'],
+        props: {
+          data: {
+            type: Object,
+          },
+          city: {
+             type: Object ,
+          },
+          phone: {
+              default: '',
+              type: String
+          },
+          phone_formatted: {
+              default: '',
+              type: String
+          },
+        },
         data () {
             return {
                 hooperSettings: {

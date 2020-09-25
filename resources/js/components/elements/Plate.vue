@@ -1,11 +1,9 @@
 <template>
-    <div class="plate" v-observe-visibility="{ callback: visibilityChanged,   intersection: {
-    threshold: 0,
-    }, }">
+    <div class="plate" v-observe-visibility="{ callback: visibilityChanged, intersection: { threshold: 0 }, }">
         <transition-group name="slide-fade" tag="div" v-on:enter="enter">
             <div v-if="show" v-bind:key="1">
-                <p v-html="text" ></p>
-                <p class="disclaimer" v-html="disclaimer" v-bind:key="2"></p>
+                <p v-bind:class="{ bold: bold }" v-html="text" ></p>
+                <p class="disclaimer" v-html="disclaimer"></p>
             </div>
         </transition-group>
     </div>
@@ -30,6 +28,10 @@ export default {
         },
         city: {
             type: String
+        },
+        bold: {
+            default: false,
+            type: Boolean
         }
     },
     methods: {
@@ -44,6 +46,10 @@ export default {
 </script>
 
 <style lang="scss" >
+a.plate-wrap {
+    font-weight: normal;
+}
+
 .plate {
     width: 100%;
     background: rgb(239,116,48);
@@ -52,19 +58,32 @@ export default {
     margin: -10px auto 0;
     padding: 25px 20px 15px;
 
+    a {
+        font-weight: normal;
+        color: #000;
+    }
+
     p {
         font-size: 20px;
         color: #000;
         line-height: 28px;
         text-align: center;
         margin-bottom: 0;
+
+        &.bold {
+            font-weight: bold;
+        }
     }
 
     .disclaimer {
-        font-size: 14px;
-        line-height: 1.6;
+        font-size: 18px;
+        line-height: 26px;
         text-align: center;
-        color: #000000a6;
+        color: #000;
+
+        a {
+            border-bottom: 1px solid #00000061;
+        }
     }
 
     /* Анимации появления и исчезновения могут иметь */
@@ -79,6 +98,12 @@ export default {
         /* .slide-fade-leave-active до версии 2.1.8 */ {
         transform: translateX(-10px);
         opacity: 0;
+    }
+
+    @media only screen and (max-width: 580px) {
+        .show_desktop {
+            display: none;
+        }
     }
 }
 

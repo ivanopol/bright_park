@@ -10,7 +10,11 @@
         <div class="container model-breadcrumbs">
             {{Breadcrumbs::render("model", $city, $car_model, $car_type)}}
         </div>
-        <hooper-component :data='@json($data['slider'])' :city='@json($cities['active'])' ></hooper-component>
+        <hooper-component :data='@json($data['slider'])'
+                          :city='@json($cities['active'])'
+                          :phone='@json($cities['active']['phone'])'
+                          :phone_formatted='@json($cities['active']['phone_format'])'
+        ></hooper-component>
 
         @foreach ($data['blocks'] as $key => $block)
             <info-component :block='@json($block)' :n='@json($key)' :model='@json($data['model_id'])' :type='@json($data['type_id'])' :data='@json($data)'></info-component>
@@ -36,6 +40,9 @@
             <review-component :reviews='@json($data['reviews'])'
                               :model_name="'{{$data['model_full']}}'"></review-component>
         @endif
+        <plate :city="'{{$city}}'"
+               :text="'Выбрали LADA {{ $data['model_full'] }}? Узнайте все дополнительные выгоды сентября!'"
+        ></plate>
         <next-action-component :link="'{{request()->segment(count(request()->segments()))}}'"
                                :cities='@json($cities)'></next-action-component>
         <section class="block block_5">
