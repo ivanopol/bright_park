@@ -110,6 +110,53 @@ class HomeController extends Controller
             'car_attrs' => $car_attrs,
         ]);
     }
+    /**
+     * Страница кредита
+     *
+     * @param City|null $city
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     */
+    public function credit_offers(City $city = null, Request $request)
+    {
+
+        if ($city['alias']) {
+            $this->city = $city['alias'];
+        } else {
+            return redirect()->route('index', ['city' => 'perm']);
+        }
+
+        $cities = $city->getCities($this->city);
+        $data['coordinates'] = explode(",", $city['coordinates']);
+        $this->seo->setMetaTags($city, ['place' => $data['coordinates']]);
+
+        $service = new BasePageService();
+        $offer = $service->getRetargetOffers(new Retarget(), $request);
+        $models = CarModel::with('types_preview')->orderBy('sort', 'asc')->get();
+
+        $raw = new AutoruService();
+        $brands = $raw->getBrands();
+
+        $car_model = CarModel::find(1);
+        $car_type = CarType::find(1);
+
+        $car_attrs = CarModelCarType::where([
+            ['car_model_id', '=', $car_model->id],
+            ['car_type_id', '=', $car_type->id],
+        ])->limit(1)->get();
+
+
+        return view('offers', [
+            'offer' => $offer,
+            'city' => $this->city,
+            'cities' => $cities,
+            'models'=>$models,
+            'brands' => $brands,
+            'car_model' => $car_model,
+            'car_type' => $car_type,
+            'car_attrs' => $car_attrs,
+        ]);
+    }
 
     /**
      * Страница моделей

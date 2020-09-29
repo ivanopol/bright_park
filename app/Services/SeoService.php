@@ -148,6 +148,11 @@ class SeoService
                     $tags->title = "О Компании | Брайт Парк в <:CITY_DATIVE:>";
                     $tags->description = "О Компании | Брайт Парк в <:CITY_DATIVE:>";
                 }
+                elseif ( $segments[1] === 'credit' )
+                {
+                    $tags->title = "КРЕДИТ ТЕСТ | Брайт Парк в <:CITY_DATIVE:>";
+                    $tags->description = "КРЕДИТ ТЕСТ | Брайт Парк в <:CITY_DATIVE:>";
+                }
                 elseif ( $segments[1] === 'accessories' )
                 {
                     $tags->title = "Аксессуары | Брайт Парк в <:CITY_DATIVE:>";
