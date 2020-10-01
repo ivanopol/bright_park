@@ -23,7 +23,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="block-info-img">
+            <div class="block-info-img" v-if="block.url">
                 <picture>
                     <source :srcset="get_source(block.url)" media="(min-width: 580px)">
                     <img :src="block.url" alt="">
