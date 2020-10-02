@@ -41,7 +41,7 @@
                               :model_name="'{{$data['model_full']}}'"></review-component>
         @endif
         <plate :city="'{{$city}}'"
-               :text="'Выбрали LADA {{ $data['model_full'] }}? Узнайте все дополнительные выгоды сентября!'"
+               :text="'Выбрали LADA {{ $data['model_full'] }}? Узнайте все дополнительные выгоды октября!'"
         ></plate>
         <next-action-component :link="'{{request()->segment(count(request()->segments()))}}'"
                                :cities='@json($cities)'></next-action-component>

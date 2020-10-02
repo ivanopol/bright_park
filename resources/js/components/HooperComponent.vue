@@ -27,7 +27,7 @@
             </div>
         </div>
         <plate :city="city.value"
-               :text="'До&nbsp;31&nbsp;октября&nbsp;&mdash; акция &laquo;Первый снег&raquo;! Согласуем спец.выгоды, доплатим при обмене'"
+               :text="'До&nbsp;31&nbsp;октября&nbsp;&mdash; акция &laquo;' + action + '&raquo;! Согласуем спец.выгоды, доплатим при обмене'"
                :disclaimer="'Подробности<span class=\'show_desktop\'> по телефону</span>: <a href=\'tel:' + phone + '\' class=\'callibri_tel event\'>' + phone_formatted + '</a>'"
         ></plate>
     </div>
@@ -68,6 +68,7 @@
         },
         data () {
             return {
+                action: 'Первый листопад',
                 hooperSettings: {
                     infiniteScroll: this.data.slides_mini.length > 2,
                     itemsToShow: 3,
@@ -103,6 +104,17 @@
             }
 
             window.addEventListener("resize", this.myEventHandler);
+        },
+        created: function () {
+            const action_fisrt_snow = [
+                'perm',
+                'yekaterinburg',
+                'magnitogorsk'
+            ]
+
+            if (action_fisrt_snow.indexOf(this.city.value) >= 0) {
+                this.action = 'Первый снег'
+            }
         },
         methods: {
             get_source: function(path) {
