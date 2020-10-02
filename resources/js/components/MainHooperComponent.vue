@@ -29,7 +29,7 @@
                     </picture>
                 </div>
                 <div class="product-content">
-                    <p class="title-tagline bold">Выгода&nbsp;10% по&nbsp;госпрограмме на&nbsp;LADA в&nbsp;сентябре</p>
+                    <p class="title-tagline bold">Выгода&nbsp;10% по&nbsp;госпрограмме на&nbsp;LADA в&nbsp;октябре</p>
                     <div class="item-buttons">
                         <a :href="city + '/granta/sedan'" id="main__slider__exchange-lada-vesta-details" class="btn btn-primary event">Подробнее о модели</a>
                         <a :href="city + '/stocks/obmen-na-lada-vesta-vyshe-rynochnoj-ceny'" id="main__slider__exchange-lada-vesta-action" class="btn btn-secondary event">Условия акции</a>
