@@ -27,7 +27,7 @@
             </div>
         </div>
         <plate :city="city.value"
-               :text="'До&nbsp;30&nbsp;сентября&nbsp;&mdash; золотые условия! Согласуем для вас специальные выгоды'"
+               :text="'До&nbsp;31&nbsp;октября&nbsp;&mdash; акция &laquo;Первый снег&raquo;! Согласуем спец.выгоды, доплатим при обмене'"
                :disclaimer="'Подробности<span class=\'show_desktop\'> по телефону</span>: <a href=\'tel:' + phone + '\' class=\'callibri_tel event\'>' + phone_formatted + '</a>'"
         ></plate>
     </div>
