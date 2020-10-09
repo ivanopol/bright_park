@@ -1,7 +1,8 @@
 <template>
     <div id="advantages" class="advantages_wrap">
         <p class="h2-text">Брайт Парк</p>
-        <h1>Мы - федеральный дилер LADA, работающий в {{dative}} и ещё 5 регионах с 2008 года.</h1>
+        <h1>Брайт Парк&nbsp;&mdash; федеральный дилер LADA. Компания работает в&nbsp;{{dative}} и&nbsp;ещё 5&nbsp;регионах с&nbsp;2008&nbsp;года.
+            Команда Брайт Парка занимается реализацией автомобилей LADA от&nbsp;завода АвтоВАЗ. Главная задача&nbsp;&mdash; безопасная, быстрая и&nbsp;приятная сделка для клиента.</h1>
         <ul class="clarification">
             <li>
                 <div class="advantage">
