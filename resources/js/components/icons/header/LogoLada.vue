@@ -1,4 +1,4 @@
-<template>
+l<template>
     <svg id="common__header__lada-logo" class="logo-lada-svg event" v-bind:class="[ theme ]" data-name="logo_lada" xmlns="http://www.w3.org/2000/svg" width="100mm" height="26.15mm" viewBox="0 0 283.46 74.12">
         <title>logo_lada</title>
         <polygon class="cls-1" points="19.21 60.39 19.21 0 0 0 0 74.11 49.41 74.11 49.41 60.39 19.21 60.39"/>

@@ -3,7 +3,7 @@
         <div class="logo-wrap" :class="theme">
             <div class="container logo-wrap-row">
                 <div class="logo-bright-park">
-                    <a id="common__header__bp-logo" class="event" :href="'/' + city">
+                    <a id="common__header__bp-logo" class="event" :href="'/' + city + uri_params">
                         <logo-bright-park :theme="theme"></logo-bright-park>
                     </a>
                 </div>
@@ -47,7 +47,7 @@
         },
         data: function () {
             return {
-
+                uri_params: window.location.search,
             };
         },
         components: {

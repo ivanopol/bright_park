@@ -14,7 +14,7 @@
                 <div class="product-content">
                     <p class="title-tagline bold">Каждую неделю!<br>10 LADA GRANTA на&nbsp;спец.условиях!</p>
                     <div class="item-buttons">
-                        <a :href="city + '/granta/sedan'" id="main__slider__zolotaya-osenv-brajt-parke" class="btn btn-primary event">Подробнее о модели</a>
+                        <a :href="city + '/granta/sedan' + uri_params" id="main__slider__zolotaya-osenv-brajt-parke" class="btn btn-primary event">Подробнее о модели</a>
                     </div>
                 </div>
             </slide>
@@ -31,8 +31,8 @@
                 <div class="product-content">
                     <p class="title-tagline bold">Выгода&nbsp;10% по&nbsp;госпрограмме на&nbsp;LADA в&nbsp;октябре</p>
                     <div class="item-buttons">
-                        <a :href="city + '/granta/sedan'" id="main__slider__exchange-lada-vesta-details" class="btn btn-primary event">Подробнее о модели</a>
-                        <a :href="city + '/stocks/obmen-na-lada-vesta-vyshe-rynochnoj-ceny'" id="main__slider__exchange-lada-vesta-action" class="btn btn-secondary event">Условия акции</a>
+                        <a :href="city + '/granta/sedan' + uri_params" id="main__slider__exchange-lada-vesta-details" class="btn btn-primary event">Подробнее о модели</a>
+                        <a :href="city + '/stocks/obmen-na-lada-vesta-vyshe-rynochnoj-ceny' + uri_params" id="main__slider__exchange-lada-vesta-action" class="btn btn-secondary event">Условия акции</a>
                     </div>
                 </div>
             </slide>
@@ -49,8 +49,8 @@
                 <div class="product-content">
                     <p class="title-tagline bold">LADA Vesta<br> по&nbsp;обновлённой<br> госпрограмме</p>
                     <div class="item-buttons">
-                        <a :href="city + '/vesta/sedan'" id="main__slider__lada-vesta-benefit-10-details" class="btn btn-primary event">Подробнее о модели</a>
-                        <a :href="city + '/stocks/lada-vesta-vygoda-10-po-gosprogramme'" id="main__slider__lada-vesta-benefit-10-action" class="btn btn-secondary event">Условия акции</a>
+                        <a :href="city + '/vesta/sedan' + uri_params" id="main__slider__lada-vesta-benefit-10-details" class="btn btn-primary event">Подробнее о модели</a>
+                        <a :href="city + '/stocks/lada-vesta-vygoda-10-po-gosprogramme' + uri_params" id="main__slider__lada-vesta-benefit-10-action" class="btn btn-secondary event">Условия акции</a>
                     </div>
                 </div>
             </slide>
@@ -67,8 +67,8 @@
                 <div class="product-content">
                     <p class="title-tagline bold">0%&nbsp;первоначальный взнос при покупке LADA</p>
                     <div class="item-buttons">
-                        <a :href="city + '/granta/sedan'" id="main__slider__lada-granta-0-firstpay-details" class="btn btn-primary event">Подробнее о модели</a>
-                        <a :href="city + '/stocks/lada-granta-0-pervonachalnyj-vznos'" id="main__slider__lada-granta-0-firstpay-action" class="btn btn-secondary event">Условия акции</a>
+                        <a :href="city + '/granta/sedan' + uri_params" id="main__slider__lada-granta-0-firstpay-details" class="btn btn-primary event">Подробнее о модели</a>
+                        <a :href="city + '/stocks/lada-granta-0-pervonachalnyj-vznos' + uri_params" id="main__slider__lada-granta-0-firstpay-action" class="btn btn-secondary event">Условия акции</a>
                     </div>
                 </div>
             </slide>
@@ -84,8 +84,8 @@
                 <div class="product-content">
                     <p class="title-tagline bold">40&nbsp;000 рублей<br>выгода при обмене на&nbsp;LADA</p>
                     <div class="item-buttons">
-                        <a :href="city + '/granta/sedan'" id="main__slider__benefit-40000-details" class="btn btn-primary event">Подробнее о модели</a>
-                        <a :href="city + '/stocks/doplata-40-000-rublej-pri-obmene-na-lada-granta'" id="main__slider__benefit-40000-action" class="btn btn-secondary event">Условия акции</a>
+                        <a :href="city + '/granta/sedan' + uri_params" id="main__slider__benefit-40000-details" class="btn btn-primary event">Подробнее о модели</a>
+                        <a :href="city + '/stocks/doplata-40-000-rublej-pri-obmene-na-lada-granta' + uri_params" id="main__slider__benefit-40000-action" class="btn btn-secondary event">Условия акции</a>
                     </div>
                 </div>
             </slide>
@@ -100,12 +100,17 @@ import 'hooper/dist/hooper.css';
 
 export default {
     name: 'App',
+    data() {
+        return {
+            uri_params: window.location.search,
+        }
+    },
     components: {
         Hooper,
         Slide,
         HooperPagination
     },
-    props: ['city']
+    props: ['city'],
 };
 </script>
 

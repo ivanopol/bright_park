@@ -2,7 +2,7 @@
     <header  @scroll="handleScroll" :class="{show : scrolled}">
         <div class="logo-wrap" :class="theme">
             <div class="logo-bright-park">
-                <a id="common__header-sticky__bp-logo" class="event" :href="'/' + city">
+                <a id="common__header-sticky__bp-logo" class="event" :href="'/' + city + uri_params">
                     <logo-bright-park :theme="theme"></logo-bright-park>
                 </a>
             </div>
@@ -45,7 +45,8 @@
         },
         data: function () {
             return {
-                scrolled: false
+                scrolled: false,
+                uri_params: window.location.search,
             };
         },
         methods: {

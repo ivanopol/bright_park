@@ -10,7 +10,7 @@
                 v-on:click.prevent="show('Узнать про обмен', 'main__modal-image-buttons-exchange_', 'Отправить', 1, 'obmen')"/>
             </li>
             <li>
-                <a id="main__image-buttons__service" :href="'/' + cities.active.value + '/service'" class="event">
+                <a id="main__image-buttons__service" :href="'/' + cities.active.value + '/service' + uri_params" class="event">
                     <img class="buttons-block-list-maintenance bubble" src="/build/images/main/buttons_block/maintenance.png" alt="Брайт Парк: техническое обслуживание"/>
                 </a>
             </li>
@@ -45,6 +45,7 @@
                 button_text: '',
                 form_type: 1,
                 goal: '',
+                uri_params: window.location.search,
             }
         },
         components: {},
