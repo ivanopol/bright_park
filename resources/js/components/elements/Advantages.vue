@@ -6,32 +6,33 @@
         <ul class="clarification">
             <li>
                 <div class="advantage">
-                    <span class="value">12</span>
-                    <span class="text" ref="text_01">банков-<br>партнеров</span>
-                    <span class="clarification-item">Одобрение 98% клиентов</span>
+                    <span class="value">500</span>
+                    <span class="text" ref="text_04">авто с&nbsp;ПТС в&nbsp;наличии</span>
+                    <span class="clarification-item">Подберем авто в&nbsp;нужной комплектации и&nbsp;цвете</span>
                 </div>
             </li>
             <li>
                 <div class="advantage">
-                    <span class="value">15 мин.</span>
-                    <span class="text" ref="text_02">на одобрение по кредиту</span>
+                    <span class="value">12</span>
+                    <span class="text" ref="text_01">банков-<br>партнеров</span>
+                    <span class="clarification-item">Одобрим кредит (средний показатель&nbsp;&mdash; 98%)</span>
+                </div>
+            </li>
+            <li>
+                <div class="advantage">
+                    <span class="value">15&nbsp;мин.</span>
+                    <span class="text" ref="text_02">на&nbsp;одобрение кредита</span>
                     <span class="clarification-item">Сэкономим ваше время</span>
                 </div>
             </li>
             <li>
                 <div class="advantage">
-                    <span class="value">1 час</span>
-                    <span class="text" ref="text_03">обмен авто на новенькую LADA</span>
-                    <span class="clarification-item">Не замучаем документами и ожиданием</span>
+                    <span class="value">1&nbsp;час</span>
+                    <span class="text" ref="text_03">обмен авто на&nbsp;новенькую LADA</span>
+                    <span class="clarification-item">Без лишних документов и&nbsp;долгого ожидания</span>
                 </div>
             </li>
-            <li>
-                <div class="advantage">
-                    <span class="value">500</span>
-                    <span class="text" ref="text_04">авто с ПТС в наличии</span>
-                    <span class="clarification-item">Любые комплектации и цвет автомобиля на ваш выбор</span>
-                </div>
-            </li>
+
         </ul>
     </div>
 </template>
