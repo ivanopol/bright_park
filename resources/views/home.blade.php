@@ -10,36 +10,7 @@
     <plate :bold='true' :city="'{{$city}}'" :text="'Внимание! Склад пополнился! Отдаем с&nbsp;максимальной выгодой!'"></plate>
     <div class="event-scroll">
         <div class="container">
-            <div id="advantages" class="advantages_wrap">
-                <p class="h2-text">Брайт Парк</p>
-                <h1>Мы - федеральный дилер LADA, работающий в {{$cities['active']['dative']}} и ещё 5 регионах с 2008 года.</h1>
-                <ul>
-                    <li>
-                        <div class="advantage">
-                            <span class="value">12</span>
-                            <span class="text">банков-<br>партнеров</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="advantage">
-                            <span class="value">15 мин.</span>
-                            <span class="text">на одобрение по кредиту</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="advantage">
-                            <span class="value">1 час</span>
-                            <span class="text">обмен авто на новенькую LADA</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="advantage">
-                            <span class="value">500</span>
-                            <span class="text">авто с ПТС в наличии</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+            <advantages :dative="'{{$cities['active']['dative']}}'"></advantages>
         </div>
 
         <buttons-component :cities='@json($cities)'></buttons-component>

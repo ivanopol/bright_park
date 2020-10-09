@@ -69,6 +69,8 @@ Vue.component('banks-component', require('./components/service/BanksComponent').
 Vue.component('yclients-form', require('./components/forms/YclientsForm').default);
 Vue.component('yclients-form2', require('./components/forms/YclientsForm2').default);
 Vue.component('plate', require('./components/elements/Plate').default);
+Vue.component('advantages', require('./components/elements/Advantages').default);
+
 
 /*const store = new Vuex.Store({
     state: {
