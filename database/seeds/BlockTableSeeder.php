@@ -19,7 +19,7 @@ class BlockTableSeeder extends Seeder
                 'pointers' => 0,
                 'pnum' => 0,
                 'show' => false,
-                'trigger' => '90% клиентов рады, что выбрали отечественный авто и не переплачивают за обслуживание',
+                'trigger' => '',
             ],
             [
                 'model_id' => 1,
@@ -30,7 +30,7 @@ class BlockTableSeeder extends Seeder
                 'pointers' => 5,
                 'pnum' => 1,
                 'show' => false,
-                'trigger' => "",
+                'trigger' => "90% клиентов рады, что выбрали отечественный авто и не переплачивают за обслуживание",
             ],
             [
                 'model_id' => 1,
