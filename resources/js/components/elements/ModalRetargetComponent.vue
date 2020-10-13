@@ -5,7 +5,7 @@
                 <div class="retarget-warning-icon">
                     <img src="/build/images/icons/icon-warning.svg" alt="Автомобили сильно подорожают в 2020 году">
                 </div>
-                <div class="retarget-warning-title">Автомобили сильно подорожают в 2020 году</div>
+                <div class="retarget-warning-title">Автомобили сильно подорожают до конца 2020 года</div>
             </div>
             <div class="retarget-warning-body">
                 <div class="retarget-warning-row">В 2020 году эксперты ожидают рост цен на автомобили на&nbsp;7-8%</div>
