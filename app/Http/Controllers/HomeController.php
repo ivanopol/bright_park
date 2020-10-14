@@ -131,7 +131,11 @@ class HomeController extends Controller
         $this->seo->setMetaTags($city, ['place' => $data['coordinates']]);
 
         $service = new BasePageService();
-        $offer = $service->getRetargetOffers(new Retarget(), $request);
+        $offer = [
+            'img_mobile' => "/build/images/main/mobile/september_596х1057.jpg",
+            'img_tablet' => "/build/images/main/tablet/900х584_september.jpg",
+            'img_desktop' => "/build/images/main/desktop/1920х870_september.jpg",
+        ];
         $models = CarModel::with('types_preview')->orderBy('sort', 'asc')->get();
 
         $raw = new AutoruService();
@@ -146,7 +150,7 @@ class HomeController extends Controller
         ])->limit(1)->get();
 
 
-        return view('offers', [
+        return view('credit', [
             'offer' => $offer,
             'city' => $this->city,
             'cities' => $cities,
@@ -155,6 +159,7 @@ class HomeController extends Controller
             'car_model' => $car_model,
             'car_type' => $car_type,
             'car_attrs' => $car_attrs,
+            'data' => $data,
         ]);
     }
 

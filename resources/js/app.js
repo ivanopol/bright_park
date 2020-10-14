@@ -70,7 +70,7 @@ Vue.component('yclients-form', require('./components/forms/YclientsForm').defaul
 Vue.component('yclients-form2', require('./components/forms/YclientsForm2').default);
 Vue.component('plate', require('./components/elements/Plate').default);
 Vue.component('advantages', require('./components/elements/Advantages').default);
-
+Vue.component('credit-component', require('./components/CreditComponent').default);
 
 /*const store = new Vuex.Store({
     state: {

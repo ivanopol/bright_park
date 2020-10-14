@@ -146,12 +146,12 @@ class SeoService
                 } elseif ( $segments[1] === 'about' )
                 {
                     $tags->title = "О Компании | Брайт Парк в <:CITY_DATIVE:>";
-                    $tags->description = "О Компании | Брайт Парк в <:CITY_DATIVE:>";
+                    $tags->description = "О Компании  | Брайт Парк в <:CITY_DATIVE:>";
                 }
                 elseif ( $segments[1] === 'credit' )
                 {
-                    $tags->title = "КРЕДИТ ТЕСТ | Брайт Парк в <:CITY_DATIVE:>";
-                    $tags->description = "КРЕДИТ ТЕСТ | Брайт Парк в <:CITY_DATIVE:>";
+                    $tags->title = "Кредит на новый автомобиль ЛАДА (LADA) в <:CITY_DATIVE:>";
+                    $tags->description = "Автокредит на выгодных условиях 👍🏼 | Брайт Парк в <:CITY_DATIVE:>";
                 }
                 elseif ( $segments[1] === 'accessories' )
                 {
