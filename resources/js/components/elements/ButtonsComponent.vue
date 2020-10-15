@@ -2,8 +2,9 @@
     <section class="buttons-block container">
         <ul class="buttons-block-list">
             <li>
-                <img id="main__image-buttons__profitable-credit" class="buttons-block-list-credit event" src="/build/images/main/buttons_block/profitable_credit.png" alt="Брайт Парк: выгодный кредит"
-                v-on:click.prevent="show('Узнать про кредит', 'main__modal-image-buttons-profitable-credit_', 'Отправить', 1, 'credit')"/>
+                <a :href="'/' + cities.active.value + '/credit'">
+                <img id="main__image-buttons__profitable-credit" class="buttons-block-list-credit event" src="/build/images/main/buttons_block/profitable_credit.png" alt="Брайт Парк: выгодный кредит"/>
+                </a>
             </li>
             <li>
                 <img id="main__image-buttons__exchange" class="buttons-block-list-exchange event" src="/build/images/main/buttons_block/exchange.png" alt="Брайт Парк: обмен"

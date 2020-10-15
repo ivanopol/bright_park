@@ -90,6 +90,9 @@
                                 <a id="common__menu__about" :href="'/' + cities.active.value + '/about'" class="event" itemprop="url"><div class="title bubble">О компании</div></a>
                             </li>
                             <li>
+                                <a id="common__menu__credit" :href="'/' + cities.active.value + '/credit'" class="event" itemprop="url"><div class="title bubble">Кредит</div></a>
+                            </li>
+                            <li>
                                 <a id="common__menu__stocks" :href="'/' + cities.active.value + '/stocks'" class="event" itemprop="url"><div class="title bubble">Акции</div></a>
                             </li>
                             <li>

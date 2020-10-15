@@ -8,7 +8,7 @@
                 <a id="model__next-action__test-drive" class="btn event" href="#" v-on:click.prevent="show('Записаться на тест-драйв', 'model__modal-next-action-test-drive_', 'test_drive')">Записаться на тест-драйв</a>
             </li>
             <li>
-                <a id="model__next-action__count-payment" class="btn event" :href="this.link + '/model_details#credit'">Рассчитать кредит</a>
+                <a id="model__next-action__count-payment" class="btn event" :href="'/' + cities.active.value + '/credit'">Рассчитать кредит</a>
             </li>
             <li>
                 <a id="model__next-action__estimate-car" class="btn event" :href="this.link + '/model_details#estimation'">Оценить свой автомобиль</a>
