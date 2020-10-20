@@ -3,8 +3,11 @@
 @section('content')
     <tab-bar :cities='@json($cities)' :models='@json($models)' :phone="'{{$cities['active']['phone']}}'"></tab-bar>
     <header-sticky-model :theme="'light'" :city="'{{$city}}'" :button=true
+                         :city_ru="'{{$cities['active']['label']}}'"
                              :car='@json($data['slider']['slides'])' ></header-sticky-model>
-    <header-component :line="true" :theme="'light'" :city="'{{$city}}'" :head_class="'header-model'"
+    <header-component :line="true" :theme="'light'" :city="'{{$city}}'"
+                      :head_class="'header-model'"
+                      :city_ru="'{{$cities['active']['label']}}'"
                       :car='@json($data['slider']['slides'])'></header-component>
     <div class="">
         <div class="container model-breadcrumbs">

@@ -2,11 +2,14 @@
     <header :class="head_class">
         <div class="logo-wrap" :class="theme">
             <div class="container logo-wrap-row">
-                <div class="logo-bright-park">
-                    <a id="common__header__bp-logo" class="event" :href="'/' + city + uri_params">
-                        <logo-bright-park :theme="theme"></logo-bright-park>
-                    </a>
-                </div>
+                <span class="logo-wrap-left">
+                    <div class="logo-bright-park">
+                        <a id="common__header__bp-logo" class="event" :href="'/' + city + uri_params">
+                            <logo-bright-park :theme="theme"></logo-bright-park>
+                        </a>
+                    </div>
+                    <span class="logo-city">{{city_ru}}</span>
+                </span>
                 <div class="logo-lada">
                     <logo-lada :theme="theme"></logo-lada>
                 </div>
@@ -34,6 +37,10 @@
                 type: Boolean
             },
             city: {
+                type: String
+            },
+            city_ru: {
+                default: '',
                 type: String
             },
             car: {
@@ -75,6 +82,17 @@
                 justify-content: space-between;
             }
 
+            &-left {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+            }
+
+            .logo-city {
+                margin-left: 10px;
+                font-size: 14px;
+            }
+
             .logo-bright-park {
                 width: 49%;
                 height: 25px;
@@ -94,6 +112,12 @@
                 }
             }
 
+            @media only screen and (min-width: 580px) {
+                .logo-bright-park {
+                    width: auto;
+                }
+            }
+
             .logo-lada {
                 width: 16%;
                 height: 20px;
@@ -103,8 +127,13 @@
             }
 
             @media only screen and (min-width: 1367px) {
+                .logo-city {
+                    margin-left: 15px;
+                    font-size: 16px;
+                }
+
                 .logo-bright-park {
-                    width: 25%;
+                   // width: 25%;
                 }
                 .logo-lada {
                     width: 16%;

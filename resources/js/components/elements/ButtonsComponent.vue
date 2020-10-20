@@ -74,7 +74,6 @@
 
 <style scoped lang="scss">
     .buttons-block {
-        margin-bottom: 60px;
         &-list {
             display: flex;
             justify-content: center;
@@ -95,6 +94,12 @@
                 height: 100%;
                 transition: all .3s ease;
             }
+        }
+    }
+
+    @media only screen and (max-width: 579px) {
+        .buttons-block {
+            margin-top: 60px
         }
     }
 

@@ -2,18 +2,13 @@
 
 @section('content')
     <tab-bar :theme="'dark'" :cities='@json($cities)' :models='@json($models)' :phone="'{{$cities['active']['phone']}}'"></tab-bar>
-    <header-sticky-component :theme="'light'" :city="'{{$city}}'"></header-sticky-component>
-    <header-component :absolute="true"  :theme="'light'" :city="'{{$city}}'" ></header-component>
+    <header-sticky-component :theme="'light'" :city="'{{$city}}'" :city_ru="'{{$cities['active']['label']}}'"></header-sticky-component>
+    <header-component :absolute="true"  :theme="'light'" :city="'{{$city}}'" :city_ru="'{{$cities['active']['label']}}'" ></header-component>
     <section class="main-screen">
         <main-hooper-component :city="'{{$city}}'"></main-hooper-component>
     </section>
     <plate :bold='true' :city="'{{$city}}'" :text="'Внимание! В октябре отдаем все LADA с максимальной выгодой!'"></plate>
     <div class="event-scroll">
-        <div class="container">
-            <advantages :dative="'{{$cities['active']['dative']}}'"></advantages>
-        </div>
-
-        <buttons-component :cities='@json($cities)'></buttons-component>
 
         <section id="models" class="models_wrap">
             <div class="container">
@@ -34,6 +29,20 @@
                 </ul>
             </div>
         </section>
+
+        <buttons-component :cities='@json($cities)'></buttons-component>
+
+        <div class="container">
+            <advantages :dative="'{{$cities['active']['dative']}}'"></advantages>
+            <div class="advantages_form">
+                <form-buy-component :cities='@json($cities)'
+                                    :form_id="'main__advantages_'"
+                                    :button_text="'Отправить'"
+                                    :form_title="''"
+                                    :goal="'about_model'">
+                </form-buy-component>
+            </div>
+        </div>
 
         <banks-component :cities='@json($cities)'></banks-component>
 

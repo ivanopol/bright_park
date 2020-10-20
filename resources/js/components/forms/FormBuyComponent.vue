@@ -1,6 +1,6 @@
 <template>
     <section class="block form">
-        <div class="block-text">
+        <div class="block-text" v-if="form_title">
             <h2 v-html="form_title"></h2>
         </div>
         <form-common :cities="cities"

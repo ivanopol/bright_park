@@ -84,5 +84,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+    ul.clarification {
+        margin-bottom: 0;
+    }
 </style>

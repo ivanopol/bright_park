@@ -6,7 +6,8 @@
                     <logo-bright-park-sun></logo-bright-park-sun>
                 </a>
             </div>
-            <span>{{ car.reduction | formating }}</span>
+            <span v-if="!this.switch">{{ car.reduction | formating }}</span>
+            <span v-else>{{city_ru}}</span>
             <a id="models__header-sticky__find-price" class="event btn-small green" :href="car.link">Узнать цену</a>
         </div>
     </header>
@@ -33,6 +34,10 @@
             city: {
                 type: String
             },
+            city_ru: {
+                default: '',
+                type: String
+            },
             button: {
                 default: false,
                 type: Boolean
@@ -43,7 +48,8 @@
         },
         data: function () {
             return {
-                scrolled: false
+                scrolled: false,
+                switch: false,
             };
         },
         filters: {
@@ -64,6 +70,11 @@
         },
         components: {
             LogoBrightParkSun,
+        },
+        mounted () {
+            setTimeout(() => {
+                this.switch = true
+            }, 6000);
         },
         created () {
             window.addEventListener('scroll', this.handleScroll);

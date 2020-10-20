@@ -3,8 +3,8 @@
 @section('content')
     <tab-bar :theme="'dark'" :cities='@json($cities)' :models='@json($models)'
              :phone="'{{$cities['active']['phone']}}'"></tab-bar>
-    <header-sticky-component :theme="'light'" :city="'{{$city}}'"></header-sticky-component>
-    <header-component :absolute="true" :theme="'light'" :city="'{{$city}}'"></header-component>
+    <header-sticky-component :theme="'light'" :city="'{{$city}}'" :city_ru="'{{$cities['active']['label']}}'"></header-sticky-component>
+    <header-component :absolute="true" :theme="'light'" :city="'{{$city}}'" :city_ru="'{{$cities['active']['label']}}'"></header-component>
     <div class="container">
         {{Breadcrumbs::render("stocks.one", $city, $stocks)}}
     </div>
