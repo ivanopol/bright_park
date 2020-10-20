@@ -7,7 +7,7 @@
     <section class="main-screen">
         <main-hooper-component :city="'{{$city}}'"></main-hooper-component>
     </section>
-    <plate :bold='true' :city="'{{$city}}'" :text="'Внимание! Склад пополнился! Отдаем с&nbsp;максимальной выгодой!'"></plate>
+    <plate :bold='true' :city="'{{$city}}'" :text="'Внимание! В октябре отдаем все LADA с максимальной выгодой!'"></plate>
     <div class="event-scroll">
         <div class="container">
             <advantages :dative="'{{$cities['active']['dative']}}'"></advantages>

@@ -4,6 +4,23 @@
             <slide class="even">
                 <div class="asset-container">
                     <picture>
+                        <source srcset="/build/images/main/mobile/vygoda-10-dlya-vsekh-klientov-brajt-parka.jpg, /build/images/main/mobile/vygoda-10-dlya-vsekh-klientov-brajt-parka.jpg 2x" media="(max-width: 580px)">
+                        <source srcset="/build/images/main/tablet/vygoda-10-dlya-vsekh-klientov-brajt-parka.jpg, /build/images/main/tablet/vygoda-10-dlya-vsekh-klientov-brajt-parka.jpg 2x" media="(max-width: 1365px)">
+                        <source srcset="/build/images/main/desktop/vygoda-10-dlya-vsekh-klientov-brajt-parka.jpg, /build/images/main/desktop/vygoda-10-dlya-vsekh-klientov-brajt-parka.jpg 2x" media="(min-width: 1366px)">
+                        <img class="asset-image" src="/build/images/main/mobile/vygoda-10-dlya-vsekh-klientov-brajt-parka.jpg"
+                             srcset="/build/images/main/mobile/vygoda-10-dlya-vsekh-klientov-brajt-parka.jpg, /build/images/main/mobile/vygoda-10-dlya-vsekh-klientov-brajt-parka.jpg 2x" alt="Брайт Парк: выгода 10%  для всех клиентов Брайт Парка" />
+                    </picture>
+                </div>
+                <div class="product-content">
+                    <p class="title-tagline bold dark">Выгода&nbsp;10%<br> для всех клиентов Брайт&nbsp;Парка</p>
+                    <div class="item-buttons">
+                        <a :href="city + '/stocks/rasshirennye-usloviya-programmy-gosudarstvennoj-podderzhki' + uri_params" id="main__slider__ygoda-10-dlya-vsekh-klientov-brajt-parka" class="btn btn-primary event">Условия акции</a>
+                    </div>
+                </div>
+            </slide>
+            <slide class="even">
+                <div class="asset-container">
+                    <picture>
                         <source srcset="/build/images/main/mobile/zolotaya-osenv-brajt-parke.jpg, /build/images/main/mobile/zolotaya-osenv-brajt-parke.jpg 2x" media="(max-width: 580px)">
                         <source srcset="/build/images/main/tablet/zolotaya-osenv-brajt-parke.jpg, /build/images/main/tablet/zolotaya-osenv-brajt-parke.jpg 2x" media="(max-width: 1365px)">
                         <source srcset="/build/images/main/desktop/zolotaya-osenv-brajt-parke.jpg, /build/images/main/desktop/zolotaya-osenv-brajt-parke.jpg 2x" media="(min-width: 1366px)">
@@ -204,6 +221,10 @@ export default {
         }
 
         .title-tagline {
+            &.dark {
+                color: #000
+            }
+
             font-size: 26px;
             //font-weight: bold;
             width: 80vw;

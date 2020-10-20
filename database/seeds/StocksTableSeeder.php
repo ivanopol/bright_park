@@ -206,10 +206,26 @@ class StocksTableSeeder extends Seeder
                             <p>Обращайтесь в Брайт парк! И уже в апреле вы сможете стать обладателем новой LADA!</p>
                          ',
                 'text_short' => 'Брайт Парк работает онлайн!</br>Мы оказываем полный цикл услуг по приобретению автомобиля',
-                'preview' => '/build/images/stocks/brajt_park-rabotaet_onlajn.jpg',
+                'preview' => '/build/images/stocks/brajt_park_rabotaet_onlajn.jpg',
                 'slug' => 'brajt-park-rabotaet-onlajn',
                 'city_id' => 0,
-                'sort' => 2,
+                'sort' => 5,
+            ],
+            [
+                'title' => 'Расширенные условия программы государственной поддержки',
+                'text' => '<p>Максимально выгодные предложения на&nbsp;покупку LADA. Вы&nbsp;можете приобрести автомобиль по&nbsp;доступной цене, суммируя акции по&nbsp;специальным программам.</p>
+                           <p>Выгода&nbsp;10% от&nbsp;стоимости при покупке на&nbsp;условиях льготного кредитования<br>Льготный автокредит может быть выдан без первоначального взноса.</p>
+                           <p>Расширенными условиями программы государственной поддержки можно воспользоваться при условиях:</p>
+                           <ul>
+                                <li>наличие действующих водительских прав;</li>
+                                <li>отсутствие других автокредитов в&nbsp;течение 2019 и&nbsp;2020&nbsp;года, а&nbsp;также обязуются не&nbsp;заключать в&nbsp;2020 году иных кредитных договоров на&nbsp;приобретение автомобиля.</li>
+                            </ul>
+                         ',
+                'text_short' => 'Максимально выгодные предложения на&nbsp;покупку LADA. Вы&nbsp;можете приобрести автомобиль по&nbsp;доступной цене, суммируя акции по&nbsp;специальным программам.',
+                'preview' => '/build/images/stocks/rasshirennye_usloviya_programmy_gosudarstvennoj_podderzhki.jpg',
+                'slug' => 'rasshirennye-usloviya-programmy-gosudarstvennoj-podderzhki',
+                'city_id' => 0,
+                'sort' => 6,
             ],
         ];
 
