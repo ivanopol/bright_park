@@ -59,6 +59,7 @@ Vue.component('event-handler-component', require('./components/events/EventHandl
 Vue.component('scroll-event-handler-component', require('./components/events/ScrollEventHandlerComponent').default);
 Vue.component('baraban', require('./components/retargeting/Baraban').default);
 Vue.component('buttons-component', require('./components/elements/ButtonsComponent').default);
+Vue.component('buttons-component-2', require('./components/elements/ButtonsComponent2').default);
 Vue.component('banner-component', require('./components/elements/BannerComponent').default);
 Vue.component('review-service', require('./components/service/ReviewService').default);
 Vue.component('trust-us', require('./components/service/TrustUs').default);
