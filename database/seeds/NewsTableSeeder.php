@@ -257,6 +257,20 @@ LADA Vesta продолжает пользоваться спросом на&nbs
                 'slug' => 'lada-vesta-avtomobil-goda-v-rossii',
                 'city_id' => 0,
             ],
+            [
+                'title' => 'Старт продаж LADA Vesta Cross [BLACK]',
+                'text' => '<p>В&nbsp;продаже появились модели LADA Vesta Cross и&nbsp;Vesta SW&nbsp;Cross в&nbsp;специальном исполнении [BLACK].</p>
+                    <p>Автомобили специальной серии отличаются черными акцентами интерьера и&nbsp;экстерьера в&nbsp;сочетании с&nbsp;насыщенными цветами кузова: черная глянцевая крыша, черные корпуса зеркал, 17-дюймовые&nbsp;легкосплавные диски (черный глянец/алмазная полировка) и&nbsp;эмблемы с&nbsp;названием специальной серии. Черная обивка сидений и&nbsp;потолка создают стильную атмосферу современной классики.</p>
+                    <p>Автомобили серии [BLACK] не&nbsp;только привлекательны с&nbsp;точки зрения дизайна, но&nbsp;и&nbsp;функциональны. Обе модели созданы на&nbsp;базе комплектации Comfort c&nbsp;&laquo;зимним&raquo; пакетом, включающим такие комфортные опции как подогрев лобового стекла, передних сидений и&nbsp;рулевого колеса в&nbsp;практичной отделке из&nbsp;эко-кожи.</p>
+                    <p>Цены на&nbsp;новую комплектацию стартуют от&nbsp;849&nbsp;900&nbsp;рублей, а&nbsp;выгода на&nbsp;пакет опций составляет до&nbsp;25%* по&nbsp;сравнению с&nbsp;покупкой отдельных аксессуаров (*средняя цена на&nbsp;рынке аксессуаров).</p>
+                    <p>Vesta Cross&nbsp;SE [BLACK], MT: 849&nbsp;900&nbsp;руб; АТ: 934&nbsp;900&nbsp;руб.</p>
+                    <p>Vesta Cross&nbsp;SW [BLACK], МТ: 890&nbsp;900&nbsp;руб; АТ: 975&nbsp;900&nbsp;руб.</p>
+                    <p>Купить новые модели можно на&nbsp;<a class="event" title="Купить Lada Vesta Cross [Black]" href="/<:CITY:>/vesta/sedan">сайте</a>.</p>',
+                'text_short' => 'В&nbsp;продаже появились модели LADA Vesta Cross и&nbsp;Vesta SW&nbsp;Cross в&nbsp;специальном исполнении [BLACK].',
+                'preview' => '/build/images/news/lada-vesta-cross.jpg',
+                'slug' => 'start-prodazh-lada-vesta-cross-black',
+                'city_id' => 0,
+            ],
         ];
         DB::table('news')->insert($news);
     }
