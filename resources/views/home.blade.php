@@ -38,7 +38,7 @@
                 <form-buy-component :cities='@json($cities)'
                                     :form_id="'main__advantages_'"
                                     :button_text="'Отправить'"
-                                    :form_title="''"
+                                    :form_title="'Оставьте заявку, мы вам перезвоним'"
                                     :goal="'about_model'">
                 </form-buy-component>
             </div>
