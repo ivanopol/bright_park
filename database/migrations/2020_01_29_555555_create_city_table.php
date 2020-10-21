@@ -25,6 +25,7 @@ class CreateCityTable extends Migration
             $table->text('begin_script')->nullable();
             $table->text('end_script')->nullable();
             $table->integer('bitrix_responsible_id');
+            $table->string('emails')->nullable();
         });
         Artisan::call('db:seed', [
             '--class' => CityTableSeeder::class
