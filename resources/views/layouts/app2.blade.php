@@ -165,12 +165,12 @@
                     '        gtag(\'config\', \'UA-144189432-5\');';*/
                 // /Global site tag (gtag.js) - Google Analytics
                 // Calibri
-                var calibri = document.createElement("script");
+          /*      var calibri = document.createElement("script");
                 calibri.src = "//cdn.callibri.ru/callibri.js";
                 calibri.type = "text/javascript";
                 calibri.charset = "utf-8";
                 var calibri_script = document.createElement("script");
-                calibri_script.innerHTML = 'callibri_wait(window, null, function(){ document.body.dataset.jsLoaded == true}, 10, 50, callibriInit);';
+                calibri_script.innerHTML = 'callibri_wait(window, null, function(){ document.body.dataset.jsLoaded == true}, 10, 50, callibriInit);';*/
                 // /Calibri
 
                 if (window.location.pathname === '/perm/service' || window.location.pathname === '/perm') {
@@ -213,10 +213,10 @@
                 tag_body.appendChild(jivosite_custom);
               //  tag_body.appendChild(gtag);
               //  tag_body.appendChild(gtag_script);
-                tag_body.appendChild(calibri);
+ /*               tag_body.appendChild(calibri);
                 setTimeout(() => {
                     tag_body.appendChild(calibri_script);
-                }, 500);
+                }, 500);*/
             }, 1000);
         }
     });
