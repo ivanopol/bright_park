@@ -229,7 +229,7 @@ class SeoTableSeeder extends Seeder
                 'description' => '🔥Эксперты выяснили, почему российский автомобиль ВАЗ-2101 был в почете у финнов. Подробнее на сайте Bright Park',
             ],
         ];
-        $both = $news + $stocks + $models + $pages;
+        $both = array_merge($news, $stocks, $models, $pages);
         DB::table('seo')->insert($both);
     }
 }
