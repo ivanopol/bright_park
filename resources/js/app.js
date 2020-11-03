@@ -37,6 +37,7 @@ Vue.component('form-component', require('./components/forms/FormComponent.vue').
 Vue.component('form-retarget-component', require('./components/forms/FormRetargetComponent.vue').default);
 Vue.component('form-buy-component', require('./components/forms/FormBuyComponent.vue').default);
 Vue.component('form-buy2-component', require('./components/forms/FormBuy2Component.vue').default);
+Vue.component('form-buy3-component', require('./components/forms/FormBuy3Component.vue').default);
 Vue.component('form-baraban', require('./components/forms/FormBaraban.vue').default);
 Vue.component('review-component', require('./components/ReviewComponent.vue').default);
 Vue.component('model-details-component', require('./components/ModelDetailsComponent').default);
