@@ -7,7 +7,7 @@
     <section class="main-screen">
         <main-hooper-component :city="'{{$city}}'"></main-hooper-component>
     </section>
-    <plate :bold='true' :city="'{{$city}}'" :text="'Внимание! В октябре отдаем все LADA с максимальной выгодой!'"></plate>
+    <plate :bold='true' :city="'{{$city}}'" :text="'Обменяем ваш авто на&nbsp;новую LADA без доплаты, Подробности по&nbsp;телефону: <a href=\'tel:{{$cities['active']['phone_format']}}\' class=\'callibri_tel event\'>{{$cities['active']['phone_format']}}</a>'"></plate>
     <div class="event-scroll">
 
         <section id="models" class="models_wrap">

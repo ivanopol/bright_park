@@ -72,6 +72,10 @@ a.plate-wrap {
 
         &.bold {
             font-weight: bold;
+
+            a {
+                font-weight: bold;
+            }
         }
     }
 

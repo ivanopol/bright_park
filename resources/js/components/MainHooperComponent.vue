@@ -1,6 +1,25 @@
 <template>
     <section>
-        <hooper class="main-screen-wrap" :autoPlay="false" :playSpeed="6000" :wheelControl="false" :transition="600" :infiniteScroll="true">
+        <hooper class="main-screen-wrap" :autoPlay="true" :playSpeed="6000" :wheelControl="false" :transition="600" :infiniteScroll="true">
+
+            <slide class="odd">
+                <div class="asset-container">
+                    <picture>
+                        <source srcset="/build/images/main/mobile/main_granta_red.jpg, /build/images/main/mobile/main_granta_red.jpg 2x" media="(max-width: 580px)">
+                        <source srcset="/build/images/main/tablet/main_granta_red.jpg, /build/images/main/tablet/main_granta_red.jpg 2x" media="(max-width: 1365px)">
+                        <source srcset="/build/images/main/desktop/main_granta_red.jpg, /build/images/main/desktop/main_granta_red.jpg 2x" media="(min-width: 1366px)">
+                        <img class="asset-image" src="/build/images/main/mobile/main_granta_red.jpg" srcset="/build/images/main/mobile/main_granta_red.jpg, /build/images/main/mobile/main_granta_red.jpg 2x" alt="Брайт Парк: Доплата 40 000 рублей при обмене на Lada Granta" />
+                    </picture>
+                </div>
+                <div class="product-content">
+                    <p class="title-tagline bold">Обмен</br> на&nbsp;LADA</br> без доплаты</p>
+                    <div class="item-buttons">
+                        <a :href="city + '/granta/sedan' + uri_params" id="main__slider__benefit-40000-details" class="btn btn-primary event">Подробнее о модели</a>
+                        <a :href="city + '/stocks/doplata-40-000-rublej-pri-obmene-na-lada-granta' + uri_params" id="main__slider__benefit-40000-action" class="btn btn-secondary event">Условия акции</a>
+                    </div>
+                </div>
+            </slide>
+
             <slide class="even">
                 <div class="asset-container">
                     <picture>
@@ -35,24 +54,7 @@
                     </div>
                 </div>
             </slide>
-            <slide class="even">
-                <div class="asset-container">
-                    <picture>
-                        <source srcset="/build/images/main/mobile/main_vesta_red.jpg, /build/images/main/mobile/main_vesta_red.jpg 2x" media="(max-width: 580px)">
-                        <source srcset="/build/images/main/tablet/main_vesta_red.jpg, /build/images/main/tablet/main_vesta_red.jpg 2x" media="(max-width: 1365px)">
-                        <source srcset="/build/images/main/desktop/main_vesta_red.jpg, /build/images/main/desktop/main_vesta_red.jpg 2x" media="(min-width: 1366px)">
-                        <img class="asset-image" src="/build/images/main/mobile/main_vesta_red.jpg"
-                             srcset="/build/images/main/mobile/main_vesta_red.jpg, /build/images/main/mobile/main_vesta_red.jpg 2x" alt="Брайт Парк: Обмен на LADA Vesta выше рыночной цены" />
-                    </picture>
-                </div>
-                <div class="product-content">
-                    <p class="title-tagline bold">Выгода&nbsp;10% по&nbsp;госпрограмме на&nbsp;LADA в&nbsp;октябре</p>
-                    <div class="item-buttons">
-                        <a :href="city + '/granta/sedan' + uri_params" id="main__slider__exchange-lada-vesta-details" class="btn btn-primary event">Подробнее о модели</a>
-                        <a :href="city + '/stocks/obmen-na-lada-vesta-vyshe-rynochnoj-ceny' + uri_params" id="main__slider__exchange-lada-vesta-action" class="btn btn-secondary event">Условия акции</a>
-                    </div>
-                </div>
-            </slide>
+
             <slide class="even">
                 <div class="asset-container">
                     <picture>
@@ -89,20 +91,23 @@
                     </div>
                 </div>
             </slide>
-            <slide class="odd">
+
+
+            <slide class="even">
                 <div class="asset-container">
                     <picture>
-                        <source srcset="/build/images/main/mobile/main_granta_red.jpg, /build/images/main/mobile/main_granta_red.jpg 2x" media="(max-width: 580px)">
-                        <source srcset="/build/images/main/tablet/main_granta_red.jpg, /build/images/main/tablet/main_granta_red.jpg 2x" media="(max-width: 1365px)">
-                        <source srcset="/build/images/main/desktop/main_granta_red.jpg, /build/images/main/desktop/main_granta_red.jpg 2x" media="(min-width: 1366px)">
-                        <img class="asset-image" src="/build/images/main/mobile/main_granta_red.jpg" srcset="/build/images/main/mobile/main_granta_red.jpg, /build/images/main/mobile/main_granta_red.jpg 2x" alt="Брайт Парк: Доплата 40 000 рублей при обмене на Lada Granta" />
+                        <source srcset="/build/images/main/mobile/main_vesta_red.jpg, /build/images/main/mobile/main_vesta_red.jpg 2x" media="(max-width: 580px)">
+                        <source srcset="/build/images/main/tablet/main_vesta_red.jpg, /build/images/main/tablet/main_vesta_red.jpg 2x" media="(max-width: 1365px)">
+                        <source srcset="/build/images/main/desktop/main_vesta_red.jpg, /build/images/main/desktop/main_vesta_red.jpg 2x" media="(min-width: 1366px)">
+                        <img class="asset-image" src="/build/images/main/mobile/main_vesta_red.jpg"
+                             srcset="/build/images/main/mobile/main_vesta_red.jpg, /build/images/main/mobile/main_vesta_red.jpg 2x" alt="Брайт Парк: Обмен на LADA Vesta выше рыночной цены" />
                     </picture>
                 </div>
                 <div class="product-content">
                     <p class="title-tagline bold">40&nbsp;000 рублей<br>выгода при обмене на&nbsp;LADA</p>
                     <div class="item-buttons">
-                        <a :href="city + '/granta/sedan' + uri_params" id="main__slider__benefit-40000-details" class="btn btn-primary event">Подробнее о модели</a>
-                        <a :href="city + '/stocks/doplata-40-000-rublej-pri-obmene-na-lada-granta' + uri_params" id="main__slider__benefit-40000-action" class="btn btn-secondary event">Условия акции</a>
+                        <a :href="city + '/granta/sedan' + uri_params" id="main__slider__exchange-lada-vesta-details" class="btn btn-primary event">Подробнее о модели</a>
+                        <a :href="city + '/stocks/obmen-na-lada-vesta-vyshe-rynochnoj-ceny' + uri_params" id="main__slider__exchange-lada-vesta-action" class="btn btn-secondary event">Условия акции</a>
                     </div>
                 </div>
             </slide>
