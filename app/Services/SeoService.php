@@ -167,7 +167,7 @@ class SeoService
             case 3:
                 if ( $segments[1] === 'stocks' )
                 {
-                    $tags->title = $params['stocks']->title . " - Брайт Парк " . $city->city_dative;
+                    $tags->title = $params['stocks']->title . " - Брайт Парк в " . $city->city_dative;
                     $tags->description = mb_strimwidth($params['stocks']->text_short, 0, 157, "...") . " - Брайт Парк в " . $city->city_dative;
                 } elseif ( $segments[1] === 'news' )
                 {
