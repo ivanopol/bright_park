@@ -21,6 +21,45 @@
             </div>
         </div>
     </div>
+
+    <?php $url = explode("/", url()->current()); ?>
+    @if ($url[count($url)-1] === 'zimnyaya-rezina')
+
+        <section id="models" class="models_wrap">
+        <div class="container">
+            <h2>Модели</h2>
+            <ul>
+                @foreach ($models as $model)
+                    @if(!empty($model->types_preview[0]))
+                        <li>
+                            <a id="main__models__{{$model->slug}}" class="event" href="{{ route('model', ['city' => $city, 'car_model' => $model->slug, 'car_type' => $model->types_preview[0]->slug])}}">
+                                <div class="img_wrap">
+                                    <img src="{{ $model->preview }}" alt="{{ $model->title }}">
+                                </div>
+                                <div class="title">{{ $model->title }}</div>
+                            </a>
+                        </li>
+                    @endif
+                @endforeach
+            </ul>
+        </div>
+    </section>
+
+    <buttons-component :cities='@json($cities)'></buttons-component>
+
+    <div class="container">
+        <advantages :dative="'{{$cities['active']['dative']}}'"></advantages>
+        <div class="advantages_form">
+            <form-buy-component :cities='@json($cities)'
+                                :form_id="'main__advantages_'"
+                                :button_text="'Отправить'"
+                                :form_title="'Оставьте заявку, мы вам перезвоним'"
+                                :goal="'about_model'">
+            </form-buy-component>
+        </div>
+    </div>
+    @endif
+
     <footer-component :coordinates='@json($data['coordinates'])'
                       :phone='@json($cities['active']['phone'])'
                       :phone_formatted='@json($cities['active']['phone_format'])'
