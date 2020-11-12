@@ -43,9 +43,9 @@
                    :car_type='@json($car_type)'
                    :car_attrs='@json($car_attrs)'
                    :cities='@json($cities)'
-                   :form_id="'details__fill-form_'"
+                   :form_id="'model__fill-form_'"
                    :goal="'fixconditions'"
-                   :prefix="'details__'"
+                   :prefix="'model__'"
             ></steps>
         </section>
 {{--        <form-component :cities='@json($cities)'
