@@ -268,13 +268,31 @@ class HomeController extends Controller
             'place' => $data['coordinates']
         ]);
 
+        $raw = new AutoruService();
+        $brands = $raw->getBrands();
+
+        $car_attrs = CarModelCarType::where([
+            ['car_model_id', '=', $car_model->id],
+            ['car_type_id', '=', $car_type->id],
+        ])->limit(1)->get();
+
+        if (!isset($_COOKIE["c_count"])) {
+            $count = rand(7, 15);
+            setcookie("c_count", $count);
+        } else {
+            $count = $_COOKIE["c_count"];
+        }
+
         return view('model', [
             'data' => $data,
+            'brands' => $brands,
             'models' => $models,
             'city' => $this->city,
             'cities' => $cities,
             'car_model' => $car_model,
             'car_type' => $car_type,
+            'car_attrs' => $car_attrs,
+            'count' => $count,
         ]);
     }
 

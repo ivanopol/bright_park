@@ -34,11 +34,25 @@
         @if(count($data['colors']))
             <color-choose-component :colors='@json($data['colors'])' :model="'{{$car_model->slug}}'" :type="'{{$car_type->slug}}'"></color-choose-component>
         @endif
-        <form-component :cities='@json($cities)'
+        <section class="model-details">
+            <div class="trigger-wrap">
+                <p class="trigger-wrap-text">Осталось <span class="model-count-text">{{$count}}</span> {{$car_model->title}} {{$car_type->title_ru}} по цене лучше, чем на сайте</p>
+            </div>
+            <steps :brands='@json($brands)'
+                   :car_model='@json($car_model)'
+                   :car_type='@json($car_type)'
+                   :car_attrs='@json($car_attrs)'
+                   :cities='@json($cities)'
+                   :form_id="'details__fill-form_'"
+                   :goal="'fixconditions'"
+                   :prefix="'details__'"
+            ></steps>
+        </section>
+{{--        <form-component :cities='@json($cities)'
                         :form_id="'model__try-it-yourself_'"
                         :form_title="'Расширенный тест-драйв в Брайт парке'"
                         :goal="'test_drive'">
-        </form-component>
+        </form-component>--}}
         @if(count($data['reviews']))
             <review-component :reviews='@json($data['reviews'])'
                               :model_name="'{{$data['model_full']}}'"></review-component>
