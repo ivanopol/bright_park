@@ -5,7 +5,7 @@
 
             @if ($breadcrumb->url)
                 <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                    <a href="{{ $breadcrumb->url }}" itemprop="item"><span itemprop="name">{{ $breadcrumb->title }}</span></a>
+                    <a href="{{ $breadcrumb->url }}" itemprop="item"><span itemprop="name">{!! $breadcrumb->title !!}</span></a>
                     <meta itemprop="position" content="{{$key + 1}}" />
                 </li>
             @endif

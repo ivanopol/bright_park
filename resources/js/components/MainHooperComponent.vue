@@ -1,6 +1,23 @@
 <template>
     <section>
-        <hooper class="main-screen-wrap" :autoPlay="true" :playSpeed="6000" :wheelControl="false" :transition="600" :infiniteScroll="true">
+        <hooper class="main-screen-wrap" :autoPlay="false" :playSpeed="6000" :wheelControl="false" :transition="600" :infiniteScroll="true">
+
+            <slide class="odd">
+                <div class="asset-container">
+                    <picture>
+                        <source srcset="/build/images/main/mobile/nuzhno-uspet-do-povysheniya-cen.jpg, /build/images/main/mobile/nuzhno-uspet-do-povysheniya-cen.jpg 2x" media="(max-width: 580px)">
+                        <source srcset="/build/images/main/tablet/nuzhno-uspet-do-povysheniya-cen.jpg, /build/images/main/tablet/nuzhno-uspet-do-povysheniya-cen.jpg 2x" media="(max-width: 1365px)">
+                        <source srcset="/build/images/main/desktop/nuzhno-uspet-do-povysheniya-cen.jpg, /build/images/main/desktop/nuzhno-uspet-do-povysheniya-cen.jpg 2x" media="(min-width: 1366px)">
+                        <img class="asset-image" src="/build/images/main/mobile/nuzhno-uspet-do-povysheniya-cen.jpg" srcset="/build/images/main/mobile/nuzhno-uspet-do-povysheniya-cen.jpg, /build/images/main/mobile/nuzhno-uspet-do-povysheniya-cen.jpg 2x" alt="Акция Брайт Парк: нужно успеть до  повышения цен" />
+                    </picture>
+                </div>
+                <div class="product-content">
+                    <p class="title-tagline bold title-uppercase"><span class="crossed">Можно</span> <span class="c_orange">Нужно</span> успеть до повышения цен</p>
+                    <div class="item-buttons">
+                        <a :href="city + '/stocks/nuzhno-uspet-do-povysheniya-cen' + uri_params" id="main__slider__nuzhno-uspet-do-povysheniya-cen" class="btn btn-primary event">Условия акции</a>
+                    </div>
+                </div>
+            </slide>
 
             <slide class="odd">
                 <div class="asset-container">
@@ -23,20 +40,20 @@
             <slide class="even">
                 <div class="asset-container">
                     <picture>
-                        <source srcset="/build/images/main/mobile/vygoda-10-dlya-vsekh-klientov-brajt-parka.jpg, /build/images/main/mobile/vygoda-10-dlya-vsekh-klientov-brajt-parka.jpg 2x" media="(max-width: 580px)">
-                        <source srcset="/build/images/main/tablet/vygoda-10-dlya-vsekh-klientov-brajt-parka.jpg, /build/images/main/tablet/vygoda-10-dlya-vsekh-klientov-brajt-parka.jpg 2x" media="(max-width: 1365px)">
-                        <source srcset="/build/images/main/desktop/vygoda-10-dlya-vsekh-klientov-brajt-parka.jpg, /build/images/main/desktop/vygoda-10-dlya-vsekh-klientov-brajt-parka.jpg 2x" media="(min-width: 1366px)">
-                        <img class="asset-image" src="/build/images/main/mobile/vygoda-10-dlya-vsekh-klientov-brajt-parka.jpg"
-                             srcset="/build/images/main/mobile/vygoda-10-dlya-vsekh-klientov-brajt-parka.jpg, /build/images/main/mobile/vygoda-10-dlya-vsekh-klientov-brajt-parka.jpg 2x" alt="Брайт Парк: выгода 10%  для всех клиентов Брайт Парка" />
+                        <source srcset="/build/images/main/mobile/black-friday.jpg, /build/images/main/mobile/black-friday.jpg 2x" media="(max-width: 580px)">
+                        <source srcset="/build/images/main/tablet/black-friday.jpg, /build/images/main/tablet/black-friday.jpg 2x" media="(max-width: 1365px)">
+                        <source srcset="/build/images/main/desktop/black-friday.jpg, /build/images/main/desktop/black-friday.jpg 2x" media="(min-width: 1366px)">
+                        <img class="asset-image" src="/build/images/main/mobile/black-friday.jpg" srcset="/build/images/main/mobile/black-friday.jpg, /build/images/main/mobile/black-friday.jpg 2x" alt="Акция Брайт Парк: скидки на мксимум черная пятница" />
                     </picture>
                 </div>
                 <div class="product-content">
-                    <p class="title-tagline bold dark">Выгода&nbsp;10%<br> для всех клиентов Брайт&nbsp;Парка</p>
+                    <p class="title-tagline bold title-uppercase"><span class="action-bold">Скидки на максимум</span> черная пятница</p>
                     <div class="item-buttons">
-                        <a :href="city + '/stocks/rasshirennye-usloviya-programmy-gosudarstvennoj-podderzhki' + uri_params" id="main__slider__ygoda-10-dlya-vsekh-klientov-brajt-parka" class="btn btn-primary event">Условия акции</a>
+                        <a :href="city + '/stocks/black-friday' + uri_params" id="main__slider__black-friday" class="btn btn-primary event">Условия акции</a>
                     </div>
                 </div>
             </slide>
+
             <slide class="even">
                 <div class="asset-container">
                     <picture>
@@ -58,6 +75,25 @@
             <slide class="even">
                 <div class="asset-container">
                     <picture>
+                        <source srcset="/build/images/main/mobile/vygoda-10-dlya-vsekh-klientov-brajt-parka.jpg, /build/images/main/mobile/vygoda-10-dlya-vsekh-klientov-brajt-parka.jpg 2x" media="(max-width: 580px)">
+                        <source srcset="/build/images/main/tablet/vygoda-10-dlya-vsekh-klientov-brajt-parka.jpg, /build/images/main/tablet/vygoda-10-dlya-vsekh-klientov-brajt-parka.jpg 2x" media="(max-width: 1365px)">
+                        <source srcset="/build/images/main/desktop/vygoda-10-dlya-vsekh-klientov-brajt-parka.jpg, /build/images/main/desktop/vygoda-10-dlya-vsekh-klientov-brajt-parka.jpg 2x" media="(min-width: 1366px)">
+                        <img class="asset-image" src="/build/images/main/mobile/vygoda-10-dlya-vsekh-klientov-brajt-parka.jpg"
+                             srcset="/build/images/main/mobile/vygoda-10-dlya-vsekh-klientov-brajt-parka.jpg, /build/images/main/mobile/vygoda-10-dlya-vsekh-klientov-brajt-parka.jpg 2x" alt="Брайт Парк: выгода 10%  для всех клиентов Брайт Парка" />
+                    </picture>
+                </div>
+                <div class="product-content">
+                    <p class="title-tagline bold dark">Выгода&nbsp;10%<br> для всех клиентов Брайт&nbsp;Парка</p>
+                    <div class="item-buttons">
+                        <a :href="city + '/stocks/rasshirennye-usloviya-programmy-gosudarstvennoj-podderzhki' + uri_params" id="main__slider__ygoda-10-dlya-vsekh-klientov-brajt-parka" class="btn btn-primary event">Условия акции</a>
+                    </div>
+                </div>
+            </slide>
+
+<!--
+            <slide class="even">
+                <div class="asset-container">
+                    <picture>
                         <source srcset="/build/images/main/mobile/main_vesta_gray.jpg, /build/images/main/mobile/main_vesta_gray.jpg 2x" media="(max-width: 580px)">
                         <source srcset="/build/images/main/tablet/main_vesta_gray.jpg, /build/images/main/tablet/main_vesta_gray.jpg 2x" media="(max-width: 1365px)">
                         <source srcset="/build/images/main/desktop/main_vesta_gray.jpg, /build/images/main/desktop/main_vesta_gray.jpg 2x" media="(min-width: 1366px)">
@@ -72,7 +108,7 @@
                         <a :href="city + '/stocks/lada-vesta-vygoda-10-po-gosprogramme' + uri_params" id="main__slider__lada-vesta-benefit-10-action" class="btn btn-secondary event">Условия акции</a>
                     </div>
                 </div>
-            </slide>
+            </slide>-->
             <slide class="odd">
                 <div class="asset-container">
                     <picture>
@@ -217,6 +253,19 @@ export default {
 
         }
 
+        .crossed {
+            position: relative;
+
+            &:before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 3px;
+                background-color: #FF8351;
+                top: 40%;
+            }
+        }
+
         .title-model {
             font-family: PragmaticaLightCBold, Helvetica, sans-serif;
             font-size: 213%;
@@ -228,6 +277,11 @@ export default {
         .title-tagline {
             &.dark {
                 color: #000
+            }
+
+            .action-bold {
+                font-weight: bold;
+                display: block;
             }
 
             font-size: 26px;

@@ -67,9 +67,7 @@ class CheckUTM
                 $result = curl_exec($curl);
                 curl_close($curl);
                 $result = json_decode($result, 1);
-                $lead = $result['result'];
-
-
+                $lead = isset($result['result']) ? $result['result'] : [];
 
                 $report .= 'Поиск лида по идентификатору:<br><pre>Запрос: ' . print_r($request_crm, true) . '</pre><br><pre>Ответ: ' . print_r($result, true) . '</pre><br><br>';
 

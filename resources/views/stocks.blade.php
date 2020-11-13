@@ -14,7 +14,7 @@
             <h1>Акции Брайт Парка в {{ $city_info->city_dative  }} </h1>
             @foreach($stocks as $stock)
                 <div class="stocks-row">
-                    <a id="stocks__stocks-one__title-{{$stock->id}}" class="stocks-title event" href="{{ route('stocks.one', ['city' => $city_info->alias, 'stocks_title' => $stock->slug]) }}" >{{$stock->title}}</a>
+                    <a id="stocks__stocks-one__title-{{$stock->id}}" class="stocks-title event" href="{{ route('stocks.one', ['city' => $city_info->alias, 'stocks_title' => $stock->slug]) }}" >{!! $stock->title !!}</a>
                     <div class="stocks-content">
                         <div class="stocks-img">
                             <a id="stocks__stocks-one__image-{{$stock->id}}" class="event" href="{{ route('stocks.one', ['city' => $city_info->alias, 'stocks_title' => $stock->slug]) }}">

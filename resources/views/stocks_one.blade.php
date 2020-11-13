@@ -10,7 +10,7 @@
     </div>
     <div class="container p-top-90">
         <div class="stocks-wrapper">
-            <h1>{{ $stocks->title }}</h1>
+            <h1>{!! $stocks->title !!}</h1>
             <div class="stocks-one">
                 <div class="stocks-one-img">
                     <img src="{{$stocks->preview}}" alt="{{$stocks->text_short}}">
